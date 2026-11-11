@@ -320,4 +320,78 @@ a { color: inherit; text-decoration: none; }
 }
 .btn:hover { opacity: .85; }
 .btn--primary { background: var(--accent); color: #fff; }
+.btn--ghost { border-color: var(--line); color: var(--ink-2); background: var(--panel); }
+
+/* ── P1 趋势话题 ────────────────────────────────────────── */
+.topic-list { display: grid; gap: 18px; margin-top: 6px; }
+.topic { display: grid; gap: 7px; }
+.topic-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.topic-name { font-size: 14.5px; font-weight: 620; letter-spacing: -.01em; }
+.topic-stat { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.topic-bar {
+  height: 7px; border-radius: 999px; overflow: hidden;
+  background: var(--line-soft);
+}
+.topic-fill {
+  display: block; height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 55%, #7dd3fc));
+  transition: width .3s ease;
+}
+.topic-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums;
+}
+.topic-repos { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  padding: 3px 10px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--panel);
+  font: inherit; font-size: 11.5px; color: var(--ink-2);
+  transition: border-color .15s ease, color .15s ease;
+}
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── P2 潜力观察 ────────────────────────────────────────── */
+.name-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.score {
+  flex: none; font-size: 13px; font-weight: 700; color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  padding: 2px 9px; border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* ── 数据说明抽屉 ───────────────────────────────────────── */
+.stat-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px; margin-bottom: 6px;
+}
+.stat {
+  padding: 12px 14px; border-radius: 10px;
+  background: var(--line-soft);
+}
+.stat-value { font-size: 18px; font-weight: 650; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.stat-label { margin-top: 2px; font-size: 11.5px; color: var(--muted); }
+
+.data-table {
+  width: 100%; border-collapse: collapse; margin-top: 4px;
+  font-size: 12.5px; font-variant-numeric: tabular-nums;
+}
+.data-table th {
+  text-align: left; font-weight: 600; font-size: 11.5px;
+  color: var(--muted); padding: 6px 8px 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+.data-table td { padding: 7px 8px 7px 0; border-bottom: 1px solid var(--line-soft); color: var(--ink-2); }
+.data-table td.num { text-align: right; padding-right: 0; }
+
+.field-list { margin: 0; display: grid; gap: 8px; }
+.field-key {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px; color: var(--accent);
+}
+.field-desc { margin: 0 0 4px; font-size: 12.8px; line-height: 1.6; color: var(--ink-2); }
+
+@media (max-width: 560px) {
+  .stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 

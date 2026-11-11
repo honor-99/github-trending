@@ -18,6 +18,7 @@ assets/styles.css       样式（浅色 / 深色自适应，移动端适配）
 assets/app.js           渲染逻辑（原生 JS，fetch JSON；含详情抽屉）
 scripts/fetch-trending.py   抓 https://github.com/trending → TSV
 scripts/archive.py          归档 + 派生（唯一写数据的入口）
+scripts/insights.py         纯统计派生：话题聚合 / 潜力观察 / 数据说明（不调模型）
 scripts/interpret.py        中文七段式解读（LLM 预生成，按 hash 幂等）
 scripts/publish.sh          幂等提交 + 推送
 data/
@@ -26,6 +27,9 @@ data/
   repos.json                      仓库维表：first_seen / times_on_board / streak / history
   latest-<period>.json            每期最新一期 + 信号（前端读取这个）
   interpretations.json            仓库 → 中文七段式解读（跨周期共用）
+  topics.json                     话题聚合结果（P1）
+  potential.json                  潜力观察结果（P2）
+  archive.json                    数据说明页：快照清单 + 字段文档（P2 起替代裸 meta.json）
   meta.json                       全局元信息
 ```
 
@@ -101,12 +105,39 @@ python3 scripts/interpret.py --force --limit 3       # 忽略 hash 强制重算
   该映射会记录在每条解读的 `model_resolved` 字段并在 UI 里显示。
 - **失败降级**：单个项目失败只告警；没有解读的条目在抽屉里显示"还没生成" + 原始描述。
 
+## 派生洞察（insights.py，零模型成本）
+
+```bash
+python3 scripts/insights.py     # 秒级，读写都在 data/
+```
+
+**P1 趋势话题**：按 `TOPIC_RULES` 关键词规则，把最近一次日/周/月榜的项目归到 12 个方向
+（AI Agent / 编码助手、LLM / 模型与推理、前端 / 设计系统、后端 / 基础设施、CLI / 开发者工具、
+安全 / 逆向、数据 / 爬虫、音视频 / 多模态、自动化 / 效率、游戏 / 图形、学习 / 知识管理、机器人 / 硬件，
+其余进「其他/未归类」）。一个项目最多打 3 个标签。输出每话题的仓库数、占比、本期新增 star、
+代表语言与 Top5 项目。改口径只改 `TOPIC_RULES`。
+
+**P2 潜力观察**：找中腰部高增速，而不是重复排行榜本身。
+
+```
+score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)
+体量空间 = 1 - min(stars_total / 150000, 0.85)
+新鲜度   = 首次上榜 ×1.15
+排除：stars_total > 150,000（头部）或本期新增 < 200（噪音）
+```
+
+每条都带 `reasons`（可解释文案，如「本期 +9,621 star，相当于存量的 514.5%」），不做黑盒分。
+
+**数据说明**：`archive.json` 汇总快照清单（日期/期/条数/新续掉/大小）、仓库数、上榜记录数、
+已解读数、字段文档与文件清单 —— 页面右上「数据」按钮打开的就是它（不再直接甩原始 JSON）。
+
 ## 定时任务怎么接
 
 抓取由本机 cron 触发，**不用 GitHub Actions**（Pages 走分支部署）：
 
 ```
 cron 08:00  →  scripts/archive.py --period daily
+            →  scripts/insights.py                                          （秒级，零成本）
             →  scripts/interpret.py --period all --limit 8 --workers 6   （硬超时 150s）
             →  git add data/ && git commit && git push
             →  Pages 从分支发布

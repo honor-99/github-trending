@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>GitHub 热度追踪 · 榜单归档</title>
 <meta name="description" content="GitHub Trending 每期快照归档：新上榜、持续热门、掉榜一眼看清。" />
-<link rel="stylesheet" href="assets/styles.css?v=2" />
+<link rel="stylesheet" href="assets/styles.css?v=3" />
 </head>
 <body>
 <header class="topbar">
@@ -14,14 +14,16 @@
     <span class="brand-text">热度追踪</span>
   </a>
   <nav class="topnav">
-    <a href="./" class="is-active">榜单</a>
-    <a href="data/meta.json" target="_blank" rel="noopener">数据</a>
+    <a href="#top" class="is-active" data-nav="list">榜单</a>
+    <a href="#topics" data-nav="topics">话题</a>
+    <a href="#potential" data-nav="potential">潜力</a>
+    <a href="#data" id="dataLink">数据</a>
     <a id="repoLink" href="https://github.com/trending" target="_blank" rel="noopener">GitHub</a>
   </nav>
 </header>
 
 <main class="wrap">
-  <section class="hero">
+  <section class="hero" id="top">
     <p class="eyebrow">GITHUB TRENDING ARCHIVE</p>
     <h1>热度追踪</h1>
     <p class="lede">
@@ -79,11 +81,35 @@
     <p class="empty" id="emptyText"></p>
   </section>
 
+  <section class="block" id="topics" hidden>
+    <div class="block-head">
+      <div>
+        <p class="eyebrow">TOPIC HEAT</p>
+        <h2>趋势话题</h2>
+      </div>
+      <p class="block-sub" id="topicsSub"></p>
+    </div>
+    <div class="topic-list" id="topicList"></div>
+    <p class="foot-dim" id="topicsNote"></p>
+  </section>
+
+  <section class="block" id="potential" hidden>
+    <div class="block-head">
+      <div>
+        <p class="eyebrow">POTENTIAL</p>
+        <h2>潜力观察</h2>
+      </div>
+      <p class="block-sub" id="potentialSub"></p>
+    </div>
+    <ol class="list" id="potentialList"></ol>
+    <p class="foot-dim" id="potentialNote"></p>
+  </section>
+
   <footer class="foot">
     <p id="footSource"></p>
     <p class="foot-dim">
       数据源 GitHub Trending（匿名访问每次返回 9–14 条）· 快照由本机定时任务抓取后直接提交，无服务端。
-      描述保留 GitHub 原文，中文解读为下一阶段。
+      描述保留 GitHub 原文；点条目可看中文七段式解读（由模型预生成并落盘，页面本身不调模型）。
     </p>
   </footer>
 </main>
@@ -103,6 +129,6 @@
   </aside>
 </div>
 
-<script src="assets/app.js?v=2"></script>
+<script src="assets/app.js?v=3"></script>
 </body>
 </html>

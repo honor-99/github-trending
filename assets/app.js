@@ -10,6 +10,8 @@
 
   /* 解读库：{ full_name: {...} }，缺失时面板优雅降级 */
   let INTERP = {};
+  /* 派生洞察：话题 / 潜力 / 数据说明，缺失时对应区块隐藏 */
+  const INSIGHTS = { topics: null, potential: null, archive: null };
 
   function el(tag, cls, text) {
     const node = document.createElement(tag);
@@ -43,6 +45,212 @@
     } catch (err) {
       INTERP = {}; // 解读库缺失不影响主榜单
     }
+  }
+
+  async function fetchJson(name) {
+    try {
+      const res = await fetch(`data/${name}`, { cache: 'no-store' });
+      return res.ok ? await res.json() : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  async function loadInsights() {
+    const [topics, potential, archive] = await Promise.all([
+      fetchJson('topics.json'), fetchJson('potential.json'), fetchJson('archive.json'),
+    ]);
+    INSIGHTS.topics = topics;
+    INSIGHTS.potential = potential;
+    INSIGHTS.archive = archive;
+    renderTopics();
+    renderPotential();
+  }
+
+  /* ── P1 趋势话题 ─────────────────────────────────────── */
+  function renderTopics() {
+    const data = INSIGHTS.topics;
+    const section = $('#topics');
+    if (!data || !data.topics || !data.topics.length) { section.hidden = true; return; }
+    section.hidden = false;
+
+    const maxCount = Math.max(...data.topics.map((t) => t.repo_count), 1);
+    $('#topicsSub').textContent = `${data.project_count} 个项目归成 ${data.topics.length} 个方向`;
+    $('#topicsNote').textContent = data.basis || '';
+
+    const box = $('#topicList');
+    box.innerHTML = '';
+    for (const t of data.topics) {
+      const row = el('div', 'topic');
+      const head = el('div', 'topic-head');
+      head.append(el('span', 'topic-name', t.name));
+      head.append(el('span', 'topic-stat', `${t.repo_count} 个 · ${Math.round(t.share * 100)}%`));
+      row.append(head);
+
+      const bar = el('div', 'topic-bar');
+      const fill = el('span', 'topic-fill');
+      fill.style.width = `${Math.round((t.repo_count / maxCount) * 100)}%`;
+      bar.append(fill);
+      row.append(bar);
+
+      const meta = el('div', 'topic-meta');
+      meta.append(el('span', '', `本期新增 ${fmt(t.stars_period_total)} star`));
+      if (t.languages && t.languages.length) {
+        meta.append(el('span', 'dot-sep', t.languages.filter((l) => l && l !== '-').slice(0, 3).join(' / ')));
+      }
+      row.append(meta);
+
+      const chips = el('div', 'topic-repos');
+      for (const r of t.repos.slice(0, 4)) {
+        const chip = el('button', 'chip', r.full_name);
+        chip.type = 'button';
+        chip.addEventListener('click', () => openDrawer({
+          full_name: r.full_name,
+          language: r.language,
+          stars_total: r.stars_total,
+          stars_period: r.stars_period,
+        }));
+        chips.append(chip);
+      }
+      row.append(chips);
+      box.append(row);
+    }
+  }
+
+  /* ── P2 潜力观察 ─────────────────────────────────────── */
+  function renderPotential() {
+    const data = INSIGHTS.potential;
+    const section = $('#potential');
+    if (!data || !data.items || !data.items.length) { section.hidden = true; return; }
+    section.hidden = false;
+
+    $('#potentialSub').textContent = `从 ${data.candidate_count} 个候选里挑出 ${data.items.length} 个`;
+    $('#potentialNote').textContent = data.method || '';
+
+    const list = $('#potentialList');
+    list.innerHTML = '';
+    data.items.forEach((it, i) => {
+      const li = el('li', 'item item--clickable');
+      li.tabIndex = 0;
+      li.setAttribute('role', 'button');
+      li.setAttribute('aria-label', `查看 ${it.full_name} 详情`);
+      li.append(el('span', 'rank', String(i + 1).padStart(2, '0')));
+
+      const main = el('div', 'item-main');
+      const nameRow = el('div', 'name-row');
+      nameRow.append(el('span', 'name', it.full_name));
+      nameRow.append(el('span', 'score', it.score.toFixed(1)));
+      main.append(nameRow);
+
+      const meta = el('div', 'meta');
+      if (it.language && it.language !== '-') meta.append(el('span', 'badge badge--lang', it.language));
+      meta.append(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
+      meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
+      meta.append(el('span', 'badge badge--up', `涨幅 ${(it.growth * 100).toFixed(0)}%`));
+      if (INTERP[it.full_name]) meta.append(el('span', 'badge badge--ai', '中文解读'));
+      main.append(meta);
+
+      if (it.reasons && it.reasons.length) main.append(el('p', 'desc', it.reasons.slice(0, 2).join(' · ')));
+      li.append(main);
+
+      const open = () => openDrawer(it);
+      li.addEventListener('click', open);
+      li.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+      });
+      list.append(li);
+    });
+  }
+
+  /* ── 数据说明（替代直接打开原始 meta.json）───────────── */
+  function openDataDrawer() {
+    const a = INSIGHTS.archive;
+    const body = [];
+
+    if (!a) {
+      body.push(el('p', 'notice', '数据说明还没生成（archive.json 缺失），请看原始文件。'));
+    } else {
+      const s = a.summary || {};
+      const grid = el('div', 'stat-grid');
+      const stats = [
+        ['快照', fmt(s.snapshot_count)],
+        ['仓库', fmt(s.repo_count)],
+        ['上榜记录', fmt(s.index_rows)],
+        ['已解读', fmt(s.interpreted_count)],
+        ['起始', s.first_date || '—'],
+        ['体积', `${Math.round((s.total_bytes || 0) / 1024)} KB`],
+      ];
+      for (const [label, value] of stats) {
+        const cell = el('div', 'stat');
+        cell.append(el('div', 'stat-value', String(value)));
+        cell.append(el('div', 'stat-label', label));
+        grid.append(cell);
+      }
+      body.push(el('h3', 'sec-title', '归档概览'));
+      body.push(grid);
+
+      if (a.snapshots && a.snapshots.length) {
+        body.push(el('h3', 'sec-title', '快照清单'));
+        const table = el('table', 'data-table');
+        const thead = el('thead');
+        const hr = el('tr');
+        for (const h of ['日期', '期', '条数', '新/续/掉', '大小']) hr.append(el('th', '', h));
+        thead.append(hr);
+        table.append(thead);
+        const tbody = el('tbody');
+        for (const snap of a.snapshots.slice(0, 30)) {
+          const tr = el('tr');
+          tr.append(el('td', '', snap.date));
+          tr.append(el('td', '', LABEL[snap.period] || snap.period));
+          tr.append(el('td', 'num', String(snap.count)));
+          const sig = snap.signals || {};
+          tr.append(el('td', 'num', `${sig.new ?? '—'} / ${sig.continued ?? '—'} / ${sig.dropped ?? '—'}`));
+          tr.append(el('td', 'num', `${Math.round((snap.bytes || 0) / 1024 * 10) / 10} KB`));
+          tbody.append(tr);
+        }
+        table.append(tbody);
+        body.push(table);
+      }
+
+      if (a.fields) {
+        body.push(el('h3', 'sec-title', '字段说明'));
+        const dl = el('dl', 'field-list');
+        for (const f of a.fields) {
+          dl.append(el('dt', 'field-key', f.field));
+          dl.append(el('dd', 'field-desc', f.desc));
+        }
+        body.push(dl);
+      }
+
+      if (a.files) {
+        body.push(el('h3', 'sec-title', '文件清单'));
+        const ul = el('ul', 'sec-list sec-list--check');
+        for (const f of a.files) {
+          const li = el('li', 'sec-item');
+          li.append(el('span', 'sec-mark', '·'));
+          li.append(el('span', 'sec-item-text', `${f.name} — ${f.desc}`));
+          ul.append(li);
+        }
+        body.push(ul);
+      }
+    }
+
+    const actions = el('div', 'drawer-actions');
+    for (const [label, href] of [['原始 meta.json', 'data/meta.json'], ['归档索引', 'data/archive.json']]) {
+      const link = el('a', 'btn btn--ghost', label);
+      link.href = href;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      actions.append(link);
+    }
+    body.push(actions);
+
+    showDrawer({
+      eyebrow: 'ARCHIVE DATA',
+      title: '数据说明',
+      meta: [el('span', 'dot-sep', a ? `更新于 ${(a.generated_at || '').replace('T', ' ').slice(0, 16)}` : '尚无摘要')],
+      body,
+    });
   }
 
   async function load(period) {
@@ -218,39 +426,50 @@
     ['risks', '采用前要确认', 'warn'],
   ];
 
+  /* 抽屉外壳：项目详情与数据说明共用 */
+  function showDrawer({ eyebrow, title, meta = [], body = [] }) {
+    const drawer = $('#drawer');
+    const metaBox = $('#drawerMeta');
+    $('#drawerEyebrow').textContent = eyebrow;
+    $('#drawerTitle').textContent = title;
+    metaBox.innerHTML = '';
+    for (const node of meta) metaBox.append(node);
+    const bodyBox = $('#drawerBody');
+    bodyBox.innerHTML = '';
+    for (const node of body) bodyBox.append(node);
+
+    drawer.hidden = false;
+    requestAnimationFrame(() => drawer.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+  }
+
   function openDrawer(it) {
     const rec = INTERP[it.full_name] || null;
-    const drawer = $('#drawer');
-    const body = $('#drawerBody');
+    const body = [];
 
-    $('#drawerTitle').textContent = it.full_name;
-    $('#drawerEyebrow').textContent = rec ? 'AI 中文解读' : 'PROJECT NOTES';
-
-    const meta = $('#drawerMeta');
-    meta.innerHTML = '';
-    if (it.language && it.language !== '-') meta.append(el('span', 'badge badge--lang', it.language));
-    if (it.stars_total !== undefined) meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
+    const metaNodes = [];
+    if (it.language && it.language !== '-') metaNodes.push(el('span', 'badge badge--lang', it.language));
+    if (it.stars_total !== undefined) metaNodes.push(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
     if (it.stars_period !== undefined && it.stars_period !== null) {
-      meta.append(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
+      metaNodes.push(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
     }
-    if (it.streak > 1) meta.append(el('span', 'badge badge--hot', `连续 ${it.streak} 次`));
+    if (it.streak > 1) metaNodes.push(el('span', 'badge badge--hot', `连续 ${it.streak} 次`));
 
-    body.innerHTML = '';
     if (rec) {
       if (rec.one_liner) {
         const box = el('div', 'quote');
         box.append(el('p', 'quote-label', '一句话读懂'));
         box.append(el('p', 'quote-text', rec.one_liner));
-        body.append(box);
+        body.push(box);
       }
       if (rec.summary) {
-        body.append(el('h3', 'sec-title', '它是什么'));
-        body.append(el('p', 'sec-text', rec.summary));
+        body.push(el('h3', 'sec-title', '它是什么'));
+        body.push(el('p', 'sec-text', rec.summary));
       }
       for (const [key, title, style] of SECTION_DEFS) {
         const arr = Array.isArray(rec[key]) ? rec[key].filter(Boolean) : [];
         if (!arr.length) continue;
-        body.append(el('h3', 'sec-title', title));
+        body.push(el('h3', 'sec-title', title));
         const ul = el('ul', `sec-list sec-list--${style}`);
         arr.forEach((text, i) => {
           const li = el('li', 'sec-item');
@@ -258,7 +477,7 @@
           li.append(el('span', 'sec-item-text', text));
           ul.append(li);
         });
-        body.append(ul);
+        body.push(ul);
       }
 
       const prov = el('div', 'prov');
@@ -267,17 +486,15 @@
         `${rec.model || '未知模型'}${rec.model_resolved && rec.model_resolved !== rec.model ? ` → ${rec.model_resolved}` : ''}`
         + ` · ${(rec.generated_at || '').replace('T', ' ').slice(0, 16)}`
         + ` · README ${rec.readme_used ? '已参考' : '未取到'}`));
-      body.append(prov);
+      body.push(prov);
     } else {
-      body.append(el('p', 'notice', '这个项目还没有生成中文解读（下次抓取时会补上）。下面是 GitHub 原始描述。'));
+      body.push(el('p', 'notice', '这个项目还没有生成中文解读（下次抓取时会补上）。下面是 GitHub 原始描述。'));
     }
 
-    if (rec && rec.source_description) {
-      body.append(el('h3', 'sec-title', 'GitHub 原始描述'));
-      body.append(el('p', 'sec-text sec-text--dim', rec.source_description));
-    } else if (!rec && it.description) {
-      body.append(el('h3', 'sec-title', 'GitHub 原始描述'));
-      body.append(el('p', 'sec-text sec-text--dim', it.description));
+    const desc = (rec && rec.source_description) || it.description;
+    if (desc) {
+      body.push(el('h3', 'sec-title', 'GitHub 原始描述'));
+      body.push(el('p', 'sec-text sec-text--dim', desc));
     }
 
     const actions = el('div', 'drawer-actions');
@@ -286,11 +503,14 @@
     gh.target = '_blank';
     gh.rel = 'noopener';
     actions.append(gh);
-    body.append(actions);
+    body.push(actions);
 
-    drawer.hidden = false;
-    requestAnimationFrame(() => drawer.classList.add('is-open'));
-    document.body.style.overflow = 'hidden';
+    showDrawer({
+      eyebrow: rec ? 'AI 中文解读' : 'PROJECT NOTES',
+      title: it.full_name,
+      meta: metaNodes,
+      body,
+    });
   }
 
   function closeDrawer() {
@@ -312,8 +532,23 @@
     btn.addEventListener('click', () => setPeriod(btn.dataset.period));
   });
 
+  const dataLink = $('#dataLink');
+  if (dataLink) {
+    dataLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      openDataDrawer();
+    });
+  }
+  document.querySelectorAll('.topnav a[data-nav]').forEach((a) => {
+    a.addEventListener('click', () => {
+      document.querySelectorAll('.topnav a').forEach((x) => x.classList.remove('is-active'));
+      a.classList.add('is-active');
+    });
+  });
+
   (async () => {
     await loadInterpretations();
+    await loadInsights();
     setPeriod(currentPeriod(), { push: false });
   })();
 })();
