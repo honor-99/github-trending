@@ -3,14 +3,13 @@
   'use strict';
 
   const LABEL = { daily: '日榜', weekly: '周榜', monthly: '月榜' };
-  const PERIOD_HINT = {
-    daily: '今日增长榜',
-    weekly: '本周增长榜',
-    monthly: '本月增长榜',
-  };
+  const PERIOD_HINT = { daily: '今日增长榜', weekly: '本周增长榜', monthly: '本月增长榜' };
 
   const $ = (sel) => document.querySelector(sel);
   const fmt = (n) => (n === null || n === undefined ? '—' : Number(n).toLocaleString('zh-CN'));
+
+  /* 解读库：{ full_name: {...} }，缺失时面板优雅降级 */
+  let INTERP = {};
 
   function el(tag, cls, text) {
     const node = document.createElement(tag);
@@ -37,6 +36,15 @@
     load(period);
   }
 
+  async function loadInterpretations() {
+    try {
+      const res = await fetch('data/interpretations.json', { cache: 'no-store' });
+      if (res.ok) INTERP = await res.json();
+    } catch (err) {
+      INTERP = {}; // 解读库缺失不影响主榜单
+    }
+  }
+
   async function load(period) {
     const kpis = $('#kpis');
     kpis.innerHTML = '';
@@ -60,7 +68,6 @@
     const news = items.filter((i) => i.status === 'new');
     const hots = items.filter((i) => i.status === 'continued');
 
-    /* 顶部元信息 */
     const metaBits = [`${data.date} 快照`];
     if (data.prev_date) {
       const days = Math.round((new Date(data.date) - new Date(data.prev_date)) / 86400000);
@@ -71,7 +78,6 @@
     if (data.snapshot_count) metaBits.push(`累计 ${data.snapshot_count} 份`);
     $('#controlsMeta').textContent = metaBits.join(' · ');
 
-    /* 首份快照提示（无对比基线时不假装有信号） */
     const notice = $('#notice');
     if (!data.prev_date) {
       notice.hidden = false;
@@ -82,7 +88,6 @@
       notice.hidden = true;
     }
 
-    /* KPI 卡 */
     const kpis = $('#kpis');
     kpis.innerHTML = '';
     const cards = [
@@ -99,26 +104,20 @@
       kpis.append(card);
     }
 
-    /* 新上榜 */
     toggleBlock('#block-new', news.length, () => {
       $('#newSub').textContent = `${data.date} 刚进入视野`;
       fillList('#list-new', news, 'new');
     });
-
-    /* 持续热门 */
     toggleBlock('#block-hot', hots.length, () => {
       const maxStreak = Math.max(...hots.map((i) => i.streak || 1), 1);
       $('#hotSub').textContent = `最长连续 ${maxStreak} 期`;
       fillList('#list-hot', hots, 'hot');
     });
-
-    /* 掉榜 */
     toggleBlock('#block-drop', dropped.length, () => {
       $('#dropSub').textContent = `上一期（${data.prev_date || '—'}）还在，这一期消失`;
       fillDropList(dropped);
     });
 
-    /* 空态 */
     const emptyBox = $('#block-empty');
     if (!items.length) {
       emptyBox.hidden = false;
@@ -130,16 +129,15 @@
       emptyBox.hidden = true;
     }
 
-    /* 页脚 */
     $('#footSource').textContent =
       `${LABEL[data.period] || ''}数据 ${data.date} · 来源 ${data.source || 'github.com/trending'} · 抓取于 ${(data.fetched_at || '').replace('T', ' ')}`;
   }
 
-  function toggleBlock(sel, count, render) {
+  function toggleBlock(sel, count, renderFn) {
     const block = $(sel);
     if (!count) { block.hidden = true; return; }
     block.hidden = false;
-    render();
+    renderFn();
   }
 
   function fillList(sel, items, kind) {
@@ -172,47 +170,150 @@
   }
 
   function buildItem(it, kind) {
-    const li = el('li', 'item');
+    const hasNotes = Boolean(INTERP[it.full_name]);
+    const li = el('li', 'item item--clickable');
+    li.tabIndex = 0;
+    li.setAttribute('role', 'button');
+    li.setAttribute('aria-label', `查看 ${it.full_name} 详情`);
+    li.dataset.name = it.full_name;
+
     li.append(el('span', 'rank', `#${it.rank}`));
 
     const main = el('div', 'item-main');
-    const a = el('a', 'name', it.full_name);
-    a.href = it.url || `https://github.com/${it.full_name}`;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    main.append(a);
-
+    main.append(el('span', 'name', it.full_name));
     if (it.description) main.append(el('p', 'desc', it.description));
 
     const meta = el('div', 'meta');
-    if (it.language && it.language !== '-') {
-      meta.append(el('span', 'badge badge--lang', it.language));
-    }
+    if (it.language && it.language !== '-') meta.append(el('span', 'badge badge--lang', it.language));
     meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
     if (it.stars_period !== null && it.stars_period !== undefined) {
-      const periodWord = kind === 'new' ? '本期' : '本期';
-      meta.append(el('span', 'dot-sep', `${periodWord} +${fmt(it.stars_period)}`));
+      meta.append(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
     }
     if (it.rank_change !== null && it.rank_change !== undefined && it.rank_change !== 0) {
       const up = it.rank_change > 0;
-      meta.append(
-        el('span', `badge ${up ? 'badge--up' : 'badge--down'}`, `${up ? '↑' : '↓'} ${Math.abs(it.rank_change)} 位`)
-      );
+      meta.append(el('span', `badge ${up ? 'badge--up' : 'badge--down'}`,
+        `${up ? '↑' : '↓'} ${Math.abs(it.rank_change)} 位`));
     }
+    if (hasNotes) meta.append(el('span', 'badge badge--ai', '中文解读'));
     main.append(meta);
     li.append(main);
 
-    if (kind === 'hot' && it.streak > 1) {
-      li.append(el('span', 'badge badge--hot', `连续 ${it.streak} 次`));
-    } else if (kind === 'new') {
-      li.append(el('span', 'badge badge--new', '新上榜'));
-    }
+    if (kind === 'hot' && it.streak > 1) li.append(el('span', 'badge badge--hot', `连续 ${it.streak} 次`));
+    else if (kind === 'new') li.append(el('span', 'badge badge--new', '新上榜'));
+
+    const open = () => openDrawer(it);
+    li.addEventListener('click', open);
+    li.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
     return li;
   }
+
+  /* ── 详情抽屉 ─────────────────────────────────────────── */
+  const SECTION_DEFS = [
+    ['audience', '谁适合关注', 'check'],
+    ['use_cases', '能用在哪些工作中', 'check'],
+    ['adoption_steps', '建议怎么落地', 'number'],
+    ['build_ideas', '可以基于它开发什么', 'check'],
+    ['risks', '采用前要确认', 'warn'],
+  ];
+
+  function openDrawer(it) {
+    const rec = INTERP[it.full_name] || null;
+    const drawer = $('#drawer');
+    const body = $('#drawerBody');
+
+    $('#drawerTitle').textContent = it.full_name;
+    $('#drawerEyebrow').textContent = rec ? 'AI 中文解读' : 'PROJECT NOTES';
+
+    const meta = $('#drawerMeta');
+    meta.innerHTML = '';
+    if (it.language && it.language !== '-') meta.append(el('span', 'badge badge--lang', it.language));
+    if (it.stars_total !== undefined) meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
+    if (it.stars_period !== undefined && it.stars_period !== null) {
+      meta.append(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
+    }
+    if (it.streak > 1) meta.append(el('span', 'badge badge--hot', `连续 ${it.streak} 次`));
+
+    body.innerHTML = '';
+    if (rec) {
+      if (rec.one_liner) {
+        const box = el('div', 'quote');
+        box.append(el('p', 'quote-label', '一句话读懂'));
+        box.append(el('p', 'quote-text', rec.one_liner));
+        body.append(box);
+      }
+      if (rec.summary) {
+        body.append(el('h3', 'sec-title', '它是什么'));
+        body.append(el('p', 'sec-text', rec.summary));
+      }
+      for (const [key, title, style] of SECTION_DEFS) {
+        const arr = Array.isArray(rec[key]) ? rec[key].filter(Boolean) : [];
+        if (!arr.length) continue;
+        body.append(el('h3', 'sec-title', title));
+        const ul = el('ul', `sec-list sec-list--${style}`);
+        arr.forEach((text, i) => {
+          const li = el('li', 'sec-item');
+          li.append(el('span', 'sec-mark', style === 'number' ? String(i + 1) : style === 'warn' ? '!' : '✓'));
+          li.append(el('span', 'sec-item-text', text));
+          ul.append(li);
+        });
+        body.append(ul);
+      }
+
+      const prov = el('div', 'prov');
+      prov.append(el('span', 'badge badge--ai', 'AI 生成'));
+      prov.append(el('span', 'prov-text',
+        `${rec.model || '未知模型'}${rec.model_resolved && rec.model_resolved !== rec.model ? ` → ${rec.model_resolved}` : ''}`
+        + ` · ${(rec.generated_at || '').replace('T', ' ').slice(0, 16)}`
+        + ` · README ${rec.readme_used ? '已参考' : '未取到'}`));
+      body.append(prov);
+    } else {
+      body.append(el('p', 'notice', '这个项目还没有生成中文解读（下次抓取时会补上）。下面是 GitHub 原始描述。'));
+    }
+
+    if (rec && rec.source_description) {
+      body.append(el('h3', 'sec-title', 'GitHub 原始描述'));
+      body.append(el('p', 'sec-text sec-text--dim', rec.source_description));
+    } else if (!rec && it.description) {
+      body.append(el('h3', 'sec-title', 'GitHub 原始描述'));
+      body.append(el('p', 'sec-text sec-text--dim', it.description));
+    }
+
+    const actions = el('div', 'drawer-actions');
+    const gh = el('a', 'btn btn--primary', '查看 GitHub');
+    gh.href = it.url || `https://github.com/${it.full_name}`;
+    gh.target = '_blank';
+    gh.rel = 'noopener';
+    actions.append(gh);
+    body.append(actions);
+
+    drawer.hidden = false;
+    requestAnimationFrame(() => drawer.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    const drawer = $('#drawer');
+    drawer.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(() => { drawer.hidden = true; }, 180);
+  }
+
+  $('#drawer').addEventListener('click', (e) => {
+    if (e.target.closest('[data-close]')) closeDrawer();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !$('#drawer').hidden) closeDrawer();
+  });
 
   /* 启动 */
   document.querySelectorAll('.segmented button').forEach((btn) => {
     btn.addEventListener('click', () => setPeriod(btn.dataset.period));
   });
-  setPeriod(currentPeriod(), { push: false });
+
+  (async () => {
+    await loadInterpretations();
+    setPeriod(currentPeriod(), { push: false });
+  })();
 })();

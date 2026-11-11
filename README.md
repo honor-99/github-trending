@@ -15,14 +15,17 @@
 ```
 index.html              页面骨架（纯 HTML）
 assets/styles.css       样式（浅色 / 深色自适应，移动端适配）
-assets/app.js           渲染逻辑（原生 JS，fetch JSON）
+assets/app.js           渲染逻辑（原生 JS，fetch JSON；含详情抽屉）
 scripts/fetch-trending.py   抓 https://github.com/trending → TSV
 scripts/archive.py          归档 + 派生（唯一写数据的入口）
+scripts/interpret.py        中文七段式解读（LLM 预生成，按 hash 幂等）
+scripts/publish.sh          幂等提交 + 推送
 data/
   YYYY/YYYY-MM-DD-<period>.json   每期快照（唯一事实来源，不可变）
   index.jsonl                     总账：一行一条上榜记录（由快照重建）
   repos.json                      仓库维表：first_seen / times_on_board / streak / history
   latest-<period>.json            每期最新一期 + 信号（前端读取这个）
+  interpretations.json            仓库 → 中文七段式解读（跨周期共用）
   meta.json                       全局元信息
 ```
 
@@ -76,13 +79,36 @@ python3 -m http.server 8123 --bind 127.0.0.1
 # 切换周榜/月榜：http://127.0.0.1:8123/?p=weekly
 ```
 
+## 中文七段式解读（interpret.py）
+
+点任意条目 → 右侧抽屉渲染：`一句话读懂 / 它是什么 / 谁适合关注 / 能用在哪些工作中 /
+建议怎么落地（编号）/ 可以基于它开发什么 / 采用前要确认（风险）/ GitHub 原始描述`。
+
+```bash
+python3 scripts/interpret.py --limit 8 --workers 6   # 补一批没解读过的
+python3 scripts/interpret.py --dry-run --limit 1     # 只打印 prompt，不调模型
+python3 scripts/interpret.py --force --limit 3       # 忽略 hash 强制重算
+```
+
+- **输入**：GitHub `README`（`gh api repos/{o}/{r}/readme`，截断 3000 字）+ 描述 + star + 语言。
+  33/33 都成功取到 README。
+- **幂等**：`hash = sha256(full_name + description + language + readme)`，没变就跳过，跨日/周/月榜共用一份。
+- **落盘**：每成功一个立刻写 `interpretations.json`，中途被打断不丢进度。
+- **并发**：默认 4，实测 `--workers 6` 时 33 个约 3 分钟（串行约 50 分钟）。
+- **模型**：默认读 `~/.hermes/config.yaml` 的 `model.base_url` + `model.default`，
+  可用 `--model` / `--api-base` 或环境变量 `INTERPRET_MODEL` / `INTERPRET_API_BASE` 覆盖。
+  注意中转可能改写模型：请求 `deepseek-v4-pro`，实际返回 `deepseek-v4.1-flash-1017` / `deepseek-flash`，
+  该映射会记录在每条解读的 `model_resolved` 字段并在 UI 里显示。
+- **失败降级**：单个项目失败只告警；没有解读的条目在抽屉里显示"还没生成" + 原始描述。
+
 ## 定时任务怎么接
 
 抓取由本机 cron 触发，**不用 GitHub Actions**（Pages 走分支部署）：
 
 ```
 cron 08:00  →  scripts/archive.py --period daily
-            →  git add data/ && git commit -m "data: daily 2026-11-11" && git push
+            →  scripts/interpret.py --period all --limit 8 --workers 6   （硬超时 150s）
+            →  git add data/ && git commit && git push
             →  Pages 从分支发布
 ```
 
