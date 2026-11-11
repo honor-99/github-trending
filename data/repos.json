@@ -59,7 +59,7 @@
     "period": "monthly",
     "rank": 10,
     "stars_period": 17107,
-    "stars_total": 58017
+    "stars_total": 58020
    }
   ],
   "language": "Python",
@@ -109,7 +109,7 @@
     "period": "monthly",
     "rank": 11,
     "stars_period": 17106,
-    "stars_total": 99380
+    "stars_total": 99383
    }
   ],
   "language": "Java",
@@ -134,7 +134,7 @@
     "period": "monthly",
     "rank": 6,
     "stars_period": 22624,
-    "stars_total": 52664
+    "stars_total": 52676
    }
   ],
   "language": "CSS",
@@ -234,7 +234,7 @@
     "period": "monthly",
     "rank": 12,
     "stars_period": 9346,
-    "stars_total": 46786
+    "stars_total": 46789
    }
   ],
   "language": "Python",
@@ -346,7 +346,7 @@
     "period": "monthly",
     "rank": 3,
     "stars_period": 41811,
-    "stars_total": 69405
+    "stars_total": 69416
    },
    {
     "date": "2026-11-11",
@@ -383,7 +383,7 @@
     "period": "monthly",
     "rank": 2,
     "stars_period": 50753,
-    "stars_total": 107341
+    "stars_total": 107348
    }
   ],
   "language": "Python",
@@ -433,7 +433,7 @@
     "period": "monthly",
     "rank": 7,
     "stars_period": 22380,
-    "stars_total": 82350
+    "stars_total": 82356
    }
   ],
   "language": "TypeScript",
@@ -595,7 +595,7 @@
     "period": "monthly",
     "rank": 1,
     "stars_period": 389832,
-    "stars_total": 450200
+    "stars_total": 450249
    }
   ],
   "language": "TypeScript",
@@ -620,7 +620,7 @@
     "period": "monthly",
     "rank": 5,
     "stars_period": 28598,
-    "stars_total": 107647
+    "stars_total": 107665
    }
   ],
   "language": "Rust",
@@ -645,7 +645,7 @@
     "period": "monthly",
     "rank": 4,
     "stars_period": 28609,
-    "stars_total": 55827
+    "stars_total": 55860
    },
    {
     "date": "2026-11-11",
@@ -689,7 +689,7 @@
     "period": "monthly",
     "rank": 14,
     "stars_period": 5300,
-    "stars_total": 6366
+    "stars_total": 6378
    }
   ],
   "language": "TypeScript",
@@ -744,7 +744,7 @@
     "period": "monthly",
     "rank": 8,
     "stars_period": 17591,
-    "stars_total": 50311
+    "stars_total": 50320
    }
   ],
   "language": "TypeScript",
@@ -769,7 +769,7 @@
     "period": "monthly",
     "rank": 9,
     "stars_period": 17223,
-    "stars_total": 115863
+    "stars_total": 115869
    },
    {
     "date": "2026-11-11",
