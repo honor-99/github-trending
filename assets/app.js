@@ -8,6 +8,26 @@
   const $ = (sel) => document.querySelector(sel);
   const fmt = (n) => (n === null || n === undefined ? '—' : Number(n).toLocaleString('zh-CN'));
 
+  /* ── 外观皮肤：paper（纸感浅色）/ slate（深墨精密） ── */
+  const SKINS = { paper: '纸感', slate: '深墨' };
+  function applySkin(skin, { persist = true } = {}) {
+    const next = SKINS[skin] ? skin : 'paper';
+    document.documentElement.dataset.skin = next;
+    if (persist) { try { localStorage.setItem('trend.skin', next); } catch (e) { /* 隐私模式 */ } }
+    const btn = $('#skinToggle');
+    if (btn) {
+      btn.textContent = `外观 · ${SKINS[next]}`;
+      btn.setAttribute('aria-label', `当前外观 ${SKINS[next]}，点击切换`);
+    }
+  }
+  const LANG_SLUG = (lang) => String(lang || '').toLowerCase().replace(/[^a-z+#]/g, '');
+  function langDot(lang) {
+    const dot = el('span', 'lang-dot');
+    dot.dataset.lang = LANG_SLUG(lang);
+    dot.title = lang || '';
+    return dot;
+  }
+
   /* 解读库：{ full_name: {...} }，缺失时面板优雅降级 */
   let INTERP = {};
   /* 派生洞察：话题 / 潜力 / 数据说明，缺失时对应区块隐藏 */
@@ -129,6 +149,7 @@
 
     const list = $('#potentialList');
     list.innerHTML = '';
+    const maxGain = Math.max(...data.items.map((i) => i.stars_period || 0), 1);
     data.items.forEach((it, i) => {
       const li = el('li', 'item item--clickable');
       li.tabIndex = 0;
@@ -143,8 +164,12 @@
       main.append(nameRow);
 
       const meta = el('div', 'meta');
-      if (it.language && it.language !== '-') meta.append(el('span', 'badge badge--lang', it.language));
+      if (it.language && it.language !== '-') {
+        meta.append(langDot(it.language));
+        meta.append(el('span', 'badge badge--lang', it.language));
+      }
       meta.append(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
+      meta.append(gainBar(it.stars_period || 0, maxGain));
       meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
       const growthLabel = it.growth >= 1
         ? `新增占累计 ${Math.round((it.stars_period / it.stars_total) * 100)}%`
@@ -357,7 +382,16 @@
   function fillList(sel, items, kind) {
     const list = $(sel);
     list.innerHTML = '';
-    for (const it of items) list.append(buildItem(it, kind));
+    const maxGain = Math.max(...items.map((i) => i.stars_period || 0), 1);
+    for (const it of items) list.append(buildItem(it, kind, maxGain));
+  }
+
+  function gainBar(value, max, { muted = false } = {}) {
+    const wrap = el('span', `gain-bar${muted ? ' gain-bar--muted' : ''}`);
+    const fill = el('span', 'gain-fill');
+    fill.style.width = `${Math.max(4, Math.round((value / max) * 100))}%`;
+    wrap.append(fill);
+    return wrap;
   }
 
   function fillDropList(dropped) {
@@ -373,7 +407,10 @@
       a.rel = 'noopener';
       main.append(a);
       const meta = el('div', 'meta');
-      if (d.language && d.language !== '-') meta.append(el('span', 'badge badge--lang', d.language));
+      if (d.language && d.language !== '-') {
+        meta.append(langDot(d.language));
+        meta.append(el('span', 'badge badge--lang', d.language));
+      }
       if (d.last_stars_total) meta.append(el('span', 'dot-sep', `${fmt(d.last_stars_total)} stars`));
       meta.append(el('span', 'dot-sep', '掉出榜单'));
       main.append(meta);
@@ -383,7 +420,7 @@
     }
   }
 
-  function buildItem(it, kind) {
+  function buildItem(it, kind, maxGain) {
     const hasNotes = Boolean(INTERP[it.full_name]);
     const li = el('li', 'item item--clickable');
     li.tabIndex = 0;
@@ -398,10 +435,14 @@
     if (it.description) main.append(el('p', 'desc', it.description));
 
     const meta = el('div', 'meta');
-    if (it.language && it.language !== '-') meta.append(el('span', 'badge badge--lang', it.language));
+    if (it.language && it.language !== '-') {
+      meta.append(langDot(it.language));
+      meta.append(el('span', 'badge badge--lang', it.language));
+    }
     meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
     if (it.stars_period !== null && it.stars_period !== undefined) {
       meta.append(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
+      meta.append(gainBar(it.stars_period || 0, maxGain || 1));
     }
     if (it.rank_change !== null && it.rank_change !== undefined && it.rank_change !== 0) {
       const up = it.rank_change > 0;
@@ -534,6 +575,17 @@
   });
 
   /* 启动 */
+  let stored = 'paper';
+  try { stored = localStorage.getItem('trend.skin') || 'paper'; } catch (e) { /* noop */ }
+  applySkin(stored, { persist: false });
+  const skinToggle = $('#skinToggle');
+  if (skinToggle) {
+    skinToggle.addEventListener('click', () => {
+      const cur = document.documentElement.dataset.skin || 'paper';
+      applySkin(cur === 'paper' ? 'slate' : 'paper');
+    });
+  }
+
   document.querySelectorAll('.segmented button').forEach((btn) => {
     btn.addEventListener('click', () => setPeriod(btn.dataset.period));
   });
