@@ -5,6 +5,11 @@
 
 无服务端、无构建、无第三方依赖：`index.html` + `assets/` 就是全部前端，数据是 JSON 文件。
 
+**在线地址**：https://trending.208202.xyz/ （旧路径 `208202.xyz/github-trending/` 301 跳转到这里）
+
+部署方式：GitHub Pages 从 `master` 分支根目录发布（非 Actions 构建），自定义域 `trending.208202.xyz`
+（Cloudflare CNAME → `honor-99.github.io`，**DNS only 灰云**；橙云会让 GitHub 签证书失败）。
+
 ## 目录结构
 
 ```
