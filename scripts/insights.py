@@ -197,7 +197,12 @@ def potential_score(it: dict) -> dict | None:
     score = 100 * headroom * fresh * (0.5 * min(growth / 0.25, 1) + 0.35 * volume + stability)
     score = round(min(score, 100), 1)
 
-    reasons = [f"本期 +{gain:,} star，相当于存量的 {growth:.1%}"]
+    prior = max(total - gain, 0)
+    reasons = []
+    if prior < 1000:
+        reasons.append(f"新仓库：累计 {total:,} star 几乎全部来自本期，涨幅百分比不具可比性")
+    else:
+        reasons.append(f"本期 +{gain:,} star，相当于存量的 {growth:.1%}")
     if fresh > 1:
         reasons.append("刚进榜单，还没被反复曝光")
     if total < 30_000:

@@ -146,7 +146,10 @@
       if (it.language && it.language !== '-') meta.append(el('span', 'badge badge--lang', it.language));
       meta.append(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
       meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
-      meta.append(el('span', 'badge badge--up', `涨幅 ${(it.growth * 100).toFixed(0)}%`));
+      const growthLabel = it.growth >= 1
+        ? `新增占累计 ${Math.round((it.stars_period / it.stars_total) * 100)}%`
+        : `存量涨幅 ${Math.round(it.growth * 100)}%`;
+      meta.append(el('span', 'badge badge--up', growthLabel));
       if (INTERP[it.full_name]) meta.append(el('span', 'badge badge--ai', '中文解读'));
       main.append(meta);
 
