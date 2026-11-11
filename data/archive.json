@@ -1,0 +1,105 @@
+{
+ "generated_at": "2026-11-11T17:45:57+08:00",
+ "summary": {
+  "repo_count": 33,
+  "index_rows": 40,
+  "snapshot_count": 3,
+  "interpreted_count": 33,
+  "first_date": "2026-11-11",
+  "latest_date": "2026-11-11",
+  "total_bytes": 13413
+ },
+ "snapshots": [
+  {
+   "date": "2026-11-11",
+   "period": "monthly",
+   "count": 14,
+   "fetched_at": "2026-11-11T10:46:52+08:00",
+   "signals": null,
+   "bytes": 4988,
+   "path": "data/2026/2026-11-11-monthly.json"
+  },
+  {
+   "date": "2026-11-11",
+   "period": "weekly",
+   "count": 14,
+   "fetched_at": "2026-11-11T10:46:48+08:00",
+   "signals": null,
+   "bytes": 4653,
+   "path": "data/2026/2026-11-11-weekly.json"
+  },
+  {
+   "date": "2026-11-11",
+   "period": "daily",
+   "count": 12,
+   "fetched_at": "2026-11-11T17:45:57+08:00",
+   "signals": null,
+   "bytes": 3772,
+   "path": "data/2026/2026-11-11-daily.json"
+  }
+ ],
+ "fields": [
+  {
+   "field": "date / period",
+   "desc": "快照日期与周期（daily / weekly / monthly），文件名即 2026-11-11-daily.json"
+  },
+  {
+   "field": "rank",
+   "desc": "在该期 GitHub Trending 页面上的名次"
+  },
+  {
+   "field": "stars_period",
+   "desc": "该周期内新增 star（日榜=今日，周榜=本周，月榜=本月）"
+  },
+  {
+   "field": "stars_total",
+   "desc": "抓取时的累计 star"
+  },
+  {
+   "field": "language",
+   "desc": "GitHub 标注的主语言，空值为 -"
+  },
+  {
+   "field": "description",
+   "desc": "GitHub 原始描述，逐字保留不改写"
+  },
+  {
+   "field": "status",
+   "desc": "派生信号：new 新上榜 / continued 持续在榜 / dropped 掉榜"
+  },
+  {
+   "field": "streak",
+   "desc": "连续在榜期数，掉榜后清零"
+  },
+  {
+   "field": "rank_change",
+   "desc": "与上一期相比的名次变化（正数为上升）"
+  }
+ ],
+ "files": [
+  {
+   "name": "data/index.jsonl",
+   "desc": "总账：一行一条上榜记录，由全部快照重建"
+  },
+  {
+   "name": "data/repos.json",
+   "desc": "仓库维表：首次上榜、在榜次数、连续期数、历史"
+  },
+  {
+   "name": "data/latest-<period>.json",
+   "desc": "每期最新一期 + 派生信号，页面读这个"
+  },
+  {
+   "name": "data/interpretations.json",
+   "desc": "中文七段式解读，按仓库内容 hash 幂等"
+  },
+  {
+   "name": "data/topics.json",
+   "desc": "话题聚合结果（本次生成）"
+  },
+  {
+   "name": "data/potential.json",
+   "desc": "潜力观察结果（本次生成）"
+  }
+ ]
+}

@@ -1,0 +1,488 @@
+{
+ "generated_at": "2026-11-11T17:45:57+08:00",
+ "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
+ "project_count": 33,
+ "topics": [
+  {
+   "name": "AI Agent / 编码助手",
+   "repo_count": 20,
+   "share": 0.606,
+   "stars_period_total": 538826,
+   "avg_stars_period": 26941,
+   "languages": [
+    "CSS",
+    "JavaScript",
+    "Python",
+    "Rust",
+    "Shell",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "morluto/rea",
+     "stars_period": 389832,
+     "stars_total": 450249,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "pbakaus/impeccable",
+     "stars_period": 28598,
+     "stars_total": 107665,
+     "language": "Rust",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "Nutlope/hallmark",
+     "stars_period": 22624,
+     "stars_total": 52676,
+     "language": "CSS",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "heygen-com/hyperframes",
+     "stars_period": 22380,
+     "stars_total": 82356,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "cloudflare/security-audit-skill",
+     "stars_period": 10967,
+     "stars_total": 69416,
+     "language": "JavaScript",
+     "periods": [
+      "monthly",
+      "weekly"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "自动化 / 效率",
+   "repo_count": 6,
+   "share": 0.182,
+   "stars_period_total": 34605,
+   "avg_stars_period": 5768,
+   "languages": [
+    "Python",
+    "Rust",
+    "Shell",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "tashfeenahmed/freellmapi",
+     "stars_period": 17591,
+     "stars_total": 50320,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "NVIDIA/auto-ontology",
+     "stars_period": 9621,
+     "stars_total": 11491,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ]
+    },
+    {
+     "full_name": "Donchitos/Claude-Code-Game-Studios",
+     "stars_period": 3730,
+     "stars_total": 38099,
+     "language": "Shell",
+     "periods": [
+      "weekly"
+     ]
+    },
+    {
+     "full_name": "max-sixty/worktrunk",
+     "stars_period": 2093,
+     "stars_total": 12406,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ]
+    },
+    {
+     "full_name": "homeassistant-ai/ha-mcp",
+     "stars_period": 790,
+     "stars_total": 6908,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "安全 / 逆向",
+   "repo_count": 5,
+   "share": 0.152,
+   "stars_period_total": 464094,
+   "avg_stars_period": 92819,
+   "languages": [
+    "Java",
+    "JavaScript",
+    "Rust",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "morluto/rea",
+     "stars_period": 389832,
+     "stars_total": 450249,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "pbakaus/impeccable",
+     "stars_period": 28598,
+     "stars_total": 107665,
+     "language": "Rust",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "tashfeenahmed/freellmapi",
+     "stars_period": 17591,
+     "stars_total": 50320,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "NationalSecurityAgency/ghidra",
+     "stars_period": 17106,
+     "stars_total": 99383,
+     "language": "Java",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "cloudflare/security-audit-skill",
+     "stars_period": 10967,
+     "stars_total": 69416,
+     "language": "JavaScript",
+     "periods": [
+      "monthly",
+      "weekly"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "其他 / 未归类",
+   "repo_count": 5,
+   "share": 0.152,
+   "stars_period_total": 23674,
+   "avg_stars_period": 4735,
+   "languages": [
+    "Python",
+    "Ruby",
+    "Rust",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "pingdotgg/t3code",
+     "stars_period": 11979,
+     "stars_total": 55860,
+     "language": "TypeScript",
+     "periods": [
+      "monthly",
+      "weekly"
+     ]
+    },
+    {
+     "full_name": "milind-soni/OpenMausBot",
+     "stars_period": 8951,
+     "stars_total": 20707,
+     "language": "TypeScript",
+     "periods": [
+      "weekly"
+     ]
+    },
+    {
+     "full_name": "sherlock-project/sherlock",
+     "stars_period": 2393,
+     "stars_total": 109644,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ]
+    },
+    {
+     "full_name": "tokio-rs/topcoat",
+     "stars_period": 192,
+     "stars_total": 7023,
+     "language": "Rust",
+     "periods": [
+      "daily"
+     ]
+    },
+    {
+     "full_name": "we-promise/sure",
+     "stars_period": 159,
+     "stars_total": 12384,
+     "language": "Ruby",
+     "periods": [
+      "daily"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "音视频 / 多模态",
+   "repo_count": 3,
+   "share": 0.091,
+   "stars_period_total": 74972,
+   "avg_stars_period": 24991,
+   "languages": [
+    "Python",
+    "Rust",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "debpalash/VoiceStudio",
+     "stars_period": 50753,
+     "stars_total": 107348,
+     "language": "Python",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "heygen-com/hyperframes",
+     "stars_period": 22380,
+     "stars_total": 82356,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "anomalyco/hex",
+     "stars_period": 1839,
+     "stars_total": 6221,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "LLM / 模型与推理",
+   "repo_count": 3,
+   "share": 0.091,
+   "stars_period_total": 27587,
+   "avg_stars_period": 9196,
+   "languages": [
+    "Python",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "tashfeenahmed/freellmapi",
+     "stars_period": 17591,
+     "stars_total": 50320,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "NVIDIA/auto-ontology",
+     "stars_period": 9621,
+     "stars_total": 11491,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ]
+    },
+    {
+     "full_name": "ranxianglei/billion-context",
+     "stars_period": 375,
+     "stars_total": 6641,
+     "language": "TypeScript",
+     "periods": [
+      "daily",
+      "monthly"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "CLI / 开发者工具",
+   "repo_count": 3,
+   "share": 0.091,
+   "stars_period_total": 12375,
+   "avg_stars_period": 4125,
+   "languages": [
+    "Rust"
+   ],
+   "repos": [
+    {
+     "full_name": "vercel-labs/agent-desktop",
+     "stars_period": 9502,
+     "stars_total": 21456,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ]
+    },
+    {
+     "full_name": "max-sixty/worktrunk",
+     "stars_period": 2093,
+     "stars_total": 12406,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ]
+    },
+    {
+     "full_name": "vercel-labs/agent-browser",
+     "stars_period": 780,
+     "stars_total": 49520,
+     "language": "Rust",
+     "periods": [
+      "daily",
+      "weekly"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "学习 / 知识管理",
+   "repo_count": 2,
+   "share": 0.061,
+   "stars_period_total": 23951,
+   "avg_stars_period": 11976,
+   "languages": [
+    "Python"
+   ],
+   "repos": [
+    {
+     "full_name": "HKUDS/DeepTutor",
+     "stars_period": 17107,
+     "stars_total": 58020,
+     "language": "Python",
+     "periods": [
+      "monthly"
+     ]
+    },
+    {
+     "full_name": "anthropics/knowledge-work-plugins",
+     "stars_period": 6844,
+     "stars_total": 35373,
+     "language": "Python",
+     "periods": [
+      "monthly"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "数据 / 爬虫",
+   "repo_count": 1,
+   "share": 0.03,
+   "stars_period_total": 7291,
+   "avg_stars_period": 7291,
+   "languages": [
+    "Python"
+   ],
+   "repos": [
+    {
+     "full_name": "D4Vinci/Scrapling",
+     "stars_period": 7291,
+     "stars_total": 101196,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "游戏 / 图形",
+   "repo_count": 1,
+   "share": 0.03,
+   "stars_period_total": 3730,
+   "avg_stars_period": 3730,
+   "languages": [
+    "Shell"
+   ],
+   "repos": [
+    {
+     "full_name": "Donchitos/Claude-Code-Game-Studios",
+     "stars_period": 3730,
+     "stars_total": 38099,
+     "language": "Shell",
+     "periods": [
+      "weekly"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "前端 / 设计系统",
+   "repo_count": 1,
+   "share": 0.03,
+   "stars_period_total": 3108,
+   "avg_stars_period": 3108,
+   "languages": [
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "meta/astryx",
+     "stars_period": 3108,
+     "stars_total": 23948,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "机器人 / 硬件",
+   "repo_count": 1,
+   "share": 0.03,
+   "stars_period_total": 456,
+   "avg_stars_period": 456,
+   "languages": [
+    "C++"
+   ],
+   "repos": [
+    {
+     "full_name": "google-deepmind/mujoco",
+     "stars_period": 456,
+     "stars_total": 17544,
+     "language": "C++",
+     "periods": [
+      "daily"
+     ]
+    }
+   ]
+  }
+ ]
+}

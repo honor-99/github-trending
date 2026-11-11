@@ -1,0 +1,156 @@
+{
+ "generated_at": "2026-11-11T17:45:57+08:00",
+ "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
+ "candidate_count": 28,
+ "excluded_count": 5,
+ "items": [
+  {
+   "full_name": "NVIDIA/auto-ontology",
+   "score": 95.4,
+   "stars_period": 9621,
+   "stars_total": 11491,
+   "growth": 5.1449,
+   "language": "Python",
+   "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +9,621 star，相当于存量的 514.5%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 11,491 star，向上空间大",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "anomalyco/hex",
+   "score": 92.1,
+   "stars_period": 1839,
+   "stars_total": 6221,
+   "growth": 0.4197,
+   "language": "Rust",
+   "description": "Local voice dictation for mac, windows and linux",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +1,839 star，相当于存量的 42.0%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 6,221 star，向上空间大"
+   ]
+  },
+  {
+   "full_name": "milind-soni/OpenMausBot",
+   "score": 88.8,
+   "stars_period": 8951,
+   "stars_total": 20707,
+   "growth": 0.7614,
+   "language": "TypeScript",
+   "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +8,951 star，相当于存量的 76.1%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 20,707 star，向上空间大",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "vercel-labs/agent-desktop",
+   "score": 88.5,
+   "stars_period": 9502,
+   "stars_total": 21456,
+   "growth": 0.7949,
+   "language": "Rust",
+   "description": "Computer use CLI for AI agents",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +9,502 star，相当于存量的 79.5%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 21,456 star，向上空间大",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "max-sixty/worktrunk",
+   "score": 78.7,
+   "stars_period": 2093,
+   "stars_total": 12406,
+   "growth": 0.2029,
+   "language": "Rust",
+   "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +2,093 star，相当于存量的 20.3%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 12,406 star，向上空间大",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "anthropics/knowledge-work-plugins",
+   "score": 76.1,
+   "stars_period": 6844,
+   "stars_total": 35373,
+   "growth": 0.2399,
+   "language": "Python",
+   "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
+   "periods": [
+    "monthly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +6,844 star，相当于存量的 24.0%",
+    "刚进榜单，还没被反复曝光",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "anthropics/claude-plugins-official",
+   "score": 70.9,
+   "stars_period": 9346,
+   "stars_total": 46789,
+   "growth": 0.2496,
+   "language": "Python",
+   "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
+   "periods": [
+    "monthly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +9,346 star，相当于存量的 25.0%",
+    "刚进榜单，还没被反复曝光",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "tashfeenahmed/freellmapi",
+   "score": 68.8,
+   "stars_period": 17591,
+   "stars_total": 50320,
+   "growth": 0.5375,
+   "language": "TypeScript",
+   "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
+   "periods": [
+    "monthly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +17,591 star，相当于存量的 53.7%",
+    "刚进榜单，还没被反复曝光",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  }
+ ]
+}

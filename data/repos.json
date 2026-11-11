@@ -184,7 +184,7 @@
     "period": "daily",
     "rank": 8,
     "stars_period": 465,
-    "stars_total": 115286
+    "stars_total": 115476
    }
   ],
   "language": "JavaScript",
@@ -259,7 +259,7 @@
     "period": "daily",
     "rank": 7,
     "stars_period": 531,
-    "stars_total": 20576
+    "stars_total": 20685
    }
   ],
   "language": "Python",
@@ -309,7 +309,7 @@
     "period": "daily",
     "rank": 3,
     "stars_period": 1679,
-    "stars_total": 192501
+    "stars_total": 192736
    },
    {
     "date": "2026-11-11",
@@ -408,7 +408,7 @@
     "period": "daily",
     "rank": 9,
     "stars_period": 456,
-    "stars_total": 17443
+    "stars_total": 17544
    }
   ],
   "language": "C++",
@@ -458,7 +458,7 @@
     "period": "daily",
     "rank": 5,
     "stars_period": 790,
-    "stars_total": 6771
+    "stars_total": 6908
    }
   ],
   "language": "Python",
@@ -483,7 +483,7 @@
     "period": "daily",
     "rank": 4,
     "stars_period": 1225,
-    "stars_total": 321106
+    "stars_total": 321392
    },
    {
     "date": "2026-11-11",
@@ -545,7 +545,7 @@
     "period": "daily",
     "rank": 1,
     "stars_period": 3108,
-    "stars_total": 23326
+    "stars_total": 23948
    }
   ],
   "language": "TypeScript",
@@ -682,7 +682,7 @@
     "period": "daily",
     "rank": 10,
     "stars_period": 375,
-    "stars_total": 6435
+    "stars_total": 6641
    },
    {
     "date": "2026-11-11",
@@ -719,7 +719,7 @@
     "period": "daily",
     "rank": 2,
     "stars_period": 2393,
-    "stars_total": 109242
+    "stars_total": 109644
    }
   ],
   "language": "Python",
@@ -806,7 +806,7 @@
     "period": "daily",
     "rank": 11,
     "stars_period": 192,
-    "stars_total": 6911
+    "stars_total": 7023
    }
   ],
   "language": "Rust",
@@ -831,7 +831,7 @@
     "period": "daily",
     "rank": 6,
     "stars_period": 780,
-    "stars_total": 49358
+    "stars_total": 49520
    },
    {
     "date": "2026-11-11",
@@ -893,7 +893,7 @@
     "period": "daily",
     "rank": 12,
     "stars_period": 159,
-    "stars_total": 12137
+    "stars_total": 12384
    }
   ],
   "language": "Ruby",
