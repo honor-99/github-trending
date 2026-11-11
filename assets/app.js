@@ -45,10 +45,36 @@
     return LABEL[p] ? p : 'daily';
   }
 
+  /* 分段控件的滑动指示器 */
+  function moveIndicator() {
+    const bar = document.querySelector('.seg-indicator');
+    const active = document.querySelector('.segmented button[aria-selected="true"]');
+    if (!bar || !active) return;
+    bar.style.width = `${active.offsetWidth}px`;
+    bar.style.transform = `translateX(${active.offsetLeft - 2}px)`;
+  }
+
+  const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function countUp(node, target) {
+    const value = Number(target);
+    if (REDUCED || !Number.isFinite(value)) { node.textContent = String(target); return; }
+    const duration = 620;
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      node.textContent = String(Math.round(value * eased));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
   function setPeriod(period, { push = true } = {}) {
     document.querySelectorAll('.segmented button').forEach((b) => {
       b.setAttribute('aria-selected', String(b.dataset.period === period));
     });
+    moveIndicator();
     if (push) {
       const url = new URL(location.href);
       if (period === 'daily') url.searchParams.delete('p');
@@ -100,8 +126,9 @@
 
     const box = $('#topicList');
     box.innerHTML = '';
-    for (const t of data.topics) {
+    data.topics.forEach((t, idx) => {
       const row = el('div', 'topic');
+      row.style.setProperty('--i', String(idx));
       const head = el('div', 'topic-head');
       head.append(el('span', 'topic-name', t.name));
       head.append(el('span', 'topic-stat', `${t.repo_count} 个 · ${Math.round(t.share * 100)}%`));
@@ -109,9 +136,13 @@
 
       const bar = el('div', 'topic-bar');
       const fill = el('span', 'topic-fill');
-      fill.style.width = `${Math.round((t.repo_count / maxCount) * 100)}%`;
+      fill.style.width = '0%';
       bar.append(fill);
       row.append(bar);
+      const target = `${Math.round((t.repo_count / maxCount) * 100)}%`;
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => { fill.style.width = target; });
+      });
 
       const meta = el('div', 'topic-meta');
       meta.append(el('span', '', `本期新增 ${fmt(t.stars_period_total)} star`));
@@ -134,7 +165,7 @@
       }
       row.append(chips);
       box.append(row);
-    }
+    });
   }
 
   /* ── P2 潜力观察 ─────────────────────────────────────── */
@@ -151,7 +182,8 @@
     list.innerHTML = '';
     const maxGain = Math.max(...data.items.map((i) => i.stars_period || 0), 1);
     data.items.forEach((it, i) => {
-      const li = el('li', 'item item--clickable');
+      const li = el('li', `item item--clickable${i === 0 ? ' item--lead' : ''}`);
+      li.style.setProperty('--i', String(i));
       li.tabIndex = 0;
       li.setAttribute('role', 'button');
       li.setAttribute('aria-label', `查看 ${it.full_name} 详情`);
@@ -332,12 +364,17 @@
       { label: '持续热门', value: data.signals.continued, hint: '连续多次在榜', cls: 'kpi--hot' },
       { label: '掉榜', value: data.signals.dropped, hint: '从上一快照消失', cls: 'kpi--drop' },
     ];
+    let kpiDelay = 0;
     for (const c of cards) {
       const card = el('div', `kpi ${c.cls}`.trim());
       card.append(el('div', 'kpi-label', c.label));
-      card.append(el('div', 'kpi-value', String(c.value)));
+      const valueNode = el('div', 'kpi-value', '0');
+      card.append(valueNode);
       card.append(el('div', 'kpi-hint', c.hint));
       kpis.append(card);
+      const delay = kpiDelay;
+      setTimeout(() => countUp(valueNode, c.value), delay);
+      kpiDelay += 70;
     }
 
     toggleBlock('#block-new', news.length, () => {
@@ -383,7 +420,12 @@
     const list = $(sel);
     list.innerHTML = '';
     const maxGain = Math.max(...items.map((i) => i.stars_period || 0), 1);
-    for (const it of items) list.append(buildItem(it, kind, maxGain));
+    items.forEach((it, i) => {
+      const li = buildItem(it, kind, maxGain);
+      li.style.setProperty('--i', String(i));
+      if (i === 0) li.classList.add('item--lead');
+      list.append(li);
+    });
   }
 
   function gainBar(value, max, { muted = false } = {}) {
@@ -603,10 +645,14 @@
       a.classList.add('is-active');
     });
   });
+  window.addEventListener('resize', moveIndicator);
 
   (async () => {
     await loadInterpretations();
     await loadInsights();
     setPeriod(currentPeriod(), { push: false });
+    moveIndicator();
+    window.addEventListener('load', moveIndicator);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveIndicator);
   })();
 })();

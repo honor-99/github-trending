@@ -5,21 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>GitHub 热度追踪 · 榜单归档</title>
 <meta name="description" content="GitHub Trending 每期快照归档：新上榜、持续热门、掉榜，加上话题聚合与潜力观察。" />
-<link rel="stylesheet" href="assets/styles.css?v=6" />
+<link rel="stylesheet" href="assets/styles.css?v=7" />
 </head>
 <body>
 <header class="topbar">
   <a class="brand" href="./">
-    <span class="brand-mark">GH</span>
+    <span class="brand-mark" aria-hidden="true">GH</span>
     <span class="brand-text">热度追踪</span>
   </a>
-  <nav class="topnav">
-    <a href="#rankCol" class="is-active" data-nav="list">榜单</a>
-    <a href="#topics" data-nav="topics">话题</a>
-    <a href="#potential" data-nav="potential">潜力</a>
-    <a href="#data" id="dataLink">数据</a>
-    <a id="repoLink" href="https://github.com/trending" target="_blank" rel="noopener">GitHub</a>
-    <button class="skin-btn" id="skinToggle" type="button" aria-label="切换外观">外观 · 纸感</button>
+  <nav class="topnav" aria-label="站点导航">
+    <button class="nav-link" id="dataLink" type="button">数据</button>
+    <a class="nav-link" href="https://github.com/honor-99/github-trending" target="_blank" rel="noopener">源码</a>
+    <button class="nav-pill" id="skinToggle" type="button" aria-label="切换外观">外观 · 纸感</button>
   </nav>
 </header>
 
@@ -27,11 +24,13 @@
 
   <section class="console-head">
     <div class="console-title">
-      <p class="eyebrow">GITHUB TRENDING ARCHIVE</p>
+      <p class="eyebrow">GitHub Trending Archive</p>
       <h1>热度追踪</h1>
+      <p class="console-lede">每期榜单存一份不可变快照，与上一期对比得出新上榜、持续热门与掉榜。</p>
     </div>
     <div class="console-tools">
       <div class="segmented" role="tablist" aria-label="榜单周期">
+        <span class="seg-indicator" aria-hidden="true"></span>
         <button role="tab" data-period="daily" aria-selected="true">日榜</button>
         <button role="tab" data-period="weekly" aria-selected="false">周榜</button>
         <button role="tab" data-period="monthly" aria-selected="false">月榜</button>
@@ -127,7 +126,7 @@
   <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
     <header class="drawer-head">
       <div class="drawer-head-main">
-        <p class="eyebrow" id="drawerEyebrow">PROJECT NOTES</p>
+        <p class="eyebrow" id="drawerEyebrow">Project Notes</p>
         <h2 id="drawerTitle"></h2>
         <div class="meta" id="drawerMeta"></div>
       </div>
@@ -137,6 +136,6 @@
   </aside>
 </div>
 
-<script src="assets/app.js?v=6"></script>
+<script src="assets/app.js?v=7"></script>
 </body>
 </html>
