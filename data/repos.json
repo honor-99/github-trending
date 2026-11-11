@@ -9,7 +9,7 @@
     "period": "weekly",
     "rank": 7,
     "stars_period": 7291,
-    "stars_total": 101180
+    "stars_total": 101196
    }
   ],
   "language": "Python",
@@ -34,7 +34,7 @@
     "period": "weekly",
     "rank": 10,
     "stars_period": 3730,
-    "stars_total": 38095
+    "stars_total": 38099
    }
   ],
   "language": "Shell",
@@ -84,7 +84,7 @@
     "period": "weekly",
     "rank": 4,
     "stars_period": 9621,
-    "stars_total": 11484
+    "stars_total": 11491
    }
   ],
   "language": "Python",
@@ -159,7 +159,7 @@
     "period": "weekly",
     "rank": 14,
     "stars_period": 1591,
-    "stars_total": 15885
+    "stars_total": 15887
    }
   ],
   "language": "Python",
@@ -209,7 +209,7 @@
     "period": "weekly",
     "rank": 13,
     "stars_period": 1839,
-    "stars_total": 6219
+    "stars_total": 6221
    }
   ],
   "language": "Rust",
@@ -316,7 +316,7 @@
     "period": "weekly",
     "rank": 8,
     "stars_period": 5014,
-    "stars_total": 192401
+    "stars_total": 192413
    }
   ],
   "language": "Python",
@@ -353,7 +353,7 @@
     "period": "weekly",
     "rank": 2,
     "stars_period": 10967,
-    "stars_total": 69405
+    "stars_total": 69416
    }
   ],
   "language": "JavaScript",
@@ -490,7 +490,7 @@
     "period": "weekly",
     "rank": 3,
     "stars_period": 9872,
-    "stars_total": 321000
+    "stars_total": 321019
    }
   ],
   "language": "Shell",
@@ -570,7 +570,7 @@
     "period": "weekly",
     "rank": 6,
     "stars_period": 8951,
-    "stars_total": 20698
+    "stars_total": 20707
    }
   ],
   "language": "TypeScript",
@@ -652,7 +652,7 @@
     "period": "weekly",
     "rank": 1,
     "stars_period": 11979,
-    "stars_total": 55827
+    "stars_total": 55860
    }
   ],
   "language": "TypeScript",
@@ -776,7 +776,7 @@
     "period": "weekly",
     "rank": 9,
     "stars_period": 4473,
-    "stars_total": 115863
+    "stars_total": 115869
    }
   ],
   "language": "TypeScript",
@@ -838,7 +838,7 @@
     "period": "weekly",
     "rank": 11,
     "stars_period": 3606,
-    "stars_total": 49275
+    "stars_total": 49292
    }
   ],
   "language": "Rust",
@@ -868,7 +868,7 @@
     "period": "weekly",
     "rank": 5,
     "stars_period": 9502,
-    "stars_total": 21444
+    "stars_total": 21456
    }
   ],
   "language": "Rust",
