@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>GitHub 热度追踪 · 榜单归档</title>
-<meta name="description" content="GitHub Trending 每期快照归档：新上榜、持续热门、掉榜一眼看清。" />
-<link rel="stylesheet" href="assets/styles.css?v=4" />
+<meta name="description" content="GitHub Trending 每期快照归档：新上榜、持续热门、掉榜，加上话题聚合与潜力观察。" />
+<link rel="stylesheet" href="assets/styles.css?v=5" />
 </head>
 <body>
 <header class="topbar">
@@ -14,7 +14,7 @@
     <span class="brand-text">热度追踪</span>
   </a>
   <nav class="topnav">
-    <a href="#top" class="is-active" data-nav="list">榜单</a>
+    <a href="#rankCol" class="is-active" data-nav="list">榜单</a>
     <a href="#topics" data-nav="topics">话题</a>
     <a href="#potential" data-nav="potential">潜力</a>
     <a href="#data" id="dataLink">数据</a>
@@ -22,21 +22,20 @@
   </nav>
 </header>
 
-<main class="wrap">
-  <section class="hero" id="top">
-    <p class="eyebrow">GITHUB TRENDING ARCHIVE</p>
-    <h1>热度追踪</h1>
-    <p class="lede">
-      每期榜单存一份不可变快照，与上一期对比得出<strong>新上榜</strong>、<strong>持续热门</strong>和<strong>掉榜</strong>——
-      不只看今天涨了多少，更看它站了多久。
-    </p>
-    <div class="controls">
+<main class="shell" id="top">
+
+  <section class="console-head">
+    <div class="console-title">
+      <p class="eyebrow">GITHUB TRENDING ARCHIVE</p>
+      <h1>热度追踪</h1>
+    </div>
+    <div class="console-tools">
       <div class="segmented" role="tablist" aria-label="榜单周期">
-        <button role="tab" data-period="daily" aria-selected="true">日</button>
-        <button role="tab" data-period="weekly" aria-selected="false">周</button>
-        <button role="tab" data-period="monthly" aria-selected="false">月</button>
+        <button role="tab" data-period="daily" aria-selected="true">日榜</button>
+        <button role="tab" data-period="weekly" aria-selected="false">周榜</button>
+        <button role="tab" data-period="monthly" aria-selected="false">月榜</button>
       </div>
-      <div class="controls-meta" id="controlsMeta"></div>
+      <p class="console-status" id="controlsMeta"></p>
     </div>
   </section>
 
@@ -44,72 +43,80 @@
 
   <p class="notice" id="notice" hidden></p>
 
-  <section class="block" id="block-new" hidden>
-    <div class="block-head">
-      <div>
-        <p class="eyebrow">NEW ENTRIES</p>
-        <h2>新上榜</h2>
-      </div>
-      <p class="block-sub" id="newSub"></p>
-    </div>
-    <ol class="list" id="list-new"></ol>
-  </section>
+  <div class="board-grid">
 
-  <section class="block" id="block-hot" hidden>
-    <div class="block-head">
-      <div>
-        <p class="eyebrow">SUSTAINED</p>
-        <h2>持续热门</h2>
-      </div>
-      <p class="block-sub" id="hotSub"></p>
-    </div>
-    <ol class="list" id="list-hot"></ol>
-  </section>
+    <section class="col col--rank" id="rankCol">
+      <header class="col-head">
+        <span class="col-index">01</span>
+        <h2>榜单动态</h2>
+        <span class="col-hint">与上一期对比</span>
+      </header>
 
-  <section class="block" id="block-drop" hidden>
-    <div class="block-head">
-      <div>
-        <p class="eyebrow">DROPPED</p>
-        <h2>掉榜</h2>
-      </div>
-      <p class="block-sub" id="dropSub"></p>
-    </div>
-    <ol class="list list--muted" id="list-drop"></ol>
-  </section>
+      <section class="block" id="block-new" hidden>
+        <div class="block-head">
+          <div class="block-title">
+            <h3>新上榜</h3>
+            <span class="block-sub" id="newSub"></span>
+          </div>
+          <span class="block-count" id="newCount"></span>
+        </div>
+        <ol class="list" id="list-new"></ol>
+      </section>
 
-  <section class="block" id="block-empty" hidden>
-    <p class="empty" id="emptyText"></p>
-  </section>
+      <section class="block" id="block-hot" hidden>
+        <div class="block-head">
+          <div class="block-title">
+            <h3>持续热门</h3>
+            <span class="block-sub" id="hotSub"></span>
+          </div>
+          <span class="block-count" id="hotCount"></span>
+        </div>
+        <ol class="list" id="list-hot"></ol>
+      </section>
 
-  <section class="block" id="topics" hidden>
-    <div class="block-head">
-      <div>
-        <p class="eyebrow">TOPIC HEAT</p>
+      <section class="block" id="block-drop" hidden>
+        <div class="block-head">
+          <div class="block-title">
+            <h3>掉榜</h3>
+            <span class="block-sub" id="dropSub"></span>
+          </div>
+          <span class="block-count" id="dropCount"></span>
+        </div>
+        <ol class="list list--muted" id="list-drop"></ol>
+      </section>
+
+      <section class="block" id="block-empty" hidden>
+        <p class="empty" id="emptyText"></p>
+      </section>
+    </section>
+
+    <section class="col col--topics" id="topics" hidden>
+      <header class="col-head">
+        <span class="col-index">02</span>
         <h2>趋势话题</h2>
-      </div>
-      <p class="block-sub" id="topicsSub"></p>
-    </div>
-    <div class="topic-list" id="topicList"></div>
-    <p class="foot-dim" id="topicsNote"></p>
-  </section>
+        <span class="col-hint" id="topicsSub"></span>
+      </header>
+      <div class="topic-list" id="topicList"></div>
+      <p class="col-note" id="topicsNote"></p>
+    </section>
 
-  <section class="block" id="potential" hidden>
-    <div class="block-head">
-      <div>
-        <p class="eyebrow">POTENTIAL</p>
+    <section class="col col--potential" id="potential" hidden>
+      <header class="col-head">
+        <span class="col-index">03</span>
         <h2>潜力观察</h2>
-      </div>
-      <p class="block-sub" id="potentialSub"></p>
-    </div>
-    <ol class="list" id="potentialList"></ol>
-    <p class="foot-dim" id="potentialNote"></p>
-  </section>
+        <span class="col-hint" id="potentialSub"></span>
+      </header>
+      <ol class="list" id="potentialList"></ol>
+      <p class="col-note" id="potentialNote"></p>
+    </section>
+
+  </div>
 
   <footer class="foot">
     <p id="footSource"></p>
     <p class="foot-dim">
       数据源 GitHub Trending（匿名访问每次返回 9–14 条）· 快照由本机定时任务抓取后直接提交，无服务端。
-      描述保留 GitHub 原文；点条目可看中文七段式解读（由模型预生成并落盘，页面本身不调模型）。
+      描述保留 GitHub 原文；点条目可看中文七段式解读（模型预生成并落盘，页面本身不调模型）。
     </p>
   </footer>
 </main>
@@ -129,6 +136,6 @@
   </aside>
 </div>
 
-<script src="assets/app.js?v=4"></script>
+<script src="assets/app.js?v=5"></script>
 </body>
 </html>

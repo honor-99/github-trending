@@ -317,15 +317,18 @@
 
     toggleBlock('#block-new', news.length, () => {
       $('#newSub').textContent = `${data.date} 刚进入视野`;
+      $('#newCount').textContent = String(news.length);
       fillList('#list-new', news, 'new');
     });
     toggleBlock('#block-hot', hots.length, () => {
       const maxStreak = Math.max(...hots.map((i) => i.streak || 1), 1);
       $('#hotSub').textContent = `最长连续 ${maxStreak} 期`;
+      $('#hotCount').textContent = String(hots.length);
       fillList('#list-hot', hots, 'hot');
     });
     toggleBlock('#block-drop', dropped.length, () => {
-      $('#dropSub').textContent = `上一期（${data.prev_date || '—'}）还在，这一期消失`;
+      $('#dropSub').textContent = `上期（${data.prev_date || '—'}）还在`;
+      $('#dropCount').textContent = String(dropped.length);
       fillDropList(dropped);
     });
 
