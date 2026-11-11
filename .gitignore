@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+# 本地预览/临时产物
+/preview/
+/tmp-data/

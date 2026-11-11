@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GitHub 热度追踪 · 榜单归档</title>
+<meta name="description" content="GitHub Trending 每期快照归档：新上榜、持续热门、掉榜一眼看清。" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./">
+    <span class="brand-mark">GH</span>
+    <span class="brand-text">热度追踪</span>
+  </a>
+  <nav class="topnav">
+    <a href="./" class="is-active">榜单</a>
+    <a href="data/meta.json" target="_blank" rel="noopener">数据</a>
+    <a id="repoLink" href="https://github.com/trending" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">GITHUB TRENDING ARCHIVE</p>
+    <h1>热度追踪</h1>
+    <p class="lede">
+      每期榜单存一份不可变快照，与上一期对比得出<strong>新上榜</strong>、<strong>持续热门</strong>和<strong>掉榜</strong>——
+      不只看今天涨了多少，更看它站了多久。
+    </p>
+    <div class="controls">
+      <div class="segmented" role="tablist" aria-label="榜单周期">
+        <button role="tab" data-period="daily" aria-selected="true">日</button>
+        <button role="tab" data-period="weekly" aria-selected="false">周</button>
+        <button role="tab" data-period="monthly" aria-selected="false">月</button>
+      </div>
+      <div class="controls-meta" id="controlsMeta"></div>
+    </div>
+  </section>
+
+  <section class="kpis" id="kpis" aria-live="polite"></section>
+
+  <p class="notice" id="notice" hidden></p>
+
+  <section class="block" id="block-new" hidden>
+    <div class="block-head">
+      <div>
+        <p class="eyebrow">NEW ENTRIES</p>
+        <h2>新上榜</h2>
+      </div>
+      <p class="block-sub" id="newSub"></p>
+    </div>
+    <ol class="list" id="list-new"></ol>
+  </section>
+
+  <section class="block" id="block-hot" hidden>
+    <div class="block-head">
+      <div>
+        <p class="eyebrow">SUSTAINED</p>
+        <h2>持续热门</h2>
+      </div>
+      <p class="block-sub" id="hotSub"></p>
+    </div>
+    <ol class="list" id="list-hot"></ol>
+  </section>
+
+  <section class="block" id="block-drop" hidden>
+    <div class="block-head">
+      <div>
+        <p class="eyebrow">DROPPED</p>
+        <h2>掉榜</h2>
+      </div>
+      <p class="block-sub" id="dropSub"></p>
+    </div>
+    <ol class="list list--muted" id="list-drop"></ol>
+  </section>
+
+  <section class="block" id="block-empty" hidden>
+    <p class="empty" id="emptyText"></p>
+  </section>
+
+  <footer class="foot">
+    <p id="footSource"></p>
+    <p class="foot-dim">
+      数据源 GitHub Trending（匿名访问每次返回 9–14 条）· 快照由本机定时任务抓取后直接提交，无服务端。
+      描述保留 GitHub 原文，中文解读为下一阶段。
+    </p>
+  </footer>
+</main>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
