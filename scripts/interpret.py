@@ -26,6 +26,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import threading
@@ -139,11 +140,30 @@ def collect_items(period: str) -> dict[str, dict]:
     return items
 
 
+def gh_bin() -> str:
+    """定位 gh：cron 的 `env -i` PATH 里通常没有 ~/.local/bin，必须自己找。"""
+    found = shutil.which("gh")
+    if found:
+        return found
+    for cand in (
+        Path.home() / ".local" / "bin" / "gh",
+        Path("/usr/local/bin/gh"),
+        Path("/usr/bin/gh"),
+        Path("/snap/bin/gh"),
+    ):
+        if cand.exists():
+            return str(cand)
+    return "gh"
+
+
+GH = gh_bin()
+
+
 def fetch_readme(full_name: str, timeout: int = 25) -> str:
     """gh api 取 README（已登录，5000 req/h）。取不到返回空串。"""
     try:
         proc = subprocess.run(
-            ["gh", "api", f"repos/{full_name}/readme", "--jq", ".content"],
+            [GH, "api", f"repos/{full_name}/readme", "--jq", ".content"],
             capture_output=True, text=True, timeout=timeout,
         )
         if proc.returncode != 0:
