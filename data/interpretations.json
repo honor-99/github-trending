@@ -341,49 +341,49 @@
   "url": "https://github.com/The-PR-Agent/pr-agent"
  },
  "addyosmani/agent-skills": {
-  "one_liner": "把成熟工程实践打包成 AI 编码代理可直接调用的技能，减少临时提示词的随意性。",
-  "summary": "从描述看，它是面向 AI 编码代理（Claude Code、Cursor 一类工具）的「工程技能」集合，用 JavaScript 编写，并自称达到生产级。这类项目通常把代码审查、测试编写、调试、重构等流程固化成代理可读取或可调用的结构化规则、技能文件或工具函数，让代理按既定工程规范执行，不再依赖用户每次临时写提示词。它与「通用提示词合集」的差别应该在于可复用性和可执行性，但作者没有提供 README，具体组织形式、支持哪些代理、如何安装都无法核实。项目累计 star 超过 11 万，在 JS 工程工具里属于极高水平，与项目实际成熟度是否匹配需要自行查证。",
+  "one_liner": "把资深工程师的开发流程与质量门封装成 AI agent 可执行的技能和斜杠命令",
+  "summary": "agent-skills 是一套给 AI 编码 agent 用的「技能包」，把高级工程师在开发各阶段的工作流、质量门和最佳实践写成 agent 能稳定遵循的规则。它按 DEFINE→PLAN→BUILD→VERIFY→REVIEW→SHIP 六个阶段组织，对应 9 个斜杠命令（/spec、/plan、/build、/test、/constraints、/review、/webperf、/code-simplify、/ship），并会在识别到具体场景时自动激活相关技能，比如设计 API 触发 api-and-interface-design。安装走 vercel-labs 的 skills CLI，一条 npx 命令可装进 70+ 种 agent（Claude Code、Cursor、Codex、Copilot、Cline 等），在 Claude Code 里则以插件命令形式存在。相对同类「提示词合集」的差异点在于它把流程做成可编排的命令，/build auto 支持一次批准计划后逐任务实现、每个任务仍然测试驱动并单独提交，失败或高风险步骤会暂停。",
   "audience": [
-   "日常用 Claude Code、Cursor、Codex 类代理写代码，希望输出更稳定的后端与前端工程师。",
-   "需要给团队统一代理使用规范、降低「每个人提示词各写一套」成本的研发效能或平台工程角色。",
-   "在评估 AI 编码代理能否进入生产流程，需要看工程规范如何被固化的技术负责人。",
-   "做 AI Agent 产品、想参考技能组织和封装方式的产品经理或 Agent 开发者。"
+   "已经在用 Claude Code、Cursor、Codex 等 AI 编码工具、但苦于 agent 输出质量不稳定的工程师。",
+   "想把代码评审、测试、发布前检查统一成固定流程的技术负责人和 QA。",
+   "需要与工程对齐需求文档与验收标准的项目经理或产品经理。",
+   "负责研发效能、想把 AI 编码纳入既有 CI 与规范体系的平台工程团队。"
   ],
   "use_cases": [
-   "在代理里跑代码审查任务，让它按固定的检查清单逐项核对改动而非泛泛点评。",
-   "让代理按统一规范生成单元测试和边界用例，减少手工补测的往返。",
-   "把团队的提交前检查、重构约定固化成代理技能，新成员接入时直接复用。",
-   "排查线上问题时，用结构化的调试步骤引导代理定位而不是盲目改代码。",
-   "作为团队内部代理配置的参考蓝本，对照它设计自己的技能目录与触发规则。"
+   "接到模糊需求时先用 /spec 把想法逼成一份可执行的规格，再用 /plan 拆成小而原子的任务。",
+   "重构或迁移遗留代码时用 /code-simplify 让 agent 按「清晰优先于聪明」的原则简化实现。",
+   "合并前用 /review 做一次多维度代码审查，或用已安装的 code-review-and-quality 技能跑五轴评审。",
+   "上线前对页面用 /webperf 做性能审计，先测量再决定优化点。",
+   "用 /constraints 一次性定义质量约束，让后续所有命令在同一套标准下执行。"
   ],
   "adoption_steps": [
-   "先打开 GitHub 仓库页面读 README 与目录结构，确认它的形态是技能文件、npm 包还是提示词模板，并确认支持的代理与安装命令。",
-   "在一个非核心的练习仓库里按 README 完成一次安装或复制，触发其中一个技能（如代码审查），确认代理确实能读到并执行。",
-   "在团队内先选一个小流程（例如 PR 前自检）试用一到两周，记录代理输出质量的差异，再决定是否推广到主仓库。"
+   "先只浏览不安装：执行 npx skills add addyosmani/agent-skills --list 看清 25 个技能清单，再挑选一个最痛的场景（例如 npx skills add addyosmani/agent-skills --skill code-review-and-quality）单装试用。",
+   "在一个小需求上跑通完整链路：在 Claude Code 里依次执行 /spec、/plan、/build，注意与内置命令同名的要写成命名空间形式 /agent-skills:review，确认产物质量后再扩大使用范围。",
+   "把可复用的部分固化下来：把 /constraints 里定下的质量约束沉淀成团队文件，并将 review、test 环节接到 PR 流程或 CI 中做强制检查。"
   ],
   "build_ideas": [
-   "基于它的技能组织方式，为团队补充公司内部规范（日志格式、错误码、发布流程）的自定义技能包。",
-   "做一个技能注册与版本管理的小工具，让不同项目锁定不同版本的技能集合，避免规则漂移。",
-   "把它接入 CI，在 PR 阶段自动触发代理执行审查类技能并输出结构化报告。",
-   "针对特定技术栈（如 React、Node 服务端）扩展出垂直技能子集，并配一套评测用例衡量代理输出。",
-   "构建技能效果评测框架，用同一批真实任务对比启用技能前后的通过率与返工率。"
+   "按同一技能格式把公司内部的编码规范、发布检查单、故障复盘模板写成私有技能包，用 npx skills 在团队内分发。",
+   "把 /constraints 与 /review 的输出接到 CI，让每次 PR 自动生成一份带质量门结论的评审报告。",
+   "针对 agent-skills 未覆盖的技术栈（如 Go 后端服务、数据管道、移动端）补充专属技能，并复用它的阶段划分与命令命名。",
+   "参照 /build auto「一次批准计划、逐任务实现并单独提交、失败即暂停」的模式，在自己的 agent 框架里实现类似的编排与回滚逻辑。",
+   "做一个团队内部的技能索引或私有 registry，解决技能数量增长后的检索、版本与权限管理问题。"
   ],
   "risks": [
-   "当前没有获取到 README，项目的实际形态、安装方式、支持的代理范围都无法核实，落地前必须以仓库文档为准。",
-   "「production-grade」只是仓库自述，没有第三方验证，也没有说明它覆盖哪些语言和框架，适用范围可能比预期窄。",
-   "许可证类型未在材料中给出，商用或二次分发前需自行确认 LICENSE 文件。",
-   "JavaScript 实现意味着可能引入 npm 依赖链，依赖数量与维护状态需要在安装前检查 package.json 和最近提交记录。",
-   "star 数与维护活跃度、issue 响应速度并不等价，采用前应查看最近发布、issue 处理情况和贡献者数量。"
+   "材料中未出现许可证信息，商用或二次分发前必须到仓库确认 LICENSE 类型与条款。",
+   "安装依赖外部的 vercel-labs skills CLI（npx skills），其版本变化或不可用会直接影响安装路径，需要评估是否锁定版本或改为手动拷贝技能文件。",
+   "在 Claude Code 中 /review 等命令与内置命令同名，必须使用 /agent-skills:review 这类命名空间形式，团队需要统一约定否则容易误用。",
+   "README 声称支持 70+ agent，但不同 agent 对斜杠命令、插件与技能自动激活的支持程度不同，材料未说明降级行为，落地前需在实际使用的 agent 上逐一实测。",
+   "仓库主语言标注为 JavaScript，而 README 展示的形态以 Markdown 技能与命令定义为主，实际代码量与可扩展接口需要通过阅读仓库结构确认后再决定是否深度定制。"
   ],
   "tokens": {
-   "prompt_tokens": 490,
-   "completion_tokens": 1437
+   "prompt_tokens": 1243,
+   "completion_tokens": 2067
   },
   "model_resolved": "deepseek-flash",
-  "hash": "cfaad574c18aebe6c371c7d916c19b33d804dfc35e45bab7638546abdf618f92",
+  "hash": "dc20bc60ceac6b97600a22d856dbd670aedfecb4c565c368bc746998cd139e27",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:23:50+08:00",
-  "readme_used": false,
+  "generated_at": "2026-11-11T12:25:50+08:00",
+  "readme_used": true,
   "source_description": "Production-grade engineering skills for AI coding agents.",
   "language": "JavaScript",
   "url": "https://github.com/addyosmani/agent-skills"
@@ -487,50 +487,50 @@
   "url": "https://github.com/anthropics/claude-plugins-official"
  },
  "anthropics/claude-quickstarts": {
-  "one_liner": "Anthropic 官方示例合集，帮你照着现成项目快速搭出可部署的 Claude API 应用原型。",
-  "summary": "这是 anthropics 组织下的示例项目集合，按官方描述，它由多个独立项目组成，目标是让开发者快速上手、做出可部署的 Claude API 应用，主语言为 Python。它的组织方式是一批门槛较低的起步项目，并非一个可安装的框架或 SDK，你通常需要进入某个具体项目目录、按各自的说明安装依赖并运行。相比社区里单个零散的 demo 仓库，其价值主要在于官方出品：API 调用方式与当前接口约定更接近，省去你从零摸索请求结构和工程骨架的时间。但本次材料未获取到 README，各子项目的具体清单、依赖要求、支持模型与部署方式均无法从现有信息确认，需要自行打开仓库核对。",
+  "one_liner": "提供一套基于 Claude API 的可直接运行的示例工程，帮开发者跳过从零搭建，快速做出可部署应用",
+  "summary": "这是一个官方维护的示例工程集合，每个子目录对应一个完整可运行的场景：客服 Agent、财务数据分析、计算机操作（Computer Use）、浏览器自动化等。做法是围绕 Claude API 给出可运行的最小工程骨架和后端调用范例，开发者拿到后按自己业务改提示词、工具和前端即可。相比第三方教程，它紧跟 Anthropic 新推出的工具形态（如 computer_toolset_20260801、browser_toolset_20260801），并额外提供一份 macOS 原生实现的 computer-use 最佳实践参考，覆盖图像裁剪、prompt caching、沙箱 shell、轨迹录制等工程细节。定位是起点而非生产框架，官方也明确说明其中 Browser Toolset 示例只是接口演示、不是生产代码。",
   "audience": [
-   "准备在自家产品里接 Claude API、需要一份可运行骨架来评估工作量的后端工程师。",
-   "要在一两周内做出 AI 功能可演示原型、但不想从零写工程脚手架的创业团队开发者。",
-   "需要给研发团队讲清「Claude 应用长什么样」的技术负责人或架构师。",
-   "做技术选型、想对比官方推荐写法与社区方案差异的技术顾问。",
-   "刚接触 Claude API、希望先跑通一个端到端例子再读文档的新手开发者。"
+   "想快速验证 Claude API 能做什么的产品经理和技术负责人",
+   "要为公司搭建客服知识库问答或财务数据分析原型的应用工程师",
+   "做 browser-use 或 computer-use 类 Agent 的 AI 应用开发者",
+   "需要一份官方权威调用范例来对齐 SDK 用法与工具定义的后端工程师",
+   "在评估 Claude 与自研 Agent 框架集成成本的技术选型人员"
   ],
   "use_cases": [
-   "克隆仓库后挑选一个与自身业务最接近的示例子项目，本地配好 API Key 跑通端到端流程，用于判断可行性。",
-   "把示例中的 API 调用、提示词组织和请求封装抽出来，作为新服务的第一版骨架，避免从空目录开始。",
-   "在内部技术分享会上直接演示示例项目，用可运行的东西代替 PPT 讲清 Claude 应用的典型结构。",
-   "拿示例作为团队新人的上手练习环境，让新人在改动代码的过程中熟悉 Claude API 的调用约定。",
-   "对比多个示例子项目在依赖、部署形态上的差异，为正式项目的技术栈选型提供参考。"
+   "克隆仓库后运行 customer-support-agent，接入公司 FAQ 知识库，做一轮客服问答效果验证",
+   "用 financial-data-analyst 的交互式可视化流程，让业务方以对话方式查看财务指标图表",
+   "在隔离的虚拟机里跑 computer-use-demo，评估 Claude 操作桌面软件的可行性与成本",
+   "参考 browser-use-demo 的 Playwright 工具封装，为自家的网页表单填写或数据抓取流程加上 Agent 能力",
+   "对照 computer-use-best-practices 里的图像缩放、结果裁剪和 prompt caching 做法，优化自研 Agent 的 token 开销与稳定性"
   ],
   "adoption_steps": [
-   "先执行 git clone https://github.com/anthropics/claude-quickstarts，然后逐层浏览目录结构，确认到底包含哪些子项目和各自的技术栈，再决定深入哪一个。",
-   "选定一个子项目后，进入该目录按其自带说明安装依赖（依据目录内的 requirements.txt、pyproject.toml 等依赖声明文件执行），并设置 ANTHROPIC_API_KEY 环境变量，本地启动验证能否跑通。",
-   "跑通之后不要直接投产，先评估把它改造成自己业务需要动多少代码，重点看鉴权、日志、错误重试、成本统计这几块是否缺失，再决定是「参考写法」还是「直接当骨架用」。"
+   "先到 console.anthropic.com 注册并申请 API key，再执行 git clone https://github.com/anthropics/claude-quickstarts 并进入对应子目录，按各目录 README 的说明安装依赖、启动服务。",
+   "优先挑一个与业务最接近的 quickstart（如客服或财务分析），原样跑通端到端流程，记录 token 消耗与响应时延作为基线。",
+   "跑通后只保留其中调用 Claude API 与工具定义的核心代码，替换成自家数据源和提示词，再决定是继续自研还是换用正式 SDK 封装。"
   ],
   "build_ideas": [
-   "把多个子项目中重复的 API 调用、重试、流式输出等公共逻辑抽成一个公司内部的 Python 模板库，后续新项目直接引用。",
-   "在示例骨架之上补齐生产必需的能力，包括访问鉴权、请求限流、调用日志与 token 成本统计，做成内部可复用的服务底座。",
-   "基于示例改造成面向具体业务场景的内部工具，例如接入自家知识库的问答服务或面向客服的辅助回复工具。",
-   "把示例包装成一套动手实验（lab）环境，配合公司内部培训，让更多工程师在半天内跑通并改动一个 Claude 应用。",
-   "以示例为基线搭建一套评测脚手架，替换提示词或模型参数后自动跑固定测试集，用于版本迭代时的效果对比。"
+   "把 customer-support-agent 与内部工单系统对接，做带知识库检索和转人工能力的客服助手",
+   "基于 browser-use-demo 的 Playwright 工具封装，做面向垂直网站（如报销、招聘后台）的自动化操作机器人",
+   "把 computer-use-best-practices 的沙箱 shell、轨迹录制等模式抽成可复用的 Agent 运行时组件，供多个内部项目共用",
+   "在 financial-data-analyst 之上叠加自有的 BI 数据源，做面向管理层的自然语言取数与图表生成工具",
+   "以 browser-toolset 的 CDP 驱动为参考，为多标签页、多会话浏览器 Agent 做一个轻量调度层"
   ],
   "risks": [
-   "本次未取到 README，各子项目的清单、前置依赖、支持的模型版本和部署方式都无法从材料确认，采用前必须亲自打开仓库逐个核对，不要按本解读直接开工。",
-   "从其「帮助快速上手」的定位看，示例代码大概率不包含生产级的鉴权、限流、重试与可观测性，直接照搬上线需要自行加固，这部分改造成本要在选型时计入。",
-   "仓库是多个项目的合集，各子项目的依赖版本和维护活跃度可能参差不齐，不能以仓库整体的 star 数代表某个具体示例的成熟度。",
-   "材料未提供 LICENSE 与商用条款，若计划把示例代码并入商业产品，需先自行确认许可范围与署名要求。",
-   "它绑定 Anthropic 的 API 与账号体系，模型版本升级或接口变更会带来示例失效与迁移成本，且实际使用会产生 API 调用费用，需提前做成本预估。"
+   "许可与商用条款需要自行核对：README 节选未给出 license 信息，克隆前应先确认仓库根目录的 LICENSE 文件。",
+   "各 quickstart 成熟度不一，官方已明示 Browser Toolset 只是接口演示、非生产代码，直接上线需要自行补齐错误处理与安全边界。",
+   "使用门槛依赖 Claude API key 与额度，成本随时长和 token 消耗变化，computer-use 类示例涉及截图输入，开销可能显著高于纯文本调用。",
+   "computer-use 与 browser-use 示例需要桌面或浏览器控制权限，README 建议在虚拟机中运行 computer-use-best-practices，隔离不当会带来本地环境风险。",
+   "示例绑定了特定版本的工具形态（如 computer_toolset_20260801、browser_toolset_20260801），API 或工具协议迭代时这些示例可能先于生产代码失效，需要跟进更新。"
   ],
   "tokens": {
-   "prompt_tokens": 503,
-   "completion_tokens": 1885
+   "prompt_tokens": 1091,
+   "completion_tokens": 891
   },
   "model_resolved": "deepseek-flash",
-  "hash": "2f74ca05b3dea52ded87f5227ceba9e6144cb70a6a6792e41a5213da67538af5",
+  "hash": "e1673f60d23a905501f09b8ec0d4032d96d877588e903d1c34f48ce2f6fc935e",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:23:54+08:00",
-  "readme_used": false,
+  "generated_at": "2026-11-11T12:25:44+08:00",
+  "readme_used": true,
   "source_description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
   "language": "Python",
   "url": "https://github.com/anthropics/claude-quickstarts"
@@ -585,49 +585,50 @@
   "url": "https://github.com/anthropics/knowledge-work-plugins"
  },
  "anthropics/skills": {
-  "one_liner": "Anthropic 官方维护的 Agent Skills 公开仓库，用来存放和分发可复用的代理技能。",
-  "summary": "从仓库描述看，这是 Anthropic 为 Agent Skills 建立的公开仓库，定位是技能的公共存放与分发处，而不是一个独立的框架或 SDK。材料中没有取到 README，因此技能的具体组织形式、加载方式、内置技能清单都无法从现有信息确认。主语言标记为 Python，可能意味着配套脚本或示例以 Python 为主，但这一点同样未经材料证实。与散落的 prompt 片段或单一工具插件相比，它是否有新意目前证据不足，需要读到 README 和目录结构后才能判断。累计 19 万 star、日榜新增 1679，说明关注度极高，但热度不能等同于可直接用于生产。",
+  "one_liner": "把任务指令打包成 SKILL.md 文件夹，让 Claude 按固定流程干活",
+  "summary": "这是 Anthropic 官方放出的 Agent Skills 示例集合，每个 skill 就是一个独立文件夹，里面放 SKILL.md（说明与元数据）、脚本和资源，Claude 在需要时动态加载这些内容来完成专项任务。仓库按创意设计、开发技术、企业沟通、文档处理分类，公开了支撑 Claude 文档能力的 docx、pdf、pptx、xlsx 四个生产级 skill，作为更复杂写法的参考。除了示例，还提供了 ./spec（Agent Skills 规范）和 ./template（模板）两个入口，说明它不只是技能仓库，也是一套可复用的格式约定。与常见的 prompt 模板库相比，新意在于把指令、脚本、资源打成自包含目录并按需加载，且可直接注册为 Claude Code 的 Plugin marketplace 使用。README 明确声明这些 skill 仅供演示与教学，实际行为可能与 Claude 内置实现不同。",
   "audience": [
-   "正在用 Claude Code 或 Claude API 搭建 agent、需要给代理补充可复用能力集的工程师。",
-   "想把团队内部反复出现的操作流程沉淀成标准单元、而不是每次重写 prompt 的开发者。",
-   "在做 agent 平台或工具生态、需要参考技能复用机制设计的产品经理。",
-   "负责技术选型、需要判断 Agent Skills 是否值得纳入技术栈的架构师或技术负责人。"
+   "正在用 Claude Code 或 Claude API 搭 agent、需要把重复任务标准化的开发者",
+   "想把公司内部流程（品牌规范、报表口径、审批动作）固化成可复用 AI 指令的团队",
+   "需要程序化处理 docx、pdf、pptx、xlsx 的文档流水线开发者，可直接参考官方实现",
+   "想学习 skill 目录结构和 SKILL.md 写法的提示词／上下文工程人员",
+   "评估是否把 Agent Skills 规范纳入自家 agent 架构的技术选型负责人"
   ],
   "use_cases": [
-   "把团队里重复出现的操作流程按官方技能写法封装一次，之后在不同项目里直接复用，减少重复调 prompt。",
-   "在 agent 选型阶段把仓库当作 Agent Skills 机制的权威参考，先读目录结构和技能示例再决定是否自建。",
-   "参考官方技能的组织方式，为内部制定自己的技能目录结构、命名规范和评审流程。",
-   "把已有的 Python 脚本或内部工具按技能形式包装，交给代理在对话中调用。",
-   "在 Claude Code 等支持技能的环境中加载现成技能，快速验证某个场景是否值得继续投入。"
+   "按公司品牌规范生成或改写文档，把规范写进 SKILL.md 后让 Claude 反复套用",
+   "参考 skills/docx、skills/pdf、skills/pptx、skills/xlsx 的实现，做文档创建、编辑与格式转换",
+   "把一个固定的数据分析流程（读表、清洗、出结论）封装成 skill，避免每次重复描述步骤",
+   "在 Claude Code 中把仓库注册为 Plugin marketplace，直接调用现成 skill 试效果",
+   "以 skills 里的技术类示例为蓝本，生成 MCP server 或测试 Web 应用"
   ],
   "adoption_steps": [
-   "先执行 git clone https://github.com/anthropics/skills 拉到本地，通读 README、目录结构和 LICENSE，确认技能数量、加载方式与许可条款。",
-   "挑一个最小的技能，在本地 Claude Code 或 Claude API 环境中按 README 说明跑通一次，记录它依赖的运行环境、权限和外部服务。",
-   "跑通后再选一个团队真实流程改写成技能，做小范围试点，并同步确定版本固定与升级回归的规则。"
+   "先在仓库里读 ./spec 下的 Agent Skills 规范和 ./template 模板，确认 SKILL.md 的字段与目录约定再动手写自己的 skill",
+   "按 README 的 Claude Code 一节给出的命令把仓库注册为 Plugin marketplace 试用现成 skill（节选里命令被截断，需回仓库原文复制完整命令）",
+   "复制 ./template 建自己的 skill 目录，写入 SKILL.md 与所需脚本，在自有环境中按 README 的免责声明要求做完整测试后再用于正式任务"
   ],
   "build_ideas": [
-   "基于仓库的技能格式做一个内部技能注册中心，支持检索、版本锁定和权限控制。",
-   "写一个技能静态检查与测试工具，在 CI 中校验技能目录结构、依赖声明和脚本可执行性。",
-   "做一层技能适配层，把同一份技能描述转译到 Claude 之外的 agent 运行时，降低绑定风险。",
-   "构建技能效果评测集，对同一技能的不同版本做回归对比，输出可用性评分。",
-   "把技能与内部知识库、工单系统对接，封装成面向具体业务场景的领域技能包。"
+   "基于 ./spec 做一个 skill 校验／lint 工具，检查 SKILL.md 元数据完整性和目录结构合规性",
+   "把公司内部常用工具链（构建、发布、数据导出 CLI）逐个包装成 skill，形成内部 skill 库",
+   "在 skills/docx、pdf、pptx、xlsx 的基础上二次开发，接入自家模板体系和审批流程做文档自动化服务",
+   "做一个 skill 市场或索引服务，按团队和场景分发、版本化管理自建 skill",
+   "把现有 prompt 模板批量迁移成 SKILL.md 结构，并对比迁移前后的任务成功率"
   ],
   "risks": [
-   "材料未取到 README，技能数量、目录约定、加载机制和许可证具体条款都无法确认，采用前必须自行核对仓库原文。",
-   "无法判断仓库是可直接投产的实现还是以示例与文档为主，代码成熟度和版本稳定性未知。",
-   "与 Anthropic 产品线的绑定程度未知，若要迁移到其他模型或 agent 框架，改造成本需要先行验证。",
-   "19 万 star 和日榜热度会显著放大预期，但 star 数不反映最近提交频率与 issue 处理速度，需自行查看提交历史和维护状态。",
-   "主语言标记为 Python，若团队技术栈不是 Python，技能脚本的依赖安装与运行环境隔离需要额外评估。"
+   "README 明确写明这些 skill 仅供演示与教学，Claude 实际行为可能与仓库中的实现不同，关键任务前必须自行充分测试",
+   "许可并非整体统一：README 只说「许多 skill」是 Apache 2.0，逐个 skill 使用前要确认对应目录的许可声明",
+   "仓库是 Anthropic 对 skills 的实现，标准本身在 agentskills.io，两者可能不同步，依赖前要确认以哪边为准",
+   "README 节选里的 Claude Code 注册命令被截断，且未说明 docx、pdf、pptx、xlsx 等 skill 的运行依赖和最低环境要求，落地成本需自行验证",
+   "项目 star 增速高但内容以示例为主，缺少版本发布与兼容性承诺的信息，长期维护节奏无法从现有材料判断"
   ],
   "tokens": {
-   "prompt_tokens": 486,
-   "completion_tokens": 1803
+   "prompt_tokens": 1099,
+   "completion_tokens": 1461
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "c153ff24106091a1b880b0bbe3ca78b4938c2d4c8ccf0260e3e31e7079bc8261",
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "8baca0ff1ac221b001b0d3d7b7e8a3cef72ba713faf73a7a50ce5b6010bd9f26",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:23:45+08:00",
-  "readme_used": false,
+  "generated_at": "2026-11-11T12:25:40+08:00",
+  "readme_used": true,
   "source_description": "Public repository for Agent Skills",
   "language": "Python",
   "url": "https://github.com/anthropics/skills"
@@ -830,98 +831,98 @@
   "url": "https://github.com/heygen-com/hyperframes"
  },
  "homeassistant-ai/ha-mcp": {
-  "one_liner": "让 Claude、ChatGPT 等 AI 助手直接配置和自动化你的 Home Assistant。",
-  "summary": "这是一个把 Home Assistant 智能家居平台接入 AI 助手的 MCP 服务端项目，用 Python 实现，目标是让 Claude、ChatGPT 等支持 MCP 的助手直接读取和操作 Home Assistant 的设备、实体与自动化。它通过暴露标准化的 MCP 工具接口，把「帮我关灯」「每晚十点提醒」这类自然语言指令转成对 Home Assistant API 的实际调用。相比手工在 Home Assistant 界面里点选配置或自己写 YAML 自动化，它的价值在于用对话方式完成设备编排与自动化创建。本次材料未提供 README，具体工具集、安装方式与支持范围无法核实，以下判断基于仓库描述与语言信息推断。",
+  "one_liner": "用 AI 助手直接配置和自动化你的 Home Assistant。",
+  "summary": "ha-mcp 是一个 MCP 服务器，把 Home Assistant 的配置与自动化能力暴露给 Claude、ChatGPT 等支持 MCP 的 AI 助手，让你用对话代替点菜单和手写 YAML。它推荐的落地方式是通过 HACS（Home Assistant 2026.11+ 的内置 Marketplace）安装 HA-MCP 集成，把服务器以 in-process 方式跑在 Home Assistant 进程内，而不是额外维护一个旁路容器。README 强调这种形态在 Home Assistant OS、Supervised、Container、Core 四种安装类型上功能对齐，这是它相对同类方案的卖点。安装时会要求提供管理员访问令牌并选择客户端连接方式，说明权限模型是账号级的。需要注意它要求 Home Assistant 2026.8.0 以上，且经历过把 ha_config_set_yaml 移入 beta 的破坏性变更。",
   "audience": [
-   "已经在跑 Home Assistant、想用自然语言快速搭建自动化的智能家居玩家。",
-   "需要给非技术家庭成员提供「说话就能控家电」入口的产品经理或开发者。",
-   "在评估 MCP 生态落地场景、想把自家系统接入 AI 助手的后端工程师。",
-   "做智能家居集成或私有化部署方案、需要评估 AI 控制链路的方案顾问。"
+   "已经重度使用 Home Assistant、想让 AI 帮忙写和改自动化的智能家居玩家。",
+   "日常用 Claude 或 ChatGPT 做工作流、希望把家里的设备控制接进同一个对话入口的工程师。",
+   "维护 Home Assistant 自定义集成或插件的开发者，需要参考一个用 fastmcp 实现的 MCP 服务端样例。",
+   "想给非技术家人提供「说一句话就能改场景」入口的产品经理或家庭管理员。"
   ],
   "use_cases": [
-   "用对话让 AI 助手批量查询家庭内各房间的灯光、温湿度等实体当前状态。",
-   "口述「工作日早上七点开窗帘并播报天气」，由 AI 生成对应的自动化规则并写入 Home Assistant。",
-   "在外出场景下通过 AI 助手临时关闭全部电器或检查门窗传感器是否关闭。",
-   "把已有的零散自动化脚本交给 AI 梳理，让 AI 批量重命名或调整触发条件。",
-   "为新装修的房子快速试跑多个自动化方案，用对话迭代而不是反复改 YAML。"
+   "在聊天窗口里用自然语言描述触发条件和动作，让 AI 直接生成或修改一条 Home Assistant 自动化。",
+   "批量整理实体：让 AI 列出某个区域下的实体并统一改名、改图标或调整分组。",
+   "排查自动化不生效的原因，让 AI 读取相关配置和实体状态后给出修改建议。",
+   "把「查一下客厅温度、把灯调暗」这类日常操作交给对话式助手，而不是打开 App 逐层点击。",
+   "在接入新设备后，让 AI 根据设备实体清单生成初始的场景与脚本草稿。"
   ],
   "adoption_steps": [
-   "先确认你的 Home Assistant 版本与部署方式支持外部 API 访问，并创建一个长期访问令牌备用。",
-   "按仓库说明（需查阅 README，当前材料未提供）安装该 Python 包或其容器镜像，配置 Home Assistant 地址与令牌后启动 MCP 服务端。",
-   "在 Claude Desktop 或其他 MCP 客户端中注册该服务端，先用只读类操作（查询实体状态）验证连通性，再逐步开放写操作与自动化创建权限。"
+   "先确认 Home Assistant 版本不低于 2026.8.0，并在一台非关键环境或先做好完整备份，再开始安装。",
+   "在 Home Assistant 2026.8–2026.10 上打开 HACS 搜索 HA-MCP 并 Download；在 2026.11 及以上打开「设置 → Marketplace」搜索 HA-MCP 并安装，完成后重启 Home Assistant。",
+   "重启后按设置向导决定服务器以哪个管理员身份运行：建议单独建一个专用管理员账号并生成长期访问令牌，而不是直接用自己的主账号令牌，然后选择允许客户端连接的方式。",
+   "在 Claude 或 ChatGPT 一侧按官方文档（homeassistant-ai.github.io/ha-mcp/）配置 MCP 连接，先用只读类操作验证连通性，再逐步放开写操作。"
   ],
   "build_ideas": [
-   "在 MCP 层之上加一层权限与确认机制，让高风险操作（开门锁、断电）必须人工二次确认后再执行。",
-   "把它封装成面向家庭成员的语音助手前端，接上麦克风与 TTS，做成局域网内的自然语言控制入口。",
-   "为自动化创建流程加入版本管理与回滚，把 AI 生成的每条自动化先落到草稿区，验证后再启用。",
-   "对接日志与场景数据，做一个「AI 复盘」功能，定期汇总设备使用情况并建议新的自动化。",
-   "面向多住户或办公场景做多租户改造，按用户隔离可访问的实体范围与操作权限。"
+   "基于它暴露的 MCP 工具封装只读或限定领域的子集，做成给家人使用的低权限助手，避免误改配置。",
+   "把 ha-mcp 接到自建机器人（如 Slack、企业微信、语音助手）上，做成家庭内部的自然语言运维入口。",
+   "在 AI 写入之前加一层 YAML 校验与自动备份/回滚中间件，降低对话式改配置的翻车成本。",
+   "参考它的 e2e 测试工作流，为自己的 Home Assistant 自定义集成搭建端到端测试。",
+   "针对特定场景（如影音、照明）预置提示词与实体白名单，做成开箱即用的场景包。"
   ],
   "risks": [
-   "材料未提供 README 与源码细节，实际的 MCP 工具集、支持的 Home Assistant 版本和安装方式均无法核实，落地前必须自行阅读仓库文档。",
-   "让 AI 助手拥有写权限意味着可能误改设备状态或自动化规则，需要提前确认是否提供只读模式与操作确认机制。",
-   "项目需要访问 Home Assistant 的 API 令牌，令牌的存放方式与是否支持最小权限，在材料中无法确认，存在凭据泄露面。",
-   "仓库许可协议、Python 版本要求、依赖项与维护活跃度均未在材料中体现，商用或长期维护前需逐项确认。",
-   "MCP 协议与各家 AI 客户端仍在快速演进，接口可能出现不兼容变更，升级成本需自行评估。"
+   "版本门槛与破坏性变更真实存在：README 明确 v7.3.0 把 ha_config_set_yaml 移到了 beta，且 9.0.0 前后的设置流程不同，升级前必须读发布说明。",
+   "授予 AI 管理员访问令牌意味着模型可以改动 Home Assistant 配置，误操作的爆炸半径是整屋自动化，务必用专用账号和备份兜底。",
+   "安装路径处于迁移状态：早期通过 homeassistant-ai/ha-mcp-integration 仓库安装的用户、以及旧名「HA-MCP Custom Component」的显示，说明升级与识别流程有历史包袱。",
+   "材料只给出 LICENSE.md 的存在，未说明具体许可证类型，商用或二次分发前需要自行打开确认。",
+   "材料未列出具体工具清单、权限边界和项目成熟度指标（仅有 e2e 测试工作流与 star 数），能否覆盖你的实际自动化需求需要装后实测。"
   ],
   "tokens": {
-   "prompt_tokens": 497,
-   "completion_tokens": 863
+   "prompt_tokens": 1252,
+   "completion_tokens": 2086
   },
   "model_resolved": "deepseek-flash",
-  "hash": "28c72a47166cf9060cb4c4ded10fea348634f4f5cb12892730f2e67d12662c0d",
+  "hash": "53e563f895a688edf2ee0029067167ac5c0325ddc8d023fc0b529be449849023",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:23:39+08:00",
-  "readme_used": false,
+  "generated_at": "2026-11-11T12:25:42+08:00",
+  "readme_used": true,
   "source_description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
   "language": "Python",
   "url": "https://github.com/homeassistant-ai/ha-mcp"
  },
  "mattpocock/skills": {
-  "one_liner": "把作者自用的 AI 编码代理技能包开源，让你直接复用一套实战工作流配置。",
-  "summary": "这是一个面向工程师的 Agent Skills 集合，作者 Matt Pocock 直接把自己 .agents 目录里的技能定义整理后开源。从描述看，它的做法是把可复用的提示词或技能文件按目录组织起来，放进 AI 编码代理的 .agents 配置目录后即可生效，而不是提供一个运行时框架。与常见的「提示词大全」相比，新意在于这些文件来自作者真实日常使用的配置，而非为演示临时拼凑。但当前材料只有一句仓库描述，未取到 README，具体包含哪些技能、支持哪些代理工具、目录约定如何，都无法从现有信息确认。",
+  "one_liner": "给 AI 编码代理装一套小而可组合的工程技能包",
+  "summary": "这是 Matt Pocock 从自己 .agents 目录里整理出来的 AI 代理技能集合，面向「真做工程」而不是「凭感觉写代码」的场景。它强调每条技能都小而可改、可组合，并且不绑定特定模型，通过 Claude Code、Codex、GitHub Copilot、Gemini CLI 等各自的插件或 skills 安装机制装进你的开发环境。作者在 README 中明确把它和 GSD、BMAD、Spec-Kit 对立起来：后几者靠接管整个流程来帮忙，代价是拿走控制权、流程里出 bug 时难排查。安装路径有两条：插件方式会自动更新，skills.sh 方式会把可编辑文件复制进项目、由你手动维护。",
   "audience": [
-   "已经在用 Claude Code、Cursor 等编码代理，但自己写的提示词零散、想参考别人成熟配置的工程师。",
-   "想给团队统一一套 AI 编码规范与操作模板，但不知道从哪下手的技术负责人。",
-   "经常把重复性任务（重构、写测试、审 diff）外包给 AI，需要结构化指令模板的开发者。",
-   "关注 Matt Pocock 在 TypeScript 与 AI 辅助开发方向内容、想直接抄作业的读者。",
-   "做 AI 编程工具链选型，需要评估社区技能包质量的产品经理或平台工程师。"
+   "已经日常用 Claude Code、Codex 或 Copilot 写业务代码、想规范代理行为而不是全靠临场提示词的工程师。",
+   "被 GSD、BMAD、Spec-Kit 这类重型流程框架束缚过、希望保留流程控制权的中高级开发者。",
+   "需要在团队内统一 AI 编码习惯、但不想强制所有人用同一套封闭工具链的技术负责人。",
+   "同时使用多个代理（如 Claude Code + Gemini CLI + Copilot）并希望复用同一批技能定义的人。"
   ],
   "use_cases": [
-   "把仓库里的技能目录整体拷进本地 .agents 目录，让编码代理按作者的工作流执行任务。",
-   "抽取其中单个技能文件，改写成团队自己的代码审查或测试生成提示词。",
-   "把技能文件目录结构作为模板，为团队搭建一套可版本化的内部提示词仓库。",
-   "对照作者的技能写法，检查自己现有提示词在职责划分和触发条件上的缺失。",
-   "在接入新编码代理工具时，用这套技能做基线，对比不同工具对同一指令的执行效果。"
+   "在 Claude Code 里用 `claude plugin install mattpocock-skills@claude-plugins-official` 安装后，让代理按固定技能流程完成日常编码任务，而不是每次重新口述要求。",
+   "用 `npx skills@latest add mattpocock/skills -a cursor` 把技能复制成可编辑文件，改造成符合自己团队代码规范的版本。",
+   "在 Gemini CLI 中分别安装 skills/engineering 与 skills/productivity 两个路径，按工程和效率两类场景区隔代理能力。",
+   "在 VS Code 的 Copilot 里通过 Chat: Install Plugin From Source 装入仓库地址，让团队成员的 Copilot 保持同一套技能。",
+   "把技能文件作为团队 AI 编码约定的起点，在其基础上增删条目，替代动辄覆盖全流程的重型框架。"
   ],
   "adoption_steps": [
-   "先执行 git clone 把仓库拉到本地，通读目录结构与文件清单，确认它是否按技能分文件组织，以及目标代理工具的目录约定。",
-   "挑一到两个与当前工作最贴近的技能文件，复制到自己的 .agents 或对应配置目录，在一个小任务上试跑并对比裸提示词的效果。",
-   "确认有效后再整体引入，并把改过的版本提交到团队仓库做版本管理，避免后续上游更新直接覆盖本地定制。"
+   "先确认你主力用哪个代理，只选一种安装方式：Claude Code 用 `claude plugin install mattpocock-skills@claude-plugins-official`，Codex 用 `codex plugin marketplace add mattpocock/skills` 加 `codex plugin add mattpocock-skills@mattpocock`，并注意两者不要同时装。",
+   "如果想改技能内容，改用可编辑路径：`npx skills@latest add mattpocock/skills -a <agent>`，安装时勾选 `setup-matt-pocock-skills`，并把生成的文件提交进项目仓库以便团队共享。",
+   "在一个已有小项目上跑一到两周，记录哪些技能真正被触发、哪些和现有规范冲突，再决定保留、改写还是删除，不要一次性全量推给团队。"
   ],
   "build_ideas": [
-   "写一个脚本，把技能目录按目标工具（Claude Code、Cursor 等）的约定自动安装或同步到本地配置目录。",
-   "做一层技能版本管理与灰度机制，让团队能把上游技能与内部定制分支合并而不冲突。",
-   "为每个技能补充评测用例（输入任务与期望产出），做成可回归的提示词效果测试集。",
-   "把技能包封装成脚手架命令，新项目初始化时按技术栈自动挑选并注入相关技能。",
-   "做一个技能索引与检索页，按任务类型（重构、测试、审查）快速定位该用哪个文件。"
+   "把团队的代码规范、目录约定和评审清单写进技能文件，做成公司内部的技能分支，而不是每次在对话里重复交代。",
+   "针对特定技术栈（如 TypeScript 后端、React 前端）派生一套领域技能，并配一个安装脚本分发到团队成员环境。",
+   "做一个技能版本管理与 diff 工具，解决 README 里提到的两种安装方式更新机制不一致（插件自动更新 vs skills.sh 手动复制）的问题。",
+   "在 CI 中加入检查，验证技能文件与仓库当前约定一致，避免代理按过期技能生成代码。",
+   "基于这些小而可组合的技能单元，拼装适合特定团队工作流（如 c 代码评审、发布前检查）的技能组合包。"
   ],
   "risks": [
-   "缺少 README，安装方式、目录约定、支持哪些代理工具均无法从现有材料验证，首次接入需要自行摸索。",
-   "仓库未声明许可证信息可查，直接复制进公司代码库或二次分发前必须核对 LICENSE 文件与授权范围。",
-   "这类技能文件通常与特定代理工具的版本和提示词格式强绑定，工具升级后存在失效或行为漂移的风险。",
-   "技能内容本质是提示词，效果随模型版本变化明显，在作者环境有效不代表在自有模型与代码库上同样有效。",
-   "仓库以个人 .agents 目录直接开源，缺乏版本标签与变更日志的可能性较高，长期维护节奏无法从现有信息判断。"
+   "README 明确警告两种安装方式（插件与 skills.sh）同时使用会导致每个技能被装两遍，切换安装方式前需先卸载干净。",
+   "Gemini CLI 和通用 npx 方式不支持自动更新，需要重新执行安装命令才能升级，技能容易在团队内出现版本漂移。",
+   "项目主要语言为 Shell，实质是提示词与配置文件的集合，效果高度依赖具体代理版本与模型表现，升级代理后行为可能变化。",
+   "材料中未提供开源许可证信息，商用或闭源分发前必须到仓库确认许可条款。",
+   "README 有较大篇幅用于引导订阅作者的个人 newsletter，仓库的长期维护承诺和治理方式在材料中没有任何说明，采用前应查看提交历史与 issue 响应情况。"
   ],
   "tokens": {
-   "prompt_tokens": 497,
-   "completion_tokens": 1157
+   "prompt_tokens": 1306,
+   "completion_tokens": 1423
   },
-  "model_resolved": "deepseek-v4.1-flash-1017",
-  "hash": "139df6b569f7bc5f6484dbc27946cd4a91db03baf470afa5c633414abccad2c9",
+  "model_resolved": "deepseek-flash",
+  "hash": "bd3e22f8fa826971391ceef482846b22bde8b0ffdaec28146c03546c994515b2",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:23:43+08:00",
-  "readme_used": false,
+  "generated_at": "2026-11-11T12:25:38+08:00",
+  "readme_used": true,
   "source_description": "Skills for Real Engineers. Straight from my .agents directory.",
   "language": "Shell",
   "url": "https://github.com/mattpocock/skills"
@@ -974,47 +975,48 @@
   "url": "https://github.com/max-sixty/worktrunk"
  },
  "meta/astryx": {
-  "one_liner": "一个可深度定制、面向 AI Agent 的开源设计系统，帮你统一产品界面与智能体交互。",
-  "summary": "Astryx 是 TypeScript 编写的开源设计系统，定位是「完全可定制」并「为 Agent 就绪」。从描述看，它想解决的不只是传统组件库的视觉统一问题，还设想让设计系统能被 AI Agent 直接理解和使用，这对把 LLM 接入产品 UI 的团队有吸引力。和多数只提供组件与主题的开源设计系统相比，它把「agent ready」作为核心卖点，是较新的方向。但当前材料只有一句 GitHub 描述，没有 README、组件清单、架构说明或示例代码，具体如何实现定制和 Agent 集成无法核实。",
+  "one_liner": "Meta 开源的设计系统：150+ 个可组合 React 组件，支持主题定制，并方便 AI 助手使用。",
+  "summary": "Astryx 是 Meta 内部发展八年的设计系统开源版，自称在公司内支撑 13000+ 应用，目前处于 Beta。它提供 150+ 个无障碍组件、品牌主题、暗色模式和 CLI，基于 React 19+ 构建，样式用 StyleX 编写，但使用方只需引入预构建 CSS 和类型化组件，不需要接入构建插件。与常见设计系统相比，它的差异在于：组件内部结构开放，可直接用导出的基础模块组合，也可用 swizzle 把组件源码弹出到项目里自行维护；主题是一组 CSS 自定义属性覆盖，因此不必 fork 或包装源码；同时 API、文档和 CLI 统一面向人和 AI 助手设计。",
   "audience": [
-   "正在搭建或重构前端组件库、需要统一多产品视觉与交互规范的前端架构师",
-   "要在产品里接入 AI Agent、并希望 Agent 输出的界面与现有设计语言一致的前端工程师",
-   "评估设计系统选型、需要判断是否值得替换现有组件库的技术负责人",
-   "关注 AI 与 UI 结合方向、想了解「agent ready 设计系统」具体形态的产品经理"
+   "正在为 React 19 项目寻找完整组件库、又不想被样式方案锁死的前端工程师。",
+   "需要快速搭出统一品牌视觉、但团队没有专职组件库维护者的产品团队。",
+   "要把设计系统接入 AI 编码助手工作流、希望人和 agent 共享同一套组件规范的平台工程师。",
+   "评估从自研组件库迁移到成熟开源方案、关注主题定制与源码可控性的架构师。"
   ],
   "use_cases": [
-   "为新产品的管理后台选定一套可换肤的组件基础，减少自研按钮、表单、弹窗等基础组件的工作量。",
-   "在已有产品中引入设计系统，统一多团队各自的样式实现，降低视觉走样和重复开发。",
-   "为接入 LLM 的对话式或生成式界面提供一套受约束的组件与样式，让 Agent 产出的界面符合品牌规范。",
-   "作为团队设计规范的代码化载体，把设计稿里的 token 和组件映射成可复用的 TypeScript 实现。"
+   "在新 React 19 后台或中台项目中安装 @astryxdesign/core 与 @astryxdesign/theme-neutral，直接使用预构建组件搭页面。",
+   "用 CSS 自定义属性覆盖做品牌主题，把默认外观调整成公司视觉规范，而不改动组件源码。",
+   "对某个行为不合预期的组件执行 swizzle，把源码弹出到项目内自行修改和维护。",
+   "在已用 Tailwind 或 CSS Modules 的项目里，通过 className 覆盖单个组件样式，做局部适配。",
+   "把 @astryxdesign/cli 安装到全局，让本地编码助手在任意目录都能查询到 Astryx 的组件与用法。"
   ],
   "adoption_steps": [
-   "先在 GitHub 打开 meta/astryx 仓库，确认最新 release、提交频率和 README 中的安装命令，再决定是否试用。",
-   "在独立分支或空目录中按官方文档安装依赖并跑通示例页面，验证组件覆盖度和主题定制能力是否满足需求。",
-   "挑选一个非核心页面做试点接入，记录与现有样式体系的冲突点和迁移工作量，再决定是否扩大范围。"
+   "先按 README 执行 npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex 与 npm install -D @astryxdesign/cli，确认项目使用 React 19 或以上。",
+   "打开官方 Sandbox 和 Storybook（astryx.atmeta.com/sandbox/ 与 /storybook/）挑 2-3 个核心组件，在一个分支里做页面级试用，验证样式覆盖方式和主题定制是否符合现有工程习惯。",
+   "试点通过后，再决定是否用 swizzle 接管个别组件源码，并把主题变量与组件使用规范写入团队文档，然后逐步替换存量组件。"
   ],
   "build_ideas": [
-   "基于它的主题定制能力封装一套符合公司品牌规范的设计 token 与组件预设，作为内部组件库发行。",
-   "开发把设计稿或自然语言描述转成 Astryx 组件代码的生成工具，配合其 Agent 能力做低代码搭建。",
-   "为它补充与主流框架或状态管理方案的适配层，降低在既有项目中的接入成本。",
-   "基于设计系统组件构建一套供 AI Agent 调用的 UI 描述协议或工具函数，让 Agent 安全地渲染界面。"
+   "基于主题的 CSS 自定义属性机制，做一套公司品牌主题包并发布为内部 npm 包，供多个项目复用。",
+   "围绕 CLI 扩展内部脚手架，在新建项目时自动安装 Astryx、注入主题并生成示例页面。",
+   "用 swizzle 机制维护一批符合内部业务规范的派生组件，形成公司层组件库。",
+   "把这套组件与文档接入内部 AI 编码助手的检索上下文，让生成的界面代码默认使用 Astryx 组件。"
   ],
   "risks": [
-   "材料中没有 README、文档和示例，组件覆盖范围、API 稳定性和「agent ready」的具体含义都无法核实，存在预期偏差风险。",
-   "仓库以 meta/astryx 形式给出，需自行确认实际维护方、开源许可证类型及商用限制，材料未提供许可信息。",
-   "短时间内新增 3108 star，热度上升快，但无法判断是否伴随稳定的版本发布节奏，版本升级可能带来破坏性变更。",
-   "作为设计系统，接入意味着组件、样式和构建链路都要跟随其技术选型，后续若弃用，迁移成本较高。",
-   "材料未说明它对 React/Vue 等框架、构建工具和浏览器版本的依赖要求，需先确认与现有技术栈是否兼容。"
+   "项目明确标注 Currently in Beta，API 与包结构可能仍在变动，不建议在稳定期产品中大规模铺开而不锁定版本。",
+   "硬性依赖 React 19+，React 18 或更早版本的项目无法直接采用，升级 React 本身就是一笔迁移成本。",
+   "样式层使用 StyleX，且需要额外安装 @stylexjs/stylex 作为依赖，团队需接受这一依赖链，即使日常不必直接写 StyleX。",
+   "README 未说明许可证细节（仅链接 LICENSE），商用前需自行确认授权条款；仓库名中的 meta 是否代表官方长期维护承诺，材料中也没有明确信息。",
+   "README 内容在安装说明处被截断，CLI 的完整能力与全局安装方式未能核实，需到官网文档确认后再纳入流程。"
   ],
   "tokens": {
-   "prompt_tokens": 494,
-   "completion_tokens": 801
+   "prompt_tokens": 1262,
+   "completion_tokens": 936
   },
   "model_resolved": "deepseek-flash",
-  "hash": "b5afc057d2a1ec121743a63d006f3cf6c2eeec5b29f9161947a176b5b593a79e",
+  "hash": "f867168a9af5a287a931b994bd05e9bff5f78773349ff3b5d111ad36f43b6a45",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:23:39+08:00",
-  "readme_used": false,
+  "generated_at": "2026-11-11T12:25:35+08:00",
+  "readme_used": true,
   "source_description": "An open source design system that's fully customizable and agent ready",
   "language": "TypeScript",
   "url": "https://github.com/meta/astryx"
@@ -1265,50 +1267,50 @@
   "url": "https://github.com/ranxianglei/billion-context"
  },
  "sherlock-project/sherlock": {
-  "one_liner": "输入一个用户名，批量排查它在哪些社交网络上有对应账号。",
-  "summary": "Sherlock 是一个用 Python 编写的开源情报（OSINT）工具，核心能力是把同一个用户名放到多个社交网络和站点上逐一比对，判断哪些平台上存在对应账号。它替人省掉的正是「一个个平台手动打开、手动输入用户名试」这种重复劳动，把按用户名做账号发现的过程批量化。从累计 10 万级 star、本周期仍有 2000 以上新增来看，它在开源情报和账号排查场景里属于被广泛知晓的工具。需要说明的是，本次没有取到 README，它的具体检索机制、收录站点规模、输出格式和命令行参数都无法从现有材料中确认，以上描述仅基于仓库的一句话简介。",
+  "one_liner": "用同一个用户名批量探测 400+ 社交网络是否存在对应账号。",
+  "summary": "Sherlock 是一个 Python 命令行工具，输入一个或多个用户名后，它会向 400 多个社交网络的用户主页或查询接口发起请求，根据响应判断该用户名是否已被注册。结果可以按用户名保存为 txt，也支持 CSV、XLSX、JSON 输出，并提供代理、超时、只显示命中项等参数。它支持 ParrotOS、Ubuntu 24.04 之外通过 pipx、pip、uv、Docker 或 dnf 安装。相比手工逐个平台试用户名，它的价值在于把跨平台账号归集这一重复劳动变成一条命令，并通过站点清单的社区维护来扩展覆盖面。",
   "audience": [
-   "做 OSINT 和外部资产梳理的安全研究人员，需要按用户名快速铺开账号面。",
-   "调查记者与事实核查人员，需要确认某个网名在多个平台上的关联账号。",
-   "品牌保护与反欺诈岗位，需要排查是否有仿冒自家品牌名的社交账号。",
-   "渗透测试人员，在授权范围内做社工面信息收集前的账号枚举。",
-   "对开源情报工具链感兴趣的 Python 开发者，想拿它做二次封装或集成。"
+   "做 OSINT 调查或开源情报核实的人员，需要在多个社交平台追踪同一用户名。",
+   "渗透测试与红队人员，在做目标信息收集时快速梳理目标公开账号面。",
+   "负责品牌保护或反欺诈的分析师，需要排查仿冒者是否用同一昵称批量注册账号。",
+   "想把账号枚举能力集成进自有工具链的 Python 开发者。",
+   "关注自身数字足迹的个人，想一次性查看某个昵称在哪些平台被占用。"
   ],
   "use_cases": [
-   "拿到一个待核查的用户名，批量跑一遍站点列表，输出「哪些平台存在该账号」的结果清单供人工逐条复核。",
-   "在品牌侵权排查中，用品牌名或变体作为输入批量检索，筛出可疑账号后交给法务或平台投诉流程。",
-   "调查报道中把一个化名跨平台比对，判断同一人是否在多个社区复用同一标识。",
-   "在授权测试中作为信息收集阶段的一个环节，把发现的账号汇总进资产与人员画像清单。",
-   "作为数据源接入自建的情报流水线，把账号发现结果与已有的告警或工单系统对接。"
+   "调查一个疑似目标的用户名，先执行 sherlock username，一次性得到命中平台清单和对应链接。",
+   "批量核对一组候选昵称，执行 sherlock user1 user2 user3 并用 -fo 指定输出目录，把结果汇总成表格。",
+   "需要结构化数据入库时加 --csv 或 --json，把命中结果直接交给后续分析脚本处理。",
+   "在受限网络环境下用 --proxy 指定代理，并用 --timeout 控制单站点等待时间，避免个别站点拖慢整体扫描。",
+   "只想看命中项时用 --print-found 减少噪声，或用 --nsfw 把成人平台纳入结果范围。"
   ],
   "adoption_steps": [
-   "先在隔离环境（venv 或容器）中克隆仓库，严格按 README 的安装说明装依赖并确认要求的 Python 版本，不要直接装进系统全局环境。",
-   "用一个已知在多个平台存在的用户名做小规模试跑，记录命中结果和明显误报，先摸清它在目标站点上的准确率再谈规模化。",
-   "正式使用前确认 LICENSE 条款与目标平台的 ToS，并把结果定位为「待人工核实的线索」而非事实结论，避免把误报直接当成结论使用。"
+   "先用隔离环境试用：执行 pipx install sherlock-project（或 docker run -it --rm sherlock/sherlock），避免污染系统 Python 环境。",
+   "用公开的测试用户名跑一次 sherlock someusername --print-found，确认网络可达、结果符合预期，并观察执行耗时。",
+   "确认可用后，把常用参数（代理、超时、输出格式、输出目录）固化成脚本或 CI 任务，再用 --site 限定站点范围以减少误报和耗时。"
   ],
   "build_ideas": [
-   "在它的输出之上加一层置信度打分与去重，把单纯的存在性判断变成可排序的线索列表。",
-   "封装成带鉴权和限速的 HTTP 服务，供内部其他系统以 API 形式调用账号检索能力。",
-   "做成定时任务，对指定品牌名或关键词的新增账号做持续监控并推送告警。",
-   "把结果导出为结构化报告（如 JSON 或 CSV）并对接内部工单、案件管理或情报平台。",
-   "增加代理池、请求节流与重试策略，降低被目标站点限流或封禁导致的漏报。"
+   "把输出结果接进图数据库，按用户名把跨平台账号聚成实体，做关联分析。",
+   "在 CLI 之上封装成长任务服务：定时重跑同一批用户名，对新出现的平台命中做告警。",
+   "基于 --site 与站点清单做定制化子集扫描器，只覆盖与业务相关的平台以提升速度与准确率。",
+   "把命中结果与截图、页面标题抓取结合，生成可供人工复核的调查报告。",
+   "封装成内部 API，供品牌保护或风控系统按需调用账号存在性查询。"
   ],
   "risks": [
-   "本次未取到 README，功能边界、收录站点范围、输出格式、Python 版本要求和命令行用法都无法从现有材料确认，落地前必须自行阅读文档验证。",
-   "材料的 GitHub 描述中未给出开源许可信息，商用、二次分发或闭源集成前需要自行确认 LICENSE 的具体条款。",
-   "跨站点按用户名检索天然受目标平台反爬、限流和页面结构变化影响，结果可能波动并产生误报或漏报，需要人工复核兜底。",
-   "批量检索他人用户名涉及个人信息处理与平台服务条款，在部分司法辖区或平台规则下可能受限，使用前需做合规确认。",
-   "材料只提供了 star 数和语言，没有最近发版时间、issue 响应情况或维护者活跃度，项目当前的维护状态和长期可持续性证据不足。"
+   "README 明确提示，第三方维护的 ParrotOS 与 Ubuntu 24.04 软件包目前是 broken 的；这些系统上应改用 uv、pipx、pip 或 Docker 安装。",
+   "社区维护的 Debian、Ubuntu、Homebrew、Kali、BlackArch 包不受 Sherlock Project 直接支持，版本可能滞后或行为不一致。",
+   "工具依赖向各站点发起请求并按响应判断账号是否存在，站点改版、加验证码或限流都会造成误报或漏报，结果需人工复核。",
+   "批量探测他人用户名可能触及目标平台的服务条款或当地法律对个人信息收集的限制，使用前需确认合规边界。",
+   "README 节选未包含许可证信息与站点清单的更新机制，正式采用前需自行核对 LICENSE 与维护活跃度。"
   ],
   "tokens": {
-   "prompt_tokens": 494,
-   "completion_tokens": 1618
+   "prompt_tokens": 1338,
+   "completion_tokens": 885
   },
   "model_resolved": "deepseek-flash",
-  "hash": "71080202214825e9127f056dd799bd53329c482d68f99704ea0ff5c1e4d2d452",
+  "hash": "ea4518117759dbae068da96eeb1d38aacceefd12f7859274015f1e959410b39b",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:23:44+08:00",
-  "readme_used": false,
+  "generated_at": "2026-11-11T12:25:36+08:00",
+  "readme_used": true,
   "source_description": "Hunt down social media accounts by username across social networks",
   "language": "Python",
   "url": "https://github.com/sherlock-project/sherlock"
@@ -1461,50 +1463,49 @@
   "url": "https://github.com/tokio-rs/topcoat"
  },
  "vercel-labs/agent-browser": {
-  "one_liner": "给 AI agent 一个命令行入口去操作浏览器，省得每个项目自己写一套自动化脚本。",
-  "summary": "vercel-labs/agent-browser 是一个用 Rust 编写的浏览器自动化命令行工具，官方描述只有一句：面向 AI agents 的浏览器自动化 CLI。它的思路是把「打开网页、点击、取内容」这类浏览器动作收敛成一个可被 agent 调用的稳定命令接口，而不是让 agent 直接写 Playwright/Puppeteer 脚本，从而把不确定性挡在模型之外。累计 star 约 4.9 万、单日新增 780，说明近期关注度有明显突增。但本期没有抓到 README，具体命令、支持的浏览器引擎、是否内置 MCP 或会话复用能力都无法核实，因此它与同类工具的差异目前无法下判断。",
+  "one_liner": "让 AI agent 用一条条 shell 命令驱动浏览器，读页面、点元素",
+  "summary": "agent-browser 是 Vercel Labs 出的原生 Rust 命令行工具，给 AI agent 提供一个可持续操作的浏览器。它的核心交互是 snapshot：把当前页面压成紧凑文本，每个元素带一个类似 @e1 的 ref，agent 点完再重新 snapshot 确认结果，形成「看一眼—动一下—再看一眼」的循环。命令通过首次调用时启动的后台 daemon 走 Chrome DevTools Protocol 控制浏览器，浏览器在命令之间保持打开，所以每步只是一次很短的 shell 调用；每个 --session 有独立的 daemon 和浏览器。和常见的「一次调用跑完整个脚本」的自动化方案相比，新意在于把动作粒度拆到单条命令、把页面表达成带稳定引用的可访问性树，并且支持 --cdp/--auto-connect 接管已有 Chrome、用 --engine 切换 Lightpanda 或 Obscura 等引擎。",
   "audience": [
-   "正在给 LLM agent 增加网页操作能力的后端/agent 开发者。",
-   "要把人工网页流程（填表、查单、对账）改造成自动化的业务团队工程师。",
-   "需要在 CI 或沙箱里跑浏览器回归验证的测试与平台工程人员。",
-   "做技术选型、需要判断「自己写 Playwright 脚本还是接现成 CLI」的架构师。",
-   "想评估 agent 能力边界、判断哪些网页任务可交付的产品经理。"
+   "在做浏览器类 agent（网页操作、表单填写、信息抓取）的 AI 应用工程师",
+   "需要让 Claude Code、Cursor 等编码 agent 具备网页操作能力的产品团队",
+   "做端到端测试或页面回归、希望用自然语言加语义定位替代脆弱选择器的 QA 工程师",
+   "需要把重复的后台网页操作（对账、填报、巡检）脚本化的运维或运营团队"
   ],
   "use_cases": [
-   "让 agent 打开指定网页并抽取结构化内容，供后续总结或入库，而不是把整页 HTML 塞进上下文。",
-   "让 agent 按步骤完成登录后填表、提交、校验结果这类多步网页操作。",
-   "把浏览器会话的执行从 agent 代码里剥离出来，在 agent 循环中作为一次命令调用触发。",
-   "在 CI 流水线里用固定命令跑页面可用性与关键路径的冒烟验证。",
-   "在受限沙箱中给 agent 提供一个受控的浏览器出口，限制它能打开哪些站点。"
+   "让 agent 执行 agent-browser open 打开目标站点，snapshot -i 取可交互元素，再按 ref 逐步完成登录、搜索、填表等操作",
+   "在自动化流程里用 find role button click --name \"Submit\" 这类语义定位代替硬编码 CSS 选择器点击按钮",
+   "用 get url 等读取类命令在每步操作后校验页面状态，做成可回放的 agent 操作循环",
+   "通过 --cdp 或 --auto-connect 接管一个已登录的 Chrome 实例，复用现有 cookie 完成需要登录态的任务",
+   "按 --session 划分不同任务各自的浏览器与 daemon，隔离多个并行 agent 的页面上下文"
   ],
   "adoption_steps": [
-   "先打开 https://github.com/vercel-labs/agent-browser 读 README 的安装段落，确认官方支持的是 cargo install、npm 包还是预编译二进制，并挑与团队技术栈一致的那一种。",
-   "按 README 里最短的示例命令本地跑通一次：用一个公开静态网页验证能否成功打开页面并拿到可读输出（标题或 DOM 文本），确认 CLI 在干净环境里能直接工作。",
-   "把自家 3 到 5 个真实目标站点写成冒烟用例，与现有方案（agent 直接写脚本或调现成浏览器库）对比成功率、耗时和调试成本，再决定是否替换。"
+   "先跑 npm install -g agent-browser 和 agent-browser install 装上 Chrome for Testing，Linux 上改用 agent-browser install --with-deps 补系统库；不想安装就用 npx agent-browser open example.com 试一次。",
+   "照 README 的快速开始跑一遍 open example.com、snapshot -i、click @e1、get url、close，确认 ref 机制和你目标站点的可访问性树质量是否符合预期。",
+   "在正式接入前，用你自己的目标站点验证登录态保持、--session 隔离、--cdp 接管和空闲一小时自动关闭这些行为，再决定是否开启 session persistence。"
   ],
   "build_ideas": [
-   "在 CLI 之上包一层 MCP server，让 Claude、Cursor 等支持 MCP 的客户端直接把浏览器动作当工具调用。",
-   "做一层站点白名单与操作审计日志，把 agent 的每次页面访问和点击记录下来，满足合规与回溯需求。",
-   "实现录制回放：把 agent 成功完成的一次操作序列固化成可重复执行的脚本，降低每次重跑的成本。",
-   "做并行会话池与隔离环境管理，支撑多个 agent 同时占用浏览器而不互相污染 cookies 和登录态。",
-   "封装成容器镜像或 GitHub Action，作为 agent 的标准化浏览器运行环境对外分发。"
+   "在 agent-browser 之上封装一层任务编排器，把 snapshot 的 ref 和动作序列持久化成可回放、可断点续跑的流程脚本。",
+   "做一层容错中间件：解析 click 因隐藏、禁用、视口外或被同意横幅遮挡而失败的原因，自动关闭遮挡元素、重新 snapshot 并重试。",
+   "把 snapshot 的可访问性树转成更适合特定模型消费的紧凑结构，做成面向自家 agent 的浏览器工具适配层。",
+   "基于 --session 的独立 daemon 做多 agent 并行调度与资源池化，避免每个任务重复启动浏览器。",
+   "接入 --engine 的 Lightpanda、Obscura 等引擎，做按任务类型自动选择浏览器引擎的路由策略。"
   ],
   "risks": [
-   "本期未取到 README，实际命令、安装方式、支持的浏览器引擎和 API 覆盖面全部未知，上面所有落地建议都要先对照官方文档核实。",
-   "许可证未确认，商用或闭源集成前必须查看仓库的 LICENSE 文件，不能默认与 Vercel 其他开源项目一致。",
-   "该仓库 star 基数大但单日新增 780，属于短期热度突增，结合项目较新的迹象，命令与参数存在破坏性变更的风险，要锁版本接入。",
-   "项目挂在 vercel-labs 组织下，无法从现有材料判断它是长期维护的产品还是实验性验证，需自行查看 commit 频率、release 记录和 issue 响应速度。",
-   "Rust CLI 多以二进制或 cargo 方式分发，纯 JS/TS 技术栈的团队会额外引入二进制依赖，带来 CI 镜像构建、版本对齐和跨平台构建的成本。"
+   "README 节选里只有 LICENSE 链接，没有写明具体许可证类型，商用前必须先去仓库确认许可条款。",
+   "项目挂在 vercel-labs 下，材料没有给出任何版本号、稳定版承诺或 API 稳定性说明，命令语法和 ref 机制存在变动可能。",
+   "首次使用需要 agent-browser install 下载 Chrome for Testing，Linux 还要额外装系统库，在受限网络或容器环境里可能装不上。",
+   "ref 只在 snapshot 时刻有效，页面导航或 DOM 变化后必须重新 snapshot，这个约束会直接改变上层 agent 的循环设计，迁移既有脚本有改造成本。",
+   "默认依赖后台 daemon 与一小时空闲退出机制，长任务或状态保持需求要额外配置 session persistence，否则会丢上下文。"
   ],
   "tokens": {
-   "prompt_tokens": 490,
-   "completion_tokens": 1834
+   "prompt_tokens": 1231,
+   "completion_tokens": 1339
   },
   "model_resolved": "deepseek-flash",
-  "hash": "da013f90a8728168fd9df9c0edc54e7a377a7f3fd47dfac99939ef47328989a6",
+  "hash": "dc2c4071cd12e6de9e826161c4dcf4ea20835d3a9268877a240f3c59154b9b15",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:23:45+08:00",
-  "readme_used": false,
+  "generated_at": "2026-11-11T12:25:38+08:00",
+  "readme_used": true,
   "source_description": "Browser automation CLI for AI agents",
   "language": "Rust",
   "url": "https://github.com/vercel-labs/agent-browser"
