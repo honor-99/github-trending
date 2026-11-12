@@ -147,6 +147,8 @@ html[data-skin="slate"] {
 
 /* ════════ 基底：材质与氛围 ════════ */
 * { box-sizing: border-box; }
+/* [hidden] 必须压过组件自己的 display（.col 是 display:grid，否则 hidden 形同虚设） */
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
 body {

@@ -131,14 +131,14 @@
     INSIGHTS.archive = archive;
     renderTopics();
     renderPotential();
+    setView(viewOfPeriod(currentPeriod()));
   }
 
   /* ── P1 趋势话题 ─────────────────────────────────────── */
   function renderTopics() {
     const data = INSIGHTS.topics;
-    const section = $('#topics');
-    if (!data || !data.topics || !data.topics.length) { section.hidden = true; return; }
-    section.hidden = false;
+    // 可见性统一由 setView() 决定，这里只负责画内容（避免加载顺序竞争时提前显形）
+    if (!data || !data.topics || !data.topics.length) return;
 
     const maxCount = Math.max(...data.topics.map((t) => t.repo_count), 1);
     $('#topicsSub').textContent = `${data.project_count} 个项目归成 ${data.topics.length} 个方向`;
@@ -191,9 +191,8 @@
   /* ── P2 潜力观察 ─────────────────────────────────────── */
   function renderPotential() {
     const data = INSIGHTS.potential;
-    const section = $('#potential');
-    if (!data || !data.items || !data.items.length) { section.hidden = true; return; }
-    section.hidden = false;
+    // 同上：只画内容，不碰 hidden
+    if (!data || !data.items || !data.items.length) return;
 
     $('#potentialSub').textContent = `从 ${data.candidate_count} 个候选里挑出 ${data.items.length} 个`;
     $('#potentialNote').textContent = data.method || '';
@@ -434,6 +433,13 @@
     $('#footSource').textContent =
       `历史榜单 · 覆盖 ${data.snapshot_count} 期快照（${data.first_date || '—'} → ${data.latest_date || '—'}）`
       + ` · 按累计 star 总量降序 · ${(data.generated_at || '').replace('T', ' ').slice(0, 16)} 生成`;
+  }
+
+  /* 周期 → 视图：只有 topics / potential 是独立视图，其余都进榜单列 */
+  function viewOfPeriod(period) {
+    if (period === 'topics') return 'topics';
+    if (period === 'potential') return 'potential';
+    return 'rank';
   }
 
   /* ── 视图切换：三类内容各自占满整页（榜单列 / 趋势话题 / 潜力观察）── */
