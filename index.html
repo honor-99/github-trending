@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>GitHub 热度追踪 · 榜单归档</title>
 <meta name="description" content="GitHub Trending 每期快照归档：新上榜、持续热门、掉榜，加上话题聚合与潜力观察。" />
-<link rel="stylesheet" href="assets/styles.css?v=12" />
+<link rel="stylesheet" href="assets/styles.css?v=14" />
 </head>
 <body>
 <header class="topbar">
@@ -35,6 +35,8 @@
         <button role="tab" data-period="weekly" aria-selected="false">周榜</button>
         <button role="tab" data-period="monthly" aria-selected="false">月榜</button>
         <button role="tab" data-period="history" aria-selected="false">历史榜单</button>
+        <button role="tab" data-period="topics" aria-selected="false">趋势话题</button>
+        <button role="tab" data-period="potential" aria-selected="false">潜力观察</button>
         <button role="tab" data-period="github" aria-selected="false">GitHub 总榜</button>
       </div>
       <p class="console-status" id="controlsMeta"></p>
@@ -45,7 +47,7 @@
 
   <p class="notice" id="notice" hidden></p>
 
-  <div class="board-grid">
+  <div class="board-grid board-grid--wide">
 
     <section class="col col--rank" id="rankCol">
       <header class="col-head">
@@ -160,6 +162,12 @@
   </aside>
 </div>
 
-<script src="assets/app.js?v=10"></script>
+<!-- 右下角快捷滚动 -->
+<div class="scroll-jump">
+  <button class="scroll-btn" id="toTop" type="button" aria-label="回到顶部" title="回到顶部">&#8593;</button>
+  <button class="scroll-btn" id="toBottom" type="button" aria-label="回到底部" title="回到底部">&#8595;</button>
+</div>
+
+<script src="assets/app.js?v=11"></script>
 </body>
 </html>

@@ -2,10 +2,14 @@
 (() => {
   'use strict';
 
-  const LABEL = { daily: '日榜', weekly: '周榜', monthly: '月榜', history: '历史榜单', github: 'GitHub 总榜' };
+  const LABEL = {
+    daily: '日榜', weekly: '周榜', monthly: '月榜', history: '历史榜单',
+    topics: '趋势话题', potential: '潜力观察', github: 'GitHub 总榜',
+  };
   const PERIOD_HINT = {
     daily: '今日增长榜', weekly: '本周增长榜', monthly: '本月增长榜',
-    history: '全部上榜项目', github: '全部仓库 · 按 star 总数',
+    history: '全部上榜项目', topics: '本期方向分布', potential: '上升空间观察',
+    github: '全部仓库 · 按 star 总数',
   };
 
   const $ = (sel) => document.querySelector(sel);
@@ -87,6 +91,10 @@
       b.setAttribute('aria-selected', String(b.dataset.period === period));
     });
     moveIndicator();
+    const activeBtn = document.querySelector('.segmented button[aria-selected="true"]');
+    if (activeBtn && activeBtn.scrollIntoView) {
+      activeBtn.scrollIntoView({ block: 'nearest', inline: 'center' });
+    }
     if (push) {
       const url = new URL(location.href);
       if (period === 'daily') url.searchParams.delete('p');
@@ -344,7 +352,7 @@
     $('#rankTitle').textContent = '历史榜单';
     $('#rankHint').textContent = '全部上榜项目 · 累计 star 降序';
     $('#block-github').hidden = true;
-    setWide(true);
+    setView('rank');
     const bits = [`累计 ${data.snapshot_count} 期快照`];
     if (data.first_date) bits.push(`${data.first_date} → ${data.latest_date}`);
     bits.push(`去重 ${data.project_count} 个项目`);
@@ -431,18 +439,89 @@
       + ` · 按累计 star 总量降序 · ${(data.generated_at || '').replace('T', ' ').slice(0, 16)} 生成`;
   }
 
-  /* ── 全宽模式：历史榜单 / GitHub 总榜 占满三列，隐藏话题与潜力两列 ── */
-  function setWide(wide) {
-    const grid = document.querySelector('.board-grid');
-    if (!grid) return;
-    grid.classList.toggle('board-grid--wide', wide);
-    if (wide) {
-      $('#topics').hidden = true;
-      $('#potential').hidden = true;
-    } else {
-      renderTopics();
-      renderPotential();
+  /* ── 视图切换：三类内容各自占满整页（榜单列 / 趋势话题 / 潜力观察）── */
+  function setView(view) {
+    const rank = $('#rankCol');
+    const topics = $('#topics');
+    const pot = $('#potential');
+    const isTopics = view === 'topics';
+    const isPot = view === 'potential';
+    if (rank) rank.hidden = isTopics || isPot;
+    if (topics) topics.hidden = !isTopics;
+    if (pot) pot.hidden = !isPot;
+    $('#notice').hidden = true;
+  }
+
+  /* 通用 KPI 渲染（新视图用，老视图保留原有实现） */
+  function paintKpis(cards) {
+    const kpis = $('#kpis');
+    kpis.innerHTML = '';
+    let delay = 0;
+    for (const c of cards) {
+      const card = el('div', `kpi ${c.cls || ''}`.trim());
+      card.append(el('div', 'kpi-label', c.label));
+      const valueNode = el('div', 'kpi-value', '0');
+      card.append(valueNode);
+      card.append(el('div', 'kpi-hint', c.hint));
+      kpis.append(card);
+      const numeric = Number(c.value);
+      if (Number.isFinite(numeric)) {
+        const d = delay;
+        setTimeout(() => countUp(valueNode, numeric), d);
+      } else {
+        valueNode.textContent = String(c.value);
+      }
+      delay += 70;
     }
+  }
+
+  /* ── 趋势话题（独立 tab）── */
+  function loadTopicsView() {
+    const data = INSIGHTS.topics;
+    setView('topics');
+    const meta = $('#controlsMeta');
+    if (!data || !data.topics || !data.topics.length) {
+      paintKpis([{ label: '状态', value: '暂无数据', hint: 'topics.json 未生成' }]);
+      if (meta) meta.textContent = '暂无话题数据';
+      return;
+    }
+    const top = data.topics[0];
+    const starsSum = data.topics.reduce((sum, t) => sum + (t.stars_period_total || 0), 0);
+    paintKpis([
+      { label: '归类项目', value: data.project_count, hint: '最近一期三榜去重后的项目' },
+      { label: '话题数', value: data.topics.length, hint: '一个项目最多 3 个标签' },
+      { label: '最大方向', value: top.repo_count, hint: `${top.name} · ${Math.round(top.share * 100)}%`, cls: 'kpi--new' },
+      { label: '新增合计', value: starsSum, hint: '按话题累加，跨话题项目会重复计入' },
+    ]);
+    if (meta) {
+      meta.textContent = `${data.project_count} 个项目归成 ${data.topics.length} 个方向`
+        + ` · ${(data.generated_at || '').replace('T', ' ').slice(0, 16)} 生成`;
+    }
+    $('#footSource').textContent = `趋势话题 · ${data.basis || '按名称+描述关键词归类'} · 纯统计，不调模型`;
+  }
+
+  /* ── 潜力观察（独立 tab）── */
+  function loadPotentialView() {
+    const data = INSIGHTS.potential;
+    setView('potential');
+    const meta = $('#controlsMeta');
+    if (!data || !data.items || !data.items.length) {
+      paintKpis([{ label: '状态', value: '暂无数据', hint: 'potential.json 未生成' }]);
+      if (meta) meta.textContent = '暂无潜力数据';
+      return;
+    }
+    const best = data.items[0];
+    paintKpis([
+      { label: '候选', value: data.candidate_count, hint: '通过体量与增量过滤' },
+      { label: '入选', value: data.items.length, hint: '按潜力分取前 N', cls: 'kpi--new' },
+      { label: '最高分', value: Math.round(best.score), hint: best.full_name },
+      { label: '排除', value: data.excluded_count, hint: '头部 >15 万★ 或单期 <200★' },
+    ]);
+    if (meta) {
+      meta.textContent = `${data.candidate_count} 个候选里挑出 ${data.items.length} 个`
+        + ` · ${(data.generated_at || '').replace('T', ' ').slice(0, 16)} 生成`;
+    }
+    $('#footSource').textContent = `潜力观察 · ${data.method || '纯统计评分'} · 不调模型`;
   }
 
   /* ── GitHub 总榜：浏览器端直连官方搜索 API，不落盘、不归档 ── */
@@ -536,7 +615,7 @@
     $('#rankTitle').textContent = 'GitHub 总榜';
     $('#rankHint').textContent = '全部仓库 · 按 star 总数';
     $('#ghSub').textContent = `前 ${GH_TARGET} 名 · ${GH_PAGES} 页并行`;
-    setWide(true);
+    setView('rank');
     list.innerHTML = '';
     if (btn) btn.disabled = true;
     $('#controlsMeta').textContent = `正在并行拉取 ${GH_PAGES} 页（每页 ${GH_PER_PAGE} 条）…`;
@@ -694,6 +773,8 @@
   async function load(period) {
     if (period === 'history') { loadHistory(); return; }
     if (period === 'github') { loadGithub(); return; }
+    if (period === 'topics') { loadTopicsView(); return; }
+    if (period === 'potential') { loadPotentialView(); return; }
     const kpis = $('#kpis');
     kpis.innerHTML = '';
     kpis.append(el('p', 'notice', '正在读取快照…'));
@@ -720,7 +801,7 @@
     $('#block-github').hidden = true;
     $('#rankTitle').textContent = '榜单动态';
     $('#rankHint').textContent = '与上一期对比';
-    setWide(false);
+    setView('rank');
 
     const metaBits = [`${data.date} 快照`];
     if (data.prev_date) {
@@ -1020,6 +1101,36 @@
 
   const ghRefresh = $('#ghRefresh');
   if (ghRefresh) ghRefresh.addEventListener('click', () => loadGithub());
+
+  /* ── 右下角快捷滚动：↑ 回到顶部 / ↓ 回到底部 ── */
+  const toTop = $('#toTop');
+  const toBottom = $('#toBottom');
+  const jumpBehavior = REDUCED ? 'auto' : 'smooth';
+  function updateJumpButtons() {
+    const y = window.scrollY || window.pageYOffset || 0;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    if (toTop) toTop.classList.toggle('is-off', y < 120);
+    if (toBottom) toBottom.classList.toggle('is-off', y >= max - 120);
+  }
+  if (toTop) {
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: jumpBehavior }));
+  }
+  if (toBottom) {
+    toBottom.addEventListener('click', () => {
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: jumpBehavior });
+    });
+  }
+  let jumpTick = false;
+  window.addEventListener('scroll', () => {
+    if (jumpTick) return;
+    jumpTick = true;
+    requestAnimationFrame(() => { jumpTick = false; updateJumpButtons(); });
+  }, { passive: true });
+  window.addEventListener('resize', updateJumpButtons);
+  if (typeof ResizeObserver === 'function') {
+    new ResizeObserver(updateJumpButtons).observe(document.body);
+  }
+  updateJumpButtons();
 
   const dataLink = $('#dataLink');
   if (dataLink) {
