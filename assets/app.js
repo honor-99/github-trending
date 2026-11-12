@@ -40,6 +40,15 @@
     return node;
   }
 
+  /* 名次标签：#N 是 GitHub Trending 总榜的原始名次，不是列表内序号 —— 用 title/aria 说清楚 */
+  function rankTag(rank, scope) {
+    const node = el('span', 'rank', `#${rank}`);
+    const where = scope === '上期' ? '上一期榜单' : '本期榜单';
+    node.title = `GitHub Trending 总榜${scope === '上期' ? '（上一期）' : ''}第 ${rank} 名 —— 这是该项目的原始名次，不是本列表内的序号`;
+    node.setAttribute('aria-label', `${where}第 ${rank} 名`);
+    return node;
+  }
+
   function currentPeriod() {
     const p = new URLSearchParams(location.search).get('p');
     return LABEL[p] ? p : 'daily';
@@ -378,13 +387,13 @@
     }
 
     toggleBlock('#block-new', news.length, () => {
-      $('#newSub').textContent = `${data.date} 刚进入视野`;
+      $('#newSub').textContent = `${data.date} 新进 · 左侧 #N 为总榜原始名次`;
       $('#newCount').textContent = String(news.length);
       fillList('#list-new', news, 'new');
     });
     toggleBlock('#block-hot', hots.length, () => {
       const maxStreak = Math.max(...hots.map((i) => i.streak || 1), 1);
-      $('#hotSub').textContent = `最长连续 ${maxStreak} 期`;
+      $('#hotSub').textContent = `最长连续 ${maxStreak} 期 · #N 为总榜原始名次`;
       $('#hotCount').textContent = String(hots.length);
       fillList('#list-hot', hots, 'hot');
     });
@@ -441,7 +450,7 @@
     list.innerHTML = '';
     for (const d of dropped) {
       const li = el('li', 'item');
-      li.append(el('span', 'rank', `#${d.last_rank}`));
+      li.append(rankTag(d.last_rank, '上期'));
       const main = el('div', 'item-main');
       const a = el('a', 'name', d.full_name);
       a.href = d.url || `https://github.com/${d.full_name}`;
@@ -470,7 +479,7 @@
     li.setAttribute('aria-label', `查看 ${it.full_name} 详情`);
     li.dataset.name = it.full_name;
 
-    li.append(el('span', 'rank', `#${it.rank}`));
+    li.append(rankTag(it.rank, '本期'));
 
     const main = el('div', 'item-main');
     main.append(el('span', 'name', it.full_name));
