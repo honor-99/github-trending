@@ -49,6 +49,31 @@
   "times_on_board": 1,
   "url": "https://github.com/Donchitos/Claude-Code-Game-Studios"
  },
+ "GoogleChrome/modern-web-guidance-src": {
+  "description": "",
+  "first_seen": "2026-11-12",
+  "full_name": "GoogleChrome/modern-web-guidance-src",
+  "history": [
+   {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 159,
+    "stars_total": 1725
+   }
+  ],
+  "language": "TypeScript",
+  "last_seen": "2026-11-12",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-12",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
+ },
  "HKUDS/DeepTutor": {
   "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
   "first_seen": "2026-11-11",
@@ -174,6 +199,56 @@
   "times_on_board": 1,
   "url": "https://github.com/The-PR-Agent/pr-agent"
  },
+ "TheAlgorithms/Java": {
+  "description": "All Algorithms implemented in Java",
+  "first_seen": "2026-11-12",
+  "full_name": "TheAlgorithms/Java",
+  "history": [
+   {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 10,
+    "stars_period": 51,
+    "stars_total": 67006
+   }
+  ],
+  "language": "Java",
+  "last_seen": "2026-11-12",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-12",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/TheAlgorithms/Java"
+ },
+ "ZhuLinsen/daily_stock_analysis": {
+  "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+  "first_seen": "2026-11-12",
+  "full_name": "ZhuLinsen/daily_stock_analysis",
+  "history": [
+   {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 278,
+    "stars_total": 70194
+   }
+  ],
+  "language": "Python",
+  "last_seen": "2026-11-12",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-12",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/ZhuLinsen/daily_stock_analysis"
+ },
  "addyosmani/agent-skills": {
   "description": "Production-grade engineering skills for AI coding agents.",
   "first_seen": "2026-11-11",
@@ -185,18 +260,25 @@
     "rank": 8,
     "stars_period": 465,
     "stars_total": 115476
+   },
+   {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 3,
+    "stars_period": 787,
+    "stars_total": 115918
    }
   ],
   "language": "JavaScript",
-  "last_seen": "2026-11-11",
+  "last_seen": "2026-11-12",
   "periods": {
    "daily": {
-    "last_date": "2026-11-11",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-12",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/addyosmani/agent-skills"
  },
  "anomalyco/hex": {
@@ -459,18 +541,25 @@
     "rank": 5,
     "stars_period": 790,
     "stars_total": 6908
+   },
+   {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 5,
+    "stars_period": 645,
+    "stars_total": 7345
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-11",
+  "last_seen": "2026-11-12",
   "periods": {
    "daily": {
-    "last_date": "2026-11-11",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-12",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/homeassistant-ai/ha-mcp"
  },
  "mattpocock/skills": {
@@ -546,18 +635,25 @@
     "rank": 1,
     "stars_period": 3108,
     "stars_total": 23948
+   },
+   {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 1,
+    "stars_period": 2776,
+    "stars_total": 24921
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-11",
+  "last_seen": "2026-11-12",
   "periods": {
    "daily": {
-    "last_date": "2026-11-11",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-12",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/meta/astryx"
  },
  "milind-soni/OpenMausBot": {
@@ -609,6 +705,31 @@
   },
   "times_on_board": 1,
   "url": "https://github.com/morluto/rea"
+ },
+ "openai/codex-security": {
+  "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+  "first_seen": "2026-11-12",
+  "full_name": "openai/codex-security",
+  "history": [
+   {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 9,
+    "stars_period": 52,
+    "stars_total": 11695
+   }
+  ],
+  "language": "TypeScript",
+  "last_seen": "2026-11-12",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-12",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/openai/codex-security"
  },
  "pbakaus/impeccable": {
   "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
@@ -708,6 +829,31 @@
   },
   "times_on_board": 2,
   "url": "https://github.com/ranxianglei/billion-context"
+ },
+ "shadcn/improve": {
+  "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+  "first_seen": "2026-11-12",
+  "full_name": "shadcn/improve",
+  "history": [
+   {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 6,
+    "stars_period": 361,
+    "stars_total": 10845
+   }
+  ],
+  "language": "-",
+  "last_seen": "2026-11-12",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-12",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/shadcn/improve"
  },
  "sherlock-project/sherlock": {
   "description": "Hunt down social media accounts by username across social networks",
@@ -834,6 +980,13 @@
     "stars_total": 49520
    },
    {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 708,
+    "stars_total": 49846
+   },
+   {
     "date": "2026-11-11",
     "period": "weekly",
     "rank": 11,
@@ -845,9 +998,9 @@
   "last_seen": "2026-11-11",
   "periods": {
    "daily": {
-    "last_date": "2026-11-11",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-12",
+    "streak": 2,
+    "times": 2
    },
    "weekly": {
     "last_date": "2026-11-11",
@@ -855,7 +1008,7 @@
     "times": 1
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/vercel-labs/agent-browser"
  },
  "vercel-labs/agent-desktop": {
@@ -894,18 +1047,25 @@
     "rank": 12,
     "stars_period": 159,
     "stars_total": 12384
+   },
+   {
+    "date": "2026-11-12",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 1078,
+    "stars_total": 12934
    }
   ],
   "language": "Ruby",
-  "last_seen": "2026-11-11",
+  "last_seen": "2026-11-12",
   "periods": {
    "daily": {
-    "last_date": "2026-11-11",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-12",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/we-promise/sure"
  }
 }

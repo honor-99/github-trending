@@ -1,0 +1,100 @@
+{
+ "period": "daily",
+ "lang": null,
+ "date": "2026-11-12",
+ "fetched_at": "2026-11-12T08:00:31+08:00",
+ "source": "https://github.com/trending?since=daily",
+ "count": 10,
+ "items": [
+  {
+   "rank": 1,
+   "full_name": "meta/astryx",
+   "stars_period": 2776,
+   "stars_total": 24921,
+   "language": "TypeScript",
+   "url": "https://github.com/meta/astryx",
+   "description": "An open source design system that's fully customizable and agent ready"
+  },
+  {
+   "rank": 2,
+   "full_name": "we-promise/sure",
+   "stars_period": 1078,
+   "stars_total": 12934,
+   "language": "Ruby",
+   "url": "https://github.com/we-promise/sure",
+   "description": "The personal finance app for everyone (by everyone)"
+  },
+  {
+   "rank": 3,
+   "full_name": "addyosmani/agent-skills",
+   "stars_period": 787,
+   "stars_total": 115918,
+   "language": "JavaScript",
+   "url": "https://github.com/addyosmani/agent-skills",
+   "description": "Production-grade engineering skills for AI coding agents."
+  },
+  {
+   "rank": 4,
+   "full_name": "vercel-labs/agent-browser",
+   "stars_period": 708,
+   "stars_total": 49846,
+   "language": "Rust",
+   "url": "https://github.com/vercel-labs/agent-browser",
+   "description": "Browser automation CLI for AI agents"
+  },
+  {
+   "rank": 5,
+   "full_name": "homeassistant-ai/ha-mcp",
+   "stars_period": 645,
+   "stars_total": 7345,
+   "language": "Python",
+   "url": "https://github.com/homeassistant-ai/ha-mcp",
+   "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants."
+  },
+  {
+   "rank": 6,
+   "full_name": "shadcn/improve",
+   "stars_period": 361,
+   "stars_total": 10845,
+   "language": "-",
+   "url": "https://github.com/shadcn/improve",
+   "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute."
+  },
+  {
+   "rank": 7,
+   "full_name": "ZhuLinsen/daily_stock_analysis",
+   "stars_period": 278,
+   "stars_total": 70194,
+   "language": "Python",
+   "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+   "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs."
+  },
+  {
+   "rank": 8,
+   "full_name": "GoogleChrome/modern-web-guidance-src",
+   "stars_period": 159,
+   "stars_total": 1725,
+   "language": "TypeScript",
+   "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+   "description": ""
+  },
+  {
+   "rank": 9,
+   "full_name": "openai/codex-security",
+   "stars_period": 52,
+   "stars_total": 11695,
+   "language": "TypeScript",
+   "url": "https://github.com/openai/codex-security",
+   "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security"
+  },
+  {
+   "rank": 10,
+   "full_name": "TheAlgorithms/Java",
+   "stars_period": 51,
+   "stars_total": 67006,
+   "language": "Java",
+   "url": "https://github.com/TheAlgorithms/Java",
+   "description": "All Algorithms implemented in Java"
+  }
+ ]
+}

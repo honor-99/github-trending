@@ -96,6 +96,55 @@
   "language": "Shell",
   "url": "https://github.com/Donchitos/Claude-Code-Game-Studios"
  },
+ "GoogleChrome/modern-web-guidance-src": {
+  "one_liner": "把现代 Web API 的最佳实践喂给 AI 编码助手，避免它生成过时的臃肿代码。",
+  "summary": "这是 GoogleChrome/modern-web-guidance 的源仓库，存放编写、校准和评估指南内容的代码与文档。它提供一套 CLI 和技能包，把 Web 平台新特性、最佳实践和浏览器兼容数据注入编码 Agent 的上下文，让模型少用训练数据里的遗留写法。用法上通过 npx 安装或直接运行 search、retrieve、legacy-scan 三个命令，把针对性指南塞进上下文窗口。卖点在于指南经过评估流程剪枝、刻意保持 token 效率，并且由 Chrome、Edge、Firefox 和 MDN 团队与社区共同维护。",
+  "audience": [
+   "日常使用 AI 编码助手写前端代码、希望输出更贴近现代 Web 平台的前端工程师。",
+   "需要把历史项目里的过时前端模式系统性升级的技术负责人。",
+   "关心性能与可访问性、希望优先采用平台原生能力而非重 polyfill 的架构师。",
+   "为团队制定 AI 编码规范、需要可复用知识注入方案的前端基建工程师。",
+   "对 Web 平台新特性落地方式和浏览器兼容数据有需求的文档与开发者关系人员。"
+  ],
+  "use_cases": [
+   "用 npx modern-web-guidance@latest search \"animate a dialog modal backdrop\" 这类命令，在写功能前先查有没有现成的现代写法。",
+   "用 retrieve 按 ID 取回单篇指南，直接作为提示词上下文交给编码助手，约束它按推荐模式实现。",
+   "对既有仓库执行 legacy-scan .，列出可被现代 Web 平台能力替代的遗留模式清单，作为重构排期输入。",
+   "在单个项目里执行 install 向导，把技能装进日常使用的编码 Agent，观察生成代码在 API 选择上的变化。",
+   "结合官方 Eval Dashboard 查看指南的评估结果，判断某条建议是否值得纳入团队规范。"
+  ],
+  "adoption_steps": [
+   "先不安装，直接跑 npx modern-web-guidance@latest search 和 retrieve 各一次，检查返回内容的深度和你团队技术栈的匹配度。",
+   "挑一个非核心但技术债明显的前端仓库执行 npx modern-web-guidance@latest legacy-scan .，人工复核扫描结果里有多少是真问题。",
+   "在前一步验证有效后，选一到两名工程师执行 npx modern-web-guidance@latest install 接入编码 Agent，用两周时间对比接入前后生成的代码，再决定是否团队推广。"
+  ],
+  "build_ideas": [
+   "参照仓库里的 authoring 与 calibrating 流程，把团队内部的组件库规范和业务约定写成自定义指南，喂给自己的编码 Agent。",
+   "把 legacy-scan 包进 CI 流水线，对新增或改动的文件做遗留模式检查，形成可持续的现代化看板。",
+   "把 search 和 retrieve 封装成内部 MCP 服务或 IDE 插件，让 Agent 在写代码时自动检索指南，而不是靠人工粘贴上下文。",
+   "借鉴其评估方法，搭建面向自家代码库的评测集，量化不同提示方案下生成代码的现代化程度。",
+   "为特定框架或业务域维护一份精简版指南分发包，减少注入上下文时的 token 开销。"
+  ],
+  "risks": [
+   "材料中未出现许可证信息，商用或二次分发前必须先确认 LICENSE 与再分发条款。",
+   "所有命令都依赖 npx 拉取 npm 包，需要确认内网或受限网络环境下的包获取与审计流程是否可行。",
+   "指南侧重现代浏览器能力，项目对旧浏览器和降级方案的覆盖范围材料未说明，面向兼容性敏感业务时需自行验证。",
+   "项目 star 规模约 1700，属于较新项目，材料未给出 CLI 参数与指南 ID 的稳定性承诺，脚本化集成前需评估接口变动成本。",
+   "效果依赖编码 Agent 实际读取并遵循注入的上下文，材料中的评估数据不代表在你的代码库和模型组合上同样有效，需先做小范围对照验证。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1133,
+   "completion_tokens": 1800
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "ca36b8d3442323858528cc42f53de3cd96302f7fd426d4bfdce7fc58f27bf27f",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-12T08:01:27+08:00",
+  "readme_used": true,
+  "source_description": "",
+  "language": "TypeScript",
+  "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
+ },
  "HKUDS/DeepTutor": {
   "one_liner": "装在自己电脑上的长期私人 AI 导师，记得你的学习进度。",
   "summary": "DeepTutor 是 HKUDS 出品的「终身个性化辅导」应用，提供 macOS（Apple Silicon / Intel）与 Windows 桌面安装包，同时有 CLI 形态的 agent 原生接口。从 README 的版本说明看，它把模型接入、检索、掌握度（mastery）追踪、视频课、Anki 与日历导出、选中文本朗读等能力打包成一个可直接安装的学习工具，并支持十余种界面语言（含韩语预览）。相较常见的单轮问答式学习助手，它的卖点在于「lifelong」——跨会话持续跟踪学习状态，另外通过 EduHub「Skills 社区」让第三方扩展教学技能。项目还挂有 arXiv 论文（2604.26962）和 Discord 社区，偏研究+产品双线推进。",
@@ -339,6 +388,104 @@
   "source_description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
   "language": "Python",
   "url": "https://github.com/The-PR-Agent/pr-agent"
+ },
+ "TheAlgorithms/Java": {
+  "one_liner": "一份用 Java 写全的算法教学代码库，可对照阅读和练手。",
+  "summary": "TheAlgorithms/Java 把常见算法与数据结构用 Java 逐个实现出来，按 DIRECTORY.md 建立索引，适合当算法教材的配套代码看。仓库提供 Gitpod 一键在线环境，打开浏览器就能运行和修改这些算法，不用本地配 JDK。README 明确说明这些实现是教学用途，效率可能低于 Java 标准库，因此它的价值在可读性和对照学习，而非生产级工具库。它靠社区按 CONTRIBUTING.md 持续提交新算法来扩充覆盖范围，本质是一个大型协作式示例集合，而不是一个有统一 API 的框架。",
+  "audience": [
+   "准备算法面试、想用 Java 对照理解每种算法写法的后端工程师。",
+   "讲授数据结构与算法课程、需要现成可运行示例代码的高校教师或培训讲师。",
+   "刚学 Java、想通过阅读真实开源代码熟悉语法与编码风格的学生或转行者。",
+   "需要快速找某个经典算法 Java 参考实现来核对思路的技术面试官。",
+   "想参与开源但不知从何下手、希望通过补一个算法提交首个 PR 的开发者。"
+  ],
+  "use_cases": [
+   "按 DIRECTORY.md 找到排序、图、动态规划等某一类算法，直接读实现并和 JDK 自带实现做对比。",
+   "把仓库里某个算法的 Java 代码拷到本地或 Gitpod 里改参数、加打印，观察运行过程来验证自己的理解。",
+   "备课时从仓库挑选对应章节的实现，作为课堂演示代码或课后练习的参考答案。",
+   "面试前针对薄弱专题（如并查集、最短路）集中通读多个实现并手写复现。",
+   "以修 bug 或补充缺失算法的方式，完成一次有实际内容的小型开源贡献。"
+  ],
+  "adoption_steps": [
+   "先打开仓库根目录的 DIRECTORY.md，确认你关心的算法门类是否已被覆盖，再决定是否深入。",
+   "点击 README 里的 Gitpod 链接，在浏览器中打开在线开发环境，无需本地安装 JDK 即可编译运行示例。",
+   "在本地使用时直接 git clone 仓库，按目录定位到具体算法的 .java 文件，用 javac/java 单独编译运行该类做验证。",
+   "若要借鉴某段实现到自己的代码，先阅读同目录下的实现细节并自行补写单元测试对照结果，不要直接当生产代码使用。"
+  ],
+  "build_ideas": [
+   "把这些算法实现包装成一套带 JUnit 测试与复杂度注释的本地刷题仓库，形成个人可检索的知识库。",
+   "基于 DIRECTORY.md 生成一个静态站点或检索工具，按算法类别、时间复杂度、数据结构维度做索引与全文搜索。",
+   "挑出仓库中实现较朴素的算法，用 JDK 标准库或更优数据结构重写一版，做性能基准对比（JMH）写成博客系列。",
+   "为仓库补一套自动化校验流程：对每个算法生成随机用例并与暴力解法对拍，把差异作为 PR 提交上游。",
+   "面向教学场景，把某个专题的算法改造成带可视化步骤输出的版本，用于课堂演示或算法动画生成。"
+  ],
+  "risks": [
+   "README 明确写明实现仅用于教学、性能可能低于 Java 标准库，直接用于生产代码可能带来性能问题。",
+   "仓库是代码集合而非可发布依赖，材料中未给出 Maven/Gradle 坐标，无法作为 jar 依赖引入，只能拷贝源码，后续上游更新难以合并。",
+   "各算法由不同贡献者提交，代码风格、异常处理与边界条件覆盖程度不一致，质量参差且没有统一 API 保证。",
+   "材料中的 README 节选未提及许可证信息，把代码复制进公司项目前必须在仓库根目录核对 LICENSE 的具体条款。",
+   "本期新增 star 仅 51，说明短期热度平稳；项目规模大但属于教育类集合，不承诺向后兼容，接口或目录结构可能随贡献规范调整而变动。"
+  ],
+  "tokens": {
+   "prompt_tokens": 668,
+   "completion_tokens": 1172
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "12f00b8b741e23296c793a31efaeff99db2b3fb6974943586bed35dadbf5838c",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-12T08:01:23+08:00",
+  "readme_used": true,
+  "source_description": "All Algorithms implemented in Java",
+  "language": "Java",
+  "url": "https://github.com/TheAlgorithms/Java"
+ },
+ "ZhuLinsen/daily_stock_analysis": {
+  "one_liner": "用 LLM 每天自动分析你的自选股，并把决策看板推送到聊天工具",
+  "summary": "这是一个 Python 写的多市场股票智能分析系统，把行情、K 线、技术指标、新闻、公告、基本面等多源数据聚合起来，交给大模型生成一份包含结论、评分、买卖点位、风险警报和操作清单的「决策仪表盘」。它通过 GitHub Actions、Docker、本地定时或 FastAPI 服务定时运行，并把结果推送到企业微信、飞书、Telegram、Discord、Slack 或邮箱，同时提供 Web/桌面工作台做手动分析、历史报告、回测和持仓管理。与单点脚本相比，它的差异在于覆盖 A股/港股/美股/日股/韩股/台股/ETF 的统一数据源抽象、15 种内置策略的多轮 Agent 问股，以及默认用 AkShare、Baostock、YFinance 等免费源做到零配置启动。README 还强调免费源稳定性不保证，长期使用建议换 Tushare、Longbridge 等 token 型数据源。",
+  "audience": [
+   "有基本 Python 环境能力、想给自己搭一套每日盯盘自动化的个人投资者。",
+   "想研究 LLM 如何结合多源金融数据做结构化输出的应用工程师。",
+   "需要每天给客户或社群整理市场简报的投顾与内容运营。",
+   "打算做内部投研工具、想找现成数据源聚合与推送底座的技术团队。"
+  ],
+  "use_cases": [
+   "每天开盘前在 Telegram 或企业微信里收到自选股的决策看板，快速过一遍结论、风险点和买卖点位。",
+   "针对某只股票用 Agent 多轮追问，切换均线、缠论、波浪、事件等不同策略视角做交叉验证。",
+   "把手上的持仓通过图片或 CSV/Excel 导入，批量跑一遍分析并补齐股票代码与名称。",
+   "用内置回测模块检验某个策略在特定市场和历史区间上的表现。",
+   "以 FastAPI 服务方式部署，把每日分析结果同时分发到多个群或邮箱。"
+  ],
+  "adoption_steps": [
+   "先本地跑通最小闭环：git clone 仓库后按 docs/full-guide.md 配置 .env，填入一个 LLM 的 key（想压成本可先用 Ollama 本地模型），再用 docker run zhulinsen/daily_stock_analysis 启动，看一份 Web 工作台生成的报告。",
+   "选 3 到 5 只自己熟悉的股票作为自选股，手动触发一次分析，逐项核对行情数值、新闻来源和报告字段是否可信，再决定是否开启定时。",
+   "先接一个推送渠道（如邮箱或 Telegram）做验证，确认格式和时效可接受后，再迁到 GitHub Actions 或服务器上的 Docker 定时任务长期运行。"
+  ],
+  "build_ideas": [
+   "把每日报告结构化后写入自己的持仓台账，做出按持仓维度的自动复盘与盈亏归因。",
+   "基于它的 FastAPI 接口做二次封装，接进公司内部 IM 机器人或自建看板系统。",
+   "在 15 种内置策略之外扩展自定义 Agent 策略，例如财报事件驱动或行业轮动规则。",
+   "替换默认数据源，接入自己的付费行情或内部数据仓库，验证数据源抽象层的适配成本。",
+   "用历史报告加回测模块做策略有效性对比，输出可复现的评估报告而不是单次结论。"
+  ],
+  "risks": [
+   "默认的 AkShare、Baostock、YFinance 等免费行情源受上游限流、接口变动和网络波动影响，README 明确写了稳定性不保证，长期定时或批量分析需要准备 Tushare、Longbridge 等 token 型数据源。",
+   "报告里的评分、买卖点位和风险提示都是 LLM 生成内容，材料中没有提供准确率或回测有效性数据，不能直接当作投资依据。",
+   "运行需要自备多个第三方密钥（LLM、SerpAPI/Tavily/Bocha 等新闻搜索、可选的社交舆情 API），任一家的额度或定价变化都会直接影响可用性和成本。",
+   "材料未给出 issue 响应速度、发版节奏、测试覆盖等维护证据，七万 star 的高关注度不等于代码质量与长期维护承诺，落地前需自行查看 CI 状态和最近提交。",
+   "跨市场能力边界分散在 docs/market-support.md 和数据源配置文档里，日股、韩股、台股等市场的实际数据覆盖可能低于宣传口径，需按文档逐项核对后再规划用途。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1802,
+   "completion_tokens": 2202
+  },
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "629bdd1ca919c4555408ffb46a3d456dd63c9cd8d3b951163f374ee334b37594",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-12T08:01:38+08:00",
+  "readme_used": true,
+  "source_description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+  "language": "Python",
+  "url": "https://github.com/ZhuLinsen/daily_stock_analysis"
  },
  "addyosmani/agent-skills": {
   "one_liner": "把资深工程师的开发流程与质量门封装成 AI agent 可执行的技能和斜杠命令",
@@ -831,49 +978,48 @@
   "url": "https://github.com/heygen-com/hyperframes"
  },
  "homeassistant-ai/ha-mcp": {
-  "one_liner": "用 AI 助手直接配置和自动化你的 Home Assistant。",
-  "summary": "ha-mcp 是一个 MCP 服务器，把 Home Assistant 的配置与自动化能力暴露给 Claude、ChatGPT 等支持 MCP 的 AI 助手，让你用对话代替点菜单和手写 YAML。它推荐的落地方式是通过 HACS（Home Assistant 2026.11+ 的内置 Marketplace）安装 HA-MCP 集成，把服务器以 in-process 方式跑在 Home Assistant 进程内，而不是额外维护一个旁路容器。README 强调这种形态在 Home Assistant OS、Supervised、Container、Core 四种安装类型上功能对齐，这是它相对同类方案的卖点。安装时会要求提供管理员访问令牌并选择客户端连接方式，说明权限模型是账号级的。需要注意它要求 Home Assistant 2026.8.0 以上，且经历过把 ha_config_set_yaml 移入 beta 的破坏性变更。",
+  "one_liner": "让 Claude、ChatGPT 等 AI 助手直接配置和自动化你的 Home Assistant。",
+  "summary": "HA-MCP 是一个 Home Assistant 的 MCP 服务器，把 HA 的配置与自动化能力暴露成工具，供 Claude、ChatGPT 等 AI 助手调用。官方推荐的做法是把它装成 HA 集成（通过 HACS，或在 Home Assistant 2026.11+ 的内置 Marketplace 安装），整个服务器在 HA 进程内运行，官方称在 Home Assistant OS、Supervised、Container、Core 四种安装方式上功能一致。安装时集成会要求填写一个管理员长期访问令牌，并让你选择客户端如何连接。实现基于 fastmcp。它的特点是：把 MCP server 做成 HA 集成、进程内运行，不需要额外单独部署一个服务，也不用自己打通网络。",
   "audience": [
-   "已经重度使用 Home Assistant、想让 AI 帮忙写和改自动化的智能家居玩家。",
-   "日常用 Claude 或 ChatGPT 做工作流、希望把家里的设备控制接进同一个对话入口的工程师。",
-   "维护 Home Assistant 自定义集成或插件的开发者，需要参考一个用 fastmcp 实现的 MCP 服务端样例。",
-   "想给非技术家人提供「说一句话就能改场景」入口的产品经理或家庭管理员。"
+   "已经在用 Home Assistant、希望用自然语言批量生成和修改自动化与仪表盘的重度用户。",
+   "想把「对话式控制与配置」接进家庭环境、又不想自己写一层桥接服务的智能家居集成商。",
+   "正在做 MCP 生态工具或家居 Agent 的开发者，想参考一个已落地的真实 MCP server 实现。",
+   "要评估「AI 助手接管家庭自动化」可行性与安全边界的产品经理。"
   ],
   "use_cases": [
-   "在聊天窗口里用自然语言描述触发条件和动作，让 AI 直接生成或修改一条 Home Assistant 自动化。",
-   "批量整理实体：让 AI 列出某个区域下的实体并统一改名、改图标或调整分组。",
-   "排查自动化不生效的原因，让 AI 读取相关配置和实体状态后给出修改建议。",
-   "把「查一下客厅温度、把灯调暗」这类日常操作交给对话式助手，而不是打开 App 逐层点击。",
-   "在接入新设备后，让 AI 根据设备实体清单生成初始的场景与脚本草稿。"
+   "用一句话让 AI 批量创建或修改自动化、脚本和场景，替代在 HA 界面里逐条点击配置。",
+   "让 AI 查询实体状态与历史，辅助排查「灯为什么没按预期亮」这类联动问题。",
+   "让 AI 读取并整理仪表盘配置，按房间或用途重新组织界面。",
+   "给新接入的设备批量重命名、打标签、分配到对应区域。",
+   "在 beta 通道使用 ha_config_set_yaml 做更底层的 YAML 配置调整。"
   ],
   "adoption_steps": [
-   "先确认 Home Assistant 版本不低于 2026.8.0，并在一台非关键环境或先做好完整备份，再开始安装。",
-   "在 Home Assistant 2026.8–2026.10 上打开 HACS 搜索 HA-MCP 并 Download；在 2026.11 及以上打开「设置 → Marketplace」搜索 HA-MCP 并安装，完成后重启 Home Assistant。",
-   "重启后按设置向导决定服务器以哪个管理员身份运行：建议单独建一个专用管理员账号并生成长期访问令牌，而不是直接用自己的主账号令牌，然后选择允许客户端连接的方式。",
-   "在 Claude 或 ChatGPT 一侧按官方文档（homeassistant-ai.github.io/ha-mcp/）配置 MCP 连接，先用只读类操作验证连通性，再逐步放开写操作。"
+   "先确认你的 Home Assistant 版本不低于 2026.8.0，然后在 HACS 里搜索 HA-MCP 并下载安装；如果版本在 2026.11 及以上，改用「设置 → Marketplace」搜索 HA-MCP 安装。",
+   "安装完成后重启 Home Assistant，接着新建一个专用的管理员账号（不要用自己日常账号），在它的个人资料 → 安全 → 长期访问令牌里创建令牌。",
+   "在集成设置中填入该令牌并选择客户端连接方式，然后用 Claude 或 ChatGPT 等 MCP 客户端连上，先在一个测试自动化上做一次读写验证，确认无误后再放开到生产实体。"
   ],
   "build_ideas": [
-   "基于它暴露的 MCP 工具封装只读或限定领域的子集，做成给家人使用的低权限助手，避免误改配置。",
-   "把 ha-mcp 接到自建机器人（如 Slack、企业微信、语音助手）上，做成家庭内部的自然语言运维入口。",
-   "在 AI 写入之前加一层 YAML 校验与自动备份/回滚中间件，降低对话式改配置的翻车成本。",
-   "参考它的 e2e 测试工作流，为自己的 Home Assistant 自定义集成搭建端到端测试。",
-   "针对特定场景（如影音、照明）预置提示词与实体白名单，做成开箱即用的场景包。"
+   "在 MCP 客户端与 HA 之间加一层变更预演：AI 生成的自动化先做 dry-run 和差异展示，人工确认后才写入。",
+   "做多用户权限分层：为不同家庭成员或不同 MCP 客户端分配不同的 HA 账号令牌，限制各自能操作的实体域。",
+   "做 AI 操作的审计与回滚：记录每次工具调用及其参数，写入前自动生成可回滚的配置快照。",
+   "把 ha_config_set_yaml 的改动接入 Git，形成配置即代码的提交与评审流程。",
+   "借鉴仓库中的 e2e 测试工作流，为自己的 HA 实例搭建一套 AI 改动后的回归校验。"
   ],
   "risks": [
-   "版本门槛与破坏性变更真实存在：README 明确 v7.3.0 把 ha_config_set_yaml 移到了 beta，且 9.0.0 前后的设置流程不同，升级前必须读发布说明。",
-   "授予 AI 管理员访问令牌意味着模型可以改动 Home Assistant 配置，误操作的爆炸半径是整屋自动化，务必用专用账号和备份兜底。",
-   "安装路径处于迁移状态：早期通过 homeassistant-ai/ha-mcp-integration 仓库安装的用户、以及旧名「HA-MCP Custom Component」的显示，说明升级与识别流程有历史包袱。",
-   "材料只给出 LICENSE.md 的存在，未说明具体许可证类型，商用或二次分发前需要自行打开确认。",
-   "材料未列出具体工具清单、权限边界和项目成熟度指标（仅有 e2e 测试工作流与 star 数），能否覆盖你的实际自动化需求需要装后实测。"
+   "硬性要求 Home Assistant 2026.8.0 或更新版本，停留在旧版本的实例无法直接安装。",
+   "服务器以管理员账号身份运行：长期访问令牌一旦泄露就等于交出 HA 管理员权限，README 自己也建议单独建账号来降低影响。",
+   "版本迭代快且存在破坏性变更，例如 v7.3.0 把 ha_config_set_yaml 移到 beta、README 的安装流程已按 9.0.0 重写，升级时配置和工具名可能再次变化。",
+   "材料只提供了 README 节选，未说明许可证具体条款，商用或再分发前需要自行查看 LICENSE 文件。",
+   "材料没有说明令牌保管、外网暴露和多用户隔离等安全细节，涉及远程访问的场景证据不足，需要自行评估。"
   ],
   "tokens": {
-   "prompt_tokens": 1252,
-   "completion_tokens": 2086
+   "prompt_tokens": 1251,
+   "completion_tokens": 2174
   },
   "model_resolved": "deepseek-flash",
-  "hash": "53e563f895a688edf2ee0029067167ac5c0325ddc8d023fc0b529be449849023",
+  "hash": "19b7b59f430e8285d08e62ac5ec95ecd5fbc4789a4c47e1954cbed29eff62ec5",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:25:42+08:00",
+  "generated_at": "2026-11-12T08:01:29+08:00",
   "readme_used": true,
   "source_description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
   "language": "Python",
@@ -1119,6 +1265,56 @@
   "language": "TypeScript",
   "url": "https://github.com/morluto/rea"
  },
+ "openai/codex-security": {
+  "one_liner": "给仓库做安全扫描，并验证、生成补丁修复漏洞的 CLI 与 SDK",
+  "summary": "Codex Security 是 OpenAI 提供的一套安全漏洞工作流，既有可在 Codex 会话里调用的插件形态，也有命令行工具 cs（codex-security）和 TypeScript SDK 两种自动化入口。它按仓库、指定路径或 Git 变更做扫描，深扫描会在标准扫描基础上重复执行并返回去重后的问题列表，然后对候选问题做验证、生成补丁、校验已有修复是否生效。周边能力包括起草 SECURITY.md、保存威胁模型、浏览历史扫描结果并去重、按自定标准评估严重度、结合源码与 Git 历史推荐负责人，以及导入第三方扫描器结果并把问题同步到 Linear、Jira、GitHub 或导出 SARIF/JSON/CSV。和只报问题的静态扫描器相比，它的差异点是把「发现—验证—打补丁—派单跟踪」串成一条闭环，并且能跑在 CI 和容器里。",
+  "audience": [
+   "应用安全（AppSec）工程师：需要批量排查仓库漏洞并验证修复是否真的生效。",
+   "平台/DevOps 工程师：要把安全扫描接进 CI 流水线或 GitHub Action 做增量检查。",
+   "已经在用 Codex 做开发的团队：想直接在会话里发起扫描并拿到带源码证据的报告。",
+   "工程经理或安全负责人：需要统一严重度口径、把问题派到 Jira/Linear 并导出合规报告。",
+   "维护多个仓库或组件的团队：需要对多仓库、多组件批量自动化扫描。"
+  ],
+  "use_cases": [
+   "在提交或合并前对 Git 变更做增量扫描，只检查这次改动引入的问题。",
+   "对认证、授权等敏感模块做定向深扫描，拿到去重后的报告和源码证据。",
+   "让工具对已有修复做验证，确认补丁是否真正关闭了报告中的问题。",
+   "起草 SECURITY.md 安全策略并保存威胁模型，供后续评审复用。",
+   "把第三方扫描器的结果导入并本地留存，统一按自己的评级标准评估严重度后导出 SARIF/JSON/CSV。",
+   "把确认的漏洞自动同步到 Linear、Jira 或 GitHub，并按源码和 Git 历史推荐负责人。"
+  ],
+  "adoption_steps": [
+   "先核对环境：Node.js 需为 22.13.0 以上的 22.x，或 24.x/26.x，Python 需 3.10+（3.10 还要装 tomli），然后执行 npm install --global @openai/codex-security 并运行 cs login 登录。",
+   "在单个仓库目录下先跑 cs scan .，打开终端输出的 REPORT 路径对应的 Markdown 文件，重点看其中的源码证据和排除项，再用 cs scans show 复看最近一次完成的扫描；若全局命令名 cs 冲突或 npm 报 EEXIST，改用 npx @openai/codex-security。",
+   "小范围验证有效后再接自动化：在 CI 的扫描进程中设置 OPENAI_API_KEY 或 CODEX_API_KEY，或改用 GitHub Action，先只扫指定路径或 Git 变更，确认报告质量和耗时后再扩大范围。"
+  ],
+  "build_ideas": [
+   "用 TypeScript SDK 封装一个内部扫描服务，按团队/仓库排队调度扫描任务并统一收集报告。",
+   "把导入的第三方扫描器发现与 Codex Security 的结果做映射，统一折算成公司自己的严重度评级规则。",
+   "写一个机器人：扫描完成后自动创建 Jira/Linear 工单，按推荐的 owner 字段直接指派并回写状态。",
+   "在 PR 流水线里做增量扫描 + 补丁建议预览，把候选修复作为评论贴到 PR 上供人工确认。",
+   "把多次扫描的 SARIF/JSON 结果聚合进内部安全看板，跟踪漏洞从发现到验证关闭的周期。"
+  ],
+  "risks": [
+   "强依赖 OpenAI 账号与 API Key：需要 cs login 或设置 OPENAI_API_KEY/CODEX_API_KEY，离线或强隔离内网环境可能无法使用，凭证管理也要纳入流程。",
+   "运行时版本约束偏窄：Node 必须是 22.13.0+ 的 22.x 或 24.x/26.x，另需 Python 3.10+ 且 3.10 要额外装 tomli，老环境升级有成本。",
+   "命令行短名 cs 可能与本机已有命令冲突，README 只给了改用 codex-security 或 npx 的兜底方案，落地时需确认脚本里的调用方式。",
+   "报告可发布到 Codex Security Cloud，意味着代码与漏洞信息可能离开本地，采用前需确认数据留存与合规边界。",
+   "材料未提供许可证、版本发布历史、检出率与误报率数据，且 README 被截断（扫描模式等细节缺失），评估成熟度前证据不足。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1230,
+   "completion_tokens": 2003
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "db062d1dd0811d9868e8a45e8d52ef81b12638445a2a663ff81936649e4f5394",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-12T08:01:27+08:00",
+  "readme_used": true,
+  "source_description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+  "language": "TypeScript",
+  "url": "https://github.com/openai/codex-security"
+ },
  "pbakaus/impeccable": {
   "one_liner": "给编码 agent 一套设计词汇，让它按命令打磨和审查界面，拦下 AI 味",
   "summary": "Impeccable 解决的是「让 AI 帮你写界面，但写出来千篇一律」的问题：它把模糊的「让它更出彩」拆成 polish、bolder、quieter、harden 这类可执行的动词，每个词对应一份专用 playbook，并要求指定明确的目标（比如「pricing cards」）。它靠三类能力落地：一是风格指令，二是 critic/audit 这类评审角色（critique 按可用性启发式打分并排序修复优先级，audit 检查无障碍、性能、主题和响应式，结论按 P0 到 P3 分级），三是 62 条确定性规则组成的 slop 检测器，不调用 LLM、不需要 API key，所以检出结果是可复现的。工程上它通过 npx impeccable install 装进项目，首次运行 /impeccable init 读取代码并写出 PRODUCT.md 作为长期上下文，/impeccable document 则把现有视觉系统固化到 DESIGN.md，让后续改动不偏离品牌。相比常见的「提示词模板」或纯模型评审，它的新意在于把设计评审拆成确定性规则加结构化上下文文件，并适配了 Claude Code、Cursor、Codex CLI 等一大批编码工具。",
@@ -1265,6 +1461,56 @@
   "source_description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
   "language": "TypeScript",
   "url": "https://github.com/ranxianglei/billion-context"
+ },
+ "shadcn/improve": {
+  "one_liner": "用最强模型审计代码库并写出规格，交给便宜模型去执行。",
+  "summary": "improve 是一个 Agent Skill，本身不写任何实现代码，只做一件事：读懂你的代码库、判断哪些问题值得修、把每条修复写成自包含的 markdown 规格，放进 plans/ 目录。它的核心主张是「计划即产品」——把昂贵的模型用在理解与决策上，把执行交给便宜的模型。用法上提供一组斜杠命令：/improve 做全量审计并输出带优先级、工作量、置信度的 findings 表，quick/deep 控制审计深度，security、perf、tests 等做定向审计，branch 只看当前分支改动，execute 在隔离 worktree 里派便宜模型实现并对照计划审查 diff，reconcile 负责刷新和清理 backlog。相比一次性生成补丁的编码 agent，它把「规划」和「执行」显式拆成两个模型档位，产出是人和任何 agent 都能接手读取的明文计划。",
+  "audience": [
+   "已经在用 Claude Code、Cursor 等支持 Agent Skills 格式工具、想控制 token 成本的工程师。",
+   "需要给一个陌生或遗留代码库做系统性体检、但不想手工翻每个包的技术负责人。",
+   "维护开源项目、希望把零散 TODO 和技术债整理成可分配任务的维护者。",
+   "带团队、想把「写规格」和「照着规格改代码」分工给不同模型档位的研发管理者。",
+   "提交 PR 前想只针对自己改动范围做一次快速自查的开发者。"
+  ],
+  "use_cases": [
+   "接手老项目时先跑一次 /improve，拿到按优先级排序的问题清单，再决定先动哪几处。",
+   "对某条具体发现回复「plan 1、3、5」，让它在 plans/ 下生成带推荐顺序索引的多份实施规格。",
+   "提 PR 前跑 /improve branch，只审计当前分支改动范围内的潜在问题。",
+   "用 /improve plan <描述> 跳过审计，直接为一件已经想清楚的事写规格。",
+   "加上 --issues 参数把生成好的计划直接发布成 GitHub issues，交给团队认领。",
+   "每隔一段时间跑 /improve reconcile，核实已落地的、刷新已漂移的、解除卡住的任务。"
+  ],
+  "adoption_steps": [
+   "在目标仓库根目录执行 npx skills add shadcn/improve 完成安装，确认你的 agent 支持 Agent Skills 格式（agentskills.io）。",
+   "先跑一次 /improve quick 做低成本试跑，检查返回的 findings 表在分类、工作量、置信度上是否符合你对这个仓库的判断。",
+   "从表里挑一到两条回复编号生成 plans/ 文件，人工读完确认规格可执行后，再交给任意 agent 或直接用 /improve execute 001 派便宜模型实现，并逐行 review 它返回的 diff 与结论。"
+  ],
+  "build_ideas": [
+   "把 plans/ 目录接入 CI，在 PR 中自动比对计划状态与实际改动，提示哪些计划已落地或已漂移。",
+   "基于 --issues 的输出开发一个 backlog 同步工具，让 plans/ 文件与 GitHub issues 状态双向对齐。",
+   "围绕 execute 模式搭一层自动化验收：把计划里的验收条件抽成测试，对便宜模型产出的 diff 自动跑一遍再交人工。",
+   "编写团队专属的审计类别扩展，让 /improve 除了通用技术债外还能识别内部规范违反项。",
+   "把 reconcile 的输出定时汇总成周报，追踪技术债 backlog 的新增、完成与停滞趋势。"
+  ],
+  "risks": [
+   "材料未提供许可证、主语言信息（主语言字段为空），商用或二次分发前需自行到仓库确认授权条款。",
+   "日榜新增 361 star 说明它是近期爆发式传播，命令集的长期稳定性和维护节奏尚缺乏足够证据。",
+   "execute 模式把实现交给更便宜的模型，产出质量不被保证，README 也明确合并决定权仍在人手里，必须逐个 review diff。",
+   "deep 模式声称要遍历每个包和每个类别，在大仓库上的 token 成本与耗时材料中没有给出任何数据。",
+   "plans/ 目录会随使用持续堆积，若不定期执行 reconcile，计划会与代码现状漂移，反而制造噪音。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1174,
+   "completion_tokens": 1774
+  },
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "0734501ee34272b7c4bae5e79ccd52d83ec13365838e2f310ba0e1220837cf38",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-12T08:01:31+08:00",
+  "readme_used": true,
+  "source_description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+  "language": "-",
+  "url": "https://github.com/shadcn/improve"
  },
  "sherlock-project/sherlock": {
   "one_liner": "用同一个用户名批量探测 400+ 社交网络是否存在对应账号。",
