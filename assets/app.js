@@ -2,8 +2,10 @@
 (() => {
   'use strict';
 
-  const LABEL = { daily: '日榜', weekly: '周榜', monthly: '月榜' };
-  const PERIOD_HINT = { daily: '今日增长榜', weekly: '本周增长榜', monthly: '本月增长榜' };
+  const LABEL = { daily: '日榜', weekly: '周榜', monthly: '月榜', history: '历史榜单' };
+  const PERIOD_HINT = {
+    daily: '今日增长榜', weekly: '本周增长榜', monthly: '本月增长榜', history: '全部上榜项目',
+  };
 
   const $ = (sel) => document.querySelector(sel);
   const fmt = (n) => (n === null || n === undefined ? '—' : Number(n).toLocaleString('zh-CN'));
@@ -322,7 +324,112 @@
     });
   }
 
+  /* ── 历史榜单：全部上榜项目的累计视图（按累计 star 降序）── */
+  async function loadHistory() {
+    const kpis = $('#kpis');
+    kpis.innerHTML = '';
+    kpis.append(el('p', 'notice', '正在读取累计数据…'));
+    const data = await fetchJson('history.json');
+    if (!data || !data.items || !data.items.length) {
+      kpis.innerHTML = '';
+      kpis.append(el('p', 'notice', 'history.json 还没生成（需先跑 scripts/history.py）。'));
+      return;
+    }
+    renderHistory(data);
+  }
+
+  function renderHistory(data) {
+    const items = data.items;
+    $('#rankTitle').textContent = '历史榜单';
+    $('#rankHint').textContent = '全部上榜项目 · 累计 star 降序';
+    const bits = [`累计 ${data.snapshot_count} 期快照`];
+    if (data.first_date) bits.push(`${data.first_date} → ${data.latest_date}`);
+    bits.push(`去重 ${data.project_count} 个项目`);
+    $('#controlsMeta').textContent = bits.join(' · ');
+    $('#notice').hidden = true;
+    ['#block-new', '#block-hot', '#block-drop', '#block-empty'].forEach((s) => {
+      const node = $(s);
+      if (node) node.hidden = true;
+    });
+
+    const kpis = $('#kpis');
+    kpis.innerHTML = '';
+    const pc = data.period_counts || {};
+    const cards = [
+      { label: '累计项目', value: data.project_count, hint: '去重后的全部项目', cls: '' },
+      { label: '上榜记录', value: data.index_rows, hint: '含同一项目多次上榜', cls: 'kpi--new' },
+      { label: '跨榜项目', value: data.cross_board_count, hint: '出现在 2 个以上榜单', cls: 'kpi--hot' },
+      {
+        label: '覆盖期数',
+        value: data.snapshot_count,
+        hint: `日 ${pc.daily || 0} · 周 ${pc.weekly || 0} · 月 ${pc.monthly || 0}`,
+        cls: '',
+      },
+    ];
+    let kpiDelay = 0;
+    for (const c of cards) {
+      const card = el('div', `kpi ${c.cls}`.trim());
+      card.append(el('div', 'kpi-label', c.label));
+      const valueNode = el('div', 'kpi-value', '0');
+      card.append(valueNode);
+      card.append(el('div', 'kpi-hint', c.hint));
+      kpis.append(card);
+      const delay = kpiDelay;
+      setTimeout(() => countUp(valueNode, c.value), delay);
+      kpiDelay += 70;
+    }
+
+    $('#block-history').hidden = false;
+    const sub = $('#histSub');
+    sub.textContent = `去重 ${data.project_count} 个 · 按累计 star 降序`;
+    sub.title = data.basis || '';
+    $('#histCount').textContent = String(items.length);
+
+    const list = $('#list-history');
+    list.innerHTML = '';
+    items.forEach((it, i) => {
+      const li = el('li', `item item--clickable${i === 0 ? ' item--lead' : ''}`);
+      li.style.setProperty('--i', String(Math.min(i, 30)));
+      li.tabIndex = 0;
+      li.setAttribute('role', 'button');
+      li.setAttribute('aria-label', `查看 ${it.full_name} 详情`);
+      /* 这里是「体量榜」序号，不用 #N —— 与 GitHub 总榜名次区分开 */
+      li.append(el('span', 'rank', String(it.place).padStart(2, '0')));
+
+      const main = el('div', 'item-main');
+      main.append(el('span', 'name', it.full_name));
+      if (it.description) main.append(el('p', 'desc', it.description));
+
+      const meta = el('div', 'meta');
+      if (it.language && it.language !== '-') {
+        meta.append(langDot(it.language));
+        meta.append(el('span', 'badge badge--lang', it.language));
+      }
+      meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
+      if (it.appearances > 1) meta.append(el('span', 'badge badge--hot', `上榜 ${it.appearances} 次`));
+      else meta.append(el('span', 'dot-sep', '上榜 1 次'));
+      for (const label of it.period_labels || []) meta.append(el('span', 'badge badge--period', label));
+      if (it.best_rank) meta.append(el('span', 'dot-sep', `榜内最好 #${it.best_rank}`));
+      if (it.first_seen) meta.append(el('span', 'dot-sep', `首次 ${it.first_seen}`));
+      if (INTERP[it.full_name]) meta.append(el('span', 'badge badge--ai', '中文解读'));
+      main.append(meta);
+      li.append(main);
+
+      const open = () => openDrawer(it);
+      li.addEventListener('click', open);
+      li.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+      });
+      list.append(li);
+    });
+
+    $('#footSource').textContent =
+      `历史榜单 · 覆盖 ${data.snapshot_count} 期快照（${data.first_date || '—'} → ${data.latest_date || '—'}）`
+      + ` · 按累计 star 总量降序 · ${(data.generated_at || '').replace('T', ' ').slice(0, 16)} 生成`;
+  }
+
   async function load(period) {
+    if (period === 'history') { loadHistory(); return; }
     const kpis = $('#kpis');
     kpis.innerHTML = '';
     kpis.append(el('p', 'notice', '正在读取快照…'));
@@ -344,6 +451,10 @@
     const dropped = data.dropped || [];
     const news = items.filter((i) => i.status === 'new');
     const hots = items.filter((i) => i.status === 'continued');
+
+    $('#block-history').hidden = true;
+    $('#rankTitle').textContent = '榜单动态';
+    $('#rankHint').textContent = '与上一期对比';
 
     const metaBits = [`${data.date} 快照`];
     if (data.prev_date) {

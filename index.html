@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>GitHub 热度追踪 · 榜单归档</title>
 <meta name="description" content="GitHub Trending 每期快照归档：新上榜、持续热门、掉榜，加上话题聚合与潜力观察。" />
-<link rel="stylesheet" href="assets/styles.css?v=8" />
+<link rel="stylesheet" href="assets/styles.css?v=9" />
 </head>
 <body>
 <header class="topbar">
@@ -34,6 +34,7 @@
         <button role="tab" data-period="daily" aria-selected="true">日榜</button>
         <button role="tab" data-period="weekly" aria-selected="false">周榜</button>
         <button role="tab" data-period="monthly" aria-selected="false">月榜</button>
+        <button role="tab" data-period="history" aria-selected="false">历史榜单</button>
       </div>
       <p class="console-status" id="controlsMeta"></p>
     </div>
@@ -48,9 +49,20 @@
     <section class="col col--rank" id="rankCol">
       <header class="col-head">
         <span class="col-index">01</span>
-        <h2>榜单动态</h2>
-        <span class="col-hint">与上一期对比</span>
+        <h2 id="rankTitle">榜单动态</h2>
+        <span class="col-hint" id="rankHint">与上一期对比</span>
       </header>
+
+      <section class="block" id="block-history" hidden>
+        <div class="block-head">
+          <div class="block-title">
+            <h3>全部上榜项目</h3>
+            <span class="block-sub" id="histSub"></span>
+          </div>
+          <span class="block-count" id="histCount"></span>
+        </div>
+        <ol class="list" id="list-history"></ol>
+      </section>
 
       <section class="block" id="block-new" hidden>
         <div class="block-head">
@@ -136,6 +148,6 @@
   </aside>
 </div>
 
-<script src="assets/app.js?v=8"></script>
+<script src="assets/app.js?v=9"></script>
 </body>
 </html>
