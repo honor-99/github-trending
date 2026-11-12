@@ -1,70 +1,21 @@
 <!doctype html>
-<html lang="zh-CN" data-skin="paper">
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GitHub Star 总榜 · 前 300</title>
-<meta name="description" content="GitHub star 总数最高的 300 个仓库，浏览器端直连 GitHub 官方 API 实时拉取，不落盘不归档。" />
-<link rel="stylesheet" href="assets/styles.css?v=11" />
+<title>GitHub 总榜 · 已并入热度追踪</title>
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="./?p=github" />
+<meta http-equiv="refresh" content="0; url=./?p=github" />
+<script>location.replace('./?p=github');</script>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+         background: #f4f1ea; color: #1a1712;
+         font: 15px/1.7 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  a { color: #a3402a; }
+</style>
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="./">
-    <span class="brand-mark" aria-hidden="true">GH</span>
-    <span class="brand-text">Star 总榜</span>
-  </a>
-  <nav class="topnav" aria-label="站点导航">
-    <a class="nav-link" href="./">榜单归档</a>
-    <a class="nav-link" href="https://api.github.com/search/repositories?q=stars:%3E1000&sort=stars&order=desc&per_page=100" target="_blank" rel="noopener">原始 API</a>
-    <button class="nav-pill" id="skinToggle" type="button" aria-label="切换外观">外观 · 纸感</button>
-  </nav>
-</header>
-
-<main class="shell" id="top">
-
-  <section class="console-head">
-    <div class="console-title">
-      <p class="eyebrow">All-time · GitHub Search API</p>
-      <h1>Star 总榜</h1>
-      <p class="console-lede">
-        GitHub 上 <strong>star 总数</strong>最高的 300 个仓库。浏览器端直连 GitHub 官方搜索 API
-        实时拉取（3 次请求，每页 100 条）——不落盘、不归档、不经过本机脚本，每次刷新拿到的都是当下数字。
-      </p>
-    </div>
-    <div class="console-tools">
-      <button class="nav-pill" id="reloadBtn" type="button">重新拉取</button>
-      <p class="console-status" id="status">准备请求 api.github.com…</p>
-      <p class="console-status" id="rateStatus" hidden></p>
-    </div>
-  </section>
-
-  <section class="kpis" id="kpis" aria-live="polite">
-    <div class="kpi"><div class="kpi-label">状态</div><div class="kpi-value" id="kpiState">—</div><div class="kpi-hint">正在读取</div></div>
-  </section>
-
-  <p class="notice" id="notice" hidden></p>
-
-  <div class="board-grid board-grid--single">
-    <section class="col" id="starsCol">
-      <header class="col-head">
-        <span class="col-index">01</span>
-        <h2>前 300 · 按 star 总数</h2>
-        <span class="col-hint" id="colHint">实时数据</span>
-      </header>
-      <ol class="list" id="starList"></ol>
-    </section>
-  </div>
-
-  <footer class="foot">
-    <p id="footSource">数据来源：GitHub 官方搜索 API（search/repositories，sort=stars）</p>
-    <p class="foot-dim">
-      本页不保存任何数据：每次打开都现场请求，关闭即消失。<strong>star 是历史累计值</strong>，
-      没有「历史峰值」这一概念——GitHub 只提供当前数量。未认证搜索接口限额为 10 次/分钟/IP，
-      本页每次打开花 3 次（每页 100 条，共 3 页）。
-    </p>
-  </footer>
-</main>
-
-<script src="assets/stars.js?v=3"></script>
+  <p>「GitHub 总榜」已并入热度追踪，正在跳转… 若没有自动跳转，请点 <a href="./?p=github">这里</a>。</p>
 </body>
 </html>

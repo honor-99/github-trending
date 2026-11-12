@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>GitHub 热度追踪 · 榜单归档</title>
 <meta name="description" content="GitHub Trending 每期快照归档：新上榜、持续热门、掉榜，加上话题聚合与潜力观察。" />
-<link rel="stylesheet" href="assets/styles.css?v=11" />
+<link rel="stylesheet" href="assets/styles.css?v=12" />
 </head>
 <body>
 <header class="topbar">
@@ -14,7 +14,6 @@
     <span class="brand-text">热度追踪</span>
   </a>
   <nav class="topnav" aria-label="站点导航">
-    <a class="nav-link" href="stars.html">Star 总榜</a>
     <button class="nav-link" id="dataLink" type="button">数据</button>
     <a class="nav-link" href="https://github.com/honor-99/github-trending" target="_blank" rel="noopener">源码</a>
     <button class="nav-pill" id="skinToggle" type="button" aria-label="切换外观">外观 · 纸感</button>
@@ -36,6 +35,7 @@
         <button role="tab" data-period="weekly" aria-selected="false">周榜</button>
         <button role="tab" data-period="monthly" aria-selected="false">月榜</button>
         <button role="tab" data-period="history" aria-selected="false">历史榜单</button>
+        <button role="tab" data-period="github" aria-selected="false">GitHub 总榜</button>
       </div>
       <p class="console-status" id="controlsMeta"></p>
     </div>
@@ -63,6 +63,17 @@
           <span class="block-count" id="histCount"></span>
         </div>
         <ol class="list" id="list-history"></ol>
+      </section>
+
+      <section class="block" id="block-github" hidden>
+        <div class="block-head">
+          <div class="block-title">
+            <h3>按 star 总数</h3>
+            <span class="block-sub" id="ghSub"></span>
+          </div>
+          <button class="block-refresh" id="ghRefresh" type="button">重新拉取</button>
+        </div>
+        <ol class="list" id="list-github"></ol>
       </section>
 
       <section class="block" id="block-new" hidden>
@@ -149,6 +160,6 @@
   </aside>
 </div>
 
-<script src="assets/app.js?v=9"></script>
+<script src="assets/app.js?v=10"></script>
 </body>
 </html>
