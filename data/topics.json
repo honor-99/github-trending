@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T08:00:31+08:00",
+ "generated_at": "2026-11-12T13:18:12+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
  "project_count": 34,
  "topics": [
@@ -25,7 +25,8 @@
      "language": "TypeScript",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "Reverse engineer anything with agents, from app behavior down to native binaries."
     },
     {
      "full_name": "pbakaus/impeccable",
@@ -34,7 +35,8 @@
      "language": "Rust",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships."
     },
     {
      "full_name": "Nutlope/hallmark",
@@ -43,7 +45,8 @@
      "language": "CSS",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex."
     },
     {
      "full_name": "heygen-com/hyperframes",
@@ -52,7 +55,8 @@
      "language": "TypeScript",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "Write HTML. Render video. Built for agents."
     },
     {
      "full_name": "cloudflare/security-audit-skill",
@@ -62,7 +66,160 @@
      "periods": [
       "monthly",
       "weekly"
-     ]
+     ],
+     "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings"
+    },
+    {
+     "full_name": "mattpocock/skills",
+     "stars_period": 9872,
+     "stars_total": 321019,
+     "language": "Shell",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Skills for Real Engineers. Straight from my .agents directory."
+    },
+    {
+     "full_name": "NVIDIA/auto-ontology",
+     "stars_period": 9621,
+     "stars_total": 11491,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context ret"
+    },
+    {
+     "full_name": "vercel-labs/agent-desktop",
+     "stars_period": 9502,
+     "stars_total": 21456,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Computer use CLI for AI agents"
+    },
+    {
+     "full_name": "anthropics/claude-plugins-official",
+     "stars_period": 9346,
+     "stars_total": 46789,
+     "language": "Python",
+     "periods": [
+      "monthly"
+     ],
+     "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins."
+    },
+    {
+     "full_name": "anthropics/knowledge-work-plugins",
+     "stars_period": 6844,
+     "stars_total": 35373,
+     "language": "Python",
+     "periods": [
+      "monthly"
+     ],
+     "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork"
+    },
+    {
+     "full_name": "anthropics/skills",
+     "stars_period": 5014,
+     "stars_total": 192413,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Public repository for Agent Skills"
+    },
+    {
+     "full_name": "thedotmack/claude-mem",
+     "stars_period": 4473,
+     "stars_total": 115869,
+     "language": "TypeScript",
+     "periods": [
+      "monthly",
+      "weekly"
+     ],
+     "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context ba"
+    },
+    {
+     "full_name": "Donchitos/Claude-Code-Game-Studios",
+     "stars_period": 3730,
+     "stars_total": 38099,
+     "language": "Shell",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy."
+    },
+    {
+     "full_name": "meta/astryx",
+     "stars_period": 2776,
+     "stars_total": 24921,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "An open source design system that's fully customizable and agent ready"
+    },
+    {
+     "full_name": "max-sixty/worktrunk",
+     "stars_period": 2093,
+     "stars_total": 12406,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows"
+    },
+    {
+     "full_name": "The-PR-Agent/pr-agent",
+     "stars_period": 1591,
+     "stars_total": 15887,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ],
+     "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier."
+    },
+    {
+     "full_name": "addyosmani/agent-skills",
+     "stars_period": 787,
+     "stars_total": 115918,
+     "language": "JavaScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "Production-grade engineering skills for AI coding agents."
+    },
+    {
+     "full_name": "vercel-labs/agent-browser",
+     "stars_period": 708,
+     "stars_total": 49846,
+     "language": "Rust",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "Browser automation CLI for AI agents"
+    },
+    {
+     "full_name": "homeassistant-ai/ha-mcp",
+     "stars_period": 645,
+     "stars_total": 7345,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants."
+    },
+    {
+     "full_name": "openai/codex-security",
+     "stars_period": 52,
+     "stars_total": 11695,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-se"
     }
    ]
   },
@@ -87,7 +244,8 @@
      "language": "TypeScript",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "Reverse engineer anything with agents, from app behavior down to native binaries."
     },
     {
      "full_name": "pbakaus/impeccable",
@@ -96,7 +254,8 @@
      "language": "Rust",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships."
     },
     {
      "full_name": "tashfeenahmed/freellmapi",
@@ -105,7 +264,8 @@
      "language": "TypeScript",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
     },
     {
      "full_name": "NationalSecurityAgency/ghidra",
@@ -114,7 +274,8 @@
      "language": "Java",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "Ghidra is a software reverse engineering (SRE) framework"
     },
     {
      "full_name": "cloudflare/security-audit-skill",
@@ -124,7 +285,28 @@
      "periods": [
       "monthly",
       "weekly"
-     ]
+     ],
+     "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings"
+    },
+    {
+     "full_name": "shadcn/improve",
+     "stars_period": 361,
+     "stars_total": 10845,
+     "language": "-",
+     "periods": [
+      "daily"
+     ],
+     "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute."
+    },
+    {
+     "full_name": "openai/codex-security",
+     "stars_period": 52,
+     "stars_total": 11695,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-se"
     }
    ]
   },
@@ -148,7 +330,8 @@
      "language": "TypeScript",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
     },
     {
      "full_name": "NVIDIA/auto-ontology",
@@ -157,7 +340,8 @@
      "language": "Python",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context ret"
     },
     {
      "full_name": "Donchitos/Claude-Code-Game-Studios",
@@ -166,7 +350,8 @@
      "language": "Shell",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy."
     },
     {
      "full_name": "max-sixty/worktrunk",
@@ -175,7 +360,8 @@
      "language": "Rust",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows"
     },
     {
      "full_name": "vercel-labs/agent-browser",
@@ -185,7 +371,28 @@
      "periods": [
       "daily",
       "weekly"
-     ]
+     ],
+     "description": "Browser automation CLI for AI agents"
+    },
+    {
+     "full_name": "homeassistant-ai/ha-mcp",
+     "stars_period": 645,
+     "stars_total": 7345,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants."
+    },
+    {
+     "full_name": "ZhuLinsen/daily_stock_analysis",
+     "stars_period": 278,
+     "stars_total": 70194,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
     }
    ]
   },
@@ -209,7 +416,8 @@
      "periods": [
       "monthly",
       "weekly"
-     ]
+     ],
+     "description": ""
     },
     {
      "full_name": "milind-soni/OpenMausBot",
@@ -218,7 +426,8 @@
      "language": "TypeScript",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "Open-source Grok Bot alternative with a virtual machine that bots can use"
     },
     {
      "full_name": "we-promise/sure",
@@ -227,7 +436,8 @@
      "language": "Ruby",
      "periods": [
       "daily"
-     ]
+     ],
+     "description": "The personal finance app for everyone (by everyone)"
     },
     {
      "full_name": "GoogleChrome/modern-web-guidance-src",
@@ -236,7 +446,8 @@
      "language": "TypeScript",
      "periods": [
       "daily"
-     ]
+     ],
+     "description": ""
     },
     {
      "full_name": "TheAlgorithms/Java",
@@ -245,7 +456,8 @@
      "language": "Java",
      "periods": [
       "daily"
-     ]
+     ],
+     "description": "All Algorithms implemented in Java"
     }
    ]
   },
@@ -267,7 +479,8 @@
      "language": "TypeScript",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
     },
     {
      "full_name": "NVIDIA/auto-ontology",
@@ -276,7 +489,8 @@
      "language": "Python",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context ret"
     },
     {
      "full_name": "ranxianglei/billion-context",
@@ -285,7 +499,8 @@
      "language": "TypeScript",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer t"
     },
     {
      "full_name": "ZhuLinsen/daily_stock_analysis",
@@ -294,7 +509,8 @@
      "language": "Python",
      "periods": [
       "daily"
-     ]
+     ],
+     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
     }
    ]
   },
@@ -316,7 +532,8 @@
      "language": "Rust",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "Computer use CLI for AI agents"
     },
     {
      "full_name": "max-sixty/worktrunk",
@@ -325,7 +542,8 @@
      "language": "Rust",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows"
     },
     {
      "full_name": "vercel-labs/agent-browser",
@@ -335,7 +553,8 @@
      "periods": [
       "daily",
       "weekly"
-     ]
+     ],
+     "description": "Browser automation CLI for AI agents"
     },
     {
      "full_name": "openai/codex-security",
@@ -344,7 +563,8 @@
      "language": "TypeScript",
      "periods": [
       "daily"
-     ]
+     ],
+     "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-se"
     }
    ]
   },
@@ -367,7 +587,8 @@
      "language": "Python",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation i"
     },
     {
      "full_name": "heygen-com/hyperframes",
@@ -376,7 +597,8 @@
      "language": "TypeScript",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "Write HTML. Render video. Built for agents."
     },
     {
      "full_name": "anomalyco/hex",
@@ -385,7 +607,8 @@
      "language": "Rust",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "Local voice dictation for mac, windows and linux"
     }
    ]
   },
@@ -406,7 +629,8 @@
      "language": "Python",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/."
     },
     {
      "full_name": "anthropics/knowledge-work-plugins",
@@ -415,7 +639,8 @@
      "language": "Python",
      "periods": [
       "monthly"
-     ]
+     ],
+     "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork"
     }
    ]
   },
@@ -436,7 +661,8 @@
      "language": "Python",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ a"
     }
    ]
   },
@@ -457,7 +683,8 @@
      "language": "Shell",
      "periods": [
       "weekly"
-     ]
+     ],
+     "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy."
     }
    ]
   },
@@ -478,7 +705,8 @@
      "language": "TypeScript",
      "periods": [
       "daily"
-     ]
+     ],
+     "description": "An open source design system that's fully customizable and agent ready"
     }
    ]
   }

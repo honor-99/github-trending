@@ -178,16 +178,26 @@
     data.topics.forEach((t, idx) => {
       const row = el('div', 'topic');
       row.style.setProperty('--i', String(idx));
+
+      /* 上半区整块做成 button（标题/占比/进度条/元信息都可点）——
+         chip 留在按钮外，避免 button 里嵌 button 这种非法结构 */
+      const main = el('button', 'topic-main');
+      main.type = 'button';
+      main.setAttribute('aria-label', `查看话题「${t.name}」的全部 ${t.repo_count} 个项目`);
+
       const head = el('div', 'topic-head');
       head.append(el('span', 'topic-name', t.name));
-      head.append(el('span', 'topic-stat', `${t.repo_count} 个 · ${Math.round(t.share * 100)}%`));
-      row.append(head);
+      const right = el('span', 'topic-right');
+      right.append(el('span', 'topic-stat', `${t.repo_count} 个 · ${Math.round(t.share * 100)}%`));
+      right.append(el('span', 'topic-go', '›'));
+      head.append(right);
+      main.append(head);
 
       const bar = el('div', 'topic-bar');
       const fill = el('span', 'topic-fill');
       fill.style.width = '0%';
       bar.append(fill);
-      row.append(bar);
+      main.append(bar);
       const target = `${Math.round((t.repo_count / maxCount) * 100)}%`;
       window.requestAnimationFrame(() => {
         window.requestAnimationFrame(() => { fill.style.width = target; });
@@ -198,17 +208,23 @@
       if (t.languages && t.languages.length) {
         meta.append(el('span', 'dot-sep', t.languages.filter((l) => l && l !== '-').slice(0, 3).join(' / ')));
       }
-      row.append(meta);
+      main.append(meta);
 
+      main.addEventListener('click', () => openTopicDrawer(t));
+      row.append(main);
+
+      /* 下面四个 chip 是快捷入口，点它直接进项目详情，不经过话题抽屉 */
       const chips = el('div', 'topic-repos');
       for (const r of t.repos.slice(0, 4)) {
         const chip = el('button', 'chip', r.full_name);
         chip.type = 'button';
+        chip.title = `${r.full_name} · 打开项目详情`;
         chip.addEventListener('click', () => openDrawer({
           full_name: r.full_name,
           language: r.language,
           stars_total: r.stars_total,
           stars_period: r.stars_period,
+          description: r.description,
         }));
         chips.append(chip);
       }
@@ -1140,6 +1156,92 @@
     showDrawer({
       eyebrow: rec ? 'AI 中文解读' : 'PROJECT NOTES',
       title: it.full_name,
+      meta: metaNodes,
+      body,
+    });
+  }
+
+  /* 话题抽屉：话题 → 全部项目 → 项目详情，给「趋势话题」一条钻取路径 */
+  function openTopicDrawer(t) {
+    const repos = Array.isArray(t.repos) ? t.repos : [];
+    const metaNodes = [
+      el('span', 'badge badge--lang', `${t.repo_count} 个项目`),
+      el('span', 'dot-sep', `占全站 ${Math.round(t.share * 100)}%`),
+      el('span', 'dot-sep', `本期新增 ${fmt(t.stars_period_total)} star`),
+    ];
+
+    const body = [];
+
+    /* 语言分布用话题内全部项目现算（topics.json 的 languages 只有语言名、没有计数） */
+    const byLang = new Map();
+    for (const r of repos) {
+      const key = r.language && r.language !== '-' ? r.language : '未知';
+      byLang.set(key, (byLang.get(key) || 0) + 1);
+    }
+    if (byLang.size) {
+      body.push(el('h3', 'sec-title', '语言分布'));
+      const wrap = el('div', 'topic-langs');
+      for (const [lang, n] of [...byLang.entries()].sort((a, b) => b[1] - a[1])) {
+        const item = el('span', 'topic-lang');
+        if (lang !== '未知') item.append(langDot(lang));
+        item.append(el('span', 'topic-lang-name', lang));
+        item.append(el('span', 'topic-lang-n', String(n)));
+        wrap.append(item);
+      }
+      body.push(wrap);
+    }
+
+    body.push(el('h3', 'sec-title', `全部 ${repos.length} 个项目`));
+    body.push(el('p', 'sec-text sec-text--dim', '按本期新增 star 降序；点任意一行查看项目详情与中文解读'));
+
+    const list = el('ul', 'topic-drawer-list');
+    repos.forEach((r, i) => {
+      const li = el('li', 'topic-drawer-item');
+      li.tabIndex = 0;
+      li.setAttribute('role', 'button');
+      li.setAttribute('aria-label', `第 ${i + 1} 个：${r.full_name}，打开项目详情`);
+
+      li.append(el('span', 'tdr-rank', String(i + 1)));
+
+      const mid = el('div', 'tdr-mid');
+      const nameRow = el('div', 'tdr-name-row');
+      const nm = el('span', 'tdr-name', r.full_name);
+      nm.title = r.full_name;
+      nameRow.append(nm);
+      if (r.language && r.language !== '-') nameRow.append(el('span', 'badge badge--lang tdr-lang', r.language));
+      if (Array.isArray(r.periods) && r.periods.length) {
+        nameRow.append(el('span', 'tdr-periods', r.periods.map((p) => LABEL[p] || p).join(' / ')));
+      }
+      mid.append(nameRow);
+      if (r.description) mid.append(el('p', 'tdr-desc', r.description));
+      li.append(mid);
+
+      li.append(el('span', 'tdr-delta', `+${fmt(r.stars_period)}`));
+
+      const open = () => openDrawer({
+        full_name: r.full_name,
+        language: r.language,
+        stars_total: r.stars_total,
+        stars_period: r.stars_period,
+        description: r.description,
+      });
+      li.addEventListener('click', open);
+      li.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+      });
+      list.append(li);
+    });
+    body.push(list);
+
+    const basis = (INSIGHTS.topics && INSIGHTS.topics.basis) || '';
+    if (basis) {
+      body.push(el('h3', 'sec-title', '归类规则'));
+      body.push(el('p', 'sec-text sec-text--dim', `${basis}。同一个项目可能出现在多个话题里。`));
+    }
+
+    showDrawer({
+      eyebrow: '趋势话题 · 规则归类',
+      title: t.name,
       meta: metaNodes,
       body,
     });

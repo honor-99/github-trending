@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-12T08:00:31+08:00",
+ "generated_at": "2026-11-12T13:18:12+08:00",
  "summary": {
   "repo_count": 38,
   "index_rows": 50,
   "snapshot_count": 4,
-  "interpreted_count": 33,
+  "interpreted_count": 38,
   "first_date": "2026-11-11",
   "latest_date": "2026-11-12",
   "total_bytes": 16650

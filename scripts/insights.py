@@ -155,6 +155,7 @@ def build_topics(items: dict[str, dict]) -> dict:
             "stars_period_total": stars,
             "avg_stars_period": round(stars / len(rows)),
             "languages": sorted({r.get("language") or "?" for r in rows})[:6],
+            # 存全部项目（不只前 5）：前端话题抽屉要能列全，否则「点进去」比页面上看到的还少
             "repos": [
                 {
                     "full_name": r["full_name"],
@@ -162,8 +163,9 @@ def build_topics(items: dict[str, dict]) -> dict:
                     "stars_total": r.get("stars_total"),
                     "language": r.get("language"),
                     "periods": r.get("periods"),
+                    "description": (r.get("description") or "")[:160],
                 }
-                for r in rows[:5]
+                for r in rows
             ],
         })
 
