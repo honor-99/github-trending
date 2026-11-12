@@ -16,9 +16,10 @@
   const fmt = (n) => (n === null || n === undefined ? '—' : Number(n).toLocaleString('zh-CN'));
 
   /* ── 外观皮肤：paper（纸感浅色）/ slate（深墨精密） ── */
-  const SKINS = { paper: '纸感', slate: '深墨' };
+  const SKINS = { linear: '线性', paper: '纸感' };
+  const SKIN_ORDER = ['linear', 'paper'];
   function applySkin(skin, { persist = true } = {}) {
-    const next = SKINS[skin] ? skin : 'paper';
+    const next = SKINS[skin] ? skin : 'linear';
     document.documentElement.dataset.skin = next;
     if (persist) { try { localStorage.setItem('trend.skin', next); } catch (e) { /* 隐私模式 */ } }
     const btn = $('#skinToggle');
@@ -1124,14 +1125,15 @@
   });
 
   /* 启动 */
-  let stored = 'paper';
-  try { stored = localStorage.getItem('trend.skin') || 'paper'; } catch (e) { /* noop */ }
+  let stored = 'linear';
+  try { stored = localStorage.getItem('trend.skin') || 'linear'; } catch (e) { /* noop */ }
   applySkin(stored, { persist: false });
   const skinToggle = $('#skinToggle');
   if (skinToggle) {
     skinToggle.addEventListener('click', () => {
-      const cur = document.documentElement.dataset.skin || 'paper';
-      applySkin(cur === 'paper' ? 'slate' : 'paper');
+      const cur = document.documentElement.dataset.skin || 'linear';
+      const i = SKIN_ORDER.indexOf(cur);
+      applySkin(SKIN_ORDER[(i + 1) % SKIN_ORDER.length]);
     });
   }
 
