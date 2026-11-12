@@ -335,13 +335,11 @@
 
   /* ── 历史榜单：全部上榜项目的累计视图（按累计 star 降序）── */
   async function loadHistory() {
-    const kpis = $('#kpis');
-    kpis.innerHTML = '';
-    kpis.append(el('p', 'notice', '正在读取累计数据…'));
+    setKpiLoading(true);
     const data = await fetchJson('history.json');
     if (!data || !data.items || !data.items.length) {
-      kpis.innerHTML = '';
-      kpis.append(el('p', 'notice', 'history.json 还没生成（需先跑 scripts/history.py）。'));
+      const kpis = kpiReset();
+      if (kpis) kpis.append(el('p', 'notice', 'history.json 还没生成（需先跑 scripts/history.py）。'));
       return;
     }
     renderHistory(data);
@@ -363,8 +361,7 @@
       if (node) node.hidden = true;
     });
 
-    const kpis = $('#kpis');
-    kpis.innerHTML = '';
+    const kpis = kpiReset();
     const pc = data.period_counts || {};
     const cards = [
       { label: '累计项目', value: data.project_count, hint: '去重后的全部项目', cls: '' },
@@ -452,10 +449,37 @@
     $('#notice').hidden = true;
   }
 
+  /* 加载态：保留 4 格骨架，只切换 is-loading，KPI 条高度恒定不跳 */
+  function ensureKpiShell() {
+    const kpis = $('#kpis');
+    if (!kpis || kpis.querySelector('.kpi')) return;
+    kpis.innerHTML = '';
+    for (let i = 0; i < 4; i++) {
+      const card = el('div', 'kpi');
+      card.append(el('div', 'kpi-label', '\u00A0'));
+      card.append(el('div', 'kpi-value', '\u00A0'));
+      card.append(el('div', 'kpi-hint', '\u00A0'));
+      kpis.append(card);
+    }
+  }
+  function setKpiLoading(on) {
+    const kpis = $('#kpis');
+    if (!kpis) return;
+    if (on) ensureKpiShell();
+    kpis.classList.toggle('is-loading', on);
+  }
+  function kpiReset() {
+    const kpis = $('#kpis');
+    if (!kpis) return null;
+    kpis.innerHTML = '';
+    kpis.classList.remove('is-loading');
+    return kpis;
+  }
+
   /* 通用 KPI 渲染（新视图用，老视图保留原有实现） */
   function paintKpis(cards) {
-    const kpis = $('#kpis');
-    kpis.innerHTML = '';
+    const kpis = kpiReset();
+    if (!kpis) return;
     let delay = 0;
     for (const c of cards) {
       const card = el('div', `kpi ${c.cls || ''}`.trim());
@@ -616,12 +640,11 @@
     $('#rankHint').textContent = '全部仓库 · 按 star 总数';
     $('#ghSub').textContent = `前 ${GH_TARGET} 名 · ${GH_PAGES} 页并行`;
     setView('rank');
-    list.innerHTML = '';
+    list.classList.add('is-loading');
     if (btn) btn.disabled = true;
     $('#controlsMeta').textContent = `正在并行拉取 ${GH_PAGES} 页（每页 ${GH_PER_PAGE} 条）…`;
     const kpis = $('#kpis');
-    kpis.innerHTML = '';
-    kpis.append(el('p', 'notice', '正在拉取 api.github.com（不落盘）…'));
+    setKpiLoading(true);
 
     const pages = Array.from({ length: GH_PAGES }, (_, i) => i + 1);
     const results = await Promise.allSettled(pages.map((p) => ghFetchPage(p)));
@@ -661,7 +684,8 @@
     items.sort((a, b) => b.stargazers_count - a.stargazers_count);
 
     if (!items.length) {
-      kpis.innerHTML = '';
+      kpiReset();
+      list.classList.remove('is-loading');
       kpis.append(el('p', 'notice', `拉取失败：${(failure && failure.message) || '未知错误'}`));
       setGhStatus(rate, '拉取失败');
       notice.hidden = false;
@@ -677,13 +701,14 @@
   function renderGithub(items, meta) {
     const notice = $('#notice');
     notice.hidden = true;
+    const ghList = $('#list-github');
+    if (ghList) ghList.classList.remove('is-loading');
     const partial = meta.partial || null;
     const top = items[0];
     const last = items[items.length - 1];
     const languages = new Set(items.map((i) => i.language).filter(Boolean));
 
-    const kpis = $('#kpis');
-    kpis.innerHTML = '';
+    const kpis = kpiReset();
     const cards = [
       { label: '榜首', value: top.stargazers_count, hint: top.full_name, cls: '' },
       { label: `第 ${items.length} 名门槛`, value: last.stargazers_count, hint: `★ 至少 ${fmt(last.stargazers_count)}`, cls: 'kpi--new' },
@@ -775,18 +800,18 @@
     if (period === 'github') { loadGithub(); return; }
     if (period === 'topics') { loadTopicsView(); return; }
     if (period === 'potential') { loadPotentialView(); return; }
-    const kpis = $('#kpis');
-    kpis.innerHTML = '';
-    kpis.append(el('p', 'notice', '正在读取快照…'));
+    setKpiLoading(true);
     try {
       const res = await fetch(`data/latest-${period}.json`, { cache: 'no-store' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       render(await res.json());
     } catch (err) {
-      kpis.innerHTML = '';
-      const box = el('p', 'notice');
-      box.textContent = `读取 data/latest-${period}.json 失败（${err.message}）。请确认快照已生成。`;
-      kpis.append(box);
+      const kpis = kpiReset();
+      if (kpis) {
+        const box = el('p', 'notice');
+        box.textContent = `读取 data/latest-${period}.json 失败（${err.message}）。请确认快照已生成。`;
+        kpis.append(box);
+      }
       ['#block-new', '#block-hot', '#block-drop', '#block-empty'].forEach((s) => { $(s).hidden = true; });
     }
   }
@@ -823,8 +848,7 @@
       notice.hidden = true;
     }
 
-    const kpis = $('#kpis');
-    kpis.innerHTML = '';
+    const kpis = kpiReset();
     const cards = [
       { label: '榜单项目', value: data.signals.total, hint: PERIOD_HINT[data.period] || '', cls: '' },
       { label: '新上榜', value: data.signals.new, hint: '首次进入榜单', cls: 'kpi--new' },
