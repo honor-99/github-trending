@@ -510,7 +510,12 @@
     const data = INSIGHTS.topics;
     setView('topics');
     const meta = $('#controlsMeta');
-    if (!data || !data.topics || !data.topics.length) {
+    if (!data) {                       // insights 还没到：只显示加载骨架
+      setKpiLoading(true);
+      if (meta) meta.textContent = '正在读取话题数据…';
+      return;
+    }
+    if (!data.topics || !data.topics.length) {
       paintKpis([{ label: '状态', value: '暂无数据', hint: 'topics.json 未生成' }]);
       if (meta) meta.textContent = '暂无话题数据';
       return;
@@ -535,7 +540,12 @@
     const data = INSIGHTS.potential;
     setView('potential');
     const meta = $('#controlsMeta');
-    if (!data || !data.items || !data.items.length) {
+    if (!data) {                       // insights 还没到：只显示加载骨架
+      setKpiLoading(true);
+      if (meta) meta.textContent = '正在读取潜力数据…';
+      return;
+    }
+    if (!data.items || !data.items.length) {
       paintKpis([{ label: '状态', value: '暂无数据', hint: 'potential.json 未生成' }]);
       if (meta) meta.textContent = '暂无潜力数据';
       return;
@@ -1178,9 +1188,13 @@
   window.addEventListener('resize', moveIndicator);
 
   (async () => {
+    const period = currentPeriod();
+    // 先落 tab 与视图：慢网络下也不该让 ?p=topics 显示成日榜
+    setPeriod(period, { push: false });
     await loadInterpretations();
     await loadInsights();
-    setPeriod(currentPeriod(), { push: false });
+    // 话题/潜力视图的内容与 KPI 依赖 insights，数据到位后补一帧
+    if (viewOfPeriod(period) !== 'rank') load(period);
     moveIndicator();
     window.addEventListener('load', moveIndicator);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveIndicator);
