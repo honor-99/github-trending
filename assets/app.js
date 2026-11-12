@@ -49,12 +49,40 @@
   }
 
   /* 名次标签：#N 是 GitHub Trending 总榜的原始名次，不是列表内序号 —— 用 title/aria 说清楚 */
-  function rankTag(rank, scope) {
+  function rankTag(rank, scope, change, kind) {
+    const wrap = el('div', 'rank-cell');
     const node = el('span', 'rank', `#${rank}`);
     const where = scope === '上期' ? '上一期榜单' : '本期榜单';
     node.title = `GitHub Trending 总榜${scope === '上期' ? '（上一期）' : ''}第 ${rank} 名 —— 这是该项目的原始名次，不是本列表内的序号`;
     node.setAttribute('aria-label', `${where}第 ${rank} 名`);
-    return node;
+    wrap.append(node);
+    /* 名次变化：正数向上、负数向下，null 视为第一次上榜 */
+    if (scope !== '上期') {
+      if (change === null || change === undefined) {
+        if (kind === 'new') wrap.append(el('span', 'rank-move rank-move--new', 'NEW'));
+      } else if (change > 0) {
+        wrap.append(el('span', 'rank-move rank-move--up', `↑${change}`));
+      } else if (change < 0) {
+        wrap.append(el('span', 'rank-move rank-move--down', `↓${Math.abs(change)}`));
+      } else {
+        wrap.append(el('span', 'rank-move rank-move--flat', '—'));
+      }
+    }
+    return wrap;
+  }
+
+  /* 右列：本期新增（大字号差值 + 细增量条） */
+  function deltaCell(value, max) {
+    const cell = el('div', 'delta');
+    if (value === null || value === undefined) {
+      cell.append(el('span', 'delta-num delta-num--dim', '—'));
+      cell.append(el('span', 'delta-label', '本期'));
+      return cell;
+    }
+    cell.append(el('span', 'delta-num', `+${fmt(value)}`));
+    cell.append(el('span', 'delta-label', '本期新增'));
+    cell.append(gainBar(value, max || 1));
+    return cell;
   }
 
   function currentPeriod() {
@@ -212,7 +240,6 @@
       const main = el('div', 'item-main');
       const nameRow = el('div', 'name-row');
       nameRow.append(el('span', 'name', it.full_name));
-      nameRow.append(el('span', 'score', it.score.toFixed(1)));
       main.append(nameRow);
 
       const meta = el('div', 'meta');
@@ -232,6 +259,12 @@
 
       if (it.reasons && it.reasons.length) main.append(el('p', 'desc', it.reasons.slice(0, 2).join(' · ')));
       li.append(main);
+
+      /* 潜力分放到右列（与榜单的「本期新增」同位置），不再挤在名称后面 */
+      const scoreCell = el('div', 'delta');
+      scoreCell.append(el('span', 'delta-num', it.score.toFixed(1)));
+      scoreCell.append(el('span', 'delta-label', '潜力分'));
+      li.append(scoreCell);
 
       const open = () => openDrawer(it);
       li.addEventListener('click', open);
@@ -978,10 +1011,22 @@
     li.setAttribute('aria-label', `查看 ${it.full_name} 详情`);
     li.dataset.name = it.full_name;
 
-    li.append(rankTag(it.rank, '本期'));
+    li.append(rankTag(it.rank, '本期', it.rank_change, kind));
 
     const main = el('div', 'item-main');
-    main.append(el('span', 'name', it.full_name));
+
+    /* 名称行：项目名 + 行内状态标（原来是甩在右侧列，密排后挤进名称行） */
+    const nameRow = el('div', 'name-row');
+    const nameNode = el('span', 'name', it.full_name);
+    nameNode.title = it.full_name;   // 单行省略时鼠标悬停可看全名
+    nameRow.append(nameNode);
+    const flags = el('span', 'flags');
+    if (kind === 'new') flags.append(el('span', 'badge badge--new', '新上榜'));
+    if (kind === 'hot' && it.streak > 1) flags.append(el('span', 'badge badge--hot', `连 ${it.streak} 期`));
+    if (hasNotes) flags.append(el('span', 'badge badge--ai', '解读'));
+    if (flags.childElementCount) nameRow.append(flags);
+    main.append(nameRow);
+
     if (it.description) main.append(el('p', 'desc', it.description));
 
     const meta = el('div', 'meta');
@@ -989,22 +1034,12 @@
       meta.append(langDot(it.language));
       meta.append(el('span', 'badge badge--lang', it.language));
     }
-    meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
-    if (it.stars_period !== null && it.stars_period !== undefined) {
-      meta.append(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
-      meta.append(gainBar(it.stars_period || 0, maxGain || 1));
-    }
-    if (it.rank_change !== null && it.rank_change !== undefined && it.rank_change !== 0) {
-      const up = it.rank_change > 0;
-      meta.append(el('span', `badge ${up ? 'badge--up' : 'badge--down'}`,
-        `${up ? '↑' : '↓'} ${Math.abs(it.rank_change)} 位`));
-    }
-    if (hasNotes) meta.append(el('span', 'badge badge--ai', '中文解读'));
+    meta.append(el('span', 'dot-sep', `★ ${fmt(it.stars_total)}`));
     main.append(meta);
     li.append(main);
 
-    if (kind === 'hot' && it.streak > 1) li.append(el('span', 'badge badge--hot', `连续 ${it.streak} 次`));
-    else if (kind === 'new') li.append(el('span', 'badge badge--new', '新上榜'));
+    /* 右列：本期新增做成列表里最容易被扫到的数字 */
+    li.append(deltaCell(it.stars_period, maxGain));
 
     const open = () => openDrawer(it);
     li.addEventListener('click', open);

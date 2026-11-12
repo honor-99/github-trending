@@ -1234,3 +1234,88 @@ html[data-skin="linear"] .block-refresh:hover:not(:disabled) {
   html[data-skin="linear"] .segmented button { padding: 6px 10px; font-size: 11.5px; }
   html[data-skin="linear"] .kpi:first-child .kpi-value { font-size: 30px; }
 }
+
+/* ════════════════════════════════════════════════════════════
+   条目密排 · 方向 A（2026-11-12）
+   ─ 左：名次 + 名次变化　中：名称行 + 单行描述 + 元信息　右：本期新增
+   ─ 目标行高 72–84px（原来 103px），让列表读起来像榜单而不是博客
+   ════════════════════════════════════════════════════════════ */
+.rank-cell { display: grid; gap: 2px; align-content: center; justify-items: start; }
+.rank-move {
+  font-family: var(--mono); font-size: 9px; font-weight: 500; line-height: 1;
+  letter-spacing: .02em; color: var(--muted); font-variant-numeric: tabular-nums;
+}
+.rank-move--up { color: var(--new); }
+.rank-move--down { color: var(--hot); }
+.rank-move--new { color: var(--accent); letter-spacing: .06em; }
+.rank-move--flat { color: var(--line-strong); }
+
+.name-row { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.name-row .name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.flags { display: inline-flex; align-items: center; gap: 4px; flex: none; }
+.flags .badge { font-size: 9.5px; line-height: 15px; padding: 0 6px; }
+
+.delta { display: grid; gap: 3px; justify-items: end; text-align: right; flex: none; }
+.delta-num {
+  font-family: var(--num-font); font-size: 14px; font-weight: 600;
+  letter-spacing: -.012em; font-variant-numeric: tabular-nums; color: var(--ink);
+  line-height: 1.1;
+}
+.delta-num--dim { color: var(--muted); }
+.delta-label {
+  font-family: var(--mono); font-size: 8.5px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted); line-height: 1;
+}
+.delta .gain-bar { width: 66px; }
+
+/* 描述压到一行（首条两行），这是行高从 103px 降到 ~80px 的关键 */
+.desc { -webkit-line-clamp: 1; }
+.item--lead .desc { -webkit-line-clamp: 2; }
+
+html[data-skin="linear"] .item {
+  grid-template-columns: 30px minmax(0, 1fr) 104px;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 10px 10px;
+}
+html[data-skin="linear"] .item-main { gap: 3px; }
+html[data-skin="linear"] .item--lead { padding-top: 12px; padding-bottom: 13px; }
+html[data-skin="linear"] .item--lead .name { font-size: 15.5px; }
+html[data-skin="linear"] .item--lead::after { display: none; }
+html[data-skin="linear"] .rank-cell .rank { font-size: 11.5px; }
+html[data-skin="linear"] .flags .badge { box-shadow: none; }
+
+/* 历史榜单 / GitHub 总榜：右侧是 star 总数，列宽对齐差值列 */
+html[data-skin="linear"] .item > .stars-count { width: 104px; }
+html[data-skin="linear"] .item > .badge { justify-self: end; }
+
+@media (max-width: 820px) {
+  .item, html[data-skin="linear"] .item {
+    grid-template-columns: 26px minmax(0, 1fr);
+    align-items: start;
+  }
+  .item > .delta, .item > .stars-count,
+  html[data-skin="linear"] .item > .stars-count {
+    grid-column: 2; justify-items: start; justify-self: start;
+    text-align: left; width: auto;
+  }
+  .delta { display: flex; align-items: baseline; gap: 7px; margin-top: 2px; }
+  .delta .gain-bar { width: 52px; order: 3; }
+  .delta-label { font-size: 9px; }
+  .name-row .name { white-space: normal; }
+  .item > .badge { grid-column: 2; justify-self: start; }
+}
+
+@media (max-width: 560px) {
+  /* 手机上描述最多两行，避免行高飙到 140px+ */
+  .desc, .item--lead .desc { -webkit-line-clamp: 2; }
+  html[data-skin="linear"] .item { padding: 8px 8px 9px; }
+}
+
+@media (max-width: 820px) {
+  /* 手机上右列差值折到第二行，行间距收紧 */
+  .item, html[data-skin="linear"] .item { row-gap: 3px; }
+}
+
+/* 潜力观察右侧评分、掉榜右侧标签：贴齐列尾 */
+.item > .score, .item > .badge { justify-self: end; }
