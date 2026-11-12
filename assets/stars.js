@@ -2,9 +2,12 @@
 (() => {
   'use strict';
 
-  /* star > 1000 的仓库共 6 万多个，取 sort=stars 的前 100（per_page 上限 = 100 = 1 次请求） */
-  const API = 'https://api.github.com/search/repositories'
-    + '?q=stars:%3E1000&sort=stars&order=desc&per_page=100';
+  /* star > 1000 的仓库共 6 万多个；每页 100 条是 API 上限，300 条 = 3 次请求 */
+  const API_BASE = 'https://api.github.com/search/repositories'
+    + '?q=stars:%3E1000&sort=stars&order=desc';
+  const PER_PAGE = 100;
+  const PAGES = 3;
+  const TARGET = PER_PAGE * PAGES;
 
   const $ = (sel) => document.querySelector(sel);
   const fmt = (n) => (n === null || n === undefined ? '—' : Number(n).toLocaleString('zh-CN'));
@@ -117,6 +120,7 @@
   function render(items, meta) {
     const notice = $('#notice');
     notice.hidden = true;
+    const partial = meta.partial || null;
 
     const languages = new Set(items.map((i) => i.language).filter(Boolean));
     const top = items[0];
@@ -128,10 +132,19 @@
       { label: '覆盖语言', value: languages.size, hint: `${items.length} 个项目的去重语言数` },
     ]);
 
-    $('#status').textContent = `拉取于 ${new Date().toLocaleTimeString('zh-CN', { hour12: false })} · ${items.length} 条`;
+    const stamp = new Date().toLocaleTimeString('zh-CN', { hour12: false });
+    $('#status').textContent = partial
+      ? `拉取于 ${stamp} · ${items.length}/${TARGET} 条（第 ${partial.page} 页失败）`
+      : `拉取于 ${stamp} · ${items.length} 条`;
     $('#colHint').textContent = `第 1–${items.length} 名 · 实时`;
     $('#footSource').textContent =
       `数据来源：GitHub 官方搜索 API · 命中 ${fmt(meta.total)} 个 star>1000 的仓库 · 本页展示前 ${items.length} 名`;
+
+    if (partial) {
+      notice.hidden = false;
+      notice.textContent = `只拉到 ${items.length} 条：第 ${partial.page} 页请求失败（${partial.message}）。`
+        + '点右上「重新拉取」可补全，或等一分钟限额窗口重置。';
+    }
 
     const list = $('#starList');
     list.innerHTML = '';
@@ -181,6 +194,28 @@
     });
   }
 
+  /* 拉一页：100 条，返回 { items, total, rate } */
+  async function fetchPage(page) {
+    const res = await fetch(`${API_BASE}&per_page=${PER_PAGE}&page=${page}`, {
+      headers: { Accept: 'application/vnd.github+json' },
+      cache: 'no-store',
+    });
+    const rate = readRate(res.headers);
+    setRate({ limit: rate.limit, remaining: rate.remaining, reset: rate.reset });
+
+    if (!res.ok) {
+      let msg = `HTTP ${res.status}`;
+      try {
+        const body = await res.json();
+        if (body && body.message) msg = body.message;
+      } catch (e) { /* 非 JSON 响应 */ }
+      throw new Error(msg);
+    }
+    const data = await res.json();
+    if (!data.items || !data.items.length) throw new Error('API 返回 0 条结果');
+    return { items: data.items, total: data.total_count };
+  }
+
   async function load() {
     const status = $('#status');
     const notice = $('#notice');
@@ -189,28 +224,47 @@
     status.textContent = '正在请求 api.github.com…';
     $('#reloadBtn').disabled = true;
     list.innerHTML = '';
-    setKpis([{ label: '状态', value: '读取中', hint: 'api.github.com', cls: '' }]);
+    setKpis([{ label: '状态', value: '读取中', hint: `并行 ${PAGES} 页 · 每页 ${PER_PAGE}`, cls: '' }]);
+
+    /* 每页 100 条的响应体很大（约 0.5MB），串行拉 3 页要等三次往返 → 并行，再对失败页重试一次 */
+    const pages = Array.from({ length: PAGES }, (_, i) => i + 1);
+    status.textContent = `正在并行拉取 ${PAGES} 页（每页 ${PER_PAGE} 条）…`;
+    const results = await Promise.allSettled(pages.map((p) => fetchPage(p)));
+
+    const failedIdx = results.map((r, i) => (r.status === 'rejected' ? i : -1)).filter((i) => i >= 0);
+    if (failedIdx.length) {
+      status.textContent = `有 ${failedIdx.length} 页失败，正在重试…`;
+      for (const i of failedIdx) {
+        try {
+          results[i] = { status: 'fulfilled', value: await fetchPage(pages[i]) };
+        } catch (err) {
+          results[i] = { status: 'rejected', reason: err };
+        }
+      }
+    }
+
+    const seen = new Set();
+    const items = [];
+    let total = null;
+    let failure = null;
+    results.forEach((r, i) => {
+      if (r.status === 'fulfilled') {
+        if (total === null) total = r.value.total;
+        for (const it of r.value.items) {
+          if (seen.has(it.full_name)) continue; // 翻页边界可能重复，去重兜底
+          seen.add(it.full_name);
+          items.push(it);
+        }
+      } else if (!failure) {
+        failure = { page: pages[i], message: (r.reason && r.reason.message) || '请求失败' };
+      }
+    });
+    /* 缺页时排序可避免名次错乱 */
+    items.sort((a, b) => b.stargazers_count - a.stargazers_count);
 
     try {
-      const res = await fetch(API, {
-        headers: { Accept: 'application/vnd.github+json' },
-        cache: 'no-store',
-      });
-      const rate = readRate(res.headers);
-      setRate({ limit: rate.limit, remaining: rate.remaining, reset: rate.reset });
-
-      if (!res.ok) {
-        let msg = `HTTP ${res.status}`;
-        try {
-          const body = await res.json();
-          if (body && body.message) msg = body.message;
-        } catch (e) { /* 非 JSON 响应 */ }
-        throw new Error(msg);
-      }
-
-      const data = await res.json();
-      if (!data.items || !data.items.length) throw new Error('API 返回 0 条结果');
-      render(data.items, { total: data.total_count });
+      if (!items.length) throw new Error((failure && failure.message) || 'API 返回 0 条结果');
+      render(items, { total: total || 0, partial: failure });
     } catch (err) {
       status.textContent = '拉取失败';
       setKpis([{ label: '状态', value: '失败', hint: err.message.slice(0, 40), cls: '' }]);
