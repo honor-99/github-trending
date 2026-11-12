@@ -824,3 +824,40 @@ html[data-skin="paper"] .topic-bar, html[data-skin="paper"] .topic-fill { border
   }
   html { scroll-behavior: auto; }
 }
+
+/* ════════ Star 总榜（独立页面 · 浏览器端直连 API · 不归档）════════ */
+/* 双类名提高特异性，避免被 ≤1180 / ≤820 的 .board-grid 单列/双列规则覆盖 */
+.board-grid.board-grid--single { grid-template-columns: 1fr; gap: 0; }
+.board-grid.board-grid--single > .col { padding: 0; }
+
+.stars-count {
+  justify-self: end; text-align: right;
+  font-family: var(--mono); font-size: 14px; font-weight: 600;
+  letter-spacing: -.01em; font-variant-numeric: tabular-nums; color: var(--ink);
+  padding-top: 2px; white-space: nowrap;
+}
+.stars-count small {
+  display: block; margin-top: 2px;
+  font-size: 9px; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--muted);
+}
+.item--lead .stars-count { font-size: 16px; }
+.item--clickable:hover .stars-count { color: var(--accent); }
+
+#rateStatus.is-low { color: var(--hot); }
+#rateStatus.is-empty { color: var(--accent); }
+
+@media (max-width: 520px) {
+  .stars-count { font-size: 12px; }
+  .stars-count small { letter-spacing: .08em; }
+}
+
+/* ≤820 时 .item 收成两列（24px + 1fr），star 数改到名称下方一行显示 */
+@media (max-width: 820px) {
+  .item > .stars-count {
+    grid-column: 2; justify-self: start; text-align: left; padding-top: 0;
+  }
+  .stars-count { font-size: 12.5px; }
+  .stars-count small { display: inline; margin: 0 0 0 4px; letter-spacing: .1em; }
+  .item--lead .stars-count { font-size: 14px; }
+}
