@@ -1,4 +1,54 @@
 {
+ "Alishahryar1/free-claude-code": {
+  "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+  "first_seen": "2026-11-13",
+  "full_name": "Alishahryar1/free-claude-code",
+  "history": [
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 6,
+    "stars_period": 415,
+    "stars_total": 69269
+   }
+  ],
+  "language": "Python",
+  "last_seen": "2026-11-13",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-13",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/Alishahryar1/free-claude-code"
+ },
+ "CopilotKit/OpenBot": {
+  "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+  "first_seen": "2026-11-13",
+  "full_name": "CopilotKit/OpenBot",
+  "history": [
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 298,
+    "stars_total": 11581
+   }
+  ],
+  "language": "TypeScript",
+  "last_seen": "2026-11-13",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-13",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/CopilotKit/OpenBot"
+ },
  "D4Vinci/Scrapling": {
   "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
   "first_seen": "2026-11-11",
@@ -50,7 +100,7 @@
   "url": "https://github.com/Donchitos/Claude-Code-Game-Studios"
  },
  "GoogleChrome/modern-web-guidance-src": {
-  "description": "",
+  "description": "Keep your coding agent up to date with the latest web best practices",
   "first_seen": "2026-11-12",
   "full_name": "GoogleChrome/modern-web-guidance-src",
   "history": [
@@ -60,18 +110,25 @@
     "rank": 8,
     "stars_period": 159,
     "stars_total": 1725
+   },
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 739,
+    "stars_total": 2872
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-13",
   "periods": {
    "daily": {
-    "last_date": "2026-11-12",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-13",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
  },
  "HKUDS/DeepTutor": {
@@ -174,6 +231,31 @@
   "times_on_board": 1,
   "url": "https://github.com/Nutlope/hallmark"
  },
+ "QwenLM/qwen-code": {
+  "description": "An open-source AI coding agent that lives in your terminal.",
+  "first_seen": "2026-11-13",
+  "full_name": "QwenLM/qwen-code",
+  "history": [
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 10,
+    "stars_period": 151,
+    "stars_total": 29787
+   }
+  ],
+  "language": "TypeScript",
+  "last_seen": "2026-11-13",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-13",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/QwenLM/qwen-code"
+ },
  "The-PR-Agent/pr-agent": {
   "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
   "first_seen": "2026-11-11",
@@ -267,18 +349,25 @@
     "rank": 3,
     "stars_period": 787,
     "stars_total": 115918
+   },
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 3,
+    "stars_period": 816,
+    "stars_total": 116655
    }
   ],
   "language": "JavaScript",
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-13",
   "periods": {
    "daily": {
-    "last_date": "2026-11-12",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-13",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/addyosmani/agent-skills"
  },
  "anomalyco/hex": {
@@ -418,6 +507,31 @@
   "times_on_board": 2,
   "url": "https://github.com/anthropics/skills"
  },
+ "ashhart/TensorFold": {
+  "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+  "first_seen": "2026-11-13",
+  "full_name": "ashhart/TensorFold",
+  "history": [
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 13,
+    "stars_period": 54,
+    "stars_total": 1928
+   }
+  ],
+  "language": "Zig",
+  "last_seen": "2026-11-13",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-13",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/ashhart/TensorFold"
+ },
  "cloudflare/security-audit-skill": {
   "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
   "first_seen": "2026-11-11",
@@ -479,6 +593,31 @@
   },
   "times_on_board": 1,
   "url": "https://github.com/debpalash/VoiceStudio"
+ },
+ "ggml-org/llama.cpp": {
+  "description": "LLM inference in C/C++",
+  "first_seen": "2026-11-13",
+  "full_name": "ggml-org/llama.cpp",
+  "history": [
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 9,
+    "stars_period": 176,
+    "stars_total": 134539
+   }
+  ],
+  "language": "C++",
+  "last_seen": "2026-11-13",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-13",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/ggml-org/llama.cpp"
  },
  "google-deepmind/mujoco": {
   "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
@@ -642,18 +781,25 @@
     "rank": 1,
     "stars_period": 2776,
     "stars_total": 24921
+   },
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 1,
+    "stars_period": 1830,
+    "stars_total": 26494
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-13",
   "periods": {
    "daily": {
-    "last_date": "2026-11-12",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-13",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/meta/astryx"
  },
  "milind-soni/OpenMausBot": {
@@ -706,6 +852,56 @@
   "times_on_board": 1,
   "url": "https://github.com/morluto/rea"
  },
+ "nodejs/node": {
+  "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+  "first_seen": "2026-11-13",
+  "full_name": "nodejs/node",
+  "history": [
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 12,
+    "stars_period": 62,
+    "stars_total": 123592
+   }
+  ],
+  "language": "JavaScript",
+  "last_seen": "2026-11-13",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-13",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/nodejs/node"
+ },
+ "nvm-sh/nvm": {
+  "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+  "first_seen": "2026-11-13",
+  "full_name": "nvm-sh/nvm",
+  "history": [
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 63,
+    "stars_total": 96005
+   }
+  ],
+  "language": "Shell",
+  "last_seen": "2026-11-13",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-13",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/nvm-sh/nvm"
+ },
  "openai/codex-security": {
   "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
   "first_seen": "2026-11-12",
@@ -717,18 +913,25 @@
     "rank": 9,
     "stars_period": 52,
     "stars_total": 11695
+   },
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 5,
+    "stars_period": 643,
+    "stars_total": 12398
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-13",
   "periods": {
    "daily": {
-    "last_date": "2026-11-12",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-13",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/openai/codex-security"
  },
  "pbakaus/impeccable": {
@@ -792,6 +995,31 @@
   },
   "times_on_board": 2,
   "url": "https://github.com/pingdotgg/t3code"
+ },
+ "pookjw/HermesEnabler": {
+  "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+  "first_seen": "2026-11-13",
+  "full_name": "pookjw/HermesEnabler",
+  "history": [
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 218,
+    "stars_total": 1520
+   }
+  ],
+  "language": "Objective-C",
+  "last_seen": "2026-11-13",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-13",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/pookjw/HermesEnabler"
  },
  "ranxianglei/billion-context": {
   "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
@@ -1054,18 +1282,25 @@
     "rank": 2,
     "stars_period": 1078,
     "stars_total": 12934
+   },
+   {
+    "date": "2026-11-13",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 967,
+    "stars_total": 13889
    }
   ],
   "language": "Ruby",
-  "last_seen": "2026-11-12",
+  "last_seen": "2026-11-13",
   "periods": {
    "daily": {
-    "last_date": "2026-11-12",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-13",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/we-promise/sure"
  }
 }

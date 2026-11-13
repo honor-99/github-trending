@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-12T13:18:12+08:00",
+ "generated_at": "2026-11-13T08:00:06+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
- "project_count": 34,
+ "project_count": 38,
  "topics": [
   {
    "name": "AI Agent / 编码助手",
-   "repo_count": 20,
-   "share": 0.588,
-   "stars_period_total": 541455,
-   "avg_stars_period": 27073,
+   "repo_count": 23,
+   "share": 0.605,
+   "stars_period_total": 544985,
+   "avg_stars_period": 23695,
    "languages": [
     "CSS",
     "JavaScript",
@@ -151,14 +151,14 @@
      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy."
     },
     {
-     "full_name": "meta/astryx",
-     "stars_period": 2776,
-     "stars_total": 24921,
-     "language": "TypeScript",
+     "full_name": "vercel-labs/agent-browser",
+     "stars_period": 3606,
+     "stars_total": 49292,
+     "language": "Rust",
      "periods": [
-      "daily"
+      "weekly"
      ],
-     "description": "An open source design system that's fully customizable and agent ready"
+     "description": "Browser automation CLI for AI agents"
     },
     {
      "full_name": "max-sixty/worktrunk",
@@ -169,6 +169,16 @@
       "weekly"
      ],
      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows"
+    },
+    {
+     "full_name": "meta/astryx",
+     "stars_period": 1830,
+     "stars_total": 26494,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "An open source design system that's fully customizable and agent ready"
     },
     {
      "full_name": "The-PR-Agent/pr-agent",
@@ -182,8 +192,8 @@
     },
     {
      "full_name": "addyosmani/agent-skills",
-     "stars_period": 787,
-     "stars_total": 115918,
+     "stars_period": 816,
+     "stars_total": 116655,
      "language": "JavaScript",
      "periods": [
       "daily"
@@ -191,46 +201,64 @@
      "description": "Production-grade engineering skills for AI coding agents."
     },
     {
-     "full_name": "vercel-labs/agent-browser",
-     "stars_period": 708,
-     "stars_total": 49846,
-     "language": "Rust",
-     "periods": [
-      "daily",
-      "weekly"
-     ],
-     "description": "Browser automation CLI for AI agents"
-    },
-    {
-     "full_name": "homeassistant-ai/ha-mcp",
-     "stars_period": 645,
-     "stars_total": 7345,
-     "language": "Python",
+     "full_name": "GoogleChrome/modern-web-guidance-src",
+     "stars_period": 739,
+     "stars_total": 2872,
+     "language": "TypeScript",
      "periods": [
       "daily"
      ],
-     "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants."
+     "description": "Keep your coding agent up to date with the latest web best practices"
     },
     {
      "full_name": "openai/codex-security",
-     "stars_period": 52,
-     "stars_total": 11695,
+     "stars_period": 643,
+     "stars_total": 12398,
      "language": "TypeScript",
      "periods": [
       "daily"
      ],
      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-se"
+    },
+    {
+     "full_name": "Alishahryar1/free-claude-code",
+     "stars_period": 415,
+     "stars_total": 69269,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and n"
+    },
+    {
+     "full_name": "CopilotKit/OpenBot",
+     "stars_period": 298,
+     "stars_total": 11581,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Brin"
+    },
+    {
+     "full_name": "QwenLM/qwen-code",
+     "stars_period": 151,
+     "stars_total": 29787,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "An open-source AI coding agent that lives in your terminal."
     }
    ]
   },
   {
    "name": "安全 / 逆向",
-   "repo_count": 7,
-   "share": 0.206,
-   "stars_period_total": 464507,
-   "avg_stars_period": 66358,
+   "repo_count": 6,
+   "share": 0.158,
+   "stars_period_total": 464737,
+   "avg_stars_period": 77456,
    "languages": [
-    "-",
     "Java",
     "JavaScript",
     "Rust",
@@ -289,19 +317,9 @@
      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings"
     },
     {
-     "full_name": "shadcn/improve",
-     "stars_period": 361,
-     "stars_total": 10845,
-     "language": "-",
-     "periods": [
-      "daily"
-     ],
-     "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute."
-    },
-    {
      "full_name": "openai/codex-security",
-     "stars_period": 52,
-     "stars_total": 11695,
+     "stars_period": 643,
+     "stars_total": 12398,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -312,10 +330,10 @@
   },
   {
    "name": "自动化 / 效率",
-   "repo_count": 7,
-   "share": 0.206,
-   "stars_period_total": 34666,
-   "avg_stars_period": 4952,
+   "repo_count": 6,
+   "share": 0.158,
+   "stars_period_total": 36939,
+   "avg_stars_period": 6156,
    "languages": [
     "Python",
     "Rust",
@@ -354,6 +372,16 @@
      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy."
     },
     {
+     "full_name": "vercel-labs/agent-browser",
+     "stars_period": 3606,
+     "stars_total": 49292,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Browser automation CLI for AI agents"
+    },
+    {
      "full_name": "max-sixty/worktrunk",
      "stars_period": 2093,
      "stars_total": 12406,
@@ -364,112 +392,28 @@
      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows"
     },
     {
-     "full_name": "vercel-labs/agent-browser",
-     "stars_period": 708,
-     "stars_total": 49846,
-     "language": "Rust",
-     "periods": [
-      "daily",
-      "weekly"
-     ],
-     "description": "Browser automation CLI for AI agents"
-    },
-    {
-     "full_name": "homeassistant-ai/ha-mcp",
-     "stars_period": 645,
-     "stars_total": 7345,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants."
-    },
-    {
-     "full_name": "ZhuLinsen/daily_stock_analysis",
-     "stars_period": 278,
-     "stars_total": 70194,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
-    }
-   ]
-  },
-  {
-   "name": "其他 / 未归类",
-   "repo_count": 5,
-   "share": 0.147,
-   "stars_period_total": 22218,
-   "avg_stars_period": 4444,
-   "languages": [
-    "Java",
-    "Ruby",
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "pingdotgg/t3code",
-     "stars_period": 11979,
-     "stars_total": 55860,
-     "language": "TypeScript",
-     "periods": [
-      "monthly",
-      "weekly"
-     ],
-     "description": ""
-    },
-    {
-     "full_name": "milind-soni/OpenMausBot",
-     "stars_period": 8951,
-     "stars_total": 20707,
-     "language": "TypeScript",
-     "periods": [
-      "weekly"
-     ],
-     "description": "Open-source Grok Bot alternative with a virtual machine that bots can use"
-    },
-    {
-     "full_name": "we-promise/sure",
-     "stars_period": 1078,
-     "stars_total": 12934,
-     "language": "Ruby",
-     "periods": [
-      "daily"
-     ],
-     "description": "The personal finance app for everyone (by everyone)"
-    },
-    {
-     "full_name": "GoogleChrome/modern-web-guidance-src",
-     "stars_period": 159,
-     "stars_total": 1725,
+     "full_name": "CopilotKit/OpenBot",
+     "stars_period": 298,
+     "stars_total": 11581,
      "language": "TypeScript",
      "periods": [
       "daily"
      ],
-     "description": ""
-    },
-    {
-     "full_name": "TheAlgorithms/Java",
-     "stars_period": 51,
-     "stars_total": 67006,
-     "language": "Java",
-     "periods": [
-      "daily"
-     ],
-     "description": "All Algorithms implemented in Java"
+     "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Brin"
     }
    ]
   },
   {
    "name": "LLM / 模型与推理",
-   "repo_count": 4,
-   "share": 0.118,
-   "stars_period_total": 32790,
-   "avg_stars_period": 8198,
+   "repo_count": 6,
+   "share": 0.158,
+   "stars_period_total": 32893,
+   "avg_stars_period": 5482,
    "languages": [
+    "C++",
     "Python",
-    "TypeScript"
+    "TypeScript",
+    "Zig"
    ],
    "repos": [
     {
@@ -503,24 +447,45 @@
      "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer t"
     },
     {
-     "full_name": "ZhuLinsen/daily_stock_analysis",
-     "stars_period": 278,
-     "stars_total": 70194,
-     "language": "Python",
+     "full_name": "ggml-org/llama.cpp",
+     "stars_period": 176,
+     "stars_total": 134539,
+     "language": "C++",
      "periods": [
       "daily"
      ],
-     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
+     "description": "LLM inference in C/C++"
+    },
+    {
+     "full_name": "QwenLM/qwen-code",
+     "stars_period": 151,
+     "stars_total": 29787,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "An open-source AI coding agent that lives in your terminal."
+    },
+    {
+     "full_name": "ashhart/TensorFold",
+     "stars_period": 54,
+     "stars_total": 1928,
+     "language": "Zig",
+     "periods": [
+      "daily"
+     ],
+     "description": "LLM Inference Engine for Metal, CUDA and Vulkan."
     }
    ]
   },
   {
    "name": "CLI / 开发者工具",
-   "repo_count": 4,
-   "share": 0.118,
-   "stars_period_total": 12355,
-   "avg_stars_period": 3089,
+   "repo_count": 6,
+   "share": 0.158,
+   "stars_period_total": 16410,
+   "avg_stars_period": 2735,
    "languages": [
+    "Python",
     "Rust",
     "TypeScript"
    ],
@@ -536,6 +501,16 @@
      "description": "Computer use CLI for AI agents"
     },
     {
+     "full_name": "vercel-labs/agent-browser",
+     "stars_period": 3606,
+     "stars_total": 49292,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Browser automation CLI for AI agents"
+    },
+    {
      "full_name": "max-sixty/worktrunk",
      "stars_period": 2093,
      "stars_total": 12406,
@@ -546,34 +521,109 @@
      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows"
     },
     {
-     "full_name": "vercel-labs/agent-browser",
-     "stars_period": 708,
-     "stars_total": 49846,
-     "language": "Rust",
-     "periods": [
-      "daily",
-      "weekly"
-     ],
-     "description": "Browser automation CLI for AI agents"
-    },
-    {
      "full_name": "openai/codex-security",
-     "stars_period": 52,
-     "stars_total": 11695,
+     "stars_period": 643,
+     "stars_total": 12398,
      "language": "TypeScript",
      "periods": [
       "daily"
      ],
      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-se"
+    },
+    {
+     "full_name": "Alishahryar1/free-claude-code",
+     "stars_period": 415,
+     "stars_total": 69269,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and n"
+    },
+    {
+     "full_name": "QwenLM/qwen-code",
+     "stars_period": 151,
+     "stars_total": 29787,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "An open-source AI coding agent that lives in your terminal."
+    }
+   ]
+  },
+  {
+   "name": "其他 / 未归类",
+   "repo_count": 5,
+   "share": 0.132,
+   "stars_period_total": 22178,
+   "avg_stars_period": 4436,
+   "languages": [
+    "Objective-C",
+    "Ruby",
+    "Shell",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "pingdotgg/t3code",
+     "stars_period": 11979,
+     "stars_total": 55860,
+     "language": "TypeScript",
+     "periods": [
+      "monthly",
+      "weekly"
+     ],
+     "description": ""
+    },
+    {
+     "full_name": "milind-soni/OpenMausBot",
+     "stars_period": 8951,
+     "stars_total": 20707,
+     "language": "TypeScript",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Open-source Grok Bot alternative with a virtual machine that bots can use"
+    },
+    {
+     "full_name": "we-promise/sure",
+     "stars_period": 967,
+     "stars_total": 13889,
+     "language": "Ruby",
+     "periods": [
+      "daily"
+     ],
+     "description": "The personal finance app for everyone (by everyone)"
+    },
+    {
+     "full_name": "pookjw/HermesEnabler",
+     "stars_period": 218,
+     "stars_total": 1520,
+     "language": "Objective-C",
+     "periods": [
+      "daily"
+     ],
+     "description": "Enable Hermès Watch Faces on any Apple Watch devices"
+    },
+    {
+     "full_name": "nvm-sh/nvm",
+     "stars_period": 63,
+     "stars_total": 96005,
+     "language": "Shell",
+     "periods": [
+      "daily"
+     ],
+     "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions."
     }
    ]
   },
   {
    "name": "音视频 / 多模态",
-   "repo_count": 3,
-   "share": 0.088,
-   "stars_period_total": 74972,
-   "avg_stars_period": 24991,
+   "repo_count": 4,
+   "share": 0.105,
+   "stars_period_total": 75387,
+   "avg_stars_period": 18847,
    "languages": [
     "Python",
     "Rust",
@@ -609,13 +659,23 @@
       "weekly"
      ],
      "description": "Local voice dictation for mac, windows and linux"
+    },
+    {
+     "full_name": "Alishahryar1/free-claude-code",
+     "stars_period": 415,
+     "stars_total": 69269,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and n"
     }
    ]
   },
   {
    "name": "学习 / 知识管理",
    "repo_count": 2,
-   "share": 0.059,
+   "share": 0.053,
    "stars_period_total": 23951,
    "avg_stars_period": 11976,
    "languages": [
@@ -647,7 +707,7 @@
   {
    "name": "数据 / 爬虫",
    "repo_count": 1,
-   "share": 0.029,
+   "share": 0.026,
    "stars_period_total": 7291,
    "avg_stars_period": 7291,
    "languages": [
@@ -669,7 +729,7 @@
   {
    "name": "游戏 / 图形",
    "repo_count": 1,
-   "share": 0.029,
+   "share": 0.026,
    "stars_period_total": 3730,
    "avg_stars_period": 3730,
    "languages": [
@@ -691,22 +751,44 @@
   {
    "name": "前端 / 设计系统",
    "repo_count": 1,
-   "share": 0.029,
-   "stars_period_total": 2776,
-   "avg_stars_period": 2776,
+   "share": 0.026,
+   "stars_period_total": 1830,
+   "avg_stars_period": 1830,
    "languages": [
     "TypeScript"
    ],
    "repos": [
     {
      "full_name": "meta/astryx",
-     "stars_period": 2776,
-     "stars_total": 24921,
+     "stars_period": 1830,
+     "stars_total": 26494,
      "language": "TypeScript",
      "periods": [
       "daily"
      ],
      "description": "An open source design system that's fully customizable and agent ready"
+    }
+   ]
+  },
+  {
+   "name": "后端 / 基础设施",
+   "repo_count": 1,
+   "share": 0.026,
+   "stars_period_total": 62,
+   "avg_stars_period": 62,
+   "languages": [
+    "JavaScript"
+   ],
+   "repos": [
+    {
+     "full_name": "nodejs/node",
+     "stars_period": 62,
+     "stars_total": 123592,
+     "language": "JavaScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "Node.js JavaScript runtime ✨🐢🚀✨"
     }
    ]
   }

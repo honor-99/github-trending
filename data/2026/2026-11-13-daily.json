@@ -1,0 +1,127 @@
+{
+ "period": "daily",
+ "lang": null,
+ "date": "2026-11-13",
+ "fetched_at": "2026-11-13T08:00:06+08:00",
+ "source": "https://github.com/trending?since=daily",
+ "count": 13,
+ "items": [
+  {
+   "rank": 1,
+   "full_name": "meta/astryx",
+   "stars_period": 1830,
+   "stars_total": 26494,
+   "language": "TypeScript",
+   "url": "https://github.com/meta/astryx",
+   "description": "An open source design system that's fully customizable and agent ready"
+  },
+  {
+   "rank": 2,
+   "full_name": "we-promise/sure",
+   "stars_period": 967,
+   "stars_total": 13889,
+   "language": "Ruby",
+   "url": "https://github.com/we-promise/sure",
+   "description": "The personal finance app for everyone (by everyone)"
+  },
+  {
+   "rank": 3,
+   "full_name": "addyosmani/agent-skills",
+   "stars_period": 816,
+   "stars_total": 116655,
+   "language": "JavaScript",
+   "url": "https://github.com/addyosmani/agent-skills",
+   "description": "Production-grade engineering skills for AI coding agents."
+  },
+  {
+   "rank": 4,
+   "full_name": "GoogleChrome/modern-web-guidance-src",
+   "stars_period": 739,
+   "stars_total": 2872,
+   "language": "TypeScript",
+   "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+   "description": "Keep your coding agent up to date with the latest web best practices"
+  },
+  {
+   "rank": 5,
+   "full_name": "openai/codex-security",
+   "stars_period": 643,
+   "stars_total": 12398,
+   "language": "TypeScript",
+   "url": "https://github.com/openai/codex-security",
+   "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security"
+  },
+  {
+   "rank": 6,
+   "full_name": "Alishahryar1/free-claude-code",
+   "stars_period": 415,
+   "stars_total": 69269,
+   "language": "Python",
+   "url": "https://github.com/Alishahryar1/free-claude-code",
+   "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)"
+  },
+  {
+   "rank": 7,
+   "full_name": "CopilotKit/OpenBot",
+   "stars_period": 298,
+   "stars_total": 11581,
+   "language": "TypeScript",
+   "url": "https://github.com/CopilotKit/OpenBot",
+   "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent."
+  },
+  {
+   "rank": 8,
+   "full_name": "pookjw/HermesEnabler",
+   "stars_period": 218,
+   "stars_total": 1520,
+   "language": "Objective-C",
+   "url": "https://github.com/pookjw/HermesEnabler",
+   "description": "Enable Hermès Watch Faces on any Apple Watch devices"
+  },
+  {
+   "rank": 9,
+   "full_name": "ggml-org/llama.cpp",
+   "stars_period": 176,
+   "stars_total": 134539,
+   "language": "C++",
+   "url": "https://github.com/ggml-org/llama.cpp",
+   "description": "LLM inference in C/C++"
+  },
+  {
+   "rank": 10,
+   "full_name": "QwenLM/qwen-code",
+   "stars_period": 151,
+   "stars_total": 29787,
+   "language": "TypeScript",
+   "url": "https://github.com/QwenLM/qwen-code",
+   "description": "An open-source AI coding agent that lives in your terminal."
+  },
+  {
+   "rank": 11,
+   "full_name": "nvm-sh/nvm",
+   "stars_period": 63,
+   "stars_total": 96005,
+   "language": "Shell",
+   "url": "https://github.com/nvm-sh/nvm",
+   "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions."
+  },
+  {
+   "rank": 12,
+   "full_name": "nodejs/node",
+   "stars_period": 62,
+   "stars_total": 123592,
+   "language": "JavaScript",
+   "url": "https://github.com/nodejs/node",
+   "description": "Node.js JavaScript runtime ✨🐢🚀✨"
+  },
+  {
+   "rank": 13,
+   "full_name": "ashhart/TensorFold",
+   "stars_period": 54,
+   "stars_total": 1928,
+   "language": "Zig",
+   "url": "https://github.com/ashhart/TensorFold",
+   "description": "LLM Inference Engine for Metal, CUDA and Vulkan."
+  }
+ ]
+}

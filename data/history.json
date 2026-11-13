@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-12T08:43:36+08:00",
+ "generated_at": "2026-11-13T08:00:06+08:00",
  "basis": "所有日/周/月快照里出现过的项目去重并集，按累计 star 总量降序（取最近一次上榜时的值）",
  "sort_key": "stars_total",
- "project_count": 38,
- "index_rows": 50,
- "snapshot_count": 4,
+ "project_count": 46,
+ "index_rows": 63,
+ "snapshot_count": 5,
  "first_date": "2026-11-11",
- "latest_date": "2026-11-12",
+ "latest_date": "2026-11-13",
  "period_counts": {
-  "daily": 2,
+  "daily": 3,
   "weekly": 1,
   "monthly": 1
  },
@@ -90,14 +90,60 @@
    "place": 3
   },
   {
+   "full_name": "ggml-org/llama.cpp",
+   "url": "https://github.com/ggml-org/llama.cpp",
+   "description": "LLM inference in C/C++",
+   "language": "C++",
+   "stars_total": 134539,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 176,
+   "appearances": 1,
+   "best_rank": 9,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "place": 4
+  },
+  {
+   "full_name": "nodejs/node",
+   "url": "https://github.com/nodejs/node",
+   "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+   "language": "JavaScript",
+   "stars_total": 123592,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 62,
+   "appearances": 1,
+   "best_rank": 12,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "place": 5
+  },
+  {
    "full_name": "addyosmani/agent-skills",
    "url": "https://github.com/addyosmani/agent-skills",
    "description": "Production-grade engineering skills for AI coding agents.",
    "language": "JavaScript",
-   "stars_total": 115918,
-   "stars_total_date": "2026-11-12",
-   "stars_period_sum": 1252,
-   "appearances": 2,
+   "stars_total": 116655,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 2068,
+   "appearances": 3,
    "best_rank": 3,
    "periods": [
     "daily"
@@ -106,11 +152,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 2
+    "daily": 3
    },
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-12",
-   "place": 4
+   "last_seen": "2026-11-13",
+   "place": 6
   },
   {
    "full_name": "thedotmack/claude-mem",
@@ -136,7 +182,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 5
+   "place": 7
   },
   {
    "full_name": "sherlock-project/sherlock",
@@ -159,7 +205,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 6
+   "place": 8
   },
   {
    "full_name": "pbakaus/impeccable",
@@ -182,7 +228,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 7
+   "place": 9
   },
   {
    "full_name": "debpalash/VoiceStudio",
@@ -205,7 +251,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 8
+   "place": 10
   },
   {
    "full_name": "D4Vinci/Scrapling",
@@ -228,7 +274,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 9
+   "place": 11
   },
   {
    "full_name": "NationalSecurityAgency/ghidra",
@@ -251,7 +297,30 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 10
+   "place": 12
+  },
+  {
+   "full_name": "nvm-sh/nvm",
+   "url": "https://github.com/nvm-sh/nvm",
+   "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+   "language": "Shell",
+   "stars_total": 96005,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 63,
+   "appearances": 1,
+   "best_rank": 11,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "place": 13
   },
   {
    "full_name": "heygen-com/hyperframes",
@@ -274,7 +343,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 11
+   "place": 14
   },
   {
    "full_name": "ZhuLinsen/daily_stock_analysis",
@@ -297,7 +366,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 12
+   "place": 15
   },
   {
    "full_name": "cloudflare/security-audit-skill",
@@ -323,7 +392,30 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 13
+   "place": 16
+  },
+  {
+   "full_name": "Alishahryar1/free-claude-code",
+   "url": "https://github.com/Alishahryar1/free-claude-code",
+   "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+   "language": "Python",
+   "stars_total": 69269,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 415,
+   "appearances": 1,
+   "best_rank": 6,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "place": 17
   },
   {
    "full_name": "TheAlgorithms/Java",
@@ -346,7 +438,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 14
+   "place": 18
   },
   {
    "full_name": "HKUDS/DeepTutor",
@@ -369,7 +461,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 15
+   "place": 19
   },
   {
    "full_name": "pingdotgg/t3code",
@@ -395,7 +487,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 16
+   "place": 20
   },
   {
    "full_name": "Nutlope/hallmark",
@@ -418,7 +510,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 17
+   "place": 21
   },
   {
    "full_name": "tashfeenahmed/freellmapi",
@@ -441,7 +533,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 18
+   "place": 22
   },
   {
    "full_name": "vercel-labs/agent-browser",
@@ -467,7 +559,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 19
+   "place": 23
   },
   {
    "full_name": "anthropics/claude-plugins-official",
@@ -490,7 +582,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 20
+   "place": 24
   },
   {
    "full_name": "Donchitos/Claude-Code-Game-Studios",
@@ -513,7 +605,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 21
+   "place": 25
   },
   {
    "full_name": "anthropics/knowledge-work-plugins",
@@ -536,17 +628,40 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 22
+   "place": 26
+  },
+  {
+   "full_name": "QwenLM/qwen-code",
+   "url": "https://github.com/QwenLM/qwen-code",
+   "description": "An open-source AI coding agent that lives in your terminal.",
+   "language": "TypeScript",
+   "stars_total": 29787,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 151,
+   "appearances": 1,
+   "best_rank": 10,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "place": 27
   },
   {
    "full_name": "meta/astryx",
    "url": "https://github.com/meta/astryx",
    "description": "An open source design system that's fully customizable and agent ready",
    "language": "TypeScript",
-   "stars_total": 24921,
-   "stars_total_date": "2026-11-12",
-   "stars_period_sum": 5884,
-   "appearances": 2,
+   "stars_total": 26494,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 7714,
+   "appearances": 3,
    "best_rank": 1,
    "periods": [
     "daily"
@@ -555,11 +670,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 2
+    "daily": 3
    },
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-12",
-   "place": 23
+   "last_seen": "2026-11-13",
+   "place": 28
   },
   {
    "full_name": "vercel-labs/agent-desktop",
@@ -582,7 +697,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 24
+   "place": 29
   },
   {
    "full_name": "milind-soni/OpenMausBot",
@@ -605,7 +720,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 25
+   "place": 30
   },
   {
    "full_name": "anthropics/claude-quickstarts",
@@ -628,7 +743,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 26
+   "place": 31
   },
   {
    "full_name": "google-deepmind/mujoco",
@@ -651,7 +766,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 27
+   "place": 32
   },
   {
    "full_name": "The-PR-Agent/pr-agent",
@@ -674,17 +789,17 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 28
+   "place": 33
   },
   {
    "full_name": "we-promise/sure",
    "url": "https://github.com/we-promise/sure",
    "description": "The personal finance app for everyone (by everyone)",
    "language": "Ruby",
-   "stars_total": 12934,
-   "stars_total_date": "2026-11-12",
-   "stars_period_sum": 1237,
-   "appearances": 2,
+   "stars_total": 13889,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 2204,
+   "appearances": 3,
    "best_rank": 2,
    "periods": [
     "daily"
@@ -693,11 +808,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 2
+    "daily": 3
    },
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-12",
-   "place": 29
+   "last_seen": "2026-11-13",
+   "place": 34
   },
   {
    "full_name": "max-sixty/worktrunk",
@@ -720,18 +835,41 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 30
+   "place": 35
   },
   {
    "full_name": "openai/codex-security",
    "url": "https://github.com/openai/codex-security",
    "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
    "language": "TypeScript",
-   "stars_total": 11695,
-   "stars_total_date": "2026-11-12",
-   "stars_period_sum": 52,
+   "stars_total": 12398,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 695,
+   "appearances": 2,
+   "best_rank": 5,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
+   "place": 36
+  },
+  {
+   "full_name": "CopilotKit/OpenBot",
+   "url": "https://github.com/CopilotKit/OpenBot",
+   "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+   "language": "TypeScript",
+   "stars_total": 11581,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 298,
    "appearances": 1,
-   "best_rank": 9,
+   "best_rank": 7,
    "periods": [
     "daily"
    ],
@@ -741,9 +879,9 @@
    "times_by_period": {
     "daily": 1
    },
-   "first_seen": "2026-11-12",
-   "last_seen": "2026-11-12",
-   "place": 31
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "place": 37
   },
   {
    "full_name": "NVIDIA/auto-ontology",
@@ -766,7 +904,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 32
+   "place": 38
   },
   {
    "full_name": "shadcn/improve",
@@ -789,7 +927,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 33
+   "place": 39
   },
   {
    "full_name": "homeassistant-ai/ha-mcp",
@@ -812,7 +950,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-12",
-   "place": 34
+   "place": 40
   },
   {
    "full_name": "tokio-rs/topcoat",
@@ -835,7 +973,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 35
+   "place": 41
   },
   {
    "full_name": "ranxianglei/billion-context",
@@ -861,7 +999,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 36
+   "place": 42
   },
   {
    "full_name": "anomalyco/hex",
@@ -884,16 +1022,62 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 37
+   "place": 43
   },
   {
    "full_name": "GoogleChrome/modern-web-guidance-src",
    "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
-   "description": "",
+   "description": "Keep your coding agent up to date with the latest web best practices",
    "language": "TypeScript",
-   "stars_total": 1725,
-   "stars_total_date": "2026-11-12",
-   "stars_period_sum": 159,
+   "stars_total": 2872,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 898,
+   "appearances": 2,
+   "best_rank": 4,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-12",
+   "last_seen": "2026-11-13",
+   "place": 44
+  },
+  {
+   "full_name": "ashhart/TensorFold",
+   "url": "https://github.com/ashhart/TensorFold",
+   "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+   "language": "Zig",
+   "stars_total": 1928,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 54,
+   "appearances": 1,
+   "best_rank": 13,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "place": 45
+  },
+  {
+   "full_name": "pookjw/HermesEnabler",
+   "url": "https://github.com/pookjw/HermesEnabler",
+   "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+   "language": "Objective-C",
+   "stars_total": 1520,
+   "stars_total_date": "2026-11-13",
+   "stars_period_sum": 218,
    "appearances": 1,
    "best_rank": 8,
    "periods": [
@@ -905,9 +1089,9 @@
    "times_by_period": {
     "daily": 1
    },
-   "first_seen": "2026-11-12",
-   "last_seen": "2026-11-12",
-   "place": 38
+   "first_seen": "2026-11-13",
+   "last_seen": "2026-11-13",
+   "place": 46
   }
  ]
 }

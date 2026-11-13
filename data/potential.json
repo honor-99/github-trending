@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-12T13:18:12+08:00",
+ "generated_at": "2026-11-13T08:00:06+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
- "candidate_count": 28,
- "excluded_count": 6,
+ "candidate_count": 30,
+ "excluded_count": 8,
  "items": [
   {
    "full_name": "ranxianglei/billion-context",
@@ -21,6 +21,25 @@
     "刚进榜单，还没被反复曝光",
     "体量仅 6,378 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "GoogleChrome/modern-web-guidance-src",
+   "score": 96.0,
+   "stars_period": 739,
+   "stars_total": 2872,
+   "growth": 0.3465,
+   "language": "TypeScript",
+   "description": "Keep your coding agent up to date with the latest web best practices",
+   "periods": [
+    "daily"
+   ],
+   "streak": 2,
+   "reasons": [
+    "本期 +739 star，相当于存量的 34.6%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 2,872 star，向上空间大",
+    "连续 2 期在榜，热度不是一次性"
    ]
   },
   {
@@ -131,24 +150,6 @@
    "streak": 1,
    "reasons": [
     "本期 +6,844 star，相当于存量的 24.0%",
-    "刚进榜单，还没被反复曝光",
-    "单期绝对增量超过 2,000，属于爆发型"
-   ]
-  },
-  {
-   "full_name": "anthropics/claude-plugins-official",
-   "score": 70.9,
-   "stars_period": 9346,
-   "stars_total": 46789,
-   "growth": 0.2496,
-   "language": "Python",
-   "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
-   "periods": [
-    "monthly"
-   ],
-   "streak": 1,
-   "reasons": [
-    "本期 +9,346 star，相当于存量的 25.0%",
     "刚进榜单，还没被反复曝光",
     "单期绝对增量超过 2,000，属于爆发型"
    ]
