@@ -101,15 +101,17 @@
 
   const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function countUp(node, target) {
+  function countUp(node, target, from) {
     const value = Number(target);
+    const start0 = Number(from);
     if (REDUCED || !Number.isFinite(value)) { node.textContent = String(target); return; }
+    const base = Number.isFinite(start0) ? start0 : 0;
     const duration = 620;
     const start = performance.now();
     const tick = (now) => {
       const p = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      node.textContent = String(Math.round(value * eased));
+      node.textContent = String(Math.round(base + (value - base) * eased));
       if (p < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
@@ -692,6 +694,7 @@
     return { items: data.items, total: data.total_count, rate };
   }
 
+  /* ── GitHub 总榜：串行逐页拉取（每页 100 条），拉到一页就先渲染一页 ── */
   async function loadGithub() {
     const list = $('#list-github');
     const notice = $('#notice');
@@ -704,161 +707,184 @@
     });
     $('#rankTitle').textContent = 'GitHub 总榜';
     $('#rankHint').textContent = '全部仓库 · 按 star 总数';
-    $('#ghSub').textContent = `前 ${GH_TARGET} 名 · ${GH_PAGES} 页并行`;
+    $('#ghSub').textContent = `前 ${GH_TARGET} 名 · ${GH_PAGES} 页逐页加载`;
     setView('rank');
     list.classList.add('is-loading');
     if (btn) btn.disabled = true;
-    $('#controlsMeta').textContent = `正在并行拉取 ${GH_PAGES} 页（每页 ${GH_PER_PAGE} 条）…`;
-    const kpis = $('#kpis');
     setKpiLoading(true);
-
-    const pages = Array.from({ length: GH_PAGES }, (_, i) => i + 1);
-    const results = await Promise.allSettled(pages.map((p) => ghFetchPage(p)));
-
-    const failedIdx = results.map((r, i) => (r.status === 'rejected' ? i : -1)).filter((i) => i >= 0);
-    if (failedIdx.length) {
-      $('#controlsMeta').textContent = `有 ${failedIdx.length} 页失败，正在重试…`;
-      for (const i of failedIdx) {
-        try {
-          results[i] = { status: 'fulfilled', value: await ghFetchPage(pages[i]) };
-        } catch (err) {
-          results[i] = { status: 'rejected', reason: err };
-        }
-      }
-    }
+    setGhStatus(null, `正在拉取第 1/${GH_PAGES} 页（每页 ${GH_PER_PAGE} 条）…`);
 
     const seen = new Set();
     const items = [];
     let total = null;
     let rate = null;
-    let failure = null;
-    results.forEach((r, i) => {
-      if (r.status === 'fulfilled') {
-        if (total === null) total = r.value.total;
-        if (r.value.rate) rate = r.value.rate;
-        for (const it of r.value.items) {
-          if (seen.has(it.full_name)) continue;
-          seen.add(it.full_name);
-          items.push(it);
-        }
-      } else if (!failure) {
-        const reason = r.reason || {};
-        failure = { page: pages[i], message: reason.message || '请求失败' };
-        if (reason.rate) rate = reason.rate;
+    let rendered = 0;
+    let partial = null;
+
+    for (let page = 1; page <= GH_PAGES; page++) {
+      setGhStatus(rate, rendered
+        ? `已显示 ${rendered} 条 · 正在拉取第 ${page}/${GH_PAGES} 页…`
+        : `正在拉取第 ${page}/${GH_PAGES} 页（每页 ${GH_PER_PAGE} 条）…`);
+
+      let got = null;
+      let err = null;
+      try {
+        got = await ghFetchPage(page);
+      } catch (e) {
+        err = e;
       }
-    });
-    items.sort((a, b) => b.stargazers_count - a.stargazers_count);
+      if (err) {
+        /* 单页失败先重试一次；仍失败就保留已完成的那几页，不再往后拉 */
+        setGhStatus(err.rate || rate, `第 ${page} 页失败 · 正在重试…`);
+        try {
+          got = await ghFetchPage(page);
+        } catch (e) {
+          err = e;
+        }
+      }
+      if (!got) {
+        const reason = err || {};
+        if (reason.rate) rate = reason.rate;
+        partial = { page, message: reason.message || '请求失败' };
+        break;
+      }
+
+      if (total === null) total = got.total;
+      if (got.rate) rate = got.rate;
+      for (const it of got.items) {
+        if (seen.has(it.full_name)) continue;
+        seen.add(it.full_name);
+        items.push(it);
+      }
+
+      /* 首页到手就立刻上屏，后面几页只做追加 */
+      const first = rendered === 0;
+      if (first) {
+        /* 旧列表撑到第一页到手再替换，避免清空后页面先塌成一条 */
+        list.innerHTML = '';
+        list.classList.remove('is-loading');
+      }
+      ghPaintKpis(items, total || 0, first);
+      ghAppendRows(list, items.slice(rendered), rendered);
+      rendered = items.length;
+      $('#ghSub').textContent = `${rendered} 条 · star > 1000 共 ${fmt(total || 0)} 个`;
+    }
 
     if (!items.length) {
       kpiReset();
       list.classList.remove('is-loading');
-      kpis.append(el('p', 'notice', `拉取失败：${(failure && failure.message) || '未知错误'}`));
+      const kpis = $('#kpis');
+      if (kpis) kpis.append(el('p', 'notice', `拉取失败：${(partial && partial.message) || '未知错误'}`));
       setGhStatus(rate, '拉取失败');
       notice.hidden = false;
-      notice.textContent = `GitHub 总榜拉取失败：${(failure && failure.message) || '未知错误'}`
+      notice.textContent = `GitHub 总榜拉取失败：${(partial && partial.message) || '未知错误'}`
         + '。点「重新拉取」重试，或等一分钟限额窗口重置。';
       if (btn) btn.disabled = false;
       return;
     }
-    renderGithub(items, { total: total || 0, rate, partial: failure });
-    if (btn) btn.disabled = false;
-  }
-
-  function renderGithub(items, meta) {
-    const notice = $('#notice');
-    notice.hidden = true;
-    const ghList = $('#list-github');
-    if (ghList) ghList.classList.remove('is-loading');
-    const partial = meta.partial || null;
-    const top = items[0];
-    const last = items[items.length - 1];
-    const languages = new Set(items.map((i) => i.language).filter(Boolean));
-
-    const kpis = kpiReset();
-    const cards = [
-      { label: '榜首', value: top.stargazers_count, hint: top.full_name, cls: '' },
-      { label: `第 ${items.length} 名门槛`, value: last.stargazers_count, hint: `★ 至少 ${fmt(last.stargazers_count)}`, cls: 'kpi--new' },
-      { label: '全站命中', value: meta.total, hint: 'star > 1,000 的仓库总数', cls: '' },
-      { label: '覆盖语言', value: languages.size, hint: `${items.length} 个项目的去重语言数`, cls: '' },
-    ];
-    let kpiDelay = 0;
-    for (const c of cards) {
-      const card = el('div', `kpi ${c.cls}`.trim());
-      card.append(el('div', 'kpi-label', c.label));
-      const valueNode = el('div', 'kpi-value', '0');
-      card.append(valueNode);
-      card.append(el('div', 'kpi-hint', c.hint));
-      kpis.append(card);
-      const delay = kpiDelay;
-      setTimeout(() => countUp(valueNode, c.value), delay);
-      kpiDelay += 70;
-    }
 
     const stamp = new Date().toLocaleTimeString('zh-CN', { hour12: false });
-    $('#ghSub').textContent = `${items.length} 条 · star > 1000 共 ${fmt(meta.total)} 个`;
-    setGhStatus(meta.rate, partial ? `第 ${partial.page} 页失败` : `${stamp} 拉取`);
+    setGhStatus(rate, partial ? `第 ${partial.page} 页失败` : `${stamp} 拉取`);
+    $('#ghSub').textContent = `${items.length} 条 · star > 1000 共 ${fmt(total || 0)} 个`;
     $('#footSource').textContent =
-      `GitHub 总榜 · 前端直连 api.github.com（${GH_PAGES} 次请求，不落盘）`
-      + ` · 命中 ${fmt(meta.total)} 个 star>1000 的仓库 · 显示前 ${items.length} 名`;
+      `GitHub 总榜 · 前端直连 api.github.com（最多 ${GH_PAGES} 次请求，逐页串行，不落盘）`
+      + ` · 命中 ${fmt(total || 0)} 个 star>1000 的仓库 · 显示前 ${items.length} 名`;
 
     if (partial) {
       notice.hidden = false;
       notice.textContent = `只拉到 ${items.length} 条：第 ${partial.page} 页请求失败（${partial.message}）。`
         + '点「重新拉取」可补全，或等一分钟限额窗口重置。';
     }
+    if (btn) btn.disabled = false;
+  }
 
-    const list = $('#list-github');
-    list.innerHTML = '';
-    items.forEach((it, i) => {
-      const li = el('li', `item item--clickable${i === 0 ? ' item--lead' : ''}`);
-      li.style.setProperty('--i', String(Math.min(i, 24)));
+  function ghKpiCards(items, total) {
+    const top = items[0];
+    const last = items[items.length - 1];
+    const languages = new Set(items.map((i) => i.language).filter(Boolean));
+    return [
+      { label: '榜首', value: top.stargazers_count, hint: top.full_name, cls: '' },
+      { label: `第 ${items.length} 名门槛`, value: last.stargazers_count, hint: `★ 至少 ${fmt(last.stargazers_count)}`, cls: 'kpi--new' },
+      { label: '全站命中', value: total, hint: 'star > 1,000 的仓库总数', cls: '' },
+      { label: '覆盖语言', value: languages.size, hint: `${items.length} 个项目的去重语言数`, cls: '' },
+    ];
+  }
 
-      const main = el('div', 'item-main');
-      main.append(el('span', 'name', it.full_name));
-      if (it.description) main.append(el('p', 'desc', it.description));
-
-      const m = el('div', 'meta');
-      if (it.language) {
-        m.append(langDot(it.language));
-        m.append(el('span', 'badge badge--lang', it.language));
-      }
-      m.append(el('span', 'dot-sep', `${fmt(it.forks_count)} forks`));
-      if (it.open_issues_count !== undefined) {
-        m.append(el('span', 'dot-sep', `${fmt(it.open_issues_count)} issues`));
-      }
-      if (it.created_at) m.append(el('span', 'badge badge--period', `建仓 ${it.created_at.slice(0, 4)}`));
-      if (it.license && it.license.spdx_id && it.license.spdx_id !== 'NOASSERTION') {
-        m.append(el('span', 'dot-sep', it.license.spdx_id));
-      }
-      if (it.pushed_at) m.append(el('span', 'dot-sep', `更新 ${ghAgo(it.pushed_at)}`));
-      main.append(m);
-
-      const rank = el('span', 'rank', String(i + 1).padStart(2, '0'));
-      rank.title = `按 star 总数排序第 ${i + 1} 名`;
-      li.append(rank);
-      li.append(main);
-
-      const count = el('span', 'stars-count');
-      count.append(el('span', '', `★ ${fmt(it.stargazers_count)}`));
-      count.append(el('small', '', 'stars'));
-      li.append(count);
-
-      li.tabIndex = 0;
-      li.setAttribute('role', 'button');
-      li.setAttribute('aria-label', `查看 ${it.full_name} 详情`);
-      const open = () => openDrawer({
-        full_name: it.full_name,
-        url: it.html_url,
-        language: it.language,
-        stars_total: it.stargazers_count,
-        description: it.description,
-      });
-      li.addEventListener('click', open);
-      li.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
-      });
-      list.append(li);
+  /* 后续页追加时不重建卡片，只把数值从当前值补间到新值，避免整块闪一下 */
+  function ghPaintKpis(items, total, first) {
+    const cards = ghKpiCards(items, total);
+    if (first) { paintKpis(cards); return; }
+    const kpis = $('#kpis');
+    const nodes = kpis ? Array.from(kpis.querySelectorAll('.kpi')) : [];
+    if (nodes.length !== cards.length) { paintKpis(cards); return; }
+    cards.forEach((c, i) => {
+      const card = nodes[i];
+      const labelNode = card.querySelector('.kpi-label');
+      const valueNode = card.querySelector('.kpi-value');
+      const hintNode = card.querySelector('.kpi-hint');
+      if (labelNode && labelNode.textContent !== c.label) labelNode.textContent = c.label;
+      if (hintNode && hintNode.textContent !== c.hint) hintNode.textContent = c.hint;
+      if (!valueNode) return;
+      const current = Number(String(valueNode.textContent).replace(/[^\d.-]/g, ''));
+      countUp(valueNode, c.value, Number.isFinite(current) ? current : 0);
     });
+  }
+
+  function ghAppendRows(list, items, offset) {
+    const frag = document.createDocumentFragment();
+    items.forEach((it, i) => frag.append(ghBuildRow(it, offset + i, i)));
+    list.append(frag);
+  }
+
+  function ghBuildRow(it, i, stagger) {
+    const li = el('li', `item item--clickable${i === 0 ? ' item--lead' : ''}`);
+    li.style.setProperty('--i', String(Math.min(stagger === undefined ? i : stagger, 8)));
+
+    const main = el('div', 'item-main');
+    main.append(el('span', 'name', it.full_name));
+    if (it.description) main.append(el('p', 'desc', it.description));
+
+    const m = el('div', 'meta');
+    if (it.language) {
+      m.append(langDot(it.language));
+      m.append(el('span', 'badge badge--lang', it.language));
+    }
+    m.append(el('span', 'dot-sep', `${fmt(it.forks_count)} forks`));
+    if (it.open_issues_count !== undefined) {
+      m.append(el('span', 'dot-sep', `${fmt(it.open_issues_count)} issues`));
+    }
+    if (it.created_at) m.append(el('span', 'badge badge--period', `建仓 ${it.created_at.slice(0, 4)}`));
+    if (it.license && it.license.spdx_id && it.license.spdx_id !== 'NOASSERTION') {
+      m.append(el('span', 'dot-sep', it.license.spdx_id));
+    }
+    if (it.pushed_at) m.append(el('span', 'dot-sep', `更新 ${ghAgo(it.pushed_at)}`));
+    main.append(m);
+
+    const rank = el('span', 'rank', String(i + 1).padStart(2, '0'));
+    rank.title = `按 star 总数排序第 ${i + 1} 名`;
+    li.append(rank);
+    li.append(main);
+
+    const count = el('span', 'stars-count');
+    count.append(el('span', '', `★ ${fmt(it.stargazers_count)}`));
+    count.append(el('small', '', 'stars'));
+    li.append(count);
+
+    li.tabIndex = 0;
+    li.setAttribute('role', 'button');
+    li.setAttribute('aria-label', `查看 ${it.full_name} 详情`);
+    const open = () => openDrawer({
+      full_name: it.full_name,
+      url: it.html_url,
+      language: it.language,
+      stars_total: it.stargazers_count,
+      description: it.description,
+    });
+    li.addEventListener('click', open);
+    li.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+    return li;
   }
 
   async function load(period) {
