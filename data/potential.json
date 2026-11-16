@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-13T08:00:06+08:00",
+ "generated_at": "2026-11-16T09:30:10+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
- "candidate_count": 30,
- "excluded_count": 8,
+ "candidate_count": 31,
+ "excluded_count": 5,
  "items": [
   {
    "full_name": "ranxianglei/billion-context",
@@ -25,114 +25,115 @@
   },
   {
    "full_name": "GoogleChrome/modern-web-guidance-src",
-   "score": 96.0,
-   "stars_period": 739,
-   "stars_total": 2872,
-   "growth": 0.3465,
+   "score": 90.6,
+   "stars_period": 1219,
+   "stars_total": 7206,
+   "growth": 0.2036,
    "language": "TypeScript",
    "description": "Keep your coding agent up to date with the latest web best practices",
    "periods": [
     "daily"
    ],
-   "streak": 2,
+   "streak": 3,
    "reasons": [
-    "本期 +739 star，相当于存量的 34.6%",
+    "本期 +1,219 star，相当于存量的 20.4%",
     "刚进榜单，还没被反复曝光",
-    "体量仅 2,872 star，向上空间大",
-    "连续 2 期在榜，热度不是一次性"
-   ]
-  },
-  {
-   "full_name": "NVIDIA/auto-ontology",
-   "score": 95.4,
-   "stars_period": 9621,
-   "stars_total": 11491,
-   "growth": 5.1449,
-   "language": "Python",
-   "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
-   "periods": [
-    "weekly"
-   ],
-   "streak": 1,
-   "reasons": [
-    "本期 +9,621 star，相当于存量的 514.5%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 11,491 star，向上空间大",
-    "单期绝对增量超过 2,000，属于爆发型"
-   ]
-  },
-  {
-   "full_name": "anomalyco/hex",
-   "score": 92.1,
-   "stars_period": 1839,
-   "stars_total": 6221,
-   "growth": 0.4197,
-   "language": "Rust",
-   "description": "Local voice dictation for mac, windows and linux",
-   "periods": [
-    "weekly"
-   ],
-   "streak": 1,
-   "reasons": [
-    "本期 +1,839 star，相当于存量的 42.0%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 6,221 star，向上空间大"
+    "体量仅 7,206 star，向上空间大",
+    "连续 3 期在榜，热度不是一次性"
    ]
   },
   {
    "full_name": "milind-soni/OpenMausBot",
-   "score": 88.8,
-   "stars_period": 8951,
-   "stars_total": 20707,
-   "growth": 0.7614,
+   "score": 90.0,
+   "stars_period": 5463,
+   "stars_total": 23436,
+   "growth": 0.304,
    "language": "TypeScript",
    "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
    "periods": [
     "weekly"
    ],
-   "streak": 1,
+   "streak": 2,
    "reasons": [
-    "本期 +8,951 star，相当于存量的 76.1%",
+    "本期 +5,463 star，相当于存量的 30.4%",
     "刚进榜单，还没被反复曝光",
-    "体量仅 20,707 star，向上空间大",
+    "体量仅 23,436 star，向上空间大",
+    "连续 2 期在榜，热度不是一次性",
     "单期绝对增量超过 2,000，属于爆发型"
    ]
   },
   {
-   "full_name": "vercel-labs/agent-desktop",
-   "score": 88.5,
-   "stars_period": 9502,
-   "stars_total": 21456,
-   "growth": 0.7949,
-   "language": "Rust",
-   "description": "Computer use CLI for AI agents",
+   "full_name": "we-promise/sure",
+   "score": 89.6,
+   "stars_period": 4556,
+   "stars_total": 15720,
+   "growth": 0.4081,
+   "language": "Ruby",
+   "description": "The personal finance app for everyone (by everyone)",
    "periods": [
     "weekly"
    ],
    "streak": 1,
    "reasons": [
-    "本期 +9,502 star，相当于存量的 79.5%",
+    "本期 +4,556 star，相当于存量的 40.8%",
     "刚进榜单，还没被反复曝光",
-    "体量仅 21,456 star，向上空间大",
+    "体量仅 15,720 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
    ]
   },
   {
-   "full_name": "max-sixty/worktrunk",
-   "score": 78.7,
-   "stars_period": 2093,
-   "stars_total": 12406,
-   "growth": 0.2029,
-   "language": "Rust",
-   "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+   "full_name": "Tencent/LoopForge",
+   "score": 88.8,
+   "stars_period": 423,
+   "stars_total": 1525,
+   "growth": 0.3838,
+   "language": "Go",
+   "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+   "periods": [
+    "daily"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +423 star，相当于存量的 38.4%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 1,525 star，向上空间大"
+   ]
+  },
+  {
+   "full_name": "google/elephant-goldfish-model",
+   "score": 87.3,
+   "stars_period": 5060,
+   "stars_total": 19793,
+   "growth": 0.3434,
+   "language": "Python",
+   "description": "Open-source plugin for designing and reviewing software with agents",
    "periods": [
     "weekly"
    ],
    "streak": 1,
    "reasons": [
-    "本期 +2,093 star，相当于存量的 20.3%",
+    "本期 +5,060 star，相当于存量的 34.3%",
     "刚进榜单，还没被反复曝光",
-    "体量仅 12,406 star，向上空间大",
+    "体量仅 19,793 star，向上空间大",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "meta/astryx",
+   "score": 83.6,
+   "stars_period": 13501,
+   "stars_total": 28896,
+   "growth": 0.877,
+   "language": "TypeScript",
+   "description": "An open source design system that's fully customizable and agent ready",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +13,501 star，相当于存量的 87.7%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 28,896 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
    ]
   },

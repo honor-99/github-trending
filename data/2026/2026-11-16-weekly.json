@@ -1,0 +1,109 @@
+{
+ "period": "weekly",
+ "lang": null,
+ "date": "2026-11-16",
+ "fetched_at": "2026-11-16T09:30:10+08:00",
+ "source": "https://github.com/trending?since=weekly",
+ "count": 11,
+ "items": [
+  {
+   "rank": 1,
+   "full_name": "meta/astryx",
+   "stars_period": 13501,
+   "stars_total": 28896,
+   "language": "TypeScript",
+   "url": "https://github.com/meta/astryx",
+   "description": "An open source design system that's fully customizable and agent ready"
+  },
+  {
+   "rank": 2,
+   "full_name": "sherlock-project/sherlock",
+   "stars_period": 10412,
+   "stars_total": 112502,
+   "language": "Python",
+   "url": "https://github.com/sherlock-project/sherlock",
+   "description": "Hunt down social media accounts by username across social networks"
+  },
+  {
+   "rank": 3,
+   "full_name": "anthropics/skills",
+   "stars_period": 6077,
+   "stars_total": 195380,
+   "language": "Python",
+   "url": "https://github.com/anthropics/skills",
+   "description": "Public repository for Agent Skills"
+  },
+  {
+   "rank": 4,
+   "full_name": "milind-soni/OpenMausBot",
+   "stars_period": 5463,
+   "stars_total": 23436,
+   "language": "TypeScript",
+   "url": "https://github.com/milind-soni/OpenMausBot",
+   "description": "Open-source Grok Bot alternative with a virtual machine that bots can use"
+  },
+  {
+   "rank": 5,
+   "full_name": "google/elephant-goldfish-model",
+   "stars_period": 5060,
+   "stars_total": 19793,
+   "language": "Python",
+   "url": "https://github.com/google/elephant-goldfish-model",
+   "description": "Open-source plugin for designing and reviewing software with agents"
+  },
+  {
+   "rank": 6,
+   "full_name": "we-promise/sure",
+   "stars_period": 4556,
+   "stars_total": 15720,
+   "language": "Ruby",
+   "url": "https://github.com/we-promise/sure",
+   "description": "The personal finance app for everyone (by everyone)"
+  },
+  {
+   "rank": 7,
+   "full_name": "ZhuLinsen/daily_stock_analysis",
+   "stars_period": 4548,
+   "stars_total": 72517,
+   "language": "Python",
+   "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+   "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs."
+  },
+  {
+   "rank": 8,
+   "full_name": "vercel-labs/agent-browser",
+   "stars_period": 4217,
+   "stars_total": 51641,
+   "language": "Rust",
+   "url": "https://github.com/vercel-labs/agent-browser",
+   "description": "Browser automation CLI for AI agents"
+  },
+  {
+   "rank": 9,
+   "full_name": "addyosmani/agent-skills",
+   "stars_period": 3889,
+   "stars_total": 117957,
+   "language": "JavaScript",
+   "url": "https://github.com/addyosmani/agent-skills",
+   "description": "Production-grade engineering skills for AI coding agents."
+  },
+  {
+   "rank": 10,
+   "full_name": "google-deepmind/mujoco",
+   "stars_period": 1922,
+   "stars_total": 18075,
+   "language": "C++",
+   "url": "https://github.com/google-deepmind/mujoco",
+   "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator."
+  },
+  {
+   "rank": 11,
+   "full_name": "backnotprop/plannotator",
+   "stars_period": 1719,
+   "stars_total": 11863,
+   "language": "TypeScript",
+   "url": "https://github.com/backnotprop/plannotator",
+   "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click."
+  }
+ ]
+}
