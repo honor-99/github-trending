@@ -97,49 +97,49 @@
   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
  },
  "CopilotKit/OpenBot": {
-  "one_liner": "为每个 AI 同事配一台专属电脑，操作先审批、事后留痕",
-  "summary": "OpenBot 是 CopilotKit 开源的自托管「AI 同事」工作区，每个 bot 拥有自己的浏览器、文件和工具环境，可以像人一样在隔离环境里操作，并把结果以交互形式返回。它采用模块化设计：模型可选、agent 可自带，官方定位是「bring any AG-UI agent」，即通过 AG-UI 协议接入已有 agent。区别于多数只提供 agent 框架的项目，它把治理做进主流程：每个动作在执行前先被决定、执行后被记录，企业版还提供公司登录、工具权限、审批和审计。交付形态上既有打包好的 Mac/Windows 桌面应用（前端 + Docker 后端一体），也支持 Kubernetes 自托管部署。",
+  "one_liner": "给每个 AI 同事配一台自己的电脑，带浏览器和文件工具，动作先审批后留痕。",
+  "summary": "OpenBot 是 CopilotKit 开源的自托管工作台，让每个 AI 同事拥有独立的浏览器、文件和工具环境，用它替代在聊天框里贴上下文的工作方式。它把动作执行拆成两段：执行前先确定要做什么并等你批准，执行后逐条记录，因此适合需要留痕的场景。部署形态包括 Mac（Apple silicon / Intel）和 Windows x64 的签名桌面安装包（内含前端与基于 Docker 的后端），也支持从源码运行和 Kubernetes 部署，模型和基础设施都由你自己选。差异点在于它背靠 AG-UI 协议（由同一团队发起），可以直接接入你已有的 AG-UI agent，而不是只能使用厂商内置的那一个；面向团队的 SSO、工具权限、审批和审计属于 OpenBot for Business 早期访问，尚未普遍可用。",
   "audience": [
-   "想把 AI agent 引入内部流程、但必须有人工审批和操作留痕的 IT/平台负责人",
-   "已经在用 CopilotKit 或 AG-UI 构建 agent、想找个现成工作区前端的开发者",
-   "有数据不出内网要求、需要自托管而非 SaaS 的团队",
-   "想零配置先在本机验证「AI 同事」体验再决定是否推广的工程师",
-   "关注企业级 agent 权限与审计方案的产品经理"
+   "想把 AI agent 落到有审批、有审计要求的企业流程里，又不愿意把数据交给 SaaS 的团队负责人。",
+   "已经在用 AG-UI 协议或 CopilotKit 自建 agent、需要一个现成前端和运行时外壳的 agent 开发者。",
+   "需要在隔离环境里让 AI 操作浏览器和文件的运维、安全或合规工程师。",
+   "评估自托管 AI 工作台、想对比开源方案与商业闭源产品的技术选型顾问。",
+   "希望数据留在自有 Kubernetes 集群上的中大型公司平台团队。"
   ],
   "use_cases": [
-   "让 bot 用内置浏览器查资料、打开网页核对信息，再以可交互的结果卡片汇报。",
-   "起草对外发送的邮件或消息，在真正发出前停下来等人工点批准。",
-   "在独立文件环境里读取、整理、生成文档，避免直接操作本地真实目录。",
-   "把团队已有的 AG-UI agent 接进统一工作区，人可以在它卡住时接管继续操作。",
-   "在企业场景中按工具维度授予权限，并对每个 bot 的每次操作保留可回溯的记录。"
+   "让 Bot 用内置浏览器打开内部系统抓取数据，整理成表格后再等你点击批准才发出。",
+   "把已上线的 AG-UI agent 接进 OpenBot，获得统一的会话界面、工具调用审批和操作记录，而不用自己写前端。",
+   "在受控环境里让 AI 读取本地文件并生成报告，全程动作在执行前确认、执行后留痕，便于事后复核。",
+   "把重复的跨系统操作（查工单、填表单、发通知）交给 Bot 执行，关键发送步骤保留人工接管。",
+   "在自有 Kubernetes 集群上部署一套内部 AI 同事工作台，并按团队配置工具权限。"
   ],
   "adoption_steps": [
-   "先从 README 的下载链接安装对应的桌面包（Mac 选 arm64 或 x64 的 .dmg，Windows 选 x64 安装程序），跑通一个 bot 的浏览器与工具调用，确认交互形态是否符合预期。",
-   "需要改代码或接入自有 agent 时，按 README 的 Run from source 从源码启动，注意后端为 Docker 方案，需先准备好容器运行环境。",
-   "团队落地时按 Deploy on Kubernetes 章节做自托管部署，同时通过 README 中的早期访问入口申请 OpenBot for Business，以获取公司登录、工具权限、审批与审计能力。"
+   "先用桌面版验证价值：从 GitHub Releases 或 README 里的 downloads.copilotkit.ai 链接下载对应平台的 .dmg 或 Windows 安装包，本机装好 Docker 后启动，跑通一个带浏览器操作的任务。",
+   "要接自有 agent 时，先确认它能说 AG-UI 协议；再从源码运行（README 的 Run from source 一节）改前端或后端，避免直接改打包好的桌面应用。",
+   "要做团队部署，先走 README 里的 OpenBot for Business 早期访问入口确认 SSO、工具权限、审批、审计的实际可用状态，同时按 README 的 Deploy on Kubernetes 一节在测试集群上跑通。"
   ],
   "build_ideas": [
-   "把公司内部已有的 agent 按 AG-UI 协议封装后接入 OpenBot，复用它的前端与审批链路而不重写交互层。",
-   "在审批环节做自定义策略插件，例如规定涉及外部发送或写文件的工具必须强制人工确认。",
-   "把每个动作的执行记录导出到企业内部日志或审计系统，形成合规可查的 agent 操作台账。",
-   "基于工具权限机制做部门级 bot 模板，让不同团队拿到预配置好的工具集与审批规则。",
-   "针对垂直场景（如客服回复草拟、招投标资料核对）在桌面端预置专用 bot 与提示词。"
+   "为 OpenBot 编写自定义工具或连接器，把公司内部 API（工单、CRM、数据仓库）包装成 Bot 可调用并受审批约束的动作。",
+   "基于 AG-UI 协议把你的既有 agent 适配成 OpenBot 可接入的后端，让它在保留自有推理逻辑的同时获得浏览器、文件和审批能力。",
+   "在审批与记录链路上做二次开发，把动作前后的决策与执行日志接入公司的审计系统或 SIEM。",
+   "围绕 Kubernetes 部署打包内部 Helm chart 或运维脚本，做多租户隔离、模型网关和配额管理。",
+   "基于它的交互式结果展示能力，做面向具体业务（如报表审核、内容发布前复核）的预置工作流模板。"
   ],
   "risks": [
-   "Web、iOS、Android 与 Business 版在 README 中均指向 early access 申请页面，团队协作与企业功能当前是否可用需先确认，不能按已 GA 规划。",
-   "README 一方面称桌面版无需终端或开发工具，另一方面说明后端基于 Docker，实际运行对容器环境的要求需自行验证。",
-   "材料中未给出开源许可证信息，商用或二次分发前必须核对仓库 LICENSE 与商业版的功能边界，避免关键能力只落在收费版。",
-   "项目与 AG-UI 协议强绑定，接入非 AG-UI 的 agent 需要额外适配层，迁移成本取决于现有 agent 的技术栈。",
-   "star 增长快但项目较新，桌面安装包由官方域名分发、源码与安装包是否同步演进需要自行核实，自托管场景要评估供应链与升级维护成本。"
+   "仓库材料中未给出开源许可证信息，商用或二次分发前必须在仓库里确认 LICENSE 的实际条款。",
+   "SSO、工具权限、审批、审计这些企业能力属于 OpenBot for Business 早期访问，Web、iOS 等平台也在早期访问名单里，现在无法当作已可用功能来规划。",
+   "桌面版依赖本机 Docker 跑后端，安装包只覆盖 macOS（arm64 / x64）和 Windows x64，材料里没有 Linux 桌面版，Linux 团队只能走源码或 Kubernetes。",
+   "接入自有 agent 的前提是它使用 AG-UI 协议，非 AG-UI 的 agent 需要额外适配成本，材料未说明是否有其他协议桥接。",
+   "项目当前处于每日榜单的新增热度期，材料只显示 star 数、不含发布历史与维护者活跃度，长期维护节奏和版本兼容策略需自行核实。"
   ],
   "tokens": {
-   "prompt_tokens": 1333,
-   "completion_tokens": 2026
+   "prompt_tokens": 1337,
+   "completion_tokens": 1503
   },
   "model_resolved": "deepseek-flash",
-  "hash": "4c40ecbeb3bf620b16df0e6e8451aad16dcf0acb699a63b8c6dc6a3b5dda0aa9",
+  "hash": "b14f81dc7e12e48e8847ca757d68da7e6761fceb3990a9be182de599818f9c56",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-13T08:00:53+08:00",
+  "generated_at": "2026-11-16T19:09:02+08:00",
   "readme_used": true,
   "source_description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
   "language": "TypeScript",
@@ -341,49 +341,49 @@
   "url": "https://github.com/HKUDS/DeepTutor"
  },
  "NVIDIA/SkillEvaluator": {
-  "one_liner": "给 AI agent 的 skill 做质量体检，并量化它对任务结果的实际影响",
-  "summary": "SkillEvaluator 是 NVIDIA 出的 Python 命令行工具，用来评估 Agent Skills 规范定义的 skill 目录（一堆指令加附属文件）写得好不好、有没有用。它按分层（tier）组织检查：Tier 1 是不需要 API key、不需要 GPU 或 Docker 的确定性质量检查，能直接给出类似 86.2/100 的分数和问题清单；更高层再接入模型打分、语义重叠检测、合成评测数据集生成，以及对比「有 skill」和「无 skill」两次 agent 运行来测行为差异。它同时提供三种入口：本地 CLI、GitHub/GitLab CI 模板，以及一个可以挂到 Claude Code、Codex 等 skill-aware agent 里的 SkillEvaluator skill。相比常见的 prompt 评测框架，它的新意在于把「skill 质量门禁」和「skill 对 agent 行为的因果影响」这两件事放进同一条流水线。",
+  "one_liner": "给 AI agent 技能做质量打分，并对比有无技能时的任务效果",
+  "summary": "SkillEvaluator 是 NVIDIA 出的 Python 工具，用来检查按 Agent Skills 规范写的技能目录（一堆指令文件加支撑文件），并量化这个技能到底有没有改变 agent 的任务结果。它把评估分成多个 tier：Tier 1 是不需要 API key 的确定性检查，直接给出质量分和问题清单；更高层则接 NVIDIA Build 的模型做 rubric 打分与反馈。除此之外还提供语义重叠检测、合成评测数据集生成，以及「带技能跑一次、不带技能跑一次」的对比式实跑评估。三种入口共用一套结果：命令行（pip install skillevaluator 或 uv tool install）、GitHub/GitLab CI（skillevaluator ci init 会开一个 setup PR）、以及装进 Claude Code/Codex 之类 agent 里的技能包。相比零散的 prompt 检查脚本，它的新意在于把「静态质量门 + 语义去重 + 对照实跑」串成一条流水线，并挂在 NVIDIA Verified Skills 体系下。",
   "audience": [
-   "写 Agent Skills 的人：想知道自己那份 skill 能不能过质量关、值不值得发布",
-   "维护内部 skill 库或 skill 市场的平台团队：需要批量打分和去重",
-   "把 agent 接入 CI 的工程团队：想在 PR 阶段拦住劣质 skill",
-   "做 agent 评测/实验的研究者：需要合成评测集和有/无 skill 的对照实验",
-   "用 Claude Code、Codex 等工具的独立开发者：想快速回答「我这个 skill 到底行不行」"
+   "维护内部 agent 技能库（Claude Code、Codex 等 skill-aware agent）的平台工程师。",
+   "负责技能上架评审、需要一条可量化质量门禁的团队负责人。",
+   "按 Agent Skills 规范写技能目录、想知道自己写的技能合不合格的作者。",
+   "已经在用 GitHub Actions 或 GitLab CI、想把技能检查塞进 PR 流程的 DevOps 工程师。",
+   "需要拿出证据说明「技能确实改变了 agent 行为」的产品经理或评估负责人。"
   ],
   "use_cases": [
-   "对本地一个 skill 目录跑 `skillevaluator validate ./my-skill --tiers 1`，拿到确定性的质量分和问题列表",
-   "用 `skillevaluator quality-check <skill路径> -r cli -r json -o reports/xxx` 生成机器可读报告，存档或接入内部看板",
-   "对同一批 skill 做语义重叠检测，找出职责重复、该合并的条目",
-   "用合成评测数据集生成能力，为 skill 造回归测试题，避免每次改动都靠人工抽查",
-   "做 live agent evaluation，在同一任务上对比加载与不加载某个 skill 的运行结果，判断它是否真的改变 agent 行为"
+   "在合并前对 PR 里改动的技能目录跑 skillevaluator validate ./my-skill --tiers 1，先把结构和确定性质量问题拦下来。",
+   "用 quality-check 输出 cli 和 json 双份报告（示例技能得 88.8/100），作为技能上架前的打分卡归档。",
+   "对同一个任务分别跑「有技能」和「无技能」两轮，用结果差异判断这个技能是帮忙还是纯噪音。",
+   "用语义重叠检测排查一批技能之间描述撞车、职责重叠的情况，整理技能库。",
+   "用合成评测数据集生成能力，给自研技能批量造测试样本，避免手工写用例。"
   ],
   "adoption_steps": [
-   "先执行 `pip install skillevaluator`（或 `uv tool install skillevaluator`），然后对你已有的一个 skill 目录跑 `skillevaluator validate ./my-skill --tiers 1`，这条路径不需要任何 API key。",
-   "如果想先看报告长什么样，克隆仓库后执行 `uv run --python 3.13 skillevaluator quality-check src/skillevaluator/tier3/reference_skills/text-analyzer -r cli -r json -o reports/first-quality`，对照自带示例 skill 理解输出字段，再替换成自己的 skill。",
-   "确认有用后，在 GitHub 仓库里跑 `skillevaluator ci init` 生成 setup PR（GitLab 则复制 `ci/bundles/0.9.0` 模板），先把 Tier 1 门禁挂到 PR 上；等需要模型打分和 live evaluation 时再配置 NVIDIA Build API key。"
+   "先装 uv 和 Git，git clone --depth 1 仓库后运行 uv run --python 3.13 skillevaluator quality-check src/skillevaluator/tier3/reference_skills/text-analyzer -r cli -r json -o reports/first-quality，看内置示例的分数和报告长什么样。",
+   "pip install skillevaluator 后对自己仓库里的一个技能跑 skillevaluator validate ./<你的技能目录> --tiers 1，确认无 API key 的确定性检查能在你的技能上跑通并产出可读的问题清单。",
+   "在 GitHub 仓库执行 skillevaluator ci init，逐行审阅它自动开出的 setup PR（GitLab 则手工复制 ci/bundles/0.9.0 模板），先只对变更过的技能开启检查再逐步收紧。"
   ],
   "build_ideas": [
-   "把 quality-check 输出的 JSON 报告接进内部 skill 注册表或评分看板，做版本间的分数趋势对比。",
-   "基于语义重叠检测做一个 skill 库去重/合并建议工具，在提交新 skill 时提示与已有条目的职责冲突。",
-   "用合成评测数据集生成能力，为自研 skill 自动产出回归测试集，接入日常 CI 做防退化。",
-   "把 live agent evaluation 接到自家 agent 框架上，做成「skill 上线前必须有 A/B 收益证据」的发布门禁。",
-   "封装一层薄服务，把 skillevaluator 的 CLI 包成 HTTP 接口，供非 Python 团队或 Web 端调用。"
+   "把 quality-check 的 JSON 报告接进内部技能市场或审批流，做成技能上架前的自动打分卡与阈值拦截。",
+   "把 ci init 生成的 workflow 改造成公司内部多仓库复用的 CI 模板，统一所有技能仓库的门禁规则。",
+   "基于「有技能 / 无技能」的对照运行封装成回归测试，锁住技能改动前后的行为差异，防止悄悄退化。",
+   "把合成评测数据集生成接到内部评测平台，为私有技能自动产出评测集并定期重跑。",
+   "通过 npx skills add NVIDIA/SkillEvaluator 把评估技能装进自家 agent，让 agent 在写完技能后自己先跑一遍自检。"
   ],
   "risks": [
-   "材料中的许可证信息只有 LICENSE 徽章，未见具体条款，商用或二次分发前必须到仓库确认实际许可。",
-   "模型打分与 live evaluation 依赖 NVIDIA Build API key 和对应模型服务，属于外部供应商依赖，需评估配额、成本和可替换性。",
-   "CI 模板版本号显示为 0.9.0，说明尚未到 1.0，CLI 参数和报告格式存在变动可能，接入 CI 时应锁定版本。",
-   "运行环境要求 Python 3.13 与 uv/Git，较老的内网或受限环境需要额外准备。",
-   "评测结论依赖被评测 agent 的运行配置与任务集，跨团队、跨环境的分数据是否可比需要自己验证，不能直接横向比较。"
+   "README 只显示了 LICENSE 徽章，材料里没有给出具体许可条款，商用或二次分发前必须去仓库确认 license 类型。",
+   "版本仍是 0.9.0（CI 模板路径为 ci/bundles/0.9.0），尚未到 1.0，CLI 参数、报告格式和 CI 模板都可能变动。",
+   "模型打分路径依赖 NVIDIA Build 的 API key，意味着外部服务依赖、调用成本以及技能内容外发，需要先做合规确认。",
+   "无 API key 的路径只覆盖 Tier 1 确定性检查，语义重叠与实跑行为评估依赖更高 tier，实际能力边界需自己实测验证。",
+   "运行要求 Python 3.13（uv 会自动准备），老项目本地环境和既有 CI 镜像可能需要额外升级。"
   ],
   "tokens": {
    "prompt_tokens": 1349,
-   "completion_tokens": 1864
+   "completion_tokens": 2731
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "967b8cc1f7c4abe4959dc8a637e2f60b7fa810b1b22810ed49c3dc1b55c83ad9",
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "ac4ceab0a7117c8c3f4983b18257130dda9c49730f6daa59a699243acd4fc2f7",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T10:22:06+08:00",
+  "generated_at": "2026-11-16T19:09:12+08:00",
   "readme_used": true,
   "source_description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
   "language": "Python",
@@ -2491,49 +2491,48 @@
   "url": "https://github.com/sherlock-project/sherlock"
  },
  "tashfeenahmed/freellmapi": {
-  "one_liner": "把几十家免费 LLM 额度聚合成一个 OpenAI 兼容接口。",
-  "summary": "FreeLLMAPI 是一个 TypeScript 写的自托管网关，把几十家提供商的免费额度（README 现写的是 87 家、1,313 个免费模型端点，GitHub 描述里还是 34 家、635 个）统一收拢到一个 `/v1` 端点后面，同时也能挂你自己的 OpenAI 兼容端点。它做三件核心的事：路由器按请求挑当前最可用的模型、某个提供商限流时自动 failover 到下一家、按 key 记用量以免撞破各家的免费额度天花板；密钥加密存储。部署形态齐全，Docker Compose、容器镜像、桌面端、移动端都有，客户端只要支持 OpenAI 协议就能直接接。和「手工维护一堆 key 和 base_url」相比，它的新意在路由 + 额度追踪 + 可自更新的签名模型目录，但实时目录是付费项（$19/年），免费安装拿到的是延迟 30 天的月度快照。",
+  "one_liner": "把几十家免费 LLM 额度聚合成一个 OpenAI 兼容的 /v1 接口。",
+  "summary": "FreeLLMAPI 是一个 TypeScript 写的自托管路由器，把大量厂商的免费额度以及任意 OpenAI 兼容的自定义端点，统一暴露成一个 /v1 接口。它按请求挑选可用模型，遇到限流就自动切到下一家，并对每个 key 记录用量，尽量不越过各家免费额度上限。密钥加密存储，附带桌面端、Docker 镜像和移动端安装包。与常见的「单 provider 代理」相比，新意在于聚合 + 路由 + 配额跟踪三件事绑在一起。需要注意的是，GitHub 描述写的是 34 家 provider、635 个端点、每月 74 亿 token，README 已变成 87 家、1313 个端点、每月 101 亿 token，说明项目迭代很快、文档口径不统一。此外，模型目录通过签名 feed 更新，免费版落后 30 天，实时目录属于 19 美元/年的付费项。",
   "audience": [
-   "想低成本横向对比多家模型效果的个人开发者和独立开发者",
-   "在跑 Cursor、Cline 等 OpenAI 兼容 coding agent、想用免费额度顶一阵的工程师",
-   "需要给自家客户端统一多模型接入层、又不想逐个写适配的 AI 应用开发者",
-   "做原型验证、预算批不下来的产品经理或小团队技术负责人",
-   "想在内网自建一套实验用 LLM 网关、自己掌控密钥的平台/基础设施工程师"
+   "想低成本试用多家模型、做对比实验的个人开发者。",
+   "需要给 Cline、Claude Code 一类 coding agent 找一个免费 OpenAI 兼容后端的工程师。",
+   "要做多模型原型验证、但不想逐家申请和对接 SDK 的产品经理。",
+   "研究 LLM 网关路由、限流与故障转移实现方式的后端工程师。"
   ],
   "use_cases": [
-   "把本地 CLI 或 IDE 插件的 base_url 指向自建的 `/v1`，用同一套 key 在多家免费模型间自动切换而不中断对话。",
-   "在跑批量实验时让路由器自动 failover，某家免费额度打满后请求继续落到下一家，避免整批任务中途失败。",
-   "用按 key 的用量统计盯着各家免费额度消耗，提前知道哪家快用完了再手工调整路由顺序。",
-   "在同一个端点上同时调用 chat、embedding、image、audio 四类能力，做多模态原型时不必为每类能力各接一套 SDK。",
-   "把公司自建的 OpenAI 兼容服务作为自定义端点混进路由池，和公网免费额度共享同一套调用方式。"
+   "把本地 coding agent 的 base_url 指向自建的 /v1，让它在多个免费模型之间自动切换。",
+   "对同一个 prompt 并行跑不同厂商模型，做输出质量和延迟的横向对比。",
+   "给个人 side project 接一个零成本的 chat、embedding 或图像推理后端。",
+   "用它的 per-key 用量统计验证自己设计的免费额度控制策略是否可行。",
+   "把公司内部或第三方的 OpenAI 兼容端点注册进去，和免费模型混在一个入口下调用。"
   ],
   "adoption_steps": [
-   "先读 docs/en/install/01-install.md，按 Docker Compose 一节起服务（或直接拉 README 里链接的 ghcr.io 容器镜像），确认 `/v1` 端口能本地访问。",
-   "按支持的提供商列表挑 2-3 家注册并拿免费 key，在管理界面填入（密钥是加密存储的），再补一个你自己的 OpenAI 兼容端点验证自定义端点通路。",
-   "把任一 OpenAI 兼容客户端或 agent 的 base_url 改成自建地址、填入网关签发的 key，跑一次正常对话后手工把某家 key 置为无效或触发限流，确认 failover 与用量统计按预期工作。"
+   "先按 docs/en/install/01-install.md 的 Docker Compose 章节在本地起服务，确认容器可访问。",
+   "在管理界面录入你已有的各厂商 API key，确认密钥是加密存储并检查 per-key 用量面板是否正常计数。",
+   "把任意 OpenAI 兼容客户端的 base_url 改为本地 /v1，按 docs/en/api/01-rest-api.md 发一次对话请求，再手动触发限流验证自动故障转移。"
   ],
   "build_ideas": [
-   "在路由层外面再包一层按任务类型（代码补全、长文摘要、多模态）选模型的路由策略，替换它默认的「挑最可用」逻辑。",
-   "把按 key 的用量数据接到自建的 Prometheus / 告警链路，做成免费额度即将耗尽的预警面板。",
-   "基于它的 `/v1` 兼容层做一个团队内部的多租户代理，把不同成员的调用分账到不同上游 key。",
-   "结合 README 提到的 prompt 压缩管线（docs/en/compression/），做一层「压缩 + 路由」组合优化来进一步压低免费额度消耗。",
-   "用它当测试基座，给自家 AI 应用做多模型一致性回归测试：同一批 prompt 并发打到多个上游，比对输出差异。"
+   "在它的路由层之上写一套自定义策略，按延迟、成本或模型能力打分选模型，替代默认挑选逻辑。",
+   "基于签名 model catalog feed 做一个内部的模型可用性看板，展示各家免费额度的实时消耗。",
+   "把 per-key 用量数据导出，接上自建的告警系统，在接近免费额度上限时提醒切换。",
+   "为特定领域（如代码补全）封装一个预设好的 provider 优先级配置，做成团队内部的一键部署模板。",
+   "把自研模型或私有推理服务包装成 OpenAI 兼容端点注册进去，与免费模型共享同一个调用入口。"
   ],
   "risks": [
-   "README 明确写「Personal experimentation only」，定位是个人实验，不要直接当作生产环境的模型接入层。",
-   "它的核心价值依赖各家免费额度的存在与稳定，任何一家收紧或改条款，路由池就会缩水，这不是项目方能控制的。",
-   "免费安装拿到的是延迟 30 天的月度模型目录快照，实时目录要付 $19/年，新模型和配额变更对免费用户会滞后一个月。",
-   "README 开头写 87 家 / 1,313 端点、GitHub 描述写 34 家 / 635 端点，两处数字不一致，说明文档更新频繁、数字类信息需以实际部署后看到的目录为准。",
-   "材料里没有给出 LICENSE 的具体类型，商用或二次分发前必须先去仓库确认许可条款；同时一个月新增 1.7 万 star 属于爆发式增长，长期维护状态暂无证据可判断。"
+   "README 明确写了「Personal experimentation only」，商用或多人共享前需自行确认是否违反免责声明及各家上游 provider 的服务条款。",
+   "免费安装拿到的模型目录是月度快照，比实时 feed 晚 30 天，想跟进新模型和配额变化需要订阅 19 美元/年的付费版。",
+   "仓库描述与 README 的 provider 数量、端点数量、token 规模三组数据互相矛盾，说明文档口径不稳定，依赖具体数字做决策前要复核。",
+   "可用性本质上取决于上游免费额度，上游随时可能调整或取消，项目本身无法保证 SLA。",
+   "材料只显示存在 LICENSE 徽章，未给出具体许可条款，二次分发或闭源改造前必须先读 LICENSE 原文。"
   ],
   "tokens": {
-   "prompt_tokens": 1386,
-   "completion_tokens": 1599
+   "prompt_tokens": 1390,
+   "completion_tokens": 1553
   },
   "model_resolved": "deepseek-flash",
-  "hash": "d283841b885cbd1fbaf8ce04dabb1cc4f08d60ae6bc2ec00038bf490ecfa8cbf",
+  "hash": "e553430f7d823008a05b709e4ffcd1f1b3fb3a0946e593108540ade3895fce8f",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T10:21:37+08:00",
+  "generated_at": "2026-11-16T19:09:01+08:00",
   "readme_used": true,
   "source_description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
   "language": "TypeScript",
