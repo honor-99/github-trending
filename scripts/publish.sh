@@ -14,5 +14,9 @@ if git diff --cached --quiet; then
 fi
 
 git commit -q -m "data: snapshot $(date +%Y-%m-%d)"
+# 远端可能刚被 GitHub Actions 补档（trending-backfill.yml）提交过，先 rebase 再推，
+# 否则 push 会因非快进被拒，数据会滞留在本地等下次。
+git pull --rebase --autostash -q origin "$BRANCH" \
+  || echo "[publish][warn] rebase 失败，尝试直接推送" >&2
 git push -q origin "HEAD:${BRANCH}"
 echo "[publish] 已推送 $(git rev-parse --short HEAD) → ${BRANCH}"

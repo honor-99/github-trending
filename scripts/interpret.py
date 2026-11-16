@@ -121,22 +121,48 @@ def load_api_key() -> str:
 
 
 # ── 数据来源 ──────────────────────────────────────────────────────────────
-def collect_items(period: str) -> dict[str, dict]:
-    """从 latest-*.json 汇总待解读项目（按 full_name 去重，保留排名最靠前的一条）。"""
+def collect_items(period: str, all_snapshots: bool = False) -> dict[str, dict]:
+    """汇总待解读项目（按 full_name 去重，保留排名最靠前的一条）。
+
+    默认只读 latest-*.json（当前榜单）。``all_snapshots=True`` 时改读 data/20*/*.json
+    全部历史快照 —— 用于「关机期间由远端 GitHub Actions 补档、本机开机后补齐解读」：
+    否则只补到最新一期，前几天补档里的独有项目会永远没有解读。
+    hash 去重照旧生效，已解读过的不会重复计费。
+    """
     periods = ["daily", "weekly", "monthly"] if period == "all" else [period]
     items: dict[str, dict] = {}
-    for p in periods:
-        f = DATA / f"latest-{p}.json"
-        if not f.exists():
-            continue
-        payload = json.loads(f.read_text(encoding="utf-8"))
-        for it in payload.get("items", []):
+
+    def feed(p: str, payload_items) -> None:
+        for it in payload_items:
             name = it.get("full_name")
             if not name:
                 continue
             prev = items.get(name)
             if prev is None or it.get("rank", 999) < prev.get("rank", 999):
-                items[name] = {**it, "periods": sorted(set(prev["periods"] + [p])) if prev else [p]}
+                items[name] = {
+                    **it,
+                    "periods": sorted(set(prev["periods"] + [p])) if prev else [p],
+                }
+
+    if all_snapshots:
+        for f in sorted(DATA.glob("20*/*-*.json")):
+            stem_period = f.stem.rsplit("-", 1)
+            if len(stem_period) != 2 or stem_period[1] not in periods:
+                continue
+            try:
+                payload = json.loads(f.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                print(f"[warn] 跳过损坏快照 {f.name}", file=sys.stderr)
+                continue
+            feed(stem_period[1], payload.get("items", []))
+        return items
+
+    for p in periods:
+        f = DATA / f"latest-{p}.json"
+        if not f.exists():
+            continue
+        payload = json.loads(f.read_text(encoding="utf-8"))
+        feed(p, payload.get("items", []))
     return items
 
 
@@ -264,6 +290,11 @@ def main() -> int:
     ap.add_argument("--model", default=os.environ.get("INTERPRET_MODEL") or None)
     ap.add_argument("--api-base", default=os.environ.get("INTERPRET_API_BASE") or None)
     ap.add_argument("--force", action="store_true")
+    ap.add_argument(
+        "--all-snapshots",
+        action="store_true",
+        help="扫描全部历史快照而非只看 latest-*.json（远端补档后补齐解读用）",
+    )
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--sleep", type=float, default=1.0, help="每次调用之间的间隔秒数")
     ap.add_argument("--workers", type=int, default=4, help="并发数（I/O 密集，4-6 合适）")
@@ -273,7 +304,7 @@ def main() -> int:
     model = args.model or cfg_model
     api_base = args.api_base or cfg_base
 
-    items = collect_items(args.period)
+    items = collect_items(args.period, args.all_snapshots)
     if not items:
         print("没有可解读的项目（latest-*.json 为空？）", file=sys.stderr)
         return 0

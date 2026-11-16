@@ -1,0 +1,114 @@
+name: trending-backfill
+
+# 远端兜底补档：本机（WSL + Hermes cron）每天 08:00 CST 抓取并推送。
+# 如果那台机器没开（关机 / 休眠 / WSL 没启动），本 workflow 在 09:00 CST 检查
+# 「今天该有的快照有没有」，没有就自己抓一份、归档、派生统计并提交回 master，
+# Pages 会基于分支自动重新构建 —— 保证站点不会因为本机没开而断档。
+#
+# 边界（有意为之）：
+#   * 不做中文解读（interpret.py 要连内网的模型中转，GitHub runner 访问不到）。
+#     解读由本机开机后的 trending-boot-interpret.service 扫描全部历史快照补齐。
+#   * 只处理「今天」。故意不提供指定历史日期的入口 —— GitHub Trending 只有当日状态，
+#     拿今天的数据写昨天的日期等于造假，宁可留空档。
+#   * archive.py 幂等：同一天同 period 重跑结果一致，所以本机与远端同时跑也不会脏数据。
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # 01:00 UTC = 09:00 CST
+  workflow_dispatch:
+    inputs:
+      force:
+        description: '忽略「已存在」判断，强制重跑当天（冒烟测试用，只会覆盖同一天的数据）'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trending-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 计算 CST 日期与缺档的期
+        id: check
+        run: |
+          DATE=$(TZ=Asia/Shanghai date +%F)
+          DOW=$(TZ=Asia/Shanghai date +%u)   # 1 = 周一
+          DOM=$(TZ=Asia/Shanghai date +%d)
+          FORCE="${{ github.event.inputs.force || 'false' }}"
+          YEAR="${DATE:0:4}"
+
+          ALL="daily"
+          [ "$DOW" = "1" ]  && ALL="$ALL weekly"    # 周榜与 Hermes cron 一致：周一
+          [ "$DOM" = "01" ] && ALL="$ALL monthly"   # 月榜：1 号
+
+          PERIODS=""
+          if [ "$FORCE" = "true" ]; then
+            PERIODS="$ALL"
+            echo "手动强制模式：本期将重跑 [$ALL]"
+          else
+            for P in $ALL; do
+              [ -f "data/${YEAR}/${DATE}-${P}.json" ] || PERIODS="$PERIODS $P"
+            done
+            PERIODS=$(echo "$PERIODS" | xargs)
+            if [ -z "$PERIODS" ]; then
+              echo "本机已经抓过 $DATE 的快照，远端不做什么。"
+            else
+              echo "缺档：$DATE 需要补 [$PERIODS]"
+            fi
+          fi
+
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "periods=$PERIODS" >> "$GITHUB_OUTPUT"
+
+      - name: 抓取 + 归档 + 派生统计
+        if: steps.check.outputs.periods != ''
+        run: |
+          set -euo pipefail
+          DATE="${{ steps.check.outputs.date }}"
+          for P in ${{ steps.check.outputs.periods }}; do
+            echo "── $P $DATE ──"
+            # fetch-trending.py 的 period 走 argv[1]，与 Hermes 侧 github-trending.py 同源
+            python3 scripts/fetch-trending.py "$P" > "/tmp/${P}.tsv"
+            echo "抓到 $(wc -l < "/tmp/${P}.tsv") 条"
+            python3 scripts/archive.py --period "$P" --date "$DATE" --from-tsv "/tmp/${P}.tsv"
+          done
+          # 纯统计派生（话题 / 潜力 / 数据说明 / 历史榜单），零网络、毫秒级
+          python3 scripts/insights.py
+          python3 scripts/history.py
+
+      - name: 提交并推送
+        if: steps.check.outputs.periods != ''
+        run: |
+          set -euo pipefail
+          DATE="${{ steps.check.outputs.date }}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "数据无变化，不提交（archive.py 幂等，可能已由本机抓过）"
+            exit 0
+          fi
+          git commit -q -m "data: snapshot ${DATE} 远端补档（${{ steps.check.outputs.periods }}）"
+          # 本机可能刚推过别的期，先 rebase 再推，避免 push 被拒
+          git pull --rebase --autostash -q origin master || true
+          git push -q origin HEAD:master
+          echo "已推送 $(git rev-parse --short HEAD)"
+
+      - name: 汇总
+        run: |
+          {
+            echo "### trending-backfill ${{ steps.check.outputs.date }}"
+            echo ""
+            echo "- 本期处理：\`${{ steps.check.outputs.periods || '无（本机已抓过）' }}\`"
+            echo "- 快照总数：$(ls data/20*/*.json | wc -l)"
+            echo "- 本步骤不生成中文解读，等本机开机后由 trending-boot-interpret.service 补齐。"
+          } >> "$GITHUB_STEP_SUMMARY"
