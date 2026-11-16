@@ -49,49 +49,48 @@
   "url": "https://github.com/Alishahryar1/free-claude-code"
  },
  "ChromeDevTools/chrome-devtools-mcp": {
-  "one_liner": "让 AI 编码助手直接控制和检查真实 Chrome 浏览器的 MCP 服务器与 CLI。",
-  "summary": "chrome-devtools-mcp 是 Chrome DevTools 团队开源的 MCP 服务器，同时提供 CLI，让 Antigravity、Claude、Cursor、Copilot 等编码 agent 能够控制并检查一个正在运行的 Chrome 浏览器。它底层用 puppeteer 执行自动化动作并自动等待结果，用 Chrome DevTools 前端录制 trace 并提取性能洞察，还能分析网络请求、截图、读取带 source map 堆栈的控制台消息。相比通用的浏览器自动化封装，它的新意在于是浏览器厂商自己维护、直接复用 DevTools 的性能与调试能力，而不是重新实现一套。",
+  "one_liner": "让 AI 编码助手通过 MCP 或 CLI 直接操控并检查真实 Chrome 浏览器。",
+  "summary": "chrome-devtools-mcp 是 Chrome DevTools 团队提供的 MCP 服务器，同时也提供 CLI，把真实 Chrome 浏览器的控制权交给 Claude、Cursor、Copilot 这类编码助手。它底层用 puppeteer 执行自动化操作，并自动等待操作结果；上层复用 Chrome DevTools，能录 trace 提取性能洞察、抓网络请求、截图、读取控制台报错（带 source map 还原的堆栈）。相比一般的浏览器自动化脚本，它的差异在于把 DevTools 的调试和性能分析能力直接作为工具暴露给 agent，而不是只提供点击和填表。材料没有给出同类项目的横向对比数据，因此它相对其他 MCP 浏览器工具的优势证据不足。",
   "audience": [
-   "使用 Claude、Cursor、Copilot 等支持 MCP 的编码 agent 的前端工程师",
-   "需要让 agent 复现和定位线上或本地页面问题的人",
-   "做 Web 性能优化、需要把 trace 和 CrUX 实测数据结合分析的性能工程师",
-   "希望把浏览器自动化接入自有 agent 工作流的产品或平台团队",
-   "在 CI 或本地环境搭建端到端浏览器动作验证的测试工程师"
+   "日常用 Claude、Cursor、Copilot 等支持 MCP 的编辑器写前端代码、希望 agent 能自己打开页面验证效果的工程师。",
+   "需要排查线上或本地页面性能问题、想要 agent 帮忙录 trace 并解读性能数据的性能优化负责人。",
+   "负责前端自动化测试与端到端验证、希望由 AI 驱动浏览器操作并断言结果的测试工程师。",
+   "需要调研或评估浏览器类 MCP 工具是否值得接入团队工作流的技术选型顾问。"
   ],
   "use_cases": [
-   "让编码 agent 打开本地开发页面，读取控制台报错和带 source map 的堆栈，定位问题源码位置。",
-   "录制一次页面加载的 performance trace，提取可执行的性能优化建议。",
-   "检查页面的网络请求，核对接口状态码、请求头和响应内容是否符合预期。",
-   "让 agent 执行点击、填表等操作并截图，验证改动后的交互是否正常。",
-   "在 agent 会话中对某个页面做快速的可访问性与渲染检查，代替手工来回切换 DevTools。"
+   "让 agent 打开本地开发页面，复现某个交互路径并截图，同时把控制台报错和 source map 还原后的堆栈贴回对话里定位问题。",
+   "录制页面加载过程的 trace，提取性能洞察，并与 CrUX 的真实用户数据对照分析。",
+   "检查页面发出的网络请求，确认接口是否被正确调用、返回是否符合预期。",
+   "把重复的浏览器操作（登录、跳转、点击、等待结果）交给 agent 执行，减少手写 puppeteer 脚本的成本。",
+   "在修复 bug 后让 agent 重新跑一遍相同操作路径，验证问题是否真的消失。"
   ],
   "adoption_steps": [
-   "在支持 MCP 的客户端里添加服务器配置，先用 npx 方式试跑：args 设为 [\"-y\", \"chrome-devtools-mcp@latest\"]，并确认本机已安装官方 Google Chrome 或 Chrome for Testing。",
-   "如果需要关闭 Google 默认开启的使用统计或 CrUX 实测数据请求，在启动参数里加上 --no-usage-statistics 和 --no-performance-crux，再在客户端里确认 MCP 工具列表已加载。",
-   "从一个低风险场景开始验证，例如让 agent 打开一个本地页面并读取控制台日志，确认可用后再扩展到性能 trace 和自动化操作。"
+   "先在支持 MCP 的客户端（如 Claude、Cursor、Copilot）的 MCP 配置里加入服务器：command 用 npx，args 为 [\"-y\", \"chrome-devtools-mcp@latest\"]，重启客户端确认工具列表出现。",
+   "首次试用时加上 --no-usage-statistics 关闭 Google 默认开启的使用统计，若不想把 trace URL 发给 CrUX 再加 --no-performance-crux，然后在一个非敏感的测试页面上跑一次截图和控制台读取。",
+   "确认可用后再接入真实工作流：只用本地或测试环境的 Chrome 实例验证，避免在登录了生产账号、含个人数据的浏览器配置下使用，并观察 agent 调用工具的成功率与延迟再决定是否长期保留。"
   ],
   "build_ideas": [
-   "封装一层项目内的 MCP 配置模板和提示词，把「改完代码后自动跑页面检查」固化成团队的 agent 工作流。",
-   "在 CI 流水线里调用它的 CLI，把页面控制台错误和网络失败作为构建门禁。",
-   "基于它的 trace 能力，把性能数据接到自建看板，做版本间的前端性能回归对比。",
-   "为特定框架（如 React、Vue）开发配套的检查脚本或 prompt 包，让 agent 按框架惯例定位问题。",
-   "把它与自有测试框架结合，用 agent 生成并回放浏览器操作序列，补充难以手写选择的用例。"
+   "在团队内部封装一层 MCP 配置模板和默认参数（含关闭统计与 CrUX 的开关），让成员开箱即用地接入统一的浏览器调试能力。",
+   "基于它暴露的工具构建 CI 场景的自动排查机器人：失败用例触发 agent 打开页面、抓控制台与网络请求并自动生成问题摘要。",
+   "把性能 trace 采集和 CrUX 字段数据串成自动化的性能回归报告生成器，按版本对比输出差异。",
+   "为特定业务（如电商下单流程、后台管理操作）编写封装好的 prompt 或技能包，让 agent 用固定动作路径完成回归验证。",
+   "结合 CLI 形态做脚本化封装，把 agent 的浏览器操作接入已有的测试框架或本地开发脚本中。"
   ],
   "risks": [
-   "它会把浏览器实例内容暴露给 MCP 客户端，可被检查、调试和修改，敏感数据和个人信息不应出现在受控浏览器中。",
-   "官方只支持 Google Chrome 和 Chrome for Testing，其他 Chromium 内核浏览器不保证可用，可能出现意外行为。",
-   "默认开启使用统计上报，性能工具还可能把 trace URL 发送给 Google CrUX API，需在合规要求下确认是否禁用。",
-   "它依赖 puppeteer 和 Chrome DevTools 前端，行为与 Chrome 版本强绑定，官方仅承诺对最新 Extended Stable 版本提供修复与支持。",
-   "让 agent 直接操作真实浏览器存在误改数据或执行非预期动作的风险，应限定在隔离的浏览器配置和测试账号下使用。"
+   "隐私风险明确写在 README 里：它会把浏览器实例内容暴露给 MCP 客户端，客户端可以检查、调试甚至修改浏览器与 DevTools 中的任何数据，使用前必须隔离敏感账号和个人信息。",
+   "使用统计默认开启，且与 Chrome 浏览器自身的统计相互独立，需要在启动参数里显式加 --no-usage-statistics 才能关闭；性能工具还可能把 trace URL 发送到 Google CrUX API，需用 --no-performance-crux 关闭。",
+   "官方只支持 Google Chrome 和 Chrome for Testing，其他 Chromium 内核浏览器不保证可用、可能出现异常行为，若团队使用 Edge 或其他 Chromium 分支需自行承担风险。",
+   "材料的 README 节选中没有出现许可证信息，也没有给出 API 稳定性承诺和版本兼容策略，采用前需要自行确认许可证与版本升级的影响。",
+   "它依赖支持 MCP 的客户端与本地 Chrome 环境，实际可用性受客户端兼容性和浏览器版本影响；README 只承诺跟进最新 Extended Stable Chrome，旧版本 Chrome 不在支持范围内。"
   ],
   "tokens": {
    "prompt_tokens": 1173,
-   "completion_tokens": 886
+   "completion_tokens": 1348
   },
-  "model_resolved": "deepseek-flash",
+  "model_resolved": "deepseek-v4.1-flash-1017",
   "hash": "3a179601255a1d6e73e52d8963106f24315cb14d5946c020ea79658b57ec6939",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T09:31:19+08:00",
+  "generated_at": "2026-11-16T09:31:53+08:00",
   "readme_used": true,
   "source_description": "Chrome DevTools for coding agents",
   "language": "TypeScript",
@@ -539,49 +538,49 @@
   "url": "https://github.com/QwenLM/qwen-code"
  },
  "Tencent/LoopForge": {
-  "one_liner": "把 coding agent 交付流程固化成带人工审批的自托管 SOP 流水线",
-  "summary": "LoopForge 是腾讯开源的自托管工作区，团队在聊天里向 Main Bot 描述需求，它会拉起 Docker 沙箱、checkout 仓库、把任务派给项目角色，最后开出 PR。当某套做法被验证有效后，可以沉淀成 SOP，由 Agent、Script、Human-gate 和子 SOP 节点按顺序在各自沙箱中执行，并支持从任意节点重跑或把任务打回指定步骤。它自身不提供编码模型，而是把 CodeBuddy、Codex、Claude Code、OpenCode、Cursor CLI、Kimi Code 等现成 CLI 编排起来，补上角色、沙箱、检查点和历史记录。相对同类工具的新意在于「聊天探索」与「SOP 流水线」两条路径共用同一套需求追踪，每次改动都能回溯到原始需求，并计入交付与成本报表；MIT 许可，全部跑在自己的基础设施上。",
+  "one_liner": "把 Codex、Claude Code 等编码 agent 编排成带人工审批的自托管交付流水线。",
+  "summary": "LoopForge 是腾讯开源的 Go 项目，提供一个自托管工作台，让团队用编码 agent 真正把软件交付出去。它有两种用法：在聊天里对 Main Bot 描述需求，它会拉起 Docker 沙箱、检出代码仓库、把任务分派给项目角色，并最终提交 PR；或者把已经跑通的协作方式固化成 SOP，由引擎按顺序执行 Agent、Script、人工审批门和子 SOP 节点。底层实际写代码的仍是各家编码 CLI（CodeBuddy、Codex、Claude Code、OpenCode、Cursor CLI、Kimi Code 等），LoopForge 补充的是角色、沙箱、检查点和历史记录。与直接使用 agent CLI 相比，新意在于把「一次性对话」变成可重复、可审批、可回溯到需求的交付流程，并输出交付与成本报告，且以 MIT 许可运行在自有基础设施上。",
   "audience": [
-   "想把团队里重复出现的需求类型标准化成固定交付流程的技术负责人。",
-   "已经在用 Claude Code、Codex 等 coding agent CLI，但缺少审批门禁和审计记录的研发团队。",
-   "负责搭建内部研发平台、需要自托管方案而不接受把代码送到第三方 SaaS 的平台或 DevOps 工程师。",
-   "对代码外发有合规要求、希望 agent 在自己机房和自有 Docker 环境中运行的团队。",
-   "想研究多 agent 编排与 human-in-the-loop 工作流设计的工程师。"
+   "研发效能或平台工程团队，希望把散落在个人手中的 agent 用法收敛成团队级标准流程。",
+   "技术负责人或项目经理，需要对 agent 产出的代码设置人工审批门和可追溯记录。",
+   "有私有化与合规要求、不能把代码交给 SaaS 编排平台的组织。",
+   "同时使用多种编码 CLI 的开发者，想用一套角色与沙箱体系统一管理它们。",
+   "关注 AI 编码落地方法论、想把最佳实践沉淀为 SOP 的工程管理者。"
   ],
   "use_cases": [
-   "把一个固定类型的需求（如依赖升级、模板化 bugfix）写成 SOP，让引擎按阶段自动执行并在 human-gate 节点等人工批准后继续。",
-   "在聊天里向 Main Bot 提一个探索性需求，让它在 Docker 沙箱里 checkout 仓库、调用项目角色试改并直接开 PR。",
-   "在 SOP 运行过程中从聊天里暂停、恢复或接管流程，或把某一步打回重做、从任意节点重跑。",
-   "用 mode=direct 让改动直接合入共享分支，跳过 PR 环节走内部快速通道。",
-   "基于每个节点的产物与日志，以及需求维度的交付与成本报表，复盘某类需求的耗时和花费。"
+   "在聊天中把「修一个 bug 并提 PR」交给 Main Bot，由它开沙箱、检出仓库、调用角色并开 PR/MR。",
+   "把固定的需求交付流程写成 SOP，按节点顺序跑 Agent 与脚本，并在人工门处等待审批后才继续。",
+   "在人工审批门驳回时，把任务退回指定步骤重跑，或从任意节点重试，而不用从头再来。",
+   "用 mode=direct 让 agent 的改动直接合入共享分支，用于低风险的文档或小修场景。",
+   "借 per-node artifacts、日志与成本报告，回溯某次交付由哪个需求触发、经过哪些步骤与角色。"
   ],
   "adoption_steps": [
-   "先在测试机确认 Docker 可用，然后按 README 的 Quick start 一节安装 npm 包 loopforge-cli 并启动服务，因为对话工作区依赖 Docker 沙箱。",
-   "只接入一个 coding agent CLI（例如 Claude Code），在一个非核心仓库上让 Main Bot 跑一次完整流程，验证沙箱 checkout、项目角色调用和开 PR 这三步是否打通。",
-   "把验证通过的流程写成第一个 SOP，在关键步骤插入 human-gate 节点，跑通后再逐步扩展到更多需求类型和更多仓库。"
+   "先按 README 的 Quick start 通过 npm 上的 loopforge-cli 装上 CLI，并准备一台能跑 Docker 的自托管机器。",
+   "拿一个非核心仓库试跑「Chat with Main Bot」路径：描述一个小需求，观察沙箱、角色分派与 PR 产出是否符合预期。",
+   "把验证过的一次流程整理成含 Agent、Script、人工审批门的 SOP，加上审批人后交给小范围团队按固定流程交付。"
   ],
   "build_ideas": [
-   "在 SOP 里增加自定义 Script 节点，把内部代码规范检查、安全扫描或单测门禁串进交付流程。",
-   "为 Agent 节点扩展适配层，接入公司内部模型网关或自研 coding CLI，替换默认支持的第三方 CLI。",
-   "基于节点的产物和日志对接内部可观测性或成本看板，把 LoopForge 的交付与成本报表并入团队现有统计体系。",
-   "围绕 Main Bot 的聊天入口对接企业 IM，让需求提出和审批通知落在团队日常使用的工具里。",
-   "把 mode=direct 的直接合入能力封装成内部共享分支的自动化流水线，配合 human-gate 做低频变更的批量处理。"
+   "为团队内部自研或未列入支持的编码 CLI 编写适配层，接入 LoopForge 的角色与沙箱体系。",
+   "在 Script 节点里挂内部工具链，例如代码规范扫描、单测覆盖率门槛、安全扫描，作为 SOP 的强制关卡。",
+   "把 SOP 的节点产物与日志接入内部工单或研发管理平台，实现需求到 PR 的自动关联与状态同步。",
+   "基于需求追踪与成本报告数据，做一层内部的 agent 交付度量看板，统计各角色与 SOP 的产出效率。",
+   "针对特定业务场景沉淀领域专用 SOP 模板库，例如前端组件库升级、依赖安全补丁批量修复。"
   ],
   "risks": [
-   "材料未给出发布时间、版本号与发布节奏，1525 star（本期新增 423）说明关注度上升很快，但不足以证明生产环境成熟度，需要自行查看 issue 与 release 情况。",
-   "实际执行依赖外部 coding agent CLI（CodeBuddy、Codex、Claude Code 等），意味着需要各自申请账号或凭据，且上游 CLI 的参数与行为变更会直接影响可用性。",
-   "每个对话工作区和 SOP 节点都要在 Docker 沙箱中运行，对宿主机资源和镜像管理有硬性要求，集群规模上来后运维成本不可忽略。",
-   "README 在本次材料中被截断，安装细节、配置项和部署拓扑未能完整确认，落地前需要完整通读仓库文档与 docs 目录。",
-   "MIT 许可对二次开发和商用限制很少，但材料未说明腾讯对该项目的长期维护承诺和社区治理方式，核心流程深度绑定前应评估锁定风险。"
+   "项目处于早期，本期 star 增长快但材料中没有任何生产案例或版本稳定性说明，需先小范围验证再扩大。",
+   "它把 CodeBuddy、Codex、Claude Code 等十余个外部 CLI 作为执行核心，这些 CLI 的接口或认证方式变动可能直接破坏流程。",
+   "Main Bot 与 SOP 都依赖 Docker 沙箱检出真实仓库，意味着必须自建并维护相应基础设施，还有镜像与网络成本。",
+   "材料仅为 README 节选，SOP 的定义格式、配置 schema 与对外 API 是否稳定无法从现有信息判断，二次开发前需先读完整文档。",
+   "主语言是 Go 但通过 npm 包 loopforge-cli 分发，需确认内网 npm 源与 Node 环境可用，否则安装路径会受阻。"
   ],
   "tokens": {
    "prompt_tokens": 1351,
-   "completion_tokens": 2537
+   "completion_tokens": 1623
   },
   "model_resolved": "deepseek-v4.1-flash-1017",
   "hash": "c9a1b9eb0fac28dbd3b761a3122425beb545af813603588574b59e0cf8364d2e",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T09:31:33+08:00",
+  "generated_at": "2026-11-16T09:31:53+08:00",
   "readme_used": true,
   "source_description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
   "language": "Go",
@@ -781,99 +780,99 @@
   "url": "https://github.com/addyosmani/agent-skills"
  },
  "ag-ui-protocol/ag-ui": {
-  "one_liner": "用统一的约 16 种事件，把 AI agent 后端标准地接到前端应用上，省掉自己造一套流式接口。",
-  "summary": "AG-UI 是一个开源、轻量、基于事件的协议，目标是标准化 AI agent 与用户界面之间的连接方式：agent 后端在运行时发出符合 AG-UI 标准事件类型的事件，前端则以少量约定输入回传用户上下文。它提供了一层中间件，兼容 SSE、WebSocket、webhook 等各种传输方式，并允许宽松的事件格式匹配，从而扩大 agent 与应用的互操作范围；同时附带参考 HTTP 实现和默认 connector，降低上手成本。README 明确将其定位为与 MCP、A2A 互补的第三块拼图：MCP 给 agent 工具，A2A 让 agent 互相通信，AG-UI 负责把 agent 送进面向用户的应用。已列出的能力包括流式 agent 聊天、双向状态同步和生成式 UI/结构化消息。新意不在于再造一个 agent 框架，而在于把「agent 到 UI」这段管道协议化，让不同 agent 框架和不同前端不必各自定制对接方式。",
+  "one_liner": "用统一事件协议把 AI Agent 后端接到前端界面，省掉自建流式通信层。",
+  "summary": "AG-UI 是一个开放、轻量、基于事件的协议，用来标准化 AI Agent 与面向用户的应用之间的连接方式。它的做法是：Agent 后端在执行过程中发出约 16 种标准事件类型，同时接受几种简单的 AG-UI 输入，中间由一层中间件做事件格式的宽松匹配，从而兼容 SSE、WebSocket、webhook 等各种传输方式。项目还附带参考 HTTP 实现和默认 connector，并可用 npx create-ag-ui-app 直接生成脚手架。它的定位不是替代 MCP 或 A2A，而是补上「Agent 到用户界面」这一段：MCP 给 Agent 工具，A2A 让 Agent 之间通信，AG-UI 负责把 Agent 带进前端应用。README 中列出实时流式对话、双向状态同步、生成式 UI 等特性，但特性列表在材料中被截断，具体能力边界证据不足。",
   "audience": [
-   "正在为自家 agent 后端开发聊天/助手界面的前端与全栈工程师。",
-   "维护 agent 框架或编排引擎、需要对外提供前端接入方式的框架作者。",
-   "评估企业内部 agent 平台技术选型的架构师与产品经理。",
-   "已经在用 CopilotKit 生态、想弄清协议层如何解耦的团队。",
-   "需要把 agent 接入到已有 Web 应用（而非独立聊天产品）的团队。"
+   "正在做 AI 对话产品、需要把 Agent 后端接到 React 等前端界面的前端工程师。",
+   "后端已有一套 Agent 运行时、希望用统一事件格式对接多个前端渠道的 Agent 平台开发者。",
+   "已经用了 MCP 或 A2A、想补齐「Agent 与用户交互」这一层的技术负责人。",
+   "需要评估生成式 UI 与双向状态同步是否可行的产品经理。",
+   "做低代码平台或 Agent 框架、想接入第三方协议生态的框架维护者。"
   ],
   "use_cases": [
-   "给已有的 agent 后端套上一层 AG-UI 事件映射，前端直接复用标准渲染逻辑做流式对话。",
-   "把前端页面的实时状态（如当前表单、选中对象）通过 AG-UI 输入回传给 agent，实现双向状态同步。",
-   "在对话流中推送结构化消息，由前端渲染成生成式 UI 组件而非纯文本。",
-   "基于现有 SSE 或 WebSocket 网关实现一个 AG-UI 传输适配层，避免改动后端基础设施。",
-   "先用官方 Dojo 对照示例验证事件格式，再决定是否接入自己的业务应用。"
+   "用 npx create-ag-ui-app 生成一个带流式对话的示例应用，先验证协议在你现有 Agent 后端上跑不跑得通。",
+   "把已有 Agent 后端的事件输出改造成约 16 种 AG-UI 标准事件，前端统一按事件渲染消息、状态和工具调用。",
+   "在需要人机协同的表单或编辑器里做双向状态同步，让 Agent 的改动实时反映到界面、用户的修改也能回传给 Agent。",
+   "用生成式 UI 能力让 Agent 在对话中返回结构化的组件描述，而不是纯文本。",
+   "在 AG-UI Dojo 里逐个跑标准事件场景，作为团队对齐协议语义的参考实现。"
   ],
   "adoption_steps": [
-   "执行 `npx create-ag-ui-app my-agent-app` 生成一个最小可跑应用，先确认本地环境与依赖链路通畅。",
-   "打开 ag-ui.com 的 Quickstart（applications 与 framework integrations 两篇），对照 @ag-ui/core 的事件定义，列出你现有 agent 后端能发出的事件与缺失项。",
-   "在 dojo.ag-ui.com 上用官方 Dojo 验证你的事件流格式，再按参考 HTTP 实现或默认 connector 接入真实应用，最后才考虑替换自研的流式协议。"
+   "先跑 npx create-ag-ui-app my-agent-app 生成脚手架，本地启动确认事件流能通，再打开 dojo.ag-ui.com 对照每个事件类型的实际效果。",
+   "读 docs.ag-ui.com 的协议规范与 Quickstart，确认你现有后端的输出能映射到哪些标准事件、哪些需要自定义，并选定传输方式（SSE、WebSocket 或 webhook）。",
+   "在仓库确认 License 与版本发布节奏后，从一条最小链路开始接入（例如只做流式文本 + 一个状态同步事件），跑通后再逐步扩到生成式 UI 等复杂事件。"
   ],
   "build_ideas": [
-   "为公司内部消息中间件（如 Kafka、自建网关）写一个 AG-UI 传输适配器，让协议不绑定 SSE/WebSocket。",
-   "把内部自研 agent 框架包装成 AG-UI 兼容层，对外统一输出标准事件，避免每个业务前端重复对接。",
-   "开发一套生成式 UI 组件映射库，把结构化消息按业务设计系统渲染成表格、卡片、表单等。",
-   "做一个 AG-UI 事件一致性测试工具，用于校验各框架集成是否按标准事件类型输出。",
-   "在低代码/可视化搭建平台中内置 AG-UI 连接器，让业务方拖拽即可挂载 agent 能力。"
+   "为 Python 或 Go 等非 JS 技术栈的 Agent 后端写一个 AG-UI 事件编码器/connector，补齐官方参考实现之外的传输适配。",
+   "基于中间件层做一层事件审计与回放工具，记录 Agent 发出的标准事件流用于调试和回归测试。",
+   "针对企业内部系统（如 CRM、工单台）封装一套领域专用的事件映射层，把业务动作翻译成 AG-UI 标准事件。",
+   "做一个多前端渠道适配器，同一套 Agent 事件同时渲染到 Web、移动端和桌面客户端。",
+   "在现有低代码或工作流平台里内置 AG-UI 客户端，让平台用户拖拽即可接入任意兼容 Agent。"
   ],
   "risks": [
-   "协议仍处于早期演进阶段，README 只说明约 16 种事件类型且内容被截断，完整规范和版本兼容策略必须到 docs 与 @ag-ui/core 的发布记录中核实。",
-   "官方强调「宽松的事件格式匹配」以扩大兼容性，这在实际集成中可能掩盖字段差异，升级时出现难以定位的隐性不兼容。",
-   "文档、Discord、Calendly 预约链接均指向 CopilotKit，治理结构是否独立于单一商业公司需要确认，否则路线图受其商业优先级影响。",
-   "材料未提及许可证类型，采用前需在 GitHub 仓库与 npm 包页面核实 License 及贡献者条款。",
-   "README 仅给出 TypeScript 侧的证据，非 TS 技术栈（如 Python、Java 后端）的 SDK 与集成成熟度在材料中无依据，需自行确认。"
+   "README 未声明开源许可协议，商用前必须在仓库确认 License 及是否存在商标或品牌使用限制。",
+   "项目与 CopilotKit 强绑定（文档、Discord、商务沟通链接均指向 CopilotKit 团队），治理上存在单一厂商主导的风险，协议走向不完全由社区决定。",
+   "主语言为 TypeScript、核心包发布在 npm（@ag-ui/core），非 JS 技术栈的团队需要自行实现事件编解码，接入成本高于预期。",
+   "协议强调「宽松的事件格式匹配」，这种灵活性会让不同实现的兼容性判断变模糊，跨团队联调时可能出现「都能跑但语义不一致」的问题。",
+   "材料中没有版本号、稳定性承诺或破坏性变更策略，且特性列表被截断、star 增长为单日榜单数据，项目成熟度与长期维护状态证据不足，建议先用脚手架做小范围验证再决定是否深度依赖。"
   ],
   "tokens": {
    "prompt_tokens": 1285,
-   "completion_tokens": 1580
+   "completion_tokens": 1420
   },
   "model_resolved": "deepseek-flash",
   "hash": "b2d2b1f6a27c542e2bbb7fc925802ab462c8efd2ddcbc91c910a810d4c7d7fc6",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T09:31:31+08:00",
+  "generated_at": "2026-11-16T09:32:01+08:00",
   "readme_used": true,
   "source_description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
   "language": "TypeScript",
   "url": "https://github.com/ag-ui-protocol/ag-ui"
  },
  "alibaba/open-code-review": {
-  "one_liner": "配好模型端点即可对 Git diff 做行级精确评论的 AI 代码评审命令行工具",
-  "summary": "OpenCodeReview 是阿里内部孵化并开源的 AI 代码评审 CLI，读取 Git diff 后把改动文件交给可配置的 LLM，由具备工具调用能力的 agent 读取完整文件、检索代码库、查看其他改动文件，最终输出带行号定位的结构化评审意见。它采用混合架构：确定性流水线加 LLM Agent，并内置 NPE、线程安全、XSS、SQL 注入等多语言规则集，另提供 ocr scan 对整文件做审计，适合阅读陌生仓库。与通用 Agent 相比，官方 benchmark（50 个开源仓库、200 个真实 PR、10 种语言、1505 条人工标注）声称在同等底层模型下 Precision 与 F1 更高、Token 消耗约为 1/9、速度更快，但明确以降低 Recall 换取更少噪音。它兼容 OpenAI 与 Anthropic 接口，通过 npm 包 @alibaba-group/open-code-review 分发。",
+  "one_liner": "给 Git diff 自动生成行级评审意见的 AI 命令行工具",
+  "summary": "Open Code Review 是阿里开源的 AI 代码评审 CLI，前身是阿里内部使用了两年的官方评审助手。它读取 Git diff，把变更文件交给可配置的 LLM，由具备工具调用能力的 Agent 读取完整文件、检索代码库、查看其他变更文件来补充上下文，最终输出精确到行的结构化评审意见；除 diff 评审外，还能用 `ocr scan` 对整份文件或目录做全量扫描。它的新意在于「确定性流水线 + LLM Agent」的混合架构，并内置 NPE、线程安全、XSS、SQL 注入等多语言规则集，同时兼容 OpenAI 与 Anthropic 接口。官方给出的对比基准显示，在相同底层模型下它的精确率和 F1 高于通用 Agent，token 消耗约为后者的 1/9，但召回率更低，这是为压低噪音而做的主动取舍。",
   "audience": [
-   "需要给团队 PR 流程加一道自动评审的后端与平台工程师。",
-   "维护 CI/CD 流水线、想把代码评审接入自动化门禁的 DevOps 人员。",
-   "关心 XSS、SQL 注入、NPE、线程安全等常见缺陷的安全与质量负责人。",
-   "手头有大量陌生代码库、需要快速摸清实现的技术负责人和新成员。",
-   "希望自建代码评审能力而不直接依赖商业 SaaS 的研发效能团队。"
+   "需要为团队 PR 建立自动化评审门禁的研发效能或平台工程团队。",
+   "日常要审大量 PR、希望先由机器过滤明显缺陷的 Tech Lead 与代码评审人。",
+   "接手陌生代码库、想快速做一轮全量代码审计的后端工程师。",
+   "关注 AI 辅助研发落地效果、需要评估 token 成本与准确率的产品或技术负责人。",
+   "在内部搭建代码质量平台、需要可自托管评审能力的架构师。"
   ],
   "use_cases": [
-   "在提交 PR 前本地跑一次 diff 评审，先把行级问题改掉再请人 review。",
-   "把评审步骤挂进 CI，对每个 Pull Request 自动生成带行号的评论。",
-   "用 ocr scan 整文件扫描刚接手的历史仓库，定位潜在的空指针、并发与注入风险。",
-   "在接入自建或第三方模型端点后，用统一规则集横向对比不同模型的评审质量。",
-   "对照官方 benchmark 的指标口径，用自家历史 PR 建立内部评审效果基线。"
+   "在 PR 流程中接入，对每次提交的 diff 自动生成行级评论，减少评审人逐行阅读的时间。",
+   "用 `ocr scan` 扫描没有有效 diff 的历史目录或陌生仓库，做一次全量缺陷排查。",
+   "把内置的多语言规则集（NPE、线程安全、XSS、SQL 注入）作为静态检查之外的补充，重点覆盖安全类问题。",
+   "通过 OpenAI 或 Anthropic 兼容接口接入企业自有的模型网关，在满足数据合规的前提下做代码评审。",
+   "在合并前用评审结果做一次自动化的质量检查，把高置信度问题拦在主干之外。"
   ],
   "adoption_steps": [
-   "先用 Node 环境安装 CLI：npm 安装 @alibaba-group/open-code-review，在本地仓库执行一次帮助命令确认可运行。",
-   "按 OpenAI 或 Anthropic 兼容格式配置模型端点与密钥，在一个小仓库的 diff 上试跑，观察评论条数与误报率是否符合团队口味。",
-   "试跑稳定后接入 CI，对 PR 触发评审，同时先用「只提示不阻断」的方式观察一到两周再决定是否设门禁。"
+   "先按 README 的安装说明安装 npm 包 @alibaba-group/open-code-review，确认本地 `ocr` 命令可用。",
+   "配置一个 OpenAI 或 Anthropic 兼容的模型 endpoint 与 API Key，先在一个小仓库上跑一次 diff 评审，观察输出质量和 token 消耗。",
+   "用 `ocr scan` 对单个目录做全量扫描，与团队现有静态检查结果对比，确认哪些规则有增量价值、哪些是噪音。",
+   "确认效果后接入 CI 的 PR 流水线，并设定只对高置信度问题阻断合并，其余作为评论提示。"
   ],
   "build_ideas": [
-   "在它内置的多语言规则集之外，补充公司内部的编码规范与框架专属检查规则。",
-   "把 CLI 包装成 GitLab、GitHub 或内部代码平台的评审机器人，负责评论回写与去重。",
-   "将评审结果结构化后接入内部缺陷看板，统计各仓库的高频问题类型并反向推动规范。",
-   "用自家历史 PR 与其标注结果搭一套内部评测集，持续比较不同模型与提示策略的 Precision、F1 与 Token 成本。",
-   "把 agent 的检索与行级定位能力抽出来，接到 IDE 插件或提交前钩子里做实时提示。"
+   "把评审结果对接内部 IM 或工单系统，自动为高严重度问题创建待办并指派给提交人。",
+   "基于内置规则集扩展团队自有的编码规范，形成可版本化的自定义规则包。",
+   "把评审数据回流成质量看板，按仓库、作者、缺陷类型统计趋势，用于度量代码质量变化。",
+   "在模型网关侧做多模型路由，按文件语言或风险等级选择不同成本的模型以控制开销。",
+   "将 `ocr scan` 的全量扫描能力封装成定时任务，对核心仓库做周期性的存量代码审计。"
   ],
   "risks": [
-   "材料只给了 LICENSE 链接而没有写明许可证类型，商用或二次分发前必须先去仓库确认具体条款。",
-   "项目主语言是 Go，但对外分发走 npm 包，落地前要确认团队 CI 环境是否有 Node 运行时及对应版本要求。",
-   "评审质量强依赖所配置的 LLM 端点，代码内容会发送到该端点，需先过内部的代码出网与合规评审，并评估 Token 成本。",
-   "官方明确说明 Recall 低于通用 Agent，意味着会漏掉一部分问题，不能把它当作唯一的质量门禁。",
-   "benchmark 由官方自建并通过其自身口径发布，指标需用团队自己的仓库与 PR 复现验证后再作为选型依据。",
-   "从阿里内部孵化后开源时间不长，CLI 参数与输出格式仍可能变化，接入 CI 时建议锁定版本并隔离调用层。"
+   "官方基准明确说明召回率低于通用 Agent，意味着会漏掉一部分问题，不能单独作为质量门禁的唯一依据。",
+   "性能数据来自项目方自建的 50 仓库、200 PR 基准，缺少第三方独立复现，实际效果需在自己的代码库上验证。",
+   "README 中许可证徽章存在但未显示具体协议类型，商用或二次分发前必须确认 LICENSE 条款。",
+   "项目通过 npm 包分发，对一个 Go 编写的工具而言意味着引入 Node 运行时依赖，需要在 CI 镜像中额外维护。",
+   "必须自备 LLM endpoint 与 API Key，评审会把源码发送到所配置的模型服务，需先确认数据出境与保密合规要求。"
   ],
   "tokens": {
    "prompt_tokens": 1314,
-   "completion_tokens": 1445
+   "completion_tokens": 1575
   },
-  "model_resolved": "deepseek-flash",
+  "model_resolved": "deepseek-v4.1-flash-1017",
   "hash": "343fc3d0f3f1568e1958fde342c4382828d19a873b0cc1b635e2d842314e462b",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T09:31:23+08:00",
+  "generated_at": "2026-11-16T09:31:50+08:00",
   "readme_used": true,
   "source_description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
   "language": "Go",
@@ -1125,49 +1124,49 @@
   "url": "https://github.com/anthropics/skills"
  },
  "backnotprop/plannotator": {
-  "one_liner": "给 AI 编码 agent 加一层浏览器批注界面，把人的反馈一键送回 agent。",
-  "summary": "Plannotator 是一个本地、基于浏览器的评审界面，专门承接 AI 编码 agent 产出的计划、规格文档、Markdown、HTML 等交互产物，以及代码 diff 和 PR。它通过插件、hooks 和命令直接接进 Claude Code、Codex、Copilot CLI、Gemini CLI、OpenCode、Kiro、Droid、Amp、DeepSeek Harness、Pi 等 agent：当 agent 提出决策、计划或完成工作后，界面在浏览器打开，你在上面标注、评论，再把反馈发回 agent 让它继续执行。代码评审侧支持本地改动和远端 PR，覆盖 Git、GitButler、Jujutsu、Perforce、GitHub、GitLab。新推出的 Plannotator Inbox 定位是人与多 agent 协作之间缺失的评审层，用来汇总决策、原型、变体和计划。其新意在于把「人审 agent 输出」做成独立于具体 agent 的通用界面层，而不是绑定在某一家的 IDE 或聊天窗口里。",
+  "one_liner": "把 AI 编码代理给出的计划和代码 diff 放进浏览器里标注，再一键把意见回传给代理。",
+  "summary": "Plannotator 是一个本地运行的浏览器评审界面，专门承接 AI 编码代理的产出：当 Claude Code、Codex、Copilot CLI、Gemini CLI、OpenCode 等代理提出决策、计划或 HTML 产物，或者刚完成一轮工作时，它通过插件、hooks 和命令自动打开页面，让人直接在文档、计划、消息或 diff 上做标注和评论，再把反馈送回代理执行。除了文档评审，它还覆盖代码评审：可以评论本地未提交的改动或远程 PR，支持 Git、GitButler、Jujutsu、Perforce、GitHub 和 GitLab，并把评论回传给代理。较新的 Plannotator Inbox 则把自己定位成人和多代理协作之间的评审层，用于集中处理决策、原型、变体和计划。新意在于它补上了人机回路中「人看、人批注」这一段，不再依赖在终端里打字描述问题；同时它内置 AI，可以就正在评审的内容提问，或者发起 AI 评审，直接把评论贴到 diff 上。",
   "audience": [
-   "已经在日常开发中用 Claude Code、Codex 等 CLI agent 写代码、但评审计划与 diff 仍靠终端复制粘贴的工程师。",
-   "需要审阅 agent 生成的方案、规格文档和 HTML 原型，并希望留下逐条批注的产品经理或设计者。",
-   "同时跑多个 coding agent、需要统一收件箱来跟踪待决策事项的技术负责人。",
-   "使用 Jujutsu、Perforce、GitButler 等非标准 Git 工作流、又想让 agent 参与代码评审的团队。",
-   "把 agent 引入团队流程、需要可追溯的评审与反馈记录的平台或研发效能工程师。"
+   "日常用 Claude Code、Codex、Copilot CLI 等命令行代理写代码，需要频繁纠正代理计划的工程师。",
+   "要在合并前审阅 AI 生成实现方案与 PR 的技术负责人或代码评审者。",
+   "同时运行多个代理、需要统一收件箱来处理待决策事项的人。",
+   "使用 Jujutsu、Perforce 或 GitButler 等非主流版本控制流程、又想要现代评审界面的团队。",
+   "经常让代理产出 HTML 原型或可视化产物、需要逐处标注反馈的产品与设计人员。"
   ],
   "use_cases": [
-   "agent 产出实现计划后，在浏览器里逐段标注疑问和修改意见，一键回传给 agent 让它改稿再执行。",
-   "对本地未提交改动或远端 PR 做行级评论并给出代码建议，评论直接回到 agent 作为下一轮修改输入。",
-   "审阅 agent 生成的 HTML 原型或可视化产物，直接在页面上标注要改的地方。",
-   "用 Plannotator Inbox 汇总多个 agent 并行产出的决策点与变体方案，逐个确认后再推进。",
-   "在评审过程中就地调用内置 AI 提问，或让 AI 先跑一轮评审并把评论贴到 diff 上。"
+   "让代理先产出实现计划，在浏览器里逐段标注「这里改」「这个方案不要」，再把整份意见回传，让代理按批注重写计划。",
+   "对本地未提交的改动或远程 GitHub/GitLab PR 逐行评论并给出代码建议，让代理直接按评论修改。",
+   "对代理生成的 HTML 原型或交互产物做视觉与文案标注，把设计反馈一次性交回代理。",
+   "在 Inbox 里集中处理多个代理抛出的决策点、方案变体和计划，避免在多终端之间来回切换。",
+   "先用内置 AI 对正在评审的 diff 跑一轮提问或预评审，人工再补充关键意见。"
   ],
   "adoption_steps": [
-   "先打开官网 plannotator.ai 和 README 里的演示视频（如 Plan review with Pi），确认交互形态符合你的评审习惯。",
-   "在 README 支持的 agent 列表里选定你正在用的那个，按其插件/hooks/commands 方式接入，先用一个只读的小计划做端到端试用。",
-   "在单个仓库或单个 PR 上试跑代码评审流程，确认评论能正确回到 agent、且与你们现有的 Git/GitHub/GitLab 工作流不冲突，再考虑推广到团队。"
+   "先到官方站点 plannotator.ai 或仓库 README，找到你正在用的那一个代理（例如 Claude Code 或 Codex）对应的 plugin/hook/command 接入说明，只接入一个代理做试点。",
+   "用一次真实的小任务走完整回路：让代理产出计划或改完一个小 diff，在浏览器里标注两三处并回传，确认代理能正确读到批注并照做。",
+   "试点通过后再扩大范围：把 Code Review 接到团队的 Git 或 GitHub PR 流程，约定标注书写规范，最后再评估是否引入 Inbox 处理多代理场景。"
   ],
   "build_ideas": [
-   "把评审评论按仓库和 agent 会话归档成可检索的知识库，用于沉淀「哪些反馈反复出现」并反哺提示词或规范文档。",
-   "为团队自定义评审模板与检查清单，在 Plannotator 打开计划或 diff 时自动附加必答项。",
-   "对接内部工单或 CI 系统，把未处理的评审意见自动转成任务或在流水线上做门禁。",
-   "针对 Jujutsu、Perforce 等非主流工作流封装更贴合团队习惯的评审入口与命令封装。",
-   "在 Inbox 之上做多 agent 编排看板，按决策紧急度排序并分派给不同评审人。"
+   "为内部自研或公司私有的代理框架编写 Plannotator 接入插件，让所有内部代理共用同一套人工评审回路。",
+   "把标注结果对接进 CI 或工单系统，让「计划被批注」「diff 评论未处理」变成可追踪的工作项和卡点。",
+   "基于它的 HTML 产物标注能力，做一套面向非工程角色（设计、运营）的原型评审流程与模板。",
+   "把团队反复出现的批注沉淀成评审规则库或提示词，让代理在下一轮产出前先自查同类问题。",
+   "为非 Git 的版本控制或内网代码托管平台写适配层，把 diff 评审扩展到现有材料未覆盖的系统。"
   ],
   "risks": [
-   "README 节选未披露开源许可证，商业或闭源场景使用前必须在仓库确认 license 及再分发条款。",
-   "接入依赖各家 agent 的插件与 hooks 机制，这些上游接口变动会直接影响可用性，升级 agent 前需验证兼容。",
-   "支持的 agent 与代码托管平台清单很长，但各组合的成熟度可能不均，需先在你自己实际使用的组合上验证而非假设全部等价。",
-   "README 强调本地浏览器评审，而 Inbox 指向 plannotator.ai 官网，采用前要确认 Inbox 的数据是否离开本地、是否需要账号以及团队数据的存放位置。",
-   "项目处于 star 快速增长期，界面与集成方式可能仍在快速调整，深度定制（自写插件或钩子）存在后续迁移成本。"
+   "提供的 README 节选中看不到 LICENSE 字段，商用或二次分发前必须到仓库确认许可证类型与限制。",
+   "项目把「Plan Mode」标注为 Legacy，说明功能命名与形态仍在快速变化，接入方式和界面可能随版本改动，存在升级迁移成本。",
+   "它需要针对每个代理分别安装插件或 hooks，且列出的代理多达十余种，各集成的成熟度和维护频率未必一致，选型时应只验证自己实际用的那一个。",
+   "作为浏览器端评审界面，它很可能需要在本地起服务并开放端口，企业环境下的网络策略、端口占用和多机协作方式需要先确认。",
+   "内置 AI 评审涉及调用外部模型服务，代码与计划内容是否会离开本机或进入第三方服务，材料中无法确认，需要在试用前核实数据流向。"
   ],
   "tokens": {
    "prompt_tokens": 1375,
-   "completion_tokens": 1430
+   "completion_tokens": 1880
   },
-  "model_resolved": "deepseek-flash",
+  "model_resolved": "deepseek-v4.1-flash-1017",
   "hash": "98083f94b88d74e49c4b413a96ca23f7d98e670def6f72a04218f2fa0d482796",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T09:31:23+08:00",
+  "generated_at": "2026-11-16T09:31:59+08:00",
   "readme_used": true,
   "source_description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
   "language": "TypeScript",
@@ -1273,48 +1272,48 @@
   "url": "https://github.com/debpalash/VoiceStudio"
  },
  "dream-num/univer": {
-  "one_liner": "把表格和文档的编辑、计算、协作能力嵌进自己产品的开源 Office SDK。",
-  "summary": "Univer 是一个 TypeScript 写的开源 Office SDK，README 的定位是让开发者用 Sheets 和 Docs 作为起点，把编辑、计算、协作与文件处理能力嵌进自己的应用或 AI agent。它没有做成一个成品在线办公软件，而是给出一套可扩展的开源内核与架构：用模块划分功能边界、用命令层统一跨功能的编辑与撤销重做、用 Facade API 和事件把外部应用与 agent 接进来。和单纯 fork 一个在线表格相比，它的新意在于把「可嵌入 + 可扩展 + 供 agent 调用」当作一等目标，并在开源核心之外提供商业扩展（README 有 Scope and licensing 一节说明边界）。",
+  "one_liner": "把表格和文档编辑能力嵌进自己的产品，并对外暴露给 AI agent。",
+  "summary": "Univer 是一套 TypeScript 写的 Office SDK，开源部分是电子表格（Sheets）和文档（Docs），可以嵌到自己的应用里获得编辑、公式计算和文件处理能力。它没有做成一个成品在线 Office，而是提供一个可扩展内核，用插件划分功能边界，用命令体系组织跨功能的编辑与撤销/重做，再通过 Facade API 和事件把编辑内容开放给外部应用和 agent。和常见的「直接嵌一个成品编辑器」方案相比，它的新意在于把 office 能力当成 SDK 来组装，并明确把 AI agent 当作一等调用方。README 同时区分了开源核心与商业扩展，说明协作、文件处理等能力可能不在开源范围内。",
   "audience": [
-   "要在自家 SaaS 或内部系统里嵌入电子表格/文档编辑能力的 TypeScript 前端团队。",
-   "正在做 AI agent 或办公助手，需要一个可被程序化读写和编辑的表格/文档内核的团队。",
-   "需要多人协作编辑、并且希望自己掌控数据与部署位置的企业研发部门。",
-   "评估在线表格/文档方案、想对比开源与商业功能边界的技术选型负责人。"
+   "想在自家 SaaS 里内置表格或文档编辑能力、又不想从零写渲染与公式引擎的工程师。",
+   "正在做 AI agent 工具链、需要让 agent 读写结构化表格或文档的产品经理与开发者。",
+   "评估过商业在线表格组件、想找可二次开发替代方案的技术选型负责人。",
+   "做协作办公或数据填报类产品的创业者，需要一套可裁剪的 office 内核。"
   ],
   "use_cases": [
-   "把类 Excel 的表格编辑器嵌进自有后台，让业务人员在熟悉的网格界面里录入和计算数据。",
-   "在文档或表格之上接 AI agent，通过 Facade API 让模型读取内容、执行编辑并保留撤销重做。",
-   "为内部系统增加多人同时编辑同一份表格或文档的协作能力。",
-   "把已有的业务数据接入表格做公式计算，再把结果回写到自有系统。",
-   "以开源核心为基线做行业定制（如财务、报表场景），按需再评估商业扩展。"
+   "在业务系统里嵌入电子表格，让用户直接做数据录入、公式计算和格式化，而不是导出 Excel 再上传。",
+   "在自研文档编辑器里加入富文本编辑与结构化内容处理，替换掉能力受限的第三方编辑器。",
+   "把表格或文档的读写能力通过 Facade API 暴露给 agent，让 agent 在受控文档上执行编辑动作。",
+   "围绕命令与撤销重做体系编写自定义业务插件，把审批、校验、模板等逻辑挂到编辑流程中。",
+   "参考 Univer Workspace 这个示例应用，快速搭一个可演示的 office 前端原型。"
   ],
   "adoption_steps": [
-   "先打开 https://docs.univer.ai/showcase 和 https://univer.ai/compare/ 看实际效果与开源/商业功能对照，确认你要的能力落在开源核心还是商业扩展里。",
-   "按 https://docs.univer.ai/ 的 Quick start 在本地新建一个 TypeScript 前端工程，安装文档给出的 npm 包并跑通一个最小表格编辑器页面。",
-   "读 README 的 Open-source architecture 与 Facade API/事件相关章节，用 Facade API 写一个读写单元格并触发撤销重做的小 demo，验证接入自有应用的成本后再决定是否深入。"
+   "先按仓库 README 的 Quick start 章节和 docs.univer.ai 文档在本地跑通开源 Sheets/Docs 示例，亲手确认渲染效果与编辑交互是否达标。",
+   "对照 univer.ai/compare 的功能对比页和 README 的 Scope and licensing 章节，列出你需要的能力分别落在开源核心还是商业扩展里，先算清授权成本。",
+   "用 Facade API 和事件机制做一个最小 PoC，例如把自家数据灌进表格并注册一个自定义命令，用实际代码量评估集成与维护成本后再决定是否深入。"
   ],
   "build_ideas": [
-   "基于开源核心封装一层行业模板，比如带固定表结构和公式的财务报表编辑器。",
-   "做一个 agent 工具层，把 Facade API 包装成模型可调用的读写单元格、批量编辑、查询区域等函数。",
-   "在编辑内核之上加自定义功能模块，例如审批流标记、单元格级评论或数据校验规则。",
-   "做成可嵌入的 React/Vue 组件包，把初始化、协作连接和文件导入导出封装成开箱即用的封装。",
-   "围绕文件处理能力做导入导出服务，把 xlsx 等格式与自家系统之间的转换自动化。"
+   "基于开源表格内核做垂直行业的报表工具，把行业模板、校验规则和导出逻辑封装成插件。",
+   "做一个 agent 可操作的文档工作台，用 Facade API 把编辑动作包装成 agent 可调用的工具集。",
+   "面向企业内部做轻量数据填报系统，把表格编辑与后端权限、审批流打通。",
+   "把文档渲染与编辑能力封装成内部组件库，供多条产品线复用同一套 office 内核。",
+   "以 Univer Workspace 为参考，裁剪出自己的协作办公前端骨架并替换为自有后端。"
   ],
   "risks": [
-   "开源核心与商业扩展的功能边界必须按 README 的 Scope and licensing 一节和 https://univer.ai/compare/ 逐条确认，避免做完才发现关键能力在商业版。",
-   "仓库 LICENSE 文件的具体条款需要自己点开确认，材料未给出许可类型，商用前不能默认。",
-   "README 被截断，Quick start 的实际包名、依赖和版本要求需以 https://docs.univer.ai/ 当前文档为准，可能与示例有出入。",
-   "作为 SDK 而非成品，架构概念（模块、命令、Facade）较多，团队需要预留学习和集成成本。",
-   "AI agent 相关能力在描述中属于产品定位，实际可用的 agent 接口成熟度要按文档和 release 记录核实。"
+   "README 明确开源部分是 Sheets 和 Docs，协作、文件处理等能力被放在商业扩展里，上线前不确认 Scope and licensing 章节可能出现做到一半才发现要付费的情况。",
+   "材料中只出现了 LICENSE 链接而未展示具体条款，采用前必须亲自确认许可证类型与商用、分发限制。",
+   "架构是插件化内核加命令与撤销重做体系，包和概念较多，团队需要评估学习曲线和二次开发的人力投入。",
+   "材料未给出稳定版本号与破坏性变更策略，需先看 releases 页确认发布节奏和主版本兼容承诺，避免升级时被动大改。",
+   "材料未提及浏览器兼容性、超大数据量表格的性能上限和移动端表现，需在选型阶段自行压测验证。"
   ],
   "tokens": {
    "prompt_tokens": 1425,
-   "completion_tokens": 1070
+   "completion_tokens": 1706
   },
   "model_resolved": "deepseek-v4.1-flash-1017",
   "hash": "7d789e97db02be48fd57d72c31805436645dcaa3f3eefef4855571b10318211e",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T09:31:23+08:00",
+  "generated_at": "2026-11-16T09:31:56+08:00",
   "readme_used": true,
   "source_description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
   "language": "TypeScript",
@@ -1419,48 +1418,48 @@
   "url": "https://github.com/google-deepmind/mujoco"
  },
  "google-labs-code/stitch-skills": {
-  "one_liner": "让编码 agent 通过 MCP 直接调用 Google Stitch 做界面设计与生成",
-  "summary": "这是一套面向 Google Stitch 的 Agent Skills 集合，按 Agent Skills 开放标准组织，让 Claude Code、Cursor、Codex、Gemini CLI、Antigravity、OpenCode 等编码 agent 能加载 Stitch 相关能力。实际能力由 Stitch MCP server 提供，仓库负责把设计、构建、工具三类技能打包成 stitch-design、stitch-build、stitch-utilities 三个插件分发。安装路径按 agent 分别设计：Codex 走 plugin marketplace 加 sparse checkout，Claude Code 和 Cursor 用 npx plugins add，OpenCode 只能手动拷贝目录。相对绑定单一 IDE 的插件，它的新意在于用开放技能标准把设计工具做成可在多个 agent 之间复用的包。",
+  "one_liner": "把 Google Stitch 的界面生成能力打包成编码 Agent 可直接加载的技能集。",
+  "summary": "这是 google-labs-code 维护的一组 Agent Skills 与插件，面向 Google Stitch 这个设计/界面生成服务，让编码 Agent 能通过 Stitch MCP server 调用它。技能遵循 Agent Skills 开放标准，因此同一套内容可以装在 Codex、Claude Code、Cursor、Gemini CLI、Antigravity、OpenCode 等不同 Agent 上。仓库按 stitch-design、stitch-build、stitch-utilities 三个插件分组，Codex 走 marketplace 加稀疏检出，Claude Code 和 Cursor 用 npx plugins 装到项目或工作区。相比各家 Agent 各写一套提示词的做法，它的新意在于用统一标准分发技能，并把「设计→组件→工具」拆成可单独安装的插件单元。",
   "audience": [
-   "用 Claude Code 或 Cursor 写前端、希望在设计稿和代码之间少一次手工搬运的工程师",
-   "需要在 CLI agent 里快速产出可讨论界面原型的产品经理或交互设计师",
-   "已在用 Google Stitch，但想把设计能力接进日常编码流程的团队",
-   "负责团队 agent 工具链、需要评估技能包与 MCP 集成的平台或效率工程师"
+   "已经在用 Claude Code、Cursor 或 Codex 写前端，希望让 Agent 直接产出界面草稿的工程师。",
+   "需要把设计稿快速转成可运行组件、评估设计到代码链路的团队技术负责人。",
+   "正在研究 Agent Skills 开放标准、想知道实际技能包长什么样的工具链开发者。",
+   "用 Gemini CLI 或 Antigravity 且已接入 Google 生态、想复用 Stitch 能力的产品团队。"
   ],
   "use_cases": [
-   "在 Claude Code 里用自然语言描述一个页面，调用 generate-design 类技能直接产出设计结果再落到代码。",
-   "用 stitch-build 把已有设计拆成组件和构建步骤，减少从设计到组件骨架的手工转换。",
-   "在 Cursor 工作区内对现有页面做设计迭代，让 agent 读取当前代码并给出对应的界面方案。",
-   "在 Codex 里注册该 marketplace 后按需只启用 stitch-design 或 stitch-utilities，控制加载的技能范围。",
-   "OpenCode 用户手动拷贝所需技能目录到 .opencode/skills 后，在同一个会话里同时使用 Stitch MCP 与其他工具。"
+   "在 Claude Code 里用 npx plugins 装好 stitch-design 后，直接让 Agent 按描述生成页面版式并落到项目里。",
+   "用 stitch-build 的技能把已有设计拆成组件，补全 props 与样式结构。",
+   "在 Cursor 工作区范围内装插件，让 Agent 在读代码上下文的同时调用 Stitch 做界面迭代。",
+   "在 Codex 里通过 marketplace 只稀疏拉取需要的插件目录，减少克隆体积后做试用。",
+   "把 skill 目录复制到 .opencode/skills 或 .claude/skills，在自建 Agent 环境里复用同一套技能。"
   ],
   "adoption_steps": [
-   "先按 https://stitch.withgoogle.com/docs/mcp/setup/ 配好 Stitch MCP server（例如在项目 opencode.json 或 ~/.config/opencode/opencode.json 里加远程 MCP 条目），确认 agent 能正常调用 Stitch 后再装技能。",
-   "Claude Code 执行 npx plugins add google-labs-code/stitch-skills --scope project --target claude-code，Cursor 则把 --scope 换成 workspace、--target 换成 cursor；Codex 用 codex plugin marketplace add 加 --ref main 与三个 --sparse 路径。",
-   "先只跑通一个技能（如 plugins/stitch-design/skills/generate-design）做一次端到端生成，确认输出可用后再决定是否全量启用三个插件。"
+   "先按 README 指向的 https://stitch.withgoogle.com/docs/mcp/setup/ 完成 Stitch MCP 配置，确认账号与服务可用，否则技能装上也无法真正调用。",
+   "在单个项目里试点：执行 npx plugins add google-labs-code/stitch-skills --scope project --target claude-code（Cursor 用 --scope workspace --target cursor），先只装 stitch-design 观察效果。",
+   "若使用 OpenCode，改为手动复制 plugins/*/skills/ 下需要的技能目录到 .opencode/skills/，并把 name 字段与文件夹名统一改成小写 kebab-case 后验证是否被加载。"
   ],
   "build_ideas": [
-   "按 Agent Skills 标准把团队自己的设计规范、组件命名和评审规则写成私有技能，与 Stitch 技能组合使用。",
-   "写一个打包或重命名脚本，把 stitch:: 形式的技能名批量转成 kebab-case 并同步目录名，解决 OpenCode 等 agent 的加载兼容问题。",
-   "把设计生成技能接入 CI 或设计评审流程，自动比对设计产出与仓库中实际组件实现的差异并输出报告。",
-   "在 stitch-utilities 之上叠加组件库文档类 MCP，让 agent 生成设计时同时受内部组件库约束。",
-   "把三个插件按团队实际工作流裁剪成内部 marketplace，只保留需要的技能子集以降低 agent 上下文占用。"
+   "在 stitch-design 的技能基础上追加团队设计规范（间距、色彩、组件命名），做出内部专用的设计技能包。",
+   "基于 stitch-utilities 里的辅助技能，改造成对接公司自有组件库的代码生成器。",
+   "写一个转换脚本，把 stitch:: 这类命名自动规范成 kebab-case，解决 OpenCode 装载失败的问题。",
+   "把技能产出的界面代码接入 CI，做结构或可访问性校验，形成设计到合并的自动化链路。",
+   "参照它的插件分组方式，把团队其他重复性工作（如接口对接、埋点）也拆成可独立安装的 skill 插件。"
   ],
   "risks": [
-   "能力强依赖 Google Stitch MCP server 与相应账号权限，Stitch 侧不可用或访问受限时这套技能基本失效。",
-   "所给材料中没有出现 license 信息，商用或二次分发前需先在仓库中确认许可条款。",
-   "各 agent 支持度不一致：OpenCode 需手动拷贝目录，且要求技能 name 为小写 kebab-case，stitch:: 命名必须先改名，allowed-tools 等 frontmatter 会被忽略。",
-   "安装方式较新且分散（codex plugin marketplace、npx plugins、手动 cp），参数与 sparse 路径可能随仓库结构调整而变化，需按 README 实际版本核对。",
-   "star 增长快但材料未体现技能内容质量、测试或发布节奏，实际可用技能数量与维护状态需进仓库逐个确认。"
+   "提供的材料里没有出现开源许可证信息，商用或二次分发前需要自行到仓库确认 license。",
+   "核心能力依赖 Google Stitch 的 MCP 服务与账号配置，服务不可用、限流或接口调整都会直接让技能失效。",
+   "OpenCode 需要手动复制目录，且技能名必须是小写 kebab-case 并与目录名一致，否则不会被加载，迁移有额外改造成本。",
+   "Codex 安装命令依赖 --sparse 指定的 .agents/plugins、plugins/stitch-design 等具体路径，仓库目录结构一变，命令就会失效。",
+   "安装链路依赖 npx plugins 这一外部命令，README 又被截断，Gemini CLI、Antigravity 等其余 Agent 的实际支持程度证据不足。"
   ],
   "tokens": {
    "prompt_tokens": 1310,
-   "completion_tokens": 2112
+   "completion_tokens": 1528
   },
   "model_resolved": "deepseek-flash",
   "hash": "402d140ee6f49f81f56db1bee19c3b69fe35d4c78e12a4dd8caf6df4b6b05a48",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T09:31:38+08:00",
+  "generated_at": "2026-11-16T09:32:04+08:00",
   "readme_used": true,
   "source_description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
   "language": "TypeScript",
@@ -2392,49 +2391,48 @@
   "url": "https://github.com/tokio-rs/topcoat"
  },
  "tradermonty/claude-trading-skills": {
-  "one_liner": "把 Claude Code 变成个人投研助手，用固定工作流做市场复盘、风控与交易计划。",
-  "summary": "这是一个基于 Claude Code Skills 的交易工作流工具箱，面向时间有限的个人投资者，把市场分析、技术图表、经济日历、选股筛选和策略开发拆成可复用的 skill。它不直接给买卖信号，而是把每日市场检查、每周组合复盘、风险管理和交易日志这些流程固化成 workflows/ 下的机器可读 YAML 清单，按顺序点名该用哪些 skill 和产出什么结果。新意在于以「先管风险再找标的」为顺序组织 AI 能力，并明确把长期投资、ETF、股息股当核心、波段交易当卫星策略，而不是做自动交易或信号服务。",
+  "one_liner": "把 Claude Code 变成有纪律的投研工作流：复盘、风控、计划、日志",
+  "summary": "这是一套基于 Claude Skills 的交易工作流工具箱，面向时间有限的个人投资者，核心用长期投资、ETF 和股息股，市况有利时用有纪律的波段交易做卫星仓位。它不替你做买卖决策，而是把市场复盘、风险管理、交易计划、交易日志和持续改进拆成可复用的 skills，并用 workflows/ 下的 YAML 清单规定每个流程用哪些 skill、有哪些决策门和产出物。新用户可从 market-regime-daily 这类 15 分钟日常市场检查起步，基础路径不需要 API。相比直接让 AI 给买卖建议的做法，它的新意在于把重点放在决策流程和检查清单上，作者明确定位为「先自用、再开源」，不承诺盈利。",
   "audience": [
-   "每天只能挤出十几分钟看盘的上班族个人投资者，需要一套固定的盘后复盘流程。",
-   "以 ETF 和股息股为底仓、想在行情有利时做点波段增强收益的长期投资者。",
-   "习惯先定风险预算和仓位上限、再去找交易标的的纪律型交易者。",
-   "想用交易日志和复盘记录改善决策过程、而不是追求某个神奇指标的人。",
-   "为投研类产品做 AI 工作流原型的开发者，需要一个可参考的 skill 编排范例。"
+   "时间有限、以长期持有 ETF 和股息股为主、想用小仓位波段增强收益的个人投资者。",
+   "想把每日复盘、每周组合检查和交易日志固定成流程，而不是凭感觉下单的人。",
+   "已经在用 Claude Code、希望把投研动作沉淀成可复用 skills 的工程师型投资者。",
+   "关注 AI 辅助投研工具形态的产品经理，想参考其工作流与决策门的设计。"
   ],
   "use_cases": [
-   "用 market-regime-daily 工作流做每日 15 分钟市场体检：跑市场宽度分析、上升趋势分析和仓位建议，输出当天的风险姿态。",
-   "用 core-portfolio-weekly 工作流做每周长期组合复盘，逐项检查核心持仓是否仍符合原始买入逻辑。",
-   "借助技术图表和经济日历相关 skill，在制定交易计划前核对关键价位与即将公布的数据事件。",
-   "用 screener 类 skill 按自己的条件筛出候选标的，再交回风险管理流程决定是否值得下单。",
-   "把每次交易的计划和结果写成日志，事后按工作流回看决策环节哪一步出了问题。"
+   "每个交易日按 market-regime-daily 工作流做 15 分钟市场检查，用市场宽度、上升趋势和敞口教练三个 skill 判断当前该承担多少风险。",
+   "每周按 core-portfolio-weekly 工作流复核长期核心持仓的 ETF 与股息股配置。",
+   "开仓前用技术图表和经济日历相关 skills 核对形态与财报、宏观事件的时间冲突。",
+   "先用筛选器 skill 定好风险预算再找候选标的，避免先选股再补风控。",
+   "交易后用日志类 skill 记录当时的决策依据，定期回看并修正自己的流程。"
   ],
   "adoption_steps": [
-   "先读文档站 https://tradermonty.github.io/claude-trading-skills/ 和 README 的 Who This Is For 与 Disclaimer，确认自己属于「长期为主、卫星波段」的目标用户而非要找自动交易或信号服务。",
-   "克隆仓库并按文档站安装章节把 skills 接入本地 Claude Code，然后先跑 workflows/market-regime-daily.yaml 这条标注「基础路径无需 API」的 15 分钟每日市场检查，验证 skill 能正常调用。",
-   "跑通后再逐个接入 workflows/ 下其它清单（例如 core-portfolio-weekly），每接一个都用自己的真实持仓或观察列表核对输出，确认符合预期后再固化为日常习惯。"
+   "先读文档站 https://tradermonty.github.io/claude-trading-skills/ 的快速开始，并查看 docs/en/privacy.md 与 SECURITY.md，确认需要提供哪些持仓和行情数据。",
+   "Clone 仓库后按文档在 Claude Code 中挂载 skills，打开 workflows/market-regime-daily.yaml，按清单里的 skill 顺序跑通这条不需要 API 的基础路径。",
+   "用模拟盘或历史数据执行一遍 core-portfolio-weekly，把输出和自己当时的判断逐条对照，确认有价值后再接入真实持仓。"
   ],
   "build_ideas": [
-   "把 workflows/ 下的 YAML 清单接到 cron 或 GitHub Actions，做成每天自动生成市场复盘报告的流水线。",
-   "替换或接入自有的行情与基本面数据源，把 market-breadth-analyzer 和 screener 的输出汇入自建看板。",
-   "将交易日志类产出落到 SQLite 或 Notion 等结构化存储，统计决策质量而非单纯收益曲线。",
-   "基于 exposure-coach 这类仓位建议 skill 做一个下单前风控检查网关，不通过检查就不允许记录交易。",
-   "针对 A 股、港股等其它市场扩展 skill 分支，复用同一套工作流 manifest 的编排结构。"
+   "把 workflows/*.yaml 的决策门接进自己的下单前检查脚本，做成必须人工确认的最后一道闸。",
+   "将日志类 skill 的输出写入 SQLite 或 Notion，做跨月的决策复盘和偏差统计。",
+   "接入自己的行情与持仓数据源，替换默认数据获取环节，适配非美市场。",
+   "为 A 股、港股补充本地化的经济日历和筛选器 skills。",
+   "把市场宽度、趋势、敞口三个 skill 的输出汇总成日报，推送到 Slack 或 Telegram。"
   ],
   "risks": [
-   "README 明确说明项目起源于作者个人使用，材料中没有维护者规模、issue 响应速度或发布节奏的信息，工程成熟度需自行核验。",
-   "项目反复声明不是信号服务、不保证盈利，回测、筛选和 AI 生成分析都不保证未来结果，不能直接当作交易依据。",
-   "skill 依赖 Claude Code 与 Anthropic 模型生态，效果会随模型和工具版本变化，若迁移到其它 agent 框架需要重写。",
-   "工作流表格中列出 API Profile 字段，说明基础路径之外的部分能力可能需要外部行情或数据 API 与密钥，成本和数据条款需自行确认。",
-   "代码以 MIT 许可 AS IS 提供且无担保，但其使用的第三方行情数据仍受各自数据源条款约束，商用前需单独核对。"
+   "README 自述由个人项目起步、作者一人维护，skills 与 workflows 的更新节奏和长期可用性没有保证。",
+   "材料中只有流程与清单，没有任何回测或收益证据，README 也明确说明它不是信号服务、不承诺盈利。",
+   "依赖 Claude Code 与 Claude 的模型额度，超出基础路径的工作流可能需要 API key，会产生调用成本。",
+   "使用时要输入个人持仓与交易数据，数据留存和隐私边界需以 docs/en/privacy.md 与 SECURITY.md 为准，自行评估后再决定是否接入真实账户。",
+   "项目明确不支持全自动交易和短线 scalping，想省掉人工决策的用法并不适用，采用前要确认这一点与你的预期一致。"
   ],
   "tokens": {
    "prompt_tokens": 1129,
-   "completion_tokens": 1915
+   "completion_tokens": 2113
   },
-  "model_resolved": "deepseek-flash",
+  "model_resolved": "deepseek-v4.1-flash-1017",
   "hash": "cb34adff175f02d8506de2fa5136e9ae4f44fdd82a1f9d6329fa490ae891e228",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T09:31:26+08:00",
+  "generated_at": "2026-11-16T09:31:57+08:00",
   "readme_used": true,
   "source_description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
   "language": "Python",
