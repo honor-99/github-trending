@@ -133,7 +133,9 @@ score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 
 
 ## 定时任务怎么接
 
-抓取由本机 cron 触发，**不用 GitHub Actions**（Pages 走分支部署）：
+抓取有**两条腿**（2026-11-16 起），互为兜底：
+
+### 主路径：本机 cron（能出中文解读）
 
 ```
 cron 08:00  →  scripts/archive.py --period daily
@@ -144,6 +146,41 @@ cron 08:00  →  scripts/archive.py --period daily
 ```
 
 `archive.py` 的幂等性就是为"重跑 / 补跑 / 兜底跑"准备的：同一天跑几次，数据都一样。
+
+### 兜底路径：GitHub Actions（不依赖本机开机，不出解读）
+
+`.github/workflows/trending-backfill.yml`，每天 **09:00 CST**（01:00 UTC）跑一次：
+
+1. 算 CST 日期，检查 `data/2026/<日期>-<period>.json` 在不在 ——
+   日榜每天都查，周榜只在周一查，月榜只在 1 号查（与上面 cron 的排期一致）；
+2. **缺了才动手**：`fetch-trending.py` → `archive.py --date <当天>` → `insights.py` → `history.py`
+   → 提交推送（commit message 带「远端补档」）；
+3. **故意不做中文解读** —— runner 连不到内网的模型中转（`172.16.40.227:3000`）；
+4. **故意不支持指定历史日期** —— GitHub Trending 只有当日状态，拿今天的数据写昨天的日期
+   等于造假，宁可留空档。
+
+本机开着时第 1 步就发现快照已存在，Actions 什么都不做（近乎零成本）。
+
+### 本机开机后补解读
+
+`~/.hermes/scripts/trending-boot-interpret.sh` + systemd user unit
+`trending-boot-interpret.service`（`WantedBy=default.target`，开机后 sleep 300 错开 gateway 的
+cron catch-up）：
+
+- 等网络就绪（HEAD 探测 github.com，最多 3 分钟）→ `git pull --rebase` 拉回远端补的档；
+- `interpret.py --period all --all-snapshots --limit 40 --workers 6` —— **扫描全部历史快照**，
+  否则前几天补档里的独有项目只看 `latest-*` 永远补不到解读；hash 去重，已解读的不重复计费；
+- `publish.sh` 提交推送；日志在 `~/.hermes/logs/trending-boot-interpret.log`。
+
+`publish.sh` 在 push 前会先 `git pull --rebase --autostash`，避免远端刚补档导致本地 push 被拒。
+
+### 断档排查顺序
+
+1. `ls data/2026/` 缺哪天 = 那天两条腿都没跑（本机没开 + Actions 也没补上）；
+2. `git log --date=iso --pretty=format:'%h %ad %s' -5` 看有没有「远端补档」commit；
+3. `curl -s https://trending.208202.xyz/data/latest-daily.json | head -5` 确认线上 `date`；
+4. `systemctl --user status hermes-gateway`、`grep "Received SIGTERM" ~/.hermes/logs/gateway.log`
+   判断本机是不是关机了。
 
 ## 已验证
 
