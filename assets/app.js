@@ -428,6 +428,8 @@
     let kpiDelay = 0;
     for (const c of cards) {
       const card = el('div', `kpi ${c.cls}`.trim());
+      // linear 皮肤把注解藏起来了（kpi-hint: display none），挂到 title 上悬浮可见
+      if (c.hint) card.title = c.hint;
       card.append(el('div', 'kpi-label', c.label));
       const valueNode = el('div', 'kpi-value', '0');
       card.append(valueNode);
@@ -541,6 +543,7 @@
     let delay = 0;
     for (const c of cards) {
       const card = el('div', `kpi ${c.cls || ''}`.trim());
+      if (c.hint) card.title = c.hint;
       card.append(el('div', 'kpi-label', c.label));
       const valueNode = el('div', 'kpi-value', '0');
       card.append(valueNode);
@@ -950,6 +953,8 @@
     let kpiDelay = 0;
     for (const c of cards) {
       const card = el('div', `kpi ${c.cls}`.trim());
+      // linear 皮肤把注解藏起来了（kpi-hint: display none），挂到 title 上悬浮可见
+      if (c.hint) card.title = c.hint;
       card.append(el('div', 'kpi-label', c.label));
       const valueNode = el('div', 'kpi-value', '0');
       card.append(valueNode);
