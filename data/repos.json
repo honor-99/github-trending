@@ -35,18 +35,25 @@
     "rank": 4,
     "stars_period": 717,
     "stars_total": 57018
+   },
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 841,
+    "stars_total": 57665
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-17",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-17",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
  },
  "CopilotKit/OpenBot": {
@@ -98,6 +105,31 @@
   },
   "times_on_board": 1,
   "url": "https://github.com/D4Vinci/Scrapling"
+ },
+ "DeanChensj/jiangshan-map": {
+  "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+  "first_seen": "2026-11-17",
+  "full_name": "DeanChensj/jiangshan-map",
+  "history": [
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 288,
+    "stars_total": 6682
+   }
+  ],
+  "language": "JavaScript",
+  "last_seen": "2026-11-17",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-17",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/DeanChensj/jiangshan-map"
  },
  "Donchitos/Claude-Code-Game-Studios": {
   "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
@@ -189,7 +221,7 @@
   "url": "https://github.com/HKUDS/DeepTutor"
  },
  "NVIDIA/SkillEvaluator": {
-  "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+  "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
   "first_seen": "2026-11-16",
   "full_name": "NVIDIA/SkillEvaluator",
   "history": [
@@ -199,18 +231,25 @@
     "rank": 10,
     "stars_period": 122,
     "stars_total": 1754
+   },
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 3,
+    "stars_period": 873,
+    "stars_total": 2667
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-17",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-17",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/NVIDIA/SkillEvaluator"
  },
  "NVIDIA/auto-ontology": {
@@ -487,18 +526,25 @@
     "rank": 8,
     "stars_period": 355,
     "stars_total": 17941
+   },
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 6,
+    "stars_period": 791,
+    "stars_total": 18936
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-17",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-17",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/ag-ui-protocol/ag-ui"
  },
  "alibaba/open-code-review": {
@@ -512,18 +558,25 @@
     "rank": 6,
     "stars_period": 691,
     "stars_total": 52164
+   },
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 951,
+    "stars_total": 52917
    }
   ],
   "language": "Go",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-17",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-17",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/alibaba/open-code-review"
  },
  "anomalyco/hex": {
@@ -708,6 +761,13 @@
     "stars_total": 11899
    },
    {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 696,
+    "stars_total": 12536
+   },
+   {
     "date": "2026-11-16",
     "period": "weekly",
     "rank": 11,
@@ -719,9 +779,9 @@
   "last_seen": "2026-11-16",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-17",
+    "streak": 2,
+    "times": 2
    },
    "weekly": {
     "last_date": "2026-11-16",
@@ -729,7 +789,7 @@
     "times": 1
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/backnotprop/plannotator"
  },
  "cloudflare/security-audit-skill": {
@@ -805,18 +865,25 @@
     "rank": 2,
     "stars_period": 988,
     "stars_total": 26113
+   },
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 1,
+    "stars_period": 1828,
+    "stars_total": 27761
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-17",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-17",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/dream-num/univer"
  },
  "elementalsouls/Claude-BugHunter": {
@@ -843,6 +910,31 @@
   },
   "times_on_board": 1,
   "url": "https://github.com/elementalsouls/Claude-BugHunter"
+ },
+ "getarcaneapp/arcane": {
+  "description": "Modern Docker Management, Designed for Everyone",
+  "first_seen": "2026-11-17",
+  "full_name": "getarcaneapp/arcane",
+  "history": [
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 14,
+    "stars_period": 46,
+    "stars_total": 8696
+   }
+  ],
+  "language": "Go",
+  "last_seen": "2026-11-17",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-17",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/getarcaneapp/arcane"
  },
  "ggml-org/ggml": {
   "description": "Tensor library for machine learning",
@@ -942,19 +1034,51 @@
     "rank": 9,
     "stars_period": 247,
     "stars_total": 9345
+   },
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 529,
+    "stars_total": 9727
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-17",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
+    "last_date": "2026-11-17",
+    "streak": 2,
+    "times": 2
+   }
+  },
+  "times_on_board": 2,
+  "url": "https://github.com/google-labs-code/stitch-skills"
+ },
+ "google-research/paper-orchestra": {
+  "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+  "first_seen": "2026-11-17",
+  "full_name": "google-research/paper-orchestra",
+  "history": [
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 10,
+    "stars_period": 313,
+    "stars_total": 1474
+   }
+  ],
+  "language": "Python",
+  "last_seen": "2026-11-17",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-17",
     "streak": 1,
     "times": 1
    }
   },
   "times_on_board": 1,
-  "url": "https://github.com/google-labs-code/stitch-skills"
+  "url": "https://github.com/google-research/paper-orchestra"
  },
  "google/elephant-goldfish-model": {
   "description": "Open-source plugin for designing and reviewing software with agents",
@@ -1037,6 +1161,31 @@
   },
   "times_on_board": 2,
   "url": "https://github.com/homeassistant-ai/ha-mcp"
+ },
+ "kajisho5/ffmpeg-skill": {
+  "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+  "first_seen": "2026-11-17",
+  "full_name": "kajisho5/ffmpeg-skill",
+  "history": [
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 9,
+    "stars_period": 367,
+    "stars_total": 6670
+   }
+  ],
+  "language": "Python",
+  "last_seen": "2026-11-17",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-17",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/kajisho5/ffmpeg-skill"
  },
  "mattpocock/skills": {
   "description": "Skills for Real Engineers. Straight from my .agents directory.",
@@ -1207,6 +1356,31 @@
   },
   "times_on_board": 1,
   "url": "https://github.com/morluto/rea"
+ },
+ "mvanhorn/last30days-skill": {
+  "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+  "first_seen": "2026-11-17",
+  "full_name": "mvanhorn/last30days-skill",
+  "history": [
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 12,
+    "stars_period": 135,
+    "stars_total": 68103
+   }
+  ],
+  "language": "Python",
+  "last_seen": "2026-11-17",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-17",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/mvanhorn/last30days-skill"
  },
  "nodejs/node": {
   "description": "Node.js JavaScript runtime ✨🐢🚀✨",
@@ -1476,6 +1650,31 @@
   "times_on_board": 2,
   "url": "https://github.com/sherlock-project/sherlock"
  },
+ "sveltejs/svelte": {
+  "description": "web development for the rest of us",
+  "first_seen": "2026-11-17",
+  "full_name": "sveltejs/svelte",
+  "history": [
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 13,
+    "stars_period": 115,
+    "stars_total": 88974
+   }
+  ],
+  "language": "JavaScript",
+  "last_seen": "2026-11-17",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-17",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/sveltejs/svelte"
+ },
  "tashfeenahmed/freellmapi": {
   "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
   "first_seen": "2026-11-11",
@@ -1574,18 +1773,25 @@
     "rank": 5,
     "stars_period": 706,
     "stars_total": 5616
+   },
+   {
+    "date": "2026-11-17",
+    "period": "daily",
+    "rank": 5,
+    "stars_period": 837,
+    "stars_total": 6295
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-17",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-17",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/tradermonty/claude-trading-skills"
  },
  "vercel-labs/agent-browser": {

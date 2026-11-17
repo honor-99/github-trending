@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-16T10:12:26+08:00",
+ "generated_at": "2026-11-17T08:00:22+08:00",
  "basis": "所有日/周/月快照里出现过的项目去重并集，按累计 star 总量降序（取最近一次上榜时的值）",
  "sort_key": "stars_total",
- "project_count": 58,
- "index_rows": 86,
- "snapshot_count": 7,
+ "project_count": 64,
+ "index_rows": 100,
+ "snapshot_count": 8,
  "first_date": "2026-11-11",
- "latest_date": "2026-11-16",
+ "latest_date": "2026-11-17",
  "period_counts": {
-  "daily": 4,
+  "daily": 5,
   "weekly": 2,
   "monthly": 1
  },
@@ -329,6 +329,29 @@
    "place": 13
   },
   {
+   "full_name": "sveltejs/svelte",
+   "url": "https://github.com/sveltejs/svelte",
+   "description": "web development for the rest of us",
+   "language": "JavaScript",
+   "stars_total": 88974,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 115,
+   "appearances": 1,
+   "best_rank": 13,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "place": 14
+  },
+  {
    "full_name": "heygen-com/hyperframes",
    "url": "https://github.com/heygen-com/hyperframes",
    "description": "Write HTML. Render video. Built for agents.",
@@ -349,7 +372,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 14
+   "place": 15
   },
   {
    "full_name": "ZhuLinsen/daily_stock_analysis",
@@ -375,7 +398,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-16",
-   "place": 15
+   "place": 16
   },
   {
    "full_name": "cloudflare/security-audit-skill",
@@ -401,7 +424,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 16
+   "place": 17
   },
   {
    "full_name": "Alishahryar1/free-claude-code",
@@ -424,7 +447,30 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 17
+   "place": 18
+  },
+  {
+   "full_name": "mvanhorn/last30days-skill",
+   "url": "https://github.com/mvanhorn/last30days-skill",
+   "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+   "language": "Python",
+   "stars_total": 68103,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 135,
+   "appearances": 1,
+   "best_rank": 12,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "place": 19
   },
   {
    "full_name": "TheAlgorithms/Java",
@@ -447,7 +493,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 18
+   "place": 20
   },
   {
    "full_name": "HKUDS/DeepTutor",
@@ -470,17 +516,17 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 19
+   "place": 21
   },
   {
    "full_name": "ChromeDevTools/chrome-devtools-mcp",
    "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
    "description": "Chrome DevTools for coding agents",
    "language": "TypeScript",
-   "stars_total": 57018,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 717,
-   "appearances": 1,
+   "stars_total": 57665,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 1558,
+   "appearances": 2,
    "best_rank": 4,
    "periods": [
     "daily"
@@ -489,11 +535,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 20
+   "last_seen": "2026-11-17",
+   "place": 22
   },
   {
    "full_name": "pingdotgg/t3code",
@@ -519,7 +565,30 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 21
+   "place": 23
+  },
+  {
+   "full_name": "alibaba/open-code-review",
+   "url": "https://github.com/alibaba/open-code-review",
+   "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+   "language": "Go",
+   "stars_total": 52917,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 1642,
+   "appearances": 2,
+   "best_rank": 2,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-17",
+   "place": 24
   },
   {
    "full_name": "Nutlope/hallmark",
@@ -542,30 +611,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 22
-  },
-  {
-   "full_name": "alibaba/open-code-review",
-   "url": "https://github.com/alibaba/open-code-review",
-   "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
-   "language": "Go",
-   "stars_total": 52164,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 691,
-   "appearances": 1,
-   "best_rank": 6,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 23
+   "place": 25
   },
   {
    "full_name": "vercel-labs/agent-browser",
@@ -591,7 +637,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 24
+   "place": 26
   },
   {
    "full_name": "tashfeenahmed/freellmapi",
@@ -614,7 +660,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 25
+   "place": 27
   },
   {
    "full_name": "anthropics/claude-plugins-official",
@@ -637,7 +683,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 26
+   "place": 28
   },
   {
    "full_name": "Donchitos/Claude-Code-Game-Studios",
@@ -660,7 +706,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 27
+   "place": 29
   },
   {
    "full_name": "anthropics/knowledge-work-plugins",
@@ -683,7 +729,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 28
+   "place": 30
   },
   {
    "full_name": "QwenLM/qwen-code",
@@ -706,7 +752,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 29
+   "place": 31
   },
   {
    "full_name": "meta/astryx",
@@ -732,18 +778,18 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 30
+   "place": 32
   },
   {
    "full_name": "dream-num/univer",
    "url": "https://github.com/dream-num/univer",
    "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
    "language": "TypeScript",
-   "stars_total": 26113,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 988,
-   "appearances": 1,
-   "best_rank": 2,
+   "stars_total": 27761,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 2816,
+   "appearances": 2,
+   "best_rank": 1,
    "periods": [
     "daily"
    ],
@@ -751,11 +797,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 31
+   "last_seen": "2026-11-17",
+   "place": 33
   },
   {
    "full_name": "milind-soni/OpenMausBot",
@@ -778,7 +824,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 32
+   "place": 34
   },
   {
    "full_name": "vercel-labs/agent-desktop",
@@ -801,7 +847,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 33
+   "place": 35
   },
   {
    "full_name": "anthropics/claude-quickstarts",
@@ -824,7 +870,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 34
+   "place": 36
   },
   {
    "full_name": "google/elephant-goldfish-model",
@@ -847,7 +893,30 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 35
+   "place": 37
+  },
+  {
+   "full_name": "ag-ui-protocol/ag-ui",
+   "url": "https://github.com/ag-ui-protocol/ag-ui",
+   "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+   "language": "TypeScript",
+   "stars_total": 18936,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 1146,
+   "appearances": 2,
+   "best_rank": 6,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-17",
+   "place": 38
   },
   {
    "full_name": "google-deepmind/mujoco",
@@ -873,30 +942,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 36
-  },
-  {
-   "full_name": "ag-ui-protocol/ag-ui",
-   "url": "https://github.com/ag-ui-protocol/ag-ui",
-   "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
-   "language": "TypeScript",
-   "stars_total": 17941,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 355,
-   "appearances": 1,
-   "best_rank": 8,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 37
+   "place": 39
   },
   {
    "full_name": "ggml-org/ggml",
@@ -919,7 +965,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 38
+   "place": 40
   },
   {
    "full_name": "The-PR-Agent/pr-agent",
@@ -942,7 +988,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 39
+   "place": 41
   },
   {
    "full_name": "we-promise/sure",
@@ -968,7 +1014,33 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 40
+   "place": 42
+  },
+  {
+   "full_name": "backnotprop/plannotator",
+   "url": "https://github.com/backnotprop/plannotator",
+   "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+   "language": "TypeScript",
+   "stars_total": 12536,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 3281,
+   "appearances": 3,
+   "best_rank": 3,
+   "periods": [
+    "daily",
+    "weekly"
+   ],
+   "period_labels": [
+    "日榜",
+    "周榜"
+   ],
+   "times_by_period": {
+    "daily": 2,
+    "weekly": 1
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-16",
+   "place": 43
   },
   {
    "full_name": "max-sixty/worktrunk",
@@ -991,7 +1063,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 41
+   "place": 44
   },
   {
    "full_name": "openai/codex-security",
@@ -1014,33 +1086,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-13",
-   "place": 42
-  },
-  {
-   "full_name": "backnotprop/plannotator",
-   "url": "https://github.com/backnotprop/plannotator",
-   "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
-   "language": "TypeScript",
-   "stars_total": 11899,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 2585,
-   "appearances": 2,
-   "best_rank": 3,
-   "periods": [
-    "daily",
-    "weekly"
-   ],
-   "period_labels": [
-    "日榜",
-    "周榜"
-   ],
-   "times_by_period": {
-    "daily": 1,
-    "weekly": 1
-   },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 43
+   "place": 45
   },
   {
    "full_name": "CopilotKit/OpenBot",
@@ -1063,7 +1109,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 44
+   "place": 46
   },
   {
    "full_name": "NVIDIA/auto-ontology",
@@ -1086,7 +1132,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 45
+   "place": 47
   },
   {
    "full_name": "shadcn/improve",
@@ -1109,18 +1155,41 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 46
+   "place": 48
   },
   {
    "full_name": "google-labs-code/stitch-skills",
    "url": "https://github.com/google-labs-code/stitch-skills",
    "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
    "language": "TypeScript",
-   "stars_total": 9345,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 247,
+   "stars_total": 9727,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 776,
+   "appearances": 2,
+   "best_rank": 8,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-17",
+   "place": 49
+  },
+  {
+   "full_name": "getarcaneapp/arcane",
+   "url": "https://github.com/getarcaneapp/arcane",
+   "description": "Modern Docker Management, Designed for Everyone",
+   "language": "Go",
+   "stars_total": 8696,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 46,
    "appearances": 1,
-   "best_rank": 9,
+   "best_rank": 14,
    "periods": [
     "daily"
    ],
@@ -1130,9 +1199,9 @@
    "times_by_period": {
     "daily": 1
    },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 47
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "place": 50
   },
   {
    "full_name": "homeassistant-ai/ha-mcp",
@@ -1155,7 +1224,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-12",
-   "place": 48
+   "place": 51
   },
   {
    "full_name": "GoogleChrome/modern-web-guidance-src",
@@ -1178,7 +1247,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-16",
-   "place": 49
+   "place": 52
   },
   {
    "full_name": "tokio-rs/topcoat",
@@ -1201,7 +1270,53 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 50
+   "place": 53
+  },
+  {
+   "full_name": "DeanChensj/jiangshan-map",
+   "url": "https://github.com/DeanChensj/jiangshan-map",
+   "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+   "language": "JavaScript",
+   "stars_total": 6682,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 288,
+   "appearances": 1,
+   "best_rank": 11,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "place": 54
+  },
+  {
+   "full_name": "kajisho5/ffmpeg-skill",
+   "url": "https://github.com/kajisho5/ffmpeg-skill",
+   "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+   "language": "Python",
+   "stars_total": 6670,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 367,
+   "appearances": 1,
+   "best_rank": 9,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "place": 55
   },
   {
    "full_name": "ranxianglei/billion-context",
@@ -1227,7 +1342,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 51
+   "place": 56
   },
   {
    "full_name": "elementalsouls/Claude-BugHunter",
@@ -1250,7 +1365,30 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 52
+   "place": 57
+  },
+  {
+   "full_name": "tradermonty/claude-trading-skills",
+   "url": "https://github.com/tradermonty/claude-trading-skills",
+   "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+   "language": "Python",
+   "stars_total": 6295,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 1543,
+   "appearances": 2,
+   "best_rank": 5,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-17",
+   "place": 58
   },
   {
    "full_name": "anomalyco/hex",
@@ -1273,18 +1411,18 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 53
+   "place": 59
   },
   {
-   "full_name": "tradermonty/claude-trading-skills",
-   "url": "https://github.com/tradermonty/claude-trading-skills",
-   "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+   "full_name": "NVIDIA/SkillEvaluator",
+   "url": "https://github.com/NVIDIA/SkillEvaluator",
+   "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
    "language": "Python",
-   "stars_total": 5616,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 706,
-   "appearances": 1,
-   "best_rank": 5,
+   "stars_total": 2667,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 995,
+   "appearances": 2,
+   "best_rank": 3,
    "periods": [
     "daily"
    ],
@@ -1292,11 +1430,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 54
+   "last_seen": "2026-11-17",
+   "place": 60
   },
   {
    "full_name": "ashhart/TensorFold",
@@ -1319,30 +1457,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 55
-  },
-  {
-   "full_name": "NVIDIA/SkillEvaluator",
-   "url": "https://github.com/NVIDIA/SkillEvaluator",
-   "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
-   "language": "Python",
-   "stars_total": 1754,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 122,
-   "appearances": 1,
-   "best_rank": 10,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 56
+   "place": 61
   },
   {
    "full_name": "Tencent/LoopForge",
@@ -1365,7 +1480,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 57
+   "place": 62
   },
   {
    "full_name": "pookjw/HermesEnabler",
@@ -1388,7 +1503,30 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 58
+   "place": 63
+  },
+  {
+   "full_name": "google-research/paper-orchestra",
+   "url": "https://github.com/google-research/paper-orchestra",
+   "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+   "language": "Python",
+   "stars_total": 1474,
+   "stars_total_date": "2026-11-17",
+   "stars_period_sum": 313,
+   "appearances": 1,
+   "best_rank": 10,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-17",
+   "place": 64
   }
  ]
 }

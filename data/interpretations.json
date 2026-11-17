@@ -193,6 +193,56 @@
   "language": "Python",
   "url": "https://github.com/D4Vinci/Scrapling"
  },
+ "DeanChensj/jiangshan-map": {
+  "one_liner": "拖动时间轴就能查看中国 2400 年疆域与古城变迁的交互式历史地图",
+  "summary": "这是一个把中国从战国（公元前 403 年）到当代的历史地理做成可交互羊皮纸风格地图的前端项目，核心操作是拖动时间轴，查看 18 个历史时期的疆域与行政区快照，并点击古城查看地名沿革、战役与诗文地标。它用 198 个疆域快照、古今地名谱系和帝王年号信息，把原本分散在纸质历史地图集中的内容整合到一个可浏览的页面上，解决了「读史时不知道古地名在今天的哪里」这类具体困惑。相比静态历史地图集，它的新意在于时间轴驱动的多政权同屏对照与地名古今溯源，而不只是单张地图的电子化。README 里没有说明数据来源、技术栈细节和数据校验方式。",
+  "audience": [
+   "读中国史或古典诗文的爱好者，想查证建康、黄州、蓝关等古地名在今天的哪个位置",
+   "历史或文博方向的内容创作者，需要为视频、文章快速找到某时期的疆域示意图",
+   "中学历史老师，想在课堂上直观展示战国到清的疆域变化",
+   "前端工程师，想参考一个以 GeoJSON 和 SVG 为主的纯前端数据可视化地图项目",
+   "历史 GIS 或数字人文方向的研究者，关注古今地名对应关系的整理方式"
+  ],
+  "use_cases": [
+   "讲某场战役或某位诗人的流放路线时，拖动时间轴到对应年代，截图当时的疆域与州府边界",
+   "核对古籍中出现的古地名，点开城市信息查看它在不同朝代的名称变化",
+   "为历史科普短视频制作素材，按时期批量导出疆域快照作为背景图",
+   "备课时对比北宋与南宋、唐前期与唐后期疆域差异，做同屏前后对照",
+   "开发历史类小游戏或科普页面时，参考它的时间轴交互和数据结构"
+  ],
+  "adoption_steps": [
+   "先打开在线 Demo https://deanchen.me/jiangshan-map/?lang=en 拖动时间轴、点击几个古城，确认数据粒度和交互是否满足需求。",
+   "在 GitHub 仓库页面确认 License 类型、最近提交时间与 open issues 数量，判断是否可商用及维护活跃度。",
+   "如果打算二次开发，克隆仓库后本地起静态服务运行构建产物，重点查看疆域快照与地名谱系的数据文件格式。",
+   "数据准确性要抽样核对：挑 3 到 5 个自己熟悉的年代和地名，与《中国历史地图集》等权威资料比对后再对外使用。"
+  ],
+  "build_ideas": [
+   "把疆域快照数据接入自己的历史科普站点，做特定朝代或特定诗人行迹的专题页。",
+   "基于古今地名谱系做一个小工具，输入今天的地名，反查它在各朝代的旧称与相关事件。",
+   "扩展时间轴为多图层叠加，例如在疆域图上叠加气候、人口或科举进士分布数据。",
+   "把诗文地标抽出来做成独立的「跟着诗词游中国」路线地图，供文旅场景使用。",
+   "移植为移动端或小程序形态的轻量版本，只保留时间轴和单城市详情页。"
+  ],
+  "risks": [
+   "材料未给出 License 类型，商用或二次分发前必须在仓库确认许可条款，否则有合规风险。",
+   "项目中明显包含大量人工整理的历史地理数据，README 未说明数据来源与校验方法，权威性无法从材料判断。",
+   "这是偏个人作品性质的项目，README 提到从 1k star 的增长故事，但材料未体现团队维护与长期路线图，功能演进和问题响应存在不确定性。",
+   "材料未提供构建方式、依赖清单和浏览器兼容性说明，本地部署与二次开发的成本需要自行验证。",
+   "历史疆域本身在学界存在争议画法，用于教学或出版前需评估内容立场与引用来源是否可接受。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1332,
+   "completion_tokens": 831
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "0e61b86939c2e7fe555bdd07635f4758104a9c20f5c1c22d6183ae605e327a2a",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-17T08:01:05+08:00",
+  "readme_used": true,
+  "source_description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+  "language": "JavaScript",
+  "url": "https://github.com/DeanChensj/jiangshan-map"
+ },
  "Donchitos/Claude-Code-Game-Studios": {
   "one_liner": "让 Claude Code 按工作室流程，从一句想法做出可玩的网页游戏。",
   "summary": "这是一个运行在 Claude Code 里的游戏开发工作流集合，并非独立游戏引擎：它用 49 个 agent 和 72 个 skill 把需求澄清、一页 brief、浏览器原型生成、自动检查和迭代串起来。用户在仓库副本中打开 Claude Code 并输入 /prototype，系统先问一轮问题，再写出 design/game-brief.md，并在 prototypes/<name>/ 生成可双击运行的网页游戏。它还会用无头浏览器做基础冒烟检查、标注 brief 条目的完成状态，并把每次接受的改动存成 checkpoint。相比一次性代码生成，新意在于把工作室式角色分工和验收门禁产品化，后续还能把原型长成 Vite+TypeScript 项目并用 /cut 收尾。",
@@ -341,51 +391,51 @@
   "url": "https://github.com/HKUDS/DeepTutor"
  },
  "NVIDIA/SkillEvaluator": {
-  "one_liner": "给 AI agent 技能做质量打分，并对比有无技能时的任务效果",
-  "summary": "SkillEvaluator 是 NVIDIA 出的 Python 工具，用来检查按 Agent Skills 规范写的技能目录（一堆指令文件加支撑文件），并量化这个技能到底有没有改变 agent 的任务结果。它把评估分成多个 tier：Tier 1 是不需要 API key 的确定性检查，直接给出质量分和问题清单；更高层则接 NVIDIA Build 的模型做 rubric 打分与反馈。除此之外还提供语义重叠检测、合成评测数据集生成，以及「带技能跑一次、不带技能跑一次」的对比式实跑评估。三种入口共用一套结果：命令行（pip install skillevaluator 或 uv tool install）、GitHub/GitLab CI（skillevaluator ci init 会开一个 setup PR）、以及装进 Claude Code/Codex 之类 agent 里的技能包。相比零散的 prompt 检查脚本，它的新意在于把「静态质量门 + 语义去重 + 对照实跑」串成一条流水线，并挂在 NVIDIA Verified Skills 体系下。",
+  "one_liner": "给 AI agent 的 skill 做质量检查和效果对比",
+  "summary": "SkillEvaluator 是 NVIDIA 开源的多层评测框架，用来检查 AI agent skill（按 Agent Skills 规范组织的指令与配套文件目录）的质量，并测量它是否真的改变了 agent 的任务结果。它先用 tier 1 的确定性检查给出质量分和问题清单，这一步不需要 API key；接入 NVIDIA Build 后再由模型按 rubric 打分并给出反馈，通过有 skill 与无 skill 的对照运行观察 agent 行为差异。除质量门禁外，它还提供 skill 之间的语义重叠检测和合成评测数据集生成，并以 pip 安装的 CLI、CI 初始化命令、agent 内 skill 三种方式接入。相比只做静态 lint 的工具，它把「这个 skill 值不值得留」推进到带对照实验的效果评估。",
   "audience": [
-   "维护内部 agent 技能库（Claude Code、Codex 等 skill-aware agent）的平台工程师。",
-   "负责技能上架评审、需要一条可量化质量门禁的团队负责人。",
-   "按 Agent Skills 规范写技能目录、想知道自己写的技能合不合格的作者。",
-   "已经在用 GitHub Actions 或 GitLab CI、想把技能检查塞进 PR 流程的 DevOps 工程师。",
-   "需要拿出证据说明「技能确实改变了 agent 行为」的产品经理或评估负责人。"
+   "维护内部 agent skill 库或插件市场的平台与 DevEx 工程师。",
+   "正在为 Claude Code、Codex 等 agent 编写和维护 skill 的开发者。",
+   "负责 AI 产品质量与评测体系、需要为 skill 上线定标准的评测工程师。",
+   "想把 skill 变更纳入现有 CI 流程的仓库维护者。",
+   "评估 agent skill 方案是否值得引入的技术选型产品经理。"
   ],
   "use_cases": [
-   "在合并前对 PR 里改动的技能目录跑 skillevaluator validate ./my-skill --tiers 1，先把结构和确定性质量问题拦下来。",
-   "用 quality-check 输出 cli 和 json 双份报告（示例技能得 88.8/100），作为技能上架前的打分卡归档。",
-   "对同一个任务分别跑「有技能」和「无技能」两轮，用结果差异判断这个技能是帮忙还是纯噪音。",
-   "用语义重叠检测排查一批技能之间描述撞车、职责重叠的情况，整理技能库。",
-   "用合成评测数据集生成能力，给自研技能批量造测试样本，避免手工写用例。"
+   "在合并 skill 变更前跑质量门禁，用 skillevaluator validate 或 CI 模板卡住不合格的 skill。",
+   "对同一批 skill 做语义重叠检测，找出功能重复的条目并决定合并或下线。",
+   "用合成评测数据集生成能力为自家 skill 造测试集，替代手工编写的评测样例。",
+   "对比开启与关闭某个 skill 的两次 agent 运行结果，量化该 skill 对任务成功率的实际贡献。",
+   "在 Claude Code 或 Codex 里通过 npx skills add 引入后直接问「我的 skill 好不好」，让 agent 代为调用评测。"
   ],
   "adoption_steps": [
-   "先装 uv 和 Git，git clone --depth 1 仓库后运行 uv run --python 3.13 skillevaluator quality-check src/skillevaluator/tier3/reference_skills/text-analyzer -r cli -r json -o reports/first-quality，看内置示例的分数和报告长什么样。",
-   "pip install skillevaluator 后对自己仓库里的一个技能跑 skillevaluator validate ./<你的技能目录> --tiers 1，确认无 API key 的确定性检查能在你的技能上跑通并产出可读的问题清单。",
-   "在 GitHub 仓库执行 skillevaluator ci init，逐行审阅它自动开出的 setup PR（GitLab 则手工复制 ci/bundles/0.9.0 模板），先只对变更过的技能开启检查再逐步收紧。"
+   "先用 pip install skillevaluator（或 uv tool install skillevaluator）装好，然后对现有 skill 目录执行 skillevaluator validate ./my-skill --tiers 1，在不配 API key 的情况下拿到确定性质量分和问题清单。",
+   "克隆仓库 git clone --depth 1 https://github.com/NVIDIA/SkillEvaluator.git，用 uv run --python 3.13 skillevaluator quality-check src/skillevaluator/tier3/reference_skills/text-analyzer -r cli -r json -o reports/first-quality 跑通自带示例，确认 JSON 报告字段能对接你们现有流程。",
+   "准备 NVIDIA Build API key 试跑模型打分的 rubric 环节，确认成本与效果可接受后，在目标仓库执行 skillevaluator ci init 生成 CI 配置 PR，把评测固化成每次 skill 变更都触发的流水线。"
   ],
   "build_ideas": [
-   "把 quality-check 的 JSON 报告接进内部技能市场或审批流，做成技能上架前的自动打分卡与阈值拦截。",
-   "把 ci init 生成的 workflow 改造成公司内部多仓库复用的 CI 模板，统一所有技能仓库的门禁规则。",
-   "基于「有技能 / 无技能」的对照运行封装成回归测试，锁住技能改动前后的行为差异，防止悄悄退化。",
-   "把合成评测数据集生成接到内部评测平台，为私有技能自动产出评测集并定期重跑。",
-   "通过 npx skills add NVIDIA/SkillEvaluator 把评估技能装进自家 agent，让 agent 在写完技能后自己先跑一遍自检。"
+   "把 quality-check 输出的 JSON 报告汇总进内部 skill 注册表或门户，做成每个 skill 的评分看板与历史趋势。",
+   "基于语义重叠检测做内部 skill 去重工具，自动给出合并建议而不是只报重复。",
+   "把 skillevaluator ci init 生成的单仓 CI 模板扩展成多仓库批量巡检脚本，定期扫描组织下所有 skill 目录。",
+   "结合合成评测数据集生成，为领域私有 skill 构建回归测试集，接入自建 agent 的发布前回归流程。",
+   "把评测封装成 agent 内的自检 skill，让 skill 作者在编写阶段就能边写边跑质量门禁。"
   ],
   "risks": [
-   "README 只显示了 LICENSE 徽章，材料里没有给出具体许可条款，商用或二次分发前必须去仓库确认 license 类型。",
-   "版本仍是 0.9.0（CI 模板路径为 ci/bundles/0.9.0），尚未到 1.0，CLI 参数、报告格式和 CI 模板都可能变动。",
-   "模型打分路径依赖 NVIDIA Build 的 API key，意味着外部服务依赖、调用成本以及技能内容外发，需要先做合规确认。",
-   "无 API key 的路径只覆盖 Tier 1 确定性检查，语义重叠与实跑行为评估依赖更高 tier，实际能力边界需自己实测验证。",
-   "运行要求 Python 3.13（uv 会自动准备），老项目本地环境和既有 CI 镜像可能需要额外升级。"
+   "README 节选中只有 LICENSE 徽章，未写明具体许可证类型，商用或二次分发前必须到仓库确认许可条款。",
+   "只有 tier 1 质量检查可无 key 运行，模型 rubric 打分依赖 NVIDIA Build API key，会带来账号申请、外部网络调用和额外调用成本。",
+   "材料中没有版本号与稳定性承诺，而 star 数在单期内从 2667 增长 873，属于早期高热度阶段，CLI 参数与报告格式可能变动，落地时应锁定具体版本。",
+   "评测对象限定为符合 Agent Skills 规范的目录结构，其他格式的 prompt 包或插件需要先转换才能评估。",
+   "快速上手路径要求 uv 与 Python 3.13，并且示例需要从 GitHub 克隆，离线或网络受限环境要提前准备镜像与依赖。"
   ],
   "tokens": {
-   "prompt_tokens": 1349,
-   "completion_tokens": 2731
+   "prompt_tokens": 1319,
+   "completion_tokens": 2363
   },
   "model_resolved": "deepseek-v4.1-flash-1017",
-  "hash": "ac4ceab0a7117c8c3f4983b18257130dda9c49730f6daa59a699243acd4fc2f7",
+  "hash": "f08b12b740842401562c6fe5d13908aedc30274900be1571936a5259ffd82b44",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T19:09:12+08:00",
+  "generated_at": "2026-11-17T08:01:13+08:00",
   "readme_used": true,
-  "source_description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+  "source_description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
   "language": "Python",
   "url": "https://github.com/NVIDIA/SkillEvaluator"
  },
@@ -833,49 +883,50 @@
   "url": "https://github.com/addyosmani/agent-skills"
  },
  "ag-ui-protocol/ag-ui": {
-  "one_liner": "用统一事件协议把 AI Agent 后端接到前端界面，省掉自建流式通信层。",
-  "summary": "AG-UI 是一个开放、轻量、基于事件的协议，用来标准化 AI Agent 与面向用户的应用之间的连接方式。它的做法是：Agent 后端在执行过程中发出约 16 种标准事件类型，同时接受几种简单的 AG-UI 输入，中间由一层中间件做事件格式的宽松匹配，从而兼容 SSE、WebSocket、webhook 等各种传输方式。项目还附带参考 HTTP 实现和默认 connector，并可用 npx create-ag-ui-app 直接生成脚手架。它的定位不是替代 MCP 或 A2A，而是补上「Agent 到用户界面」这一段：MCP 给 Agent 工具，A2A 让 Agent 之间通信，AG-UI 负责把 Agent 带进前端应用。README 中列出实时流式对话、双向状态同步、生成式 UI 等特性，但特性列表在材料中被截断，具体能力边界证据不足。",
+  "one_liner": "用一条事件流协议，把 AI agent 接进前端应用并渲染出来。",
+  "summary": "AG-UI 是一个开放的、轻量的事件协议，用来标准化 AI agent 与面向用户的应用之间的连接方式。它把 agent 输出 token、中途调用工具、更新共享状态、等待人工确认、派生子 agent 这些动作，统一成一条双向事件流：agent 发出带类型的事件，任意客户端负责渲染，因此同一个 agent 可以同时驱动网页、移动端、终端或 Slack。协议 1.0 已有冻结的规范与 JSON Schema，TypeScript、Python、.NET 三个 SDK 由规范生成，并且 0.x 与 1.0 双向兼容。相比为每个框架各写一套自定义前后端对接代码，它的新意在于把「agent 与 UI 的通信」抽成与框架无关的公共层。一个 AG-UI agent 本质上就是一个接受 RunAgentInput、回推事件流的 HTTP 端点。",
   "audience": [
-   "正在做 AI 对话产品、需要把 Agent 后端接到 React 等前端界面的前端工程师。",
-   "后端已有一套 Agent 运行时、希望用统一事件格式对接多个前端渠道的 Agent 平台开发者。",
-   "已经用了 MCP 或 A2A、想补齐「Agent 与用户交互」这一层的技术负责人。",
-   "需要评估生成式 UI 与双向状态同步是否可行的产品经理。",
-   "做低代码平台或 Agent 框架、想接入第三方协议生态的框架维护者。"
+   "正在为 agent 产品做前端对话界面、又要处理流式输出与工具调用中间态的 Web 前端工程师。",
+   "需要让同一套 agent 同时服务网页、移动端、终端或 Slack 等多个入口的全栈或平台团队。",
+   "维护 agent 框架或 SDK、希望对外暴露标准事件接口而不是自造私有协议的开发者。",
+   "评估 agent 交互层技术方案、关心协议是否稳定以及是否跨语言的产品经理或技术负责人。",
+   "已经在用 CopilotKit 搭建前端、想把后端 agent 接入标准化的一批工程团队。"
   ],
   "use_cases": [
-   "用 npx create-ag-ui-app 生成一个带流式对话的示例应用，先验证协议在你现有 Agent 后端上跑不跑得通。",
-   "把已有 Agent 后端的事件输出改造成约 16 种 AG-UI 标准事件，前端统一按事件渲染消息、状态和工具调用。",
-   "在需要人机协同的表单或编辑器里做双向状态同步，让 Agent 的改动实时反映到界面、用户的修改也能回传给 Agent。",
-   "用生成式 UI 能力让 Agent 在对话中返回结构化的组件描述，而不是纯文本。",
-   "在 AG-UI Dojo 里逐个跑标准事件场景，作为团队对齐协议语义的参考实现。"
+   "用 npx create-ag-ui-app@latest 生成一个 Next.js 前端加 agent 后端的模板工程，直接跑通流式对话。",
+   "把现有 agent 服务包装成接受 RunAgentInput 的 HTTP 端点，用 EventEncoder 把 TextMessageStart/Content/End 事件按 SSE 推给前端。",
+   "在前端根据事件类型分别渲染 token 增量、工具调用过程、状态更新和人工确认环节，而不是只展示最终文本。",
+   "让同一个 agent 端点同时对接浏览器客户端和命令行客户端，验证协议层的复用性。",
+   "用 Python 的 ag-ui-protocol 配 FastAPI 快速写一个最小 agent 服务，作为接入前的协议可行性验证。"
   ],
   "adoption_steps": [
-   "先跑 npx create-ag-ui-app my-agent-app 生成脚手架，本地启动确认事件流能通，再打开 dojo.ag-ui.com 对照每个事件类型的实际效果。",
-   "读 docs.ag-ui.com 的协议规范与 Quickstart，确认你现有后端的输出能映射到哪些标准事件、哪些需要自定义，并选定传输方式（SSE、WebSocket 或 webhook）。",
-   "在仓库确认 License 与版本发布节奏后，从一条最小链路开始接入（例如只做流式文本 + 一个状态同步事件），跑通后再逐步扩到生成式 UI 等复杂事件。"
+   "先跑官方示例熟悉协议：执行 npx create-ag-ui-app@latest 生成模板，按提示设置 OPENAI_API_KEY 后 npm run dev，重点看浏览器网络面板里的事件流长什么样。",
+   "再对照 docs.ag-ui.com/spec/1.0 的 JSON Schema 和 30 行最小示例，用 pip install ag-ui-protocol fastapi uvicorn 起一个自己的最小 agent 端点，确认事件序列与客户端能对上。",
+   "然后改造一个真实 agent：在服务端引入对应语言的 SDK（npm 的 @ag-ui/core 或 PyPI 的 ag-ui-protocol），把现有输出映射为协议事件；若已有 0.x 实现，按迁移指南升到 1.0。",
+   "最后固定版本并在 CI 里跑一次端到端事件回放，再决定是把协议层封装成内部公共库，还是直接接入现有客户端。"
   ],
   "build_ideas": [
-   "为 Python 或 Go 等非 JS 技术栈的 Agent 后端写一个 AG-UI 事件编码器/connector，补齐官方参考实现之外的传输适配。",
-   "基于中间件层做一层事件审计与回放工具，记录 Agent 发出的标准事件流用于调试和回归测试。",
-   "针对企业内部系统（如 CRM、工单台）封装一套领域专用的事件映射层，把业务动作翻译成 AG-UI 标准事件。",
-   "做一个多前端渠道适配器，同一套 Agent 事件同时渲染到 Web、移动端和桌面客户端。",
-   "在现有低代码或工作流平台里内置 AG-UI 客户端，让平台用户拖拽即可接入任意兼容 Agent。"
+   "开发一个协议事件调试面板，把 SSE 事件流按类型可视化回放，方便排查 agent 与前端对接问题。",
+   "为内部 agent 框架写一个 AG-UI 适配层或代码生成器，让业务方无需关心事件细节就能对外暴露标准端点。",
+   "做一个多端渲染器集合，同一事件流分别输出为 Web 组件、终端 TUI 和聊天平台消息格式。",
+   "在协议事件之上做中间件，用于记录、重放和断言 agent 的工具调用与状态变更，供回归测试使用。",
+   "针对人工确认环节封装一套审批 UI 组件，把 agent 暂停等人工输入的事件直接映射成可交互表单。"
   ],
   "risks": [
-   "README 未声明开源许可协议，商用前必须在仓库确认 License 及是否存在商标或品牌使用限制。",
-   "项目与 CopilotKit 强绑定（文档、Discord、商务沟通链接均指向 CopilotKit 团队），治理上存在单一厂商主导的风险，协议走向不完全由社区决定。",
-   "主语言为 TypeScript、核心包发布在 npm（@ag-ui/core），非 JS 技术栈的团队需要自行实现事件编解码，接入成本高于预期。",
-   "协议强调「宽松的事件格式匹配」，这种灵活性会让不同实现的兼容性判断变模糊，跨团队联调时可能出现「都能跑但语义不一致」的问题。",
-   "材料中没有版本号、稳定性承诺或破坏性变更策略，且特性列表被截断、star 增长为单日榜单数据，项目成熟度与长期维护状态证据不足，建议先用脚手架做小范围验证再决定是否深度依赖。"
+   "1.0 规范刚冻结，0.x 到 1.0 虽然宣称双向兼容，但仍提供迁移指南，说明存量实现存在改造工作量，需要先确认自己是否在 0.x 上。",
+   "材料中未说明 LICENSE 具体类型，商用前必须到仓库确认许可条款。",
+   "协议本身只定义事件与传输方式，实际可用性依赖各 agent 框架的适配程度，材料只提到 CLI 会「接上你选的框架」，未列出完整支持清单，需自行核对目标框架是否在内。",
+   "agent 端点依赖 HTTP 流式响应（示例用 FastAPI 的 StreamingResponse 与 SSE），需要确认现有网关、负载均衡和部署环境不会缓冲或截断长连接。",
+   "SDK 由规范生成，三语言版本与规范同步更新，升级节奏受上游规范演进影响，建议锁定版本并保留自建事件映射层的退路。"
   ],
   "tokens": {
-   "prompt_tokens": 1285,
-   "completion_tokens": 1420
+   "prompt_tokens": 1315,
+   "completion_tokens": 1611
   },
   "model_resolved": "deepseek-flash",
-  "hash": "b2d2b1f6a27c542e2bbb7fc925802ab462c8efd2ddcbc91c910a810d4c7d7fc6",
+  "hash": "aa8b15d2d4aa8be9a3641e1dcae18187fc32594f433bb671625f210dde23fe23",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T09:32:01+08:00",
+  "generated_at": "2026-11-17T08:01:09+08:00",
   "readme_used": true,
   "source_description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
   "language": "TypeScript",
@@ -1226,49 +1277,48 @@
   "url": "https://github.com/ashhart/TensorFold"
  },
  "backnotprop/plannotator": {
-  "one_liner": "给 AI 代理的计划、HTML 产物和代码 diff 加批注，一键把意见发回代理。",
-  "summary": "Plannotator 是一个本地运行、浏览器里打开的审阅界面，专门用来审 AI 编码代理的产出：计划、规格、markdown、HTML 原型、以及本地 diff 或远程 PR。它通过插件、hook 和命令接到代理上，代理提出方案或干完活时自动弹出页面，你划线、写评论，再一键把反馈送回代理继续改。材料里点名的代理覆盖 Claude Code、Codex、Copilot CLI、Gemini CLI、OpenCode、Kiro、Droid、Amp、DeepSeek Harness、Pi，代码审阅侧支持 Git、GitButler、Jujutsu、Perforce、GitHub、GitLab。新意在于把「人审代理产出」这一步做成了独立的产品层：除了逐次审阅，还提供 Plannotator Inbox 作为多代理并行工作时的统一收件箱，把决策、原型、变体、计划集中呈现。相比只用终端里的确认弹窗，它把批注、diff 评论和团队共享放进了同一个界面。",
+  "one_liner": "在浏览器里批注 AI 智能体的方案与代码改动，一键把反馈发回给智能体。",
+  "summary": "Plannotator 是一个本地运行、浏览器里使用的评审界面，专门用来把 AI 编码智能体产出的方案、规格、markdown、HTML 制品和代码 diff 呈现出来，供人批注。它通过插件、hook 和命令直接插进 Claude Code、Codex、Copilot CLI、Gemini CLI、OpenCode 等智能体的工作流：当智能体提出决策、计划或完成一轮改动时，页面自动在浏览器打开，用户标注评论后一键回传给智能体执行。代码评审部分支持本地改动和远程 PR，兼容 Git、GitButler、Jujutsu、Perforce、GitHub、GitLab，大改动还可以让智能体把 diff 拆成章节做引导式评审。新增的 Inbox 定位是人与多智能体协作之间的「评审层」，集中呈现决策、原型、变体和计划。相比只让智能体在终端里输出结果，它的新意在于把「人审—批注—回传」这个闭环做成了一个可复用的界面层，而不是某种新的模型能力。",
   "audience": [
-   "日常用 Claude Code、Codex、Gemini CLI 等代理写代码，需要反复确认计划是否跑偏的工程师。",
-   "要审代理产出的技术方案、规格文档，但不想在聊天窗口里逐条打字的 tech lead。",
-   "负责 PR review、希望把评论直接变成代理可执行修改的团队成员。",
-   "同时跑多个编码代理、需要一处集中查看各代理决策和产物的开发者。",
-   "用代理生成 HTML 原型或交互页面，需要圈选批注再让代理改的产品经理或设计师。"
+   "日常用 Claude Code、Codex、Gemini CLI 等 CLI 智能体写代码，并且经常需要停下来审方案的工程师。",
+   "负责 review 团队 PR、需要在 diff 上留具体意见的 tech lead 或代码评审人。",
+   "需要审阅 AI 生成的产品方案、规格文档或 HTML 原型再给反馈的产品经理。",
+   "同时跑多个智能体、需要把决策和产出集中到一个地方处理的重度用户。"
   ],
   "use_cases": [
-   "代理给出实施计划后，在浏览器里逐段划线批注，把「这里换方案、这里加测试」一次性回传。",
-   "对本地未提交的改动或远程 PR 逐行评论并给出修改建议，让代理直接据此改代码。",
-   "审阅代理生成的 HTML 原型或 markdown 规格文档，在页面上标注具体位置再发回。",
-   "把同一份审阅意见整理后共享给团队，用作对齐代理产出的讨论材料。",
-   "在终端里用 Herdr Annotate 对代理输出做批注，不离开命令行完成反馈闭环。"
+   "让智能体先输出实施计划，在浏览器里逐段批注修改意见后一键回传，避免在终端里反复打字描述。",
+   "对本地未提交的 diff 或 GitHub/GitLab 上的 PR 逐行评论、提出改法，评论直接回到智能体手里执行。",
+   "批注智能体生成的 markdown 规格文档和 HTML 交互原型，把设计意见结构化地反馈回去。",
+   "对体量大的改动启用引导式评审，让智能体把 diff 按重要性排成章节，一章一章过。",
+   "在 Inbox 里集中处理多智能体并行产生的决策点、备选变体和计划，决定采纳哪一个。"
   ],
   "adoption_steps": [
-   "先打开官网 plannotator.ai 和 README 的安装章节，确认当前支持的代理列表、安装命令和许可条款，再决定是否引入。",
-   "挑一个最常用的代理（例如 Claude Code 或 Codex），按官方指引装好插件或 hook，用一个真实的小计划文档跑一遍批注并回传的完整流程。",
-   "流程跑通后再扩到代码审阅：先对一次本地 diff 试用评论回传，确认与团队现有的 Git 或 PR 流程（GitHub、GitLab、jj、p4 等）不冲突，再考虑推广到多人。"
+   "先打开 plannotator.ai 或 GitHub 仓库 README，对照支持列表确认自己用的智能体（如 Claude Code、Codex、Gemini CLI、OpenCode）在其中，再按文档安装对应的插件、hook 或命令。",
+   "在一个小仓库里跑一次计划模式：让智能体出方案，确认浏览器评审页能自动打开、批注能成功回传给智能体，先把这条最短闭环跑通。",
+   "闭环验证后再接代码评审，先评一个本地 diff 和一个小 PR，确认评论能回到智能体并且格式可读，再决定是否在团队内推广。"
   ],
   "build_ideas": [
-   "如果插件或 hook 机制对外开放，为内部自研或小众代理写一个适配器，把计划与 diff 接进同一套批注界面。",
-   "把批注结果对接内部 issue 跟踪或 IM 机器人，让审阅意见自动落成工单或群消息，而不是只回传给代理。",
-   "基于「Visual HTML Skills」这类 HTML 产出规范，做团队自己的产物模板，让代理生成的页面天然适配批注流程。",
-   "为内部代码规范做可复用的 diff 审阅检查清单，把固定批注模板化，减少每次重复输入。",
-   "在多代理场景下把 Inbox 的决策记录接到团队看板，做成代理工作产出的可追溯日志。"
+   "基于它的插件和 hook 机制，把批注能力接进公司自研的内部智能体或私有部署的编码助手。",
+   "把批注结果自动同步到 Jira、Linear 或内部知识库，形成可检索的评审记录而不只是一次性反馈。",
+   "为团队定制引导式评审的章节切分规则和评审清单模板，把代码规范固化成评审流程的一部分。",
+   "在 CI 里利用它的 diff 评审输出做门禁，把人工批注中反复出现的问题转成自动化检查项。",
+   "把积累下来的批注数据整理成评测集，用来衡量不同智能体在同一类任务上的方案质量。"
   ],
   "risks": [
-   "材料中未出现 LICENSE 信息和具体安装命令、包名，商用前必须自行到仓库确认许可与分发方式。",
-   "核心能力依赖各代理的插件、hook、命令机制，代理侧接口一改，集成就可能失效，需要评估升级维护成本。",
-   "支持列表很长（十余种代理加多种 VCS），材料没有说明每个集成的成熟度差异，冷门组合可能踩坑。",
-   "宣称可「share with team」，但材料未说明共享是通过本地服务、云端还是别的机制，涉及代码和方案外传时需先确认数据边界。",
-   "项目 star 增长很快但材料没有版本号和发布历史，命令与配置格式仍可能变动，不适合直接压在生产流程的唯一入口上。"
+   "材料中没有出现许可证信息，商用或二次分发前必须先去仓库确认 License 具体条款。",
+   "README 声称支持十余种智能体和多种版本控制工具，任一集成都可能因上游插件或 hook 机制变更而滞后，选型时要先验证自己那条链路。",
+   "它是本地浏览器运行的评审界面，材料未说明多人协作、远程共享或权限控制能力，团队分布式评审需求需要额外确认。",
+   "项目 star 增长很快但整体较新，配置方式、插件接口和 Inbox 等新功能都可能快速变动，落地时要预留跟进升级的成本。",
+   "深度依赖各家 CLI 智能体自身的插件与 hook 机制，智能体工具升级后可能出现集成失效，需要评估维护负担。"
   ],
   "tokens": {
-   "prompt_tokens": 1376,
-   "completion_tokens": 1927
+   "prompt_tokens": 1363,
+   "completion_tokens": 1691
   },
-  "model_resolved": "deepseek-v4.1-flash-1017",
-  "hash": "752eec27b632d32e20d9a03c735a5f6e995d9d49c5183a079cb95175731ceae3",
+  "model_resolved": "deepseek-flash",
+  "hash": "4c1c006733781e1b6c83ce7e5f803771deed53e01ac700425dc174ed1dfc2f87",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T15:44:05+08:00",
+  "generated_at": "2026-11-17T08:01:09+08:00",
   "readme_used": true,
   "source_description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
   "language": "TypeScript",
@@ -1665,6 +1715,54 @@
   "language": "TypeScript",
   "url": "https://github.com/google-labs-code/stitch-skills"
  },
+ "google-research/paper-orchestra": {
+  "one_liner": "把零散想法和实验日志自动写成可投稿的 LaTeX 论文初稿。",
+  "summary": "PaperOrchestra 是 Google Cloud AI Research 开源的多智能体框架，把「想法 + 实验日志」这类非结构化写作素材转换成带 LaTeX 排版、可直接投稿的论文稿。它把写作拆给多个专职 agent：Outline（大纲）、Literature Review（文献综述）、Section Writing（章节撰写）、Content Refinement（内容打磨）、Plotting（绘图），其中文献综述 agent 会通过 Semantic Scholar 检索并整合相关文献，绘图 agent 生成图表。输出环节按目标会议模板生成 LaTeX，README 强调覆盖从原始素材到 submission-ready 全链路。与常见的「写作助手」相比，它的新意在于把论文生产当成一条多 agent 流水线，并显式接入了文献检索和图形生成两个容易被单模型助手忽略的环节。需要注意，用于论文生成的数据集并未包含在仓库内，README 称将另行发布。",
+  "audience": [
+   "需要快速产出论文初稿的研究生和博士后，尤其是手上已有实验日志但迟迟没动笔的人。",
+   "负责内部技术报告或白皮书产出的研究型公司的工程师与产品经理。",
+   "想研究多智能体协作流水线设计（分工、衔接、内容打磨）的 AI 应用开发者。",
+   "需要批量对比不同写作 prompt / agent 编排方案效果的 NLP 与评测研究者。"
+  ],
+  "use_cases": [
+   "把实验跟踪系统里的训练日志和指标整理成素材，让流水线生成含图表和文献综述的论文初稿。",
+   "在投稿截止前用 Outline 与 Section Writing 两个环节快速搭出章节骨架，再由人工补细节。",
+   "单独调用 Literature Review 环节，为某个研究方向快速生成带引用的相关工作梳理。",
+   "把实验结果目录交给 Plotting 环节批量生成论文级图表，减少手工画图时间。",
+   "按目标会议模板生成 LaTeX 源码，作为 Overleaf 工程的起点做后续人工修改。"
+  ],
+  "adoption_steps": [
+   "先按 README 创建 Python 3.11 的 Conda 环境：conda create -n paper_orchestra python=3.11 && conda activate paper_orchestra && pip install -r requirements.txt。",
+   "在项目根目录建 .env，至少填入 SEMANTIC_SCHOLAR_API_KEY 和一组模型密钥（GEMINI_API_KEY 或 VERTEX_AI_PROJECT + VERTEX_AI_LOCATION，或 OPENAI_API_KEY），SMTP 两项只在需要邮件收取结果时才填。",
+   "准备一小份自己的素材（一个想法说明加一段实验日志），通过 README 提供的 bash 脚本或 Python CLI 跑一次完整流水线，检查生成的 LaTeX 是否能编译、图表与引用是否合理，再决定是否扩大使用范围。"
+  ],
+  "build_ideas": [
+   "把流水线接到内部实验跟踪或 notebook 导出流程上，实现「实验跑完即产出初稿」的自动化管道。",
+   "把 Literature Review 环节单独抽出来做成一个文献综述服务，接入公司内部知识库或自建论文库做检索增强。",
+   "针对不同会议模板（如 NeurIPS、ACL）扩展 LaTeX 模板配置与章节结构约束，做成模板插件层。",
+   "在 Plotting 环节之上加一层图表规范校验（字体、尺寸、色盲友好），让生成图直接符合投稿要求。",
+   "为流水线加一套评测 harness，用人工评分或 LLM 评审对比不同 agent 编排方案对成稿质量的影响。"
+  ],
+  "risks": [
+   "README 明确说明论文生成所用数据集不随仓库发布、将另行放出，因此当前无法复现其完整示例与评测流程。",
+   "运行依赖多个外部服务与密钥（OpenAI、Gemini/Vertex AI、Semantic Scholar），任一缺失即无法跑通，且调用成本与限流需要自行评估。",
+   "提供的 README 节选在 Usage 的 bash 脚本处被截断，脚本参数与 CLI 用法无法从材料确认，首次运行需要直接读源码。",
+   "这是 google-research 组织下的研究代码，材料中未提及许可证条款与维护承诺，生产集成前需确认授权范围与后续更新情况。",
+   "材料未说明对生成文献条目做真实性校验的机制，直接使用生成的引用存在错引风险，投稿前必须逐条人工核对。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1187,
+   "completion_tokens": 1734
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "f3f035413a12c48eef84a829e4232fe4170da0102dc04f954dd94d724012a21e",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-17T08:01:09+08:00",
+  "readme_used": true,
+  "source_description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+  "language": "Python",
+  "url": "https://github.com/google-research/paper-orchestra"
+ },
  "google/elephant-goldfish-model": {
   "one_liner": "用大象记住项目上下文起草规格，再让金鱼从零挑刺的 AI 评审插件",
   "summary": "EGM 是一个面向 AI 编程助手的开源插件，把「写规格」和「评审规格」拆成两个角色：Elephant 持有项目上下文并起草规格，Goldfish 评审者在不带先前对话的情况下只看草稿和被引用的原始材料，从而暴露未言明的假设和盲区，架构取舍和最终批准仍由人来做。它内置的起草与设计评审流程面向软件规格文档，其他类型的文档可以用 /egm-review-loop 自行选择评审者和标准。评审已有文档和代码漂移检查（drift report）是两条轻量入口，不需要先写新规格：一条命令就能拿现有设计文档或 PR 计划对照真实代码跑一次评审。新意主要在「刻意让评审方失忆」这个机制上，用信息隔离对抗 AI 评审常见的顺着作者思路走的偏差。",
@@ -1810,6 +1908,55 @@
   "source_description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
   "language": "Python",
   "url": "https://github.com/homeassistant-ai/ha-mcp"
+ },
+ "kajisho5/ffmpeg-skill": {
+  "one_liner": "给你的编码 agent 装上本地 FFmpeg 剪辑能力，不联网、不用 API key。",
+  "summary": "ffmpeg-skill 是一个 Agent Skill：它把 42 个封装好的 FFmpeg/ffprobe 工具交给 Claude Code、Cursor、Codex 等能读 SKILL.md 的 agent，让 agent 按「probe → 尽量无损编辑 → 检查 → 校验」的固定流程剪视频。功能覆盖剪切、拼接、去静音、按比例与时长的适配、字幕与卡拉 OK、叠加与动效、HDR→SDR 与 LUT、音频清理与响度、多机位、交付检查、整片工程渲染和批量目录处理，全部在本地运行，只依赖 ffmpeg 与 python3。它同时提供 MCP server，默认 tools/list 只暴露 12 个核心工具以控制客户端上下文，设置 FFMPEG_SKILL_MCP_FULL=1 后列出全部 42 个，两种模式下都能通过 tools/call 按名调用任意工具；整套工具还有一份机器可读的 contract 描述。相比自己写 FFmpeg 脚本，它的新意在于「给 agent 用的工具契约 + 自校验流程」，并且 README 中的每个前后对比 demo 都能用 demos/build.py 重新生成，素材多为 FFmpeg 自带测试源。",
+  "audience": [
+   "已经在用 Claude Code、Cursor 或 Codex 写自动化脚本，想把视频处理也纳入同一工作流的工程师。",
+   "需要把长视频批量改成 9:16 竖版、加字幕并分发到多个平台的短视频运营或内容工程。",
+   "素材涉敏、不能上传云端，只能用本地工具链处理音视频的团队。",
+   "正在做 MCP 工具集成，想参考一个多工具 server 和机器可读契约如何设计的开发者。",
+   "做播客、口播或课程录制，需要去静音、做响度标准化和字幕的后期人员。"
+  ],
+  "use_cases": [
+   "用 fit.py --aspect 9:16 --fit crop 把横版素材批量裁成竖版，直接得到平台可发布的尺寸。",
+   "用 caption.py --animate pop --karaoke 生成带动效和逐字高亮的字幕，替代手工对齐时间轴。",
+   "用 silence.py --threshold -35 自动切掉口播中的停顿和静场，缩短成片时长。",
+   "用 loudness.py -I -14 --tp -1 把成片响度统一到平台常见标准，并做交付检查。",
+   "让 agent 对多机位素材做同步与漂移校正，再通过整片工程渲染输出最终成片。"
+  ],
+  "adoption_steps": [
+   "先在本机确认 ffmpeg、ffprobe 和 python3 都在 PATH 上（README 明确这是运行前提），跑一次 ffmpeg -version 验证。",
+   "执行 npx ffmpeg-skill 安装并初始化，然后在 Claude Code、Cursor 或任意 MCP 客户端里接入它的 MCP server，先用默认 12 个核心工具试跑。",
+   "拿一段自己的素材跑 probe → 剪切 → 校验的完整流程，并对照 docs/demos.md 用 demos/build.py 重建 demo，确认输出符合预期后再接批量目录处理。"
+  ],
+  "build_ideas": [
+   "在它的 MCP server 之上封装一条「素材进、多平台成片出」的批量流水线，把竖版、字幕、响度固化成一键任务。",
+   "利用它的机器可读 contract 生成自己的工具文档、参数校验层或可视化配置界面，降低非工程师的使用门槛。",
+   "把交付检查与响度校验接入 CI，对每次渲染出的成片自动做规范化门禁。",
+   "针对播客、课程、电商带货等垂直场景，基于 42 个工具组合出行业模板，并复用 demos/build.py 的合成素材做回归测试。",
+   "把它的 tools/call 接口接到自己的 agent 框架或聊天前端，做成对话式剪辑助手。"
+  ],
+  "risks": [
+   "材料只显示存在 LICENSE 链接，未说明具体许可证类型，商用或二次分发前必须自行确认许可条款。",
+   "运行强依赖系统上的 ffmpeg/ffprobe 版本，README 有兼容性章节但材料未给出具体版本范围，需在自己的环境中先验证关键工具是否正常。",
+   "MCP 默认只暴露 12 个工具，完整 42 个需要设置 FFMPEG_SKILL_MCP_FULL=1，客户端上下文占用与工具发现问题要提前评估。",
+   "虽然主语言是 Python 且声称只用标准库，但分发走 npm 与 npx，实际落地需要 Node 环境，多语言依赖链要在部署方案里算进去。",
+   "star 短期增长快（本期 +367）且作者通过 GitHub Sponsors 接受赞助，42 个工具的边界情况和长期维护节奏需要自己在关键路径上做验证与兜底。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1468,
+   "completion_tokens": 1803
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "064d455d0cc6fad49ff0da0532fcaa33df59b1cd6f1665f76eb855ec9e7317e5",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-17T08:01:10+08:00",
+  "readme_used": true,
+  "source_description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+  "language": "Python",
+  "url": "https://github.com/kajisho5/ffmpeg-skill"
  },
  "mattpocock/skills": {
   "one_liner": "给 AI 编码代理装一套小而可组合的工程技能包",
@@ -2050,6 +2197,55 @@
   "source_description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
   "language": "TypeScript",
   "url": "https://github.com/morluto/rea"
+ },
+ "mvanhorn/last30days-skill": {
+  "one_liner": "跨 Reddit、X、YouTube 等平台按真实点赞和投注热度打分，再由 AI 汇总成一份调研简报。",
+  "summary": "这是一个面向 AI agent 的检索技能包：它并行搜索 Reddit、X、YouTube、Hacker News、Polymarket 和网页，按 upvote、like、engagement 和真实下注金额排序，最后由一个 agent 裁判合成一份带出处的摘要。它的做法是绕开各家封闭的 API，让用户自带 key 和浏览器 session，把十几个互不相通的平台桥接给同一个 agent 使用，输出的是具体的人、帖子和赔率，而不是编辑筛选过的页面。与 Google 或单一聊天机器人相比，它的差异点在于覆盖面和评分信号：它同时搜索多个平台，并用真实互动数据给结果排序。安装方式有两种：Claude Code 插件市场，或者通过 npx skills 装进 50 多个 Agent Skills 宿主；Reddit、HN、Polymarket、GitHub 零配置即可用，其余平台需要跑一次 setup wizard。",
+  "audience": [
+   "需要在会前或商务谈判前快速背调某个人、某家公司近一个月动态的销售、BD 和投资人员。",
+   "做技术选型、想看看 Reddit 和 HN 上工程师对某个库真实吐槽的后端和基础架构工程师。",
+   "需要判断某个事件市场预期、会去看 Polymarket 赔率的从业者和内容创作者。",
+   "正在搭建自己的 agent 工具链、想接入现成检索能力的 AI 应用开发者。",
+   "要产出周期性行业简报、但不想手动翻十个平台的产品经理和市场研究岗。"
+  ],
+  "use_cases": [
+   "明天要见某位创始人或候选人时，运行 /last30days 加人名，拿到他本月在 X、Reddit、GitHub 上的实际动作和争议点。",
+   "团队要引入一个新框架前，用它在 Reddit 和 HN 上搜近 30 天讨论，按点赞数挑出真实用户反馈和迁移踩坑贴。",
+   "追踪某个政策或产品发布的市场预期，把 Polymarket 赔率和 X 上的讨论放在同一份简报里对照。",
+   "调研某款工具的口碑时，拉取 YouTube 转录和 TikTok 互动数据，提炼出视频里反复提到的优缺点。",
+   "把每周固定话题的检索结果整理成内部周报，替代人工逐个平台翻热帖。"
+  ],
+  "adoption_steps": [
+   "在 Claude Code 中执行 /plugin marketplace add mvanhorn/last30days-skill 和 /plugin install last30days；如果用的是 Codex、Cursor、Copilot 等宿主，改跑 npx skills add mvanhorn/last30days-skill -g。",
+   "先用零配置的 Reddit、HN、Polymarket、GitHub 跑一次真实话题（例如一个你熟悉的项目名），核对输出质量和引用是否准确，再决定是否投入配置成本。",
+   "有需要再运行一次 setup wizard 解锁 X、YouTube、TikTok、arXiv、Techmeme，并以 skills/last30days/SKILL.md 为准核对最新命令和参数，因为 README 明确说该文件才是命令与设置的 source of truth。"
+  ],
+  "build_ideas": [
+   "把它的输出接进内部知识库或周报系统，做成定时任务，每天或每周自动归档某个话题的跨平台热度变化。",
+   "针对垂直场景（竞品监控、投资标的跟踪）沉淀固定的查询模板和打分权重，把通用的 agent 裁判调成团队自己的判断口径。",
+   "把评分层替换或补充成公司自有信号源，例如内部工单、Slack 讨论、客服反馈，与公开平台的点赞数据合并排序。",
+   "封装成一个 MCP server 或内部 API，让其他 agent 工作流（写文案、做销售简报）直接调用它的检索结果。",
+   "基于它自带 key 的多平台接入层，抽出一个只做「搜索 + 打分」的库，复用到自己的舆情或线索挖掘产品里。"
+  ],
+  "risks": [
+   "零配置只覆盖 Reddit、HN、Polymarket、GitHub，X、YouTube、TikTok 等必须自带 API key 或浏览器 session，凭证保管和平台条款合规需要先自查。",
+   "它依赖 Reddit、X、YouTube、Polymarket 等第三方平台自有 API 和认证方式，任何一家改接口或收紧权限都可能导致对应数据源失效。",
+   "README 只跟踪 v4 流水线且声明 SKILL.md 才是命令与设置的权威来源，说明版本迭代快、文档可能不同步，落地时要按代码和 SKILL.md 核对而非照抄 README。",
+   "排序依据是 upvote、like、下注金额等热度信号，高分不等于事实正确，涉及人物评价或商业判断时仍需回看原始帖子核实。",
+   "材料中未提及许可证与依赖清单，商用前需要到仓库确认 license 类型以及它对宿主环境（Claude Code 插件市场、agentskills.io 生态）的绑定程度。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1281,
+   "completion_tokens": 1802
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "d7b5681d0f0bf696dc86fc09777bf0c2039e5ed3fd56d713dbd815d725f5b757",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-17T08:01:19+08:00",
+  "readme_used": true,
+  "source_description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+  "language": "Python",
+  "url": "https://github.com/mvanhorn/last30days-skill"
  },
  "nodejs/node": {
   "one_liner": "一个开源的跨平台 JavaScript 运行时，让你脱离浏览器也能跑 JS。",
@@ -2489,6 +2685,55 @@
   "source_description": "Hunt down social media accounts by username across social networks",
   "language": "Python",
   "url": "https://github.com/sherlock-project/sherlock"
+ },
+ "sveltejs/svelte": {
+  "one_liner": "把声明式组件编译成精准更新 DOM 的高效 JavaScript，省掉框架运行时开销。",
+  "summary": "Svelte 是一个用来构建 Web 应用的编译器：你写声明式组件，它在构建阶段把组件转换成高效 JavaScript，运行时只做「外科手术式」的 DOM 更新。它与在浏览器里跑运行时做 diff 的思路不同，把大量工作前移到了编译期。README 明确它采用 MIT 许可，开发主要靠志愿者推进，资金通过 Open Collective 募集，路线图公开在 svelte.dev/roadmap。除了框架本身，仓库还包含 packages/svelte 包与贡献指南，说明它是可持续参与的开源工程而不只是一个 npm 包。",
+  "audience": [
+   "正在做前端框架选型、关心包体积与运行时性能的前端工程师。",
+   "维护中大型 Web 应用、希望减少框架运行时开销的团队技术负责人。",
+   "需要评估开源依赖许可证与治理模式的产品经理或架构师。",
+   "想学习「编译期优化」这一思路、准备写课程或技术文章的内容创作者。",
+   "需要在既有页面里嵌入局部交互组件、但不想引入重型运行时的开发者。"
+  ],
+  "use_cases": [
+   "用声明式组件从零搭建一个交互式单页应用，并把构建产物直接部署为静态资源。",
+   "把表单、列表、弹窗等局部交互封装成组件，嵌入到已有的服务端渲染页面中。",
+   "在团队内搭建统一的设计系统或组件库，用编译产物控制最终打包体积。",
+   "做性能对比实验：同一功能分别用 Svelte 与现有框架实现，量测产物体积与更新开销。",
+   "作为教学示例，演示「编译期生成更新代码」与「运行时 diff」两种前端架构的差异。"
+  ],
+  "adoption_steps": [
+   "先打开 svelte.dev 的官方教程与文档完整走一遍，确认组件写法、响应式语法与团队现有框架的差异。",
+   "在真实项目之外新建一个独立 demo，按官网文档写一个带交互的列表或表单并完成构建，记录产物体积和实际运行表现。",
+   "决定引入后，先读 CONTRIBUTING.md 和 packages/svelte 目录确认包结构与版本信息，再划定迁移边界，从单个局部组件开始替换，而不是整站重写。"
+  ],
+  "build_ideas": [
+   "基于 Svelte 封装一套团队内部设计系统组件库，并对外发布为可复用的包。",
+   "开发面向内容站点的静态生成模板或脚手架，把编译产物的体积优势作为卖点。",
+   "做浏览器扩展的界面层，利用小体积产物降低扩展包大小与加载延迟。",
+   "构建可嵌入第三方网站的小型交互挂件（如问卷、计算器、配置器）。",
+   "编写面向教学的示例工程，逐段展示编译前后的输出代码，用于培训或课程。"
+  ],
+  "risks": [
+   "材料只有 README 节选，没有版本号、发布记录和破坏性变更历史，采用前需自行查看 release 与 CHANGELOG 确认当前主版本状态。",
+   "README 明确开发依赖志愿者、资金来自 Open Collective 捐赠，没有商业公司提供的 SLA 或长期支持承诺。",
+   "它是编译器型框架，必须接入构建链；若现有项目已有 webpack 等复杂构建或多个框架共存，集成成本需要先做验证。",
+   "MIT 许可允许商用与修改，但从 React/Vue 迁移意味着组件需要重写，人力成本要在选型阶段就计入。",
+   "路由、服务端渲染等周边能力不在本仓库 README 的描述范围内，需另行确认对应方案是否成熟可用。"
+  ],
+  "tokens": {
+   "prompt_tokens": 862,
+   "completion_tokens": 1643
+  },
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "62fa8b157035982e05c4f938bf078d42993d420e76e2214757e3ccbf395e97d7",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-17T08:01:25+08:00",
+  "readme_used": true,
+  "source_description": "web development for the rest of us",
+  "language": "JavaScript",
+  "url": "https://github.com/sveltejs/svelte"
  },
  "tashfeenahmed/freellmapi": {
   "one_liner": "把几十家免费 LLM 额度聚合成一个 OpenAI 兼容的 /v1 接口。",

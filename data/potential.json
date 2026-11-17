@@ -1,9 +1,28 @@
 {
- "generated_at": "2026-11-16T19:09:13+08:00",
+ "generated_at": "2026-11-17T08:01:26+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
- "candidate_count": 31,
+ "candidate_count": 33,
  "excluded_count": 5,
  "items": [
+  {
+   "full_name": "NVIDIA/SkillEvaluator",
+   "score": 96.8,
+   "stars_period": 873,
+   "stars_total": 2667,
+   "growth": 0.4866,
+   "language": "Python",
+   "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+   "periods": [
+    "daily"
+   ],
+   "streak": 2,
+   "reasons": [
+    "本期 +873 star，相当于存量的 48.7%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 2,667 star，向上空间大",
+    "连续 2 期在榜，热度不是一次性"
+   ]
+  },
   {
    "full_name": "ranxianglei/billion-context",
    "score": 96.4,
@@ -21,25 +40,6 @@
     "刚进榜单，还没被反复曝光",
     "体量仅 6,378 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
-   ]
-  },
-  {
-   "full_name": "GoogleChrome/modern-web-guidance-src",
-   "score": 90.2,
-   "stars_period": 1219,
-   "stars_total": 7251,
-   "growth": 0.2021,
-   "language": "TypeScript",
-   "description": "Keep your coding agent up to date with the latest web best practices",
-   "periods": [
-    "daily"
-   ],
-   "streak": 3,
-   "reasons": [
-    "本期 +1,219 star，相当于存量的 20.2%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 7,251 star，向上空间大",
-    "连续 3 期在榜，热度不是一次性"
    ]
   },
   {
@@ -82,21 +82,21 @@
    ]
   },
   {
-   "full_name": "Tencent/LoopForge",
-   "score": 88.7,
-   "stars_period": 423,
-   "stars_total": 1582,
-   "growth": 0.365,
-   "language": "Go",
-   "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+   "full_name": "google-research/paper-orchestra",
+   "score": 87.5,
+   "stars_period": 313,
+   "stars_total": 1474,
+   "growth": 0.2696,
+   "language": "Python",
+   "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
    "periods": [
     "daily"
    ],
    "streak": 1,
    "reasons": [
-    "本期 +423 star，相当于存量的 36.5%",
+    "本期 +313 star，相当于存量的 27.0%",
     "刚进榜单，还没被反复曝光",
-    "体量仅 1,582 star，向上空间大"
+    "体量仅 1,474 star，向上空间大"
    ]
   },
   {

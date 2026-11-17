@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-16T19:09:13+08:00",
+ "generated_at": "2026-11-17T08:01:26+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
- "project_count": 36,
+ "project_count": 38,
  "topics": [
   {
    "name": "AI Agent / 编码助手",
    "repo_count": 24,
-   "share": 0.667,
-   "stars_period_total": 577834,
-   "avg_stars_period": 24076,
+   "share": 0.632,
+   "stars_period_total": 579563,
+   "avg_stars_period": 24148,
    "languages": [
     "CSS",
     "Go",
@@ -149,19 +149,9 @@
      "description": "Production-grade engineering skills for AI coding agents."
     },
     {
-     "full_name": "GoogleChrome/modern-web-guidance-src",
-     "stars_period": 1219,
-     "stars_total": 7251,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "Keep your coding agent up to date with the latest web best practices"
-    },
-    {
      "full_name": "dream-num/univer",
-     "stars_period": 988,
-     "stars_total": 26113,
+     "stars_period": 1828,
+     "stars_total": 27761,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -169,20 +159,29 @@
      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Buil"
     },
     {
-     "full_name": "backnotprop/plannotator",
-     "stars_period": 866,
-     "stars_total": 11899,
-     "language": "TypeScript",
+     "full_name": "alibaba/open-code-review",
+     "stars_period": 951,
+     "stars_total": 52917,
+     "language": "Go",
      "periods": [
-      "daily",
-      "weekly"
+      "daily"
      ],
-     "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
+     "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comment"
+    },
+    {
+     "full_name": "NVIDIA/SkillEvaluator",
+     "stars_period": 873,
+     "stars_total": 2667,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and liv"
     },
     {
      "full_name": "ChromeDevTools/chrome-devtools-mcp",
-     "stars_period": 717,
-     "stars_total": 57018,
+     "stars_period": 841,
+     "stars_total": 57665,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -191,8 +190,8 @@
     },
     {
      "full_name": "tradermonty/claude-trading-skills",
-     "stars_period": 706,
-     "stars_total": 5616,
+     "stars_period": 837,
+     "stars_total": 6295,
      "language": "Python",
      "periods": [
       "daily"
@@ -200,29 +199,9 @@
      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development."
     },
     {
-     "full_name": "alibaba/open-code-review",
-     "stars_period": 691,
-     "stars_total": 52164,
-     "language": "Go",
-     "periods": [
-      "daily"
-     ],
-     "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comment"
-    },
-    {
-     "full_name": "Tencent/LoopForge",
-     "stars_period": 423,
-     "stars_total": 1582,
-     "language": "Go",
-     "periods": [
-      "daily"
-     ],
-     "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows fo"
-    },
-    {
      "full_name": "ag-ui-protocol/ag-ui",
-     "stars_period": 355,
-     "stars_total": 17941,
+     "stars_period": 791,
+     "stars_total": 18936,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -230,9 +209,20 @@
      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications."
     },
     {
+     "full_name": "backnotprop/plannotator",
+     "stars_period": 696,
+     "stars_total": 12536,
+     "language": "TypeScript",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
+    },
+    {
      "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 247,
-     "stars_total": 9345,
+     "stars_period": 529,
+     "stars_total": 9727,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -240,37 +230,46 @@
      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
     },
     {
-     "full_name": "NVIDIA/SkillEvaluator",
-     "stars_period": 122,
-     "stars_total": 1754,
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars_period": 367,
+     "stars_total": 6670,
      "language": "Python",
      "periods": [
       "daily"
      ],
-     "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent eval"
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
     },
     {
-     "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 98,
-     "stars_total": 6512,
+     "full_name": "google-research/paper-orchestra",
+     "stars_period": 313,
+     "stars_total": 1474,
      "language": "Python",
      "periods": [
       "daily"
      ],
-     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
+     "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing."
+    },
+    {
+     "full_name": "mvanhorn/last30days-skill",
+     "stars_period": 135,
+     "stars_total": 68103,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
     }
    ]
   },
   {
    "name": "安全 / 逆向",
-   "repo_count": 6,
-   "share": 0.167,
-   "stars_period_total": 495036,
-   "avg_stars_period": 82506,
+   "repo_count": 5,
+   "share": 0.132,
+   "stars_period_total": 494938,
+   "avg_stars_period": 98988,
    "languages": [
     "Java",
     "JavaScript",
-    "Python",
     "Rust",
     "TypeScript"
    ],
@@ -324,91 +323,17 @@
       "monthly"
      ],
      "description": "Ghidra is a software reverse engineering (SRE) framework"
-    },
-    {
-     "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 98,
-     "stars_total": 6512,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
-    }
-   ]
-  },
-  {
-   "name": "自动化 / 效率",
-   "repo_count": 5,
-   "share": 0.139,
-   "stars_period_total": 27485,
-   "avg_stars_period": 5497,
-   "languages": [
-    "Go",
-    "Python",
-    "Rust",
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "tashfeenahmed/freellmapi",
-     "stars_period": 17591,
-     "stars_total": 50320,
-     "language": "TypeScript",
-     "periods": [
-      "monthly"
-     ],
-     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
-    },
-    {
-     "full_name": "ZhuLinsen/daily_stock_analysis",
-     "stars_period": 4548,
-     "stars_total": 72537,
-     "language": "Python",
-     "periods": [
-      "weekly"
-     ],
-     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
-    },
-    {
-     "full_name": "vercel-labs/agent-browser",
-     "stars_period": 4217,
-     "stars_total": 51654,
-     "language": "Rust",
-     "periods": [
-      "weekly"
-     ],
-     "description": "Browser automation CLI for AI agents"
-    },
-    {
-     "full_name": "tradermonty/claude-trading-skills",
-     "stars_period": 706,
-     "stars_total": 5616,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development."
-    },
-    {
-     "full_name": "Tencent/LoopForge",
-     "stars_period": 423,
-     "stars_total": 1582,
-     "language": "Go",
-     "periods": [
-      "daily"
-     ],
-     "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows fo"
     }
    ]
   },
   {
    "name": "其他 / 未归类",
-   "repo_count": 4,
-   "share": 0.111,
-   "stars_period_total": 49040,
-   "avg_stars_period": 12260,
+   "repo_count": 5,
+   "share": 0.132,
+   "stars_period_total": 49328,
+   "avg_stars_period": 9866,
    "languages": [
+    "JavaScript",
     "Python",
     "Ruby",
     "TypeScript"
@@ -453,15 +378,154 @@
       "weekly"
      ],
      "description": "The personal finance app for everyone (by everyone)"
+    },
+    {
+     "full_name": "DeanChensj/jiangshan-map",
+     "stars_period": 288,
+     "stars_total": 6682,
+     "language": "JavaScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy &"
+    }
+   ]
+  },
+  {
+   "name": "自动化 / 效率",
+   "repo_count": 5,
+   "share": 0.132,
+   "stars_period_total": 27506,
+   "avg_stars_period": 5501,
+   "languages": [
+    "Python",
+    "Rust",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "tashfeenahmed/freellmapi",
+     "stars_period": 17591,
+     "stars_total": 50320,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ],
+     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
+    },
+    {
+     "full_name": "ZhuLinsen/daily_stock_analysis",
+     "stars_period": 4548,
+     "stars_total": 72537,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ],
+     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
+    },
+    {
+     "full_name": "vercel-labs/agent-browser",
+     "stars_period": 4217,
+     "stars_total": 51654,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Browser automation CLI for AI agents"
+    },
+    {
+     "full_name": "tradermonty/claude-trading-skills",
+     "stars_period": 837,
+     "stars_total": 6295,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development."
+    },
+    {
+     "full_name": "google-research/paper-orchestra",
+     "stars_period": 313,
+     "stars_total": 1474,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing."
+    }
+   ]
+  },
+  {
+   "name": "CLI / 开发者工具",
+   "repo_count": 5,
+   "share": 0.132,
+   "stars_period_total": 6650,
+   "avg_stars_period": 1330,
+   "languages": [
+    "Python",
+    "Rust",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "vercel-labs/agent-browser",
+     "stars_period": 4217,
+     "stars_total": 51654,
+     "language": "Rust",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Browser automation CLI for AI agents"
+    },
+    {
+     "full_name": "ChromeDevTools/chrome-devtools-mcp",
+     "stars_period": 841,
+     "stars_total": 57665,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "Chrome DevTools for coding agents"
+    },
+    {
+     "full_name": "backnotprop/plannotator",
+     "stars_period": 696,
+     "stars_total": 12536,
+     "language": "TypeScript",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
+    },
+    {
+     "full_name": "google-labs-code/stitch-skills",
+     "stars_period": 529,
+     "stars_total": 9727,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+    },
+    {
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars_period": 367,
+     "stars_total": 6670,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
     }
    ]
   },
   {
    "name": "LLM / 模型与推理",
    "repo_count": 4,
-   "share": 0.111,
-   "stars_period_total": 28130,
-   "avg_stars_period": 7032,
+   "share": 0.105,
+   "stars_period_total": 28390,
+   "avg_stars_period": 7098,
    "languages": [
     "Go",
     "Python",
@@ -500,8 +564,8 @@
     },
     {
      "full_name": "alibaba/open-code-review",
-     "stars_period": 691,
-     "stars_total": 52164,
+     "stars_period": 951,
+     "stars_total": 52917,
      "language": "Go",
      "periods": [
       "daily"
@@ -511,67 +575,12 @@
    ]
   },
   {
-   "name": "CLI / 开发者工具",
-   "repo_count": 4,
-   "share": 0.111,
-   "stars_period_total": 6047,
-   "avg_stars_period": 1512,
-   "languages": [
-    "Rust",
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "vercel-labs/agent-browser",
-     "stars_period": 4217,
-     "stars_total": 51654,
-     "language": "Rust",
-     "periods": [
-      "weekly"
-     ],
-     "description": "Browser automation CLI for AI agents"
-    },
-    {
-     "full_name": "backnotprop/plannotator",
-     "stars_period": 866,
-     "stars_total": 11899,
-     "language": "TypeScript",
-     "periods": [
-      "daily",
-      "weekly"
-     ],
-     "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
-    },
-    {
-     "full_name": "ChromeDevTools/chrome-devtools-mcp",
-     "stars_period": 717,
-     "stars_total": 57018,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "Chrome DevTools for coding agents"
-    },
-    {
-     "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 247,
-     "stars_total": 9345,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
-    }
-   ]
-  },
-  {
    "name": "学习 / 知识管理",
-   "repo_count": 3,
-   "share": 0.083,
-   "stars_period_total": 23994,
-   "avg_stars_period": 7998,
+   "repo_count": 4,
+   "share": 0.105,
+   "stars_period_total": 24399,
+   "avg_stars_period": 6100,
    "languages": [
-    "C++",
     "Python"
    ],
    "repos": [
@@ -596,21 +605,118 @@
      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork"
     },
     {
-     "full_name": "ggml-org/ggml",
-     "stars_period": 43,
-     "stars_total": 15936,
-     "language": "C++",
+     "full_name": "google-research/paper-orchestra",
+     "stars_period": 313,
+     "stars_total": 1474,
+     "language": "Python",
      "periods": [
       "daily"
      ],
-     "description": "Tensor library for machine learning"
+     "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing."
+    },
+    {
+     "full_name": "mvanhorn/last30days-skill",
+     "stars_period": 135,
+     "stars_total": 68103,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+    }
+   ]
+  },
+  {
+   "name": "前端 / 设计系统",
+   "repo_count": 3,
+   "share": 0.079,
+   "stars_period_total": 14407,
+   "avg_stars_period": 4802,
+   "languages": [
+    "JavaScript",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "meta/astryx",
+     "stars_period": 13501,
+     "stars_total": 28933,
+     "language": "TypeScript",
+     "periods": [
+      "weekly"
+     ],
+     "description": "An open source design system that's fully customizable and agent ready"
+    },
+    {
+     "full_name": "ag-ui-protocol/ag-ui",
+     "stars_period": 791,
+     "stars_total": 18936,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications."
+    },
+    {
+     "full_name": "sveltejs/svelte",
+     "stars_period": 115,
+     "stars_total": 88974,
+     "language": "JavaScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "web development for the rest of us"
+    }
+   ]
+  },
+  {
+   "name": "后端 / 基础设施",
+   "repo_count": 3,
+   "share": 0.079,
+   "stars_period_total": 942,
+   "avg_stars_period": 314,
+   "languages": [
+    "Go",
+    "Python",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "google-labs-code/stitch-skills",
+     "stars_period": 529,
+     "stars_total": 9727,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+    },
+    {
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars_period": 367,
+     "stars_total": 6670,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
+    },
+    {
+     "full_name": "getarcaneapp/arcane",
+     "stars_period": 46,
+     "stars_total": 8696,
+     "language": "Go",
+     "periods": [
+      "daily"
+     ],
+     "description": "Modern Docker Management, Designed for Everyone"
     }
    ]
   },
   {
    "name": "音视频 / 多模态",
    "repo_count": 2,
-   "share": 0.056,
+   "share": 0.053,
    "stars_period_total": 73133,
    "avg_stars_period": 36566,
    "languages": [
@@ -641,43 +747,11 @@
    ]
   },
   {
-   "name": "前端 / 设计系统",
-   "repo_count": 2,
-   "share": 0.056,
-   "stars_period_total": 13856,
-   "avg_stars_period": 6928,
-   "languages": [
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "meta/astryx",
-     "stars_period": 13501,
-     "stars_total": 28933,
-     "language": "TypeScript",
-     "periods": [
-      "weekly"
-     ],
-     "description": "An open source design system that's fully customizable and agent ready"
-    },
-    {
-     "full_name": "ag-ui-protocol/ag-ui",
-     "stars_period": 355,
-     "stars_total": 17941,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications."
-    }
-   ]
-  },
-  {
    "name": "数据 / 爬虫",
    "repo_count": 2,
-   "share": 0.056,
-   "stars_period_total": 813,
-   "avg_stars_period": 406,
+   "share": 0.053,
+   "stars_period_total": 1824,
+   "avg_stars_period": 912,
    "languages": [
     "Go",
     "Python"
@@ -685,8 +759,8 @@
    "repos": [
     {
      "full_name": "alibaba/open-code-review",
-     "stars_period": 691,
-     "stars_total": 52164,
+     "stars_period": 951,
+     "stars_total": 52917,
      "language": "Go",
      "periods": [
       "daily"
@@ -695,20 +769,20 @@
     },
     {
      "full_name": "NVIDIA/SkillEvaluator",
-     "stars_period": 122,
-     "stars_total": 1754,
+     "stars_period": 873,
+     "stars_total": 2667,
      "language": "Python",
      "periods": [
       "daily"
      ],
-     "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent eval"
+     "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and liv"
     }
    ]
   },
   {
    "name": "机器人 / 硬件",
    "repo_count": 1,
-   "share": 0.028,
+   "share": 0.026,
    "stars_period_total": 1922,
    "avg_stars_period": 1922,
    "languages": [
@@ -724,28 +798,6 @@
       "weekly"
      ],
      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator."
-    }
-   ]
-  },
-  {
-   "name": "后端 / 基础设施",
-   "repo_count": 1,
-   "share": 0.028,
-   "stars_period_total": 247,
-   "avg_stars_period": 247,
-   "languages": [
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 247,
-     "stars_total": 9345,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
     }
    ]
   }
