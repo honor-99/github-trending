@@ -38,6 +38,8 @@
 
   /* 解读库：{ full_name: {...} }，缺失时面板优雅降级 */
   let INTERP = {};
+  let STARS_LIVE = {};   // {full_name: {stars_live, checked_at}} —— scripts/stars.py 每天刷
+  let LIVE_META = null;  // stars-live.json 的元信息（generated_at / ok / failed）
   /* 派生洞察：话题 / 潜力 / 数据说明，缺失时对应区块隐藏 */
   const INSIGHTS = { topics: null, potential: null, archive: null };
 
@@ -141,6 +143,18 @@
       if (res.ok) INTERP = await res.json();
     } catch (err) {
       INTERP = {}; // 解读库缺失不影响主榜单
+    }
+  }
+
+  async function loadStarsLive() {
+    try {
+      const res = await fetch('data/stars-live.json', { cache: 'no-store' });
+      if (!res.ok) return;
+      const payload = await res.json();
+      STARS_LIVE = payload.items || {};
+      LIVE_META = payload;
+    } catch (err) {
+      STARS_LIVE = {}; // 实时 star 缺失不影响主榜单
     }
   }
 
@@ -467,6 +481,16 @@
         meta.append(el('span', 'badge badge--lang', it.language));
       }
       meta.append(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
+      /* 历史榜单：有实时值就补一条「★ 305,550」+「实时」标，悬停看快照与刷新时间。
+         排序仍按快照口径（stars_total），实时值只做展示，不参与排序。 */
+      const live = STARS_LIVE[it.full_name];
+      if (live && typeof live.stars_live === 'number') {
+        const liveNode = el('span', 'dot-sep live-star', `★ ${fmt(live.stars_live)}`);
+        liveNode.title = `实时 star（${(live.checked_at || '').replace('T', ' ').slice(0, 16)} 刷新）`
+          + ` · 快照 ${fmt(it.stars_total)}${it.stars_total_date ? `（${it.stars_total_date}）` : ''}`;
+        meta.append(liveNode);
+        meta.append(el('span', 'badge badge--live', '实时'));
+      }
       if (it.appearances > 1) meta.append(el('span', 'badge badge--hot', `上榜 ${it.appearances} 次`));
       else meta.append(el('span', 'dot-sep', '上榜 1 次'));
       for (const label of it.period_labels || []) meta.append(el('span', 'badge badge--period', label));
@@ -486,7 +510,10 @@
 
     $('#footSource').textContent =
       `历史榜单 · 覆盖 ${data.snapshot_count} 期快照（${data.first_date || '—'} → ${data.latest_date || '—'}）`
-      + ` · 按累计 star 总量降序 · ${(data.generated_at || '').replace('T', ' ').slice(0, 16)} 生成`;
+      + ` · 按累计 star 总量降序 · ${(data.generated_at || '').replace('T', ' ').slice(0, 16)} 生成`
+      + (LIVE_META && LIVE_META.generated_at
+        ? ` · star 实时刷新于 ${LIVE_META.generated_at.replace('T', ' ').slice(0, 16)}（${LIVE_META.ok}/${LIVE_META.project_count}）`
+        : ' · star 为快照值');
   }
 
   /* 周期 → 视图：只有 topics / potential 是独立视图，其余都进榜单列 */
@@ -1129,6 +1156,14 @@
     const metaNodes = [];
     if (it.language && it.language !== '-') metaNodes.push(el('span', 'badge badge--lang', it.language));
     if (it.stars_total !== undefined) metaNodes.push(el('span', 'dot-sep', `${fmt(it.stars_total)} stars`));
+    /* 抽屉里同样给实时值，标注刷新时间，避免和快照值混淆 */
+    const liveRec = STARS_LIVE[it.full_name];
+    if (liveRec && typeof liveRec.stars_live === 'number') {
+      const node = el('span', 'dot-sep live-star', `★ ${fmt(liveRec.stars_live)} 实时`);
+      node.title = `实时值（${(liveRec.checked_at || '').replace('T', ' ').slice(0, 16)} 刷新）`
+        + ` · 上榜快照 ${fmt(it.stars_total)}${it.stars_total_date ? `（${it.stars_total_date}）` : ''}`;
+      metaNodes.push(node);
+    }
     if (it.stars_period !== undefined && it.stars_period !== null) {
       metaNodes.push(el('span', 'dot-sep', `本期 +${fmt(it.stars_period)}`));
     }
@@ -1362,7 +1397,10 @@
     // 先落 tab 与视图：慢网络下也不该让 ?p=topics 显示成日榜
     setPeriod(period, { push: false });
     await loadInterpretations();
+    await loadStarsLive();
     await loadInsights();
+    // setPeriod 已经触发过一次渲染，那时 stars-live.json 还没到位；历史榜单补一帧带上实时 star
+    if (period === 'history') load('history');
     // 话题/潜力视图的内容与 KPI 依赖 insights，数据到位后补一帧
     if (viewOfPeriod(period) !== 'rank') load(period);
     moveIndicator();

@@ -20,6 +20,7 @@ scripts/fetch-trending.py   抓 https://github.com/trending → TSV
 scripts/archive.py          归档 + 派生（唯一写数据的入口）
 scripts/insights.py         纯统计派生：话题聚合 / 潜力观察 / 数据说明（不调模型）
 scripts/interpret.py        中文七段式解读（LLM 预生成，按 hash 幂等）
+scripts/stars.py            实时 star 批量刷新（GraphQL，2 个请求刷全部上榜项目）
 scripts/publish.sh          幂等提交 + 推送
 data/
   YYYY/YYYY-MM-DD-<period>.json   每期快照（唯一事实来源，不可变）
@@ -27,6 +28,8 @@ data/
   repos.json                      仓库维表：first_seen / times_on_board / streak / history
   latest-<period>.json            每期最新一期 + 信号（前端读取这个）
   interpretations.json            仓库 → 中文七段式解读（跨周期共用）
+  history.json                    历史榜单（全部上榜项目按累计 star 排）
+  stars-live.json                 实时 star（只做展示，不参与排序）
   topics.json                     话题聚合结果（P1）
   potential.json                  潜力观察结果（P2）
   archive.json                    数据说明页：快照清单 + 字段文档（P2 起替代裸 meta.json）
@@ -112,6 +115,26 @@ python3 scripts/interpret.py --force --limit 3                       # 忽略 ha
   该映射会记录在每条解读的 `model_resolved` 字段并在 UI 里显示。
 - **失败降级**：单个项目失败只告警；没有解读的条目在抽屉里显示"还没生成" + 原始描述。
 
+## 实时 star（stars.py，2026-11-18 新增）
+
+历史榜单每行的 star 原本只是「上榜那一刻」的快照值（`stars_total` + `stars_total_date`），
+所以一个 11-11 上榜、之后再没出现过的项目，数字会一直停在 11-11。
+
+```bash
+python3 scripts/stars.py             # 刷全部上榜项目 → data/stars-live.json（约 6s）
+python3 scripts/stars.py --dry-run   # 只报「将刷多少个 / 分几个请求」，不发请求
+```
+
+- **为什么用 GraphQL**：REST `repos/{o}/{r}` 一条仓库一次请求，未认证限额 **60 次/小时/IP**
+  （本机出口实测常被打满，`remaining: 0`），68 个仓库根本不够；GraphQL 一个请求塞 40 个别名，
+  68 个项目 = **2 个请求**，实测 5.7s、68/68 成功。
+- **口径**：排序仍然只按快照（`history.json` 的 `stars_total`），`stars-live.json` 只提供展示值，
+  前端在数字旁加「★ 467,263」+「实时」小标，悬停显示「实时（18:55 刷新）· 快照 450,249（2026-11-11）」。
+  历史榜单的脚注会写 `star 实时刷新于 …（68/68）`；拿不到时自动退化成「star 为快照值」。
+- **失败不阻断**：单仓库 404/改名只跳过并保留上一次的值；整体失败（网络/认证）不写文件，
+  页面沿用上一版。这样「历史榜单」永远不会因为刷 star 而挂掉。
+- 已知限制：只覆盖 `history.json` 里出现过的项目；日/周/月榜仍显示快照值（那三个榜看的是本期增量）。
+
 ## 派生洞察（insights.py，零模型成本）
 
 ```bash
@@ -146,8 +169,10 @@ score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 
 
 ```
 cron 08:00  →  scripts/archive.py --period daily
-            →  scripts/insights.py                                          （秒级，零成本）
+            →  scripts/history.py                                          （秒级，零成本）
             →  scripts/interpret.py --period all --all-snapshots --limit 12 --workers 6（硬超时 240s）
+            →  scripts/stars.py                                            （GraphQL，2 请求 / 68 项目）
+            →  scripts/insights.py                                          （秒级，零成本）
             →  git add data/ && git commit && git push
             →  Pages 从分支发布
 ```
