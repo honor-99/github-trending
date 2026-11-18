@@ -46,7 +46,9 @@
   "readme_used": true,
   "source_description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
   "language": "Python",
-  "url": "https://github.com/Alishahryar1/free-claude-code"
+  "url": "https://github.com/Alishahryar1/free-claude-code",
+  "readme_sha": "2bf8a11d66ead6c1bdf7f26d3e28f22f8e2f8305",
+  "desc_hash": "e533f3bd0765b4a7afea5d1639802c319067a347893cf3999b31a18e8317d52a"
  },
  "ChromeDevTools/chrome-devtools-mcp": {
   "one_liner": "让 AI 编码助手通过 MCP 或 CLI 直接操控并检查真实 Chrome 浏览器。",
@@ -94,7 +96,9 @@
   "readme_used": true,
   "source_description": "Chrome DevTools for coding agents",
   "language": "TypeScript",
-  "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+  "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+  "readme_sha": "2dca1a052a314a7c2635fb9da68c96221441e380",
+  "desc_hash": "7499743e168dc03b321c08a6c37854441f82f99df1d33e83d271ddaef13238fd"
  },
  "CopilotKit/OpenBot": {
   "one_liner": "给每个 AI 同事配一台自己的电脑，带浏览器和文件工具，动作先审批后留痕。",
@@ -143,7 +147,9 @@
   "readme_used": true,
   "source_description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
   "language": "TypeScript",
-  "url": "https://github.com/CopilotKit/OpenBot"
+  "url": "https://github.com/CopilotKit/OpenBot",
+  "readme_sha": "e1d6f3ea1c0bf9ad7a326370b13c0cb02732275e",
+  "desc_hash": "04f74bb3242c6dc60cdf10f2974f246afbd4a57027defb9838b674389da8cb37"
  },
  "D4Vinci/Scrapling": {
   "one_liner": "把从单次请求到大规模爬取的抓取工作，收进一套 Python 接口里",
@@ -191,53 +197,56 @@
   "readme_used": true,
   "source_description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
   "language": "Python",
-  "url": "https://github.com/D4Vinci/Scrapling"
+  "url": "https://github.com/D4Vinci/Scrapling",
+  "readme_sha": "42565e07c1c2211dd4b9db27b2f7b99047025123",
+  "desc_hash": "b79b4fa3f79f1ea9c006705596604601bb29cd8c7f287950cc4bb817677341f6"
  },
  "DeanChensj/jiangshan-map": {
-  "one_liner": "拖动时间轴就能查看中国 2400 年疆域与古城变迁的交互式历史地图",
-  "summary": "这是一个把中国从战国（公元前 403 年）到当代的历史地理做成可交互羊皮纸风格地图的前端项目，核心操作是拖动时间轴，查看 18 个历史时期的疆域与行政区快照，并点击古城查看地名沿革、战役与诗文地标。它用 198 个疆域快照、古今地名谱系和帝王年号信息，把原本分散在纸质历史地图集中的内容整合到一个可浏览的页面上，解决了「读史时不知道古地名在今天的哪里」这类具体困惑。相比静态历史地图集，它的新意在于时间轴驱动的多政权同屏对照与地名古今溯源，而不只是单张地图的电子化。README 里没有说明数据来源、技术栈细节和数据校验方式。",
+  "one_liner": "拖动时间轴查看中国 2400 年疆域与古城地名变迁的交互式历史地图。",
+  "summary": "这是一个把 403 BCE 到当代的中国历史地理做成可交互羊皮纸地图的网页应用，覆盖 18 个历史时期、198 份疆域快照，并叠加古城、关隘、诗词与战场地标、帝王年号与大事年表。它的做法是把「翻纸质历史地图集」的动作换成拖动时间轴加点击城市，一处地名可以追溯从古到今的名称谱系，回答「建康、黄州、蓝关在今天哪里」这类阅读时冒出的问题。相比静态教科书地图或 GIS 专业工具，它的新意在于把疆域演变、地名沿革与古典诗词路线放在同一条时间轴上做横向对比，并配了英、简、繁、日四套界面。项目以 JavaScript 实现，提供在线 Demo 直接体验，累计 star 6682、本期新增 288，属于近期热度上升较快的个人作品。",
   "audience": [
-   "读中国史或古典诗文的爱好者，想查证建康、黄州、蓝关等古地名在今天的哪个位置",
-   "历史或文博方向的内容创作者，需要为视频、文章快速找到某时期的疆域示意图",
-   "中学历史老师，想在课堂上直观展示战国到清的疆域变化",
-   "前端工程师，想参考一个以 GeoJSON 和 SVG 为主的纯前端数据可视化地图项目",
-   "历史 GIS 或数字人文方向的研究者，关注古今地名对应关系的整理方式"
+   "读中国史书或古典诗词时想随手确认地名的历史地理爱好者，可以直接查建康、黄州、蓝关对应今天的哪座城市。",
+   "中学历史与语文教师，可以用时间轴对比战国七雄到清代疆域的变化来做课堂演示素材。",
+   "历史类内容创作者与科普作者，可以截图或录屏做「长安两千年改名史」这类可视化选题。",
+   "做教育类或文化类 Web 产品的工程师，可以参考它的时间轴交互与地名沿革数据组织方式。",
+   "需要给孩子讲清「秋海棠叶到雄鸡」版图变化过程的家长或科普讲解者。"
   ],
   "use_cases": [
-   "讲某场战役或某位诗人的流放路线时，拖动时间轴到对应年代，截图当时的疆域与州府边界",
-   "核对古籍中出现的古地名，点开城市信息查看它在不同朝代的名称变化",
-   "为历史科普短视频制作素材，按时期批量导出疆域快照作为背景图",
-   "备课时对比北宋与南宋、唐前期与唐后期疆域差异，做同屏前后对照",
-   "开发历史类小游戏或科普页面时，参考它的时间轴交互和数据结构"
+   "备课时按朝代拖动时间轴，截取某一时期疆域与州郡快照，放进 PPT 讲分裂与统一的过程。",
+   "读《赤壁赋》或韩愈诗时，在地图上点出黄州、蓝关关隘的位置与当时政区归属，核对注释。",
+   "做短视频或图文选题时，用古城地名谱系功能展示长安—西安这类一城多名的时间线。",
+   "产品调研时完整走一遍时间轴拖动、城池点击、帝王年号查看的交互路径，记录可复用的交互模式。",
+   "对外英文内容场景下切换到英文界面，向非中文读者演示中国疆域的历史演变。"
   ],
   "adoption_steps": [
-   "先打开在线 Demo https://deanchen.me/jiangshan-map/?lang=en 拖动时间轴、点击几个古城，确认数据粒度和交互是否满足需求。",
-   "在 GitHub 仓库页面确认 License 类型、最近提交时间与 open issues 数量，判断是否可商用及维护活跃度。",
-   "如果打算二次开发，克隆仓库后本地起静态服务运行构建产物，重点查看疆域快照与地名谱系的数据文件格式。",
-   "数据准确性要抽样核对：挑 3 到 5 个自己熟悉的年代和地名，与《中国历史地图集》等权威资料比对后再对外使用。"
+   "先打开 README 里的在线 Demo（https://deanchen.me/jiangshan-map/?lang=en），拖动时间轴并点击几座古城，确认 198 份疆域快照的粒度与地名沿革是否满足你的需求。",
+   "读 README 与 README_ZH 全文以及作者那篇《From textbook maps to 1k GitHub stars》博文，确认数据来源、历史分期口径与项目定位，再决定是当资料用还是当二次开发底座。",
+   "如需本地部署或二次开发，克隆 DeanChensj/jiangshan-map 仓库，按仓库内 README 与 package 配置确认运行命令和依赖，并先核对仓库的 LICENSE 文件是否允许你的使用方式。"
   ],
   "build_ideas": [
-   "把疆域快照数据接入自己的历史科普站点，做特定朝代或特定诗人行迹的专题页。",
-   "基于古今地名谱系做一个小工具，输入今天的地名，反查它在各朝代的旧称与相关事件。",
-   "扩展时间轴为多图层叠加，例如在疆域图上叠加气候、人口或科举进士分布数据。",
-   "把诗文地标抽出来做成独立的「跟着诗词游中国」路线地图，供文旅场景使用。",
-   "移植为移动端或小程序形态的轻量版本，只保留时间轴和单城市详情页。"
+   "把疆域与地名数据抽出来，做一个面向教师的课件生成器，按朝代导出静态地图切片与标注图。",
+   "在时间轴之上叠加自定义图层，例如把某一诗人的行旅路线或某场战役的行军路线做成可切换的专题线。",
+   "做一个地名沿革查询小工具，输入今天的城市名反查它在各朝代的称谓与隶属政区。",
+   "参照它的交互做垂直扩展版本，比如丝路沿线或世界文明的时间轴地图，复用拖动与点击的交互范式。",
+   "将其嵌入到历史类电子书或博物馆导览页，作为章节配图的可交互替代方案。"
   ],
   "risks": [
-   "材料未给出 License 类型，商用或二次分发前必须在仓库确认许可条款，否则有合规风险。",
-   "项目中明显包含大量人工整理的历史地理数据，README 未说明数据来源与校验方法，权威性无法从材料判断。",
-   "这是偏个人作品性质的项目，README 提到从 1k star 的增长故事，但材料未体现团队维护与长期路线图，功能演进和问题响应存在不确定性。",
-   "材料未提供构建方式、依赖清单和浏览器兼容性说明，本地部署与二次开发的成本需要自行验证。",
-   "历史疆域本身在学界存在争议画法，用于教学或出版前需评估内容立场与引用来源是否可接受。"
+   "材料中未提及许可证信息，二次开发或商用前必须到仓库确认 LICENSE 是否存在及其具体条款。",
+   "除主语言 JavaScript 外，材料未说明构建工具、依赖清单与运行方式，本地部署成本需要克隆后自行评估。",
+   "README 节选未给出历史疆域数据与地名沿革的引用来源，用于教学或出版前需自行核对史源与分期口径。",
+   "项目由个人账号维护且近期热度上升较快，材料未体现 issue 响应与发版节奏，长期维护稳定性需查看提交历史与 issue 区确认。",
+   "在线 Demo 部署在作者个人域名 deanchen.me 上，若用于课堂或正式演示，需评估该地址的可访问性与可用性风险，必要时自行部署。"
   ],
   "tokens": {
    "prompt_tokens": 1332,
-   "completion_tokens": 831
+   "completion_tokens": 1410
   },
   "model_resolved": "deepseek-flash",
-  "hash": "0e61b86939c2e7fe555bdd07635f4758104a9c20f5c1c22d6183ae605e327a2a",
+  "hash": "717105c26b0faab74aa0ed3bd76c9322f6fce34b1f83304fa1f55a131c020c5d",
+  "readme_sha": "1f951cd050b5377cf5f041ced86f249054c808f5",
+  "desc_hash": "3245d689f44b18d46c92ee59ecf9f1a345e24d3def7f4fcdad3bc06ab24244d1",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-17T08:01:05+08:00",
+  "generated_at": "2026-11-18T09:53:17+08:00",
   "readme_used": true,
   "source_description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
   "language": "JavaScript",
@@ -290,7 +299,9 @@
   "readme_used": true,
   "source_description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
   "language": "Shell",
-  "url": "https://github.com/Donchitos/Claude-Code-Game-Studios"
+  "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+  "readme_sha": "1842501050d579e421bef697ccd37487b37279be",
+  "desc_hash": "c23ea40ef0ff798f20a2c46c74151432e28e0f569c47235c48a15ccd4af04cef"
  },
  "GoogleChrome/modern-web-guidance-src": {
   "one_liner": "把现代 Web 最佳实践喂给编码 agent，避免它生成过时的老写法",
@@ -339,7 +350,9 @@
   "readme_used": true,
   "source_description": "Keep your coding agent up to date with the latest web best practices",
   "language": "TypeScript",
-  "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
+  "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+  "readme_sha": "705d5b77f74d109637faffbdda9aacc035b181e8",
+  "desc_hash": "8a58a37afb2959cf68de5d1a26c80d54174e2c75efb2e2b73a92d801a7c199af"
  },
  "HKUDS/DeepTutor": {
   "one_liner": "把教材和文档变成能长期跟踪你学习进度的个人 AI 家教。",
@@ -388,102 +401,106 @@
   "readme_used": true,
   "source_description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
   "language": "Python",
-  "url": "https://github.com/HKUDS/DeepTutor"
+  "url": "https://github.com/HKUDS/DeepTutor",
+  "readme_sha": "c9f229e2d348872a06d5d8820d860561f9e7d2fb",
+  "desc_hash": "5ca87ceacb65b7c56850c6adb7d67a69592c3ba05034874e954db7dc50372559"
  },
  "NVIDIA/SkillEvaluator": {
-  "one_liner": "给 AI agent 的 skill 做质量检查和效果对比",
-  "summary": "SkillEvaluator 是 NVIDIA 开源的多层评测框架，用来检查 AI agent skill（按 Agent Skills 规范组织的指令与配套文件目录）的质量，并测量它是否真的改变了 agent 的任务结果。它先用 tier 1 的确定性检查给出质量分和问题清单，这一步不需要 API key；接入 NVIDIA Build 后再由模型按 rubric 打分并给出反馈，通过有 skill 与无 skill 的对照运行观察 agent 行为差异。除质量门禁外，它还提供 skill 之间的语义重叠检测和合成评测数据集生成，并以 pip 安装的 CLI、CI 初始化命令、agent 内 skill 三种方式接入。相比只做静态 lint 的工具，它把「这个 skill 值不值得留」推进到带对照实验的效果评估。",
+  "one_liner": "给 AI agent 的 skill/插件做质检，并实测它是否真的改变了 agent 的行为。",
+  "summary": "SkillEvaluator 是 NVIDIA 开源的多层评估框架，针对按 Agent Skills 规范组织的 skill 目录（指令加配套文件）做质量、安全、重叠、兼容性检查，并通过有无 skill 的对照运行来衡量 skill 对任务结果的实际影响。使用上分三层：quality-check 不需要 LLM key，就能做静态质量检查；harness-check 不用跑 agent，只检查 skill 的描述在 Claude Code、Codex 等 harness 里会不会被截断或加载失败；最后一层接入模型（可用 NVIDIA Build key）做语义重叠检测、合成评测集生成和 live agent 评测。它还把评估做成可维护的 CI 模板（skillevaluator ci init 直接开 PR），并支持用 npx skills add 把它自身装进 agent、以对话方式调用。相比只做 prompt 或代码 lint 的工具，它的新意在于把「skill 有没有用」变成了可对照、可进 CI 的量化流程。",
   "audience": [
-   "维护内部 agent skill 库或插件市场的平台与 DevEx 工程师。",
-   "正在为 Claude Code、Codex 等 agent 编写和维护 skill 的开发者。",
-   "负责 AI 产品质量与评测体系、需要为 skill 上线定标准的评测工程师。",
-   "想把 skill 变更纳入现有 CI 流程的仓库维护者。",
-   "评估 agent skill 方案是否值得引入的技术选型产品经理。"
+   "正在维护内部 skill/插件库、需要防止重复和低质 skill 混入的 AI 平台工程师。",
+   "把 agent 接入研发流程、希望 skill 变更像代码一样过 CI 的 DevOps/平台团队。",
+   "要给第三方或社区提交的 skill 做准入审核的安全与合规负责人。",
+   "需要向管理层证明「加了这个 skill 到底提升了多少」的 AI 产品经理。",
+   "为 Claude Code、Codex 等 harness 编写 skill 的个人开发者。"
   ],
   "use_cases": [
-   "在合并 skill 变更前跑质量门禁，用 skillevaluator validate 或 CI 模板卡住不合格的 skill。",
-   "对同一批 skill 做语义重叠检测，找出功能重复的条目并决定合并或下线。",
-   "用合成评测数据集生成能力为自家 skill 造测试集，替代手工编写的评测样例。",
-   "对比开启与关闭某个 skill 的两次 agent 运行结果，量化该 skill 对任务成功率的实际贡献。",
-   "在 Claude Code 或 Codex 里通过 npx skills add 引入后直接问「我的 skill 好不好」，让 agent 代为调用评测。"
+   "在提交新 skill 前运行 skillevaluator quality-check ./my-skill，先做不需要模型 key 的静态质量筛查。",
+   "用 skillevaluator harness-check ./my-skill 检查 skill 描述是否会在 Codex 等 harness 中被截断，导致 skill 实际加载不到。",
+   "在 skill 仓库执行 skillevaluator ci init，自动生成 GitHub CI 配置，让每次 skill 变更都跑一遍检查。",
+   "用 validate 组合流水线并接入 NVIDIA Build key，生成合成评测集，对比有/无 skill 的 agent 运行结果来量化收益。",
+   "对已有 skill 集合做语义重叠检测，找出功能重复的 skill 并合并或下架。"
   ],
   "adoption_steps": [
-   "先用 pip install skillevaluator（或 uv tool install skillevaluator）装好，然后对现有 skill 目录执行 skillevaluator validate ./my-skill --tiers 1，在不配 API key 的情况下拿到确定性质量分和问题清单。",
-   "克隆仓库 git clone --depth 1 https://github.com/NVIDIA/SkillEvaluator.git，用 uv run --python 3.13 skillevaluator quality-check src/skillevaluator/tier3/reference_skills/text-analyzer -r cli -r json -o reports/first-quality 跑通自带示例，确认 JSON 报告字段能对接你们现有流程。",
-   "准备 NVIDIA Build API key 试跑模型打分的 rubric 环节，确认成本与效果可接受后，在目标仓库执行 skillevaluator ci init 生成 CI 配置 PR，把评测固化成每次 skill 变更都触发的流水线。"
+   "在 Python 3.12–3.14 环境中执行 pip install skillevaluator（或 uv tool install --python 3.13 skillevaluator），先跑 skillevaluator quality-check 对一个现有 skill 做零成本试跑。",
+   "对同一个 skill 再跑 skillevaluator harness-check，确认描述长度和目标 harness（如 Codex、Claude Code）的兼容性。",
+   "申请免费的 NVIDIA Build key 完成全层配置，运行 skillevaluator validate ./my-skill 得到含实测对比的完整报告，再决定是否在仓库执行 skillevaluator ci init 接入 CI。"
   ],
   "build_ideas": [
-   "把 quality-check 输出的 JSON 报告汇总进内部 skill 注册表或门户，做成每个 skill 的评分看板与历史趋势。",
-   "基于语义重叠检测做内部 skill 去重工具，自动给出合并建议而不是只报重复。",
-   "把 skillevaluator ci init 生成的单仓 CI 模板扩展成多仓库批量巡检脚本，定期扫描组织下所有 skill 目录。",
-   "结合合成评测数据集生成，为领域私有 skill 构建回归测试集，接入自建 agent 的发布前回归流程。",
-   "把评测封装成 agent 内的自检 skill，让 skill 作者在编写阶段就能边写边跑质量门禁。"
+   "把 quality-check 和 harness-check 封装成 pre-commit hook，在本地提交阶段就拦截不合规 skill。",
+   "基于语义重叠检测的输出做一个内部 skill 目录去重与推荐服务，给重复 skill 建议合并目标。",
+   "将 validate 的有/无 skill 对照评测结果接入内部看板，按 skill 维度跟踪版本迭代带来的效果变化。",
+   "针对公司自有的 agent harness 扩展 harness-check 的版本化 profile，覆盖自研客户端的描述截断规则。",
+   "用它的合成评测集生成能力，为特定业务域批量构造 skill 回归测试集，作为发版前的固定基准。"
   ],
   "risks": [
-   "README 节选中只有 LICENSE 徽章，未写明具体许可证类型，商用或二次分发前必须到仓库确认许可条款。",
-   "只有 tier 1 质量检查可无 key 运行，模型 rubric 打分依赖 NVIDIA Build API key，会带来账号申请、外部网络调用和额外调用成本。",
-   "材料中没有版本号与稳定性承诺，而 star 数在单期内从 2667 增长 873，属于早期高热度阶段，CLI 参数与报告格式可能变动，落地时应锁定具体版本。",
-   "评测对象限定为符合 Agent Skills 规范的目录结构，其他格式的 prompt 包或插件需要先转换才能评估。",
-   "快速上手路径要求 uv 与 Python 3.13，并且示例需要从 GitHub 克隆，离线或网络受限环境要提前准备镜像与依赖。"
+   "仓库 star 增长快但项目较新，1.0.1 才加入 harness-check，API 与 CLI 参数仍可能变动，需锁定版本使用。",
+   "完整三层评估依赖 LLM key（README 提到 NVIDIA Build key），会产生外部服务依赖和调用成本，离线或内网环境需先确认可用性。",
+   "Python 版本要求限定在 3.12–3.14，老环境需要额外准备解释器或容器。",
+   "评估对象绑定 Agent Skills 规范（agentskills.io）与特定 harness（Claude Code、Codex），换用非标准 skill 格式时适用性需自行验证。",
+   "许可与长期维护状态应以仓库 LICENSE 和 NVIDIA 官方发布节奏为准，用于生产准入前需确认支持策略。"
   ],
   "tokens": {
-   "prompt_tokens": 1319,
-   "completion_tokens": 2363
+   "prompt_tokens": 1301,
+   "completion_tokens": 1022
   },
-  "model_resolved": "deepseek-v4.1-flash-1017",
-  "hash": "f08b12b740842401562c6fe5d13908aedc30274900be1571936a5259ffd82b44",
+  "model_resolved": "deepseek-flash",
+  "hash": "35f0305327aa601b359159abc44de9fed171691f49c14adc9ae40aeeb9f14567",
+  "readme_sha": "107eed6a7e1acd37b52400107cfe3b19f47a9433",
+  "desc_hash": "21dcc3b3bcc84335308bdd70bdfb7e79ffc71c3e053ddabbfe1889a6bbbcd88d",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-17T08:01:13+08:00",
+  "generated_at": "2026-11-18T09:53:13+08:00",
   "readme_used": true,
   "source_description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
   "language": "Python",
   "url": "https://github.com/NVIDIA/SkillEvaluator"
  },
  "NVIDIA/auto-ontology": {
-  "one_liner": "把企业元数据编成语义本体层，让 Agent 查数不再答错。",
-  "summary": "Auto Ontology 是 NVIDIA 开源的 Python 框架，从企业元数据自动生成或接入已有本体和语义模型，构建可供 AI 使用的知识图谱，为指标、实体和关系提供可信的业务含义。它把这份上下文通过 MCP、CLI 和 API 暴露给任意 Agent 框架，并在生成 SQL 时用已认证的定义与血缘做校验，让每个答案都带出处。产品化部分是 Next.js 前端加 FastAPI 后端、Postgres 存语义目录、Better Auth 做 RBAC，支持 Helm 或 Docker Compose 部署，自然语言问答由 NVIDIA NIM 驱动。与常见的 text-to-SQL 方案相比，它的新意在于把「语义目录 + 定义对齐 + 查询校验」做成独立可复用的上下文层，而不是塞进 prompt。需要注意它明确不接受外部贡献，且效果验证要依赖配套的 auto-ontology-eval 在 NeMo Gym 上跑 BIRD 类基准。",
+  "one_liner": "把企业元数据自动建成本体，让 Agent 查询数据时不再答错指标",
+  "summary": "Auto Ontology 是 NVIDIA 开源的 Python 库，从企业元数据自动生成以图结构组织的本体（概念、指标、实体与关系的治理化映射），再通过 MCP、CLI 和 API 提供给任意 Agent 框架使用。它强调确定性查询生成和更可解释的答案：每个回答都附带 SQL 和推理步骤，并能对照目录与检索到的定义做校验。相比直接做 Text-to-SQL，它解决的是「业务概念含义、来源、计算方式、是否可信」这层上下文缺失的问题，并支持把专家认证过的修正回灌到本体，让共享上下文越用越准。项目采用 Apache-2.0 许可，并提供基于 Wide World Importers 示例库的 Docker Compose 快速上手路径。",
   "audience": [
-   "正在做 text-to-SQL 或分析型 Agent、被「数字答错」卡住的数据/AI 工程师。",
-   "负责指标口径统一、跨系统定义对齐的数据治理与数仓团队成员。",
-   "需要在企业内部落地 Agent 上下文层、评估 MCP 接入方式的企业架构师。",
-   "想给 BI 或自助分析产品加上可解释性与数据血缘的产品经理。",
-   "已有 dbt/语义层资产、希望复用而不是重建的 analytics 平台负责人。"
+   "负责指标中台或数据治理、需要统一跨系统指标口径的数据平台工程师",
+   "正在做 LLM 数据分析 Agent、被「数字答错」问题卡住的 AI 应用开发者",
+   "需要把业务术语路由到正确数据源与粒度的 BI / 分析产品负责人",
+   "评估企业知识图谱与语义层方案的架构师"
   ],
   "use_cases": [
-   "把数仓元数据导入生成本体，让 Agent 用自然语言提问后自动翻译成 SQL 并在目标库执行。",
-   "在指标口径冲突时，用它的定义对齐能力统一多个系统里的同名指标，并让查询走已认证定义。",
-   "为每个回答附带血缘与出处，做面向业务方的可审计分析问答。",
-   "通过 MCP 把它挂到已有的 Agent 框架上，作为统一的数据上下文服务，而不是每个 Agent 各写一套 prompt。",
-   "用 auto-ontology-eval 在 BIRD 等基准上对比接入本体前后的准确率，形成内部立项的量化依据。"
+   "从数仓和 BI 元数据自动生成初始本体，作为 Agent 查询生成的可信上下文来源。",
+   "在多个来源对同一指标定义冲突时，用本体做定义对齐并沉淀统一口径。",
+   "在专家认证前，用真实业务问题批量试跑草稿本体，检查生成查询是否与目录和定义一致。",
+   "把专家修正和实际使用反馈回灌本体，逐步提升共享上下文质量。",
+   "通过 MCP、CLI、API 把本体上下文接到已有的 Agent 框架中，而不是重写 Agent。"
   ],
   "adoption_steps": [
-   "先按 README 用 Docker Compose 起本地栈（前端 3000 端口、后端、Postgres），跑通 Web UI 的问答流程，确认部署形态能接受。",
-   "准备 NVIDIA NIM 的访问凭据并接入一个测试库，观察它生成的 ontology 与 SQL 是否贴合你真实的表和指标。",
-   "克隆 auto-ontology-eval，在 NeMo Gym 上用 BIRD 类基准跑一次「有本体 / 无本体」的对照，拿到自己场景的准确率差值再决定是否深入。",
-   "小范围试点时通过 CLI 或 API 接入一个内部 Agent，只覆盖少量已认证指标，验证血缘返回和 RBAC 是否符合权限要求。"
+   "先按 README 快速上手：git clone 仓库后 cp .env.example .env，填入 build.nvidia.com 申请的 nvapi- 密钥、AUTH_SECRET、APP_URL、POSTGRES_PASSWORD 与 CONNECTION_STRINGS，再用 Docker Compose v2 启动并接通 Wide World Importers 示例库跑通端到端流程。",
+   "跑通示例后，把 CONNECTION_STRINGS 换成自己的一个真实数据源，导入其元数据生成初版本体，并用十到二十个真实业务问题检验答案与 SQL 是否正确。",
+   "验证可用后，选定一种集成方式（MCP、CLI 或 API）接入现有 Agent，并把专家的修正按项目提供的回灌机制写回本体。"
   ],
   "build_ideas": [
-   "写一个元数据适配器，把内部数仓、dbt 模型或 BI 语义层的定义自动灌进 Auto Ontology，省掉手工维护本体。",
-   "基于它的 MCP 接口封装一个统一的「数据上下文网关」，供公司内多个 Agent 共用并集中做权限与审计。",
-   "利用返回的 lineage 和 provenance 做答案溯源面板，让业务方点开每个数字能看到定义、来源和校验结果。",
-   "在它有「学习」闭环上做扩展：把人工纠正的 SQL 和口径沉淀回本体，形成领域内的持续改进机制。",
-   "结合 auto-ontology-eval 做一套内部评测流水线，把本体改动和模型升级都纳入回归测试。"
+   "在本体之上做一层指标口径审批工作流，把业务专家的认证动作变成版本化的本体变更记录。",
+   "开发面向特定行业（如零售、金融）的元数据到本体的预置映射模板，减少冷启动成本。",
+   "为生成 SQL 与推理步骤做可视化追溯面板，展示某个数字来自哪个定义、哪张表、哪一步计算。",
+   "把本体校验环节接入 CI，在语义模型变更时自动跑一批回归问题，防止口径漂移。",
+   "基于 MCP 接口封装成企业内部统一的「语义上下文服务」，供多个 Agent 团队共享调用。"
   ],
   "risks": [
-   "项目声明当前不接受外部贡献，意味着你提的 bug 和需求不一定能进上游，深度定制要自己维护 fork。",
-   "自然语言问答依赖 NVIDIA NIM，模型能力与 API 可用性绑定在 NVIDIA 生态上，替换成本需要提前评估。",
-   "README 的组件表被截断、材料里没有版本号、发布记录和测试覆盖信息，生产成熟度目前证据不足。",
-   "本期新增 9621 star 属于短期暴涨，热度不等于生产验证，是否有大规模落地案例材料里看不出来。",
-   "完整栈需要 Postgres 加 Next.js 前端与 Python 后端，运维面比纯 Python 库大；同时 Apache 2.0 之外还捆绑了第三方组件，需逐个核对 THIRD_PARTY_NOTICES.md。"
+   "README 版权年份为 2026 且本期新增 9621 star（总量 11491），说明项目极新、热度集中在最近一周，API 与本体结构存在较大变动可能。",
+   "快速上手依赖 NVIDIA API Key 与 build.nvidia.com 的云模型服务，材料未说明是否支持完全离线或私有化部署，数据合规敏感的团队需先确认。",
+   "提供的 README 为节选且被截断，完整安装步骤、配置项与升级迁移路径需以仓库实际文档为准，不要按节选内容直接上生产。",
+   "公开验证仅覆盖 Wide World Importers 单一样例库，多源定义冲突、大规模元数据下的实际效果材料未给出证据。",
+   "运行依赖 Docker Compose v2、uv、Postgres 以及 Apache Ossie 生态的可移植性约定，与现有语义模型和调度体系的集成成本需要自行评估。"
   ],
   "tokens": {
-   "prompt_tokens": 1138,
-   "completion_tokens": 1571
+   "prompt_tokens": 1189,
+   "completion_tokens": 1478
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "91710a73e38bd322505af6bdea44229e7ca7c8f5514dbccde825c00bf48e9f44",
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "0668d5c6b948208d68482489cfc5c2c6aa2a9e111b9ddd6ccd1517caa4f75562",
+  "readme_sha": "6ee5eb6b291c8e08b762ef255e6a91d8947edb50",
+  "desc_hash": "6bcf7ff63e68b99ac3215148bdc93e6a6a78978f719e90162176b38828c1eadf",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T10:21:48+08:00",
+  "generated_at": "2026-11-18T09:53:20+08:00",
   "readme_used": true,
   "source_description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
   "language": "Python",
@@ -537,7 +554,9 @@
   "readme_used": true,
   "source_description": "Ghidra is a software reverse engineering (SRE) framework",
   "language": "Java",
-  "url": "https://github.com/NationalSecurityAgency/ghidra"
+  "url": "https://github.com/NationalSecurityAgency/ghidra",
+  "readme_sha": "3f1eea7b35d8551f2433f3074f68ba736d72673f",
+  "desc_hash": "27d427d0ae088164a392439d2156928a86a9cbd63221f8bf5da0ac80b04020fa"
  },
  "Nutlope/hallmark": {
   "one_liner": "给编码 Agent 加一层设计技能，让生成的页面不像 AI 批量产出的。",
@@ -586,7 +605,9 @@
   "readme_used": true,
   "source_description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
   "language": "CSS",
-  "url": "https://github.com/Nutlope/hallmark"
+  "url": "https://github.com/Nutlope/hallmark",
+  "readme_sha": "2568bb6f51284bc3feeea6a3098d31f6743ec623",
+  "desc_hash": "68b3bf51e14b4e9960e1ec5983fabcbd8426249d23cb20d9c5861f98722f624e"
  },
  "QwenLM/qwen-code": {
   "one_liner": "在终端里直接调用 AI 改代码的开源编程代理，模型和框架都不锁定供应商。",
@@ -636,7 +657,9 @@
   "readme_used": true,
   "source_description": "An open-source AI coding agent that lives in your terminal.",
   "language": "TypeScript",
-  "url": "https://github.com/QwenLM/qwen-code"
+  "url": "https://github.com/QwenLM/qwen-code",
+  "readme_sha": "f1452ecb9f78089da829c77c368fdf048f3eef08",
+  "desc_hash": "ac7126abad317d3a764843b63f350027e482aafd6fa7c3794a9300110eb4d77a"
  },
  "Tencent/LoopForge": {
   "one_liner": "把 Codex、Claude Code 等编码 agent 编排成带人工审批的自托管交付流水线。",
@@ -685,7 +708,9 @@
   "readme_used": true,
   "source_description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
   "language": "Go",
-  "url": "https://github.com/Tencent/LoopForge"
+  "url": "https://github.com/Tencent/LoopForge",
+  "readme_sha": "8141eec354b8852ef67a908ef2547232a2e4bf9d",
+  "desc_hash": "9d93e108a4393f2ba77830789baf8e62ee6a354f7517bc3ae3ec33699ffced3d"
  },
  "The-PR-Agent/pr-agent": {
   "one_liner": "在 PR 上自动跑 AI 代码审查的开源工具，可自托管。",
@@ -732,7 +757,9 @@
   "readme_used": true,
   "source_description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
   "language": "Python",
-  "url": "https://github.com/The-PR-Agent/pr-agent"
+  "url": "https://github.com/The-PR-Agent/pr-agent",
+  "readme_sha": "5ae64795bf57565830ff4ab24034773e9df293c1",
+  "desc_hash": "d16f061a222496442e38653e803c83f650cc41914492876a0aff1aa05c22a49c"
  },
  "TheAlgorithms/Java": {
   "one_liner": "一份用 Java 写全的算法教学代码库，可对照阅读和练手。",
@@ -782,7 +809,9 @@
   "readme_used": true,
   "source_description": "All Algorithms implemented in Java",
   "language": "Java",
-  "url": "https://github.com/TheAlgorithms/Java"
+  "url": "https://github.com/TheAlgorithms/Java",
+  "readme_sha": "91766e523bca050fa0d0424d3899bdd93ae3cbee",
+  "desc_hash": "e6dffbe0b6402a21e19138bde8bb9efb514a8f3b01f98734be4e0b82b4bceb13"
  },
  "ZhuLinsen/daily_stock_analysis": {
   "one_liner": "用 LLM 每天自动分析多市场自选股，把决策仪表盘推送到你的群聊。",
@@ -831,7 +860,9 @@
   "readme_used": true,
   "source_description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
   "language": "Python",
-  "url": "https://github.com/ZhuLinsen/daily_stock_analysis"
+  "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+  "readme_sha": "3843dc8b0bfd5ea54ee3cc62325bcd5e6d17742e",
+  "desc_hash": "01bf9845101df79035f0c81c17e2a9dd21d162e036ddbd4d3dc53b2ea4cf2ef0"
  },
  "addyosmani/agent-skills": {
   "one_liner": "把资深工程师的开发流程与质量门封装成 AI agent 可执行的技能和斜杠命令",
@@ -879,7 +910,9 @@
   "readme_used": true,
   "source_description": "Production-grade engineering skills for AI coding agents.",
   "language": "JavaScript",
-  "url": "https://github.com/addyosmani/agent-skills"
+  "url": "https://github.com/addyosmani/agent-skills",
+  "readme_sha": "7f610b8ca80ff9bc7ba7f95f3209430c3481891d",
+  "desc_hash": "15a59e9c33f1146a0a8f0da2aec754c6027655c00317fa55456a7fd24d43ba68"
  },
  "affaan-m/ECC": {
   "one_liner": "给 Claude Code、Cursor 等编码 agent 加装技能、记忆与安全护栏的优化插件层。",
@@ -928,7 +961,9 @@
   "readme_used": true,
   "source_description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
   "language": "JavaScript",
-  "url": "https://github.com/affaan-m/ECC"
+  "url": "https://github.com/affaan-m/ECC",
+  "readme_sha": "12cec5467b2fe979aff27960641a251024517a71",
+  "desc_hash": "3aecd127bca27f7360170e155381b1484dc7c73a8fa07577bff7606b99e0b822"
  },
  "ag-ui-protocol/ag-ui": {
   "one_liner": "用一条事件流协议，把 AI agent 接进前端应用并渲染出来。",
@@ -978,7 +1013,9 @@
   "readme_used": true,
   "source_description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
   "language": "TypeScript",
-  "url": "https://github.com/ag-ui-protocol/ag-ui"
+  "url": "https://github.com/ag-ui-protocol/ag-ui",
+  "readme_sha": "511991757bea32ccb96348a311469f0fd345c88b",
+  "desc_hash": "e6f8e9414a83a51ee8719d2f361e5fc21c78a2b940f1627ac9aa1bc50f9f732d"
  },
  "alibaba/open-code-review": {
   "one_liner": "给 Git diff 自动生成行级评审意见的 AI 命令行工具",
@@ -1028,52 +1065,57 @@
   "readme_used": true,
   "source_description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
   "language": "Go",
-  "url": "https://github.com/alibaba/open-code-review"
+  "url": "https://github.com/alibaba/open-code-review",
+  "readme_sha": "a5669f6323926276435f61c44fca26ba6b3df906",
+  "desc_hash": "447efc063cf335afd844a03cf439b399bca007b6206d0c1ab567eb73c4b2760a"
  },
  "anomalyco/hex": {
-  "one_liner": "按住快捷键说话，本机转写后自动粘贴进当前应用，语音不出本机。",
-  "summary": "Hex 是一个用 Rust 写的跨平台本地语音听写工具，按住快捷键说话、松手后文字直接落在光标处，不需要切换窗口。识别在你的机器上完成，首次运行下载一个语音模型，之后音频不离开本机。它内置多种模型可选（Parakeet 系列、Whisper large-v3-turbo、Qwen3-ASR、SenseVoice、Cohere Transcribe、Granite Speech 等），还支持加载自己的 GGUF 模型。相比纯听写工具，它多了 Output 处理管线（按应用/网站配置词替换、清理脚本、可选的 OpenCode 改写）、词汇表、可搜索的 7 天历史、Annotate 录屏标注，以及一个需要鉴权的本地 API 和 TypeScript SDK。Meetings 会议转写目前只是 macOS 上的 Labs 实验特性。",
+  "one_liner": "按住快捷键说话，本机转写并粘贴到当前光标处。",
+  "summary": "Hex 是一个用 Rust 写的本地语音听写工具，覆盖 macOS、Windows 和 Linux：按住快捷键说话、松开后文字直接落到你正在用的应用光标处。转写全部在本机完成，首次运行下载一个语音模型，之后音频不出机器。它把模型选择做成可切换的清单（Parakeet、Whisper large-v3-turbo、Qwen3-ASR、SenseVoice、Cohere Transcribe 等），还支持加载自己的 GGUF 模型，并按应用或网站配置 Output 步骤和 Vocabulary 词表。相比只做「语音转文字」的工具，它还提供带鉴权的本地 API 和 TypeScript SDK 供二次开发，另有 macOS 上的 Meetings 会议转写和跨平台的 Annotate 边画边讲录屏，但后两者标注为 Labs 实验特性。",
   "audience": [
-   "需要在 IDE、终端、聊天工具之间频繁输入长段文字，又不想把语音传到云端的开发者。",
-   "对隐私敏感、稿件或客户信息不能上传第三方服务的写作者、记者、律师和医疗从业者。",
-   "主要用中文或其他非英语交流、希望本地 ASR 也能识别自己语言的用户（Qwen3-ASR、SenseVoice 覆盖中日韩）。",
-   "想把语音转写嵌进自己工具链的工程师，可以直接用它的本地 API 和 TypeScript SDK。",
-   "需要给不同应用设置不同输出规则（术语替换、格式清理）的重度口述用户。"
+   "每天写大量文字、但不愿把语音上传到云端的开发者和知识工作者。",
+   "同时在 macOS、Windows、Linux 上工作，需要一套听写方案跨平台一致的人。",
+   "需要中英混合听写、并希望术语和专有名词被正确拼写的产品经理与研究者。",
+   "想给自家工具嵌入本地转写能力、又不想自建推理栈的工程师。",
+   "对会议记录和讲解录屏有需求、且使用 macOS 的团队。"
   ],
   "use_cases": [
-   "在编辑器里口述 commit message、代码注释或文档段落，说完直接在光标处成形，不用切窗口。",
-   "在邮件、Slack、工单系统里口述回复，并用 Output 为每个应用单独配置术语替换和格式清理步骤。",
-   "用 Annotate 一边在屏幕上画一边讲解，录下 bug 复现过程或产品演示，macOS、Linux、Windows 都支持。",
-   "把会议、采访的录音通过本地 API 或 hex transcribe 批量转写成文本，交给自己的脚本后续处理。",
-   "在 macOS 上用 Meetings（Labs）录下通话并自动生成逐字稿。"
+   "在编辑器里口述提交信息、代码注释或文档段落，文字直接落在光标处。",
+   "在任意聊天、邮件或工单系统里按住快捷键说话，省去切换窗口和打字。",
+   "用 Labs 里的 Meetings 在 macOS 上录一通电话并产出转写文本。",
+   "用 Annotate 一边在屏幕上画一边讲解，同时录下画面和语音。",
+   "通过本地 API 或 TypeScript SDK 把同一套模型接进自己的脚本和内部工具。"
   ],
   "adoption_steps": [
-   "先在下载表里对应自己平台取包（macOS Apple silicon 用 DMG，Windows x64 用 Installer），首次启动等语音模型下载完成，确认能正常听写再往下走。",
-   "进设置把 Shortcut mode 调成 Hold 或 Tap，按语言选模型（中文优先 Qwen3-ASR 0.6B 或 SenseVoice Small，英语系统默认 Parakeet Unified English），再把常用人名和术语填进 Vocabulary。",
-   "在三个最常用的应用里各口述一段并用 Option-Shift-V（Windows/Linux 为 Ctrl-Alt-V）复贴验证，然后到 Output 里按应用加词替换或清理脚本；要集成到自己工具时，用本地 API 和 sdk/typescript 跑一次 hex transcribe 验证链路。"
+   "从 README 的 Downloads 表下载对应安装包：macOS 选 Apple silicon 的 DMG，Windows x64 选 Installer；Linux 的包格式在给出的节选中被截断，需到发布页确认；优先选 Stable 而非 Dev。",
+   "首次启动后等待语音模型下载完成（英文系统默认 Parakeet Unified English），然后按住默认快捷键，在任意输入框说一句话，确认文字落在光标处并试一次 Option-Shift-V（Windows/Linux 为 Ctrl-Alt-V）重新粘贴上一次听写。",
+   "进 Settings 的模型选择器换成更贴合你语言的模型（中文可试 Qwen3-ASR 0.6B 或 SenseVoice Small），在 Vocabulary 里填常用人名和术语，再按应用配置 Output 步骤（词替换、内置清理或自己的脚本）。",
+   "如果要二次开发，调用其带鉴权的本地 API 或用 sdk/typescript 里的 SDK，先跑通一次与 App 相同模型的转写请求。"
   ],
   "build_ideas": [
-   "基于本地 API 和 TypeScript SDK 做一个批量转写 CLI 或内部服务，把采访、会议录音目录一次性转成带标点的文稿。",
-   "针对团队术语和格式规范，写一套 Output 脚本步骤（如统一缩写、强制大小写、脱敏替换）做成可共享的预设包。",
-   "把领域语料微调或转换成 GGUF 模型，通过模型选择器里的「Add model file…」接进来，解决专业术语识别差的问题。",
-   "围绕 Annotate 的录屏加语音做二次工作流，比如自动把口述内容与画面对齐生成带步骤说明的 bug 报告。",
-   "给特定行业做 Vocabulary 词表加 per-app Output 规则的组合模板，覆盖医疗、法律、代码等场景。"
+   "用 TypeScript SDK 给 VS Code、JetBrains 或 Obsidian 写插件，在编辑器内直接调用本地转写而不依赖系统级快捷键。",
+   "为 Output 写自定义脚本，做团队术语统一、中英标点规范化和固定格式模板填充。",
+   "把内部领域词典做成可分发的 Vocabulary 词表，随项目或团队配置一起下发。",
+   "转换或微调自己的 GGUF 模型，通过「Add model file…」接入，针对特定口音或行业词汇优化。",
+   "基于 Annotate 的录屏加语音能力，串成一套「讲解即文档」的内部知识沉淀流水线。"
   ],
   "risks": [
-   "材料里的下载表只列出 macOS（Apple silicon）和 Windows x64，Intel Mac、Windows ARM 与 Linux 的具体发行包没有体现，采用前要先确认自己的平台有没有包。",
-   "README 未提及许可证和商业使用条款，是否允许在公司内部或产品中分发使用，必须先去仓库确认 LICENSE。",
-   "Meetings、Annotate 以及 GNOME Wayland 下的标注都在 Labs 实验区，接口和行为随时可能变动，不要把它们排进关键流程。",
-   "首次运行必须下载语音模型，Cohere Transcribe 被明确标注为大体积下载，磁盘占用和带宽需要在部署前评估。",
-   "识别质量依赖 Parakeet、Whisper、Qwen、Granite 等第三方模型，特定口音、专业术语和低资源语言的实际效果要自己测；且项目分 Stable 和会自动更新的 Dev 双通道，生产环境应锁定 Stable。"
+   "给出的 README 节选里没有出现许可证信息，商用或二次分发前必须去仓库确认具体协议。",
+   "Downloads 表只列出 macOS 的 Apple silicon 版本，Intel Mac 是否可用需要另行确认。",
+   "Meetings 和 GNOME Wayland 下的 Annotate 都标注为 Labs 实验特性，行为与接口可能随时变化，不适合直接压在生产流程上。",
+   "首次运行必须联网下载模型，且部分模型（如 Cohere Transcribe）体积很大，离线或受限网络环境要先规划带宽与存储。",
+   "Dev 通道会自动从 dev 频道更新，团队部署应锁定 Stable；另外历史默认只保留 7 天，需要长期留档就得先调整设置。"
   ],
   "tokens": {
    "prompt_tokens": 1267,
-   "completion_tokens": 2162
+   "completion_tokens": 1639
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "b838a73e66e8fdae898275c5ec9ac207decde420fc918e84112832c44aab45b6",
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "b5193483c1459b947be37d0e44022cef14867c0a3ae8f66b943b268518d0ec8a",
+  "readme_sha": "3d8275a2706be83d21aaac5518e0d20684a9b756",
+  "desc_hash": "6e0c61432ef25e0c09636e1ff72b829eb127066504f78943ddee2813c551f4de",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T10:21:53+08:00",
+  "generated_at": "2026-11-18T09:53:22+08:00",
   "readme_used": true,
   "source_description": "Local voice dictation for mac, windows and linux",
   "language": "Rust",
@@ -1126,7 +1168,9 @@
   "readme_used": true,
   "source_description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
   "language": "Python",
-  "url": "https://github.com/anthropics/claude-plugins-official"
+  "url": "https://github.com/anthropics/claude-plugins-official",
+  "readme_sha": "930803c3a44f9e6d65ede9a2333336968f54085e",
+  "desc_hash": "4b98d7f9f110bdb6829ed20d4d18aff57714afbe07f3b586d83f8a801bc0e252"
  },
  "anthropics/claude-quickstarts": {
   "one_liner": "提供一套基于 Claude API 的可直接运行的示例工程，帮开发者跳过从零搭建，快速做出可部署应用",
@@ -1175,7 +1219,9 @@
   "readme_used": true,
   "source_description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
   "language": "Python",
-  "url": "https://github.com/anthropics/claude-quickstarts"
+  "url": "https://github.com/anthropics/claude-quickstarts",
+  "readme_sha": "2697536d46ea6ef6bd1cdd9bdedb463d358c7139",
+  "desc_hash": "edbb98f414fd5ee9530ab43dfe7b72bada16bd8e3e6f2d01083bf67ad3382edc"
  },
  "anthropics/knowledge-work-plugins": {
   "one_liner": "把 Claude 按岗位预配置成销售、法务、财务等角色的现成插件集。",
@@ -1224,7 +1270,9 @@
   "readme_used": true,
   "source_description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
   "language": "Python",
-  "url": "https://github.com/anthropics/knowledge-work-plugins"
+  "url": "https://github.com/anthropics/knowledge-work-plugins",
+  "readme_sha": "261e2f47e2b1701258e4bd3ec18620dc5d7c28ad",
+  "desc_hash": "bf3ad73bbca72098e82f9c3efeab7bfefe460e9ce17b975f6b7c354cb332ea98"
  },
  "anthropics/skills": {
   "one_liner": "把任务指令打包成 SKILL.md 文件夹，让 Claude 按固定流程干活",
@@ -1273,52 +1321,57 @@
   "readme_used": true,
   "source_description": "Public repository for Agent Skills",
   "language": "Python",
-  "url": "https://github.com/anthropics/skills"
+  "url": "https://github.com/anthropics/skills",
+  "readme_sha": "4171c2c9eba15bf2bdefb496d941ba559368438b",
+  "desc_hash": "896af186ad99bb3c29a8800ee81a466595d78d67135b58b636d9cda2cca5958e"
  },
  "ashhart/TensorFold": {
-  "one_liner": "用 Zig 写的二进制直接读 checkpoint，在 Mac 和 N 卡上跑 LLM 推理服务，不需要 Python。",
-  "summary": "TensorFold 是一个用 Zig 实现的 LLM 推理引擎，自己负责读取 checkpoint、对请求做 tokenize，并直接调用 Metal 或 CUDA kernel 完成推理，省掉 Python 与 MLX 运行时。安装走 Homebrew，之后用 `tensorfold pull` 拉取指定 revision 的权重、用 `tensorfold serve` 起服务，例如把 mlx-community/Qwen3.5-2B-MLX-4bit 以 local-model 名字、8k 上下文对外提供。它的新意主要在工程形态：把「安装依赖 + 推理栈」压缩成一个 Zig 二进制，同时把模型版本钉在 commit 上以便复现。README 里还有一套面向编码 agent 的协作流程（ATC 工具 + 公开 check-in 雷达），用来避免多个贡献者或 agent 重复做同一个 issue。",
+  "one_liner": "用 Zig 写的本地 LLM 推理服务，不装 Python 也能在 Mac 和 N 卡上跑模型。",
+  "summary": "TensorFold 是一个用 Zig 编写的 LLM 推理引擎，直接读取 checkpoint、对请求做 tokenize，并调用 Metal 或 CUDA kernel 完成推理，对外提供 OpenAI 风格的 HTTP 接口。它的卖点是运行时不需要 Python 或 MLX：在 Apple Silicon 上用 Homebrew 安装、在 Linux + NVIDIA 上用预编译 tar.gz 解压即可，然后执行 tensorfold pull 拉取权重、执行 tensorfold serve 启动服务。除 /v1/chat/completions 外，它还提供 completions、Responses 和 Anthropic Messages 接口，文档中还提到并行请求、精确解码、上下文压缩、Cortheon 模式和一个实验性的 Living Weights（在运行中的模型权重里教它新事实）。和常见的 Python 推理栈相比，它的新意主要在于用 Zig 单二进制减少依赖体积与部署环节，但材料中未给出吞吐、显存占用等对比数据，性能优势无法从现有信息判断。",
   "audience": [
-   "在 Apple Silicon Mac 上想把小模型跑成常驻服务、又不想装 Python/MLX 环境的工程师。",
-   "有 NVIDIA GPU 机器、希望用单二进制部署推理端点的后端或运维人员。",
-   "需要固定 checkpoint 版本做可复现 benchmark 的评测人员。",
-   "想研究非 Python 推理栈实现（Zig + Metal/CUDA kernel）的系统方向开发者。",
-   "用多个编码 agent 参与同一开源项目、需要冲突协调机制的项目维护者。"
+   "想在一台 Apple Silicon Mac 上跑本地模型、又不想维护 Python 或 MLX 环境的后端工程师。",
+   "需要在带 NVIDIA 显卡的 Linux 服务器上部署自托管推理服务、并希望直接用 OpenAI 兼容接口对接现有客户端的开发者。",
+   "对 Zig 感兴趣、想读一个真实高性能推理引擎源码的系统编程学习者。",
+   "要在内网或离线环境提供模型服务、无法接受运行时依赖 Python 生态的运维或平台团队。",
+   "想验证「在模型权重中注入新事实」这类实验能力的研究型开发者。"
   ],
   "use_cases": [
-   "在 Mac 上执行 `tensorfold pull` 加 `tensorfold serve`，把 Qwen3.5-2B 4bit 起成一个本地端点供自己的应用调用。",
-   "在 NVIDIA Linux 机器上下载对应 CPU 架构的 release 包，替换掉现有的 Python 推理容器以缩小镜像和依赖面。",
-   "按 docs/evaluating.md 的做法固定 revision、做签名校验，跑一套不需要 GPU 的测试来验证部署是否正常。",
-   "对比同一模型在 Metal 与 CUDA 两条后端路径上的表现，作为选型依据。",
-   "参考它的 ATC 领取/心跳/释放流程，为自己团队的多人多 agent 仓库设计 issue 认领看板。"
+   "在 Mac 上执行 brew install 后拉起本地服务，把编辑器或聊天客户端的 base URL 指向 http://127.0.0.1:8080/v1 做日常问答。",
+   "在 NVIDIA Linux 机器上解压 release 包后执行 tensorfold serve，用 /v1/chat/completions 承载批量文本生成任务。",
+   "利用 Anthropic Messages 兼容接口，把原本调用 Claude 的内部工具切换到自托管模型做成本或隐私验证。",
+   "通过 --context 调整上下文长度、用 --no-thinking 关闭思考模式，为低延迟场景调参压测。",
+   "试用 Living Weights，在运行中的模型权重里写入业务事实，观察是否优于提示词注入。"
   ],
   "adoption_steps": [
-   "先按 README 在 Apple Silicon 上试水：`brew install ashhart/tensorfold/tensorfold`，然后 `tensorfold pull mlx-community/Qwen3.5-2B-MLX-4bit@93760be4f1f69842a46bc13dbdc0f19e291392a3`，再 `tensorfold serve mlx-community/Qwen3.5-2B-MLX-4bit --name local-model --context 8192 --no-thinking`。",
-   "在目标机器上先读 docs/evaluating.md，按其覆盖的 pinning、签名校验、容器和无 GPU 测试流程做一轮完整验证，确认后再接入业务。",
-   "如果要参与贡献，先 `npm install -g github:ashhart/ATC` 装到 0.9.4 以上，在更新后的 clone 里跑 `atc check ISSUE --json` 确认无人认领后再 `atc claim ISSUE --json`，并按 CONTRIBUTING.md 与 docs/atc/SKILL.md 执行。"
+   "先在 Mac 上执行 brew install ashhart/tensorfold/tensorfold，再执行 tensorfold pull mlx-community/Qwen3.5-2B-MLX-4bit@93760be4f1f69842a46bc13dbdc0f19e291392a3 与 tensorfold serve ... --name local-model --context 8192 --no-thinking，跑通最小链路。",
+   "用 README 里的 curl 请求 http://127.0.0.1:8080/v1/chat/completions 验证服务可用，再访问 /v1/models 确认服务暴露的模型名。",
+   "在 NVIDIA Linux 环境先核对 glibc ≥ 2.28、驱动 ≥ R580（CUDA 13.0），按 docs/run-guide.md 的平台说明下载对应 linux-x86_64 或 linux-aarch64 的 v1.2.9 压缩包，校验 sha256 后再解压并加入 PATH。",
+   "对照 docs/supported-models.md 确认目标 checkpoint 在自己机器上受支持，再决定是否接入生产流量。"
   ],
   "build_ideas": [
-   "用一条内部 CLI 或 Makefile 把 `tensorfold pull` 与 `tensorfold serve` 的固定 revision、上下文长度、模型名参数封装成团队标准启动命令。",
-   "在服务前面加一层网关做鉴权、限流和多模型路由，把 TensorFold 当作后端推理进程使用。",
-   "把 docs/evaluating.md 里的 pinning 与测试流程接进 CI，对每次模型或引擎升级自动跑一致性回归。",
-   "参照 ATC 的 check/claim/pulse/land 语义，做一个对接自家 issue 系统的多 agent 协作面板。",
-   "围绕 Metal 与 CUDA 两条路径搭一套统一的吞吐/延迟对照基准，用于硬件采购与后端选择。"
+   "在它的 OpenAI 兼容接口前加一层网关，做多模型路由、限流和请求日志，替换掉原来基于 Python 的推理网关。",
+   "基于 Anthropic Messages 兼容层写一个适配器，让现有 SDK 代码零改动切到本地模型。",
+   "围绕 Living Weights 做一个小工具，把结构化业务数据定期写进模型权重，替代部分 RAG 流程。",
+   "把 tensorfold serve 打包进容器或系统服务单元，配合健康检查和 /v1/models 探活做自托管部署模板。",
+   "利用并行请求与上下文压缩能力，封装一个面向长文档批处理的命令行工具。"
   ],
   "risks": [
-   "材料中没有出现许可证信息，商用或二次分发前必须先去仓库确认 LICENSE 与模型权重各自的许可。",
-   "README 只在 Qwen3.5-2B 4bit 这一个 checkpoint 上说明「已在 Metal 和 GB10 上验证」，其他模型、量化格式和上下文长度的支持范围未说明。",
-   "GitHub 描述写的是 Metal、CUDA 和 Vulkan，但 README 正文只涉及 Metal 与 CUDA，Vulkan 后端的可用性需要实测确认。",
-   "项目把 agent 协作绑定在 ATC（npm 全局包）和公开 check-in 雷达上，贡献流程依赖额外工具链，并且向公开看板暴露活动状态。",
-   "Zig、GPU 驱动和 CUDA/Metal 工具链的版本要求未在材料中给出，二进制分发在不同机器上的兼容性需要自行验证。"
+   "GitHub 描述写着支持 Metal、CUDA 和 Vulkan，但 README 只给出 Apple Silicon 与 NVIDIA 的安装路径，Vulkan 的实际支持程度需要自行验证。",
+   "材料中未出现开源许可信息，商用或二次分发前必须到仓库确认 LICENSE，并注意 README 明确提示模型权重有各自独立的许可。",
+   "Linux 侧硬性要求 glibc 2.28+ 与 NVIDIA 驱动 R580+/CUDA 13.0，老发行版和旧驱动的机器无法直接使用，Windows 支持仅有单独文档说明。",
+   "Living Weights 在文档中标注为 experimental，Cortheon 模式等高级能力也缺少稳定性承诺，不适合直接承载生产关键路径。",
+   "项目 star 量约 1900、单日新增 54，属于早期项目，接口与 serve 参数可能随版本变化，升级前需按版本号固定并做回归测试。"
   ],
   "tokens": {
-   "prompt_tokens": 1230,
-   "completion_tokens": 1569
+   "prompt_tokens": 1390,
+   "completion_tokens": 1593
   },
   "model_resolved": "deepseek-flash",
-  "hash": "3d9b0b0d5e1165c2bf0cbe91c9a66c3ad1894f44ec4a1dc3f3666c5cf7937797",
+  "hash": "ea179a02adf69f9fde484b0f4bc570f1d3252cfd89b77e0cd2182b9dd150eb80",
+  "readme_sha": "349754660f7b12df310839eec65ff8292a70525a",
+  "desc_hash": "e1da0c1ff0e583cfb21040ae4584dd7447124c5d721ecc1b32bf483cd195023f",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T10:22:04+08:00",
+  "generated_at": "2026-11-18T09:53:17+08:00",
   "readme_used": true,
   "source_description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
   "language": "Zig",
@@ -1370,7 +1423,9 @@
   "readme_used": true,
   "source_description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
   "language": "TypeScript",
-  "url": "https://github.com/backnotprop/plannotator"
+  "url": "https://github.com/backnotprop/plannotator",
+  "readme_sha": "b8de95afdf52a703d9013c6ee51bbb5d22f44b18",
+  "desc_hash": "ac88268daeaec406d97bbf1dd7fc89f93688416455399e9ccca740eae222d54f"
  },
  "cloudflare/security-audit-skill": {
   "one_liner": "把编码 Agent 变成分阶段、可核验的安全审计员，产出机器可读的漏洞结论。",
@@ -1419,7 +1474,9 @@
   "readme_used": true,
   "source_description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
   "language": "JavaScript",
-  "url": "https://github.com/cloudflare/security-audit-skill"
+  "url": "https://github.com/cloudflare/security-audit-skill",
+  "readme_sha": "c80305c88cd5087db37f76a0d230c1fc092c864c",
+  "desc_hash": "495aa6fade416fadff4a177bedf53cd214ce67937fbd6fd45a1ed697e5305a10"
  },
  "cursor/plugins": {
   "one_liner": "把 Cursor 的 agent 能力拆成可挑选的插件，按需装配工作流。",
@@ -1469,7 +1526,9 @@
   "readme_used": true,
   "source_description": "Cursor plugin specification and official plugins",
   "language": "TypeScript",
-  "url": "https://github.com/cursor/plugins"
+  "url": "https://github.com/cursor/plugins",
+  "readme_sha": "ee488e42344cc6ec6bfed86ace1fb64d7f9eae9e",
+  "desc_hash": "e007f4991129a7573749c888398022349d6902b3fab61208eca5f4ba3817f421"
  },
  "debpalash/VoiceStudio": {
   "one_liner": "在本机跑声音克隆、配音、转写与有声书，替代 ElevenLabs 的开源方案。",
@@ -1519,7 +1578,9 @@
   "readme_used": true,
   "source_description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
   "language": "Python",
-  "url": "https://github.com/debpalash/VoiceStudio"
+  "url": "https://github.com/debpalash/VoiceStudio",
+  "readme_sha": "5b336fbac18c4c3400089956d2cb2307ade2fb6d",
+  "desc_hash": "151dd020c7b2405f6a2627c2b8b29844c0d814d64ffd9954f37cbb5380aa9744"
  },
  "dream-num/univer": {
   "one_liner": "在自家产品里嵌入可扩展的表格与文档编辑内核，不用从零写编辑器",
@@ -1567,7 +1628,9 @@
   "readme_used": true,
   "source_description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
   "language": "TypeScript",
-  "url": "https://github.com/dream-num/univer"
+  "url": "https://github.com/dream-num/univer",
+  "readme_sha": "3244196198837cd4b1a8d4eb0d3350273af9a260",
+  "desc_hash": "f14497c03d0a7f2ea9f756667b186d340201d3afd811d8da3381f1a8de77b3b8"
  },
  "elementalsouls/Claude-BugHunter": {
   "one_liner": "给 Claude Code 装上一套自动加载的漏洞挖掘与红队技能包",
@@ -1616,7 +1679,9 @@
   "readme_used": true,
   "source_description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
   "language": "Python",
-  "url": "https://github.com/elementalsouls/Claude-BugHunter"
+  "url": "https://github.com/elementalsouls/Claude-BugHunter",
+  "readme_sha": "4182889da32bba8e37c28e1d5bec4231bf5046db",
+  "desc_hash": "c819ed58f6475e5e8ebb96475f3e90c3bf39d85ba246a0a96c1fd061d6bae10c"
  },
  "getarcaneapp/arcane": {
   "one_liner": "用浏览器管理 Docker 的现代化面板，让不熟命令行的人也能管容器。",
@@ -1665,7 +1730,9 @@
   "readme_used": true,
   "source_description": "Modern Docker Management, Designed for Everyone",
   "language": "Go",
-  "url": "https://github.com/getarcaneapp/arcane"
+  "url": "https://github.com/getarcaneapp/arcane",
+  "readme_sha": "94063cc0583ae7b52e1d376c702a9fce852f6284",
+  "desc_hash": "fc9eff057335f7818165b7277ad72a47d10f4068e377108f6d05db4646db04db"
  },
  "ggml-org/ggml": {
   "one_liner": "零依赖的 C/C++ 张量库，把量化推理直接嵌进任何程序",
@@ -1714,52 +1781,56 @@
   "readme_used": true,
   "source_description": "Tensor library for machine learning",
   "language": "C++",
-  "url": "https://github.com/ggml-org/ggml"
+  "url": "https://github.com/ggml-org/ggml",
+  "readme_sha": "3178f3a5c3e837f4b402c6b0aa5cd587ccc5c152",
+  "desc_hash": "5124f55d32d96649e93348efcdfd09b046954fc90295b57f9e17b5343d78faed"
  },
  "ggml-org/llama.cpp": {
-  "one_liner": "在本地或自建机器上用 C/C++ 跑 LLM 推理，不依赖云 API",
-  "summary": "llama.cpp 是一个用 C/C++ 实现的 LLM 推理项目，底层依赖同组织的 ggml 张量计算库，主打在通用硬件上直接加载并运行大模型。它现在提供统一的 llama 命令行工具：llama cli 可以直接从 Hugging Face 拉取 GGUF 模型并开启对话，llama serve 则启动一个 OpenAI 兼容的 API 服务并自带 Web UI，示例中还展示了带视觉输入的 VLM 会话。安装方式覆盖 curl/PowerShell 一键脚本、Docker、releases 预编译二进制和源码构建四条路径，采用 MIT 许可。相较需要 Python 栈和较重依赖的推理方案，它的差异点在于纯 C/C++ 实现、单一可执行文件式分发，以及与 OpenAI 接口保持兼容，便于把已有客户端切到本地后端。",
+  "one_liner": "在 C/C++ 里用最小配置在各种硬件上跑 LLM 推理",
+  "summary": "llama.cpp 是面向大语言模型（及多模态模型）的本地推理引擎，用 C/C++ 实现，目标是极简部署并让各种硬件都能获得先进性能。它构建在 ggml 张量计算库之上，通过量化推理和多种后端（CPU、GPU、Docker、预编译二进制）把模型跑起来。项目已发布 v1.0.0，并在 Hugging Face 提供了对应博文，说明它已从实验项目进入稳定版本阶段。与依赖 Python 栈的推理方案相比，它的新意在于用原生代码和极少的依赖换取更广的硬件覆盖与更低的部署成本，同时提供 llama-server REST API 供服务化使用。",
   "audience": [
-   "需要在本地笔记本或自建服务器上跑模型的算法与后端工程师。",
-   "想把现有 OpenAI SDK 调用切到私有化推理服务、避免数据出网的平台团队。",
-   "做端侧、嵌入式和消费级硬件 AI 应用的开发者。",
-   "研究模型量化与推理性能优化、需要可改底层算子的研究人员。",
-   "需要在隔离或内网环境演示大模型能力的产品经理与售前工程师。"
+   "需要在本地或私有环境跑开源模型的算法与后端工程师。",
+   "想把 LLM 能力嵌入桌面或端侧应用、且不愿引入 Python 运行时的 C++ 开发者。",
+   "评估自托管推理服务方案、关注部署复杂度与硬件成本的产品经理和技术负责人。",
+   "需要在没有 GPU 或只有消费级显卡的机器上验证模型效果的研究者。",
+   "为特定硬件（如 ARM、特定加速卡）做推理适配的系统工程师。"
   ],
   "use_cases": [
-   "用 llama cli -hf 直接拉取 GGUF 量化模型，在本地做提示词与效果的快速验证。",
-   "用 llama serve 起一个 OpenAI 兼容服务，把已有应用的 base_url 指向本地端口做联调。",
-   "通过自带 Web UI 演示带图像输入的多模态对话，无需额外写前端。",
-   "在无 GPU 或只有消费级显卡的机器上做离线推理，用于内网文档问答类工具。",
-   "在 Docker 中部署固定版本的推理服务，作为内部工具的私有推理后端。"
+   "在开发机上用 curl 或 PowerShell 一键脚本安装后，直接从 Hugging Face 下载并运行模型做效果验证。",
+   "用 llama-server 暴露 REST API，把本地模型接进内部工具或原型应用做接口联调。",
+   "通过 Docker 镜像把推理服务部署到服务器，实现环境隔离和可重复的发布流程。",
+   "在无网络的隔离环境中使用 releases 页面的预编译二进制或本地源码构建，完成离线推理。",
+   "在资源受限的笔记本或边缘设备上运行量化后的模型，评估响应速度与内存占用是否满足需求。"
   ],
   "adoption_steps": [
-   "先用官方脚本安装：Linux/macOS 执行 curl -LsSf https://llama.app/install.sh | sh，Windows 执行 irm https://llama.app/install.ps1 | iex；若网络受限则到 releases 页下载对应平台的预编译二进制。",
-   "跑通最小闭环：执行 llama cli -hf ggml-org/Qwen3.5-0.8B-GGUF，确认本机后端、内存与模型加载正常，记录首 token 延迟和吞吐。",
-   "启动 llama serve -hf ggml-org/Qwen3.5-0.8B-GGUF，把现有 OpenAI 客户端的 base_url 指向本地端口，跑一遍现有业务用例的回归，确认接口兼容性与输出质量。"
+   "先用最轻量方式试跑：执行 curl -LsSf https://llama.app/install.sh | sh（或 PowerShell 对应命令），然后用 llama 命令行直接从 Hugging Face 加载一个小模型验证可用性。",
+   "阅读 docs/build.md 与 docs/docker.md，按目标硬件选择源码编译或 Docker 方式，确认所需后端与依赖版本后再纳入工程环境。",
+   "在正式接入前，用真实业务输入对候选模型做一轮延迟、内存与输出质量测试，并记录所选模型格式与量化配置，避免后续迁移返工。"
   ],
   "build_ideas": [
-   "基于 llama-server 的 REST API 封装一层内部推理网关，做鉴权、限流、多模型路由和用量统计。",
-   "把 llama cli 与内部知识库、工具调用协议结合，做成命令行式的私有助手。",
-   "基于官方 Docker 镜像做多模型热切换的部署方案，按业务场景预置不同量化等级的 GGUF 模型。",
-   "针对特定硬件平台做 ggml 后端的性能基准与调优工具，输出可复现的吞吐/延迟对比报告。",
-   "改造自带 Web UI，做成面向具体业务的多模态交互前端，例如图片问答或表单识别。"
+   "基于 llama-server 的 REST API 封装一层业务网关，加入鉴权、限流和请求日志，做成内部统一的模型调用入口。",
+   "针对特定垂直场景做领域微调后的模型，再用 llama.cpp 的量化和本地推理能力打包成可离线分发的桌面工具。",
+   "基于 lib llama API 把推理能力嵌入既有 C++ 应用，做代码补全、文档摘要等就地功能而不引入独立服务进程。",
+   "围绕多硬件后端做自动化基准测试与选型脚本，为不同机器配置自动推荐合适的量化等级与后端参数。",
+   "在 CI 流程中集成预编译二进制，搭建模型升级后的回归评测流水线，自动比对输出质量与性能指标。"
   ],
   "risks": [
-   "命令与接口仍在演进：README 中 lib llama API 与 llama-server REST API 均指向尚在讨论的 issue，升级版本可能破坏现有脚本与客户端，需要锁版本。",
-   "示例统一使用 GGUF 格式模型，目标模型如果没有可用的 GGUF 版本或量化产物，需要自行转换并验证精度损失。",
-   "文档示例用的是 0.8B 级别小模型，真实业务模型在目标硬件上的显存占用、并发能力和延迟必须自行压测，不能照搬示例结论。",
-   "一键安装脚本从 llama.app 拉取并执行，企业环境需先确认脚本与二进制来源的可信度及内网可达性，否则应走源码构建或 releases 离线包。",
-   "项目为 MIT 许可，但实际使用还需确认 ggml 等依赖组件以及所下载模型权重的许可条款，尤其是商用场景。"
+   "项目处于高频迭代状态，API 与命令行参数可能变动，长期锁定某一版本前需确认升级成本与兼容性策略。",
+   "不同硬件后端的支持成熟度不一致，某些加速卡或平台可能缺少预编译包，需要自行编译并承担调试成本。",
+   "许可证为 MIT，但所用模型权重通常另有许可，商用前需分别确认模型本身的授权条款。",
+   "推理效果与速度高度依赖模型格式转换和量化等级，选型不当会出现质量下降或内存溢出，需要实测验证。",
+   "README 未说明各后端的具体性能数据与最低硬件要求，容量规划前需自行在目标机器上压测，不能依赖宣传口径。"
   ],
   "tokens": {
-   "prompt_tokens": 1613,
-   "completion_tokens": 1880
+   "prompt_tokens": 1604,
+   "completion_tokens": 901
   },
-  "model_resolved": "deepseek-v4.1-flash-1017",
-  "hash": "219511a5de8d4f66761b439e49fbe9a34a1b1deb63756cdf0981ebbc52f0e960",
+  "model_resolved": "deepseek-flash",
+  "hash": "05e8630c728eaf40f3fd4977f64e9f9107bb3c509271846c1663a1f6e7ad222a",
+  "readme_sha": "0bdcbc8ced799f698a402076fa744770e41a6b6b",
+  "desc_hash": "6aa032ab013e82836b5d28a9816d8311205dd326630792dac1c27e164ee60270",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T10:21:57+08:00",
+  "generated_at": "2026-11-18T09:53:14+08:00",
   "readme_used": true,
   "source_description": "LLM inference in C/C++",
   "language": "C++",
@@ -1812,7 +1883,9 @@
   "readme_used": true,
   "source_description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
   "language": "C++",
-  "url": "https://github.com/google-deepmind/mujoco"
+  "url": "https://github.com/google-deepmind/mujoco",
+  "readme_sha": "e8c8ca731dc670c273dbff7a956938064c41e6c3",
+  "desc_hash": "95752ed4d4b99e06dd5aa2025725a1ab6b12613f1b0c6a1ec65c3db08ab3986d"
  },
  "google-labs-code/stitch-skills": {
   "one_liner": "把 Google Stitch 的界面生成能力打包成编码 Agent 可直接加载的技能集。",
@@ -1860,7 +1933,9 @@
   "readme_used": true,
   "source_description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
   "language": "TypeScript",
-  "url": "https://github.com/google-labs-code/stitch-skills"
+  "url": "https://github.com/google-labs-code/stitch-skills",
+  "readme_sha": "baecaabfa0fc08d596e3d5921479321eaacac02a",
+  "desc_hash": "2c760355c2742cb8d454101c613d850c052b1eb53d02be6dff1ece8b6d3d4908"
  },
  "google-research/paper-orchestra": {
   "one_liner": "把零散想法和实验日志自动写成可投稿的 LaTeX 论文初稿。",
@@ -1908,7 +1983,9 @@
   "readme_used": true,
   "source_description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
   "language": "Python",
-  "url": "https://github.com/google-research/paper-orchestra"
+  "url": "https://github.com/google-research/paper-orchestra",
+  "readme_sha": "c79a45651aaf5f9ff5b9ec977c69ffd0c3e02095",
+  "desc_hash": "37cb9b2d4ae73b044aed0017d5792fac12f30d9c00c0c47a2df2f1f87255ccda"
  },
  "google/elephant-goldfish-model": {
   "one_liner": "用大象记住项目上下文起草规格，再让金鱼从零挑刺的 AI 评审插件",
@@ -1957,7 +2034,9 @@
   "readme_used": true,
   "source_description": "Open-source plugin for designing and reviewing software with agents",
   "language": "Python",
-  "url": "https://github.com/google/elephant-goldfish-model"
+  "url": "https://github.com/google/elephant-goldfish-model",
+  "readme_sha": "96b3acc766bb1b0ed312a4a5f5b5ea61207c9b4e",
+  "desc_hash": "f46fd57d2a64180e218c49651040d64d4414be5ab5d4d972065535ef1c6a7148"
  },
  "heygen-com/hyperframes": {
   "one_liner": "用 HTML/CSS 写页面，直接渲染成确定性 MP4，方便交给 AI agent 批量出片。",
@@ -2006,7 +2085,9 @@
   "readme_used": true,
   "source_description": "Write HTML. Render video. Built for agents.",
   "language": "TypeScript",
-  "url": "https://github.com/heygen-com/hyperframes"
+  "url": "https://github.com/heygen-com/hyperframes",
+  "readme_sha": "8e6fb677459ff95bd4d43007095d31f8171b70de",
+  "desc_hash": "7f544d7f6ef5cf24fc9b488e07c1affa5da8770e5ea25c36ae409a523e1dec91"
  },
  "homeassistant-ai/ha-mcp": {
   "one_liner": "让 Claude、ChatGPT 等 AI 助手直接配置和自动化你的 Home Assistant。",
@@ -2054,7 +2135,9 @@
   "readme_used": true,
   "source_description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
   "language": "Python",
-  "url": "https://github.com/homeassistant-ai/ha-mcp"
+  "url": "https://github.com/homeassistant-ai/ha-mcp",
+  "readme_sha": "d8b003af14a92389aa643fb1127547c7d2de908d",
+  "desc_hash": "1a88a0bc7354a5eab87b11456f1cf8c3efa320c7cf00a1c5be0bb1160409c606"
  },
  "jingyaogong/minimind": {
   "one_liner": "花 3 块钱、2 小时从零训出 64M 小语言模型，把 LLM 全流程拆成能读懂的代码。",
@@ -2103,7 +2186,9 @@
   "readme_used": true,
   "source_description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
   "language": "Python",
-  "url": "https://github.com/jingyaogong/minimind"
+  "url": "https://github.com/jingyaogong/minimind",
+  "readme_sha": "1b11a450c0e50ba81f7072103020c859cb90ac0e",
+  "desc_hash": "c83e1fc3e562a8ec16a07747d5fc716f35e62b16eceaccc6e5de601d3570f473"
  },
  "kajisho5/ffmpeg-skill": {
   "one_liner": "给你的编码 agent 装上本地 FFmpeg 剪辑能力，不联网、不用 API key。",
@@ -2152,7 +2237,9 @@
   "readme_used": true,
   "source_description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
   "language": "Python",
-  "url": "https://github.com/kajisho5/ffmpeg-skill"
+  "url": "https://github.com/kajisho5/ffmpeg-skill",
+  "readme_sha": "c48bb935a49c45c9059676007ff894363a31cf87",
+  "desc_hash": "4c40d1a999ee704009c182f2fc06546446c6bb9c02c5352f16c442115c31fa1f"
  },
  "mattpocock/skills": {
   "one_liner": "给 AI 编码代理装一套小而可组合的工程技能包",
@@ -2200,7 +2287,9 @@
   "readme_used": true,
   "source_description": "Skills for Real Engineers. Straight from my .agents directory.",
   "language": "Shell",
-  "url": "https://github.com/mattpocock/skills"
+  "url": "https://github.com/mattpocock/skills",
+  "readme_sha": "f7038f139299985eea6c3e18398dbafb379a0010",
+  "desc_hash": "97045027997800d18ded9e1e015708999697638b948824b563d0cd857ad91ce7"
  },
  "max-sixty/worktrunk": {
   "one_liner": "把 git worktree 管得跟切分支一样简单，方便同时跑多个 AI agent。",
@@ -2247,7 +2336,9 @@
   "readme_used": true,
   "source_description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
   "language": "Rust",
-  "url": "https://github.com/max-sixty/worktrunk"
+  "url": "https://github.com/max-sixty/worktrunk",
+  "readme_sha": "cb34774014556b4eedaf43ca5f572cb4bcb5e1f9",
+  "desc_hash": "e1de757ef191d72aa4b978cf041028c9c3d6daad47d9db99d4275adb938da1bc"
  },
  "meta/astryx": {
   "one_liner": "Meta 开源的设计系统：150+ 个可组合 React 组件，支持主题定制，并方便 AI 助手使用。",
@@ -2294,7 +2385,9 @@
   "readme_used": true,
   "source_description": "An open source design system that's fully customizable and agent ready",
   "language": "TypeScript",
-  "url": "https://github.com/meta/astryx"
+  "url": "https://github.com/meta/astryx",
+  "readme_sha": "29b89543395d69bd2a5385a9e768ec9bd9015f73",
+  "desc_hash": "cee09caeff1cf9ba3b4970fe911e5d3568fe7ce5cbd5cba148432ee8fc48589d"
  },
  "milind-soni/OpenMausBot": {
   "one_liner": "在聊天界面里管理一队本地运行的 AI agent，每个都带自己的虚拟机和已连接的应用。",
@@ -2343,7 +2436,9 @@
   "readme_used": true,
   "source_description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
   "language": "TypeScript",
-  "url": "https://github.com/milind-soni/OpenMausBot"
+  "url": "https://github.com/milind-soni/OpenMausBot",
+  "readme_sha": "35fff6f617dab8ea42fe25a703181d3be559e071",
+  "desc_hash": "7f27e6a33ec431de0ee46e86359a6869709c4126052cf548ddf522080579987d"
  },
  "morluto/rea": {
   "one_liner": "让你的 AI agent 通过 MCP 逆向分析二进制、应用与运行时行为。",
@@ -2392,7 +2487,9 @@
   "readme_used": true,
   "source_description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
   "language": "TypeScript",
-  "url": "https://github.com/morluto/rea"
+  "url": "https://github.com/morluto/rea",
+  "readme_sha": "4ccd45edee2a6d3b7229f591123954f2d1df1a86",
+  "desc_hash": "5ac528c4ea6bf0091094a1d1cad19be40c9a0e45aa719a59788f30ff7181a01a"
  },
  "mvanhorn/last30days-skill": {
   "one_liner": "让 AI agent 跨 Reddit、X、YouTube、HN 等平台检索并汇总某话题最近的真实讨论",
@@ -2441,7 +2538,9 @@
   "readme_used": true,
   "source_description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
   "language": "Python",
-  "url": "https://github.com/mvanhorn/last30days-skill"
+  "url": "https://github.com/mvanhorn/last30days-skill",
+  "readme_sha": "ee3f7f3b0f64f9ca996e579bfd2aa2383bace11b",
+  "desc_hash": "83ec92c4a2b4fed86c986bf0af3ebfad2b30491746cc50e1ff348d8c38085f07"
  },
  "nodejs/node": {
   "one_liner": "一个开源的跨平台 JavaScript 运行时，让你脱离浏览器也能跑 JS。",
@@ -2490,7 +2589,9 @@
   "readme_used": true,
   "source_description": "Node.js JavaScript runtime ✨🐢🚀✨",
   "language": "JavaScript",
-  "url": "https://github.com/nodejs/node"
+  "url": "https://github.com/nodejs/node",
+  "readme_sha": "3b7d93827ae99ff451a4ff9016dbd254cd5776b8",
+  "desc_hash": "738541eb213eb5764502ba89f280d6c1b392a7c2f8af590af26d3e742b7581eb"
  },
  "nvm-sh/nvm": {
   "one_liner": "一条 bash 脚本，让你在同一台机器上装、切、管多个 Node.js 版本。",
@@ -2537,7 +2638,9 @@
   "readme_used": true,
   "source_description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
   "language": "Shell",
-  "url": "https://github.com/nvm-sh/nvm"
+  "url": "https://github.com/nvm-sh/nvm",
+  "readme_sha": "ce45970821854997ed942a1af186061af95811d9",
+  "desc_hash": "edaa8a6597a23cd011821d9aa3487baa580bb03d7a0b5984349a27b91092453c"
  },
  "obra/superpowers": {
   "one_liner": "给编码 agent 装上一套先问清需求、再出计划、再分工实现的开发方法论。",
@@ -2587,7 +2690,9 @@
   "readme_used": true,
   "source_description": "An agentic skills framework & software development methodology that works.",
   "language": "Shell",
-  "url": "https://github.com/obra/superpowers"
+  "url": "https://github.com/obra/superpowers",
+  "readme_sha": "c5bb59fdaf17ba154e803c549cd71a73ef36c24b",
+  "desc_hash": "934ded3f82006d88fbabfb9f775db79c5aba943a64129f85b5016e633fb71622"
  },
  "openai/codex-security": {
   "one_liner": "给仓库做安全扫描，并验证、生成补丁修复漏洞的 CLI 与 SDK",
@@ -2637,7 +2742,9 @@
   "readme_used": true,
   "source_description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
   "language": "TypeScript",
-  "url": "https://github.com/openai/codex-security"
+  "url": "https://github.com/openai/codex-security",
+  "readme_sha": "985e1e45098f5a02d7ef3932ae164823e9435acb",
+  "desc_hash": "d068a7cc88c245053f95a9ca6a73f7e531bc9541adf535a63f574ec08f0014ed"
  },
  "pbakaus/impeccable": {
   "one_liner": "给编码 agent 一套设计词汇，让它按命令打磨和审查界面，拦下 AI 味",
@@ -2686,7 +2793,9 @@
   "readme_used": true,
   "source_description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
   "language": "Rust",
-  "url": "https://github.com/pbakaus/impeccable"
+  "url": "https://github.com/pbakaus/impeccable",
+  "readme_sha": "8a79cb56fc9cbdd931723d869e11dc64e9d8d137",
+  "desc_hash": "0ea4828f53de65bcb221010d18416cec9f8d699696bb18b3ae71c3dd21a84d93"
  },
  "pingdotgg/t3code": {
   "one_liner": "在你自己的机器上统一驱动 Claude Code、Codex 等编码 agent，并能用手机接着审批下一步。",
@@ -2735,7 +2844,9 @@
   "readme_used": true,
   "source_description": "",
   "language": "TypeScript",
-  "url": "https://github.com/pingdotgg/t3code"
+  "url": "https://github.com/pingdotgg/t3code",
+  "readme_sha": "24dc0f8f7f6669ee439bc13f496e0451239f0e31",
+  "desc_hash": "fc7dc3a14ad49a4833674eebfec0d55e41d268f37127b5e364ddf32107cfaf38"
  },
  "pookjw/HermesEnabler": {
   "one_liner": "给非爱马仕版 Apple Watch 装上爱马仕表盘",
@@ -2782,7 +2893,9 @@
   "readme_used": true,
   "source_description": "Enable Hermès Watch Faces on any Apple Watch devices",
   "language": "Objective-C",
-  "url": "https://github.com/pookjw/HermesEnabler"
+  "url": "https://github.com/pookjw/HermesEnabler",
+  "readme_sha": "fced2b12db454a26b6f08df18ca9480a875c1784",
+  "desc_hash": "8599746c23958ad15fcbb11361812036756d71f7d80ecb73281c7bf93d60c759"
  },
  "ranxianglei/billion-context": {
   "one_liner": "把长会话的上下文压缩掉，让小窗口也能撑起月级会话。",
@@ -2831,7 +2944,9 @@
   "readme_used": true,
   "source_description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
   "language": "TypeScript",
-  "url": "https://github.com/ranxianglei/billion-context"
+  "url": "https://github.com/ranxianglei/billion-context",
+  "readme_sha": "b52b0721079757e4967b687def01cf66ad80a5ef",
+  "desc_hash": "8f7d7ef8b6b7184f5dc333ca69c1ef7a0bc3c01f405ba92fa438bdfc65f1e80c"
  },
  "shadcn/improve": {
   "one_liner": "用最强模型审计代码库并写出规格，交给便宜模型去执行。",
@@ -2881,7 +2996,9 @@
   "readme_used": true,
   "source_description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
   "language": "-",
-  "url": "https://github.com/shadcn/improve"
+  "url": "https://github.com/shadcn/improve",
+  "readme_sha": "17e41e80976356c4bacfa5b9f2e873b67d1fe554",
+  "desc_hash": "6d35c5a9b5e18def657e59fad2d36f7d6a197e0f14e0c8a30a65d1aa8c161cd5"
  },
  "sherlock-project/sherlock": {
   "one_liner": "用同一个用户名批量探测 400+ 社交网络是否存在对应账号。",
@@ -2930,7 +3047,9 @@
   "readme_used": true,
   "source_description": "Hunt down social media accounts by username across social networks",
   "language": "Python",
-  "url": "https://github.com/sherlock-project/sherlock"
+  "url": "https://github.com/sherlock-project/sherlock",
+  "readme_sha": "ddad6e0214cfa14bfabab0d67bf52293f5d2990e",
+  "desc_hash": "55af8d821a7881a1389183800c977262839e9c69238bf129992f2951a9d4a719"
  },
  "sveltejs/svelte": {
   "one_liner": "把声明式组件编译成精准更新 DOM 的高效 JavaScript，省掉框架运行时开销。",
@@ -2979,7 +3098,9 @@
   "readme_used": true,
   "source_description": "web development for the rest of us",
   "language": "JavaScript",
-  "url": "https://github.com/sveltejs/svelte"
+  "url": "https://github.com/sveltejs/svelte",
+  "readme_sha": "7ea71647521ae850fd0933665f94760806ac5b29",
+  "desc_hash": "d009615483c94bf84a3487749cbcf1934ce44da2368ee13778046e6c9b7d63ad"
  },
  "tashfeenahmed/freellmapi": {
   "one_liner": "把几十家免费 LLM 额度聚合成一个 OpenAI 兼容的 /v1 接口。",
@@ -3027,7 +3148,9 @@
   "readme_used": true,
   "source_description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
   "language": "TypeScript",
-  "url": "https://github.com/tashfeenahmed/freellmapi"
+  "url": "https://github.com/tashfeenahmed/freellmapi",
+  "readme_sha": "fd0d8792a598289c84dbcba22394dacf5a76c4b6",
+  "desc_hash": "53ebb0746e981e3f0d31a31cbf2a4cda48403a5943ba7e06598434d57a5ab19a"
  },
  "thedotmack/claude-mem": {
   "one_liner": "让你的编码 Agent 记住上次会话做过什么，自动把相关上下文带进新会话。",
@@ -3076,7 +3199,9 @@
   "readme_used": true,
   "source_description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
   "language": "TypeScript",
-  "url": "https://github.com/thedotmack/claude-mem"
+  "url": "https://github.com/thedotmack/claude-mem",
+  "readme_sha": "5591cca25a1cbb59a9f8dea160071369a8117290",
+  "desc_hash": "8e71d54bc44f2a50fa7a71dbc1d45de687258297c4384b412a3445c2e01aeafa"
  },
  "tokio-rs/topcoat": {
   "one_liner": "用 Rust 一套代码写全栈 Web 应用，服务端渲染，不碰 wasm 和客户端构建链。",
@@ -3125,7 +3250,9 @@
   "readme_used": true,
   "source_description": "A batteries-included framework for building web apps",
   "language": "Rust",
-  "url": "https://github.com/tokio-rs/topcoat"
+  "url": "https://github.com/tokio-rs/topcoat",
+  "readme_sha": "2799dc5b44ce9bb9bf53d16a92af2ff4fc4810f3",
+  "desc_hash": "91743f50f8d4e81ed74ab59f7cdb6efd726d2dccc62e4e17f13b3b70d24b7e9a"
  },
  "tradermonty/claude-trading-skills": {
   "one_liner": "把 Claude Code 变成有纪律的投研工作流：复盘、风控、计划、日志",
@@ -3173,7 +3300,9 @@
   "readme_used": true,
   "source_description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
   "language": "Python",
-  "url": "https://github.com/tradermonty/claude-trading-skills"
+  "url": "https://github.com/tradermonty/claude-trading-skills",
+  "readme_sha": "a3c2d91c57fb18cbe5cdb5b2aaca5e34f44b63b8",
+  "desc_hash": "8a235d57665cac673b73b04ec2a0c246c4a0e43ba346d23a8565d8c266d1b26b"
  },
  "vercel-labs/agent-browser": {
   "one_liner": "让 AI agent 用一条条 shell 命令驱动浏览器，读页面、点元素",
@@ -3221,7 +3350,9 @@
   "readme_used": true,
   "source_description": "Browser automation CLI for AI agents",
   "language": "Rust",
-  "url": "https://github.com/vercel-labs/agent-browser"
+  "url": "https://github.com/vercel-labs/agent-browser",
+  "readme_sha": "53f71fd42a568994479edfa5063c58ca0b5dad8d",
+  "desc_hash": "7d5d49da981b31953c80e0246783c3f8496053f342f52469328b762e2b6f5476"
  },
  "vercel-labs/agent-desktop": {
   "one_liner": "让 AI agent 通过系统无障碍树读写桌面应用，不靠截图和像素匹配。",
@@ -3270,7 +3401,9 @@
   "readme_used": true,
   "source_description": "Computer use CLI for AI agents",
   "language": "Rust",
-  "url": "https://github.com/vercel-labs/agent-desktop"
+  "url": "https://github.com/vercel-labs/agent-desktop",
+  "readme_sha": "7b592641a826b48dc793b3434fcb150dd05e7e45",
+  "desc_hash": "6f440ac0148ef6f42fd02a4329f7c9a76610a2aace2c3d167b2d5ee056647730"
  },
  "we-promise/sure": {
   "one_liner": "自托管的个人财务管理应用，接盘已停更的 Maybe Finance，账目数据留在自己服务器。",
@@ -3320,6 +3453,8 @@
   "readme_used": true,
   "source_description": "The personal finance app for everyone (by everyone)",
   "language": "Ruby",
-  "url": "https://github.com/we-promise/sure"
+  "url": "https://github.com/we-promise/sure",
+  "readme_sha": "35f5c2e0681b8ef1c55545a5846535e8198ce4c8",
+  "desc_hash": "88d75d8d452c89972936c2e775c7fe2c4837a180ac866e5fbda813aa4f983b22"
  }
 }
