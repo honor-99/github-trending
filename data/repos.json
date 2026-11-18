@@ -363,18 +363,25 @@
     "rank": 7,
     "stars_period": 423,
     "stars_total": 1582
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 591,
+    "stars_total": 3107
    }
   ],
   "language": "Go",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
+    "last_date": "2026-11-18",
     "streak": 1,
-    "times": 1
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/Tencent/LoopForge"
  },
  "The-PR-Agent/pr-agent": {
@@ -515,6 +522,31 @@
   "times_on_board": 4,
   "url": "https://github.com/addyosmani/agent-skills"
  },
+ "affaan-m/ECC": {
+  "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+  "first_seen": "2026-11-18",
+  "full_name": "affaan-m/ECC",
+  "history": [
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 6,
+    "stars_period": 883,
+    "stars_total": 305482
+   }
+  ],
+  "language": "JavaScript",
+  "last_seen": "2026-11-18",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-18",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/affaan-m/ECC"
+ },
  "ag-ui-protocol/ag-ui": {
   "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
   "first_seen": "2026-11-16",
@@ -533,18 +565,25 @@
     "rank": 6,
     "stars_period": 791,
     "stars_total": 18936
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 3,
+    "stars_period": 1445,
+    "stars_total": 19981
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-17",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-18",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/ag-ui-protocol/ag-ui"
  },
  "alibaba/open-code-review": {
@@ -565,18 +604,25 @@
     "rank": 2,
     "stars_period": 951,
     "stars_total": 52917
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 763,
+    "stars_total": 53710
    }
   ],
   "language": "Go",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-17",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-18",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/alibaba/open-code-review"
  },
  "anomalyco/hex": {
@@ -768,6 +814,13 @@
     "stars_total": 12536
    },
    {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 9,
+    "stars_period": 691,
+    "stars_total": 13057
+   },
+   {
     "date": "2026-11-16",
     "period": "weekly",
     "rank": 11,
@@ -779,9 +832,9 @@
   "last_seen": "2026-11-16",
   "periods": {
    "daily": {
-    "last_date": "2026-11-17",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-18",
+    "streak": 3,
+    "times": 3
    },
    "weekly": {
     "last_date": "2026-11-16",
@@ -789,7 +842,7 @@
     "times": 1
    }
   },
-  "times_on_board": 3,
+  "times_on_board": 4,
   "url": "https://github.com/backnotprop/plannotator"
  },
  "cloudflare/security-audit-skill": {
@@ -828,6 +881,31 @@
   },
   "times_on_board": 2,
   "url": "https://github.com/cloudflare/security-audit-skill"
+ },
+ "cursor/plugins": {
+  "description": "Cursor plugin specification and official plugins",
+  "first_seen": "2026-11-18",
+  "full_name": "cursor/plugins",
+  "history": [
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 14,
+    "stars_period": 201,
+    "stars_total": 16887
+   }
+  ],
+  "language": "TypeScript",
+  "last_seen": "2026-11-18",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-18",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/cursor/plugins"
  },
  "debpalash/VoiceStudio": {
   "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
@@ -872,18 +950,25 @@
     "rank": 1,
     "stars_period": 1828,
     "stars_total": 27761
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 1774,
+    "stars_total": 28887
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-17",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-18",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/dream-num/univer"
  },
  "elementalsouls/Claude-BugHunter": {
@@ -897,18 +982,25 @@
     "rank": 11,
     "stars_period": 98,
     "stars_total": 6512
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 5,
+    "stars_period": 1005,
+    "stars_total": 9223
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-16",
+    "last_date": "2026-11-18",
     "streak": 1,
-    "times": 1
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/elementalsouls/Claude-BugHunter"
  },
  "getarcaneapp/arcane": {
@@ -922,18 +1014,25 @@
     "rank": 14,
     "stars_period": 46,
     "stars_total": 8696
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 10,
+    "stars_period": 618,
+    "stars_total": 9306
    }
   ],
   "language": "Go",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-17",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-18",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/getarcaneapp/arcane"
  },
  "ggml-org/ggml": {
@@ -1041,18 +1140,25 @@
     "rank": 8,
     "stars_period": 529,
     "stars_total": 9727
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 13,
+    "stars_period": 350,
+    "stars_total": 10087
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-17",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-18",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/google-labs-code/stitch-skills"
  },
  "google-research/paper-orchestra": {
@@ -1066,18 +1172,25 @@
     "rank": 10,
     "stars_period": 313,
     "stars_total": 1474
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 1072,
+    "stars_total": 2958
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-17",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-18",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/google-research/paper-orchestra"
  },
  "google/elephant-goldfish-model": {
@@ -1161,6 +1274,31 @@
   },
   "times_on_board": 2,
   "url": "https://github.com/homeassistant-ai/ha-mcp"
+ },
+ "jingyaogong/minimind": {
+  "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+  "first_seen": "2026-11-18",
+  "full_name": "jingyaogong/minimind",
+  "history": [
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 15,
+    "stars_period": 192,
+    "stars_total": 65939
+   }
+  ],
+  "language": "Python",
+  "last_seen": "2026-11-18",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-18",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/jingyaogong/minimind"
  },
  "kajisho5/ffmpeg-skill": {
   "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
@@ -1368,18 +1506,25 @@
     "rank": 12,
     "stars_period": 135,
     "stars_total": 68103
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 696,
+    "stars_total": 69028
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-17",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-18",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/mvanhorn/last30days-skill"
  },
  "nodejs/node": {
@@ -1431,6 +1576,31 @@
   },
   "times_on_board": 1,
   "url": "https://github.com/nvm-sh/nvm"
+ },
+ "obra/superpowers": {
+  "description": "An agentic skills framework & software development methodology that works.",
+  "first_seen": "2026-11-18",
+  "full_name": "obra/superpowers",
+  "history": [
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 1,
+    "stars_period": 1917,
+    "stars_total": 319307
+   }
+  ],
+  "language": "Shell",
+  "last_seen": "2026-11-18",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-18",
+    "streak": 1,
+    "times": 1
+   }
+  },
+  "times_on_board": 1,
+  "url": "https://github.com/obra/superpowers"
  },
  "openai/codex-security": {
   "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
@@ -1661,18 +1831,25 @@
     "rank": 13,
     "stars_period": 115,
     "stars_total": 88974
+   },
+   {
+    "date": "2026-11-18",
+    "period": "daily",
+    "rank": 12,
+    "stars_period": 477,
+    "stars_total": 89582
    }
   ],
   "language": "JavaScript",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-18",
   "periods": {
    "daily": {
-    "last_date": "2026-11-17",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-18",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/sveltejs/svelte"
  },
  "tashfeenahmed/freellmapi": {

@@ -785,50 +785,49 @@
   "url": "https://github.com/TheAlgorithms/Java"
  },
  "ZhuLinsen/daily_stock_analysis": {
-  "one_liner": "接大模型自动分析多市场自选股，每天把决策仪表盘推到你的群聊。",
-  "summary": "这是一个 Python 实现的多市场股票分析系统，它把行情、K 线、技术指标、新闻、公告、基本面等多源数据聚合后交给 LLM，生成包含核心结论、评分、趋势、买卖点位、风险警报与催化因素的「决策仪表盘」，并推送到企业微信、飞书、Telegram、Discord、Slack 或邮箱。它还自带 Web/桌面工作台（手动分析、历史报告、回测、持仓、配置管理）和可多轮追问的策略 Agent，内置均线、缠论、波浪、趋势、热点等 15 种策略，可通过 GitHub Actions、Docker 或本地定时任务无人值守运行。相比常见的单市场行情看板，它的差异点在于覆盖 A股、港股、美股、日股、韩股、台股和 ETF，并把「聚合数据—分析—展示—推送」串成一条流水线。需要注意，分析质量实际取决于你接入的数据源和模型，README 未给出可验证的准确率或收益数据。",
+  "one_liner": "用 LLM 每天自动分析多市场自选股，把决策仪表盘推送到你的群聊。",
+  "summary": "这是一个 Python 写的多市场股票智能分析系统，覆盖 A股、港股、美股、日股、韩股、台股和 ETF，把行情、K 线、技术指标、新闻、公告、基本面聚合成一份「决策仪表盘」，包含结论、评分、买卖点位、风险警报和操作清单。它通过 GitHub Actions、Docker 或本地定时任务触发，跑完自动推送到企业微信、飞书、Telegram、Discord、Slack 或邮箱，并提供 Web/桌面工作台做手动分析和历史报告回看。相比单纯的行情脚本，它的差异点在于内置 15 种策略的多轮「Agent 策略问股」，以及图片 / CSV / Excel / 剪贴板导入持仓后自动补全代码的交互链路。整体定位是「零成本定时跑」的自选股日报工具，而不是交易执行系统。",
   "audience": [
-   "同时盯 A股、港股、美股等多个市场自选股，但没时间每天逐个复盘的个人投资者。",
-   "需要每天早上给客户或社群输出一份结构化行情简报的投顾、财经内容运营。",
-   "想把 LLM Agent 落到金融垂直场景，参考其多源数据聚合 + 多轮策略问股设计的工程师。",
-   "想找一个现成的 FastAPI + 定时任务 + 多渠道推送骨架，改造为自己内部工具的后端开发。",
-   "关注个人理财自动化、希望把持仓和自选股分析结果沉淀成历史报告做对比的研究型用户。"
+   "有自选股清单、想每天开盘前拿到一份结构化复盘的个人投资者。",
+   "需要给团队或社群每天发盘前简报的投研人员与财经内容运营。",
+   "想找一个真实 LLM Agent 落地案例来读代码的 Python 后端工程师。",
+   "在评估「AI + 金融数据」产品形态的产品经理。",
+   "手上有持仓表格（Excel/CSV）希望批量分析而不是逐只查询的人。"
   ],
   "use_cases": [
-   "每天开盘前让系统跑一遍自选股，把带评分、买卖点位和风险提示的决策仪表盘推到企业微信或 Telegram 群里。",
-   "针对单只股票用内置的均线、缠论、波浪或事件策略做多轮追问，快速拿到不同视角的技术面解读。",
-   "把券商导出的 CSV/Excel 持仓或持仓截图导入系统，结合历史报告做定期持仓复盘。",
-   "用手动分析 + 回测功能，把某个策略在历史区间上跑一遍，先看结果再决定是否纳入每日推送。",
-   "以 FastAPI 服务方式部署，把分析结果通过 API 接到自己已有的看板或内部系统里做二次展示。"
+   "每天定时跑一次自选股分析，把决策仪表盘推送到飞书或 Telegram 群，替代手工整理盘前简报。",
+   "对单只股票用内置的均线、缠论、波浪等策略做多轮追问，快速拿到不同视角的技术面判断。",
+   "把券商导出的持仓 Excel 或截图直接导入，让系统补全代码后一次性生成全部持仓的分析报告。",
+   "用工作台里的回测和历史报告功能，回看某只票过去一段时间的系统结论是否站得住。",
+   "通过它自带的 FastAPI 服务把分析能力接进内部工具或自己的看板。"
   ],
   "adoption_steps": [
-   "先读 docs/market-support.md 和 docs/full-guide.md，确认你要覆盖的市场对应哪些数据源、能力边界在哪，再确定自选股清单。",
-   "用 Docker 拉取 zhulinsen/daily_stock_analysis 镜像在本地起服务，配置一个 LLM 供应商（如 DeepSeek、OpenAI 兼容接口或本地 Ollama）和一个行情数据源 key，先用两三只股票跑一次手动分析验证输出。",
-   "确认输出格式和质量符合预期后，再接入 GitHub Actions 或本地定时任务，并只先开通一个推送渠道（例如 Telegram 或企业微信）观察几天的每日仪表盘，稳定后再加其他渠道。"
+   "先按 README 的「快速开始」用 Docker 镜像 zhulinsen/daily_stock_analysis 或本地 Python 环境把服务跑起来，不做任何配置，先确认工作台能打开。",
+   "在工作台里配置自选股清单和 AI 模型的 API Key（README 的技术栈表格列出了 Modelflare、x6.ai 等接入方式），先手动触发一次分析，逐项核对行情和新闻数据是否与官方来源一致。",
+   "确认数据无误后，再配置 GitHub Actions 或 Docker 定时任务，并只开一个推送渠道（如飞书 webhook）做小范围验证，稳定几天后再加其他渠道。"
   ],
   "build_ideas": [
-   "针对文档中支持较弱的市场补充数据源适配器，把行情、公告、新闻的抓取逻辑做成可插拔模块。",
-   "新增推送通道，例如钉钉机器人、飞书卡片消息或微信服务号模板消息，复用现有推送抽象层。",
-   "把 15 种内置策略改造成可注册的策略插件，并让每种策略能独立配置参数与回测区间。",
-   "在决策报告之上加一层事实校验：把 LLM 给出的结论和催化因素绑定到具体新闻或公告原文链接，减少无出处断言。",
-   "用 Ollama 等本地模型做完全离线部署，包装成数据不出内网的私有化版本，供对数据合规敏感的团队使用。"
+   "用它暴露的 FastAPI 接口对接自己的持仓账本或风控规则，做成「触发条件才推送」而非每天全量推送。",
+   "按现有推送模块的结构新增自定义渠道，比如内部 IM 或自建 webhook 网关。",
+   "基于它的 Agent 策略框架补充自己的选股策略，把 15 种内置策略扩展到自己的方法论。",
+   "把每日报告落库成结构化时间序列，做长期的「AI 结论 vs 实际走势」对照统计。",
+   "替换模型层为本地部署模型或私有网关，用于不方便把持仓数据发给公网 API 的场景。"
   ],
   "risks": [
-   "投资决策风险：系统输出的是 LLM 生成的买卖点位和评分，README 未提供任何可验证的准确率、收益回测或风险披露，不能直接当作投资建议使用。",
-   "推荐中立性：README 中行情数据源标注为「TickPlus（推荐）」并附注册返利参数，同时有多个带专属链接的模型服务商赞助位，选型时需自行比价并核实是否适合自己。",
-   "数据源与合规：各市场行情数据通常有再分发限制，且多数数据源需要自行申请 key，能否免费长期使用、可否商用需逐一核对各供应商条款。",
-   "「零成本定时运行」的前提是 GitHub Actions 免费额度加上低价或免费模型额度，私有仓库、高频任务或多市场全量抓取可能超额，实际成本需自己压测确认。",
-   "依赖面较宽：同时耦合多个行情源、多个 AI 供应商和六个推送渠道，任一上游 API 变更或限流都可能中断每日任务，需要有人能读懂 Python 代码自行修。",
-   "维护状态证据不足：star 数很高且本期仍在增长，但材料未提供 issue 响应速度、发布节奏和维护者构成，长期可用性无法据此判断；README 挂的 arXiv 链接也没有论文内容可供评估方法学。"
+   "行情、新闻和 AI 推理都依赖外部第三方服务，README 里技术栈与数据源表格在节选中被截断，同时赞助商是第三方 API 中转商，实际调用成本和配额上限需要自己先算清楚。",
+   "README 引用的 arXiv 链接编号（2608.26990）在格式和日期上无法从材料中核实，如果关注其方法论依据，需要自行确认是否存在对应论文。",
+   "文档明确区分了「市场支持边界」，说明不同市场的数据源和能力并不对等，多市场覆盖不等于每个市场的字段都完整，选市场前应先读 docs/market-support.md。",
+   "项目本期新增 4548 star、累计 7.2 万，属于短期爆发式增长，材料中没有 issue 响应速度、发版节奏等信息，采用前应自行查看最近提交和未关闭 issue。",
+   "输出是投资决策类内容，材料中看不到风险提示与免责声明的具体条款，用于对外发布或作为决策依据前需要自行评估合规责任。"
   ],
   "tokens": {
-   "prompt_tokens": 1794,
-   "completion_tokens": 2576
+   "prompt_tokens": 1788,
+   "completion_tokens": 1862
   },
-  "model_resolved": "deepseek-v4.1-flash-1017",
-  "hash": "e29afb9ba2f5a2912ea14271411af6c2a059b912cd66338cd73b00dc619df4bb",
+  "model_resolved": "deepseek-flash",
+  "hash": "193f283e947fe5d82250048e2923b1d1501c0cfed8869af9abefc07c4c47a9cf",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T10:21:58+08:00",
+  "generated_at": "2026-11-18T08:01:29+08:00",
   "readme_used": true,
   "source_description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
   "language": "Python",
@@ -1373,6 +1372,56 @@
   "language": "JavaScript",
   "url": "https://github.com/cloudflare/security-audit-skill"
  },
+ "cursor/plugins": {
+  "one_liner": "把 Cursor 的 agent 能力拆成可挑选的插件，按需装配工作流。",
+  "summary": "这是 Cursor 官方维护的插件集合仓库，每个插件是仓库根目录下的独立目录，各自带一个 `.cursor-plugin/plugin.json` 清单来描述自身。从 README 的表格看，插件覆盖教学、持续学习记忆、团队 CI/评审流程、分支安全审计、PR 评审画布、文档画布、并行云端 agent 编排、CLI 面向 agent 的设计规范等场景，作者既有 Cursor 官方也有个人贡献者。它和「一个大而全的 AI 编码工具」的区别在于粒度：你只挑与自己痛点匹配的那一个插件装上，而不是接受整套工作流。另外仓库自带 `create-plugin`，用来脚手架化和校验新插件，说明它同时想做成一个插件生态的入口。",
+  "audience": [
+   "已经在用 Cursor、想把团队约定固化成可复用工作流的 tech lead。",
+   "负责代码评审与安全审计、希望把审查动作部分自动化的后端或平台工程师。",
+   "要给 coding agent 设计命令行工具、需要参考 agent 友好 CLI 规范的开发者。",
+   "想给自己团队写内部 Cursor 插件、需要现成脚手架和清单格式参考的人。",
+   "评估 AI 编码工具落地方式、需要判断插件化路线是否值得投入的工程管理者。"
+  ],
+  "use_cases": [
+   "用 `thermos` 对一条分支做深度安全与正确性审计，并输出偏严格的代码质量评分。",
+   "用 `pr-review-canvas` 把 PR diff 按重要性分组渲染成评审画布，减少逐文件翻阅。",
+   "用 `orchestrate` 把一个大任务拆给 planner、worker、verifier 等并行云端 agent 并做结构化交接。",
+   "用 `cli-for-agent` 的规范检查自家 CLI 的参数、help 示例、错误输出、幂等与 dry-run 是否对 agent 友好。",
+   "用 `continual-learning` 把会话记录增量沉淀成 AGENTS.md 里的高信号条目，避免每次重新交代背景。",
+   "用 `create-plugin` 脚手架一个新的内部插件并校验其 manifest 是否合法。"
+  ],
+  "adoption_steps": [
+   "先克隆仓库并在 Cursor 里打开根目录，对照 README 插件表挑一个最贴近当前痛点的目录（例如 `pr-review-canvas`），读它的 `.cursor-plugin/plugin.json` 和目录内说明确认用法与依赖。",
+   "在 Cursor 的插件市场按表格里的 `name` 搜索安装该插件，选一个非关键分支或小 PR 完整跑一遍流程，记录实际产出质量与耗时是否可接受。",
+   "验证有效后用 `create-plugin` 起一个内部插件空目录，把团队已有的评审或发布规范写成 manifest 加技能描述，先在小组内加载试用再推广。"
+  ],
+  "build_ideas": [
+   "基于 `create-plugin` 做一套公司内部插件模板，预置统一的 manifest 字段、目录结构和提交检查。",
+   "在 `cursor-team-kit` 的 CI、评审、发布流程之上叠加公司自有的分支策略与发布门禁，形成内部版团队套件。",
+   "用 `cursor-sdk` 写脚本，把插件的产出（评审结果、审计报告）回写到内部工单或 IM 系统。",
+   "参考 `origin-apps` 里「先拉取 live spec 再按凭证、scope、webhook、分页、错误规则实现」的思路，把现有 GitHub App 迁移成 Origin 应用。",
+   "给 `pr-review-canvas` 增加自定义分组规则，按内部模块归属或风险等级而不是通用重要性来排列 diff。"
+  ],
+  "risks": [
+   "README 节选未体现开源许可证信息，商用或二次分发前必须先在仓库中确认 LICENSE。",
+   "插件作者混杂，`continual-learning`、`cursor-team-kit`、`cli-for-agent`、`pstack`、`dyl-stack` 等由个人贡献者维护，更新节奏和支持力度与官方插件不一致。",
+   "材料未说明各插件要求的 Cursor 版本与 manifest 兼容范围，安装后若 `.cursor-plugin/plugin.json` 不被识别将无法加载。",
+   "插件多为工作流与提示编排，效果高度依赖所用模型和上下文，README 里的描述属于市场文案级别，缺少可复现的效果评测，采用前应自行做小样本验证。",
+   "`thermos`、`ralph-loop`、`orchestrate` 这类涉及自我循环或并行云端 agent 的插件会放大调用次数，采用前需确认额度与计费影响。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1199,
+   "completion_tokens": 2124
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "d445692d3eeab870b914de0dc23b34424125a28f1c8ef169a7b14431dc2ba7e3",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-18T08:01:17+08:00",
+  "readme_used": true,
+  "source_description": "Cursor plugin specification and official plugins",
+  "language": "TypeScript",
+  "url": "https://github.com/cursor/plugins"
+ },
  "debpalash/VoiceStudio": {
   "one_liner": "在本机跑声音克隆、配音、转写与有声书，替代 ElevenLabs 的开源方案。",
   "summary": "VoiceStudio 是一个用 Python 写的本地化 AI 语音工作台，把声音克隆、声音设计、视频配音、口述转文字、转写和有声书旁白放在同一个工具里，README 声称支持 646 种语言，并可运行在笔记本、台式机、服务器乃至手机和平板上。它的卖点是「全本地」，即不把音频上传到云端，对应 ElevenLabs 那类 SaaS 语音服务的隐私与订阅成本问题。除开源仓库外，项目还有官网、Release 下载页，以及 VoiceStudio Pro 和 VoiceStudio Cloud 两个商业化入口。README 提供 20 种语言的翻译版本和 Discord 社区，并列出战略赞助商，说明它已有一定的社区与商业运作。材料没有给出模型权重、硬件门槛和基准测试数据，因此「646 语言」和「手机也能跑」的实际效果还需要自行验证。",
@@ -1519,6 +1568,55 @@
   "source_description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
   "language": "Python",
   "url": "https://github.com/elementalsouls/Claude-BugHunter"
+ },
+ "getarcaneapp/arcane": {
+  "one_liner": "用浏览器管理 Docker 的现代化面板，让不熟命令行的人也能管容器。",
+  "summary": "Arcane 是一个用 Go 编写的 Docker 管理工具，自我定位是「为所有人设计的现代 Docker 管理」；从 README 里的浅色、深色仪表盘截图看，它提供的是 Web 控制台形态。当前 main 分支已经是 v3，2.x 留在 release/2.x.x 分支维护，说明项目正在做大版本演进。工程侧信号比较明确：发布公开的 SBOM、接入 Snyk 扫描、用 Crowdin 做多语言翻译，Go 包路径为 getarcane.dev/arcane/v3。README 本身很薄，安装与配置全部指向 getarcane.app 官方文档站；它相对同类 Docker 管理面板的具体差异，材料里没有对比说明，证据不足。",
+  "audience": [
+   "家里或小团队有多台 Docker 主机、想用浏览器替代 docker 命令行的自建服务爱好者。",
+   "需要给团队一个容器可视化入口、但不想引入重型平台的后端与 DevOps 工程师。",
+   "做 Go 二次开发、想把容器管理能力嵌进自有系统的开发者（有 getarcane.dev/arcane/v3 这个 module 可用）。",
+   "需要非英语界面的团队，可通过 Crowdin 参与或维护本地化翻译。",
+   "关注供应链透明度的安全与合规评审人员，可直接查公开的 SBOM。"
+  ],
+  "use_cases": [
+   "在仪表盘里完成日常 Docker 操作，减少在终端反复敲 docker 命令的时间。",
+   "把多台机器上的容器状态集中到一个 Web 入口查看和处理。",
+   "为不熟悉命令行的同事开一个只做查看和简单操作的容器管理入口。",
+   "通过 Crowdin 项目维护团队自己的中文或其他语种界面翻译。",
+   "把 getarcane.dev/arcane/v3 作为依赖引入自建工具，复用其容器管理能力。"
+  ],
+  "adoption_steps": [
+   "先访问 https://getarcane.app 的文档站，按其中的 setup 指引在一台测试机上部署一份，不要直接上生产环境。",
+   "打开 https://getarcane.app/sbom 核对依赖清单，并到仓库 LICENSE 文件确认实际许可类型，与团队合规要求对齐后再决定是否采用。",
+   "新部署直接评估 main 分支的 v3；已有 2.x 部署则先读 v3 的迁移说明，再决定升级路径，不要跨版本硬升。"
+  ],
+  "build_ideas": [
+   "基于 getarcane.dev/arcane/v3 这个 Go module 写内部 CLI 或流水线步骤，把容器部署动作接到现有 CI 里。",
+   "在 Arcane 之上补企业内部需要的统一登录与操作审计（需先确认它当前是否已提供）。",
+   "基于公开 SBOM 做一个内部合规检查服务，把依赖清单纳入发布前扫描流程。",
+   "围绕 Crowdin 建立团队术语表，维护一份自己的本地化分支并持续跟进上游。",
+   "把容器状态与自有监控告警打通，做告警触发的自动重启或回滚脚本。"
+  ],
+  "risks": [
+   "main 已是 v3、2.x 单独留分支，说明正处大版本迁移期，配置与接口可能变动，升级有迁移成本。",
+   "README 没给具体安装命令，也没写明许可类型，商用前必须去文档站和 LICENSE 文件确认。",
+   "功能请求已迁到 Discussions、issue 只收 bug，非 bug 需求没有排期承诺，别把路线图当成既定计划。",
+   "本期 star 增长较快，但材料看不出维护者规模与发版节奏，长期维护能力证据不足。",
+   "管理面板本身需要 Docker 守护进程权限，暴露出去就是高价值攻击面；公开 SBOM 只代表依赖透明，不等于通过安全审计。"
+  ],
+  "tokens": {
+   "prompt_tokens": 954,
+   "completion_tokens": 2332
+  },
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "746820b234cbfb6b234f4adc5da524855b3a2f16c67efe8a1c4a260064d153d4",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-18T08:01:24+08:00",
+  "readme_used": true,
+  "source_description": "Modern Docker Management, Designed for Everyone",
+  "language": "Go",
+  "url": "https://github.com/getarcaneapp/arcane"
  },
  "ggml-org/ggml": {
   "one_liner": "零依赖的 C/C++ 张量库，把量化推理直接嵌进任何程序",
@@ -1909,6 +2007,55 @@
   "language": "Python",
   "url": "https://github.com/homeassistant-ai/ha-mcp"
  },
+ "jingyaogong/minimind": {
+  "one_liner": "花 3 块钱、2 小时从零训出 64M 小语言模型，把 LLM 全流程拆成能读懂的代码。",
+  "summary": "MiniMind 是一个用 PyTorch 原生实现、从零复现大语言模型全流程的开源项目：主线模型约 64M 参数，结构对齐 Qwen3 / Qwen3-MoE 生态，覆盖 Tokenizer 训练、Pretrain、SFT、LoRA、DPO、PPO/GRPO/CISPO、Tool Use、Agentic RL、自适应思考和蒸馏。它的卖点在于把 transformers / trl / peft 里被封装掉的部分重新摊开写成可读代码，同时开源了配套数据集，并宣称 SFT 阶段单张 3090 跑 1 epoch 约 2 小时、对应租金约 3 元。相比常见的 LoRA 微调教程，它强调从零训练而不是只做推理或微调，定位更接近教学与可复现实验。另有 MiniMind-V（视觉）、MiniMind-O（Omni 多模态）、MiniMind-dLM（扩散语言模型）、MiniMind-Linear（线性模型）等扩展分支。",
+  "audience": [
+   "想搞懂 LLM 内部机制、但被 transformers 高层抽象挡住的后端或算法工程师。",
+   "需要给团队或学生做 LLM 原理课、要求学员亲手跑通训练链路的高校教师与培训讲师。",
+   "手上只有一张消费级或租用 GPU、想低成本做算法验证的个人开发者。",
+   "想对比 DPO / PPO / GRPO / CISPO 等对齐算法在同等小模型上行为差异的研究者。",
+   "需要评估「自研极小模型是否可行」的技术负责人或产品经理。"
+  ],
+  "use_cases": [
+   "在单张 3090 或同级显卡上跑通 SFT 一个 epoch，实测训练耗时与显存占用，判断自己的硬件是否够用。",
+   "把 Pretrain → SFT → DPO 的代码逐段拆开做代码走读，作为内部 LLM 原理分享会的教材。",
+   "用项目自带的数据清洗与蒸馏脚本处理自有语料，产出一份可复现的小模型训练数据集。",
+   "在同一套代码上切换 PPO / GRPO / CISPO，对比不同强化学习算法在极小模型上的收敛表现。",
+   "训练出的权重导出后接 llama.cpp、ollama 或 vllm，验证小模型在本地推理引擎上的部署链路。"
+  ],
+  "adoption_steps": [
+   "先把仓库 clone 到本地，按 README 安装 PyTorch 等依赖，并用官方在线体验或已有权重跑一次推理，确认环境与输出正常。",
+   "在单卡上照 README 的 SFT 配置跑最小规模训练（先跑少量 step 而非完整 epoch），记录显存峰值与耗时，验证「2 小时 / 3 块钱」在你的卡上是否成立。",
+   "跑通后再按需扩展到 Pretrain 或 DPO / GRPO 阶段，并确认多卡 DDP / DeepSpeed 部分的文档与代码是否完整、是否与你的集群环境匹配。"
+  ],
+  "build_ideas": [
+   "基于它从零实现的 Tokenizer 与 `<tool_call>` / `<think>` 模板，构造自己的 Agent 工具调用数据集并训练小模型做意图路由。",
+   "把 Tool Use 与 Agentic RL 流程抽出来，接到公司内部业务工具上，做一个可完全本地部署、不依赖外部 API 的轻量 Agent。",
+   "以 MiniMind 为教师模型的对照基线，搭建一条面向垂直领域的蒸馏流水线，输出领域专用的几十兆级小模型。",
+   "在 Dense 与 MoE 两套结构之间做消融实验，为团队内部的结构选型提供可复现数据。",
+   "把它改造成一门带自动评测的课程或实验平台，学员提交训练脚本后自动跑分对比。"
+  ],
+  "risks": [
+   "64M 参数模型的能力上限很低，仅适合教学、流程验证和极轻量任务，不要把它当作可上生产的效果型模型。",
+   "宣传中的「2 小时 / 3 块钱」明确只对应 SFT 阶段单张 3090 跑 1 个 epoch，不包含预训练与数据准备成本，预算评估时容易误算。",
+   "项目同时维护 V、O、dLM、Linear 等多个分支且更新频繁，主线 README 与各分支文档可能存在不同步，落地前需按你选定的分支实测。",
+   "核心算法刻意不用 transformers / trl / peft 的高层接口，与主流生态的权重格式、训练脚本互操作性需要自行验证，迁移到已有流水线有适配成本。",
+   "代码以 Apache 2.0 开源，但训练数据涉及蒸馏与网络收集，数据集的实际来源与商用许可需在使用前单独核对。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1860,
+   "completion_tokens": 1681
+  },
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "41323e95b9d8e20272b3982f6b495adb3ce6e3476c346d2e43ec6b9fdbda5f8b",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-18T08:01:16+08:00",
+  "readme_used": true,
+  "source_description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+  "language": "Python",
+  "url": "https://github.com/jingyaogong/minimind"
+ },
  "kajisho5/ffmpeg-skill": {
   "one_liner": "给你的编码 agent 装上本地 FFmpeg 剪辑能力，不联网、不用 API key。",
   "summary": "ffmpeg-skill 是一个 Agent Skill：它把 42 个封装好的 FFmpeg/ffprobe 工具交给 Claude Code、Cursor、Codex 等能读 SKILL.md 的 agent，让 agent 按「probe → 尽量无损编辑 → 检查 → 校验」的固定流程剪视频。功能覆盖剪切、拼接、去静音、按比例与时长的适配、字幕与卡拉 OK、叠加与动效、HDR→SDR 与 LUT、音频清理与响度、多机位、交付检查、整片工程渲染和批量目录处理，全部在本地运行，只依赖 ffmpeg 与 python3。它同时提供 MCP server，默认 tools/list 只暴露 12 个核心工具以控制客户端上下文，设置 FFMPEG_SKILL_MCP_FULL=1 后列出全部 42 个，两种模式下都能通过 tools/call 按名调用任意工具；整套工具还有一份机器可读的 contract 描述。相比自己写 FFmpeg 脚本，它的新意在于「给 agent 用的工具契约 + 自校验流程」，并且 README 中的每个前后对比 demo 都能用 demos/build.py 重新生成，素材多为 FFmpeg 自带测试源。",
@@ -2199,49 +2346,49 @@
   "url": "https://github.com/morluto/rea"
  },
  "mvanhorn/last30days-skill": {
-  "one_liner": "跨 Reddit、X、YouTube 等平台按真实点赞和投注热度打分，再由 AI 汇总成一份调研简报。",
-  "summary": "这是一个面向 AI agent 的检索技能包：它并行搜索 Reddit、X、YouTube、Hacker News、Polymarket 和网页，按 upvote、like、engagement 和真实下注金额排序，最后由一个 agent 裁判合成一份带出处的摘要。它的做法是绕开各家封闭的 API，让用户自带 key 和浏览器 session，把十几个互不相通的平台桥接给同一个 agent 使用，输出的是具体的人、帖子和赔率，而不是编辑筛选过的页面。与 Google 或单一聊天机器人相比，它的差异点在于覆盖面和评分信号：它同时搜索多个平台，并用真实互动数据给结果排序。安装方式有两种：Claude Code 插件市场，或者通过 npx skills 装进 50 多个 Agent Skills 宿主；Reddit、HN、Polymarket、GitHub 零配置即可用，其余平台需要跑一次 setup wizard。",
+  "one_liner": "让 AI agent 跨 Reddit、X、YouTube、HN 等平台检索并汇总某话题最近的真实讨论",
+  "summary": "这是一个给 AI agent 用的「搜索技能」：它并行查询 Reddit、X、YouTube、TikTok、Hacker News、Polymarket、arXiv、Techmeme 等平台，再按点赞、投票、赔率等真实互动信号打分，由一个 AI judge 合成一份带出处的简报。它的卖点不是自建索引，而是把十几个各自有 API 和鉴权壁垒的封闭平台，通过你自己的 API key 和浏览器会话，接到同一个 agent 里，从而绕开「Google 只聚合编辑、ChatGPT 只有 Reddit、Gemini 只有 YouTube」的割裂。安装方式很轻：Claude Code 走 plugin marketplace，其他 50+ Agent Skills 宿主用 npx skills add。Reddit、HN、Polymarket、GitHub 以及公司相关的专利与招聘页零配置可用，X、YouTube、TikTok、arXiv 等需要跑一次设置向导解锁。相对同类工具的新意在于「跨平台 + 按真实互动排序 + agent 综合」这三件事被打包成一个可安装的 skill，而不是一个新搜索引擎。",
   "audience": [
-   "需要在会前或商务谈判前快速背调某个人、某家公司近一个月动态的销售、BD 和投资人员。",
-   "做技术选型、想看看 Reddit 和 HN 上工程师对某个库真实吐槽的后端和基础架构工程师。",
-   "需要判断某个事件市场预期、会去看 Polymarket 赔率的从业者和内容创作者。",
-   "正在搭建自己的 agent 工具链、想接入现成检索能力的 AI 应用开发者。",
-   "要产出周期性行业简报、但不想手动翻十个平台的产品经理和市场研究岗。"
+   "需要在见客户或候选人前快速摸清对方近一个月公开动态的销售、BD 和招聘人员。",
+   "做技术选型、要在拍板前收集真实用户吐槽与踩坑记录的工程师和架构师。",
+   "做选题和竞品追踪的内容运营与产品经理，需要跨平台看同一话题的讨论热度。",
+   "用 Polymarket 赔率做事件预期判断的投研或分析岗位。",
+   "已经在用 Claude Code、Cursor、Codex 等 Agent Skills 宿主、想把外部检索能力接进工作流的开发者。"
   ],
   "use_cases": [
-   "明天要见某位创始人或候选人时，运行 /last30days 加人名，拿到他本月在 X、Reddit、GitHub 上的实际动作和争议点。",
-   "团队要引入一个新框架前，用它在 Reddit 和 HN 上搜近 30 天讨论，按点赞数挑出真实用户反馈和迁移踩坑贴。",
-   "追踪某个政策或产品发布的市场预期，把 Polymarket 赔率和 X 上的讨论放在同一份简报里对照。",
-   "调研某款工具的口碑时，拉取 YouTube 转录和 TikTok 互动数据，提炼出视频里反复提到的优缺点。",
-   "把每周固定话题的检索结果整理成内部周报，替代人工逐个平台翻热帖。"
+   "见面前跑一次 /last30days <人名>，拿到对方这个月的项目动向、发言和代码提交情况，而不是几年前的 LinkedIn。",
+   "在引入某个新框架前检索 Reddit 与 HN 上最近 30 天的抱怨帖和技术讨论，判断真实落地坑点。",
+   "对比同一话题在 X 和 Reddit 上的口碑差异，识别哪个平台在吹、哪个平台在骂。",
+   "把 Polymarket 的赔率变化和 YouTube 转写、新闻报道放在一起，形成某个事件的预期简报。",
+   "定期为公司名跑一次，汇总专利 filings、招聘页面和技术社区讨论，作为竞品情报输入。"
   ],
   "adoption_steps": [
-   "在 Claude Code 中执行 /plugin marketplace add mvanhorn/last30days-skill 和 /plugin install last30days；如果用的是 Codex、Cursor、Copilot 等宿主，改跑 npx skills add mvanhorn/last30days-skill -g。",
-   "先用零配置的 Reddit、HN、Polymarket、GitHub 跑一次真实话题（例如一个你熟悉的项目名），核对输出质量和引用是否准确，再决定是否投入配置成本。",
-   "有需要再运行一次 setup wizard 解锁 X、YouTube、TikTok、arXiv、Techmeme，并以 skills/last30days/SKILL.md 为准核对最新命令和参数，因为 README 明确说该文件才是命令与设置的 source of truth。"
+   "在 Claude Code 中依次执行 /plugin marketplace add mvanhorn/last30days-skill 和 /plugin install last30days；非 Claude Code 宿主改用 npx skills add mvanhorn/last30days-skill -g 全局安装。",
+   "先不配置任何 key，用它跑一个你自己非常熟悉的话题，检查召回来源和摘要是否准确，确认质量后再进入设置向导配置 X、YouTube、TikTok 等凭据。",
+   "打开 skills/last30days/SKILL.md 核对当前命令、配置项和依赖，把它作为版本依据，再决定是否写进团队的标准调研流程。"
   ],
   "build_ideas": [
-   "把它的输出接进内部知识库或周报系统，做成定时任务，每天或每周自动归档某个话题的跨平台热度变化。",
-   "针对垂直场景（竞品监控、投资标的跟踪）沉淀固定的查询模板和打分权重，把通用的 agent 裁判调成团队自己的判断口径。",
-   "把评分层替换或补充成公司自有信号源，例如内部工单、Slack 讨论、客服反馈，与公开平台的点赞数据合并排序。",
-   "封装成一个 MCP server 或内部 API，让其他 agent 工作流（写文案、做销售简报）直接调用它的检索结果。",
-   "基于它自带 key 的多平台接入层，抽出一个只做「搜索 + 打分」的库，复用到自己的舆情或线索挖掘产品里。"
+   "把 /last30days 的输出接进内部知识库或飞书/Slack 机器人，做成定期的行业或竞品情报推送。",
+   "针对垂直领域定制来源白名单和打分权重，例如给技术选型场景提高 HN 与 GitHub 权重、降低 TikTok 权重。",
+   "封装成 CI 或定时任务里的追踪器，对公司名、产品名做每日或每周增量对比并生成 diff 报告。",
+   "基于 SKILL.md 派生一个私有分支，接入公司内部数据源（工单、内部论坛、Slack 归档），让 agent 同时检索内外网信号。",
+   "把 Polymarket 赔率变化做成阈值触发器，赔率异动时自动触发一次跨平台检索并生成事件预警。"
   ],
   "risks": [
-   "零配置只覆盖 Reddit、HN、Polymarket、GitHub，X、YouTube、TikTok 等必须自带 API key 或浏览器 session，凭证保管和平台条款合规需要先自查。",
-   "它依赖 Reddit、X、YouTube、Polymarket 等第三方平台自有 API 和认证方式，任何一家改接口或收紧权限都可能导致对应数据源失效。",
-   "README 只跟踪 v4 流水线且声明 SKILL.md 才是命令与设置的权威来源，说明版本迭代快、文档可能不同步，落地时要按代码和 SKILL.md 核对而非照抄 README。",
-   "排序依据是 upvote、like、下注金额等热度信号，高分不等于事实正确，涉及人物评价或商业判断时仍需回看原始帖子核实。",
-   "材料中未提及许可证与依赖清单，商用前需要到仓库确认 license 类型以及它对宿主环境（Claude Code 插件市场、agentskills.io 生态）的绑定程度。"
+   "材料中没有给出开源许可证信息，商用或二次分发前必须自行到仓库确认 License。",
+   "X、YouTube、TikTok 等平台依赖你自带的 API key 和浏览器登录态，可能违反平台服务条款，并存在账号被限流或封禁的风险。",
+   "跨平台抓取依赖各平台 API 与页面结构，平台一旦改动就会失效，维护成本落在使用者自己身上。",
+   "排序基于 upvote、like 和赔率，天然偏向话题热度而非事实正确性，高互动内容也可能是营销或错误信息。",
+   "它绑定 Claude Code 或其他 Agent Skills 宿主，更换宿主或宿主 skill 规范变化时存在迁移成本，README 与 SKILL.md 也可能出现文档漂移。"
   ],
   "tokens": {
-   "prompt_tokens": 1281,
-   "completion_tokens": 1802
+   "prompt_tokens": 1286,
+   "completion_tokens": 1797
   },
   "model_resolved": "deepseek-flash",
-  "hash": "d7b5681d0f0bf696dc86fc09777bf0c2039e5ed3fd56d713dbd815d725f5b757",
+  "hash": "740470f91fa61dd14ae7624a818858db11dbe8d53d9a7160cb0542a83e189aed",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-17T08:01:19+08:00",
+  "generated_at": "2026-11-18T08:01:14+08:00",
   "readme_used": true,
   "source_description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
   "language": "Python",
@@ -2342,6 +2489,56 @@
   "source_description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
   "language": "Shell",
   "url": "https://github.com/nvm-sh/nvm"
+ },
+ "obra/superpowers": {
+  "one_liner": "给编码 agent 装上一套先问清需求、再出计划、再分工实现的开发方法论。",
+  "summary": "这是一套面向编码 agent 的软件开发方法论，由一组可组合的 skills 加初始指令构成，让 agent 自动触发这些技能而无须你手动调用。它的流程是：agent 先不写代码，而是追问你真正要做什么，把规格一段段挤出来给你确认；随后产出一份细到「没品味、没上下文、不爱测试的初级工程师」也能照做的实现计划，强调真正的 red/green TDD、YAGNI 和 DRY；你说「go」之后进入 subagent 驱动的开发，逐任务实现并自检复核，常见可自主工作数小时不偏离计划。新意在于它把方法论写成 agent 可执行的技能包，并适配了 Claude Code、Codex CLI、Cursor、Gemini CLI、GitHub Copilot CLI 等十余种 harness，而不是绑定单一工具。实现以 Shell 为主，安装需按 harness 分别进行。",
+  "audience": [
+   "日常已经在用 Claude Code、Codex CLI 或 Cursor 写代码，想让 agent 别一上来就乱写代码的工程师。",
+   "需要把 agent 产出纳入团队评审流程、希望过程可追溯到规格与计划的技术负责人。",
+   "在多种编码 harness 之间切换，想统一同一套工作方式的平台或效率工具维护者。",
+   "用 agent 承接交付型开发任务、需要每个任务都有测试与复核记录的自由职业者或小团队。",
+   "对 agent 自主长时执行有兴趣，想观察 subagent 编排实际效果的研究型开发者。"
+  ],
+  "use_cases": [
+   "接到一个模糊需求时，先让 agent 追问并输出一段段可读的规格，签字确认后再进入编码。",
+   "对已有代码库开发新功能时，要求 agent 按 red/green TDD 先写失败测试再实现，并遵循 YAGNI 与 DRY。",
+   "把已批准的实现计划拆成任务，交给 subagent 逐个执行并交叉检查，实现数小时连续推进。",
+   "给新入职工程师或新接入的 agent 一套统一的分步开发流程模板，减少「直接开写」的随意性。",
+   "在 Claude Code、Codex CLI、Gemini CLI 等多个 harness 上装同一套技能，保持工作方式一致。"
+  ],
+  "adoption_steps": [
+   "先只在一个 harness 上安装：Claude Code 可执行 `/plugin install superpowers@claude-plugins-official`，其他 harness 按 README 对应章节的命令安装，用多个就分别各装一次。",
+   "拿一个低风险的小需求完整跑一遍流程，重点观察它追问出的规格是否准确、实现计划是否可执行，以及耗时和 token 开销。",
+   "团队推广前先读 README 的「When Something Goes Wrong」「Philosophy」「Visual companion telemetry」章节，确认偏离计划的处理方式与遥测行为，再决定是否在团队内统一使用。"
+  ],
+  "build_ideas": [
+   "基于它的 skills 机制编写团队自有技能包，把内部编码规范、评审清单和发布流程固化进去。",
+   "为公司自研 agent 或内部 harness 写适配层，让这套技能在非公开支持的宿主上也能触发。",
+   "把 agent 产出的规格与实现计划自动归档到工单或 PR 描述里，形成可审计的开发过程记录。",
+   "围绕 subagent 驱动的开发过程做可观测性工具，统计每个任务的执行时长、返工次数和成本。",
+   "构建技能质量的回归评测集，用固定需求批量测试不同版本的技能包对产出质量的影响。"
+  ],
+  "risks": [
+   "README 目录里有 License 章节但节选未给出具体许可证，商用或二次分发前必须自行确认授权条款。",
+   "安装按 harness 各自一套，同时使用多个 harness 时会出现重复安装与版本不一致的问题，且需为每个 harness 单独更新。",
+   "技能依赖宿主 agent 能自动触发，换到不同 harness 后触发行为和效果可能不一致，材料未给出各 harness 的等价性说明。",
+   "README 存在 Visual companion telemetry 章节，说明可视化伴随组件涉及遥测，采集范围与关闭方式需自行阅读确认。",
+   "存在商业服务（sales@primeradiant.com）与商业支持，开源部分与商业功能的边界在节选中未说明，企业采用前需确认。",
+   "方法论鼓励 agent 自主运行数小时，这会放大审查成本与调用费用，需要在使用前设定人工检查点和预算上限。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1219,
+   "completion_tokens": 2050
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "38c4f0d943baf9c5b278128b83f12b69452e595d4404809942fc66f86fbab774",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-18T08:01:17+08:00",
+  "readme_used": true,
+  "source_description": "An agentic skills framework & software development methodology that works.",
+  "language": "Shell",
+  "url": "https://github.com/obra/superpowers"
  },
  "openai/codex-security": {
   "one_liner": "给仓库做安全扫描，并验证、生成补丁修复漏洞的 CLI 与 SDK",

@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-17T08:00:22+08:00",
+ "generated_at": "2026-11-18T08:00:27+08:00",
  "basis": "所有日/周/月快照里出现过的项目去重并集，按累计 star 总量降序（取最近一次上榜时的值）",
  "sort_key": "stars_total",
- "project_count": 64,
- "index_rows": 100,
- "snapshot_count": 8,
+ "project_count": 68,
+ "index_rows": 115,
+ "snapshot_count": 9,
  "first_date": "2026-11-11",
- "latest_date": "2026-11-17",
+ "latest_date": "2026-11-18",
  "period_counts": {
-  "daily": 5,
+  "daily": 6,
   "weekly": 2,
   "monthly": 1
  },
@@ -64,6 +64,52 @@
    "place": 2
   },
   {
+   "full_name": "obra/superpowers",
+   "url": "https://github.com/obra/superpowers",
+   "description": "An agentic skills framework & software development methodology that works.",
+   "language": "Shell",
+   "stars_total": 319307,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 1917,
+   "appearances": 1,
+   "best_rank": 1,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-18",
+   "last_seen": "2026-11-18",
+   "place": 3
+  },
+  {
+   "full_name": "affaan-m/ECC",
+   "url": "https://github.com/affaan-m/ECC",
+   "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+   "language": "JavaScript",
+   "stars_total": 305482,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 883,
+   "appearances": 1,
+   "best_rank": 6,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-18",
+   "last_seen": "2026-11-18",
+   "place": 4
+  },
+  {
    "full_name": "anthropics/skills",
    "url": "https://github.com/anthropics/skills",
    "description": "Public repository for Agent Skills",
@@ -87,7 +133,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 3
+   "place": 5
   },
   {
    "full_name": "ggml-org/llama.cpp",
@@ -110,7 +156,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 4
+   "place": 6
   },
   {
    "full_name": "nodejs/node",
@@ -133,7 +179,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 5
+   "place": 7
   },
   {
    "full_name": "addyosmani/agent-skills",
@@ -159,7 +205,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 6
+   "place": 8
   },
   {
    "full_name": "thedotmack/claude-mem",
@@ -185,7 +231,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 7
+   "place": 9
   },
   {
    "full_name": "sherlock-project/sherlock",
@@ -211,7 +257,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 8
+   "place": 10
   },
   {
    "full_name": "pbakaus/impeccable",
@@ -234,7 +280,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 9
+   "place": 11
   },
   {
    "full_name": "debpalash/VoiceStudio",
@@ -257,7 +303,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 10
+   "place": 12
   },
   {
    "full_name": "D4Vinci/Scrapling",
@@ -280,7 +326,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 11
+   "place": 13
   },
   {
    "full_name": "NationalSecurityAgency/ghidra",
@@ -303,7 +349,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 12
+   "place": 14
   },
   {
    "full_name": "nvm-sh/nvm",
@@ -326,18 +372,18 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 13
+   "place": 15
   },
   {
    "full_name": "sveltejs/svelte",
    "url": "https://github.com/sveltejs/svelte",
    "description": "web development for the rest of us",
    "language": "JavaScript",
-   "stars_total": 88974,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 115,
-   "appearances": 1,
-   "best_rank": 13,
+   "stars_total": 89582,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 592,
+   "appearances": 2,
+   "best_rank": 12,
    "periods": [
     "daily"
    ],
@@ -345,11 +391,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-17",
-   "last_seen": "2026-11-17",
-   "place": 14
+   "last_seen": "2026-11-18",
+   "place": 16
   },
   {
    "full_name": "heygen-com/hyperframes",
@@ -372,7 +418,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 15
+   "place": 17
   },
   {
    "full_name": "ZhuLinsen/daily_stock_analysis",
@@ -398,7 +444,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-16",
-   "place": 16
+   "place": 18
   },
   {
    "full_name": "cloudflare/security-audit-skill",
@@ -424,7 +470,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 17
+   "place": 19
   },
   {
    "full_name": "Alishahryar1/free-claude-code",
@@ -447,18 +493,18 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 18
+   "place": 20
   },
   {
    "full_name": "mvanhorn/last30days-skill",
    "url": "https://github.com/mvanhorn/last30days-skill",
    "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
    "language": "Python",
-   "stars_total": 68103,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 135,
-   "appearances": 1,
-   "best_rank": 12,
+   "stars_total": 69028,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 831,
+   "appearances": 2,
+   "best_rank": 8,
    "periods": [
     "daily"
    ],
@@ -466,11 +512,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-17",
-   "last_seen": "2026-11-17",
-   "place": 19
+   "last_seen": "2026-11-18",
+   "place": 21
   },
   {
    "full_name": "TheAlgorithms/Java",
@@ -493,7 +539,30 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 20
+   "place": 22
+  },
+  {
+   "full_name": "jingyaogong/minimind",
+   "url": "https://github.com/jingyaogong/minimind",
+   "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+   "language": "Python",
+   "stars_total": 65939,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 192,
+   "appearances": 1,
+   "best_rank": 15,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-18",
+   "last_seen": "2026-11-18",
+   "place": 23
   },
   {
    "full_name": "HKUDS/DeepTutor",
@@ -516,7 +585,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 21
+   "place": 24
   },
   {
    "full_name": "ChromeDevTools/chrome-devtools-mcp",
@@ -539,7 +608,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-17",
-   "place": 22
+   "place": 25
   },
   {
    "full_name": "pingdotgg/t3code",
@@ -565,17 +634,17 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 23
+   "place": 26
   },
   {
    "full_name": "alibaba/open-code-review",
    "url": "https://github.com/alibaba/open-code-review",
    "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
    "language": "Go",
-   "stars_total": 52917,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 1642,
-   "appearances": 2,
+   "stars_total": 53710,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 2405,
+   "appearances": 3,
    "best_rank": 2,
    "periods": [
     "daily"
@@ -584,11 +653,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 2
+    "daily": 3
    },
    "first_seen": "2026-11-16",
-   "last_seen": "2026-11-17",
-   "place": 24
+   "last_seen": "2026-11-18",
+   "place": 27
   },
   {
    "full_name": "Nutlope/hallmark",
@@ -611,7 +680,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 25
+   "place": 28
   },
   {
    "full_name": "vercel-labs/agent-browser",
@@ -637,7 +706,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 26
+   "place": 29
   },
   {
    "full_name": "tashfeenahmed/freellmapi",
@@ -660,7 +729,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 27
+   "place": 30
   },
   {
    "full_name": "anthropics/claude-plugins-official",
@@ -683,7 +752,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 28
+   "place": 31
   },
   {
    "full_name": "Donchitos/Claude-Code-Game-Studios",
@@ -706,7 +775,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 29
+   "place": 32
   },
   {
    "full_name": "anthropics/knowledge-work-plugins",
@@ -729,7 +798,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 30
+   "place": 33
   },
   {
    "full_name": "QwenLM/qwen-code",
@@ -752,7 +821,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 31
+   "place": 34
   },
   {
    "full_name": "meta/astryx",
@@ -778,17 +847,17 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 32
+   "place": 35
   },
   {
    "full_name": "dream-num/univer",
    "url": "https://github.com/dream-num/univer",
    "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
    "language": "TypeScript",
-   "stars_total": 27761,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 2816,
-   "appearances": 2,
+   "stars_total": 28887,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 4590,
+   "appearances": 3,
    "best_rank": 1,
    "periods": [
     "daily"
@@ -797,11 +866,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 2
+    "daily": 3
    },
    "first_seen": "2026-11-16",
-   "last_seen": "2026-11-17",
-   "place": 33
+   "last_seen": "2026-11-18",
+   "place": 36
   },
   {
    "full_name": "milind-soni/OpenMausBot",
@@ -824,7 +893,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 34
+   "place": 37
   },
   {
    "full_name": "vercel-labs/agent-desktop",
@@ -847,7 +916,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 35
+   "place": 38
   },
   {
    "full_name": "anthropics/claude-quickstarts",
@@ -870,7 +939,30 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 36
+   "place": 39
+  },
+  {
+   "full_name": "ag-ui-protocol/ag-ui",
+   "url": "https://github.com/ag-ui-protocol/ag-ui",
+   "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+   "language": "TypeScript",
+   "stars_total": 19981,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 2591,
+   "appearances": 3,
+   "best_rank": 3,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 3
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-18",
+   "place": 40
   },
   {
    "full_name": "google/elephant-goldfish-model",
@@ -893,30 +985,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 37
-  },
-  {
-   "full_name": "ag-ui-protocol/ag-ui",
-   "url": "https://github.com/ag-ui-protocol/ag-ui",
-   "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
-   "language": "TypeScript",
-   "stars_total": 18936,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 1146,
-   "appearances": 2,
-   "best_rank": 6,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 2
-   },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-17",
-   "place": 38
+   "place": 41
   },
   {
    "full_name": "google-deepmind/mujoco",
@@ -942,7 +1011,30 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 39
+   "place": 42
+  },
+  {
+   "full_name": "cursor/plugins",
+   "url": "https://github.com/cursor/plugins",
+   "description": "Cursor plugin specification and official plugins",
+   "language": "TypeScript",
+   "stars_total": 16887,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 201,
+   "appearances": 1,
+   "best_rank": 14,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-18",
+   "last_seen": "2026-11-18",
+   "place": 43
   },
   {
    "full_name": "ggml-org/ggml",
@@ -965,7 +1057,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 40
+   "place": 44
   },
   {
    "full_name": "The-PR-Agent/pr-agent",
@@ -988,7 +1080,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 41
+   "place": 45
   },
   {
    "full_name": "we-promise/sure",
@@ -1014,17 +1106,17 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 42
+   "place": 46
   },
   {
    "full_name": "backnotprop/plannotator",
    "url": "https://github.com/backnotprop/plannotator",
    "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
    "language": "TypeScript",
-   "stars_total": 12536,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 3281,
-   "appearances": 3,
+   "stars_total": 13057,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 3972,
+   "appearances": 4,
    "best_rank": 3,
    "periods": [
     "daily",
@@ -1035,12 +1127,12 @@
     "周榜"
    ],
    "times_by_period": {
-    "daily": 2,
+    "daily": 3,
     "weekly": 1
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 43
+   "place": 47
   },
   {
    "full_name": "max-sixty/worktrunk",
@@ -1063,7 +1155,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 44
+   "place": 48
   },
   {
    "full_name": "openai/codex-security",
@@ -1086,7 +1178,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-13",
-   "place": 45
+   "place": 49
   },
   {
    "full_name": "CopilotKit/OpenBot",
@@ -1109,7 +1201,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 46
+   "place": 50
   },
   {
    "full_name": "NVIDIA/auto-ontology",
@@ -1132,7 +1224,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 47
+   "place": 51
   },
   {
    "full_name": "shadcn/improve",
@@ -1155,18 +1247,64 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 48
+   "place": 52
   },
   {
    "full_name": "google-labs-code/stitch-skills",
    "url": "https://github.com/google-labs-code/stitch-skills",
    "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
    "language": "TypeScript",
-   "stars_total": 9727,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 776,
-   "appearances": 2,
+   "stars_total": 10087,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 1126,
+   "appearances": 3,
    "best_rank": 8,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 3
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-18",
+   "place": 53
+  },
+  {
+   "full_name": "getarcaneapp/arcane",
+   "url": "https://github.com/getarcaneapp/arcane",
+   "description": "Modern Docker Management, Designed for Everyone",
+   "language": "Go",
+   "stars_total": 9306,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 664,
+   "appearances": 2,
+   "best_rank": 10,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-18",
+   "place": 54
+  },
+  {
+   "full_name": "elementalsouls/Claude-BugHunter",
+   "url": "https://github.com/elementalsouls/Claude-BugHunter",
+   "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+   "language": "Python",
+   "stars_total": 9223,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 1103,
+   "appearances": 2,
+   "best_rank": 5,
    "periods": [
     "daily"
    ],
@@ -1177,31 +1315,8 @@
     "daily": 2
    },
    "first_seen": "2026-11-16",
-   "last_seen": "2026-11-17",
-   "place": 49
-  },
-  {
-   "full_name": "getarcaneapp/arcane",
-   "url": "https://github.com/getarcaneapp/arcane",
-   "description": "Modern Docker Management, Designed for Everyone",
-   "language": "Go",
-   "stars_total": 8696,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 46,
-   "appearances": 1,
-   "best_rank": 14,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-17",
-   "last_seen": "2026-11-17",
-   "place": 50
+   "last_seen": "2026-11-18",
+   "place": 55
   },
   {
    "full_name": "homeassistant-ai/ha-mcp",
@@ -1224,7 +1339,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-12",
-   "place": 51
+   "place": 56
   },
   {
    "full_name": "GoogleChrome/modern-web-guidance-src",
@@ -1247,7 +1362,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-16",
-   "place": 52
+   "place": 57
   },
   {
    "full_name": "tokio-rs/topcoat",
@@ -1270,7 +1385,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 53
+   "place": 58
   },
   {
    "full_name": "DeanChensj/jiangshan-map",
@@ -1293,7 +1408,7 @@
    },
    "first_seen": "2026-11-17",
    "last_seen": "2026-11-17",
-   "place": 54
+   "place": 59
   },
   {
    "full_name": "kajisho5/ffmpeg-skill",
@@ -1316,7 +1431,7 @@
    },
    "first_seen": "2026-11-17",
    "last_seen": "2026-11-17",
-   "place": 55
+   "place": 60
   },
   {
    "full_name": "ranxianglei/billion-context",
@@ -1342,30 +1457,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 56
-  },
-  {
-   "full_name": "elementalsouls/Claude-BugHunter",
-   "url": "https://github.com/elementalsouls/Claude-BugHunter",
-   "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
-   "language": "Python",
-   "stars_total": 6512,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 98,
-   "appearances": 1,
-   "best_rank": 11,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 57
+   "place": 61
   },
   {
    "full_name": "tradermonty/claude-trading-skills",
@@ -1388,7 +1480,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-17",
-   "place": 58
+   "place": 62
   },
   {
    "full_name": "anomalyco/hex",
@@ -1411,7 +1503,53 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 59
+   "place": 63
+  },
+  {
+   "full_name": "Tencent/LoopForge",
+   "url": "https://github.com/Tencent/LoopForge",
+   "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+   "language": "Go",
+   "stars_total": 3107,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 1014,
+   "appearances": 2,
+   "best_rank": 7,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-18",
+   "place": 64
+  },
+  {
+   "full_name": "google-research/paper-orchestra",
+   "url": "https://github.com/google-research/paper-orchestra",
+   "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+   "language": "Python",
+   "stars_total": 2958,
+   "stars_total_date": "2026-11-18",
+   "stars_period_sum": 1385,
+   "appearances": 2,
+   "best_rank": 4,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-18",
+   "place": 65
   },
   {
    "full_name": "NVIDIA/SkillEvaluator",
@@ -1434,7 +1572,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-17",
-   "place": 60
+   "place": 66
   },
   {
    "full_name": "ashhart/TensorFold",
@@ -1457,30 +1595,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 61
-  },
-  {
-   "full_name": "Tencent/LoopForge",
-   "url": "https://github.com/Tencent/LoopForge",
-   "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
-   "language": "Go",
-   "stars_total": 1582,
-   "stars_total_date": "2026-11-16",
-   "stars_period_sum": 423,
-   "appearances": 1,
-   "best_rank": 7,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-16",
-   "place": 62
+   "place": 67
   },
   {
    "full_name": "pookjw/HermesEnabler",
@@ -1503,30 +1618,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 63
-  },
-  {
-   "full_name": "google-research/paper-orchestra",
-   "url": "https://github.com/google-research/paper-orchestra",
-   "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
-   "language": "Python",
-   "stars_total": 1474,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 313,
-   "appearances": 1,
-   "best_rank": 10,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-17",
-   "last_seen": "2026-11-17",
-   "place": 64
+   "place": 68
   }
  ]
 }
