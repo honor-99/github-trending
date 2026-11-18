@@ -881,6 +881,55 @@
   "language": "JavaScript",
   "url": "https://github.com/addyosmani/agent-skills"
  },
+ "affaan-m/ECC": {
+  "one_liner": "给 Claude Code、Cursor 等编码 agent 加装技能、记忆与安全护栏的优化插件层。",
+  "summary": "ECC 是一个面向 AI 编码 agent 的「harness 优化」系统，官方描述覆盖 skills、instincts、memory、security 与 research-first development 五块能力，目标是把 Claude Code、Codex、Opencode、Cursor 等工具调得更稳更可控。它的分发形态比较明确：Claude Code 插件 slug 为 ecc@ecc，另有 npm 包 ecc-universal 与 ecc-agentshield、一个 GitHub App（ecc-tools）和官网 ecc.tools。相比只服务单一 agent 的提示词/规则合集，它的差异点在于跨 agent 复用同一套能力，并且把安全（agentshield）单独拆成一个包。需要注意的是，材料只给了安装入口、多语言 README 和官方渠道警告，没有展示 skills 与 memory 的具体实现机制，因此其实际效果无法从现有信息判断。",
+  "audience": [
+   "每天在 Claude Code 或 Cursor 里写代码、想减少重复提示和上下文重建的工程师。",
+   "负责把 AI 编码工具推向团队、需要统一规范与安全底线的平台/DevOps 团队。",
+   "要给 agent 制定内部编码规范、希望规范能被工具强制执行而不是靠口口相传的 tech lead。",
+   "在评估 AI 编码工具链选型、需要判断插件层是否值得纳入的产品经理。",
+   "使用 Codex、Opencode 等非 Claude 系 agent、又想要一套通用增强层的开发者。"
+  ],
+  "use_cases": [
+   "在 Claude Code 中通过 `ecc@ecc` 插件安装后，让 agent 按预设的 skills 与 research-first 流程执行任务，而不是每次手动写一大段提示。",
+   "借助 memory 能力让跨会话的项目上下文得以保留，减少每次重新解释代码库结构的开销。",
+   "用 ecc-agentshield 对 agent 生成的代码或改动做安全侧检查，作为提交前的额外一道闸。",
+   "在 Claude Code、Cursor、Codex 之间复用同一套技能定义，降低换工具时的规则迁移成本。",
+   "把团队内部的开发规范沉淀成自定义 skill，让新成员接入 agent 时天然遵循同一套做法。"
+  ],
+  "adoption_steps": [
+   "只从官方渠道安装：GitHub 仓库 affaan-m/ECC、npm 包 ecc-universal / ecc-agentshield、插件 slug `ecc@ecc` 或官网 ecc.tools，明确避开第三方镜像与转载。",
+   "先在个人沙箱仓库里按 README 的 guided setup 或 native plugin commands 二选一安装，不要叠加完整手动安装，观察它会写入哪些配置、hooks 与文件后再决定是否推到主仓库。",
+   "试用一到两周后，再评估 ECC Pro / GitHub App 的定价与权限范围，决定是个人用还是团队层面统一启用，并把版本号固定下来避免上游变更影响日常开发。"
+  ],
+  "build_ideas": [
+   "基于 ecc-agentshield 扩展出团队自有的 agent 输出安全策略，接入 CI 做自动化拦截。",
+   "把公司内部编码规范、代码评审清单封装成私有 skills 集，随插件一起分发给团队成员。",
+   "用 memory 层做二次开发，把项目架构文档、历史决策记录注入 agent 上下文，形成可检索的团队知识底座。",
+   "为 ECC 尚未覆盖的编辑器或自建 agent 框架做适配层，复用同一套 skill 定义。",
+   "围绕 skills 与 instincts 做一个内部市场或配置管理工具，支持版本化、灰度与回滚。"
+  ],
+  "risks": [
+   "README 明确警告存在第三方转载与镜像且可能含恶意代码，安装源必须逐个核对，装错来源等于把任意代码引入开发环境。",
+   "插件与 skill 通常会拿到较深的仓库与命令执行权限，落地前需要确认它实际申请了哪些权限、会改动哪些文件。",
+   "累计 star 超过 30 万，但可见的 README 节选以徽章、多语言链接和安装入口为主，未展示实现细节，热度与实际成熟度需自行核实。",
+   "材料中出现 pricing 页面与 ECC Pro 字样，说明存在商业分层，需确认免费层与付费层的能力边界，避免团队用起来后被功能墙卡住。",
+   "LICENSE 只以链接形式出现，具体许可证类型未在材料中说明；同时项目同时维护 17 种语言文档，各语言版本与英文版的一致性也无从验证，采用前应确认许可条款与文档准确性。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1532,
+   "completion_tokens": 1913
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "295d46a7b508ce610eee2d3876e309262136368d8158c96d0526571ecce6e3de",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-18T09:27:37+08:00",
+  "readme_used": true,
+  "source_description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+  "language": "JavaScript",
+  "url": "https://github.com/affaan-m/ECC"
+ },
  "ag-ui-protocol/ag-ui": {
   "one_liner": "用一条事件流协议，把 AI agent 接进前端应用并渲染出来。",
   "summary": "AG-UI 是一个开放的、轻量的事件协议，用来标准化 AI agent 与面向用户的应用之间的连接方式。它把 agent 输出 token、中途调用工具、更新共享状态、等待人工确认、派生子 agent 这些动作，统一成一条双向事件流：agent 发出带类型的事件，任意客户端负责渲染，因此同一个 agent 可以同时驱动网页、移动端、终端或 Slack。协议 1.0 已有冻结的规范与 JSON Schema，TypeScript、Python、.NET 三个 SDK 由规范生成，并且 0.x 与 1.0 双向兼容。相比为每个框架各写一套自定义前后端对接代码，它的新意在于把「agent 与 UI 的通信」抽成与框架无关的公共层。一个 AG-UI agent 本质上就是一个接受 RunAgentInput、回推事件流的 HTTP 端点。",
