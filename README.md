@@ -89,14 +89,21 @@ python3 -m http.server 8123 --bind 127.0.0.1
 建议怎么落地（编号）/ 可以基于它开发什么 / 采用前要确认（风险）/ GitHub 原始描述`。
 
 ```bash
-python3 scripts/interpret.py --limit 8 --workers 6   # 补一批没解读过的
-python3 scripts/interpret.py --dry-run --limit 1     # 只打印 prompt，不调模型
-python3 scripts/interpret.py --force --limit 3       # 忽略 hash 强制重算
+python3 scripts/interpret.py --limit 8 --workers 6                  # 补一批没解读过的
+python3 scripts/interpret.py --all-snapshots --limit 12 --workers 6  # 扫全部历史快照（cron 用这个）
+python3 scripts/interpret.py --dry-run --limit 1                     # 只打印 prompt，不调模型
+python3 scripts/interpret.py --force --limit 3                       # 忽略 hash 强制重算
 ```
 
 - **输入**：GitHub `README`（`gh api repos/{o}/{r}/readme`，截断 3000 字）+ 描述 + star + 语言。
   33/33 都成功取到 README。
 - **幂等**：`hash = sha256(full_name + description + language + readme)`，没变就跳过，跨日/周/月榜共用一份。
+- **README 取法（2026-11-18 改）**：先并行取 `readme --jq .sha`（几百字节），
+  `readme_sha + desc_hash` 与上次一致就直接复用，**正文只在真变了才下载**。
+  旧版每轮无脑重拉 39~68 个 README（最大 117KB），150s 硬超时就是这么爆的 ——
+  `affaan-m/ECC` 因此漏过解读。改后空转一轮 68 个项目约 **20s**（改前 108s）。
+- **范围（2026-11-18 改）**：cron 必须带 `--all-snapshots`。只读 `latest-*.json` 时，
+  某个项目若在补到解读前就掉榜，会被**永久跳过**（下次开机才由 boot-interpret 补）。
 - **落盘**：每成功一个立刻写 `interpretations.json`，中途被打断不丢进度。
 - **并发**：默认 4，实测 `--workers 6` 时 33 个约 3 分钟（串行约 50 分钟）。
 - **模型**：默认读 `~/.hermes/config.yaml` 的 `model.base_url` + `model.default`，
@@ -140,7 +147,7 @@ score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 
 ```
 cron 08:00  →  scripts/archive.py --period daily
             →  scripts/insights.py                                          （秒级，零成本）
-            →  scripts/interpret.py --period all --limit 8 --workers 6   （硬超时 150s）
+            →  scripts/interpret.py --period all --all-snapshots --limit 12 --workers 6（硬超时 240s）
             →  git add data/ && git commit && git push
             →  Pages 从分支发布
 ```

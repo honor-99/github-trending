@@ -203,6 +203,36 @@ def fetch_readme(full_name: str, timeout: int = 25) -> str:
         return ""
 
 
+def fetch_readme_sha(full_name: str, timeout: int = 15) -> str:
+    """只取 README 的 git blob sha（响应几百字节，比正文小两个数量级）。
+
+    返回值三态：真实 sha / "none"（仓库没有 README）/ "ERR"（网络或权限失败，
+    调用方应回退到下载正文，避免把一次抖动当成「内容没变」而永久跳过）。
+    """
+    try:
+        proc = subprocess.run(
+            [GH, "api", f"repos/{full_name}/readme", "--jq", ".sha"],
+            capture_output=True, text=True, timeout=timeout,
+        )
+        if proc.returncode == 0:
+            return proc.stdout.strip() or "ERR"
+        if "404" in (proc.stderr or ""):
+            return "none"
+        return "ERR"
+    except (subprocess.SubprocessError, ValueError, OSError):
+        return "ERR"
+
+
+def desc_hash(item: dict) -> str:
+    """描述/语言/名字的指纹：这部分变了就必须重算，与 README 是否变化无关。"""
+    payload = "\x1f".join([
+        item.get("full_name", ""),
+        item.get("description", "") or "",
+        item.get("language", "") or "",
+    ])
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
 def content_hash(item: dict, readme: str) -> str:
     payload = "\x1f".join([
         item.get("full_name", ""),
@@ -317,14 +347,40 @@ def main() -> int:
             print("[warn] interpretations.json 解析失败，将重建", file=sys.stderr)
 
     api_key = "" if args.dry_run else load_api_key()
+
+    # 第一刀：并行取 README 的 blob sha（几百字节）。正文只在 sha 变化时才下载，
+    # 否则每轮都要把 39~68 个 README（单个最大 117KB）重新拉一遍，150s 超时就是这么爆的。
+    shas: dict[str, str] = {}
+    if not args.dry_run and items:
+        names = list(items.keys())
+        workers_sha = max(1, min(args.workers, len(names)))
+        with concurrent.futures.ThreadPoolExecutor(max_workers=workers_sha) as pool:
+            for name, sha in zip(names, pool.map(fetch_readme_sha, names)):
+                shas[name] = sha
+
     todo: list[tuple[str, dict]] = []
+    reuse = 0
     for name, item in items.items():
+        old = store.get(name) or {}
+        sha = shas.get(name, "")
+        dh = desc_hash(item)
+        # 指纹一致 → 直接复用，连正文都不下载
+        if (not args.force and old.get("hash") and sha and sha != "ERR"
+                and old.get("readme_sha") == sha and old.get("desc_hash") == dh):
+            reuse += 1
+            continue
         readme = fetch_readme(name) if not args.dry_run else ""
         h = content_hash(item, readme)
-        old = store.get(name)
-        if not args.force and old and old.get("hash") == h:
+        if not args.force and old.get("hash") == h:
+            # 正文算出来仍然一致（典型情况：升级前的旧条目还没有指纹字段）→ 顺手补上，下轮免下载
+            if sha and sha != "ERR":
+                old["readme_sha"] = sha
+                old["desc_hash"] = dh
+                store[name] = old
+            reuse += 1
             continue
-        todo.append((name, {**item, "_readme": readme, "_hash": h}))
+        todo.append((name, {**item, "_readme": readme, "_hash": h,
+                            "_sha": "" if sha == "ERR" else sha, "_desc_hash": dh}))
 
     print(
         f"共 {len(items)} 个项目，已有 {len(items) - len(todo)} 份可复用，本次处理 {min(len(todo), args.limit)} 个"
@@ -352,6 +408,8 @@ def main() -> int:
                 raise ValueError("模型返回内容为空")
             result.update({
                 "hash": item["_hash"],
+                "readme_sha": item.get("_sha") or "",
+                "desc_hash": item.get("_desc_hash") or "",
                 "model": model,
                 "generated_at": datetime.now(CST).isoformat(timespec="seconds"),
                 "readme_used": bool(readme),
