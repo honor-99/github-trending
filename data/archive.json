@@ -1,15 +1,24 @@
 {
- "generated_at": "2026-11-18T09:54:51+08:00",
+ "generated_at": "2026-11-19T16:31:21+08:00",
  "summary": {
-  "repo_count": 68,
-  "index_rows": 115,
-  "snapshot_count": 9,
+  "repo_count": 76,
+  "index_rows": 134,
+  "snapshot_count": 10,
   "interpreted_count": 68,
   "first_date": "2026-11-11",
-  "latest_date": "2026-11-18",
-  "total_bytes": 39769
+  "latest_date": "2026-11-19",
+  "total_bytes": 46048
  },
  "snapshots": [
+  {
+   "date": "2026-11-19",
+   "period": "daily",
+   "count": 19,
+   "fetched_at": "2026-11-19T16:31:21+08:00",
+   "signals": null,
+   "bytes": 6279,
+   "path": "data/2026/2026-11-19-daily.json"
+  },
   {
    "date": "2026-11-18",
    "period": "daily",
