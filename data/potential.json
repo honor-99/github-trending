@@ -1,28 +1,9 @@
 {
- "generated_at": "2026-11-19T16:31:21+08:00",
+ "generated_at": "2026-11-20T16:13:01+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
- "candidate_count": 36,
+ "candidate_count": 33,
  "excluded_count": 8,
  "items": [
-  {
-   "full_name": "google-research/paper-orchestra",
-   "score": 100,
-   "stars_period": 1524,
-   "stars_total": 4646,
-   "growth": 0.4881,
-   "language": "Python",
-   "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
-   "periods": [
-    "daily"
-   ],
-   "streak": 3,
-   "reasons": [
-    "本期 +1,524 star，相当于存量的 48.8%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 4,646 star，向上空间大",
-    "连续 3 期在榜，热度不是一次性"
-   ]
-  },
   {
    "full_name": "ranxianglei/billion-context",
    "score": 96.4,
@@ -117,6 +98,24 @@
     "刚进榜单，还没被反复曝光",
     "体量仅 28,933 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "mjmirza/app-store-compliance",
+   "score": 78.3,
+   "stars_period": 377,
+   "stars_total": 2193,
+   "growth": 0.2076,
+   "language": "Shell",
+   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+   "periods": [
+    "daily"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +377 star，相当于存量的 20.8%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 2,193 star，向上空间大"
    ]
   },
   {
