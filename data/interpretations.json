@@ -304,55 +304,55 @@
   "desc_hash": "c23ea40ef0ff798f20a2c46c74151432e28e0f569c47235c48a15ccd4af04cef"
  },
  "GoogleChrome/modern-web-guidance-src": {
-  "one_liner": "把现代 Web 最佳实践喂给编码 agent，避免它生成过时的老写法",
-  "summary": "Modern Web Guidance 是一套面向编码 agent 的「技能」内容包，把 Web 平台专家经验、最佳实践和浏览器兼容数据直接注入 agent 的上下文窗口。它的做法是通过 CLI 提供 search、retrieve、legacy-scan 等命令，按需返回经过筛选的指南，而不是一次性塞入大量文档，并声称用评测来裁剪模型已经掌握的冗余内容以保证 token 效率。本次上榜的是其源码仓库，用于编写、校准和评估这些指南内容，分发的 npm 包是 modern-web-guidance。由 Chrome、Edge、Firefox 和 MDN 团队共同维护是它区别于个人整理的 prompt 集合的主要差异点，但材料中未给出内容规模、覆盖范围的具体数字。",
+  "one_liner": "让编码 agent 按现代 Web 最佳实践写前端，别再吐过时臃肿代码。",
+  "summary": "这是 GoogleChrome/modern-web-guidance 的源仓库，存放用于编写、校准和评测内容技能的代码与文档；这些技能会把 Web 平台知识、最佳实践和浏览器兼容数据注入到编码 agent 的上下文里。它的 CLI 通过 search、retrieve 按需返回经过筛选的指南，并用 legacy-scan 扫描代码库中的老旧写法，从而把 token 只花在相关条目上。相比让模型自行回忆 API，它针对的是训练数据里充斥着旧代码、模型即便知道新 API 也不会正确使用的痛点。项目由 Chrome、Edge、Firefox 和 MDN 团队共同维护，并配有公开的评测看板，用来裁剪模型已经掌握的内容。",
   "audience": [
-   "日常用 Claude Code、Cursor 等编码 agent 写前端代码，发现它总生成 jQuery 式或大量 JS 补丁方案的工程师。",
-   "负责团队前端规范与代码评审，想把「优先用平台原生能力」这条规则固化进工具链的技术负责人。",
-   "接手历史项目、需要先摸清哪些地方还在用旧模式的前端维护者。",
-   "关注 Web 平台新特性落地、但希望有浏览器厂商背书的兼容性判断依据的产品经理或技术选型者。",
-   "想为这套指南贡献条目或参与评估流程的开源贡献者。"
+   "日常使用 Claude Code、Copilot 等编码 agent 写前端，但经常要手动纠正其过时写法的前端工程师。",
+   "负责给团队配置 agent 规则、提示词或技能包的 AI 工程效率团队。",
+   "需要把存量项目从 jQuery 或手写 polyfill 迁移到原生 API 的技术负责人与架构师。",
+   "关注 Web 性能与可访问性，希望默认产出就带上平台级无障碍能力的开发者。",
+   "需要评估这类 agent 技能是否值得推广的技术选型顾问或 DevRel。"
   ],
   "use_cases": [
-   "在让 agent 实现某个交互前，先用 `npx modern-web-guidance@latest search \"animate a dialog modal backdrop\"` 找到对应指南再贴进上下文。",
-   "用 `retrieve <guide-id>` 按 ID 精确取出某一篇指南，避免搜索结果的无关内容污染上下文。",
-   "用 `legacy-scan .` 扫描存量代码库，列出可以被现代平台 API 替代的旧模式清单，作为重构排期的输入。",
-   "把指南作为团队内部的「新特性落地参考」，在评审时对照它判断某个方案是否属于不必要的 polyfill 或重型库。",
-   "参考仓库里的评估（eval）流程，反向检查自己团队维护的 prompt 或规则集是否真的有效。"
+   "用 `npx modern-web-guidance@latest search \"animate a dialog modal backdrop\"` 在动手前查到对应现代写法的指南。",
+   "用 `retrieve \"animate-to-from-top-layer\"` 按 ID 拉取单篇指南，直接塞进 agent 上下文或写进团队规范文档。",
+   "在存量仓库执行 `legacy-scan .`，产出一份可逐项排期的现代化改造清单。",
+   "在给 agent 布置任务前，先用 search 检索相关条目并注入，减少模型凭训练记忆生成旧模式。",
+   "作为团队内部前端规范的参考基线，对照其指南检查自研组件是否使用了过时 API。"
   ],
   "adoption_steps": [
-   "先不安装，直接在项目根目录跑 `npx modern-web-guidance@latest search \"<你的场景>\"` 和 `npx modern-web-guidance@latest legacy-scan .`，确认返回内容对当前代码库确实有参考价值。",
-   "确认有效后再执行 `npx modern-web-guidance@latest install`，跟着交互式向导选择目标 agent，安装后检查它实际写入了哪些配置文件并纳入版本控制评审。",
-   "在一个真实的小需求上对比「装之前 / 装之后」agent 生成的代码差异，重点看是否真的减少了手写 JS 和第三方依赖，再决定是否推广到团队。"
+   "先确认本机 Node.js 版本不低于 22，然后不安装直接跑 `npx modern-web-guidance@latest search \"<你的场景>\"` 和 `retrieve`，验证返回内容是否切题。",
+   "在单个仓库试跑 `npx modern-web-guidance@latest legacy-scan .`，人工抽查它标记出的问题是否准确、噪音是否可接受。",
+   "确认效果后执行 `npx modern-web-guidance@latest install`，按交互向导接入你使用的编码 agent，并在小范围项目里对比接入前后的生成代码差异。"
   ],
   "build_ideas": [
-   "把 legacy-scan 的输出接入 CI，对新增的旧模式用法做增量告警，形成「不许写回去」的守门规则。",
-   "基于 retrieve 的指南内容构建内部知识库或编辑器插件，在写代码时按当前文件上下文推荐对应指南。",
-   "参考仓库的评估框架，为你自己团队的领域规范（如组件库用法）搭建一套可量化的 prompt 效果评测看板。",
-   "把指南条目翻译或裁剪成适合团队内部约定（框架选型、浏览器支持基线）的定制版本，通过同一套 CLI 分发。",
-   "结合 legacy-scan 结果生成重构任务清单，估算改造收益并接入项目管理工具。"
+   "把 legacy-scan 包装成 CI 或 PR 检查项，对新增代码里出现的旧模式给出评论提示。",
+   "基于 search / retrieve 的 CLI 能力做一个内部 IDE 插件或编辑器命令，让开发者在写代码时直接查指南。",
+   "参考其评测看板的思路，为团队自有的前端规范搭建一套 agent 输出质量的评测流水线。",
+   "将团队私有最佳实践按同样的指南结构编写，与官方条目合并成内部技能包。",
+   "围绕检索结果做一个内部知识库镜像，支持离线环境和代码审查平台的引用。"
   ],
   "risks": [
-   "材料中未提及开源许可证，商用或二次分发前必须先到仓库确认 LICENSE，不能默认它和 Chrome 文档一样可自由使用。",
-   "`install` 是交互式向导，会修改编码 agent 的配置文件，材料没有说明它具体写哪些文件、能否干净卸载，建议先看仓库文档或在隔离环境试装。",
-   "本次 star 增长（739）出现在 daily 榜单，属于短期热度，无法从材料判断其发布节奏、版本稳定性与长期维护承诺。",
-   "token 效率与「裁剪模型已知内容」的说法来自项目自身的评估（Eval Dashboard），材料未提供可独立复核的基准数据，实际效果需自行对比验证。",
-   "本仓库是内容源码仓库，实际使用依赖 npm 上的 modern-web-guidance 包，两者的版本对应关系、Node 版本要求及离线可用性材料中均未说明，需要额外确认。"
+   "安装包要求 Node.js 22 及以上，仍在 Node 18/20 上的团队需要先升级运行时。",
+   "本仓库是源仓库，面向使用者的安装走的是单独的 `modern-web-guidance` npm 包与另一个仓库，两者版本和文档可能不同步，需分别确认。",
+   "README 节选未提及许可证条款，商用或二次分发前必须在仓库中确认 LICENSE。",
+   "材料未说明它支持哪些编码 agent 或客户端，接入前要确认与你实际使用的工具是否兼容。",
+   "项目近期 star 增长快、内容覆盖「近几年到最前沿」的 Web 特性，指南条目和 CLI 参数仍可能变动，锁版本或定期复核调用方式更稳妥。"
   ],
   "tokens": {
-   "prompt_tokens": 1145,
-   "completion_tokens": 1506
+   "prompt_tokens": 1148,
+   "completion_tokens": 1350
   },
   "model_resolved": "deepseek-flash",
-  "hash": "75da328faf23cf8282b10ff75ab3b5ea5e78a1567d859ba388ea53307d83c6d9",
+  "hash": "94c00b330ac7bc2d56a535e38cc385a0b979ad4db76886feec9d3283a1e2dead",
+  "readme_sha": "7b1df9846fbdcc222b9846938b5656abce018b07",
+  "desc_hash": "8a58a37afb2959cf68de5d1a26c80d54174e2c75efb2e2b73a92d801a7c199af",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-13T08:00:50+08:00",
+  "generated_at": "2026-11-20T08:02:20+08:00",
   "readme_used": true,
   "source_description": "Keep your coding agent up to date with the latest web best practices",
   "language": "TypeScript",
-  "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
-  "readme_sha": "705d5b77f74d109637faffbdda9aacc035b181e8",
-  "desc_hash": "8a58a37afb2959cf68de5d1a26c80d54174e2c75efb2e2b73a92d801a7c199af"
+  "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
  },
  "HKUDS/CLI-Anything": {
   "one_liner": "把软件包装成命令行接口，让 AI agent 能直接驱动它干活。",
@@ -752,7 +752,7 @@
   },
   "model_resolved": "deepseek-flash",
   "hash": "1467fbf90c9e8ea99700ec24f66ef14a1c9e6dac6dded6f7782483baf526186b",
-  "readme_sha": "f7d058b46e61676b4bbfeb234f85acf8bfecb10b",
+  "readme_sha": "fcdd9f9d34af949c79d952eb6b8d2daee7b821e6",
   "desc_hash": "9d93e108a4393f2ba77830789baf8e62ee6a354f7517bc3ae3ec33699ffced3d",
   "model": "deepseek-v4-pro",
   "generated_at": "2026-11-19T08:00:59+08:00",
@@ -1015,7 +1015,7 @@
   "source_description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
   "language": "JavaScript",
   "url": "https://github.com/affaan-m/ECC",
-  "readme_sha": "12cec5467b2fe979aff27960641a251024517a71",
+  "readme_sha": "062240ed20d8ebcabec42967c98bc734b79740b8",
   "desc_hash": "3aecd127bca27f7360170e155381b1484dc7c73a8fa07577bff7606b99e0b822"
  },
  "ag-ui-protocol/ag-ui": {
@@ -1123,52 +1123,53 @@
   "desc_hash": "447efc063cf335afd844a03cf439b399bca007b6206d0c1ab567eb73c4b2760a"
  },
  "anomalyco/hex": {
-  "one_liner": "按住快捷键说话，本机转写并粘贴到当前光标处。",
-  "summary": "Hex 是一个用 Rust 写的本地语音听写工具，覆盖 macOS、Windows 和 Linux：按住快捷键说话、松开后文字直接落到你正在用的应用光标处。转写全部在本机完成，首次运行下载一个语音模型，之后音频不出机器。它把模型选择做成可切换的清单（Parakeet、Whisper large-v3-turbo、Qwen3-ASR、SenseVoice、Cohere Transcribe 等），还支持加载自己的 GGUF 模型，并按应用或网站配置 Output 步骤和 Vocabulary 词表。相比只做「语音转文字」的工具，它还提供带鉴权的本地 API 和 TypeScript SDK 供二次开发，另有 macOS 上的 Meetings 会议转写和跨平台的 Annotate 边画边讲录屏，但后两者标注为 Labs 实验特性。",
+  "one_liner": "按住快捷键说话，本机转写并粘贴到当前应用，录音不出本机。",
+  "summary": "Hex 是一个跨 macOS、Windows、Linux 的本地语音听写工具：按住快捷键说话，松手后文字直接落在光标处，首次运行才下载语音模型，之后转写全在本机完成。它用多种可切换的语音模型（Parakeet、Whisper、Qwen3-ASR、SenseVoice 等）覆盖不同语种，还允许加入自己的 GGUF 模型。相比只做「语音转文字」的工具，它把 Output 步骤链（词替换、内置清理、自定义脚本、可选的 OpenCode 改写）按应用或网站分别配置，并提供带鉴权的本地 API 与 TypeScript SDK 供二次集成。此外还有历史记录、词表、屏幕标注录制和 macOS 实验性的会议记录。",
   "audience": [
-   "每天写大量文字、但不愿把语音上传到云端的开发者和知识工作者。",
-   "同时在 macOS、Windows、Linux 上工作，需要一套听写方案跨平台一致的人。",
-   "需要中英混合听写、并希望术语和专有名词被正确拼写的产品经理与研究者。",
-   "想给自家工具嵌入本地转写能力、又不想自建推理栈的工程师。",
-   "对会议记录和讲解录屏有需求、且使用 macOS 的团队。"
+   "每天要写大量文字、又不想把语音上传到云端的开发者与写作者",
+   "需要在 IDE、终端、Slack、邮件之间频繁切换输入、追求低摩擦录入的工程师",
+   "对数据合规敏感、不允许音频离开本机的法务、医疗、金融等场景从业者",
+   "想把语音转写能力接进自家工具链、需要本地 API 或 TypeScript SDK 的开发者",
+   "多语种办公者，例如中英混说或需要俄语、希伯来语、北欧语种听写的用户",
+   "用 macOS 或 Windows 桌面为主、偶尔在 Linux 上办公的产品经理与运营"
   ],
   "use_cases": [
-   "在编辑器里口述提交信息、代码注释或文档段落，文字直接落在光标处。",
-   "在任意聊天、邮件或工单系统里按住快捷键说话，省去切换窗口和打字。",
-   "用 Labs 里的 Meetings 在 macOS 上录一通电话并产出转写文本。",
-   "用 Annotate 一边在屏幕上画一边讲解，同时录下画面和语音。",
-   "通过本地 API 或 TypeScript SDK 把同一套模型接进自己的脚本和内部工具。"
+   "在任意应用的光标处口述需求文档、提交信息或 PR 描述，说完直接得到可编辑文字。",
+   "用 Option-Shift-V（Windows/Linux 为 Ctrl-Alt-V）重复粘贴上一条听写，避免反复开口。",
+   "为不同应用配置不同 Output 步骤，例如在 IDE 里走自定义脚本规范化标识符、在聊天工具里只做清理。",
+   "把常用人名、项目代号放进 Vocabulary 词表，让支持的模型在转写时直接写对专有名词。",
+   "在 macOS 上用 Meetings 实验功能录制线上会议并生成文字记录，或在三平台上用 Annotate 边画边讲录屏。",
+   "通过带鉴权的本地 API 和 TypeScript SDK，把同一套模型的转写能力接进自己写的小工具。"
   ],
   "adoption_steps": [
-   "从 README 的 Downloads 表下载对应安装包：macOS 选 Apple silicon 的 DMG，Windows x64 选 Installer；Linux 的包格式在给出的节选中被截断，需到发布页确认；优先选 Stable 而非 Dev。",
-   "首次启动后等待语音模型下载完成（英文系统默认 Parakeet Unified English），然后按住默认快捷键，在任意输入框说一句话，确认文字落在光标处并试一次 Option-Shift-V（Windows/Linux 为 Ctrl-Alt-V）重新粘贴上一次听写。",
-   "进 Settings 的模型选择器换成更贴合你语言的模型（中文可试 Qwen3-ASR 0.6B 或 SenseVoice Small），在 Vocabulary 里填常用人名和术语，再按应用配置 Output 步骤（词替换、内置清理或自己的脚本）。",
-   "如果要二次开发，调用其带鉴权的本地 API 或用 sdk/typescript 里的 SDK，先跑通一次与 App 相同模型的转写请求。"
+   "先按 README 的 Downloads 表下载对应平台的 Stable 包（macOS 为 DMG、Windows x64 有独立安装包），安装后首次启动完成语音模型下载，确认断网后仍能听写。",
+   "在 Settings 里把快捷键改成不冲突的组合，决定用「按住」还是「Tap 开关」模式，然后到任意编辑器里实打实听写一段并检查粘贴位置是否正确。",
+   "按需配置 Vocabulary 词表、History 保留期与 Output 步骤链，若要做集成则阅读 sdk/typescript/README.md 并调用本地鉴权 API 验证一次转写。"
   ],
   "build_ideas": [
-   "用 TypeScript SDK 给 VS Code、JetBrains 或 Obsidian 写插件，在编辑器内直接调用本地转写而不依赖系统级快捷键。",
-   "为 Output 写自定义脚本，做团队术语统一、中英标点规范化和固定格式模板填充。",
-   "把内部领域词典做成可分发的 Vocabulary 词表，随项目或团队配置一起下发。",
-   "转换或微调自己的 GGUF 模型，通过「Add model file…」接入，针对特定口音或行业词汇优化。",
-   "基于 Annotate 的录屏加语音能力，串成一套「讲解即文档」的内部知识沉淀流水线。"
+   "基于带鉴权的本地 API 与 TypeScript SDK，把 Hex 的转写接进内部知识库或工单系统，做「说话即建单」。",
+   "利用 Output 的自定义脚本步骤，写一层针对团队术语的自动改写管道，例如统一变量命名或插入模板片段。",
+   "按 docs/features/own-models.md 引入自训练或领域微调的 GGUF 模型，替换默认模型以适配专业词汇。",
+   "围绕 History（默认 7 天可搜索）做本地导出或摘要工具，把听写记录整理成日报与会议纪要。",
+   "参考 Labs 中的 Annotate 与 Meetings 思路，为特定行业（如教学讲解、远程巡检）扩展录屏加语音标注的工作流。"
   ],
   "risks": [
-   "给出的 README 节选里没有出现许可证信息，商用或二次分发前必须去仓库确认具体协议。",
-   "Downloads 表只列出 macOS 的 Apple silicon 版本，Intel Mac 是否可用需要另行确认。",
-   "Meetings 和 GNOME Wayland 下的 Annotate 都标注为 Labs 实验特性，行为与接口可能随时变化，不适合直接压在生产流程上。",
-   "首次运行必须联网下载模型，且部分模型（如 Cohere Transcribe）体积很大，离线或受限网络环境要先规划带宽与存储。",
-   "Dev 通道会自动从 dev 频道更新，团队部署应锁定 Stable；另外历史默认只保留 7 天，需要长期留档就得先调整设置。"
+   "材料中未出现许可证信息，商用或二次分发前必须到仓库确认 LICENSE 与模型权重各自的使用条款。",
+   "Labs 中的功能被明确标注为实验性（例如 Meetings 仅限 macOS、GNOME Wayland 上的 Annotate 需额外开启 Labs 选项），不要把它们排进关键流程。",
+   "模型是首次运行在线下载且体积不小（README 直接称 Cohere Transcribe 为「big download」），需评估带宽、磁盘占用与离线分发的可行性。",
+   "平台能力不对等：Meetings 只在 macOS 提供，Linux 侧还存在 Wayland 特例，跨平台团队要按成员系统分别验证可用功能。",
+   "README 提供了 Stable 与自动从 dev 频道自更新的 Dev 两条渠道，选用 Dev 会持续收到未稳定构建，需明确团队用哪条渠道并固定版本。"
   ],
   "tokens": {
-   "prompt_tokens": 1267,
-   "completion_tokens": 1639
+   "prompt_tokens": 1270,
+   "completion_tokens": 1417
   },
   "model_resolved": "deepseek-v4.1-flash-1017",
-  "hash": "b5193483c1459b947be37d0e44022cef14867c0a3ae8f66b943b268518d0ec8a",
-  "readme_sha": "3d8275a2706be83d21aaac5518e0d20684a9b756",
+  "hash": "b3587ab3a8639c966eb980d15da9124d2fff5a3b5ba7a1ba7345c6275550c811",
+  "readme_sha": "a5fa733257aa788d9df6e4f5b33f8c3e0ca2a835",
   "desc_hash": "6e0c61432ef25e0c09636e1ff72b829eb127066504f78943ddee2813c551f4de",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-18T09:53:22+08:00",
+  "generated_at": "2026-11-20T08:02:26+08:00",
   "readme_used": true,
   "source_description": "Local voice dictation for mac, windows and linux",
   "language": "Rust",
@@ -1432,51 +1433,51 @@
   "url": "https://github.com/appwrite/appwrite"
  },
  "ashhart/TensorFold": {
-  "one_liner": "用 Zig 写的本地 LLM 推理引擎，免 Python 直接在 Metal/CUDA 上跑模型",
-  "summary": "TensorFold 是一个用 Zig 编写的 LLM 推理与服务引擎，直接读取 checkpoint、做 tokenization 并调用 Metal 或 CUDA kernel，官方强调服务过程不需要 Python 或 MLX 环境。它提供 OpenAI 风格的 HTTP 接口（chat completions、completions、Responses，以及 Anthropic Messages），Mac 上可用 Homebrew 安装，Linux + NVIDIA 用预编译归档解压即用。新意主要在工程形态：把推理栈收敛成单个 Zig 原生二进制，绕开 Python 运行时依赖，和常见基于 PyTorch/vLLM 或 MLX 的路线不同。README 还提到实验性的 Living Weights（在运行中模型的权重里教新事实）、Mac 应用和 TensorFold Starlight，但这些在材料里只有入口、没有细节。",
+  "one_liner": "用 Zig 写的本地 LLM 推理服务，不装 Python 也能在 Mac 或 N 卡上跑模型。",
+  "summary": "TensorFold 是一个用 Zig 编写的推理引擎，直接读取 checkpoint、做 tokenization，并在 Metal 或 CUDA 上执行 kernel，对外提供 HTTP 服务。它主打免 Python、免 MLX 依赖的部署方式：Mac 用 Homebrew 一条命令安装，Linux/Windows 下载预编译包解压即可，然后用 tensorfold pull 拉模型、tensorfold serve 起服务。接口层面兼容 OpenAI 的 chat completions、completions、Responses，以及 Anthropic Messages，前端工具基本可以不改代码接入。另外自带 tensorfold chat 终端交互命令，可一键起服务、流式对话、结束时自动关服务。相比常见的 Python 推理栈，它的差异点在于用单一 Zig 二进制把「拉模型、起服务、聊天」都收进一个 CLI。",
   "audience": [
-   "在 Apple Silicon 或 NVIDIA 机器上做本地推理验证、又不想维护 Python 环境的后端工程师",
-   "需要 OpenAI 兼容接口、想把本地模型接入现有客户端或 Agent 框架的开发者",
-   "对 Zig 语言和原生 kernel 实现感兴趣、想读或改推理引擎源码的系统程序员",
-   "在 Mac 上做离线/私有化小模型 Demo 的产品或方案人员",
-   "需要在 Windows 或 Linux 边缘设备上部署小参数量 4bit 模型、且能控制驱动版本的运维人员"
+   "在 Apple Silicon 或 NVIDIA 显卡上想跑本地模型、又不想维护 Python/conda 环境的后端工程师。",
+   "需要给内部工具接一个 OpenAI 兼容本地端点、但不想把数据发到云端的应用开发者。",
+   "做本地推理部署方案对比、关注非 Python 技术栈（Zig、原生二进制）的架构选型人员。",
+   "想在终端里直接跟模型对话、不依赖 Web UI 的开发者或运维人员。",
+   "已经在用 Anthropic Messages 或 Responses 接口格式、希望换后端时少改代码的团队。"
   ],
   "use_cases": [
-   "在 Mac 上用 brew 安装后 pull 一个 4bit 小模型并以 OpenAI 兼容端点起服务，用 curl 或现有 SDK 直接发请求做效果验证",
-   "在装了 R580 以上 NVIDIA 驱动的 Linux 机器上解压发布包，起一个本地模型作为内网推理后端，供已有应用把 base_url 指过来",
-   "用它的 /v1/models 和 Anthropic Messages 兼容层做多客户端接入测试，比较不同客户端协议下的行为",
-   "把 Zig 引擎作为最小依赖的推理进程嵌入到需要离线运行、不能装 Python 的部署镜像里",
-   "基于 supported-models 文档挑选可在目标机器上跑的 checkpoint，做本地模型选型与吞吐/显存占用的横向对比"
+   "在 Mac 上用 brew 安装后拉一个 4-bit 小模型，起本地服务给自己的脚本或 IDE 插件调用。",
+   "在 Linux NVIDIA 机器上部署预编译包，把 /v1/chat/completions 当作内网 OpenAI 兼容端点供多个应用共用。",
+   "用 tensorfold chat MODEL 一条命令起服务并流式对话，做模型效果的手动快速验证。",
+   "把已有调用 Anthropic Messages 或 OpenAI Responses 的客户端指向本地服务，做离线或私有化替换测试。",
+   "在无 Python 运行时的精简容器或系统镜像里部署推理服务，减少依赖体积。"
   ],
   "adoption_steps": [
-   "先在 Mac 上执行 brew install ashhart/tensorfold/tensorfold，再 pull README 给出的 Qwen3.5-2B-MLX-4bit 固定 revision，用 serve --name local-model --context 8192 起服务，验证整条链路是否跑通。",
-   "接着用 README 里的 curl 请求 /v1/chat/completions 发一条消息，并访问 /v1/models 确认服务名与协议兼容性符合预期。",
-   "确认可用后，阅读 docs/run-guide.md 和 docs/supported-models.md，核对目标平台的 glibc、NVIDIA 驱动版本和需要用的 checkpoint 是否在支持清单内，再决定是否上生产机器。"
+   "先在 Mac 上执行 brew install ashhart/tensorfold/tensorfold，或从 GitHub Releases 下载对应平台的 tar.gz 并校验 sha256，确认二进制能在目标机器上跑起来。",
+   "按 README 的命令执行 tensorfold pull mlx-community/Qwen3.5-2B-MLX-4bit@93760be4f1f69842a46bc13dbdc0f19e291392a3，再 tensorfold serve ... --name local-model --context 8192 起服务，用文档里的 curl 请求验证返回正常。",
+   "验证通过后，把自有的业务模型按同样流程试拉一个，并核对 /v1/models 与客户端 SDK 的兼容性；同时在目标机器上确认驱动版本（NVIDIA 需 R580 及以上、CUDA 13.0、glibc 2.28 及以上）后再进入正式部署。"
   ],
   "build_ideas": [
-   "在它的 OpenAI 兼容端点前面加一层轻量网关，做多模型路由、鉴权和请求日志，替代自建的 Python 推理服务。",
-   "围绕 Living Weights 这个实验特性做知识注入工具链，把结构化事实转成可写入运行中模型权重的操作流程。",
-   "为 Zig 引擎写一个 benchmark 或压测脚本，对比同一 checkpoint 在 Metal 与 CUDA 上的首 token 延迟和吞吐。",
-   "基于 Mac 应用或 Starlight 相关入口做面向非工程用户的本地模型管理界面，封装 pull、serve 和模型切换。",
-   "把引擎打包进容器或最小化系统镜像，做一套不依赖 Python 的离线推理部署模板。"
+   "基于它的 OpenAI 兼容接口写一层网关，做多模型路由、鉴权和用量统计，把本地模型接入现有应用。",
+   "把 tensorfold chat 的流式输出封装成脚本或命令行工具，用于批量 prompt 回归测试和模型对比。",
+   "利用 Anthropic Messages 兼容接口，给已有的 Claude 客户端或 Agent 框架做一个可切换的本地后端适配层。",
+   "围绕 tensorfold serve 写容器镜像和健康检查、进程守护配置，做成内网可复制的一键部署单元。",
+   "如果有 Zig 能力，可参考其贡献指南参与 kernel 或平台后端扩展，把自身硬件或模型格式支持补上。"
   ],
   "risks": [
-   "材料中没有出现项目自身的开源许可证信息，README 只提示模型权重另有许可，商用或再分发前必须先去仓库确认 LICENSE。",
-   "Linux 侧要求 glibc 2.28 以上和 NVIDIA 驱动 R580 以上（CUDA 13.0），驱动较旧的机器无法直接使用发布归档。",
-   "支持哪些 checkpoint 和机器组合要看 docs/supported-models.md，材料未给出清单，先按 README 示例之外的模型试跑时存在不兼容风险。",
-   "这是一个以个人作者为中心的年轻项目（赞助和社交账号均为个人），star 量约 1900，长期维护与问题响应速度需要自行评估。",
-   "Living Weights 在文档中明确标为 experimental，Mac 应用和 Starlight 在材料里只有名称没有说明，不要把它们当作已稳定可依赖的能力来规划。"
+   "材料中未给出代码仓库的开源许可证，商用或二次分发前必须到仓库确认 LICENSE，模型权重另有独立许可也需逐个核对。",
+   "NVIDIA 路径硬性要求 driver R580 及以上、CUDA 13.0、glibc 2.28 及以上，较旧的 GPU 服务器或企业锁定驱动版本的环境可能无法直接用。",
+   "README 中只给出了 Apple Silicon 与 NVIDIA 的安装步骤，虽描述提到 Vulkan，但 Vulkan 的平台要求和可用性在材料中缺乏证据，需自行验证。",
+   "材料未说明支持哪些模型架构与量化格式，只能确认示例中的 Qwen3.5-2B MLX 4bit，目标模型能否加载需要实测。",
+   "项目 star 约 1900、版本为 1.3.0，README 出现个人 Ko-fi 与个人社交账号，维护规模和长期支持能力需自行评估，接口与 CLI 参数存在变动可能。"
   ],
   "tokens": {
-   "prompt_tokens": 1389,
-   "completion_tokens": 1344
+   "prompt_tokens": 1418,
+   "completion_tokens": 1491
   },
   "model_resolved": "deepseek-v4.1-flash-1017",
-  "hash": "03b2431f92a46389d8f07276bdf7cfc92e2191c0f1857642c9168cce3665608f",
-  "readme_sha": "870a9a3dc983c8411e21e971971405b440b6d53f",
+  "hash": "2a98d8681084291bb7b456144dc77ada88d2163a63835f383386c30f39eef478",
+  "readme_sha": "7ff125609e5ccf65fdf8168e9e2610fbe9759372",
   "desc_hash": "e1da0c1ff0e583cfb21040ae4584dd7447124c5d721ecc1b32bf483cd195023f",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-19T08:01:00+08:00",
+  "generated_at": "2026-11-20T08:02:25+08:00",
   "readme_used": true,
   "source_description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
   "language": "Zig",
@@ -1683,7 +1684,7 @@
   "source_description": "Cursor plugin specification and official plugins",
   "language": "TypeScript",
   "url": "https://github.com/cursor/plugins",
-  "readme_sha": "2758dd8e9457ec7a2394fe645bce66132439c35d",
+  "readme_sha": "b7e392f613ea7bbb04422d379680c3abeea3b65e",
   "desc_hash": "e007f4991129a7573749c888398022349d6902b3fab61208eca5f4ba3817f421"
  },
  "debpalash/VoiceStudio": {
@@ -1839,6 +1840,58 @@
   "language": "Python",
   "url": "https://github.com/elementalsouls/Claude-BugHunter"
  },
+ "firecrawl/firecrawl": {
+  "one_liner": "把网页抓取、爬取、站点映射与文档解析统一成面向 AI Agent 的 Markdown 数据接口。",
+  "summary": "Firecrawl 原先是一个网页抓取工具，现在被重新定义为 Agent 的「知识基础设施」：输入 URL 后，它输出干净的 Markdown，页面里的 JavaScript 由本机 Chrome/Chromium 渲染，PDF 与 Office 文档也在本地解析。它提供三种用法：本机单二进制的 Firecrawl Local（通过 cargo install firecrawl-local 安装）、托管云服务 firecrawl.dev，以及从 apps/api 自行部署的完整服务端（包含队列、worker 和数据库）。配套 SDK 同时适用于这三种形态；Firecrawl Local 还能用 init 自动把自己注册进 Claude Code、Cursor、Windsurf、Gemini CLI、Codex 等客户端的 MCP 配置。相比只做单页抓取的工具，它的差异点在于：同一套 API 覆盖 scrape、crawl、map，云端额外提供 search 与 Alexandria 的 550+ 数据源，并且本地与云端的用法保持一致。",
+  "audience": [
+   "正在给 AI Agent 或 RAG 流程补充网页知识，但不想自己维护无头浏览器和解析器的后端工程师。",
+   "需要把文档站点批量转成 Markdown 语料，用于微调或检索的算法与数据工程师。",
+   "希望零运维、直接调用托管 API 获取结构化网页内容的独立开发者和小团队。",
+   "必须把数据留在内网、不能走第三方云服务的金融、政企或医疗行业的技术负责人。",
+   "在 Claude Code、Cursor 等 MCP 客户端里工作，想让 Agent 具备联网抓取能力的开发者。"
+  ],
+  "use_cases": [
+   "用 firecrawl-local scrape 把单篇技术文档或博客转成 Markdown，直接粘进上下文或存入向量库。",
+   "用 firecrawl-local crawl --limit 50 --out ./pages 批量抓取某个文档站，为内部知识库准备语料。",
+   "先用 map 列出目标站点全部 URL，再决定抓取范围，避免直接爬全站。",
+   "在 Claude Code 或 Cursor 里通过 MCP 接入 Firecrawl Local，让编码助手随时查阅在线文档与报错页面。",
+   "用自托管服务端部署 apps/api，让内网应用统一通过同一套 API 完成抓取和爬取。"
+  ],
+  "adoption_steps": [
+   "先做最小验证：执行 npx -y firecrawl-cli@latest scrape https://firecrawl.dev 检查输出效果，再决定是否安装本地版或改用云端。",
+   "若走本地版，先装好 Rust 与 C 编译器（macOS 执行 xcode-select --install，Debian/Ubuntu 安装 build-essential），再执行 cargo install firecrawl-local，然后用 firecrawl-local scrape 与 map 各测一个目标站点。",
+   "若要让 Agent 用上，在目标机器运行 firecrawl-local init，确认它识别到 Claude Code、Cursor 等客户端，并检查它备份的原有 MCP 配置文件后再启用。",
+   "若需规模化或数据不出网，评估自托管路径：阅读 apps/local 与 apps/api 两个目录的部署要求，在测试环境把队列、worker 与数据库跑通，再接入业务。"
+  ],
+  "build_ideas": [
+   "把 Firecrawl Local 的抓取能力封装成内部知识库的定时同步任务，按站点增量更新 Markdown 语料。",
+   "基于 map 的输出做站点结构分析工具，自动识别文档层级并生成带目录的语料索引。",
+   "在自托管服务端之上加一层缓存与去重，降低重复抓取同一 URL 的开销。",
+   "开发面向特定领域的 MCP 工具集，把 Firecrawl 抓取与内部检索、比对逻辑结合成 Agent 专用技能。",
+   "把 scrape 与 PDF/Office 解析能力接入现有 RAG 流水线，替换自研的网页清洗模块。"
+  ],
+  "risks": [
+   "仓库主语言标为 TypeScript，但 Firecrawl Local 通过 cargo install 分发的 Rust 二进制；采用前需确认目标环境是否具备 Rust 工具链与 C 编译器。",
+   "Local 版依赖本机已有的 Chrome 或 Chromium，无浏览器时只能处理静态页面，需要渲染的页面会返回警告而非正确内容。",
+   "README 同时存在 Local、Cloud、自托管三种形态，且自托管需自行维护队列、worker 与数据库，运维成本介于本地单机与纯 SaaS 之间，容易低估。",
+   "MCP 自动配置会修改 Claude Desktop、Cursor 等的配置文件，需要确认其备份机制是否覆盖你正在使用的版本。",
+   "search 与 Alexandria 的 550+ 数据源只在云端提供，若要求数据不出内网，这部分能力无法获得，需确认功能缺口是否可接受。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1304,
+   "completion_tokens": 1112
+  },
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "2696dac6aa1f7057439f156a6505740de16d2ae556df0c4eaee4ef6704458ef5",
+  "readme_sha": "eaecfed6c8a76b16b4e8bcd5d499a473ece1cb11",
+  "desc_hash": "5a11047aebe1393c34b1d1d7ad1f419a8814b16d80adfdcf07f2bca29f66ae37",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-20T08:02:36+08:00",
+  "readme_used": true,
+  "source_description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.",
+  "language": "TypeScript",
+  "url": "https://github.com/firecrawl/firecrawl"
+ },
  "getarcaneapp/arcane": {
   "one_liner": "用浏览器管理 Docker 的现代化面板，让不熟命令行的人也能管容器。",
   "summary": "Arcane 是一个用 Go 编写的 Docker 管理工具，自我定位是「为所有人设计的现代 Docker 管理」；从 README 里的浅色、深色仪表盘截图看，它提供的是 Web 控制台形态。当前 main 分支已经是 v3，2.x 留在 release/2.x.x 分支维护，说明项目正在做大版本演进。工程侧信号比较明确：发布公开的 SBOM、接入 Snyk 扫描、用 Crowdin 做多语言翻译，Go 包路径为 getarcane.dev/arcane/v3。README 本身很薄，安装与配置全部指向 getarcane.app 官方文档站；它相对同类 Docker 管理面板的具体差异，材料里没有对比说明，证据不足。",
@@ -1983,7 +2036,7 @@
   },
   "model_resolved": "deepseek-flash",
   "hash": "05e8630c728eaf40f3fd4977f64e9f9107bb3c509271846c1663a1f6e7ad222a",
-  "readme_sha": "0bdcbc8ced799f698a402076fa744770e41a6b6b",
+  "readme_sha": "8f2b101415404dd3572543d2750ba6e957ceba5f",
   "desc_hash": "6aa032ab013e82836b5d28a9816d8311205dd326630792dac1c27e164ee60270",
   "model": "deepseek-v4-pro",
   "generated_at": "2026-11-18T09:53:14+08:00",
@@ -2292,59 +2345,108 @@
   "source_description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
   "language": "Python",
   "url": "https://github.com/homeassistant-ai/ha-mcp",
-  "readme_sha": "d8b003af14a92389aa643fb1127547c7d2de908d",
+  "readme_sha": "57c704eedbdd5684d3964a0d79c3cdf9b63e30f9",
   "desc_hash": "1a88a0bc7354a5eab87b11456f1cf8c3efa320c7cf00a1c5be0bb1160409c606"
  },
  "jingyaogong/minimind": {
-  "one_liner": "花 3 块钱、2 小时从零训出 64M 小语言模型，把 LLM 全流程拆成能读懂的代码。",
-  "summary": "MiniMind 是一个用 PyTorch 原生实现、从零复现大语言模型全流程的开源项目：主线模型约 64M 参数，结构对齐 Qwen3 / Qwen3-MoE 生态，覆盖 Tokenizer 训练、Pretrain、SFT、LoRA、DPO、PPO/GRPO/CISPO、Tool Use、Agentic RL、自适应思考和蒸馏。它的卖点在于把 transformers / trl / peft 里被封装掉的部分重新摊开写成可读代码，同时开源了配套数据集，并宣称 SFT 阶段单张 3090 跑 1 epoch 约 2 小时、对应租金约 3 元。相比常见的 LoRA 微调教程，它强调从零训练而不是只做推理或微调，定位更接近教学与可复现实验。另有 MiniMind-V（视觉）、MiniMind-O（Omni 多模态）、MiniMind-dLM（扩散语言模型）、MiniMind-Linear（线性模型）等扩展分支。",
+  "one_liner": "在单张 3090 上用 2 小时、约 3 块钱，从零亲手训出一个 64M 小语言模型。",
+  "summary": "MiniMind 是一套用 PyTorch 原生代码从 0 实现的小语言模型全流程复现项目，主线模型约 64M 参数，体积约为 GPT-3 的 1/2700。它把 Tokenizer 训练、Pretrain、SFT、LoRA、RLHF-DPO、RLAIF（PPO/GRPO/CISPO）、Tool Use、Agentic RL、自适应思考与蒸馏等环节的代码和数据全部开源，且核心算法不使用 transformers/trl/peft 的高层封装，只保证与这些框架兼容。区别于常见的“拿大模型做 LoRA 微调”，它的定位是让个人 GPU 也能完成从零训练，同时兼作 LLM 入门教程。README 明确说明“2 小时”指单张 3090 上 SFT 跑完 1 个 epoch 的实测耗时，“3 块钱”是对应时段的 GPU 租用成本，并非全流程训练成本。",
   "audience": [
-   "想搞懂 LLM 内部机制、但被 transformers 高层抽象挡住的后端或算法工程师。",
-   "需要给团队或学生做 LLM 原理课、要求学员亲手跑通训练链路的高校教师与培训讲师。",
-   "手上只有一张消费级或租用 GPU、想低成本做算法验证的个人开发者。",
-   "想对比 DPO / PPO / GRPO / CISPO 等对齐算法在同等小模型上行为差异的研究者。",
-   "需要评估「自研极小模型是否可行」的技术负责人或产品经理。"
+   "想搞懂 LLM 内部原理、不满足于只做 LoRA 微调的算法工程师和研究生。",
+   "需要一门可复现教学案例的高校教师或 AI 课程作者。",
+   "手头只有单卡消费级 GPU、想完整体验预训练到对齐全链路的个人开发者。",
+   "要评估小参数模型在端侧或离线场景能做哪些功能的产品经理。",
+   "想研究 GRPO/CISPO、Agentic RL 等新算法最小实现的研究型工程师。"
   ],
   "use_cases": [
-   "在单张 3090 或同级显卡上跑通 SFT 一个 epoch，实测训练耗时与显存占用，判断自己的硬件是否够用。",
-   "把 Pretrain → SFT → DPO 的代码逐段拆开做代码走读，作为内部 LLM 原理分享会的教材。",
-   "用项目自带的数据清洗与蒸馏脚本处理自有语料，产出一份可复现的小模型训练数据集。",
-   "在同一套代码上切换 PPO / GRPO / CISPO，对比不同强化学习算法在极小模型上的收敛表现。",
-   "训练出的权重导出后接 llama.cpp、ollama 或 vllm，验证小模型在本地推理引擎上的部署链路。"
+   "在单张 3090 上按 README 跑通 Pretrain 到 SFT 的全流程，得到可对话的 64M 模型。",
+   "用项目自带的开源数据集和脚本训练自己的 Tokenizer，并验证 <tool_call>、<think> 等模板标记。",
+   "在 64M 模型上复现 DPO、PPO、GRPO、CISPO 等对齐算法，对比不同策略的训练曲线。",
+   "把训好的模型导出，用 llama.cpp、ollama 或 vllm 做本地推理验证，评估端侧可行性。",
+   "把 MiniMind 的极简结构当作教学素材，逐行讲解 Attention、MoE 与训练循环。"
   ],
   "adoption_steps": [
-   "先把仓库 clone 到本地，按 README 安装 PyTorch 等依赖，并用官方在线体验或已有权重跑一次推理，确认环境与输出正常。",
-   "在单卡上照 README 的 SFT 配置跑最小规模训练（先跑少量 step 而非完整 epoch），记录显存峰值与耗时，验证「2 小时 / 3 块钱」在你的卡上是否成立。",
-   "跑通后再按需扩展到 Pretrain 或 DPO / GRPO 阶段，并确认多卡 DDP / DeepSpeed 部分的文档与代码是否完整、是否与你的集群环境匹配。"
+   "先克隆仓库并按 README 准备 Python/PyTorch 环境，用官方提供的权重或小数据集跑一次推理脚本，确认 GPU、显存与依赖版本可用。",
+   "按 README 的顺序跑 Tokenizer 训练与 1 个 epoch 的 SFT，对照文档里“单卡 3090 / 2 小时”的基准，记录自己硬件上的实际耗时与显存占用。",
+   "在自己的小数据集上做 LoRA 或 SFT 微调，再用 llama.cpp 或 ollama 加载导出模型验证效果，据此判断是否值得投入 Pretrain 与 RL 阶段。"
   ],
   "build_ideas": [
-   "基于它从零实现的 Tokenizer 与 `<tool_call>` / `<think>` 模板，构造自己的 Agent 工具调用数据集并训练小模型做意图路由。",
-   "把 Tool Use 与 Agentic RL 流程抽出来，接到公司内部业务工具上，做一个可完全本地部署、不依赖外部 API 的轻量 Agent。",
-   "以 MiniMind 为教师模型的对照基线，搭建一条面向垂直领域的蒸馏流水线，输出领域专用的几十兆级小模型。",
-   "在 Dense 与 MoE 两套结构之间做消融实验，为团队内部的结构选型提供可复现数据。",
-   "把它改造成一门带自动评测的课程或实验平台，学员提交训练脚本后自动跑分对比。"
+   "基于 MiniMind 的结构做垂直领域小模型：用自有语料重跑 SFT 与 DPO，产物可直接离线部署。",
+   "把 Tool Use 与 Agentic RL 的代码抽出来，做成教学用的最小 Agent 训练实验模板。",
+   "参考 MiniMind-V、MiniMind-O、MiniMind-dLM、MiniMind-Linear 的拆分方式，扩展出音频或视觉的小模型分支。",
+   "围绕它开发一套课程或实验平台：每个训练阶段配一个 notebook 与可视化评测面板。",
+   "封装成 CI 可跑的回归测试：每次改动训练代码后自动跑极小规模训练，验证 loss 与流程未坏。"
   ],
   "risks": [
-   "64M 参数模型的能力上限很低，仅适合教学、流程验证和极轻量任务，不要把它当作可上生产的效果型模型。",
-   "宣传中的「2 小时 / 3 块钱」明确只对应 SFT 阶段单张 3090 跑 1 个 epoch，不包含预训练与数据准备成本，预算评估时容易误算。",
-   "项目同时维护 V、O、dLM、Linear 等多个分支且更新频繁，主线 README 与各分支文档可能存在不同步，落地前需按你选定的分支实测。",
-   "核心算法刻意不用 transformers / trl / peft 的高层接口，与主流生态的权重格式、训练脚本互操作性需要自行验证，迁移到已有流水线有适配成本。",
-   "代码以 Apache 2.0 开源，但训练数据涉及蒸馏与网络收集，数据集的实际来源与商用许可需在使用前单独核对。"
+   "64M 参数模型的实际能力有限，只能用于学习和流程验证，不要指望它替代线上业务所用的大模型。",
+   "“2 小时 / 3 块钱”仅指 SFT 单 epoch 的 3090 实测，Pretrain 与 RL 阶段的实际耗时和租用成本需要自己重新评估。",
+   "README 声称兼容 transformers、trl、peft、vllm、ollama、Llama-Factory，但具体版本兼容性未在材料中给出，落地前必须实测验证。",
+   "仓库迭代较快、主线结构对齐 Qwen3 生态，接口和脚本可能随版本变动，基于旧版本写的二次开发代码存在返工成本。",
+   "代码采用 Apache 2.0，但开源数据集的许可与商用限制在材料中未说明，用于商业项目前需单独核实数据来源。"
   ],
   "tokens": {
-   "prompt_tokens": 1860,
-   "completion_tokens": 1681
+   "prompt_tokens": 1875,
+   "completion_tokens": 1447
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "6192309e1a71993781391ca612ddc527c2cc3da49c75471d1f7e7451a88fbbd4",
+  "readme_sha": "1b11a450c0e50ba81f7072103020c859cb90ac0e",
+  "desc_hash": "ec2efeea48c75422a75c95537a23eef1e5a9b5b5e22e7bc3d864432cfd33b37a",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-20T08:02:20+08:00",
+  "readme_used": true,
+  "source_description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+  "language": "Python",
+  "url": "https://github.com/jingyaogong/minimind"
+ },
+ "jquery/jquery": {
+  "one_liner": "长期维护的浏览器端 JavaScript 基础库，4.0.0 已发布，可继续用于老项目与新项目。",
+  "summary": "jQuery 是一个长期维护的 JavaScript 库，GitHub 描述就是简洁的「jQuery JavaScript Library」，官方站点为 jquery.com。当前主线是 4.x 分支（main 分支，Full 支持），4.0.0 已于 2026-01-17 正式发布；3.x 转入 3.x-stable 分支仅接收关键更新，2.x 与 1.x 已完全停止支持。它明确声明除浏览器外还支持 Node、浏览器扩展等非浏览器环境，并且自建版本需要最新 Node.js/npm 加 git 1.7 以上。相比同类新库，它的「新意」不在于特性，而在于版本支持策略被清晰切成四档并给出商业支持渠道，让团队能按风险决定升级节奏。",
+  "audience": [
+   "维护仍依赖 jQuery 的老前端项目、需要判断升级到 4.x 还是留在 3.x 的工程师。",
+   "需要在浏览器、Node 与浏览器扩展等多种环境里复用同一套代码的开发者。",
+   "为历史遗留系统采购兜底支持、需要评估 1.x/2.x 停服影响的架构师或技术负责人。",
+   "想参与开源贡献、需要按官方风格指南与 gh-NUMBER/trac-NUMBER 引用规范提 PR 的贡献者。"
+  ],
+  "use_cases": [
+   "把停留在 3.x 的项目按官方建议升级到 4.x，并核对 3.x 分支只收关键更新带来的修复缺口。",
+   "为仍在跑 1.x 或 2.x 的系统做技术债盘点，评估迁移工作量或联系 HeroDevs、TuxCare 购买商业支持。",
+   "在浏览器扩展或 Node 环境中引入 jQuery，而不是只在网页里使用。",
+   "从源码自行构建定制版本：安装 git 与最新 Node.js/npm 后按 README 的构建说明操作。",
+   "阅读 meetings.jquery.org 的核心团队会议纪要，跟踪 4.x 后续方向后再决定是否跟进。"
+  ],
+  "adoption_steps": [
+   "先从 https://jquery.com/download/ 获取最新版本，确认目标项目当前使用的分支（1.x/2.x/3.x/4.x），再对照 README 的支持表确定升级路径。",
+   "在测试环境把项目升到 4.0.0，重点回归 3.x 仅关键更新覆盖不到的部分，通过后再合并到主干。",
+   "如需自行构建或提交补丁，安装 git 1.7+ 与最新 Node.js/npm，并按 contribute.jquery.org 的 Getting Involved、Core Style Guide、Writing Code 三份指南准备 PR。"
+  ],
+  "build_ideas": [
+   "基于 jQuery 的浏览器扩展与 Node 双环境支持，封装一套跨环境共用的工具层。",
+   "围绕 4.x 做一个迁移检查工具，扫描代码中依赖已停止支持的 1.x/2.x 行为的写法并给出告警。",
+   "在团队内部维护一份 jQuery 版本支持看板，自动同步 README 中的四档支持状态与商业支持渠道信息。",
+   "为内部组件库编写 jQuery 插件形式的适配层，让老页面与新组件共存并逐步替换。"
+  ],
+  "risks": [
+   "2.x 与 1.x 分支已明确不再支持，仍依赖这两个分支的系统不会再有官方修复，只能自担风险或购买商业支持。",
+   "3.x 只接收关键更新而非完整维护，停留在 3.x 意味着非关键缺陷与常规改进不再进入该分支。",
+   "从旧分支升到 4.x 是跨大版本迁移，README 未提供逐条不兼容清单，实际改造量需要自行验证。",
+   "自行构建依赖最新 Node.js/npm 与 git 1.7+，构建环境过旧会直接无法完成构建。",
+   "历史问题记录分散在 GitHub 与已只读的 bugs.jquery.com（Trac）两套追踪系统中，排查老问题时需要同时检索 gh-NUMBER 与 trac-NUMBER 两种引用。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1217,
+   "completion_tokens": 1323
   },
   "model_resolved": "deepseek-v4.1-flash-1017",
-  "hash": "41323e95b9d8e20272b3982f6b495adb3ce6e3476c346d2e43ec6b9fdbda5f8b",
+  "hash": "42ca6a60d4eed1e0610a8dbaaf65098acdcba0b1128dd58e890a6ce386acba60",
+  "readme_sha": "26e1a2d26e53b8ff3d78baa17d4de870a888c1d6",
+  "desc_hash": "83cde55f0903130dd623b107c478e0dd1de380cbdcd12fd202db377260aeae7a",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-18T08:01:16+08:00",
+  "generated_at": "2026-11-20T08:02:34+08:00",
   "readme_used": true,
-  "source_description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
-  "language": "Python",
-  "url": "https://github.com/jingyaogong/minimind",
-  "readme_sha": "1b11a450c0e50ba81f7072103020c859cb90ac0e",
-  "desc_hash": "c83e1fc3e562a8ec16a07747d5fc716f35e62b16eceaccc6e5de601d3570f473"
+  "source_description": "jQuery JavaScript Library",
+  "language": "JavaScript",
+  "url": "https://github.com/jquery/jquery"
  },
  "kajisho5/ffmpeg-skill": {
   "one_liner": "给你的编码 agent 装上本地 FFmpeg 剪辑能力，不联网、不用 API key。",
@@ -2394,7 +2496,7 @@
   "source_description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
   "language": "Python",
   "url": "https://github.com/kajisho5/ffmpeg-skill",
-  "readme_sha": "08e8bc67be265fed498aaa342511116b3232d3e0",
+  "readme_sha": "588a6ea7c2d8c66de2900d2d4c4d241e1b6f7332",
   "desc_hash": "4c40d1a999ee704009c182f2fc06546446c6bb9c02c5352f16c442115c31fa1f"
  },
  "mattpocock/skills": {
@@ -2497,53 +2599,56 @@
   "desc_hash": "e1de757ef191d72aa4b978cf041028c9c3d6daad47d9db99d4275adb938da1bc"
  },
  "meta/astryx": {
-  "one_liner": "Meta 开源的设计系统：150+ 个可组合 React 组件，支持主题定制，并方便 AI 助手使用。",
-  "summary": "Astryx 是 Meta 内部发展八年的设计系统开源版，自称在公司内支撑 13000+ 应用，目前处于 Beta。它提供 150+ 个无障碍组件、品牌主题、暗色模式和 CLI，基于 React 19+ 构建，样式用 StyleX 编写，但使用方只需引入预构建 CSS 和类型化组件，不需要接入构建插件。与常见设计系统相比，它的差异在于：组件内部结构开放，可直接用导出的基础模块组合，也可用 swizzle 把组件源码弹出到项目里自行维护；主题是一组 CSS 自定义属性覆盖，因此不必 fork 或包装源码；同时 API、文档和 CLI 统一面向人和 AI 助手设计。",
+  "one_liner": "为 React 项目提供 Meta 内部打磨八年、可深度定制且对 AI 助手友好的组件库",
+  "summary": "Astryx 是 Meta 开源的 React 设计系统，在公司内部演进了八年，支撑过 13000+ 应用，现在以 Beta 状态对外发布。它提供 150+ 无障碍组件、品牌级主题、暗黑模式、现成模板和一个 CLI，使用方式是引入预构建 CSS 再写类型化 React 组件，不要求你接入构建插件或采纳某套样式方案。新意集中在三点：组件内部结构开放，构建块直接导出，必要时可用 swizzle 把组件源码弹出到项目里自持；样式虽用 StyleX 编写，但消费端无感知，可用 className 配合 Tailwind、CSS Modules 或普通 CSS 覆盖；主题本质是一组 CSS 自定义属性覆盖，不 fork 不包裹就能换品牌。另外它把 API、文档和 CLI 一起设计，让人和 AI 助手按同一份参考（CLI 的 init 会写入 AGENTS.md）来构建界面。",
   "audience": [
-   "正在为 React 19 项目寻找完整组件库、又不想被样式方案锁死的前端工程师。",
-   "需要快速搭出统一品牌视觉、但团队没有专职组件库维护者的产品团队。",
-   "要把设计系统接入 AI 编码助手工作流、希望人和 agent 共享同一套组件规范的平台工程师。",
-   "评估从自研组件库迁移到成熟开源方案、关注主题定制与源码可控性的架构师。"
+   "正在用或计划升级到 React 19 的前端团队，需要一个开箱即用又有无障碍保障的组件库。",
+   "公司内部设计系统或组件库的维护者，想参考一套大规模落地过的架构与主题机制。",
+   "需要快速搭出中后台或产品界面的产品团队，希望少写样式、直接用模板起步。",
+   "重度使用 AI 编码助手生成 UI 的团队，想要一套人和 Agent 共用同一参考的组件规范。",
+   "需要在不 fork 组件源码的前提下做品牌视觉定制的设计师与前端协作场景。"
   ],
   "use_cases": [
-   "在新 React 19 后台或中台项目中安装 @astryxdesign/core 与 @astryxdesign/theme-neutral，直接使用预构建组件搭页面。",
-   "用 CSS 自定义属性覆盖做品牌主题，把默认外观调整成公司视觉规范，而不改动组件源码。",
-   "对某个行为不合预期的组件执行 swizzle，把源码弹出到项目内自行修改和维护。",
-   "在已用 Tailwind 或 CSS Modules 的项目里，通过 className 覆盖单个组件样式，做局部适配。",
-   "把 @astryxdesign/cli 安装到全局，让本地编码助手在任意目录都能查询到 Astryx 的组件与用法。"
+   "在新项目里安装 @astryxdesign/core 加 theme-neutral，直接引预构建 CSS 并用类型化组件搭页面骨架。",
+   "通过覆盖 CSS 自定义属性生成公司专属主题包，把品牌色、圆角、间距一次性替换掉。",
+   "用 CLI 的 swizzle 把某个组件源码弹出到项目里，改造交互细节而不受上游 API 限制。",
+   "借助 Storybook 和 Sandbox 逐个挑选组件、验证无障碍行为，再复制到业务代码。",
+   "把 CLI init 生成的 AGENTS.md 放进仓库，让 AI 助手按同一套组件约定生成界面代码。"
   ],
   "adoption_steps": [
-   "先按 README 执行 npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex 与 npm install -D @astryxdesign/cli，确认项目使用 React 19 或以上。",
-   "打开官方 Sandbox 和 Storybook（astryx.atmeta.com/sandbox/ 与 /storybook/）挑 2-3 个核心组件，在一个分支里做页面级试用，验证样式覆盖方式和主题定制是否符合现有工程习惯。",
-   "试点通过后，再决定是否用 swizzle 接管个别组件源码，并把主题变量与组件使用规范写入团队文档，然后逐步替换存量组件。"
+   "先确认项目已在 React 19 及以上，然后按 README 安装：npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex，并 npm install -D @astryxdesign/cli。",
+   "在写任何 UI 之前执行一次 CLI 的 init，按它打印的说明完成样式与主题接入，并检查它写入的 AGENTS.md 内容是否符合团队规范。",
+   "去 astryx.atmeta.com/storybook 与 sandbox 挑 2-3 个真实页面用到的组件做试点，验证主题覆盖和 className 覆盖在你现有样式方案下是否生效，再决定是否扩大范围。"
   ],
   "build_ideas": [
-   "基于主题的 CSS 自定义属性机制，做一套公司品牌主题包并发布为内部 npm 包，供多个项目复用。",
-   "围绕 CLI 扩展内部脚手架，在新建项目时自动安装 Astryx、注入主题并生成示例页面。",
-   "用 swizzle 机制维护一批符合内部业务规范的派生组件，形成公司层组件库。",
-   "把这套组件与文档接入内部 AI 编码助手的检索上下文，让生成的界面代码默认使用 Astryx 组件。"
+   "做一套公司内部主题包，把品牌 token 映射成 CSS 自定义属性覆盖，发布成私有 npm 包复用。",
+   "基于 swizzle 弹出的组件源码二次开发，做成团队自己的高阶业务组件（如复杂表格、表单编排器）。",
+   "把 CLI 的 init 与生成的 AGENTS.md 接入团队脚手架和 AI 编码流程，形成「新建项目即带设计规范」的模板。",
+   "利用现成模板搭一套中后台页面模板库，把 Astryx 组件组合成可复制的页面级方案。",
+   "在 Astryx 之上封装内部设计系统层，统一收口 className 覆盖写法，避免各业务各写一套样式补丁。"
   ],
   "risks": [
-   "项目明确标注 Currently in Beta，API 与包结构可能仍在变动，不建议在稳定期产品中大规模铺开而不锁定版本。",
-   "硬性依赖 React 19+，React 18 或更早版本的项目无法直接采用，升级 React 本身就是一笔迁移成本。",
-   "样式层使用 StyleX，且需要额外安装 @stylexjs/stylex 作为依赖，团队需接受这一依赖链，即使日常不必直接写 StyleX。",
-   "README 未说明许可证细节（仅链接 LICENSE），商用前需自行确认授权条款；仓库名中的 meta 是否代表官方长期维护承诺，材料中也没有明确信息。",
-   "README 内容在安装说明处被截断，CLI 的完整能力与全局安装方式未能核实，需到官网文档确认后再纳入流程。"
+   "项目明确标注 Currently in Beta，组件 API 与包结构在正式版前存在破坏性变更的可能，不适合直接压在生产核心链路上。",
+   "React 19 是硬性 peer 依赖，仍停留在 React 18 的项目需要先完成框架升级，迁移成本要先评估。",
+   "StyleX（@stylexjs/stylex）是必须安装的 peer 依赖，即使消费端不写 StyleX，依赖树和版本约束也会多一层。",
+   "README 节选只显示 LICENSE 链接而未给出具体条款，商用前需要在仓库中确认实际许可类型。",
+   "深度超出 CSS 变量范围的定制要走 swizzle 接管源码，之后上游组件升级需要手动同步，长期维护成本会随定制量上升。",
+   "目前公开的采用案例主要来自 Meta 内部（13000+ 应用为内部数据），外部生态、第三方文章和社区问答的数量尚不明确，遇到问题可参考的资料可能有限。"
   ],
   "tokens": {
    "prompt_tokens": 1262,
-   "completion_tokens": 936
+   "completion_tokens": 1796
   },
   "model_resolved": "deepseek-flash",
-  "hash": "f867168a9af5a287a931b994bd05e9bff5f78773349ff3b5d111ad36f43b6a45",
+  "hash": "d4d08ddb1a2dac50826c7e4bf42b19a7ccae6f35f75ee1e8a5f1376578cdc37b",
+  "readme_sha": "d30ee50759fdfb941a9f1a681f13b02910601bb5",
+  "desc_hash": "cee09caeff1cf9ba3b4970fe911e5d3568fe7ce5cbd5cba148432ee8fc48589d",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:25:35+08:00",
+  "generated_at": "2026-11-20T08:02:22+08:00",
   "readme_used": true,
   "source_description": "An open source design system that's fully customizable and agent ready",
   "language": "TypeScript",
-  "url": "https://github.com/meta/astryx",
-  "readme_sha": "29b89543395d69bd2a5385a9e768ec9bd9015f73",
-  "desc_hash": "cee09caeff1cf9ba3b4970fe911e5d3568fe7ce5cbd5cba148432ee8fc48589d"
+  "url": "https://github.com/meta/astryx"
  },
  "milind-soni/OpenMausBot": {
   "one_liner": "在聊天界面里管理一队本地运行的 AI agent，每个都带自己的虚拟机和已连接的应用。",
@@ -2596,6 +2701,57 @@
   "readme_sha": "59f51944ec9181200393c6f54c3f7932153159c8",
   "desc_hash": "7f27e6a33ec431de0ee46e86359a6869709c4126052cf548ddf522080579987d"
  },
+ "mjmirza/app-store-compliance": {
+  "one_liner": "用一份开放的审核避坑手册加提交前扫描脚本，帮你减少 iOS 和 Android 应用被商店打回。",
+  "summary": "这是一个面向 App Store 和 Google Play 上架合规的开放手册与预提交检查工具，主体内容放在文档里，同时提供一个 Shell 防护脚本，扫描项目目录并输出现有被拒风险点。它整理了 117 条有记录的被拒模式和对应修法、隐私清单与 Data safety 检查项，以及 95 条监管截止日期（EU AI Act、DSA、COPPA、年龄相关法律）。使用方式很轻：clone 仓库后用 bash 跑一次扫描，不改动你的应用代码，也不需要安装额外依赖。相比散落在博客和论坛里的经验帖，它的新意在于把「被拒」当成可提前排除的失败模式，并且额外提供面向 Claude Code、Cursor 等 AI 编码工具的 skill，让检查可以嵌进日常提交流程。",
+  "audience": [
+   "即将首次提交 iOS 或 Android 应用、不确定审核红线的独立开发者。",
+   "已经被 App Store 或 Google Play 拒过、需要对照具体条款准备申诉或整改的移动端工程师。",
+   "负责发版流程、希望在上传前加一道自动检查的移动端技术负责人或发布经理。",
+   "不写代码但需要把关合规清单的产品经理或运营人员。",
+   "日常使用 Claude Code、Cursor、Codex 等 AI 编码工具、想把合规检查接进 AI 工作流的开发者。"
+  ],
+  "use_cases": [
+   "在提审前对本地 Xcode 或 Android 工程目录跑一次 guard 脚本，按输出的 [CRITICAL] 行逐条修掉高风险项。",
+   "应用已被拒时，翻 docs/MISTAKE-PATTERNS.md 的申诉手册，对照被拒原因找到对应的模式条目和修法。",
+   "产品经理按 docs/PRE-SUBMISSION-CHECKLIST.md 逐项过一遍，完成提交前的合规自查。",
+   "把仓库里的 skill 安装进 AI 编码工具，让每次让 AI 改完代码后自动提示隐私清单或 Data safety 的遗漏。",
+   "依据仓库中 95 条监管截止日期清单，排查 EU AI Act、DSA、COPPA 等法规对当前应用的上线时间要求。"
+  ],
+  "adoption_steps": [
+   "先按 README 执行 git clone https://github.com/mjmirza/app-store-compliance ~/repositories/app-store-compliance，把手册拉到本地。",
+   "对目标工程运行 bash ~/repositories/app-store-compliance/agent-os/hooks/app-store-compliance-guard.sh \"/path/to/your/app\"，注意保留引号并指向含 Xcode 工程或 Android 应用的目录，先只看输出不改代码。",
+   "根据最后一行是 BLOCKED 还是 CLEAN 决定下一步：被 BLOCKED 就按每条 [CRITICAL] 下方的 fix 提示修改后重跑，同时在 CI 或提交前脚本里固定加这一步。"
+  ],
+  "build_ideas": [
+   "把 guard 脚本封装成 GitHub Actions 或 GitLab CI 的 job，在每次 PR 和发版流水线上自动跑合规扫描并产出报告。",
+   "将 117 条被拒模式结构化成语料，做一个检索或问答工具，输入被拒邮件原文就定位到对应条目和修法。",
+   "基于 95 条监管截止日期清单开发一个提醒服务，按应用所属地区和市场推送即将生效的合规期限。",
+   "为 React Native、Flutter 等跨平台工程补充扫描规则，扩展当前以原生工程为主的检查覆盖面。",
+   "把仓库里的 AI skill 包装成插件或规则包，适配更多 AI 编码工具，让合规检查成为生成代码后的默认一步。"
+  ],
+  "risks": [
+   "项目主语言是 Shell，核心能力依赖 bash 和 git 环境，在 Windows 原生终端下的可用性需要自行验证。",
+   "采用自定义的 Open Roots License（ORA 2.3）而非 MIT、Apache 等常见许可，商用或二次分发前需要先读许可原文确认限制。",
+   "117 条模式和 95 条截止日期属于人工维护的静态清单，苹果和谷歌的审核条款会更新，清单可能滞后于官方政策。",
+   "README 节选在输出说明处被截断，扫描结果的完整判定逻辑和误报率无法从材料确认，需实际跑一遍评估。",
+   "仓库 star 增长较快但项目由个人维护，issue 响应速度和长期维护投入缺少证据，不宜作为唯一合规依据。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1307,
+   "completion_tokens": 1031
+  },
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "e031f541127caee63c190cd6244e81e76c3463d0149abb7ed61721220c8aac35",
+  "readme_sha": "63bdbd6b0bb7f11ff538727833e211e7c7135d7d",
+  "desc_hash": "0ce4f8b430ca3ff16fc093d9174166b82f67d23571513587718dc196b2395514",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-20T08:02:37+08:00",
+  "readme_used": true,
+  "source_description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+  "language": "Shell",
+  "url": "https://github.com/mjmirza/app-store-compliance"
+ },
  "morluto/rea": {
   "one_liner": "让你的 AI agent 通过 MCP 逆向分析二进制、应用与运行时行为。",
   "summary": "REA 是一个以 MCP 形式发布的逆向工程工具集（npm 包名 rea-agents），它把检查 native 二进制、应用与运行时行为的工具接到你已有的 agent 上，让 agent 在没有源码的情况下分析某个功能、给出证据，并帮你复刻实现。安装入口是 npx rea-agents setup，配套有网站、Guides、Showcases 和 mcp-contracts 参考文档。它相比传统逆向工具的不同之处在于把流程 agent 化、工具接口 MCP 标准化，并声称可用于构建 RL 环境。需要说明的是，README 节选在介绍「连接原生二进制、JavaScr…」处被截断，具体支持的目标平台、文件格式与工具清单无法从现有材料确认。",
@@ -2644,7 +2800,7 @@
   "source_description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
   "language": "TypeScript",
   "url": "https://github.com/morluto/rea",
-  "readme_sha": "bb4828fb62da9283985a16b2051cc98efac8c7ec",
+  "readme_sha": "ff39a01428340fb243f5268fb70f5d6ee40ffeb0",
   "desc_hash": "5ac528c4ea6bf0091094a1d1cad19be40c9a0e45aa719a59788f30ff7181a01a"
  },
  "mvanhorn/last30days-skill": {
@@ -2953,6 +3109,57 @@
   "readme_sha": "985e1e45098f5a02d7ef3932ae164823e9435acb",
   "desc_hash": "d068a7cc88c245053f95a9ca6a73f7e531bc9541adf535a63f574ec08f0014ed"
  },
+ "openvinotoolkit/openvino": {
+  "one_liner": "把训练好的模型转换优化，让它在 Intel CPU、GPU、NPU 上推理跑得更快、资源占用更低。",
+  "summary": "OpenVINO 是 Intel 主导的开源深度学习推理优化与部署工具包，核心作用是把模型以更高效的形式跑起来，而不是参与训练。它支持 PyTorch、TensorFlow、ONNX、Keras、PaddlePaddle、JAX/Flax 训练的模型，并可通过 Optimum Intel 直接对接 Hugging Face Hub 上的 transformers 与 diffusers 模型，转换后无需原始框架即可部署。硬件上覆盖 x86 与 ARM 的 CPU、Intel 集成与独立 GPU、以及 Intel NPU，主打从边缘到云端的推理场景。安装入口很多，pip、npm、conda-forge、Homebrew 都有对应包，还单独拆出了 openvino.genai 仓库用于生成式 AI。README 节选没有给出与其他推理框架的横向性能对比数据，是否更快需要自己用目标模型和硬件做基准测试。",
+  "audience": [
+   "需要在 Intel CPU、集成显卡或 NPU 上部署模型、又不想绑定某个训练框架的算法工程师。",
+   "做边缘设备与工控机部署、对内存和算力占用敏感的系统或嵌入式工程师。",
+   "使用 Hugging Face transformers 与 diffusers、希望通过 Optimum Intel 直接加速推理的产品团队。",
+   "在 Windows/x86 平台做计算机视觉或语音识别推理应用的开发者。",
+   "想在 Node.js 或 Electron 应用里嵌入本地推理能力的客户端工程师。"
+  ],
+  "use_cases": [
+   "把一个已训练好的 PyTorch 或 ONNX 视觉模型转换后部署到 Intel CPU 或集成 GPU 上做批量推理。",
+   "用 Optimum Intel 加载 Hugging Face Hub 上的 transformers 或 diffusers 模型，省去自己写转换脚本。",
+   "在算力受限的边缘设备上压缩资源占用，把推理服务从云端下沉到本地。",
+   "通过 openvino-node 在 Node.js 服务或桌面应用里直接调用模型推理，不必另起一个 Python 服务。",
+   "借助 openvino.genai 仓库探索小语言模型和生成式模型在本地 Intel 硬件上的部署。"
+  ],
+  "adoption_steps": [
+   "先执行 pip install -U openvino，再用 import openvino as ov 与 print(ov.__version__) 验证安装是否成功。",
+   "拿一个自己业务里已有的 ONNX 或 PyTorch 模型走一遍转换与推理流程，在目标硬件上记录延迟与内存占用，和现有方案对比。",
+   "对照官方 supported devices 与 system requirements 文档确认目标硬件在支持列表内，再评估是否需要引入 openvino.genai 覆盖生成式场景。"
+  ],
+  "build_ideas": [
+   "基于 openvino-node 封装一个跨平台桌面或 Electron 的本地推理组件，供前端应用直接调用。",
+   "围绕 openvino.genai 搭一个本地化的小语言模型推理服务，替代对外部 API 的依赖。",
+   "构建内部模型转换与基准测试流水线，把团队模型仓库里的模型批量转成 OpenVINO 格式并输出性能报表。",
+   "基于 Optimum Intel 做一层封装，让业务方用统一接口把 Hugging Face 模型一键跑在 Intel 硬件上。",
+   "针对边缘设备场景做一套视觉检测推理模板，包含模型转换、设备选择与性能调优的固定流程。"
+  ],
+  "risks": [
+   "硬件加速能力绑在 Intel 平台上，GPU 与 NPU 明确写的是 Intel 集成与独立显卡及 Intel NPU，换用其他厂商加速卡无法获得同等收益。",
+   "README 节选未给出许可证信息，商用前必须到仓库 LICENSE 文件确认授权条款与再分发要求。",
+   "文档链接按年份版本组织，说明版本迭代较快，落地时应锁定具体版本并固定依赖，避免升级后接口或行为变化。",
+   "README 未提供与其他推理框架的横向基准数据，性能收益需要在自有模型和硬件上实测，不能直接引用宣传口径。",
+   "转换后的模型脱离原训练框架，调试与精度排查需要保留原始模型和转换脚本，否则问题定位成本会明显上升。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1273,
+   "completion_tokens": 1713
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "55a4e03a5fb1c6712f02627e0220a69d227ec11d1f8a9b078ed23d243c2c3210",
+  "readme_sha": "7fa8d27f1e8f8e7d675aebc7a0a7c718c5b26d32",
+  "desc_hash": "aa0fe619426022a9678e0a3143c639a34e7e53c6e91d71f66f68e1145a460e9a",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-20T08:02:37+08:00",
+  "readme_used": true,
+  "source_description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+  "language": "C++",
+  "url": "https://github.com/openvinotoolkit/openvino"
+ },
  "pbakaus/impeccable": {
   "one_liner": "给编码 agent 一套设计词汇，让它按命令打磨和审查界面，拦下 AI 味",
   "summary": "Impeccable 解决的是「让 AI 帮你写界面，但写出来千篇一律」的问题：它把模糊的「让它更出彩」拆成 polish、bolder、quieter、harden 这类可执行的动词，每个词对应一份专用 playbook，并要求指定明确的目标（比如「pricing cards」）。它靠三类能力落地：一是风格指令，二是 critic/audit 这类评审角色（critique 按可用性启发式打分并排序修复优先级，audit 检查无障碍、性能、主题和响应式，结论按 P0 到 P3 分级），三是 62 条确定性规则组成的 slop 检测器，不调用 LLM、不需要 API key，所以检出结果是可复现的。工程上它通过 npx impeccable install 装进项目，首次运行 /impeccable init 读取代码并写出 PRODUCT.md 作为长期上下文，/impeccable document 则把现有视觉系统固化到 DESIGN.md，让后续改动不偏离品牌。相比常见的「提示词模板」或纯模型评审，它的新意在于把设计评审拆成确定性规则加结构化上下文文件，并适配了 Claude Code、Cursor、Codex CLI 等一大批编码工具。",
@@ -3105,6 +3312,57 @@
   "source_description": "Enable Hermès Watch Faces on any Apple Watch devices",
   "language": "Objective-C",
   "url": "https://github.com/pookjw/HermesEnabler"
+ },
+ "punkpeye/awesome-mcp-servers": {
+  "one_liner": "汇总各类 MCP server 的索引清单，帮你快速找到能直接接进 AI 客户端的现成工具。",
+  "summary": "这是一个 awesome 系列的资源清单，按主题汇总 Model Context Protocol（MCP）server 的条目，本质上是一份索引，仓库本身通常不包含可运行的服务代码。MCP 是一套让 AI 客户端连接外部工具与数据源的协议，使用者按清单挑到合适的 server 后，再按对应子项目的说明安装并在客户端里注册即可。相比自己零散搜索，它的价值在于收录广度和持续更新（本期仍在 daily 榜单上新增 53 star），适合作为选型时的第一站而不是最终答案。本次没有取到 README，因此具体的分类方式、收录标准、条目数量与维护节奏都无法确认，下面关于「怎么用」的建议均按 awesome 清单的通行形态推断。",
+  "audience": [
+   "正在给 Claude Desktop、Cursor 或其他 MCP 客户端找现成工具接入的开发者。",
+   "需要评估 MCP 生态现状、判断是否值得投入自研 server 的架构师或技术负责人。",
+   "想了解某个具体能力（数据库、浏览器、文件系统等）是否已有现成 MCP 实现的产品经理。",
+   "需要为企业内部挑选并审核第三方 MCP 连接器的平台或安全工程师。",
+   "写 MCP 相关教程、做技术选型对比文章的技术写作者与技术博主。"
+  ],
+  "use_cases": [
+   "按关键词在清单中定位某一类 server（如数据库、搜索、文件系统），再进入对应子仓库确认能力边界。",
+   "为客户端的某个具体需求挑选候选 server，横向对比几个同类条目的功能与活跃度后决定接入哪一个。",
+   "在自研 MCP server 之前先查清单，确认是否已有可复用实现，避免重复造轮子。",
+   "把清单作为团队内部的 MCP 工具候选池，逐个验证后沉淀成自己的可用清单。",
+   "在技术分享或方案评审中，用清单快速展示 MCP 目前覆盖的能力范围。"
+  ],
+  "adoption_steps": [
+   "先打开 GitHub 仓库主页浏览目录结构，确认分类方式和最近一次提交时间，判断条目是否还在维护。",
+   "从中挑 1 到 2 个和你当前需求最贴近的条目，进入其子仓库读 README，确认安装方式（npx、uvx 或 docker）、所需凭据和许可证。",
+   "在你使用的客户端（如 Claude Desktop、Cursor）的 MCP 配置中注册该 server，用一条最小请求验证它能否正常返回结果，再决定是否扩大使用范围。"
+  ],
+  "build_ideas": [
+   "把清单数据抓取下来做成可筛选的网页或内部目录，支持按客户端兼容性、传输方式、语言打标签。",
+   "为清单条目加自动化健康检查，定期抓取各子仓库的最近提交、star 趋势、许可证与归档状态，生成可用性评分。",
+   "做一个企业内部私有 MCP registry，把清单里验证通过的 server 固定版本并加镜像，规避上游变更带来的风险。",
+   "针对清单条目做安全审计工具，扫描子项目是否要求过宽的文件系统或网络权限、是否含可疑的遥测行为。",
+   "开发一个推荐器：输入自然语言需求，从清单中匹配若干候选 server 并给出接入配置片段。"
+  ],
+  "risks": [
+   "本次未取到 README，收录标准、分类维度、条目数量和维护者响应速度都无法核实，无法判断清单质量是否可靠。",
+   "清单本身通常不含代码，能否真正用起来完全取决于每个子项目的维护状态，存在大量条目已停止更新或链接失效的可能。",
+   "近 10 万 star 主要反映曝光度而非条目质量，awesome 清单普遍存在自我推广、重复收录和低质条目的问题，需要逐条甄别。",
+   "MCP 协议与客户端生态仍在快速变化，清单里标注的接入方式可能已经过时，需以子项目最新文档为准。",
+   "各 server 的许可证和安全边界彼此独立，清单一般不做安全审计，接入前需自行确认许可证兼容性与权限范围。"
+  ],
+  "tokens": {
+   "prompt_tokens": 490,
+   "completion_tokens": 1559
+  },
+  "model_resolved": "deepseek-flash",
+  "hash": "808d936d18aca5ef69d48a35e5e8cc3fac23ae585d21f7d569db84529262af33",
+  "readme_sha": "4d42d143433c9f448fc0184e2cb86f54305a2484",
+  "desc_hash": "4318e635c80d41596d6764aa386e89f29be115a64e317aceab35846dc8458203",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-20T08:02:33+08:00",
+  "readme_used": false,
+  "source_description": "A collection of MCP servers.",
+  "language": "-",
+  "url": "https://github.com/punkpeye/awesome-mcp-servers"
  },
  "ranxianglei/billion-context": {
   "one_liner": "把长会话的上下文压缩掉，让小窗口也能撑起月级会话。",
@@ -3260,6 +3518,57 @@
   "readme_sha": "ddad6e0214cfa14bfabab0d67bf52293f5d2990e",
   "desc_hash": "55af8d821a7881a1389183800c977262839e9c69238bf129992f2951a9d4a719"
  },
+ "solidjs/solid": {
+  "one_liner": "把模板编译成真实 DOM，用细粒度响应式更新界面，让你不必依赖虚拟 DOM diff。",
+  "summary": "Solid 是一个用 TypeScript 写的声明式 UI 库，核心主张是抛弃虚拟 DOM：构建时把 JSX 编译成真实 DOM 操作，组件函数只在挂载时执行一次，响应式精确到表达式级别，只有读取了某个 state 的那行代码会在它变化时重新运行。它提供 createSignal、createMemo、createStore 等响应式原语，读取即自动订阅依赖；更新在微任务里批量执行，需要同步时用 flush()。相较传统运行时 diff 方案，它的新意在于把「按组件重渲染」换成「按表达式打补丁」，并在此基础上提供一等公民的异步计算（可返回 Promise 或 AsyncIterable，以 <Loading> 为边界）、createOptimistic / createOptimisticStore 与 action 这类乐观更新原语，以及流式 SSR 和渐进式水合。README 示例里 render 来自 @solidjs/web，响应式原语来自 solid-js，说明包是按职责拆分的，照抄示例前要确认版本对应。",
+  "audience": [
+   "在意运行时开销、愿意接受编译期 JSX 转换的前端团队负责人。",
+   "要处理高频状态更新界面、想用细粒度更新替掉整树 diff 的一线前端工程师。",
+   "需要流式 SSR 与渐进式水合的服务端渲染应用开发者。",
+   "要做乐观更新和结构化 mutation（提交即改 UI、失败回滚）的产品前端。",
+   "正在评估从 React 或其他运行时框架迁移成本的架构师。"
+  ],
+  "use_cases": [
+   "用 createSignal 与 createMemo 把表单、筛选列表里的派生状态改写成按表达式订阅，避免整组件重跑。",
+   "用 createOptimistic、createOptimisticStore 配合 action 实现点赞、评论、收藏这类提交即更新、失败回滚的交互。",
+   "用流式 SSR 加渐进式水合搭建首屏内容多、需要尽快可交互的站点。",
+   "让计算函数返回 Promise 或 AsyncIterable，用 <Loading> 作为加载边界来组织异步数据加载。",
+   "在官方 Playground 里对照同一段 JSX 的编译产物，评估调试体验和产物体积是否可接受。"
+  ],
+  "adoption_steps": [
+   "先打开 https://playground.solidjs.com/ 跑一遍 README 的 Counter 例子并展开编译输出，确认团队能接受「组件只跑一次、按表达式更新」的写法与产物形态。",
+   "按 https://docs.solidjs.com 的安装指引新建一个最小工程（npm 包为 solid-js，示例中 render 来自 @solidjs/web），锁定版本后跑通 Counter、一个异步计算加 <Loading>、一个 createOptimistic 示例。",
+   "选一个非核心页面做试点迁移，同步验证构建配置、流式 SSR 与水合、以及现有测试对微任务批量更新的适配（必要时用 flush()），拿到产物与改造成本数据后再决定是否推广。"
+  ],
+  "build_ideas": [
+   "做一个编译产物可视化调试面板，展示每个 DOM 表达式订阅了哪些 signal、更新时触发了哪一处。",
+   "封装一套基于 action 与 createOptimisticStore 的数据层脚手架，统一处理乐观更新、失败回滚和并发冲突。",
+   "围绕流式 SSR 和水合做缓存与分块下发策略的插件或中间件。",
+   "基于其响应式原语做一套面向内部业务的设计系统组件库，把状态订阅约束在组件内部。",
+   "做从 React 组件到 Solid 写法的转换/提示工具，降低存量代码试点迁移的人力成本。"
+  ],
+  "risks": [
+   "材料未提供 LICENSE 信息，采用前需在仓库确认许可证类型及专利条款是否满足公司法务要求。",
+   "README 示例同时从 solid-js 和 @solidjs/web 导入，并出现 createOptimistic、action、<Loading> 等原语，API 面仍在演进，需核对文档与你锁定的版本是否一致，避免照抄示例编译不过。",
+   "它的收益依赖构建期 JSX 编译转换，必须接入对应构建配置；源码与产物不一致会影响断点调试和团队上手成本，需先在试点工程验证工具链承载能力。",
+   "状态读取在下一个微任务才反映到 DOM，现有依赖同步 DOM 断言的测试和第三方同步集成需要用 flush() 适配，改造成本要提前估算。",
+   "材料没有给出组件库、路由、meta-framework 等生态集成和人才供给的证据，采用前需确认你实际要用的配套在 Solid 上是否有可用实现，并实测迁移工作量。"
+  ],
+  "tokens": {
+   "prompt_tokens": 1263,
+   "completion_tokens": 2695
+  },
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "57012c3eedc26eb5dd5322dd4bdd9b77ca9909b881fa8fe3ab85004ac01f9635",
+  "readme_sha": "3440b902928d23e4b18d76066a62da2af027d7d9",
+  "desc_hash": "06875f1d57ea78b29f3bb466657bfd4b946fa5433130828243f2a40404ba4525",
+  "model": "deepseek-v4-pro",
+  "generated_at": "2026-11-20T08:02:46+08:00",
+  "readme_used": true,
+  "source_description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+  "language": "TypeScript",
+  "url": "https://github.com/solidjs/solid"
+ },
  "sveltejs/svelte": {
   "one_liner": "把声明式组件编译成精准更新 DOM 的高效 JavaScript，省掉框架运行时开销。",
   "summary": "Svelte 是一个用来构建 Web 应用的编译器：你写声明式组件，它在构建阶段把组件转换成高效 JavaScript，运行时只做「外科手术式」的 DOM 更新。它与在浏览器里跑运行时做 diff 的思路不同，把大量工作前移到了编译期。README 明确它采用 MIT 许可，开发主要靠志愿者推进，资金通过 Open Collective 募集，路线图公开在 svelte.dev/roadmap。除了框架本身，仓库还包含 packages/svelte 包与贡献指南，说明它是可持续参与的开源工程而不只是一个 npm 包。",
@@ -3312,54 +3621,55 @@
   "desc_hash": "d009615483c94bf84a3487749cbcf1934ce44da2368ee13778046e6c9b7d63ad"
  },
  "tashfeenahmed/freellmapi": {
-  "one_liner": "把几十家免费 LLM 额度聚合成一个 OpenAI 兼容的 /v1 接口。",
-  "summary": "FreeLLMAPI 是一个 TypeScript 写的自托管路由器，把大量厂商的免费额度以及任意 OpenAI 兼容的自定义端点，统一暴露成一个 /v1 接口。它按请求挑选可用模型，遇到限流就自动切到下一家，并对每个 key 记录用量，尽量不越过各家免费额度上限。密钥加密存储，附带桌面端、Docker 镜像和移动端安装包。与常见的「单 provider 代理」相比，新意在于聚合 + 路由 + 配额跟踪三件事绑在一起。需要注意的是，GitHub 描述写的是 34 家 provider、635 个端点、每月 74 亿 token，README 已变成 87 家、1313 个端点、每月 101 亿 token，说明项目迭代很快、文档口径不统一。此外，模型目录通过签名 feed 更新，免费版落后 30 天，实时目录属于 19 美元/年的付费项。",
+  "one_liner": "把几十家免费 LLM 额度聚合成一个 OpenAI 兼容端点，自动路由和故障切换。",
+  "summary": "FreeLLMAPI 是一个 TypeScript 写的自托管网关，把多家厂商的免费额度（README 称 87 家 provider、1313 个免费 model endpoint）和自定义 OpenAI 兼容端点，统一收敛到一个 /v1 接口下。它内部做三件事：按请求挑当前最合适的模型、遇到限流就自动 failover 到下一家、按 key 记录用量以免超出各家的免费额度上限；密钥加密存储。相比自己写脚本轮询多个 API key，它的差异点在于路由+故障切换+配额追踪是一体的，并且模型目录通过签名 feed 自动更新（免费版拿月度快照，付费版 $19/yr 当天更新）。需要明确的是，作者自己标注了 Personal experimentation only，定位是个人试验而非生产级基础设施。",
   "audience": [
-   "想低成本试用多家模型、做对比实验的个人开发者。",
-   "需要给 Cline、Claude Code 一类 coding agent 找一个免费 OpenAI 兼容后端的工程师。",
-   "要做多模型原型验证、但不想逐家申请和对接 SDK 的产品经理。",
-   "研究 LLM 网关路由、限流与故障转移实现方式的后端工程师。"
+   "手上有多个厂商免费 API key、想合并成一个入口做实验的个人开发者。",
+   "在写 coding agent 或 CLI 工具、需要一个可随时切换上游模型的 OpenAI 兼容后端的工程师。",
+   "想低成本跑原型、又不愿意把代码绑死在单一厂商 SDK 上的小团队。",
+   "想研究多 provider 路由、限流退避和配额管理实现方式的架构师。",
+   "习惯自托管、用 Docker Compose 管服务的运维/ homelab 用户。"
   ],
   "use_cases": [
-   "把本地 coding agent 的 base_url 指向自建的 /v1，让它在多个免费模型之间自动切换。",
-   "对同一个 prompt 并行跑不同厂商模型，做输出质量和延迟的横向对比。",
-   "给个人 side project 接一个零成本的 chat、embedding 或图像推理后端。",
-   "用它的 per-key 用量统计验证自己设计的免费额度控制策略是否可行。",
-   "把公司内部或第三方的 OpenAI 兼容端点注册进去，和免费模型混在一个入口下调用。"
+   "把本地跑的 OpenAI 兼容客户端（CLI 编码助手、聊天前端）的 base_url 指向自建的 /v1，一次性接上多家免费模型。",
+   "在批量跑实验时让路由自动在某个厂商 429 限流后切到下一家，避免脚本中断。",
+   "用 per-key 用量统计盯住每家免费额度，防止某一家被跑爆后再也调不通。",
+   "把公司内部已有的 OpenAI 兼容服务作为一个自定义 endpoint 注册进去，和公共免费额度混用。",
+   "借它的 prompt compression 文档与模块，评估在网关层压缩请求以节省 token 的可行性。"
   ],
   "adoption_steps": [
-   "先按 docs/en/install/01-install.md 的 Docker Compose 章节在本地起服务，确认容器可访问。",
-   "在管理界面录入你已有的各厂商 API key，确认密钥是加密存储并检查 per-key 用量面板是否正常计数。",
-   "把任意 OpenAI 兼容客户端的 base_url 改为本地 /v1，按 docs/en/api/01-rest-api.md 发一次对话请求，再手动触发限流验证自动故障转移。"
+   "先按 docs/en/install/01-install.md 的 Docker Compose 章节起一个本地实例，或直接装桌面端（Microsoft Store / Google Play / App Store 均有入口）先看界面。",
+   "在管理界面里填入至少两个 provider 的 key，确认密钥以加密形式保存，然后发一次 chat completions 请求验证 /v1 能通。",
+   "故意把其中一个 provider 的额度耗尽或填错 key，观察路由是否按预期 failover，并检查 per-key 用量统计是否准确，再决定是否接入自己的客户端。"
   ],
   "build_ideas": [
-   "在它的路由层之上写一套自定义策略，按延迟、成本或模型能力打分选模型，替代默认挑选逻辑。",
-   "基于签名 model catalog feed 做一个内部的模型可用性看板，展示各家免费额度的实时消耗。",
-   "把 per-key 用量数据导出，接上自建的告警系统，在接近免费额度上限时提醒切换。",
-   "为特定领域（如代码补全）封装一个预设好的 provider 优先级配置，做成团队内部的一键部署模板。",
-   "把自研模型或私有推理服务包装成 OpenAI 兼容端点注册进去，与免费模型共享同一个调用入口。"
+   "在它前面加一层团队鉴权与配额，把个人试验用的网关改造成内部共享的模型入口。",
+   "基于 per-key 用量数据做一个用量看板，按 provider 展示剩余免费额度和即将耗尽的告警。",
+   "为自家私有模型或内部推理服务写一个自定义 provider adapter，接入它的路由体系。",
+   "把它的 failover 逻辑抽出来，做成 coding agent 侧的模型降级策略库。",
+   "结合 README 提到的 prompt compression pipeline，做一个按模型上下文长度自动选择压缩策略的中间件。"
   ],
   "risks": [
-   "README 明确写了「Personal experimentation only」，商用或多人共享前需自行确认是否违反免责声明及各家上游 provider 的服务条款。",
-   "免费安装拿到的模型目录是月度快照，比实时 feed 晚 30 天，想跟进新模型和配额变化需要订阅 19 美元/年的付费版。",
-   "仓库描述与 README 的 provider 数量、端点数量、token 规模三组数据互相矛盾，说明文档口径不稳定，依赖具体数字做决策前要复核。",
-   "可用性本质上取决于上游免费额度，上游随时可能调整或取消，项目本身无法保证 SLA。",
-   "材料只显示存在 LICENSE 徽章，未给出具体许可条款，二次分发或闭源改造前必须先读 LICENSE 原文。"
+   "README 写 87 家 provider / 1313 个 endpoint / 10.1B tokens，而 GitHub 描述仍是 34 家 / 635 个 / 7.4B，官方口径不一致，接入前应自己在实例里核对实际可用的 provider 数量。",
+   "作者明确标注 Personal experimentation only，材料中没有任何关于 SLA、并发上限或生产可用性的承诺，不适合直接承载线上业务。",
+   "模型目录靠签名 feed 自动更新，但免费安装只能拿到延迟 30 天的月度快照，新模型和配额修复要等，或者付 $19/yr 才有当天更新，存在功能上的付费分层。",
+   "整个方案建立在各厂商免费额度之上，材料未说明这种代理转发是否符合各家服务条款，需要逐个 provider 核对后再决定是否长期使用。",
+   "累计 50320 star 中本期新增 17591，单月增量超过总量的三分之一，热度增长异常，建议以自己部署后的实际表现而非 star 数判断是否采用。"
   ],
   "tokens": {
-   "prompt_tokens": 1390,
-   "completion_tokens": 1553
+   "prompt_tokens": 1394,
+   "completion_tokens": 1594
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "e553430f7d823008a05b709e4ffcd1f1b3fb3a0946e593108540ade3895fce8f",
+  "model_resolved": "deepseek-v4.1-flash-1017",
+  "hash": "98f0ec45784dfc00404655c27ec1c7c49862a33f8122008234bee346a042df09",
+  "readme_sha": "98f6210b12c83fa4bf6c32787ba122647c49cd9e",
+  "desc_hash": "53ebb0746e981e3f0d31a31cbf2a4cda48403a5943ba7e06598434d57a5ab19a",
   "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T19:09:01+08:00",
+  "generated_at": "2026-11-20T08:02:27+08:00",
   "readme_used": true,
   "source_description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
   "language": "TypeScript",
-  "url": "https://github.com/tashfeenahmed/freellmapi",
-  "readme_sha": "fd0d8792a598289c84dbcba22394dacf5a76c4b6",
-  "desc_hash": "53ebb0746e981e3f0d31a31cbf2a4cda48403a5943ba7e06598434d57a5ab19a"
+  "url": "https://github.com/tashfeenahmed/freellmapi"
  },
  "thedotmack/claude-mem": {
   "one_liner": "让你的编码 Agent 记住上次会话做过什么，自动把相关上下文带进新会话。",
@@ -3409,7 +3719,7 @@
   "source_description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
   "language": "TypeScript",
   "url": "https://github.com/thedotmack/claude-mem",
-  "readme_sha": "3d7a90f7257c6e52a023e982e16cf5be503a6dc3",
+  "readme_sha": "e6504752588c5bdfe529c10df4341552c879d8fb",
   "desc_hash": "8e71d54bc44f2a50fa7a71dbc1d45de687258297c4384b412a3445c2e01aeafa"
  },
  "tokio-rs/topcoat": {

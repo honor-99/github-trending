@@ -1,28 +1,9 @@
 {
- "generated_at": "2026-11-19T08:01:30+08:00",
+ "generated_at": "2026-11-20T08:02:52+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
- "candidate_count": 37,
+ "candidate_count": 33,
  "excluded_count": 8,
  "items": [
-  {
-   "full_name": "google-research/paper-orchestra",
-   "score": 100,
-   "stars_period": 1524,
-   "stars_total": 4251,
-   "growth": 0.5589,
-   "language": "Python",
-   "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
-   "periods": [
-    "daily"
-   ],
-   "streak": 3,
-   "reasons": [
-    "本期 +1,524 star，相当于存量的 55.9%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 4,251 star，向上空间大",
-    "连续 3 期在榜，热度不是一次性"
-   ]
-  },
   {
    "full_name": "ranxianglei/billion-context",
    "score": 96.4,
@@ -39,26 +20,6 @@
     "本期 +5,300 star，相当于存量的 491.7%",
     "刚进榜单，还没被反复曝光",
     "体量仅 6,378 star，向上空间大",
-    "单期绝对增量超过 2,000，属于爆发型"
-   ]
-  },
-  {
-   "full_name": "elementalsouls/Claude-BugHunter",
-   "score": 95.1,
-   "stars_period": 2313,
-   "stars_total": 11339,
-   "growth": 0.2563,
-   "language": "Python",
-   "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
-   "periods": [
-    "daily"
-   ],
-   "streak": 2,
-   "reasons": [
-    "本期 +2,313 star，相当于存量的 25.6%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 11,339 star，向上空间大",
-    "连续 2 期在榜，热度不是一次性",
     "单期绝对增量超过 2,000，属于爆发型"
    ]
   },
@@ -99,6 +60,24 @@
     "刚进榜单，还没被反复曝光",
     "体量仅 15,732 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "mjmirza/app-store-compliance",
+   "score": 88.1,
+   "stars_period": 377,
+   "stars_total": 1819,
+   "growth": 0.2614,
+   "language": "Shell",
+   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+   "periods": [
+    "daily"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +377 star，相当于存量的 26.1%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 1,819 star，向上空间大"
    ]
   },
   {
@@ -155,6 +134,24 @@
     "本期 +6,844 star，相当于存量的 24.0%",
     "刚进榜单，还没被反复曝光",
     "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "backnotprop/plannotator",
+   "score": 71.0,
+   "stars_period": 1719,
+   "stars_total": 11899,
+   "growth": 0.1689,
+   "language": "TypeScript",
+   "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +1,719 star，相当于存量的 16.9%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 11,899 star，向上空间大"
    ]
   }
  ]
