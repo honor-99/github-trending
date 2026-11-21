@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T16:13:01+08:00",
+ "generated_at": "2026-11-21T16:06:18+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
  "project_count": 41,
  "topics": [
@@ -7,8 +7,8 @@
    "name": "AI Agent / 编码助手",
    "repo_count": 24,
    "share": 0.585,
-   "stars_period_total": 580547,
-   "avg_stars_period": 24189,
+   "stars_period_total": 580913,
+   "avg_stars_period": 24205,
    "languages": [
     "CSS",
     "HTML",
@@ -149,16 +149,6 @@
      "description": "Production-grade engineering skills for AI coding agents."
     },
     {
-     "full_name": "obra/superpowers",
-     "stars_period": 2028,
-     "stars_total": 322347,
-     "language": "Shell",
-     "periods": [
-      "daily"
-     ],
-     "description": "An agentic skills framework & software development methodology that works."
-    },
-    {
      "full_name": "backnotprop/plannotator",
      "stars_period": 1719,
      "stars_total": 11899,
@@ -170,8 +160,8 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1349,
-     "stars_total": 13055,
+     "stars_period": 1622,
+     "stars_total": 14792,
      "language": "Python",
      "periods": [
       "daily"
@@ -179,49 +169,29 @@
      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
     },
     {
-     "full_name": "mvanhorn/last30days-skill",
-     "stars_period": 954,
-     "stars_total": 71040,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
-    },
-    {
-     "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 898,
-     "stars_total": 60823,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
-    },
-    {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 825,
-     "stars_total": 204581,
+     "stars_period": 1241,
+     "stars_total": 205557,
      "language": "TypeScript",
      "periods": [
       "daily"
      ],
-     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API."
+     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
     },
     {
-     "full_name": "cursor/plugins",
-     "stars_period": 384,
-     "stars_total": 17652,
-     "language": "TypeScript",
+     "full_name": "obra/superpowers",
+     "stars_period": 890,
+     "stars_total": 323031,
+     "language": "Shell",
      "periods": [
       "daily"
      ],
-     "description": "Cursor plugin specification and official plugins"
+     "description": "An agentic skills framework & software development methodology that works."
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 377,
-     "stars_total": 2193,
+     "stars_period": 869,
+     "stars_total": 2940,
      "language": "Shell",
      "periods": [
       "daily"
@@ -229,19 +199,29 @@
      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and"
     },
     {
-     "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 302,
-     "stars_total": 10828,
-     "language": "TypeScript",
+     "full_name": "HKUDS/CLI-Anything",
+     "stars_period": 773,
+     "stars_total": 61601,
+     "language": "Python",
      "periods": [
       "daily"
      ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
+    },
+    {
+     "full_name": "mvanhorn/last30days-skill",
+     "stars_period": 681,
+     "stars_total": 71608,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
     },
     {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 271,
-     "stars_total": 68874,
+     "stars_period": 636,
+     "stars_total": 69465,
      "language": "HTML",
      "periods": [
       "daily"
@@ -250,13 +230,33 @@
     },
     {
      "full_name": "Tracer-Cloud/opensre",
-     "stars_period": 38,
-     "stars_total": 13276,
+     "stars_period": 466,
+     "stars_total": 13727,
      "language": "Python",
      "periods": [
       "daily"
      ],
      "description": "The open-source agent for CI/CD reliability."
+    },
+    {
+     "full_name": "google-labs-code/stitch-skills",
+     "stars_period": 315,
+     "stars_total": 11148,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+    },
+    {
+     "full_name": "cursor/plugins",
+     "stars_period": 299,
+     "stars_total": 17929,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "Cursor plugin specification and official plugins"
     }
    ]
   },
@@ -264,8 +264,8 @@
    "name": "安全 / 逆向",
    "repo_count": 8,
    "share": 0.195,
-   "stars_period_total": 496846,
-   "avg_stars_period": 62106,
+   "stars_period_total": 498105,
+   "avg_stars_period": 62263,
    "languages": [
     "Java",
     "JavaScript",
@@ -327,8 +327,8 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1349,
-     "stars_total": 13055,
+     "stars_period": 1622,
+     "stars_total": 14792,
      "language": "Python",
      "periods": [
       "daily"
@@ -337,8 +337,8 @@
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 377,
-     "stars_total": 2193,
+     "stars_period": 869,
+     "stars_total": 2940,
      "language": "Shell",
      "periods": [
       "daily"
@@ -347,8 +347,8 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 182,
-     "stars_total": 75361,
+     "stars_period": 676,
+     "stars_total": 75945,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -361,8 +361,8 @@
    "name": "其他 / 未归类",
    "repo_count": 6,
    "share": 0.146,
-   "stars_period_total": 49454,
-   "avg_stars_period": 8242,
+   "stars_period_total": 50368,
+   "avg_stars_period": 8395,
    "languages": [
     "C",
     "Python",
@@ -412,8 +412,8 @@
     },
     {
      "full_name": "XiaoYouChR/Ghost-Downloader-3",
-     "stars_period": 341,
-     "stars_total": 13144,
+     "stars_period": 1082,
+     "stars_total": 13981,
      "language": "Python",
      "periods": [
       "daily"
@@ -422,8 +422,8 @@
     },
     {
      "full_name": "nginx/nginx",
-     "stars_period": 73,
-     "stars_total": 32425,
+     "stars_period": 246,
+     "stars_total": 32629,
      "language": "C",
      "periods": [
       "daily"
@@ -436,8 +436,8 @@
    "name": "CLI / 开发者工具",
    "repo_count": 6,
    "share": 0.146,
-   "stars_period_total": 7533,
-   "avg_stars_period": 1256,
+   "stars_period_total": 8639,
+   "avg_stars_period": 1440,
    "languages": [
     "HTML",
     "Python",
@@ -466,9 +466,19 @@
      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
     },
     {
+     "full_name": "zhouxiaoka/autoclip",
+     "stars_period": 979,
+     "stars_total": 12407,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
+    },
+    {
      "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 898,
-     "stars_total": 60823,
+     "stars_period": 773,
+     "stars_total": 61601,
      "language": "Python",
      "periods": [
       "daily"
@@ -476,19 +486,9 @@
      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
     },
     {
-     "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 302,
-     "stars_total": 10828,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
-    },
-    {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 271,
-     "stars_total": 68874,
+     "stars_period": 636,
+     "stars_total": 69465,
      "language": "HTML",
      "periods": [
       "daily"
@@ -496,14 +496,14 @@
      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. "
     },
     {
-     "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 126,
-     "stars_total": 11665,
-     "language": "Python",
+     "full_name": "google-labs-code/stitch-skills",
+     "stars_period": 315,
+     "stars_total": 11148,
+     "language": "TypeScript",
      "periods": [
       "daily"
      ],
-     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
     }
    ]
   },
@@ -511,8 +511,8 @@
    "name": "LLM / 模型与推理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 27923,
-   "avg_stars_period": 5585,
+   "stars_period_total": 28503,
+   "avg_stars_period": 5701,
    "languages": [
     "C++",
     "Python",
@@ -550,24 +550,24 @@
      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
     },
     {
-     "full_name": "openvinotoolkit/openvino",
-     "stars_period": 246,
-     "stars_total": 11632,
-     "language": "C++",
-     "periods": [
-      "daily"
-     ],
-     "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference"
-    },
-    {
      "full_name": "jingyaogong/minimind",
-     "stars_period": 238,
-     "stars_total": 67274,
+     "stars_period": 847,
+     "stars_total": 67850,
      "language": "Python",
      "periods": [
       "daily"
      ],
      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours."
+    },
+    {
+     "full_name": "openvinotoolkit/openvino",
+     "stars_period": 217,
+     "stars_total": 11841,
+     "language": "C++",
+     "periods": [
+      "daily"
+     ],
+     "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference"
     }
    ]
   },
@@ -575,8 +575,8 @@
    "name": "学习 / 知识管理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 25912,
-   "avg_stars_period": 5182,
+   "stars_period_total": 26549,
+   "avg_stars_period": 5310,
    "languages": [
     "Python",
     "TypeScript"
@@ -603,9 +603,19 @@
      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork"
     },
     {
+     "full_name": "firecrawl/firecrawl",
+     "stars_period": 1241,
+     "stars_total": 205557,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
+    },
+    {
      "full_name": "mvanhorn/last30days-skill",
-     "stars_period": 954,
-     "stars_total": 71040,
+     "stars_period": 681,
+     "stars_total": 71608,
      "language": "Python",
      "periods": [
       "daily"
@@ -613,19 +623,9 @@
      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
     },
     {
-     "full_name": "firecrawl/firecrawl",
-     "stars_period": 825,
-     "stars_total": 204581,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API."
-    },
-    {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 182,
-     "stars_total": 75361,
+     "stars_period": 676,
+     "stars_total": 75945,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -638,8 +638,8 @@
    "name": "音视频 / 多模态",
    "repo_count": 3,
    "share": 0.073,
-   "stars_period_total": 73259,
-   "avg_stars_period": 24420,
+   "stars_period_total": 74112,
+   "avg_stars_period": 24704,
    "languages": [
     "Python",
     "TypeScript"
@@ -667,8 +667,8 @@
     },
     {
      "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 126,
-     "stars_total": 11665,
+     "stars_period": 979,
+     "stars_total": 12407,
      "language": "Python",
      "periods": [
       "daily"
@@ -769,21 +769,21 @@
    "name": "数据 / 爬虫",
    "repo_count": 1,
    "share": 0.024,
-   "stars_period_total": 825,
-   "avg_stars_period": 825,
+   "stars_period_total": 1241,
+   "avg_stars_period": 1241,
    "languages": [
     "TypeScript"
    ],
    "repos": [
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 825,
-     "stars_total": 204581,
+     "stars_period": 1241,
+     "stars_total": 205557,
      "language": "TypeScript",
      "periods": [
       "daily"
      ],
-     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API."
+     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
     }
    ]
   },
@@ -791,16 +791,16 @@
    "name": "后端 / 基础设施",
    "repo_count": 1,
    "share": 0.024,
-   "stars_period_total": 302,
-   "avg_stars_period": 302,
+   "stars_period_total": 315,
+   "avg_stars_period": 315,
    "languages": [
     "TypeScript"
    ],
    "repos": [
     {
      "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 302,
-     "stars_total": 10828,
+     "stars_period": 315,
+     "stars_total": 11148,
      "language": "TypeScript",
      "periods": [
       "daily"

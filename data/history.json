@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-20T16:13:01+08:00",
+ "generated_at": "2026-11-21T16:06:18+08:00",
  "basis": "所有日/周/月快照里出现过的项目去重并集，按累计 star 总量降序（取最近一次上榜时的值）",
  "sort_key": "stars_total",
  "project_count": 84,
- "index_rows": 150,
- "snapshot_count": 11,
+ "index_rows": 166,
+ "snapshot_count": 12,
  "first_date": "2026-11-11",
- "latest_date": "2026-11-20",
+ "latest_date": "2026-11-21",
  "period_counts": {
-  "daily": 8,
+  "daily": 9,
   "weekly": 2,
   "monthly": 1
  },
@@ -42,10 +42,10 @@
    "url": "https://github.com/obra/superpowers",
    "description": "An agentic skills framework & software development methodology that works.",
    "language": "Shell",
-   "stars_total": 322347,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 4767,
-   "appearances": 3,
+   "stars_total": 323031,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 5657,
+   "appearances": 4,
    "best_rank": 1,
    "periods": [
     "daily"
@@ -54,10 +54,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 3
+    "daily": 4
    },
    "first_seen": "2026-11-18",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 2
   },
   {
@@ -135,13 +135,13 @@
   {
    "full_name": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.",
+   "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
    "language": "TypeScript",
-   "stars_total": 204581,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 825,
-   "appearances": 1,
-   "best_rank": 5,
+   "stars_total": 205557,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 2066,
+   "appearances": 2,
+   "best_rank": 2,
    "periods": [
     "daily"
    ],
@@ -149,10 +149,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-20",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 6
   },
   {
@@ -517,11 +517,11 @@
    "url": "https://github.com/toeverything/AFFiNE",
    "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
    "language": "TypeScript",
-   "stars_total": 75361,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 182,
-   "appearances": 1,
-   "best_rank": 13,
+   "stars_total": 75945,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 858,
+   "appearances": 2,
+   "best_rank": 10,
    "periods": [
     "daily"
    ],
@@ -529,10 +529,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-20",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 22
   },
   {
@@ -566,10 +566,10 @@
    "url": "https://github.com/mvanhorn/last30days-skill",
    "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
    "language": "Python",
-   "stars_total": 71040,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 2844,
-   "appearances": 4,
+   "stars_total": 71608,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 3525,
+   "appearances": 5,
    "best_rank": 3,
    "periods": [
     "daily"
@@ -578,11 +578,34 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 5
    },
    "first_seen": "2026-11-17",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 24
+  },
+  {
+   "full_name": "cathrynlavery/diagram-design",
+   "url": "https://github.com/cathrynlavery/diagram-design",
+   "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+   "language": "HTML",
+   "stars_total": 69465,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 907,
+   "appearances": 2,
+   "best_rank": 10,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
+   "place": 25
   },
   {
    "full_name": "cloudflare/security-audit-skill",
@@ -608,7 +631,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 25
+   "place": 26
   },
   {
    "full_name": "Alishahryar1/free-claude-code",
@@ -631,29 +654,6 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 26
-  },
-  {
-   "full_name": "cathrynlavery/diagram-design",
-   "url": "https://github.com/cathrynlavery/diagram-design",
-   "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
-   "language": "HTML",
-   "stars_total": 68874,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 271,
-   "appearances": 1,
-   "best_rank": 10,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-20",
-   "last_seen": "2026-11-20",
    "place": 27
   },
   {
@@ -661,11 +661,11 @@
    "url": "https://github.com/jingyaogong/minimind",
    "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
    "language": "Python",
-   "stars_total": 67274,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 430,
-   "appearances": 2,
-   "best_rank": 12,
+   "stars_total": 67850,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 1277,
+   "appearances": 3,
+   "best_rank": 7,
    "periods": [
     "daily"
    ],
@@ -673,10 +673,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 2
+    "daily": 3
    },
    "first_seen": "2026-11-18",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 28
   },
   {
@@ -707,10 +707,10 @@
    "url": "https://github.com/HKUDS/CLI-Anything",
    "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
    "language": "Python",
-   "stars_total": 60823,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 1287,
-   "appearances": 2,
+   "stars_total": 61601,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 2060,
+   "appearances": 3,
    "best_rank": 4,
    "periods": [
     "daily"
@@ -719,10 +719,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 2
+    "daily": 3
    },
    "first_seen": "2026-11-19",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 30
   },
   {
@@ -1035,10 +1035,10 @@
    "url": "https://github.com/nginx/nginx",
    "description": "The official NGINX Open Source repository.",
    "language": "C",
-   "stars_total": 32425,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 73,
-   "appearances": 1,
+   "stars_total": 32629,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 319,
+   "appearances": 2,
    "best_rank": 15,
    "periods": [
     "daily"
@@ -1047,10 +1047,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-20",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 44
   },
   {
@@ -1271,10 +1271,10 @@
    "url": "https://github.com/cursor/plugins",
    "description": "Cursor plugin specification and official plugins",
    "language": "TypeScript",
-   "stars_total": 17652,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 899,
-   "appearances": 3,
+   "stars_total": 17929,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 1198,
+   "appearances": 4,
    "best_rank": 6,
    "periods": [
     "daily"
@@ -1283,10 +1283,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 3
+    "daily": 4
    },
    "first_seen": "2026-11-18",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 54
   },
   {
@@ -1362,15 +1362,15 @@
    "place": 57
   },
   {
-   "full_name": "Tracer-Cloud/opensre",
-   "url": "https://github.com/Tracer-Cloud/opensre",
-   "description": "The open-source agent for CI/CD reliability.",
+   "full_name": "elementalsouls/Claude-BugHunter",
+   "url": "https://github.com/elementalsouls/Claude-BugHunter",
+   "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
    "language": "Python",
-   "stars_total": 13276,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 38,
-   "appearances": 1,
-   "best_rank": 16,
+   "stars_total": 14792,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 4074,
+   "appearances": 4,
+   "best_rank": 1,
    "periods": [
     "daily"
    ],
@@ -1378,10 +1378,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 4
    },
-   "first_seen": "2026-11-20",
-   "last_seen": "2026-11-20",
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-21",
    "place": 58
   },
   {
@@ -1389,11 +1389,11 @@
    "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
    "description": "The only downloader you need. 下载器的集大成者。",
    "language": "Python",
-   "stars_total": 13144,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 341,
-   "appearances": 1,
-   "best_rank": 8,
+   "stars_total": 13981,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 1423,
+   "appearances": 2,
+   "best_rank": 3,
    "periods": [
     "daily"
    ],
@@ -1401,11 +1401,34 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-20",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 59
+  },
+  {
+   "full_name": "Tracer-Cloud/opensre",
+   "url": "https://github.com/Tracer-Cloud/opensre",
+   "description": "The open-source agent for CI/CD reliability.",
+   "language": "Python",
+   "stars_total": 13727,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 504,
+   "appearances": 2,
+   "best_rank": 12,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 2
+   },
+   "first_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
+   "place": 60
   },
   {
    "full_name": "backnotprop/plannotator",
@@ -1431,18 +1454,18 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 60
+   "place": 61
   },
   {
-   "full_name": "elementalsouls/Claude-BugHunter",
-   "url": "https://github.com/elementalsouls/Claude-BugHunter",
-   "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+   "full_name": "zhouxiaoka/autoclip",
+   "url": "https://github.com/zhouxiaoka/autoclip",
+   "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
    "language": "Python",
-   "stars_total": 13055,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 2452,
-   "appearances": 3,
-   "best_rank": 2,
+   "stars_total": 12407,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 1105,
+   "appearances": 2,
+   "best_rank": 4,
    "periods": [
     "daily"
    ],
@@ -1450,11 +1473,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 3
+    "daily": 2
    },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-20",
-   "place": 61
+   "first_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
+   "place": 62
   },
   {
    "full_name": "max-sixty/worktrunk",
@@ -1477,7 +1500,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 62
+   "place": 63
   },
   {
    "full_name": "openai/codex-security",
@@ -1500,29 +1523,6 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-13",
-   "place": 63
-  },
-  {
-   "full_name": "zhouxiaoka/autoclip",
-   "url": "https://github.com/zhouxiaoka/autoclip",
-   "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
-   "language": "Python",
-   "stars_total": 11665,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 126,
-   "appearances": 1,
-   "best_rank": 14,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-20",
-   "last_seen": "2026-11-20",
    "place": 64
   },
   {
@@ -1530,10 +1530,10 @@
    "url": "https://github.com/openvinotoolkit/openvino",
    "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
    "language": "C++",
-   "stars_total": 11632,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 270,
-   "appearances": 2,
+   "stars_total": 11841,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 487,
+   "appearances": 3,
    "best_rank": 11,
    "periods": [
     "daily"
@@ -1542,10 +1542,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 2
+    "daily": 3
    },
    "first_seen": "2026-11-19",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 65
   },
   {
@@ -1595,6 +1595,29 @@
    "place": 67
   },
   {
+   "full_name": "google-labs-code/stitch-skills",
+   "url": "https://github.com/google-labs-code/stitch-skills",
+   "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+   "language": "TypeScript",
+   "stars_total": 11148,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 2108,
+   "appearances": 6,
+   "best_rank": 8,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 6
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-21",
+   "place": 68
+  },
+  {
    "full_name": "shadcn/improve",
    "url": "https://github.com/shadcn/improve",
    "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
@@ -1615,29 +1638,6 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 68
-  },
-  {
-   "full_name": "google-labs-code/stitch-skills",
-   "url": "https://github.com/google-labs-code/stitch-skills",
-   "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
-   "language": "TypeScript",
-   "stars_total": 10828,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 1793,
-   "appearances": 5,
-   "best_rank": 8,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 5
-   },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-20",
    "place": 69
   },
   {
@@ -1924,11 +1924,11 @@
    "url": "https://github.com/mjmirza/app-store-compliance",
    "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
    "language": "Shell",
-   "stars_total": 2193,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 377,
-   "appearances": 1,
-   "best_rank": 7,
+   "stars_total": 2940,
+   "stars_total_date": "2026-11-21",
+   "stars_period_sum": 1246,
+   "appearances": 2,
+   "best_rank": 6,
    "periods": [
     "daily"
    ],
@@ -1936,10 +1936,10 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 1
+    "daily": 2
    },
    "first_seen": "2026-11-20",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-21",
    "place": 82
   },
   {
