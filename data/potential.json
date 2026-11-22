@@ -1,26 +1,26 @@
 {
- "generated_at": "2026-11-21T16:06:18+08:00",
+ "generated_at": "2026-11-22T15:51:58+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
- "candidate_count": 37,
- "excluded_count": 4,
+ "candidate_count": 36,
+ "excluded_count": 5,
  "items": [
   {
    "full_name": "mjmirza/app-store-compliance",
-   "score": 96.6,
-   "stars_period": 869,
-   "stars_total": 2940,
-   "growth": 0.4196,
+   "score": 100,
+   "stars_period": 720,
+   "stars_total": 3564,
+   "growth": 0.2532,
    "language": "Shell",
-   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 111 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
    "periods": [
     "daily"
    ],
-   "streak": 2,
+   "streak": 3,
    "reasons": [
-    "本期 +869 star，相当于存量的 42.0%",
+    "本期 +720 star，相当于存量的 25.3%",
     "刚进榜单，还没被反复曝光",
-    "体量仅 2,940 star，向上空间大",
-    "连续 2 期在榜，热度不是一次性"
+    "体量仅 3,564 star，向上空间大",
+    "连续 3 期在榜，热度不是一次性"
    ]
   },
   {
