@@ -206,18 +206,25 @@
     "rank": 8,
     "stars_period": 773,
     "stars_total": 61363
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 5,
+    "stars_period": 769,
+    "stars_total": 62067
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/HKUDS/CLI-Anything"
  },
  "HKUDS/DeepTutor": {
@@ -470,18 +477,25 @@
     "rank": 12,
     "stars_period": 466,
     "stars_total": 13593
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 12,
+    "stars_period": 450,
+    "stars_total": 13982
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/Tracer-Cloud/opensre"
  },
  "XiaoYouChR/Ghost-Downloader-3": {
@@ -495,18 +509,25 @@
     "rank": 3,
     "stars_period": 1082,
     "stars_total": 13677
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 779,
+    "stars_total": 14429
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3"
  },
  "ZhuLinsen/daily_stock_analysis": {
@@ -931,18 +952,25 @@
     "rank": 11,
     "stars_period": 636,
     "stars_total": 69267
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 583,
+    "stars_total": 69789
    }
   ],
   "language": "HTML",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/cathrynlavery/diagram-design"
  },
  "cloudflare/security-audit-skill": {
@@ -1000,18 +1028,25 @@
     "rank": 14,
     "stars_period": 299,
     "stars_total": 17837
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 14,
+    "stars_period": 260,
+    "stars_total": 18099
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-22",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/cursor/plugins"
  },
  "debpalash/VoiceStudio": {
@@ -1103,18 +1138,25 @@
     "rank": 1,
     "stars_period": 1622,
     "stars_total": 14211
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 1,
+    "stars_period": 1803,
+    "stars_total": 16020
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 2,
-    "times": 3
+    "last_date": "2026-11-22",
+    "streak": 3,
+    "times": 4
    }
   },
-  "times_on_board": 3,
+  "times_on_board": 4,
   "url": "https://github.com/elementalsouls/Claude-BugHunter"
  },
  "firecrawl/firecrawl": {
@@ -1128,18 +1170,25 @@
     "rank": 2,
     "stars_period": 1241,
     "stars_total": 205246
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 1006,
+    "stars_total": 206169
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/firecrawl/firecrawl"
  },
  "getarcaneapp/arcane": {
@@ -1293,18 +1342,25 @@
     "rank": 13,
     "stars_period": 315,
     "stars_total": 11021
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 13,
+    "stars_period": 326,
+    "stars_total": 11414
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 4,
-    "times": 4
+    "last_date": "2026-11-22",
+    "streak": 5,
+    "times": 5
    }
   },
-  "times_on_board": 4,
+  "times_on_board": 5,
   "url": "https://github.com/google-labs-code/stitch-skills"
  },
  "google-research/paper-orchestra": {
@@ -1439,18 +1495,25 @@
     "rank": 7,
     "stars_period": 847,
     "stars_total": 67675
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 488,
+    "stars_total": 68141
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-22",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/jingyaogong/minimind"
  },
  "kajisho5/ffmpeg-skill": {
@@ -1634,18 +1697,25 @@
     "rank": 6,
     "stars_period": 869,
     "stars_total": 2716
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 6,
+    "stars_period": 720,
+    "stars_total": 3388
    }
   ],
   "language": "Shell",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/mjmirza/app-store-compliance"
  },
  "morluto/rea": {
@@ -1698,18 +1768,25 @@
     "rank": 9,
     "stars_period": 681,
     "stars_total": 71431
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 10,
+    "stars_period": 560,
+    "stars_total": 71988
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 3,
-    "times": 3
+    "last_date": "2026-11-22",
+    "streak": 4,
+    "times": 4
    }
   },
-  "times_on_board": 3,
+  "times_on_board": 4,
   "url": "https://github.com/mvanhorn/last30days-skill"
  },
  "nginx/nginx": {
@@ -1723,18 +1800,25 @@
     "rank": 15,
     "stars_period": 246,
     "stars_total": 32559
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 16,
+    "stars_period": 189,
+    "stars_total": 32726
    }
   ],
   "language": "C",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/nginx/nginx"
  },
  "nodejs/node": {
@@ -1805,18 +1889,25 @@
     "rank": 5,
     "stars_period": 890,
     "stars_total": 322819
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 3,
+    "stars_period": 883,
+    "stars_total": 323710
    }
   ],
   "language": "Shell",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-22",
+    "streak": 3,
+    "times": 3
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/obra/superpowers"
  },
  "openai/codex-security": {
@@ -1862,18 +1953,25 @@
     "rank": 16,
     "stars_period": 217,
     "stars_total": 11783
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 15,
+    "stars_period": 200,
+    "stars_total": 11928
    }
   ],
   "language": "C++",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/openvinotoolkit/openvino"
  },
  "pbakaus/impeccable": {
@@ -2167,18 +2265,25 @@
     "rank": 10,
     "stars_period": 676,
     "stars_total": 75784
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 9,
+    "stars_period": 574,
+    "stars_total": 76283
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/toeverything/AFFiNE"
  },
  "tokio-rs/topcoat": {
@@ -2376,18 +2481,25 @@
     "rank": 4,
     "stars_period": 979,
     "stars_total": 12162
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 683,
+    "stars_total": 12836
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-21",
+  "last_seen": "2026-11-22",
   "periods": {
    "daily": {
-    "last_date": "2026-11-21",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-22",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/zhouxiaoka/autoclip"
  }
 }

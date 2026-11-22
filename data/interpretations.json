@@ -148,7 +148,7 @@
   "source_description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
   "language": "TypeScript",
   "url": "https://github.com/CopilotKit/OpenBot",
-  "readme_sha": "2504c2c7d02ec52841e5bda49f5b36a8e0673ea1",
+  "readme_sha": "0391651a4e4483dfa13858da452d44371c15f1d9",
   "desc_hash": "04f74bb3242c6dc60cdf10f2974f246afbd4a57027defb9838b674389da8cb37"
  },
  "D4Vinci/Scrapling": {
@@ -243,7 +243,7 @@
   },
   "model_resolved": "deepseek-flash",
   "hash": "717105c26b0faab74aa0ed3bd76c9322f6fce34b1f83304fa1f55a131c020c5d",
-  "readme_sha": "09f5830803989944473261221e8ecf4c25bfa4d7",
+  "readme_sha": "32b77f850f783a03942a029126c1a64f2f7a8ad0",
   "desc_hash": "3245d689f44b18d46c92ee59ecf9f1a345e24d3def7f4fcdad3bc06ab24244d1",
   "model": "deepseek-v4-pro",
   "generated_at": "2026-11-18T09:53:17+08:00",
@@ -752,7 +752,7 @@
   },
   "model_resolved": "deepseek-flash",
   "hash": "1467fbf90c9e8ea99700ec24f66ef14a1c9e6dac6dded6f7782483baf526186b",
-  "readme_sha": "fcdd9f9d34af949c79d952eb6b8d2daee7b821e6",
+  "readme_sha": "d465ff9e9b4dbbd77dea869b7ddc24b1fd9768fe",
   "desc_hash": "9d93e108a4393f2ba77830789baf8e62ee6a354f7517bc3ae3ec33699ffced3d",
   "model": "deepseek-v4-pro",
   "generated_at": "2026-11-19T08:00:59+08:00",
@@ -2493,7 +2493,7 @@
   "source_description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
   "language": "Rust",
   "url": "https://github.com/max-sixty/worktrunk",
-  "readme_sha": "cb34774014556b4eedaf43ca5f572cb4bcb5e1f9",
+  "readme_sha": "3fda58e1267e3ae844b0ba2940a914085c5ff89b",
   "desc_hash": "e1de757ef191d72aa4b978cf041028c9c3d6daad47d9db99d4275adb938da1bc"
  },
  "meta/astryx": {
@@ -2846,7 +2846,7 @@
   "source_description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
   "language": "Shell",
   "url": "https://github.com/nvm-sh/nvm",
-  "readme_sha": "f63b93cffbdf90348b924ea817f83a6c1d805fea",
+  "readme_sha": "5bee774348697e55237e8797a16e4c1952341e5f",
   "desc_hash": "edaa8a6597a23cd011821d9aa3487baa580bb03d7a0b5984349a27b91092453c"
  },
  "obra/superpowers": {
@@ -3154,7 +3154,7 @@
   "source_description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
   "language": "TypeScript",
   "url": "https://github.com/ranxianglei/billion-context",
-  "readme_sha": "b52b0721079757e4967b687def01cf66ad80a5ef",
+  "readme_sha": "92526d0ebe4f17984a794969ac76e8ea859bbb49",
   "desc_hash": "8f7d7ef8b6b7184f5dc333ca69c1ef7a0bc3c01f405ba92fa438bdfc65f1e80c"
  },
  "shadcn/improve": {
@@ -3409,7 +3409,7 @@
   "source_description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
   "language": "TypeScript",
   "url": "https://github.com/thedotmack/claude-mem",
-  "readme_sha": "a8c51ff36e60c5409581403ba6ad44ee2566e794",
+  "readme_sha": "458657198278112b80e185714178378d0230b218",
   "desc_hash": "8e71d54bc44f2a50fa7a71dbc1d45de687258297c4384b412a3445c2e01aeafa"
  },
  "tokio-rs/topcoat": {
