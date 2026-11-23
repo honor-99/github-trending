@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-22T08:03:08+08:00",
+ "generated_at": "2026-11-23T08:01:45+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
- "candidate_count": 36,
- "excluded_count": 5,
+ "candidate_count": 35,
+ "excluded_count": 6,
  "items": [
   {
    "full_name": "ranxianglei/billion-context",
@@ -21,25 +21,6 @@
     "刚进榜单，还没被反复曝光",
     "体量仅 6,378 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
-   ]
-  },
-  {
-   "full_name": "mjmirza/app-store-compliance",
-   "score": 95.5,
-   "stars_period": 720,
-   "stars_total": 3388,
-   "growth": 0.2699,
-   "language": "Shell",
-   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
-   "periods": [
-    "daily"
-   ],
-   "streak": 2,
-   "reasons": [
-    "本期 +720 star，相当于存量的 27.0%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 3,388 star，向上空间大",
-    "连续 2 期在榜，热度不是一次性"
    ]
   },
   {
@@ -98,6 +79,25 @@
     "刚进榜单，还没被反复曝光",
     "体量仅 19,811 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "mjmirza/app-store-compliance",
+   "score": 85.8,
+   "stars_period": 621,
+   "stars_total": 3959,
+   "growth": 0.186,
+   "language": "Shell",
+   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+   "periods": [
+    "daily"
+   ],
+   "streak": 3,
+   "reasons": [
+    "本期 +621 star，相当于存量的 18.6%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 3,959 star，向上空间大",
+    "连续 3 期在榜，热度不是一次性"
    ]
   },
   {

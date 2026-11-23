@@ -243,7 +243,7 @@
   },
   "model_resolved": "deepseek-flash",
   "hash": "717105c26b0faab74aa0ed3bd76c9322f6fce34b1f83304fa1f55a131c020c5d",
-  "readme_sha": "32b77f850f783a03942a029126c1a64f2f7a8ad0",
+  "readme_sha": "15c73efc07f1578d1d4c0e238fffa1eb38fe8d65",
   "desc_hash": "3245d689f44b18d46c92ee59ecf9f1a345e24d3def7f4fcdad3bc06ab24244d1",
   "model": "deepseek-v4-pro",
   "generated_at": "2026-11-18T09:53:17+08:00",
@@ -2695,7 +2695,7 @@
   "source_description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
   "language": "Python",
   "url": "https://github.com/mvanhorn/last30days-skill",
-  "readme_sha": "ee3f7f3b0f64f9ca996e579bfd2aa2383bace11b",
+  "readme_sha": "8c3c3e5d82c6159d7cbd6b9611c665416b761f37",
   "desc_hash": "83ec92c4a2b4fed86c986bf0af3ebfad2b30491746cc50e1ff348d8c38085f07"
  },
  "n8n-io/n8n": {
@@ -3409,7 +3409,7 @@
   "source_description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
   "language": "TypeScript",
   "url": "https://github.com/thedotmack/claude-mem",
-  "readme_sha": "458657198278112b80e185714178378d0230b218",
+  "readme_sha": "aa07c83f7e25dcd6a15bdcf360cb2bce09b1a6d3",
   "desc_hash": "8e71d54bc44f2a50fa7a71dbc1d45de687258297c4384b412a3445c2e01aeafa"
  },
  "tokio-rs/topcoat": {
