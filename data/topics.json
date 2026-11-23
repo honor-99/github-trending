@@ -1,21 +1,21 @@
 {
- "generated_at": "2026-11-22T15:51:58+08:00",
+ "generated_at": "2026-11-23T16:43:41+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
  "project_count": 41,
  "topics": [
   {
    "name": "AI Agent / 编码助手",
-   "repo_count": 24,
-   "share": 0.585,
-   "stars_period_total": 580481,
-   "avg_stars_period": 24187,
+   "repo_count": 27,
+   "share": 0.659,
+   "stars_period_total": 584426,
+   "avg_stars_period": 21645,
    "languages": [
     "CSS",
+    "Go",
     "HTML",
     "JavaScript",
     "Python",
-    "Rust",
-    "Shell"
+    "Rust"
    ],
    "repos": [
     {
@@ -79,16 +79,6 @@
      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context ba"
     },
     {
-     "full_name": "meta/astryx",
-     "stars_period": 13501,
-     "stars_total": 28933,
-     "language": "TypeScript",
-     "periods": [
-      "weekly"
-     ],
-     "description": "An open source design system that's fully customizable and agent ready"
-    },
-    {
      "full_name": "anthropics/claude-plugins-official",
      "stars_period": 9346,
      "stars_total": 46789,
@@ -109,59 +99,80 @@
      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork"
     },
     {
-     "full_name": "anthropics/skills",
-     "stars_period": 6077,
-     "stars_total": 195401,
+     "full_name": "dream-num/univer",
+     "stars_period": 6436,
+     "stars_total": 31355,
+     "language": "TypeScript",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Buil"
+    },
+    {
+     "full_name": "mvanhorn/last30days-skill",
+     "stars_period": 4731,
+     "stars_total": 73010,
+     "language": "Python",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+    },
+    {
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars_period": 3748,
+     "stars_total": 9927,
      "language": "Python",
      "periods": [
       "weekly"
      ],
-     "description": "Public repository for Agent Skills"
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
     },
     {
-     "full_name": "google/elephant-goldfish-model",
-     "stars_period": 5060,
-     "stars_total": 19811,
-     "language": "Python",
+     "full_name": "alibaba/open-code-review",
+     "stars_period": 3700,
+     "stars_total": 55523,
+     "language": "Go",
      "periods": [
       "weekly"
      ],
-     "description": "Open-source plugin for designing and reviewing software with agents"
+     "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comment"
     },
     {
-     "full_name": "vercel-labs/agent-browser",
-     "stars_period": 4217,
-     "stars_total": 51654,
-     "language": "Rust",
+     "full_name": "meta/astryx",
+     "stars_period": 3626,
+     "stars_total": 32351,
+     "language": "TypeScript",
      "periods": [
       "weekly"
      ],
-     "description": "Browser automation CLI for AI agents"
+     "description": "An open source design system that's fully customizable and agent ready"
     },
     {
-     "full_name": "addyosmani/agent-skills",
-     "stars_period": 3889,
-     "stars_total": 117967,
-     "language": "JavaScript",
+     "full_name": "ag-ui-protocol/ag-ui",
+     "stars_period": 3620,
+     "stars_total": 21271,
+     "language": "TypeScript",
      "periods": [
       "weekly"
      ],
-     "description": "Production-grade engineering skills for AI coding agents."
+     "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications."
     },
     {
-     "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1803,
-     "stars_total": 16488,
-     "language": "Python",
+     "full_name": "GoogleChrome/modern-web-guidance-src",
+     "stars_period": 3575,
+     "stars_total": 10320,
+     "language": "TypeScript",
      "periods": [
-      "daily"
+      "weekly"
      ],
-     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
+     "description": "Keep your coding agent up to date with the latest web best practices"
     },
     {
      "full_name": "backnotprop/plannotator",
-     "stars_period": 1719,
-     "stars_total": 11899,
+     "stars_period": 2815,
+     "stars_total": 14532,
      "language": "TypeScript",
      "periods": [
       "weekly"
@@ -169,9 +180,50 @@
      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
     },
     {
+     "full_name": "google-labs-code/stitch-skills",
+     "stars_period": 2683,
+     "stars_total": 12059,
+     "language": "TypeScript",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+    },
+    {
+     "full_name": "tradermonty/claude-trading-skills",
+     "stars_period": 2616,
+     "stars_total": 7851,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development."
+    },
+    {
+     "full_name": "ChromeDevTools/chrome-devtools-mcp",
+     "stars_period": 2268,
+     "stars_total": 58919,
+     "language": "TypeScript",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Chrome DevTools for coding agents"
+    },
+    {
+     "full_name": "elementalsouls/Claude-BugHunter",
+     "stars_period": 1716,
+     "stars_total": 18540,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
+    },
+    {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 1006,
-     "stars_total": 206440,
+     "stars_period": 915,
+     "stars_total": 207336,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -180,8 +232,8 @@
     },
     {
      "full_name": "obra/superpowers",
-     "stars_period": 883,
-     "stars_total": 323909,
+     "stars_period": 788,
+     "stars_total": 324469,
      "language": "Shell",
      "periods": [
       "daily"
@@ -190,8 +242,8 @@
     },
     {
      "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 769,
-     "stars_total": 62271,
+     "stars_period": 699,
+     "stars_total": 63073,
      "language": "Python",
      "periods": [
       "daily"
@@ -200,8 +252,8 @@
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 720,
-     "stars_total": 3564,
+     "stars_period": 621,
+     "stars_total": 4304,
      "language": "Shell",
      "periods": [
       "daily"
@@ -210,28 +262,18 @@
     },
     {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 583,
-     "stars_total": 69949,
+     "stars_period": 518,
+     "stars_total": 70553,
      "language": "HTML",
      "periods": [
       "daily"
      ],
-     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. "
-    },
-    {
-     "full_name": "mvanhorn/last30days-skill",
-     "stars_period": 560,
-     "stars_total": 72208,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
     },
     {
      "full_name": "Tracer-Cloud/opensre",
-     "stars_period": 450,
-     "stars_total": 14101,
+     "stars_period": 399,
+     "stars_total": 14557,
      "language": "Python",
      "periods": [
       "daily"
@@ -239,19 +281,9 @@
      "description": "The open-source agent for CI/CD reliability."
     },
     {
-     "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 326,
-     "stars_total": 11606,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
-    },
-    {
      "full_name": "cursor/plugins",
-     "stars_period": 260,
-     "stars_total": 18192,
+     "stars_period": 294,
+     "stars_total": 18591,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -264,8 +296,8 @@
    "name": "安全 / 逆向",
    "repo_count": 8,
    "share": 0.195,
-   "stars_period_total": 498035,
-   "avg_stars_period": 62254,
+   "stars_period_total": 497817,
+   "avg_stars_period": 62227,
    "languages": [
     "Java",
     "JavaScript",
@@ -327,8 +359,8 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1803,
-     "stars_total": 16488,
+     "stars_period": 1716,
+     "stars_total": 18540,
      "language": "Python",
      "periods": [
       "daily"
@@ -337,8 +369,8 @@
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 720,
-     "stars_total": 3564,
+     "stars_period": 621,
+     "stars_total": 4304,
      "language": "Shell",
      "periods": [
       "daily"
@@ -347,8 +379,8 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 574,
-     "stars_total": 76437,
+     "stars_period": 542,
+     "stars_total": 77028,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -358,13 +390,99 @@
    ]
   },
   {
+   "name": "CLI / 开发者工具",
+   "repo_count": 7,
+   "share": 0.171,
+   "stars_period_total": 13372,
+   "avg_stars_period": 1910,
+   "languages": [
+    "HTML",
+    "Python",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars_period": 3748,
+     "stars_total": 9927,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
+    },
+    {
+     "full_name": "backnotprop/plannotator",
+     "stars_period": 2815,
+     "stars_total": 14532,
+     "language": "TypeScript",
+     "periods": [
+      "weekly"
+     ],
+     "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
+    },
+    {
+     "full_name": "google-labs-code/stitch-skills",
+     "stars_period": 2683,
+     "stars_total": 12059,
+     "language": "TypeScript",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+    },
+    {
+     "full_name": "ChromeDevTools/chrome-devtools-mcp",
+     "stars_period": 2268,
+     "stars_total": 58919,
+     "language": "TypeScript",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Chrome DevTools for coding agents"
+    },
+    {
+     "full_name": "HKUDS/CLI-Anything",
+     "stars_period": 699,
+     "stars_total": 63073,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
+    },
+    {
+     "full_name": "zhouxiaoka/autoclip",
+     "stars_period": 641,
+     "stars_total": 13897,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
+    },
+    {
+     "full_name": "cathrynlavery/diagram-design",
+     "stars_period": 518,
+     "stars_total": 70553,
+     "language": "HTML",
+     "periods": [
+      "daily"
+     ],
+     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
+    }
+   ]
+  },
+  {
    "name": "其他 / 未归类",
-   "repo_count": 6,
-   "share": 0.146,
-   "stars_period_total": 50008,
-   "avg_stars_period": 8335,
+   "repo_count": 5,
+   "share": 0.122,
+   "stars_period_total": 31705,
+   "avg_stars_period": 6341,
    "languages": [
     "C",
+    "Objective-C",
     "Python",
     "Ruby",
     "TypeScript"
@@ -381,29 +499,9 @@
      "description": ""
     },
     {
-     "full_name": "sherlock-project/sherlock",
-     "stars_period": 10412,
-     "stars_total": 112526,
-     "language": "Python",
-     "periods": [
-      "weekly"
-     ],
-     "description": "Hunt down social media accounts by username across social networks"
-    },
-    {
-     "full_name": "milind-soni/OpenMausBot",
-     "stars_period": 5463,
-     "stars_total": 23463,
-     "language": "TypeScript",
-     "periods": [
-      "weekly"
-     ],
-     "description": "Open-source Grok Bot alternative with a virtual machine that bots can use"
-    },
-    {
      "full_name": "we-promise/sure",
-     "stars_period": 4556,
-     "stars_total": 15732,
+     "stars_period": 1771,
+     "stars_total": 17415,
      "language": "Ruby",
      "periods": [
       "weekly"
@@ -412,8 +510,8 @@
     },
     {
      "full_name": "XiaoYouChR/Ghost-Downloader-3",
-     "stars_period": 779,
-     "stars_total": 14648,
+     "stars_period": 701,
+     "stars_total": 15698,
      "language": "Python",
      "periods": [
       "daily"
@@ -421,9 +519,19 @@
      "description": "The only downloader you need. 下载器的集大成者。"
     },
     {
+     "full_name": "pookjw/HermesEnabler",
+     "stars_period": 461,
+     "stars_total": 2416,
+     "language": "Objective-C",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Enable Hermès Watch Faces on any Apple Watch devices"
+    },
+    {
      "full_name": "nginx/nginx",
-     "stars_period": 189,
-     "stars_total": 32781,
+     "stars_period": 163,
+     "stars_total": 32945,
      "language": "C",
      "periods": [
       "daily"
@@ -433,150 +541,11 @@
    ]
   },
   {
-   "name": "CLI / 开发者工具",
-   "repo_count": 6,
-   "share": 0.146,
-   "stars_period_total": 8297,
-   "avg_stars_period": 1383,
-   "languages": [
-    "HTML",
-    "Python",
-    "Rust",
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "vercel-labs/agent-browser",
-     "stars_period": 4217,
-     "stars_total": 51654,
-     "language": "Rust",
-     "periods": [
-      "weekly"
-     ],
-     "description": "Browser automation CLI for AI agents"
-    },
-    {
-     "full_name": "backnotprop/plannotator",
-     "stars_period": 1719,
-     "stars_total": 11899,
-     "language": "TypeScript",
-     "periods": [
-      "weekly"
-     ],
-     "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
-    },
-    {
-     "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 769,
-     "stars_total": 62271,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
-    },
-    {
-     "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 683,
-     "stars_total": 13026,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
-    },
-    {
-     "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 583,
-     "stars_total": 69949,
-     "language": "HTML",
-     "periods": [
-      "daily"
-     ],
-     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. "
-    },
-    {
-     "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 326,
-     "stars_total": 11606,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
-    }
-   ]
-  },
-  {
-   "name": "LLM / 模型与推理",
-   "repo_count": 5,
-   "share": 0.122,
-   "stars_period_total": 28127,
-   "avg_stars_period": 5625,
-   "languages": [
-    "C++",
-    "Python",
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "tashfeenahmed/freellmapi",
-     "stars_period": 17591,
-     "stars_total": 50320,
-     "language": "TypeScript",
-     "periods": [
-      "monthly"
-     ],
-     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
-    },
-    {
-     "full_name": "ranxianglei/billion-context",
-     "stars_period": 5300,
-     "stars_total": 6378,
-     "language": "TypeScript",
-     "periods": [
-      "monthly"
-     ],
-     "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer t"
-    },
-    {
-     "full_name": "ZhuLinsen/daily_stock_analysis",
-     "stars_period": 4548,
-     "stars_total": 72537,
-     "language": "Python",
-     "periods": [
-      "weekly"
-     ],
-     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
-    },
-    {
-     "full_name": "jingyaogong/minimind",
-     "stars_period": 488,
-     "stars_total": 68287,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours."
-    },
-    {
-     "full_name": "openvinotoolkit/openvino",
-     "stars_period": 200,
-     "stars_total": 11987,
-     "language": "C++",
-     "periods": [
-      "daily"
-     ],
-     "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference"
-    }
-   ]
-  },
-  {
    "name": "学习 / 知识管理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 26091,
-   "avg_stars_period": 5218,
+   "stars_period_total": 30139,
+   "avg_stars_period": 6028,
    "languages": [
     "Python",
     "TypeScript"
@@ -603,9 +572,20 @@
      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork"
     },
     {
+     "full_name": "mvanhorn/last30days-skill",
+     "stars_period": 4731,
+     "stars_total": 73010,
+     "language": "Python",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+    },
+    {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 1006,
-     "stars_total": 206440,
+     "stars_period": 915,
+     "stars_total": 207336,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -614,23 +594,78 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 574,
-     "stars_total": 76437,
+     "stars_period": 542,
+     "stars_total": 77028,
      "language": "TypeScript",
      "periods": [
       "daily"
      ],
      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privac"
+    }
+   ]
+  },
+  {
+   "name": "LLM / 模型与推理",
+   "repo_count": 5,
+   "share": 0.122,
+   "stars_period_total": 27222,
+   "avg_stars_period": 5444,
+   "languages": [
+    "C++",
+    "Go",
+    "Python",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "tashfeenahmed/freellmapi",
+     "stars_period": 17591,
+     "stars_total": 50320,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ],
+     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
     },
     {
-     "full_name": "mvanhorn/last30days-skill",
-     "stars_period": 560,
-     "stars_total": 72208,
+     "full_name": "ranxianglei/billion-context",
+     "stars_period": 5300,
+     "stars_total": 6378,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ],
+     "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer t"
+    },
+    {
+     "full_name": "alibaba/open-code-review",
+     "stars_period": 3700,
+     "stars_total": 55523,
+     "language": "Go",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comment"
+    },
+    {
+     "full_name": "jingyaogong/minimind",
+     "stars_period": 473,
+     "stars_total": 69075,
      "language": "Python",
      "periods": [
       "daily"
      ],
-     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+     "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours."
+    },
+    {
+     "full_name": "openvinotoolkit/openvino",
+     "stars_period": 158,
+     "stars_total": 12167,
+     "language": "C++",
+     "periods": [
+      "daily"
+     ],
+     "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference"
     }
    ]
   },
@@ -638,8 +673,8 @@
    "name": "音视频 / 多模态",
    "repo_count": 3,
    "share": 0.073,
-   "stars_period_total": 73816,
-   "avg_stars_period": 24605,
+   "stars_period_total": 73774,
+   "avg_stars_period": 24591,
    "languages": [
     "Python",
     "TypeScript"
@@ -667,8 +702,8 @@
     },
     {
      "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 683,
-     "stars_total": 13026,
+     "stars_period": 641,
+     "stars_total": 13897,
      "language": "Python",
      "periods": [
       "daily"
@@ -679,13 +714,12 @@
   },
   {
    "name": "自动化 / 效率",
-   "repo_count": 3,
-   "share": 0.073,
-   "stars_period_total": 26356,
-   "avg_stars_period": 8785,
+   "repo_count": 2,
+   "share": 0.049,
+   "stars_period_total": 20207,
+   "avg_stars_period": 10104,
    "languages": [
     "Python",
-    "Rust",
     "TypeScript"
    ],
    "repos": [
@@ -700,112 +734,113 @@
      "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
     },
     {
-     "full_name": "ZhuLinsen/daily_stock_analysis",
-     "stars_period": 4548,
-     "stars_total": 72537,
+     "full_name": "tradermonty/claude-trading-skills",
+     "stars_period": 2616,
+     "stars_total": 7851,
      "language": "Python",
      "periods": [
       "weekly"
      ],
-     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
-    },
-    {
-     "full_name": "vercel-labs/agent-browser",
-     "stars_period": 4217,
-     "stars_total": 51654,
-     "language": "Rust",
-     "periods": [
-      "weekly"
-     ],
-     "description": "Browser automation CLI for AI agents"
+     "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development."
     }
    ]
   },
   {
    "name": "前端 / 设计系统",
-   "repo_count": 1,
-   "share": 0.024,
-   "stars_period_total": 13501,
-   "avg_stars_period": 13501,
+   "repo_count": 2,
+   "share": 0.049,
+   "stars_period_total": 7246,
+   "avg_stars_period": 3623,
    "languages": [
     "TypeScript"
    ],
    "repos": [
     {
      "full_name": "meta/astryx",
-     "stars_period": 13501,
-     "stars_total": 28933,
+     "stars_period": 3626,
+     "stars_total": 32351,
      "language": "TypeScript",
      "periods": [
       "weekly"
      ],
      "description": "An open source design system that's fully customizable and agent ready"
-    }
-   ]
-  },
-  {
-   "name": "机器人 / 硬件",
-   "repo_count": 1,
-   "share": 0.024,
-   "stars_period_total": 1922,
-   "avg_stars_period": 1922,
-   "languages": [
-    "C++"
-   ],
-   "repos": [
+    },
     {
-     "full_name": "google-deepmind/mujoco",
-     "stars_period": 1922,
-     "stars_total": 18080,
-     "language": "C++",
+     "full_name": "ag-ui-protocol/ag-ui",
+     "stars_period": 3620,
+     "stars_total": 21271,
+     "language": "TypeScript",
      "periods": [
       "weekly"
      ],
-     "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator."
-    }
-   ]
-  },
-  {
-   "name": "数据 / 爬虫",
-   "repo_count": 1,
-   "share": 0.024,
-   "stars_period_total": 1006,
-   "avg_stars_period": 1006,
-   "languages": [
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "firecrawl/firecrawl",
-     "stars_period": 1006,
-     "stars_total": 206440,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
+     "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications."
     }
    ]
   },
   {
    "name": "后端 / 基础设施",
-   "repo_count": 1,
-   "share": 0.024,
-   "stars_period_total": 326,
-   "avg_stars_period": 326,
+   "repo_count": 2,
+   "share": 0.049,
+   "stars_period_total": 6431,
+   "avg_stars_period": 3216,
    "languages": [
+    "Python",
     "TypeScript"
    ],
    "repos": [
     {
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars_period": 3748,
+     "stars_total": 9927,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
+    },
+    {
      "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 326,
-     "stars_total": 11606,
+     "stars_period": 2683,
+     "stars_total": 12059,
+     "language": "TypeScript",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+    }
+   ]
+  },
+  {
+   "name": "数据 / 爬虫",
+   "repo_count": 2,
+   "share": 0.049,
+   "stars_period_total": 4615,
+   "avg_stars_period": 2308,
+   "languages": [
+    "Go",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "alibaba/open-code-review",
+     "stars_period": 3700,
+     "stars_total": 55523,
+     "language": "Go",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comment"
+    },
+    {
+     "full_name": "firecrawl/firecrawl",
+     "stars_period": 915,
+     "stars_total": 207336,
      "language": "TypeScript",
      "periods": [
       "daily"
      ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
     }
    ]
   }

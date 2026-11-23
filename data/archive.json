@@ -1,15 +1,33 @@
 {
- "generated_at": "2026-11-22T15:51:58+08:00",
+ "generated_at": "2026-11-23T16:43:41+08:00",
  "summary": {
   "repo_count": 84,
-  "index_rows": 182,
-  "snapshot_count": 13,
+  "index_rows": 211,
+  "snapshot_count": 15,
   "interpreted_count": 68,
   "first_date": "2026-11-11",
-  "latest_date": "2026-11-22",
-  "total_bytes": 63495
+  "latest_date": "2026-11-23",
+  "total_bytes": 74085
  },
  "snapshots": [
+  {
+   "date": "2026-11-23",
+   "period": "weekly",
+   "count": 13,
+   "fetched_at": "2026-11-23T16:43:41+08:00",
+   "signals": null,
+   "bytes": 4772,
+   "path": "data/2026/2026-11-23-weekly.json"
+  },
+  {
+   "date": "2026-11-23",
+   "period": "daily",
+   "count": 16,
+   "fetched_at": "2026-11-23T16:43:40+08:00",
+   "signals": null,
+   "bytes": 5818,
+   "path": "data/2026/2026-11-23-daily.json"
+  },
   {
    "date": "2026-11-22",
    "period": "daily",
