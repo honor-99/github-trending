@@ -1,31 +1,58 @@
 {
- "generated_at": "2026-11-20T08:02:52+08:00",
+ "generated_at": "2026-11-24T09:33:49+08:00",
  "summary": {
-  "repo_count": 84,
-  "index_rows": 151,
-  "snapshot_count": 11,
-  "interpreted_count": 78,
+  "repo_count": 78,
+  "index_rows": 179,
+  "snapshot_count": 14,
+  "interpreted_count": 84,
   "first_date": "2026-11-11",
-  "latest_date": "2026-11-20",
-  "total_bytes": 52209
+  "latest_date": "2026-11-24",
+  "total_bytes": 69323
  },
  "snapshots": [
   {
-   "date": "2026-11-20",
+   "date": "2026-11-24",
    "period": "daily",
    "count": 16,
-   "fetched_at": "2026-11-20T08:01:32+08:00",
+   "fetched_at": "2026-11-24T08:00:44+08:00",
    "signals": null,
-   "bytes": 5809,
-   "path": "data/2026/2026-11-20-daily.json"
+   "bytes": 5819,
+   "path": "data/2026/2026-11-24-daily.json"
+  },
+  {
+   "date": "2026-11-23",
+   "period": "daily",
+   "count": 16,
+   "fetched_at": "2026-11-23T08:00:58+08:00",
+   "signals": null,
+   "bytes": 5818,
+   "path": "data/2026/2026-11-23-daily.json"
+  },
+  {
+   "date": "2026-11-22",
+   "period": "daily",
+   "count": 16,
+   "fetched_at": "2026-11-22T08:02:16+08:00",
+   "signals": null,
+   "bytes": 5818,
+   "path": "data/2026/2026-11-22-daily.json"
+  },
+  {
+   "date": "2026-11-21",
+   "period": "daily",
+   "count": 16,
+   "fetched_at": "2026-11-21T08:00:19+08:00",
+   "signals": null,
+   "bytes": 5819,
+   "path": "data/2026/2026-11-21-daily.json"
   },
   {
    "date": "2026-11-19",
    "period": "daily",
-   "count": 20,
-   "fetched_at": "2026-11-19T08:00:07+08:00",
+   "count": 19,
+   "fetched_at": "2026-11-19T16:31:21+08:00",
    "signals": null,
-   "bytes": 6631,
+   "bytes": 6280,
    "path": "data/2026/2026-11-19-daily.json"
   },
   {

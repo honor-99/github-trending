@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-20T08:02:52+08:00",
+ "generated_at": "2026-11-24T09:33:49+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
- "candidate_count": 33,
- "excluded_count": 8,
+ "candidate_count": 35,
+ "excluded_count": 6,
  "items": [
   {
    "full_name": "ranxianglei/billion-context",
@@ -97,6 +97,25 @@
     "刚进榜单，还没被反复曝光",
     "体量仅 19,811 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "mjmirza/app-store-compliance",
+   "score": 85.2,
+   "stars_period": 761,
+   "stars_total": 4942,
+   "growth": 0.182,
+   "language": "Shell",
+   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+   "periods": [
+    "daily"
+   ],
+   "streak": 4,
+   "reasons": [
+    "本期 +761 star，相当于存量的 18.2%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 4,942 star，向上空间大",
+    "连续 4 期在榜，热度不是一次性"
    ]
   },
   {

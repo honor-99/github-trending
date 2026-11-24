@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T08:02:52+08:00",
+ "generated_at": "2026-11-24T09:33:49+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
  "project_count": 41,
  "topics": [
@@ -7,8 +7,8 @@
    "name": "AI Agent / 编码助手",
    "repo_count": 24,
    "share": 0.585,
-   "stars_period_total": 580547,
-   "avg_stars_period": 24189,
+   "stars_period_total": 581137,
+   "avg_stars_period": 24214,
    "languages": [
     "CSS",
     "HTML",
@@ -149,14 +149,14 @@
      "description": "Production-grade engineering skills for AI coding agents."
     },
     {
-     "full_name": "obra/superpowers",
-     "stars_period": 2028,
-     "stars_total": 322058,
-     "language": "Shell",
+     "full_name": "elementalsouls/Claude-BugHunter",
+     "stars_period": 2029,
+     "stars_total": 19714,
+     "language": "Python",
      "periods": [
       "daily"
      ],
-     "description": "An agentic skills framework & software development methodology that works."
+     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
     },
     {
      "full_name": "backnotprop/plannotator",
@@ -169,19 +169,29 @@
      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
     },
     {
-     "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1349,
-     "stars_total": 12488,
-     "language": "Python",
+     "full_name": "firecrawl/firecrawl",
+     "stars_period": 924,
+     "stars_total": 207895,
+     "language": "TypeScript",
      "periods": [
       "daily"
      ],
-     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
+     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
+    },
+    {
+     "full_name": "obra/superpowers",
+     "stars_period": 840,
+     "stars_total": 325037,
+     "language": "Shell",
+     "periods": [
+      "daily"
+     ],
+     "description": "An agentic skills framework & software development methodology that works."
     },
     {
      "full_name": "mvanhorn/last30days-skill",
-     "stars_period": 954,
-     "stars_total": 70778,
+     "stars_period": 797,
+     "stars_total": 73423,
      "language": "Python",
      "periods": [
       "daily"
@@ -190,8 +200,8 @@
     },
     {
      "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 898,
-     "stars_total": 60534,
+     "stars_period": 790,
+     "stars_total": 63601,
      "language": "Python",
      "periods": [
       "daily"
@@ -199,39 +209,39 @@
      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
     },
     {
-     "full_name": "firecrawl/firecrawl",
-     "stars_period": 825,
-     "stars_total": 204179,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API."
-    },
-    {
-     "full_name": "cursor/plugins",
-     "stars_period": 384,
-     "stars_total": 17548,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "Cursor plugin specification and official plugins"
-    },
-    {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 377,
-     "stars_total": 1819,
+     "stars_period": 761,
+     "stars_total": 4942,
      "language": "Shell",
      "periods": [
       "daily"
      ],
-     "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and"
+     "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and"
+    },
+    {
+     "full_name": "cathrynlavery/diagram-design",
+     "stars_period": 620,
+     "stars_total": 70949,
+     "language": "HTML",
+     "periods": [
+      "daily"
+     ],
+     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
+    },
+    {
+     "full_name": "Tracer-Cloud/opensre",
+     "stars_period": 436,
+     "stars_total": 14821,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "The open-source agent for CI/CD reliability."
     },
     {
      "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 302,
-     "stars_total": 10710,
+     "stars_period": 422,
+     "stars_total": 12269,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -239,10 +249,10 @@
      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
     },
     {
-     "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 271,
-     "stars_total": 68619,
-     "language": "HTML",
+     "full_name": "cursor/plugins",
+     "stars_period": 397,
+     "stars_total": 18793,
+     "language": "TypeScript",
      "periods": [
       "daily"
      ],
@@ -264,8 +274,8 @@
    "name": "安全 / 逆向",
    "repo_count": 8,
    "share": 0.195,
-   "stars_period_total": 496846,
-   "avg_stars_period": 62106,
+   "stars_period_total": 498323,
+   "avg_stars_period": 62290,
    "languages": [
     "Java",
     "JavaScript",
@@ -327,8 +337,8 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1349,
-     "stars_total": 12488,
+     "stars_period": 2029,
+     "stars_total": 19714,
      "language": "Python",
      "periods": [
       "daily"
@@ -337,18 +347,18 @@
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 377,
-     "stars_total": 1819,
+     "stars_period": 761,
+     "stars_total": 4942,
      "language": "Shell",
      "periods": [
       "daily"
      ],
-     "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and"
+     "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and"
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 182,
-     "stars_total": 75151,
+     "stars_period": 595,
+     "stars_total": 77376,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -361,8 +371,8 @@
    "name": "其他 / 未归类",
    "repo_count": 6,
    "share": 0.146,
-   "stars_period_total": 49454,
-   "avg_stars_period": 8242,
+   "stars_period_total": 50301,
+   "avg_stars_period": 8384,
    "languages": [
     "C",
     "Python",
@@ -412,8 +422,8 @@
     },
     {
      "full_name": "XiaoYouChR/Ghost-Downloader-3",
-     "stars_period": 341,
-     "stars_total": 12680,
+     "stars_period": 1087,
+     "stars_total": 16287,
      "language": "Python",
      "periods": [
       "daily"
@@ -422,8 +432,8 @@
     },
     {
      "full_name": "nginx/nginx",
-     "stars_period": 73,
-     "stars_total": 32322,
+     "stars_period": 174,
+     "stars_total": 33047,
      "language": "C",
      "periods": [
       "daily"
@@ -436,8 +446,8 @@
    "name": "CLI / 开发者工具",
    "repo_count": 6,
    "share": 0.146,
-   "stars_period_total": 7533,
-   "avg_stars_period": 1256,
+   "stars_period_total": 8675,
+   "avg_stars_period": 1446,
    "languages": [
     "HTML",
     "Python",
@@ -466,9 +476,19 @@
      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
     },
     {
+     "full_name": "zhouxiaoka/autoclip",
+     "stars_period": 907,
+     "stars_total": 14368,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
+    },
+    {
      "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 898,
-     "stars_total": 60534,
+     "stars_period": 790,
+     "stars_total": 63601,
      "language": "Python",
      "periods": [
       "daily"
@@ -476,9 +496,19 @@
      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
     },
     {
+     "full_name": "cathrynlavery/diagram-design",
+     "stars_period": 620,
+     "stars_total": 70949,
+     "language": "HTML",
+     "periods": [
+      "daily"
+     ],
+     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
+    },
+    {
      "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 302,
-     "stars_total": 10710,
+     "stars_period": 422,
+     "stars_total": 12269,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -635,11 +665,138 @@
    ]
   },
   {
+   "name": "LLM / 模型与推理",
+   "repo_count": 5,
+   "share": 0.122,
+   "stars_period_total": 28451,
+   "avg_stars_period": 5690,
+   "languages": [
+    "C++",
+    "Python",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "tashfeenahmed/freellmapi",
+     "stars_period": 17591,
+     "stars_total": 50320,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ],
+     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
+    },
+    {
+     "full_name": "ranxianglei/billion-context",
+     "stars_period": 5300,
+     "stars_total": 6378,
+     "language": "TypeScript",
+     "periods": [
+      "monthly"
+     ],
+     "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer t"
+    },
+    {
+     "full_name": "ZhuLinsen/daily_stock_analysis",
+     "stars_period": 4548,
+     "stars_total": 72537,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ],
+     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
+    },
+    {
+     "full_name": "jingyaogong/minimind",
+     "stars_period": 828,
+     "stars_total": 69435,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours."
+    },
+    {
+     "full_name": "openvinotoolkit/openvino",
+     "stars_period": 184,
+     "stars_total": 12276,
+     "language": "C++",
+     "periods": [
+      "daily"
+     ],
+     "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference"
+    }
+   ]
+  },
+  {
+   "name": "学习 / 知识管理",
+   "repo_count": 5,
+   "share": 0.122,
+   "stars_period_total": 26267,
+   "avg_stars_period": 5253,
+   "languages": [
+    "Python",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "HKUDS/DeepTutor",
+     "stars_period": 17107,
+     "stars_total": 58020,
+     "language": "Python",
+     "periods": [
+      "monthly"
+     ],
+     "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/."
+    },
+    {
+     "full_name": "anthropics/knowledge-work-plugins",
+     "stars_period": 6844,
+     "stars_total": 35373,
+     "language": "Python",
+     "periods": [
+      "monthly"
+     ],
+     "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork"
+    },
+    {
+     "full_name": "firecrawl/firecrawl",
+     "stars_period": 924,
+     "stars_total": 207895,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
+    },
+    {
+     "full_name": "mvanhorn/last30days-skill",
+     "stars_period": 797,
+     "stars_total": 73423,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+    },
+    {
+     "full_name": "toeverything/AFFiNE",
+     "stars_period": 595,
+     "stars_total": 77376,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privac"
+    }
+   ]
+  },
+  {
    "name": "音视频 / 多模态",
    "repo_count": 3,
    "share": 0.073,
-   "stars_period_total": 73259,
-   "avg_stars_period": 24420,
+   "stars_period_total": 74040,
+   "avg_stars_period": 24680,
    "languages": [
     "Python",
     "TypeScript"
@@ -667,8 +824,8 @@
     },
     {
      "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 126,
-     "stars_total": 11196,
+     "stars_period": 907,
+     "stars_total": 14368,
      "language": "Python",
      "periods": [
       "daily"
@@ -769,21 +926,21 @@
    "name": "数据 / 爬虫",
    "repo_count": 1,
    "share": 0.024,
-   "stars_period_total": 825,
-   "avg_stars_period": 825,
+   "stars_period_total": 924,
+   "avg_stars_period": 924,
    "languages": [
     "TypeScript"
    ],
    "repos": [
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 825,
-     "stars_total": 204179,
+     "stars_period": 924,
+     "stars_total": 207895,
      "language": "TypeScript",
      "periods": [
       "daily"
      ],
-     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API."
+     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
     }
    ]
   },
@@ -791,16 +948,16 @@
    "name": "后端 / 基础设施",
    "repo_count": 1,
    "share": 0.024,
-   "stars_period_total": 302,
-   "avg_stars_period": 302,
+   "stars_period_total": 422,
+   "avg_stars_period": 422,
    "languages": [
     "TypeScript"
    ],
    "repos": [
     {
      "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 302,
-     "stars_total": 10710,
+     "stars_period": 422,
+     "stars_total": 12269,
      "language": "TypeScript",
      "periods": [
       "daily"

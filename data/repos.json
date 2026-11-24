@@ -204,34 +204,48 @@
  },
  "HKUDS/CLI-Anything": {
   "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-  "first_seen": "2026-11-19",
+  "first_seen": "2026-11-21",
   "full_name": "HKUDS/CLI-Anything",
   "history": [
    {
-    "date": "2026-11-19",
+    "date": "2026-11-21",
     "period": "daily",
     "rank": 8,
-    "stars_period": 389,
-    "stars_total": 59719
+    "stars_period": 773,
+    "stars_total": 61363
    },
    {
-    "date": "2026-11-20",
+    "date": "2026-11-22",
     "period": "daily",
-    "rank": 4,
-    "stars_period": 898,
-    "stars_total": 60534
+    "rank": 5,
+    "stars_period": 769,
+    "stars_total": 62067
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 5,
+    "stars_period": 699,
+    "stars_total": 62766
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 790,
+    "stars_total": 63601
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-24",
+    "streak": 4,
+    "times": 4
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 4,
   "url": "https://github.com/HKUDS/CLI-Anything"
  },
  "HKUDS/DeepTutor": {
@@ -482,52 +496,94 @@
  },
  "Tracer-Cloud/opensre": {
   "description": "The open-source agent for CI/CD reliability.",
-  "first_seen": "2026-11-20",
+  "first_seen": "2026-11-21",
   "full_name": "Tracer-Cloud/opensre",
   "history": [
    {
-    "date": "2026-11-20",
+    "date": "2026-11-21",
     "period": "daily",
-    "rank": 16,
-    "stars_period": 38,
-    "stars_total": 13113
+    "rank": 12,
+    "stars_period": 466,
+    "stars_total": 13593
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 12,
+    "stars_period": 450,
+    "stars_total": 13982
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 13,
+    "stars_period": 399,
+    "stars_total": 14399
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 12,
+    "stars_period": 436,
+    "stars_total": 14821
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-24",
+    "streak": 4,
+    "times": 4
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 4,
   "url": "https://github.com/Tracer-Cloud/opensre"
  },
  "XiaoYouChR/Ghost-Downloader-3": {
   "description": "The only downloader you need. 下载器的集大成者。",
-  "first_seen": "2026-11-20",
+  "first_seen": "2026-11-21",
   "full_name": "XiaoYouChR/Ghost-Downloader-3",
   "history": [
    {
-    "date": "2026-11-20",
+    "date": "2026-11-21",
     "period": "daily",
-    "rank": 8,
-    "stars_period": 341,
-    "stars_total": 12680
+    "rank": 3,
+    "stars_period": 1082,
+    "stars_total": 13677
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 779,
+    "stars_total": 14429
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 701,
+    "stars_total": 15109
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 1087,
+    "stars_total": 16287
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-24",
+    "streak": 4,
+    "times": 4
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 4,
   "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3"
  },
  "ZhuLinsen/daily_stock_analysis": {
@@ -999,28 +1055,49 @@
   "url": "https://github.com/backnotprop/plannotator"
  },
  "cathrynlavery/diagram-design": {
-  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
-  "first_seen": "2026-11-20",
+  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+  "first_seen": "2026-11-21",
   "full_name": "cathrynlavery/diagram-design",
   "history": [
    {
-    "date": "2026-11-20",
+    "date": "2026-11-21",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 636,
+    "stars_total": 69267
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 583,
+    "stars_total": 69789
+   },
+   {
+    "date": "2026-11-23",
     "period": "daily",
     "rank": 10,
-    "stars_period": 271,
-    "stars_total": 68619
+    "stars_period": 518,
+    "stars_total": 70281
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 10,
+    "stars_period": 620,
+    "stars_total": 70949
    }
   ],
   "language": "HTML",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-24",
+    "streak": 4,
+    "times": 4
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 4,
   "url": "https://github.com/cathrynlavery/diagram-design"
  },
  "cloudflare/security-audit-skill": {
@@ -1073,30 +1150,44 @@
     "stars_total": 16887
    },
    {
-    "date": "2026-11-19",
+    "date": "2026-11-21",
     "period": "daily",
-    "rank": 11,
-    "stars_period": 314,
-    "stars_total": 17183
+    "rank": 14,
+    "stars_period": 299,
+    "stars_total": 17837
    },
    {
-    "date": "2026-11-20",
+    "date": "2026-11-22",
     "period": "daily",
-    "rank": 6,
-    "stars_period": 384,
-    "stars_total": 17548
+    "rank": 14,
+    "stars_period": 260,
+    "stars_total": 18099
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 14,
+    "stars_period": 294,
+    "stars_total": 18430
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 14,
+    "stars_period": 397,
+    "stars_total": 18793
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 3,
-    "times": 3
+    "last_date": "2026-11-24",
+    "streak": 5,
+    "times": 5
    }
   },
-  "times_on_board": 3,
+  "times_on_board": 5,
   "url": "https://github.com/cursor/plugins"
  },
  "debpalash/VoiceStudio": {
@@ -1183,55 +1274,90 @@
     "stars_total": 9223
    },
    {
-    "date": "2026-11-19",
+    "date": "2026-11-21",
     "period": "daily",
     "rank": 1,
-    "stars_period": 2313,
-    "stars_total": 11339
+    "stars_period": 1622,
+    "stars_total": 14211
    },
    {
-    "date": "2026-11-20",
+    "date": "2026-11-22",
     "period": "daily",
-    "rank": 2,
-    "stars_period": 1349,
-    "stars_total": 12488
+    "rank": 1,
+    "stars_period": 1803,
+    "stars_total": 16020
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 1,
+    "stars_period": 1716,
+    "stars_total": 17748
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 1,
+    "stars_period": 2029,
+    "stars_total": 19714
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 3,
+    "last_date": "2026-11-24",
+    "streak": 5,
+    "times": 6
+   }
+  },
+  "times_on_board": 6,
+  "url": "https://github.com/elementalsouls/Claude-BugHunter"
+ },
+ "firecrawl/firecrawl": {
+  "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+  "first_seen": "2026-11-21",
+  "full_name": "firecrawl/firecrawl",
+  "history": [
+   {
+    "date": "2026-11-21",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 1241,
+    "stars_total": 205246
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 1006,
+    "stars_total": 206169
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 915,
+    "stars_total": 207011
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 3,
+    "stars_period": 924,
+    "stars_total": 207895
+   }
+  ],
+  "language": "TypeScript",
+  "last_seen": "2026-11-24",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-24",
+    "streak": 4,
     "times": 4
    }
   },
   "times_on_board": 4,
-  "url": "https://github.com/elementalsouls/Claude-BugHunter"
- },
- "firecrawl/firecrawl": {
-  "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.",
-  "first_seen": "2026-11-20",
-  "full_name": "firecrawl/firecrawl",
-  "history": [
-   {
-    "date": "2026-11-20",
-    "period": "daily",
-    "rank": 5,
-    "stars_period": 825,
-    "stars_total": 204179
-   }
-  ],
-  "language": "TypeScript",
-  "last_seen": "2026-11-20",
-  "periods": {
-   "daily": {
-    "last_date": "2026-11-20",
-    "streak": 1,
-    "times": 1
-   }
-  },
-  "times_on_board": 1,
   "url": "https://github.com/firecrawl/firecrawl"
  },
  "getarcaneapp/arcane": {
@@ -1387,30 +1513,44 @@
     "stars_total": 10087
    },
    {
-    "date": "2026-11-19",
+    "date": "2026-11-21",
     "period": "daily",
-    "rank": 9,
-    "stars_period": 365,
-    "stars_total": 10390
+    "rank": 13,
+    "stars_period": 315,
+    "stars_total": 11021
    },
    {
-    "date": "2026-11-20",
+    "date": "2026-11-22",
     "period": "daily",
-    "rank": 9,
-    "stars_period": 302,
-    "stars_total": 10710
+    "rank": 13,
+    "stars_period": 326,
+    "stars_total": 11414
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 494,
+    "stars_total": 11905
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 13,
+    "stars_period": 422,
+    "stars_total": 12269
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 5,
-    "times": 5
+    "last_date": "2026-11-24",
+    "streak": 7,
+    "times": 7
    }
   },
-  "times_on_board": 5,
+  "times_on_board": 7,
   "url": "https://github.com/google-labs-code/stitch-skills"
  },
  "google-research/paper-orchestra": {
@@ -1547,49 +1687,45 @@
     "stars_total": 65939
    },
    {
-    "date": "2026-11-20",
+    "date": "2026-11-21",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 847,
+    "stars_total": 67675
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 488,
+    "stars_total": 68141
+   },
+   {
+    "date": "2026-11-23",
     "period": "daily",
     "rank": 12,
-    "stars_period": 238,
-    "stars_total": 66838
+    "stars_period": 473,
+    "stars_total": 68631
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 6,
+    "stars_period": 828,
+    "stars_total": 69435
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 1,
-    "times": 2
+    "last_date": "2026-11-24",
+    "streak": 5,
+    "times": 5
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 5,
   "url": "https://github.com/jingyaogong/minimind"
- },
- "jquery/jquery": {
-  "description": "jQuery JavaScript Library",
-  "first_seen": "2026-11-19",
-  "full_name": "jquery/jquery",
-  "history": [
-   {
-    "date": "2026-11-19",
-    "period": "daily",
-    "rank": 13,
-    "stars_period": 266,
-    "stars_total": 60007
-   }
-  ],
-  "language": "JavaScript",
-  "last_seen": "2026-11-19",
-  "periods": {
-   "daily": {
-    "last_date": "2026-11-19",
-    "streak": 1,
-    "times": 1
-   }
-  },
-  "times_on_board": 1,
-  "url": "https://github.com/jquery/jquery"
  },
  "kajisho5/ffmpeg-skill": {
   "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
@@ -1762,28 +1898,49 @@
   "url": "https://github.com/milind-soni/OpenMausBot"
  },
  "mjmirza/app-store-compliance": {
-  "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
-  "first_seen": "2026-11-20",
+  "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+  "first_seen": "2026-11-21",
   "full_name": "mjmirza/app-store-compliance",
   "history": [
    {
-    "date": "2026-11-20",
+    "date": "2026-11-21",
     "period": "daily",
-    "rank": 7,
-    "stars_period": 377,
-    "stars_total": 1819
+    "rank": 6,
+    "stars_period": 869,
+    "stars_total": 2716
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 6,
+    "stars_period": 720,
+    "stars_total": 3388
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 621,
+    "stars_total": 3959
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 9,
+    "stars_period": 761,
+    "stars_total": 4942
    }
   ],
   "language": "Shell",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-24",
+    "streak": 4,
+    "times": 4
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 4,
   "url": "https://github.com/mjmirza/app-store-compliance"
  },
  "morluto/rea": {
@@ -1831,80 +1988,90 @@
     "stars_total": 69028
    },
    {
-    "date": "2026-11-19",
+    "date": "2026-11-21",
     "period": "daily",
-    "rank": 4,
-    "stars_period": 1059,
-    "stars_total": 69974
+    "rank": 9,
+    "stars_period": 681,
+    "stars_total": 71431
    },
    {
-    "date": "2026-11-20",
+    "date": "2026-11-22",
     "period": "daily",
-    "rank": 3,
-    "stars_period": 954,
-    "stars_total": 70778
+    "rank": 10,
+    "stars_period": 560,
+    "stars_total": 71988
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 6,
+    "stars_period": 668,
+    "stars_total": 72692
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 797,
+    "stars_total": 73423
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
+    "last_date": "2026-11-24",
+    "streak": 6,
+    "times": 6
+   }
+  },
+  "times_on_board": 6,
+  "url": "https://github.com/mvanhorn/last30days-skill"
+ },
+ "nginx/nginx": {
+  "description": "The official NGINX Open Source repository.",
+  "first_seen": "2026-11-21",
+  "full_name": "nginx/nginx",
+  "history": [
+   {
+    "date": "2026-11-21",
+    "period": "daily",
+    "rank": 15,
+    "stars_period": 246,
+    "stars_total": 32559
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 16,
+    "stars_period": 189,
+    "stars_total": 32726
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 15,
+    "stars_period": 163,
+    "stars_total": 32881
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 16,
+    "stars_period": 174,
+    "stars_total": 33047
+   }
+  ],
+  "language": "C",
+  "last_seen": "2026-11-24",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-24",
     "streak": 4,
     "times": 4
    }
   },
   "times_on_board": 4,
-  "url": "https://github.com/mvanhorn/last30days-skill"
- },
- "n8n-io/n8n": {
-  "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-  "first_seen": "2026-11-19",
-  "full_name": "n8n-io/n8n",
-  "history": [
-   {
-    "date": "2026-11-19",
-    "period": "daily",
-    "rank": 10,
-    "stars_period": 325,
-    "stars_total": 211062
-   }
-  ],
-  "language": "TypeScript",
-  "last_seen": "2026-11-19",
-  "periods": {
-   "daily": {
-    "last_date": "2026-11-19",
-    "streak": 1,
-    "times": 1
-   }
-  },
-  "times_on_board": 1,
-  "url": "https://github.com/n8n-io/n8n"
- },
- "nginx/nginx": {
-  "description": "The official NGINX Open Source repository.",
-  "first_seen": "2026-11-20",
-  "full_name": "nginx/nginx",
-  "history": [
-   {
-    "date": "2026-11-20",
-    "period": "daily",
-    "rank": 15,
-    "stars_period": 73,
-    "stars_total": 32322
-   }
-  ],
-  "language": "C",
-  "last_seen": "2026-11-20",
-  "periods": {
-   "daily": {
-    "last_date": "2026-11-20",
-    "streak": 1,
-    "times": 1
-   }
-  },
-  "times_on_board": 1,
   "url": "https://github.com/nginx/nginx"
  },
  "nodejs/node": {
@@ -1977,30 +2144,44 @@
     "stars_total": 319307
    },
    {
-    "date": "2026-11-19",
+    "date": "2026-11-21",
     "period": "daily",
     "rank": 5,
-    "stars_period": 822,
-    "stars_total": 321304
+    "stars_period": 890,
+    "stars_total": 322819
    },
    {
-    "date": "2026-11-20",
+    "date": "2026-11-22",
     "period": "daily",
-    "rank": 1,
-    "stars_period": 2028,
-    "stars_total": 322058
+    "rank": 3,
+    "stars_period": 883,
+    "stars_total": 323710
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 3,
+    "stars_period": 788,
+    "stars_total": 324150
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 5,
+    "stars_period": 840,
+    "stars_total": 325037
    }
   ],
   "language": "Shell",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 3,
-    "times": 3
+    "last_date": "2026-11-24",
+    "streak": 5,
+    "times": 5
    }
   },
-  "times_on_board": 3,
+  "times_on_board": 5,
   "url": "https://github.com/obra/superpowers"
  },
  "openai/codex-security": {
@@ -2037,34 +2218,48 @@
  },
  "openvinotoolkit/openvino": {
   "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
-  "first_seen": "2026-11-19",
+  "first_seen": "2026-11-21",
   "full_name": "openvinotoolkit/openvino",
   "history": [
    {
-    "date": "2026-11-19",
+    "date": "2026-11-21",
     "period": "daily",
-    "rank": 20,
-    "stars_period": 24,
-    "stars_total": 11317
+    "rank": 16,
+    "stars_period": 217,
+    "stars_total": 11783
    },
    {
-    "date": "2026-11-20",
+    "date": "2026-11-22",
     "period": "daily",
-    "rank": 11,
-    "stars_period": 246,
-    "stars_total": 11554
+    "rank": 15,
+    "stars_period": 200,
+    "stars_total": 11928
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 16,
+    "stars_period": 158,
+    "stars_total": 12088
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 15,
+    "stars_period": 184,
+    "stars_total": 12276
    }
   ],
   "language": "C++",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 2,
-    "times": 2
+    "last_date": "2026-11-24",
+    "streak": 4,
+    "times": 4
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 4,
   "url": "https://github.com/openvinotoolkit/openvino"
  },
  "pbakaus/impeccable": {
@@ -2406,27 +2601,48 @@
  },
  "toeverything/AFFiNE": {
   "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
-  "first_seen": "2026-11-20",
+  "first_seen": "2026-11-21",
   "full_name": "toeverything/AFFiNE",
   "history": [
    {
-    "date": "2026-11-20",
+    "date": "2026-11-21",
     "period": "daily",
-    "rank": 13,
-    "stars_period": 182,
-    "stars_total": 75151
+    "rank": 10,
+    "stars_period": 676,
+    "stars_total": 75784
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 9,
+    "stars_period": 574,
+    "stars_total": 76283
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 9,
+    "stars_period": 542,
+    "stars_total": 76808
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 595,
+    "stars_total": 77376
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-24",
+    "streak": 4,
+    "times": 4
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 4,
   "url": "https://github.com/toeverything/AFFiNE"
  },
  "tokio-rs/topcoat": {
@@ -2615,27 +2831,48 @@
  },
  "zhouxiaoka/autoclip": {
   "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
-  "first_seen": "2026-11-20",
+  "first_seen": "2026-11-21",
   "full_name": "zhouxiaoka/autoclip",
   "history": [
    {
-    "date": "2026-11-20",
+    "date": "2026-11-21",
     "period": "daily",
-    "rank": 14,
-    "stars_period": 126,
-    "stars_total": 11196
+    "rank": 4,
+    "stars_period": 979,
+    "stars_total": 12162
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 683,
+    "stars_total": 12836
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 641,
+    "stars_total": 13412
+   },
+   {
+    "date": "2026-11-24",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 907,
+    "stars_total": 14368
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-20",
+  "last_seen": "2026-11-24",
   "periods": {
    "daily": {
-    "last_date": "2026-11-20",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-24",
+    "streak": 4,
+    "times": 4
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 4,
   "url": "https://github.com/zhouxiaoka/autoclip"
  }
 }
