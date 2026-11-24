@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T08:01:45+08:00",
+ "generated_at": "2026-11-24T08:01:36+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
  "project_count": 41,
  "topics": [
@@ -7,8 +7,8 @@
    "name": "AI Agent / 编码助手",
    "repo_count": 24,
    "share": 0.585,
-   "stars_period_total": 580233,
-   "avg_stars_period": 24176,
+   "stars_period_total": 581137,
+   "avg_stars_period": 24214,
    "languages": [
     "CSS",
     "HTML",
@@ -149,6 +149,16 @@
      "description": "Production-grade engineering skills for AI coding agents."
     },
     {
+     "full_name": "elementalsouls/Claude-BugHunter",
+     "stars_period": 2029,
+     "stars_total": 19714,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
+    },
+    {
      "full_name": "backnotprop/plannotator",
      "stars_period": 1719,
      "stars_total": 11899,
@@ -159,19 +169,9 @@
      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
     },
     {
-     "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1716,
-     "stars_total": 17748,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
-    },
-    {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 915,
-     "stars_total": 207011,
+     "stars_period": 924,
+     "stars_total": 207895,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -180,8 +180,8 @@
     },
     {
      "full_name": "obra/superpowers",
-     "stars_period": 788,
-     "stars_total": 324150,
+     "stars_period": 840,
+     "stars_total": 325037,
      "language": "Shell",
      "periods": [
       "daily"
@@ -189,19 +189,9 @@
      "description": "An agentic skills framework & software development methodology that works."
     },
     {
-     "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 699,
-     "stars_total": 62766,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
-    },
-    {
      "full_name": "mvanhorn/last30days-skill",
-     "stars_period": 668,
-     "stars_total": 72692,
+     "stars_period": 797,
+     "stars_total": 73423,
      "language": "Python",
      "periods": [
       "daily"
@@ -209,9 +199,19 @@
      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
     },
     {
+     "full_name": "HKUDS/CLI-Anything",
+     "stars_period": 790,
+     "stars_total": 63601,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
+    },
+    {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 621,
-     "stars_total": 3959,
+     "stars_period": 761,
+     "stars_total": 4942,
      "language": "Shell",
      "periods": [
       "daily"
@@ -220,28 +220,18 @@
     },
     {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 518,
-     "stars_total": 70281,
+     "stars_period": 620,
+     "stars_total": 70949,
      "language": "HTML",
      "periods": [
       "daily"
      ],
-     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. "
-    },
-    {
-     "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 494,
-     "stars_total": 11905,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
     },
     {
      "full_name": "Tracer-Cloud/opensre",
-     "stars_period": 399,
-     "stars_total": 14399,
+     "stars_period": 436,
+     "stars_total": 14821,
      "language": "Python",
      "periods": [
       "daily"
@@ -249,9 +239,19 @@
      "description": "The open-source agent for CI/CD reliability."
     },
     {
+     "full_name": "google-labs-code/stitch-skills",
+     "stars_period": 422,
+     "stars_total": 12269,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+    },
+    {
      "full_name": "cursor/plugins",
-     "stars_period": 294,
-     "stars_total": 18430,
+     "stars_period": 397,
+     "stars_total": 18793,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -264,8 +264,8 @@
    "name": "安全 / 逆向",
    "repo_count": 8,
    "share": 0.195,
-   "stars_period_total": 497817,
-   "avg_stars_period": 62227,
+   "stars_period_total": 498323,
+   "avg_stars_period": 62290,
    "languages": [
     "Java",
     "JavaScript",
@@ -327,8 +327,8 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1716,
-     "stars_total": 17748,
+     "stars_period": 2029,
+     "stars_total": 19714,
      "language": "Python",
      "periods": [
       "daily"
@@ -337,8 +337,8 @@
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 621,
-     "stars_total": 3959,
+     "stars_period": 761,
+     "stars_total": 4942,
      "language": "Shell",
      "periods": [
       "daily"
@@ -347,8 +347,8 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 542,
-     "stars_total": 76808,
+     "stars_period": 595,
+     "stars_total": 77376,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -361,8 +361,8 @@
    "name": "其他 / 未归类",
    "repo_count": 6,
    "share": 0.146,
-   "stars_period_total": 49904,
-   "avg_stars_period": 8317,
+   "stars_period_total": 50301,
+   "avg_stars_period": 8384,
    "languages": [
     "C",
     "Python",
@@ -412,8 +412,8 @@
     },
     {
      "full_name": "XiaoYouChR/Ghost-Downloader-3",
-     "stars_period": 701,
-     "stars_total": 15109,
+     "stars_period": 1087,
+     "stars_total": 16287,
      "language": "Python",
      "periods": [
       "daily"
@@ -422,8 +422,8 @@
     },
     {
      "full_name": "nginx/nginx",
-     "stars_period": 163,
-     "stars_total": 32881,
+     "stars_period": 174,
+     "stars_total": 33047,
      "language": "C",
      "periods": [
       "daily"
@@ -436,8 +436,8 @@
    "name": "CLI / 开发者工具",
    "repo_count": 6,
    "share": 0.146,
-   "stars_period_total": 8288,
-   "avg_stars_period": 1381,
+   "stars_period_total": 8675,
+   "avg_stars_period": 1446,
    "languages": [
     "HTML",
     "Python",
@@ -466,19 +466,9 @@
      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
     },
     {
-     "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 699,
-     "stars_total": 62766,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
-    },
-    {
      "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 641,
-     "stars_total": 13412,
+     "stars_period": 907,
+     "stars_total": 14368,
      "language": "Python",
      "periods": [
       "daily"
@@ -486,19 +476,29 @@
      "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
     },
     {
+     "full_name": "HKUDS/CLI-Anything",
+     "stars_period": 790,
+     "stars_total": 63601,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
+    },
+    {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 518,
-     "stars_total": 70281,
+     "stars_period": 620,
+     "stars_total": 70949,
      "language": "HTML",
      "periods": [
       "daily"
      ],
-     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. "
+     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
     },
     {
      "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 494,
-     "stars_total": 11905,
+     "stars_period": 422,
+     "stars_total": 12269,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -511,8 +511,8 @@
    "name": "LLM / 模型与推理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 28070,
-   "avg_stars_period": 5614,
+   "stars_period_total": 28451,
+   "avg_stars_period": 5690,
    "languages": [
     "C++",
     "Python",
@@ -551,8 +551,8 @@
     },
     {
      "full_name": "jingyaogong/minimind",
-     "stars_period": 473,
-     "stars_total": 68631,
+     "stars_period": 828,
+     "stars_total": 69435,
      "language": "Python",
      "periods": [
       "daily"
@@ -561,8 +561,8 @@
     },
     {
      "full_name": "openvinotoolkit/openvino",
-     "stars_period": 158,
-     "stars_total": 12088,
+     "stars_period": 184,
+     "stars_total": 12276,
      "language": "C++",
      "periods": [
       "daily"
@@ -575,8 +575,8 @@
    "name": "学习 / 知识管理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 26076,
-   "avg_stars_period": 5215,
+   "stars_period_total": 26267,
+   "avg_stars_period": 5253,
    "languages": [
     "Python",
     "TypeScript"
@@ -604,8 +604,8 @@
     },
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 915,
-     "stars_total": 207011,
+     "stars_period": 924,
+     "stars_total": 207895,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -614,8 +614,8 @@
     },
     {
      "full_name": "mvanhorn/last30days-skill",
-     "stars_period": 668,
-     "stars_total": 72692,
+     "stars_period": 797,
+     "stars_total": 73423,
      "language": "Python",
      "periods": [
       "daily"
@@ -624,8 +624,8 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 542,
-     "stars_total": 76808,
+     "stars_period": 595,
+     "stars_total": 77376,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -638,8 +638,8 @@
    "name": "音视频 / 多模态",
    "repo_count": 3,
    "share": 0.073,
-   "stars_period_total": 73774,
-   "avg_stars_period": 24591,
+   "stars_period_total": 74040,
+   "avg_stars_period": 24680,
    "languages": [
     "Python",
     "TypeScript"
@@ -667,8 +667,8 @@
     },
     {
      "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 641,
-     "stars_total": 13412,
+     "stars_period": 907,
+     "stars_total": 14368,
      "language": "Python",
      "periods": [
       "daily"
@@ -769,16 +769,16 @@
    "name": "数据 / 爬虫",
    "repo_count": 1,
    "share": 0.024,
-   "stars_period_total": 915,
-   "avg_stars_period": 915,
+   "stars_period_total": 924,
+   "avg_stars_period": 924,
    "languages": [
     "TypeScript"
    ],
    "repos": [
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 915,
-     "stars_total": 207011,
+     "stars_period": 924,
+     "stars_total": 207895,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -791,16 +791,16 @@
    "name": "后端 / 基础设施",
    "repo_count": 1,
    "share": 0.024,
-   "stars_period_total": 494,
-   "avg_stars_period": 494,
+   "stars_period_total": 422,
+   "avg_stars_period": 422,
    "languages": [
     "TypeScript"
    ],
    "repos": [
     {
      "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 494,
-     "stars_total": 11905,
+     "stars_period": 422,
+     "stars_total": 12269,
      "language": "TypeScript",
      "periods": [
       "daily"

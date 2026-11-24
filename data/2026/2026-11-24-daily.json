@@ -1,0 +1,154 @@
+{
+ "period": "daily",
+ "lang": null,
+ "date": "2026-11-24",
+ "fetched_at": "2026-11-24T08:00:44+08:00",
+ "source": "https://github.com/trending?since=daily",
+ "count": 16,
+ "items": [
+  {
+   "rank": 1,
+   "full_name": "elementalsouls/Claude-BugHunter",
+   "stars_period": 2029,
+   "stars_total": 19714,
+   "language": "Python",
+   "url": "https://github.com/elementalsouls/Claude-BugHunter",
+   "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices."
+  },
+  {
+   "rank": 2,
+   "full_name": "XiaoYouChR/Ghost-Downloader-3",
+   "stars_period": 1087,
+   "stars_total": 16287,
+   "language": "Python",
+   "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+   "description": "The only downloader you need. 下载器的集大成者。"
+  },
+  {
+   "rank": 3,
+   "full_name": "firecrawl/firecrawl",
+   "stars_period": 924,
+   "stars_total": 207895,
+   "language": "TypeScript",
+   "url": "https://github.com/firecrawl/firecrawl",
+   "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
+  },
+  {
+   "rank": 4,
+   "full_name": "zhouxiaoka/autoclip",
+   "stars_period": 907,
+   "stars_total": 14368,
+   "language": "Python",
+   "url": "https://github.com/zhouxiaoka/autoclip",
+   "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
+  },
+  {
+   "rank": 5,
+   "full_name": "obra/superpowers",
+   "stars_period": 840,
+   "stars_total": 325037,
+   "language": "Shell",
+   "url": "https://github.com/obra/superpowers",
+   "description": "An agentic skills framework & software development methodology that works."
+  },
+  {
+   "rank": 6,
+   "full_name": "jingyaogong/minimind",
+   "stars_period": 828,
+   "stars_total": 69435,
+   "language": "Python",
+   "url": "https://github.com/jingyaogong/minimind",
+   "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours."
+  },
+  {
+   "rank": 7,
+   "full_name": "mvanhorn/last30days-skill",
+   "stars_period": 797,
+   "stars_total": 73423,
+   "language": "Python",
+   "url": "https://github.com/mvanhorn/last30days-skill",
+   "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+  },
+  {
+   "rank": 8,
+   "full_name": "HKUDS/CLI-Anything",
+   "stars_period": 790,
+   "stars_total": 63601,
+   "language": "Python",
+   "url": "https://github.com/HKUDS/CLI-Anything",
+   "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
+  },
+  {
+   "rank": 9,
+   "full_name": "mjmirza/app-store-compliance",
+   "stars_period": 761,
+   "stars_total": 4942,
+   "language": "Shell",
+   "url": "https://github.com/mjmirza/app-store-compliance",
+   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents."
+  },
+  {
+   "rank": 10,
+   "full_name": "cathrynlavery/diagram-design",
+   "stars_period": 620,
+   "stars_total": 70949,
+   "language": "HTML",
+   "url": "https://github.com/cathrynlavery/diagram-design",
+   "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop."
+  },
+  {
+   "rank": 11,
+   "full_name": "toeverything/AFFiNE",
+   "stars_period": 595,
+   "stars_total": 77376,
+   "language": "TypeScript",
+   "url": "https://github.com/toeverything/AFFiNE",
+   "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use."
+  },
+  {
+   "rank": 12,
+   "full_name": "Tracer-Cloud/opensre",
+   "stars_period": 436,
+   "stars_total": 14821,
+   "language": "Python",
+   "url": "https://github.com/Tracer-Cloud/opensre",
+   "description": "The open-source agent for CI/CD reliability."
+  },
+  {
+   "rank": 13,
+   "full_name": "google-labs-code/stitch-skills",
+   "stars_period": 422,
+   "stars_total": 12269,
+   "language": "TypeScript",
+   "url": "https://github.com/google-labs-code/stitch-skills",
+   "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor."
+  },
+  {
+   "rank": 14,
+   "full_name": "cursor/plugins",
+   "stars_period": 397,
+   "stars_total": 18793,
+   "language": "TypeScript",
+   "url": "https://github.com/cursor/plugins",
+   "description": "Cursor plugin specification and official plugins"
+  },
+  {
+   "rank": 15,
+   "full_name": "openvinotoolkit/openvino",
+   "stars_period": 184,
+   "stars_total": 12276,
+   "language": "C++",
+   "url": "https://github.com/openvinotoolkit/openvino",
+   "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference"
+  },
+  {
+   "rank": 16,
+   "full_name": "nginx/nginx",
+   "stars_period": 174,
+   "stars_total": 33047,
+   "language": "C",
+   "url": "https://github.com/nginx/nginx",
+   "description": "The official NGINX Open Source repository."
+  }
+ ]
+}
