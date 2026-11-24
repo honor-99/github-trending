@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T08:00:44+08:00",
+ "generated_at": "2026-11-24T09:33:49+08:00",
  "basis": "所有日/周/月快照里出现过的项目去重并集，按累计 star 总量降序（取最近一次上榜时的值）",
  "sort_key": "stars_total",
  "project_count": 78,
