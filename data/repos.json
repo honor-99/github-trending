@@ -42,18 +42,30 @@
     "rank": 4,
     "stars_period": 841,
     "stars_total": 57665
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 11,
+    "stars_period": 2268,
+    "stars_total": 58919
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-17",
     "streak": 2,
     "times": 2
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
  },
  "CopilotKit/OpenBot": {
@@ -188,18 +200,30 @@
     "rank": 1,
     "stars_period": 1219,
     "stars_total": 7251
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 7,
+    "stars_period": 3575,
+    "stars_total": 10320
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-16",
     "streak": 3,
     "times": 3
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 3,
+  "times_on_board": 4,
   "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
  },
  "HKUDS/CLI-Anything": {
@@ -759,18 +783,30 @@
     "rank": 3,
     "stars_period": 1445,
     "stars_total": 19981
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 6,
+    "stars_period": 3620,
+    "stars_total": 21271
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-18",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-18",
     "streak": 3,
     "times": 3
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 3,
+  "times_on_board": 4,
   "url": "https://github.com/ag-ui-protocol/ag-ui"
  },
  "alibaba/open-code-review": {
@@ -798,18 +834,30 @@
     "rank": 7,
     "stars_period": 763,
     "stars_total": 53710
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 4,
+    "stars_period": 3700,
+    "stars_total": 55523
    }
   ],
   "language": "Go",
-  "last_seen": "2026-11-18",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-18",
     "streak": 3,
     "times": 3
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 3,
+  "times_on_board": 4,
   "url": "https://github.com/alibaba/open-code-review"
  },
  "anomalyco/hex": {
@@ -1063,10 +1111,17 @@
     "rank": 11,
     "stars_period": 1719,
     "stars_total": 11899
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 8,
+    "stars_period": 2815,
+    "stars_total": 14532
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-18",
@@ -1074,13 +1129,59 @@
     "times": 3
    },
    "weekly": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-23",
+    "streak": 2,
+    "times": 2
+   }
+  },
+  "times_on_board": 5,
+  "url": "https://github.com/backnotprop/plannotator"
+ },
+ "cathrynlavery/diagram-design": {
+  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+  "first_seen": "2026-11-20",
+  "full_name": "cathrynlavery/diagram-design",
+  "history": [
+   {
+    "date": "2026-11-20",
+    "period": "daily",
+    "rank": 10,
+    "stars_period": 271,
+    "stars_total": 68874
+   },
+   {
+    "date": "2026-11-21",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 636,
+    "stars_total": 69465
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 583,
+    "stars_total": 69949
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 10,
+    "stars_period": 518,
+    "stars_total": 70553
+   }
+  ],
+  "language": "HTML",
+  "last_seen": "2026-11-23",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-23",
+    "streak": 4,
+    "times": 4
    }
   },
   "times_on_board": 4,
-  "url": "https://github.com/backnotprop/plannotator"
+  "url": "https://github.com/cathrynlavery/diagram-design"
  },
  "cathrynlavery/diagram-design": {
   "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
@@ -1289,18 +1390,30 @@
     "rank": 2,
     "stars_period": 1774,
     "stars_total": 28887
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 1,
+    "stars_period": 6436,
+    "stars_total": 31355
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-18",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-18",
     "streak": 3,
     "times": 3
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 3,
+  "times_on_board": 4,
   "url": "https://github.com/dream-num/univer"
  },
  "elementalsouls/Claude-BugHunter": {
@@ -1847,18 +1960,30 @@
     "rank": 9,
     "stars_period": 367,
     "stars_total": 6670
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 3,
+    "stars_period": 3748,
+    "stars_total": 9927
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-17",
     "streak": 1,
     "times": 1
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/kajisho5/ffmpeg-skill"
  },
  "mattpocock/skills": {
@@ -1955,10 +2080,17 @@
     "rank": 1,
     "stars_period": 13501,
     "stars_total": 28933
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 5,
+    "stars_period": 3626,
+    "stars_total": 32351
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-13",
@@ -1966,12 +2098,12 @@
     "times": 3
    },
    "weekly": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-23",
+    "streak": 2,
+    "times": 2
    }
   },
-  "times_on_board": 4,
+  "times_on_board": 5,
   "url": "https://github.com/meta/astryx"
  },
  "milind-soni/OpenMausBot": {
@@ -2525,18 +2657,30 @@
     "rank": 8,
     "stars_period": 218,
     "stars_total": 1520
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 13,
+    "stars_period": 461,
+    "stars_total": 2416
    }
   ],
   "language": "Objective-C",
-  "last_seen": "2026-11-13",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-13",
     "streak": 1,
     "times": 1
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 1,
+  "times_on_board": 2,
   "url": "https://github.com/pookjw/HermesEnabler"
  },
  "punkpeye/awesome-mcp-servers": {
@@ -2885,18 +3029,30 @@
     "rank": 5,
     "stars_period": 837,
     "stars_total": 6295
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 10,
+    "stars_period": 2616,
+    "stars_total": 7851
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-17",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-17",
     "streak": 2,
     "times": 2
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 2,
+  "times_on_board": 3,
   "url": "https://github.com/tradermonty/claude-trading-skills"
  },
  "vercel-labs/agent-browser": {
@@ -3007,10 +3163,17 @@
     "rank": 6,
     "stars_period": 4556,
     "stars_total": 15732
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 12,
+    "stars_period": 1771,
+    "stars_total": 17415
    }
   ],
   "language": "Ruby",
-  "last_seen": "2026-11-16",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-13",
@@ -3018,9 +3181,55 @@
     "times": 3
    },
    "weekly": {
-    "last_date": "2026-11-16",
-    "streak": 1,
-    "times": 1
+    "last_date": "2026-11-23",
+    "streak": 2,
+    "times": 2
+   }
+  },
+  "times_on_board": 5,
+  "url": "https://github.com/we-promise/sure"
+ },
+ "zhouxiaoka/autoclip": {
+  "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+  "first_seen": "2026-11-20",
+  "full_name": "zhouxiaoka/autoclip",
+  "history": [
+   {
+    "date": "2026-11-20",
+    "period": "daily",
+    "rank": 14,
+    "stars_period": 126,
+    "stars_total": 11665
+   },
+   {
+    "date": "2026-11-21",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 979,
+    "stars_total": 12407
+   },
+   {
+    "date": "2026-11-22",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 683,
+    "stars_total": 13026
+   },
+   {
+    "date": "2026-11-23",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 641,
+    "stars_total": 13897
+   }
+  ],
+  "language": "Python",
+  "last_seen": "2026-11-23",
+  "periods": {
+   "daily": {
+    "last_date": "2026-11-23",
+    "streak": 4,
+    "times": 4
    }
   },
   "times_on_board": 4,

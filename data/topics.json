@@ -14,8 +14,7 @@
     "HTML",
     "JavaScript",
     "Python",
-    "Rust",
-    "Shell"
+    "Rust"
    ],
    "repos": [
     {
@@ -79,16 +78,6 @@
      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context ba"
     },
     {
-     "full_name": "meta/astryx",
-     "stars_period": 13501,
-     "stars_total": 28933,
-     "language": "TypeScript",
-     "periods": [
-      "weekly"
-     ],
-     "description": "An open source design system that's fully customizable and agent ready"
-    },
-    {
      "full_name": "anthropics/claude-plugins-official",
      "stars_period": 9346,
      "stars_total": 46789,
@@ -109,44 +98,75 @@
      "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork"
     },
     {
-     "full_name": "anthropics/skills",
-     "stars_period": 6077,
-     "stars_total": 195401,
+     "full_name": "dream-num/univer",
+     "stars_period": 6436,
+     "stars_total": 31355,
+     "language": "TypeScript",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Buil"
+    },
+    {
+     "full_name": "mvanhorn/last30days-skill",
+     "stars_period": 4731,
+     "stars_total": 73010,
+     "language": "Python",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+    },
+    {
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars_period": 3748,
+     "stars_total": 9927,
      "language": "Python",
      "periods": [
       "weekly"
      ],
-     "description": "Public repository for Agent Skills"
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
     },
     {
-     "full_name": "google/elephant-goldfish-model",
-     "stars_period": 5060,
-     "stars_total": 19811,
-     "language": "Python",
+     "full_name": "alibaba/open-code-review",
+     "stars_period": 3700,
+     "stars_total": 55523,
+     "language": "Go",
      "periods": [
       "weekly"
      ],
-     "description": "Open-source plugin for designing and reviewing software with agents"
+     "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comment"
     },
     {
-     "full_name": "vercel-labs/agent-browser",
-     "stars_period": 4217,
-     "stars_total": 51654,
-     "language": "Rust",
+     "full_name": "meta/astryx",
+     "stars_period": 3626,
+     "stars_total": 32351,
+     "language": "TypeScript",
      "periods": [
       "weekly"
      ],
-     "description": "Browser automation CLI for AI agents"
+     "description": "An open source design system that's fully customizable and agent ready"
     },
     {
-     "full_name": "addyosmani/agent-skills",
-     "stars_period": 3889,
-     "stars_total": 117967,
-     "language": "JavaScript",
+     "full_name": "ag-ui-protocol/ag-ui",
+     "stars_period": 3620,
+     "stars_total": 21271,
+     "language": "TypeScript",
      "periods": [
       "weekly"
      ],
-     "description": "Production-grade engineering skills for AI coding agents."
+     "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications."
+    },
+    {
+     "full_name": "GoogleChrome/modern-web-guidance-src",
+     "stars_period": 3575,
+     "stars_total": 10320,
+     "language": "TypeScript",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Keep your coding agent up to date with the latest web best practices"
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
@@ -160,8 +180,8 @@
     },
     {
      "full_name": "backnotprop/plannotator",
-     "stars_period": 1719,
-     "stars_total": 11899,
+     "stars_period": 2815,
+     "stars_total": 14532,
      "language": "TypeScript",
      "periods": [
       "weekly"
@@ -246,7 +266,27 @@
      "periods": [
       "daily"
      ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+     "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and"
+    },
+    {
+     "full_name": "cathrynlavery/diagram-design",
+     "stars_period": 518,
+     "stars_total": 70553,
+     "language": "HTML",
+     "periods": [
+      "daily"
+     ],
+     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
+    },
+    {
+     "full_name": "Tracer-Cloud/opensre",
+     "stars_period": 399,
+     "stars_total": 14557,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "The open-source agent for CI/CD reliability."
     },
     {
      "full_name": "cursor/plugins",
@@ -441,7 +481,6 @@
    "languages": [
     "HTML",
     "Python",
-    "Rust",
     "TypeScript"
    ],
    "repos": [
@@ -515,6 +554,7 @@
    "avg_stars_period": 5690,
    "languages": [
     "C++",
+    "Go",
     "Python",
     "TypeScript"
    ],
@@ -540,14 +580,24 @@
      "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer t"
     },
     {
-     "full_name": "ZhuLinsen/daily_stock_analysis",
-     "stars_period": 4548,
-     "stars_total": 72537,
-     "language": "Python",
+     "full_name": "alibaba/open-code-review",
+     "stars_period": 3700,
+     "stars_total": 55523,
+     "language": "Go",
      "periods": [
       "weekly"
      ],
-     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
+     "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comment"
+    },
+    {
+     "full_name": "jingyaogong/minimind",
+     "stars_period": 473,
+     "stars_total": 69075,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours."
     },
     {
      "full_name": "jingyaogong/minimind",
@@ -733,8 +783,8 @@
    "repos": [
     {
      "full_name": "meta/astryx",
-     "stars_period": 13501,
-     "stars_total": 28933,
+     "stars_period": 3626,
+     "stars_total": 32351,
      "language": "TypeScript",
      "periods": [
       "weekly"
@@ -750,18 +800,30 @@
    "stars_period_total": 1922,
    "avg_stars_period": 1922,
    "languages": [
-    "C++"
+    "Python",
+    "TypeScript"
    ],
    "repos": [
     {
-     "full_name": "google-deepmind/mujoco",
-     "stars_period": 1922,
-     "stars_total": 18080,
-     "language": "C++",
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars_period": 3748,
+     "stars_total": 9927,
+     "language": "Python",
      "periods": [
       "weekly"
      ],
-     "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator."
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
+    },
+    {
+     "full_name": "google-labs-code/stitch-skills",
+     "stars_period": 2683,
+     "stars_total": 12059,
+     "language": "TypeScript",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
     }
    ]
   },

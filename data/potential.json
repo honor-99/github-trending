@@ -24,60 +24,21 @@
    ]
   },
   {
-   "full_name": "milind-soni/OpenMausBot",
-   "score": 89.9,
-   "stars_period": 5463,
-   "stars_total": 23463,
-   "growth": 0.3035,
-   "language": "TypeScript",
-   "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
-   "periods": [
-    "weekly"
-   ],
-   "streak": 2,
-   "reasons": [
-    "本期 +5,463 star，相当于存量的 30.3%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 23,463 star，向上空间大",
-    "连续 2 期在榜，热度不是一次性",
-    "单期绝对增量超过 2,000，属于爆发型"
-   ]
-  },
-  {
-   "full_name": "we-promise/sure",
-   "score": 89.6,
-   "stars_period": 4556,
-   "stars_total": 15732,
-   "growth": 0.4077,
-   "language": "Ruby",
-   "description": "The personal finance app for everyone (by everyone)",
-   "periods": [
-    "weekly"
-   ],
-   "streak": 1,
-   "reasons": [
-    "本期 +4,556 star，相当于存量的 40.8%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 15,732 star，向上空间大",
-    "单期绝对增量超过 2,000，属于爆发型"
-   ]
-  },
-  {
-   "full_name": "google/elephant-goldfish-model",
-   "score": 87.2,
-   "stars_period": 5060,
-   "stars_total": 19811,
-   "growth": 0.343,
+   "full_name": "kajisho5/ffmpeg-skill",
+   "score": 92.6,
+   "stars_period": 3748,
+   "stars_total": 9927,
+   "growth": 0.6066,
    "language": "Python",
-   "description": "Open-source plugin for designing and reviewing software with agents",
+   "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
    "periods": [
     "weekly"
    ],
    "streak": 1,
    "reasons": [
-    "本期 +5,060 star，相当于存量的 34.3%",
+    "本期 +3,748 star，相当于存量的 60.7%",
     "刚进榜单，还没被反复曝光",
-    "体量仅 19,811 star，向上空间大",
+    "体量仅 9,927 star，向上空间大",
     "单期绝对增量超过 2,000，属于爆发型"
    ]
   },
@@ -126,33 +87,112 @@
    "stars_total": 35373,
    "growth": 0.2399,
    "language": "Python",
-   "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
-   "periods": [
-    "monthly"
-   ],
-   "streak": 1,
-   "reasons": [
-    "本期 +6,844 star，相当于存量的 24.0%",
-    "刚进榜单，还没被反复曝光",
-    "单期绝对增量超过 2,000，属于爆发型"
-   ]
-  },
-  {
-   "full_name": "backnotprop/plannotator",
-   "score": 71.0,
-   "stars_period": 1719,
-   "stars_total": 11899,
-   "growth": 0.1689,
-   "language": "TypeScript",
-   "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+   "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
    "periods": [
     "weekly"
    ],
    "streak": 1,
    "reasons": [
-    "本期 +1,719 star，相当于存量的 16.9%",
+    "本期 +2,616 star，相当于存量的 50.0%",
     "刚进榜单，还没被反复曝光",
-    "体量仅 11,899 star，向上空间大"
+    "体量仅 7,851 star，向上空间大",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "GoogleChrome/modern-web-guidance-src",
+   "score": 92.2,
+   "stars_period": 3575,
+   "stars_total": 10320,
+   "growth": 0.53,
+   "language": "TypeScript",
+   "description": "Keep your coding agent up to date with the latest web best practices",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +3,575 star，相当于存量的 53.0%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 10,320 star，向上空间大",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "backnotprop/plannotator",
+   "score": 91.6,
+   "stars_period": 2815,
+   "stars_total": 14532,
+   "growth": 0.2402,
+   "language": "TypeScript",
+   "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 2,
+   "reasons": [
+    "本期 +2,815 star，相当于存量的 24.0%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 14,532 star，向上空间大",
+    "连续 2 期在榜，热度不是一次性",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "google-labs-code/stitch-skills",
+   "score": 89.9,
+   "stars_period": 2683,
+   "stars_total": 12059,
+   "growth": 0.2862,
+   "language": "TypeScript",
+   "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+   "periods": [
+    "daily",
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +2,683 star，相当于存量的 28.6%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 12,059 star，向上空间大",
+    "单期绝对增量超过 2,000，属于爆发型"
+   ]
+  },
+  {
+   "full_name": "pookjw/HermesEnabler",
+   "score": 85.4,
+   "stars_period": 461,
+   "stars_total": 2416,
+   "growth": 0.2358,
+   "language": "Objective-C",
+   "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +461 star，相当于存量的 23.6%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 2,416 star，向上空间大"
+   ]
+  },
+  {
+   "full_name": "mjmirza/app-store-compliance",
+   "score": 81.7,
+   "stars_period": 621,
+   "stars_total": 4304,
+   "growth": 0.1686,
+   "language": "Shell",
+   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+   "periods": [
+    "daily"
+   ],
+   "streak": 4,
+   "reasons": [
+    "本期 +621 star，相当于存量的 16.9%",
+    "刚进榜单，还没被反复曝光",
+    "体量仅 4,304 star，向上空间大",
+    "连续 4 期在榜，热度不是一次性"
    ]
   }
  ]
