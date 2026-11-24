@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-24T09:39:09+08:00",
+ "generated_at": "2026-11-24T09:41:22+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
- "candidate_count": 35,
- "excluded_count": 6,
+ "candidate_count": 36,
+ "excluded_count": 5,
  "items": [
   {
    "full_name": "ranxianglei/billion-context",
@@ -43,49 +43,11 @@
    ]
   },
   {
-   "full_name": "mjmirza/app-store-compliance",
-   "score": 85.2,
-   "stars_period": 761,
-   "stars_total": 4942,
-   "growth": 0.182,
-   "language": "Shell",
-   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
-   "periods": [
-    "daily"
-   ],
-   "streak": 5,
-   "reasons": [
-    "本期 +761 star，相当于存量的 18.2%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 4,942 star，向上空间大",
-    "连续 5 期在榜，热度不是一次性"
-   ]
-  },
-  {
-   "full_name": "meta/astryx",
-   "score": 83.5,
-   "stars_period": 13501,
-   "stars_total": 28933,
-   "growth": 0.8749,
-   "language": "TypeScript",
-   "description": "An open source design system that's fully customizable and agent ready",
-   "periods": [
-    "weekly"
-   ],
-   "streak": 1,
-   "reasons": [
-    "本期 +13,501 star，相当于存量的 87.5%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 28,933 star，向上空间大",
-    "单期绝对增量超过 2,000，属于爆发型"
-   ]
-  },
-  {
-   "full_name": "anthropics/knowledge-work-plugins",
-   "score": 76.1,
-   "stars_period": 6844,
-   "stars_total": 35373,
-   "growth": 0.2399,
+   "full_name": "tradermonty/claude-trading-skills",
+   "score": 92.5,
+   "stars_period": 2616,
+   "stars_total": 7851,
+   "growth": 0.4997,
    "language": "Python",
    "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
    "periods": [
@@ -178,21 +140,21 @@
   },
   {
    "full_name": "mjmirza/app-store-compliance",
-   "score": 81.7,
-   "stars_period": 621,
-   "stars_total": 4304,
-   "growth": 0.1686,
+   "score": 85.2,
+   "stars_period": 761,
+   "stars_total": 4942,
+   "growth": 0.182,
    "language": "Shell",
    "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
    "periods": [
     "daily"
    ],
-   "streak": 4,
+   "streak": 5,
    "reasons": [
-    "本期 +621 star，相当于存量的 16.9%",
+    "本期 +761 star，相当于存量的 18.2%",
     "刚进榜单，还没被反复曝光",
-    "体量仅 4,304 star，向上空间大",
-    "连续 4 期在榜，热度不是一次性"
+    "体量仅 4,942 star，向上空间大",
+    "连续 5 期在榜，热度不是一次性"
    ]
   }
  ]

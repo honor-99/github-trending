@@ -1147,52 +1147,6 @@
     "period": "daily",
     "rank": 10,
     "stars_period": 271,
-    "stars_total": 68874
-   },
-   {
-    "date": "2026-11-21",
-    "period": "daily",
-    "rank": 11,
-    "stars_period": 636,
-    "stars_total": 69465
-   },
-   {
-    "date": "2026-11-22",
-    "period": "daily",
-    "rank": 8,
-    "stars_period": 583,
-    "stars_total": 69949
-   },
-   {
-    "date": "2026-11-23",
-    "period": "daily",
-    "rank": 10,
-    "stars_period": 518,
-    "stars_total": 70553
-   }
-  ],
-  "language": "HTML",
-  "last_seen": "2026-11-23",
-  "periods": {
-   "daily": {
-    "last_date": "2026-11-23",
-    "streak": 4,
-    "times": 4
-   }
-  },
-  "times_on_board": 4,
-  "url": "https://github.com/cathrynlavery/diagram-design"
- },
- "cathrynlavery/diagram-design": {
-  "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
-  "first_seen": "2026-11-20",
-  "full_name": "cathrynlavery/diagram-design",
-  "history": [
-   {
-    "date": "2026-11-20",
-    "period": "daily",
-    "rank": 10,
-    "stars_period": 271,
     "stars_total": 68619
    },
    {
@@ -1729,18 +1683,30 @@
     "rank": 13,
     "stars_period": 422,
     "stars_total": 12269
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 9,
+    "stars_period": 2683,
+    "stars_total": 12059
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-24",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-24",
     "streak": 9,
     "times": 9
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 9,
+  "times_on_board": 10,
   "url": "https://github.com/google-labs-code/stitch-skills"
  },
  "google-research/paper-orchestra": {
@@ -2276,18 +2242,30 @@
     "rank": 7,
     "stars_period": 797,
     "stars_total": 73423
+   },
+   {
+    "date": "2026-11-23",
+    "period": "weekly",
+    "rank": 2,
+    "stars_period": 4731,
+    "stars_total": 73010
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-24",
+  "last_seen": "2026-11-23",
   "periods": {
    "daily": {
     "last_date": "2026-11-24",
     "streak": 8,
     "times": 8
+   },
+   "weekly": {
+    "last_date": "2026-11-23",
+    "streak": 1,
+    "times": 1
    }
   },
-  "times_on_board": 8,
+  "times_on_board": 9,
   "url": "https://github.com/mvanhorn/last30days-skill"
  },
  "n8n-io/n8n": {
@@ -3187,52 +3165,6 @@
    }
   },
   "times_on_board": 5,
-  "url": "https://github.com/we-promise/sure"
- },
- "zhouxiaoka/autoclip": {
-  "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
-  "first_seen": "2026-11-20",
-  "full_name": "zhouxiaoka/autoclip",
-  "history": [
-   {
-    "date": "2026-11-20",
-    "period": "daily",
-    "rank": 14,
-    "stars_period": 126,
-    "stars_total": 11665
-   },
-   {
-    "date": "2026-11-21",
-    "period": "daily",
-    "rank": 4,
-    "stars_period": 979,
-    "stars_total": 12407
-   },
-   {
-    "date": "2026-11-22",
-    "period": "daily",
-    "rank": 7,
-    "stars_period": 683,
-    "stars_total": 13026
-   },
-   {
-    "date": "2026-11-23",
-    "period": "daily",
-    "rank": 7,
-    "stars_period": 641,
-    "stars_total": 13897
-   }
-  ],
-  "language": "Python",
-  "last_seen": "2026-11-23",
-  "periods": {
-   "daily": {
-    "last_date": "2026-11-23",
-    "streak": 4,
-    "times": 4
-   }
-  },
-  "times_on_board": 4,
   "url": "https://github.com/we-promise/sure"
  },
  "zhouxiaoka/autoclip": {
