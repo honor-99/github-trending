@@ -1172,51 +1172,51 @@
   "desc_hash": "e6f8e9414a83a51ee8719d2f361e5fc21c78a2b940f1627ac9aa1bc50f9f732d"
  },
  "alibaba/open-code-review": {
-  "one_liner": "给 Git diff 做行级 AI 代码审查的 CLI，配好模型端点就能跑",
-  "summary": "Open Code Review 是阿里开源的 AI 代码审查命令行工具，源自集团内部使用了两年的官方审查助手，据称已服务数万名开发者、发现数百万个代码缺陷。它的做法是读取 Git diff，把变更文件交给带工具调用能力的 LLM Agent，Agent 可以读完整文件、检索代码库、查看其他变更文件来补充上下文，最终输出带行号定位的结构化评论；除 diff 审查外还有 `ocr scan` 可整文件扫描。架构上是「确定性流水线 + LLM Agent」的混合模式，并内置 NPE、线程安全、XSS、SQL 注入等多语言规则集，模型侧兼容 OpenAI 与 Anthropic 接口。相比通用 Agent 的新意在于取舍：官方基准称在相同底层模型下 Precision 与 F1 更高、token 消耗约为 1/9、速度更快，但 Recall 更低，是刻意用召回换降噪。",
+  "one_liner": "给 Git diff 接一个大模型审查员，按行给出精确的代码问题评论",
+  "summary": "Open Code Review 是阿里开源的 AI 代码审查 CLI，前身是阿里内部使用了两年的官方 AI 代码审查助手，据称服务过数万名开发者。它读取 Git diff，把改动文件交给可配置的 LLM，通过带工具调用能力的 Agent 去读完整文件、检索代码库、参考其他改动文件，最终输出行级精度的结构化评论；除 diff 审查外还提供 ocr scan 对整文件做审计。它的新意在于混合架构：确定性流水线加 LLM Agent，并内置 NPE、线程安全、XSS、SQL 注入等多语言规则集，模型侧兼容 OpenAI 与 Anthropic 接口。README 给出的基准称，在相同底层模型下相比通用 Agent（Claude Code）精度与 F1 更高、token 消耗约为 1/9、速度更快，但召回率更低，这是刻意用召回换降噪的取舍。",
   "audience": [
-   "需要给 PR 流程加一道自动化审查关卡的研发团队 Tech Lead。",
-   "维护多语言代码库、希望统一 NPE、线程安全、SQL 注入等检查口径的工程效能团队。",
-   "想在不自建模型的前提下接入 AI 代码审查、且已有 OpenAI 或 Anthropic 兼容端点的公司。",
-   "接手陌生代码库、需要快速通读大量文件的工程师，可用 `ocr scan` 做整文件审计。",
-   "在 CI 里做静态检查、想补一层语义级审查能力的安全与质量工程师。"
+   "需要在 PR 流程里加一道自动化审查、又不想被大量误报淹没的研发团队负责人",
+   "负责搭建公司内部代码质量门禁或 CI 流水线的平台工程/DevOps 工程师",
+   "接手陌生代码库、想先做一轮整文件审计的维护者或新入职工程师",
+   "已经在用 OpenAI 或 Anthropic 兼容模型服务、希望复用现有额度做代码审查的团队",
+   "关注 Java/多语言静态规则（NPE、线程安全、SQL 注入）落地效果的架构师或安全工程师"
   ],
   "use_cases": [
-   "在提交 PR 前本地跑一次 diff 审查，把行级评论直接作为评审意见的初稿。",
-   "把 CLI 接入 CI 流水线，对每次变更自动产出结构化审查结果并回贴到 PR。",
-   "用 `ocr scan` 扫描一个没有有效 diff 的历史目录，审计不熟悉的代码库。",
-   "针对 Java、Go 等多语言项目，用内置规则集兜住 NPE、线程安全、XSS、SQL 注入这类常见缺陷。",
-   "在切换不同模型供应商时，通过 OpenAI 或 Anthropic 兼容接口对比审查质量与 token 成本。"
+   "在提交 PR 前对本地 Git diff 跑一遍审查，拿到行级评论后再决定是否推送。",
+   "把审查步骤接进 CI，对每个 Pull Request 自动生成结构化评论，减少人工首轮 review 的机械劳动。",
+   "用 ocr scan 对没有有效 diff 的历史目录或整文件做审计，快速熟悉陌生代码库。",
+   "把内置的多语言规则集当作安全与并发缺陷的初筛，重点拦截 NPE、线程安全、XSS、SQL 注入类问题。",
+   "在团队内部对比不同模型端点的审查效果，用同一套 CLI 与提示流程做横向评估。"
   ],
   "adoption_steps": [
-   "先按 README 的安装说明通过 npm 包 @alibaba-group/open-code-review 安装 CLI，确认 `ocr` 命令可用。",
-   "配置一个 OpenAI 或 Anthropic 兼容的模型端点与密钥，在单个小仓库上跑一次 diff 审查，人工核对评论的行号定位与误报率。",
-   "确认效果后，先用 `ocr scan` 在一个子目录做整文件扫描，评估 token 消耗与耗时，再决定是否接入 CI 的 PR 流程。"
+   "先按 README 徽章指向的 npm 包 @alibaba-group/open-code-review 安装 CLI（命令行为 ocr），确认本机 Node 环境满足要求。",
+   "配置一个 OpenAI 或 Anthropic 兼容的模型端点与密钥，在一个自己熟悉的仓库上对一段真实 diff 跑一次审查，人工核对评论的准确率与噪音比例。",
+   "确认效果后先用 ocr scan 做只读审计、不阻塞流程，再逐步把 diff 审查接入 CI 作为非阻断的评论机器人，观察一段时间后再决定是否设为门禁。"
   ],
   "build_ideas": [
-   "把 CLI 包装成 GitHub、GitLab 或内部代码平台的机器人，自动把行级评论回写到 PR 讨论区。",
-   "在确定性流水线这一层扩展自定义规则，把团队内部的编码规范做成可插拔的检查项。",
-   "基于结构化评论输出做质量看板，按仓库、按规则类型统计缺陷分布与修复率。",
-   "接入自建或私有化部署的模型端点，满足代码不出内网的合规要求。",
-   "把 `ocr scan` 的整文件审计结果与现有 SAST 工具结果做合并去重，形成统一的缺陷清单。"
+   "把 CLI 包装成 GitHub/GitLab App 或机器人服务，让评论自动回写到 PR 讨论区。",
+   "基于内置规则集扩展公司自有的编码规范检查项，形成内部规则包。",
+   "把审查结果结构化落库，做缺陷类型分布、按团队/仓库的统计看板。",
+   "在 Agent 的工具层接入内部代码搜索、接口文档或工单系统，让审查能引用业务上下文。",
+   "做多模型路由：按文件语言或改动规模把请求分发到不同端点，平衡成本与精度。"
   ],
   "risks": [
-   "材料中只有 LICENSE 徽章，未给出具体许可证类型，商用或二次分发前必须先去仓库确认。",
-   "README 节选里 Supported Platforms 与 Supported Agents 两节内容被截断，具体支持哪些代码托管平台和 Agent 需要自行核实。",
-   "主语言是 Go 但通过 npm 分发，意味着落地时链路里会引入 Node.js 运行时依赖。",
-   "官方基准是自建数据集（50 个仓库、200 个 PR、10 种语言）的自评结果，且明确承认 Recall 低于通用 Agent，可能漏掉部分问题，不能当作唯一审查关卡。",
-   "项目刚从阿里内部孵化开源，外部社区的实际维护节奏、issue 响应和版本稳定性在材料中无法判断，需要观察提交与发版记录。"
+   "README 节选未展示许可证类型，商用或二次分发前必须到仓库确认 LICENSE 具体条款。",
+   "项目主语言是 Go，但分发入口是 npm 包，落地时需确认 Node 运行时依赖与版本要求是否与现有 CI 镜像兼容。",
+   "审查质量强依赖所配置的模型端点，token 成本、数据外发合规与密钥管理需要自行评估，代码内容会发送给第三方模型服务。",
+   "官方基准自述召回率低于通用 Agent，意味着会漏掉部分问题，不宜作为唯一的合并门禁。",
+   "基准数据在材料中被截断（50 个仓库、200 个 PR、10 种语言），且为项目方自建基准，实际效果需用自己的代码库验证；内置规则集覆盖哪些语言材料中也未完整列出。"
   ],
   "tokens": {
-   "prompt_tokens": 1324,
-   "completion_tokens": 1622
+   "prompt_tokens": 1334,
+   "completion_tokens": 1515
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "da4ebaf3223ddbda48aca094ede9197b1b6994750c4bae774bd04b06f4a2e0ac",
-  "readme_sha": "09245c00353c15e0d70d609636eaeef1c096a307",
+  "hash": "a0436f895a364b219202bb707e54118fc59bca7a37b2110656bb25e2cf4ea2af",
+  "readme_sha": "52bbc2d8e6c65fd1d7b1014998c3fdcd7a32d26d",
   "desc_hash": "447efc063cf335afd844a03cf439b399bca007b6206d0c1ab567eb73c4b2760a",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:30:42+08:00",
+  "generated_at": "2026-11-24T14:20:09+08:00",
   "readme_used": true,
   "source_description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
   "language": "Go",
@@ -1836,7 +1836,7 @@
   "source_description": "Cursor plugin specification and official plugins",
   "language": "TypeScript",
   "url": "https://github.com/cursor/plugins",
-  "readme_sha": "e3e669db8de95e7e9e9ce8aba04fbcf0c7bfdd58",
+  "readme_sha": "28aed68198b3cb587705b65218a09b512a8c1889",
   "desc_hash": "e007f4991129a7573749c888398022349d6902b3fab61208eca5f4ba3817f421"
  },
  "debpalash/VoiceStudio": {
@@ -2644,7 +2644,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "af33d0d5e7d9957c7c8982503bf2309837a278bfa1ce8c5ea74e5896c15cf95d",
-  "readme_sha": "a59102057e754edc3d395cf861a9aaef378711de",
+  "readme_sha": "1ef24b89c323e0de3a864999cef5d389e5480780",
   "desc_hash": "4c40d1a999ee704009c182f2fc06546446c6bb9c02c5352f16c442115c31fa1f",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:31:15+08:00",
@@ -3417,55 +3417,55 @@
   "desc_hash": "0ea4828f53de65bcb221010d18416cec9f8d699696bb18b3ae71c3dd21a84d93"
  },
  "pingdotgg/t3code": {
-  "one_liner": "在你自己的机器上统一驱动 Claude Code、Codex 等编码 agent，并能用手机接着审批下一步。",
-  "summary": "T3 Code 是一个开源的 coding agent 控制平面：agent 仍然跑在你自己的机器上，T3 Code 提供一个统一且强调速度的界面来调度它们。它不转售 token，只驱动你已经登录的订阅账号，支持 Claude Code、Codex、Cursor、OpenCode、Grok Build、Antigravity、Kiro 等，以及任何实现了 ACP 协议的 agent，并且可以在同一个线程里切换模型、让 Claude 把任务交给 Codex。一个服务端配合桌面端、Web、iOS 和 Android 客户端，所有端看到同一批线程，可通过局域网、Tailscale 或 T3 Connect 远程接入。它把 Git 做进流程：每个线程可以拥有独立 worktree，审完 diff 后一键 commit、push 并开 PR。相对同类工具的新意主要在把“多 agent 切换、跨端接管、Git 隔离”这三件事整合进一个 MIT 许可的本地优先服务端。",
+  "one_liner": "把本机各种编码 agent 收进一个界面，还能用手机接着审批下一步。",
+  "summary": "T3 Code 是一个开源的编码 agent 控制平面：agent 仍然跑在你自己的机器上，T3 Code 提供统一的操作界面。它不转卖 token，而是驱动你已经登录的 Claude Code、Codex、Cursor、OpenCode 等，以及任何 ACP 协议的 agent，并支持在同一个线程里中途换模型、让一个 agent 把任务交给另一个。桌面端、Web、iOS、Android 共用同一个 server，所以线程状态在各端一致，还能通过局域网、Tailscale 或 T3 Connect 连到远程机器。它把 Git 也做进流程：每个线程可以用独立 worktree，看完 diff 后一键 commit、push、开 PR。相比单一 agent 的官方客户端，它的新意在于「多 agent + 多端 + 自带 Git 工作流」的聚合层，且以 MIT 许可开源。",
   "audience": [
-   "已经订阅 Claude Code 或 Codex、但苦于在不同终端窗口之间来回切换的个人开发者。",
-   "需要在多台机器（笔记本、家用服务器、云主机）上跑 agent、又想统一查看会话的独立开发者或小团队。",
-   "希望产品经理或非终端用户能直接审阅 diff 并批准 agent 下一步操作的技术负责人。",
-   "经常离开工位、想用手机接手长任务审批的工程师。",
-   "手上已有自研或第三方 ACP agent、想给它接一个现成多端界面的工具作者。"
+   "已经订阅 Claude Code、Codex 等 agent，但嫌在多个终端窗口之间来回切换的个人开发者。",
+   "经常离开工位、希望用手机审批 agent 下一步动作的开发者。",
+   "需要在多台机器（家用机、公司机、云主机）上跑 agent 并统一查看线程的人。",
+   "想给团队统一 agent 工作流、并把改动纳入 Git 评审流程的技术负责人。",
+   "评估「agent 控制台」这类产品形态、需要看开源实现的产品经理。"
   ],
   "use_cases": [
-   "在桌面开一个线程让 Claude Code 改代码，出门后用 iOS 或 Android 应用批准下一步工具调用。",
-   "为每个任务单独开一个 worktree 隔离改动，审完 diff 后在界面里一键 commit、push 并开 PR。",
-   "在同一个线程里中途换模型或把任务从 Claude 交给 Codex，对比不同 agent 的同题表现。",
-   "把 agent 跑在性能更强的远程机器上，通过 Tailscale 或 T3 Connect 从本地笔记本接入操控。",
-   "把 Codex、OpenCode、Cursor 等已有账号的 agent 汇总到一个界面里统一管理会话。"
+   "在桌面端开一个线程启动任务，离开工位后用 iOS 或 Android 应用审批下一步、查看输出。",
+   "让每个线程在自己的 worktree 里改代码，改完直接看 diff，再一键 commit、push 并开 PR。",
+   "在同一个线程里中途切换模型，或让 Claude 把某个子任务交给 Codex 继续做。",
+   "把 agent 跑在远程机器上，通过局域网、Tailscale 或 T3 Connect 从本地客户端操作同一批线程。",
+   "通过 ACP 协议把自己内部或第三方的 agent 接进来，用同一套界面统一驱动。"
   ],
   "adoption_steps": [
-   "先用免安装方式试一次：运行 `npx t3@latest`（或 macOS 上 `brew install --cask t3-code`）启动，确认它识别到你本机已登录的 agent。",
-   "跑 `t3` 启动服务端并打开 Web 应用，新建一个线程并在独立 worktree 中走完一遍改动、审 diff、commit、push、开 PR 的完整流程，验证 Git 集成是否符合你的习惯。",
-   "需要远程时再配 Tailscale 或 T3 Connect，并安装手机端应用，验证从手机审阅和批准操作的实际延迟与权限边界。"
+   "先不安装直接试：在终端跑 npx t3@latest（或 macOS 用 brew install --cask t3-code 安装桌面版），启动后确认本机已登录的 Claude Code / Codex 等 agent 能被识别出来。",
+   "挑一个真实的小任务，让它在独立 worktree 里跑完，走一遍「看 diff → commit → push → 开 PR」的完整链路，验证 Git 集成是否符合你的习惯。",
+   "需要远程时先在最可控的网络里试：按 docs/user/remote-access.md 用局域网或 Tailscale 连一次，确认鉴权和数据路径后，再决定是否使用 T3 Connect。"
   ],
   "build_ideas": [
-   "按 ACP 协议（见 docs/user/providers-acp.md）把团队内部或自研的 agent 接入 T3 Code，复用它的多端界面而不必自己做客户端。",
-   "围绕“线程独立 worktree + 一键开 PR”封装团队的分支命名、提交信息和 PR 模板规范，做成半自动流程。",
-   "在服务端记录多 agent 会话与审批动作，做成团队内的 agent 使用审计或成本归因面板（需先确认服务端是否暴露可用接口）。",
-   "用 Web 客户端做定制入口，把“审批下一步”这类高频操作做成面向非工程角色的简化视图。",
-   "基于 MIT 许可 fork 出面向特定行业（如数据、嵌入式）的定制发行版，预置常用 agent 与远程访问配置。"
+   "按 docs/user/providers-acp.md 写一个 ACP 适配器，把公司内部自研 agent 接进 T3 Code 的统一界面。",
+   "围绕「每线程一个 worktree + 一键开 PR」这条链路做扩展，比如接入 CI 状态回显或评审人自动指派。",
+   "把 t3 server 部署到自托管机器上，做多机 agent 调度与线程集中查看的内部面板。",
+   "基于 MIT 许可 fork 一份，做面向特定团队或垂直场景的定制发行版（需先读商标与 fork 条款）。",
+   "在移动端审批这一环做二次开发，例如把「等待审批」推送到团队 IM 或工单系统。"
   ],
   "risks": [
-   "功能强依赖你本机已安装并登录的第三方 agent（Claude Code、Codex、Cursor 等），这些产品的账号条款、额度与接口变动会直接决定 T3 Code 是否可用。",
-   "本期新增近 1.2 万 star，增长极快，但 README 未给出插件或扩展 API 说明，二次开发前需确认对外接口是否稳定、有无版本兼容承诺。",
-   "远程访问（T3 Connect、Tailscale、局域网）会把本机 agent 的执行能力暴露到网络，需自行核实鉴权方式与默认监听范围。",
-   "安装渠道分散在 brew、winget、scoop、yay、Nix、deb、安装脚本和 npx，企业环境需确认哪些渠道可审计、是否支持内网离线部署。",
-   "代码为 MIT 许可，但 t3.codes 官网、App Store 应用等官方托管服务与开源代码的边界未在 README 说明，长期使用需确认是否依赖其托管服务。"
+   "材料只有 README 节选且 GitHub 原始描述为空，功能完整度、稳定性和实际维护节奏无法从材料判断，需自行看 issue 与提交记录。",
+   "项目为 MIT 许可，但 README 专门有「Trademarks and forks」章节，fork 后使用原品牌名或视觉标识前必须先读该条款。",
+   "它依赖你本机已安装并登录的第三方 agent（Claude Code、Codex、Cursor 等），这些 CLI 的登录方式、授权条款或接口一旦变化会直接影响可用性。",
+   "远程访问（T3 Connect、Tailscale、局域网）等于把本机 agent 的执行权限暴露到网络上，采用前需确认鉴权机制与网络边界。",
+   "一个月新增近 1.2 万 star，属于高速迭代期，CLI 参数、配置格式和文档可能频繁变动，用于生产前建议锁定具体版本。"
   ],
   "tokens": {
-   "prompt_tokens": 1292,
-   "completion_tokens": 1952
+   "prompt_tokens": 1287,
+   "completion_tokens": 1806
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "aad6eed3665c8032dd6f8da97d6407a34a815db8fe2ad358024dc6b0e8df73a6",
-  "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-16T10:21:39+08:00",
+  "model_resolved": "deepseek-v4.1-flash",
+  "hash": "b6a51496367666f977a3f0a3836717ee21136d6a3972afc1a1ff9046a1860bbe",
+  "readme_sha": "b3ad8bae49b70ae2043b2e274ac8b8b7923e02b8",
+  "desc_hash": "fc7dc3a14ad49a4833674eebfec0d55e41d268f37127b5e364ddf32107cfaf38",
+  "model": "deepseek-v4.1-flash-high",
+  "generated_at": "2026-11-24T14:20:10+08:00",
   "readme_used": true,
   "source_description": "",
   "language": "TypeScript",
-  "url": "https://github.com/pingdotgg/t3code",
-  "readme_sha": "2ff0418fcd2e00df7461476fad89b9a8fd7ee556",
-  "desc_hash": "fc7dc3a14ad49a4833674eebfec0d55e41d268f37127b5e364ddf32107cfaf38"
+  "url": "https://github.com/pingdotgg/t3code"
  },
  "pookjw/HermesEnabler": {
   "one_liner": "让非 Hermès 版 Apple Watch 也能装上 Hermès 表盘",
@@ -3560,7 +3560,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "808d936d18aca5ef69d48a35e5e8cc3fac23ae585d21f7d569db84529262af33",
-  "readme_sha": "efa186d2934a94b163a86f20e9dfa60aacef1a41",
+  "readme_sha": "c3321733dae8e88f4cbcdc1376ceac82171ac286",
   "desc_hash": "4318e635c80d41596d6764aa386e89f29be115a64e317aceab35846dc8458203",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:31:53+08:00",
@@ -3924,7 +3924,7 @@
   "source_description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
   "language": "TypeScript",
   "url": "https://github.com/thedotmack/claude-mem",
-  "readme_sha": "c5671ed0955b0d4a2944467c5a96f4e0e6e45914",
+  "readme_sha": "947b3b1aeffcc04841a4e3f7d3c3093f4240a77b",
   "desc_hash": "8e71d54bc44f2a50fa7a71dbc1d45de687258297c4384b412a3445c2e01aeafa"
  },
  "toeverything/AFFiNE": {
@@ -4233,51 +4233,51 @@
   "desc_hash": "88d75d8d452c89972936c2e775c7fe2c4837a180ac866e5fbda813aa4f983b22"
  },
  "zhouxiaoka/autoclip": {
-  "one_liner": "贴一个链接，把播客、访谈、课程等长视频自动剪成带字幕、封面和文案的竖版短视频。",
-  "summary": "AutoClip 是一个开源的 AI 视频剪辑桌面工具，输入一条长视频链接、选定目标平台，就能产出适配抖音、小红书、TikTok、Reels、YouTube Shorts、B 站与 YouTube 的成片、封面和发布文案。剪辑与渲染在本地电脑完成，软件本身免费，只有调用云端模型时按量计费，需要微调时可进入内置编辑器。除桌面版外还提供 CLI 和 MCP 接口，版本以 `autoclip --version` 和 MCP 的 `get_version` 为准，说明它同时面向手动使用和自动化流水线两种场景。README 用真实成片案例库展示访谈式、满屏播客式等竖版模板，并附原片链接可对照，比只放功能列表更有说服力。相较同类，它的差异点在于「本地渲染 + 云端模型按量付费 + MCP/CLI 可编程」的组合，而不是纯 SaaS 订阅。",
+  "one_liner": "把长视频或直播回放一键剪成带字幕、封面和文案的竖屏短视频。",
+  "summary": "AutoClip 是一款开源的 AI 视频剪辑桌面工具，输入一个链接、本地视频或直播回放，它会自动找出高光片段、跟踪说话人做智能重构画面、烧录字幕并生成封面与标题，导出适配抖音、小红书、TikTok、Reels、Shorts、B 站等平台的成片。它主打 local-first：剪辑与渲染都在本机完成，不上传排队、不订阅付费，可以自带 API key，也可以用 Ollama / LM Studio 搭配 Whisper / SenseVoice 全离线跑。v1.6 新增 Live Replay 标签页，支持 OBS Studio、Twitch、YouTube、Kick、Discord 和本地录制六种来源，并能通过 OBS WebSocket（4455 端口）以 -c copy 做无损裁剪。相比常见的云端切片 SaaS，它的差异点在于 MIT 许可、本地渲染和可离线模型组合；仓库还带有 MCP 标识（io.github.zhouxiaoka/autoclip-mcp），说明有面向 agent 的集成入口。",
   "audience": [
-   "做播客、访谈、直播回放的内容创作者，需要把 1 小时长视频稳定切成多条竖版短片。",
-   "短视频运营与 MCN 团队，要按抖音、小红书、TikTok、Shorts 多平台批量出片并统一字幕风格。",
-   "课程、知识付费与培训机构，把长课程章节转成可发布的切片素材。",
-   "企业市场部或内部培训团队，需要把会议、讲座录像快速整理成对外传播素材。",
-   "想把出片流程接进自动化管线的开发者，可用 CLI 与 MCP 接口做二次集成。"
+   "做播客、访谈类长内容、需要把每期节目切成多条短视频分发的创作者。",
+   "运营抖音、小红书、TikTok、Shorts 矩阵账号、需要批量产出竖屏切片的短视频运营。",
+   "有 Twitch、Kick、YouTube 或 OBS 直播回放、想把高光时刻快速剪出来的游戏主播。",
+   "对素材外传敏感、希望在内网或纯离线环境处理视频的团队。",
+   "想把自动切片能力接进自己 agent 或工作流的开发者（仓库提供 MCP 入口）。"
   ],
   "use_cases": [
-   "把一期播客的 YouTube 链接粘进桌面版，选抖音竖版模板，一次生成多条带字幕的切片并挑出可用片段。",
-   "对访谈类素材启用人物取景，把横版双人对谈自动裁成竖版并保持说话人居中。",
-   "为每条成片同时导出封面图和发布文案，直接复制到小红书、抖音的发布框。",
-   "用 CLI 对一批历史长视频排队处理，修复项中提到的长视频队列说明它支持批量任务。",
-   "把 MCP 服务（io.github.zhouxiaoka/autoclip-mcp）接到支持 MCP 的客户端，让 AI 助手按指令触发出片。"
+   "把一期两小时的播客访谈丢进去，自动挑出若干高光片段并导出带字幕的竖屏切片。",
+   "连接 OBS WebSocket 或导入 Twitch、Kick 直播回放，无损裁剪后直接生成可发布的短视频。",
+   "给课程、讲座类长视频批量生成字幕、封面和标题文案，省掉逐条手工剪辑。",
+   "用 Ollama / LM Studio 加 Whisper / SenseVoice 在断网机器上完成从转写到成片的整条链路。",
+   "把同一段素材按不同平台比例和文案导出多版本，一次性铺到抖音、小红书和 YouTube Shorts。"
   ],
   "adoption_steps": [
-   "先从 GitHub Releases 的 latest 页面下载对应系统的桌面版安装包，安装后运行 `autoclip --version` 确认版本，旧版用户按更新日志升级。",
-   "拿一条自己已有的长视频链接做小样本试跑：选一个目标平台模板，检查字幕分页、人物取景和封面输出是否符合预期，同时记录云端模型的计费消耗。",
-   "确认效果后，再决定走 CLI 批处理还是把 MCP 服务接入现有 AI 客户端，先用少量素材验证队列与并发表现，再扩到全量素材库。"
+   "先到 GitHub Releases（github.com/zhouxiaoka/autoclip/releases/latest）下载对应系统的安装包，用一段 10 分钟左右的本地视频跑通「导入→切片→导出」全流程，确认界面与导出格式符合预期。",
+   "在设置里决定推理方式：要么填自己的模型 API key，要么本地起 Ollama 或 LM Studio 并配置 Whisper / SenseVoice，先用一条短视频验证转写与切片质量再放量。",
+   "如果要接直播场景，在 OBS 里开启 WebSocket 服务（默认端口 4455）并在 AutoClip 的 Live Replay 标签页连接，用一段回放验证无损裁剪与成片输出后再接入日常直播流程。"
   ],
   "build_ideas": [
-   "基于 MCP 接口做一个批量出片服务，把素材库里的长视频按选题自动排队生成切片并回传结果。",
-   "把生成的发布文案与封面接到自有发布或排期系统，做成从长视频到多平台投放的半自动流水线。",
-   "针对垂直领域（如课程、医疗科普、金融访谈）沉淀一套固定的模板与字幕规范，封装成团队内部的预设配置。",
-   "用 CLI 做质量抽检工具，批量统计成片时长、字幕分页与取景结果，形成出片质量报告。",
-   "结合仓库里的案例库与研究文档，做一个选题/切片策略的对照实验工具，比较不同模板的成片差异。"
+   "基于仓库提供的 MCP 服务（io.github.zhouxiaoka/autoclip-mcp），把切片能力接进 Claude 等 agent，做成「给个链接就产出多条成片」的自动化流水线。",
+   "对接各平台的发布 API 或第三方分发工具，在切片完成后自动加标题、话题并定时发布，做成矩阵账号的批量分发系统。",
+   "在本地渲染之上加一层任务队列与模板配置，做面向团队的多素材批处理服务，统一管理切片规则和封面样式。",
+   "替换或微调高光挑选环节的评分逻辑（例如按关键词、情绪或业务指标排序），做垂直行业专用的切片策略。",
+   "把整条链路打包成内网私有化部署方案，供对素材外传有合规要求的机构使用。"
   ],
   "risks": [
-   "软件免费但云端模型按量计费，成本随素材时长和调用次数增长，批量处理前必须先用小样本估算单条成片的实际花费。",
-   "材料中只给出 LICENSE 链接而未说明具体许可条款，商用或二次分发前需自行打开仓库 LICENSE 确认授权范围。",
-   "更新日志集中修复一键出片、字幕分页、人物取景与长视频队列等问题，且提示旧版用户升级，说明功能仍在快速迭代，稳定性需要用自己的素材验证。",
-   "核心能力依赖云端模型，意味着需要网络与相应账号/额度，材料未说明具体模型供应商与离线可用程度，断网或额度不足时的降级行为证据不足。",
-   "桌面版对操作系统与硬件的要求、以及各平台（抖音、小红书、TikTok 等）模板的实际适配效果，材料未完整列出，需在下载页与案例库中逐项核对。"
+   "材料只给了 README 和 star 数，没有披露测试覆盖、贡献者规模与 issue 响应情况，工程成熟度需要自己翻 issue 和提交记录验证。",
+   "本地渲染与本地模型推理都吃机器算力，长视频的处理耗时和硬件门槛材料未说明，批量使用前应先实测。",
+   "Twitch、YouTube、Kick、Discord 等来源的导入依赖第三方接口与平台条款，接口或规则变动可能导致该功能失效。",
+   "离线方案依赖 Whisper / SenseVoice 与 Ollama / LM Studio，这些组件各自的许可和模型体积、显存要求需要单独确认，商用前要核对授权。",
+   "桌面端安装包在哪些操作系统上可用、是否有签名与自动更新，材料未说明，跨平台团队需先确认自己的系统在支持范围内。"
   ],
   "tokens": {
-   "prompt_tokens": 1855,
-   "completion_tokens": 1607
+   "prompt_tokens": 1503,
+   "completion_tokens": 1666
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "5c59517f934d0b6a8b2051291d02d4ef04a977398bb6acb46aa32c7b40390a53",
-  "readme_sha": "7f6333fa7b0fc637972f3ff556c6bc883e070e32",
+  "hash": "f8898998e245fe3b594450ad26c3edea5571718d1d6b390800e3d3d3f134e9c5",
+  "readme_sha": "e0e43bb4a8e4a272fc32aef8e4eb92df60516828",
   "desc_hash": "f6a25daa826f9591bb2a328ca6aa60415f667bb99431e78c8a97a9a988fe7bbf",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:32:37+08:00",
+  "generated_at": "2026-11-24T14:20:10+08:00",
   "readme_used": true,
   "source_description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
   "language": "Python",
