@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T09:33:49+08:00",
+ "generated_at": "2026-11-24T09:39:09+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
  "project_count": 41,
  "topics": [
@@ -256,17 +256,7 @@
      "periods": [
       "daily"
      ],
-     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. "
-    },
-    {
-     "full_name": "Tracer-Cloud/opensre",
-     "stars_period": 38,
-     "stars_total": 13113,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "The open-source agent for CI/CD reliability."
+     "description": "Cursor plugin specification and official plugins"
     }
    ]
   },
@@ -514,153 +504,6 @@
       "daily"
      ],
      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
-    },
-    {
-     "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 271,
-     "stars_total": 68619,
-     "language": "HTML",
-     "periods": [
-      "daily"
-     ],
-     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. "
-    },
-    {
-     "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 126,
-     "stars_total": 11196,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
-    }
-   ]
-  },
-  {
-   "name": "LLM / 模型与推理",
-   "repo_count": 5,
-   "share": 0.122,
-   "stars_period_total": 27923,
-   "avg_stars_period": 5585,
-   "languages": [
-    "C++",
-    "Python",
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "tashfeenahmed/freellmapi",
-     "stars_period": 17591,
-     "stars_total": 50320,
-     "language": "TypeScript",
-     "periods": [
-      "monthly"
-     ],
-     "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart ro"
-    },
-    {
-     "full_name": "ranxianglei/billion-context",
-     "stars_period": 5300,
-     "stars_total": 6378,
-     "language": "TypeScript",
-     "periods": [
-      "monthly"
-     ],
-     "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer t"
-    },
-    {
-     "full_name": "ZhuLinsen/daily_stock_analysis",
-     "stars_period": 4548,
-     "stars_total": 72537,
-     "language": "Python",
-     "periods": [
-      "weekly"
-     ],
-     "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboa"
-    },
-    {
-     "full_name": "openvinotoolkit/openvino",
-     "stars_period": 246,
-     "stars_total": 11554,
-     "language": "C++",
-     "periods": [
-      "daily"
-     ],
-     "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference"
-    },
-    {
-     "full_name": "jingyaogong/minimind",
-     "stars_period": 238,
-     "stars_total": 66838,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours."
-    }
-   ]
-  },
-  {
-   "name": "学习 / 知识管理",
-   "repo_count": 5,
-   "share": 0.122,
-   "stars_period_total": 25912,
-   "avg_stars_period": 5182,
-   "languages": [
-    "Python",
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "HKUDS/DeepTutor",
-     "stars_period": 17107,
-     "stars_total": 58020,
-     "language": "Python",
-     "periods": [
-      "monthly"
-     ],
-     "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/."
-    },
-    {
-     "full_name": "anthropics/knowledge-work-plugins",
-     "stars_period": 6844,
-     "stars_total": 35373,
-     "language": "Python",
-     "periods": [
-      "monthly"
-     ],
-     "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork"
-    },
-    {
-     "full_name": "mvanhorn/last30days-skill",
-     "stars_period": 954,
-     "stars_total": 70778,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
-    },
-    {
-     "full_name": "firecrawl/firecrawl",
-     "stars_period": 825,
-     "stars_total": 204179,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API."
-    },
-    {
-     "full_name": "toeverything/AFFiNE",
-     "stars_period": 182,
-     "stars_total": 75151,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privac"
     }
    ]
   },

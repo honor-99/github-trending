@@ -67,48 +67,93 @@ FIELDS_DOC = """{
 
 
 # ── 环境 ──────────────────────────────────────────────────────────────────
-def read_hermes_model() -> tuple[str, str]:
-    """从 ~/.hermes/config.yaml 读 (base_url, model)，读不到就用官方默认。
+def _parse_config_model(text: str) -> tuple[str, str, str]:
+    """解析 config.yaml 文本 → (base_url, model, api_key)。
 
-    Hermes 常用自建 OpenAI 兼容中转（如 http://172.16.x.x:3000/v1），
-    此时 DEEPSEEK_API_KEY 只对那个中转有效，直接打 api.deepseek.com 会 401。
+    api_key 必须和 base_url 成对取：Hermes 的 providers 段里每个网关有独立 key，
+    model 段只声明 provider 名（api_key 常为空）。之前只读 model.base_url + .env 的
+    DEEPSEEK_API_KEY，切到 gw-a 后 key 不匹配 → 全部 401（2026-11-21 起解读断供）。
     """
-    base, model = DEFAULT_BASE, DEFAULT_MODEL
-    if not HERMES_CONFIG.exists():
-        return base, model
-    text = ""
+    base, model, key = DEFAULT_BASE, DEFAULT_MODEL, ""
     try:
-        text = HERMES_CONFIG.read_text(encoding="utf-8")
-    except OSError:
-        return base, model
-
-    try:
-        import yaml  # PyYAML 若可用就走正规解析
+        import yaml
 
         cfg = yaml.safe_load(text) or {}
         m = cfg.get("model") or {}
         base = (m.get("base_url") or base).rstrip("/")
         model = m.get("default") or model
-        return base, model
-    except (ImportError, ValueError):
+        key = (m.get("api_key") or "").strip()
+        prov = (m.get("provider") or "").strip()
+        providers = cfg.get("providers") or {}
+        p = providers.get(prov) or {}
+        if p:
+            if p.get("base_url"):
+                base = str(p["base_url"]).rstrip("/")
+            key = (p.get("api_key") or "").strip() or key
+            # 该网关不提供同名模型时，退回 model 段声明的名字
+        return base, model, key
+    except (ImportError, ValueError, AttributeError):
         pass
 
-    # 没有 PyYAML（cron 的裸 python3 常见）时走最小正则，只认 model: 段的前几行
-    m = re.search(r"^model:\s*$(.*?)(?=^\S)", text, re.S | re.M)
-    block = m.group(1) if m else ""
+    # 没有 PyYAML（cron 的裸 python3 常见）走最小正则
+    mblock = re.search(r"^model:\s*$(.*?)(?=^\S)", text, re.S | re.M)
+    block = mblock.group(1) if mblock else ""
     bm = re.search(r"^\s+base_url:\s*['\"]?([^'\"\n]+)", block, re.M)
     mm = re.search(r"^\s+default:\s*['\"]?([^'\"\n]+)", block, re.M)
+    km = re.search(r"^\s+api_key:\s*['\"]?([^'\"\n]*)", block, re.M)
+    pm = re.search(r"^\s+provider:\s*['\"]?([^'\"\n]+)", block, re.M)
     if bm:
         base = bm.group(1).strip().rstrip("/")
     if mm:
         model = mm.group(1).strip()
+    if km:
+        key = km.group(1).strip()
+    if pm:
+        prov = pm.group(1).strip()
+        pblock = re.search(rf"^  {re.escape(prov)}:\s*$(.*?)(?=^  \S|\Z)", text, re.S | re.M)
+        if pblock:
+            body = pblock.group(1)
+            b2 = re.search(r"^\s+base_url:\s*['\"]?([^'\"\n]+)", body, re.M)
+            k2 = re.search(r"^\s+api_key:\s*['\"]?([^'\"\n]+)", body, re.M)
+            if b2:
+                base = b2.group(1).strip().rstrip("/")
+            if k2:
+                key = k2.group(1).strip()
+    return base, model, key
+
+
+def read_hermes_model() -> tuple[str, str]:
+    """从 ~/.hermes/config.yaml 读 (base_url, model)，读不到就用官方默认。"""
+    if not HERMES_CONFIG.exists():
+        return DEFAULT_BASE, DEFAULT_MODEL
+    try:
+        text = HERMES_CONFIG.read_text(encoding="utf-8")
+    except OSError:
+        return DEFAULT_BASE, DEFAULT_MODEL
+    base, model, _ = _parse_config_model(text)
     return base, model
+
+
+def read_hermes_key() -> str:
+    """config.yaml 里与当前 base_url 配对的 provider api_key（空串表示没配）。"""
+    if not HERMES_CONFIG.exists():
+        return ""
+    try:
+        text = HERMES_CONFIG.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+    return _parse_config_model(text)[2]
 
 
 def load_api_key() -> str:
     key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if key:
         return key
+    # config.yaml 的 provider key 优先于 .env —— .env 里的 DEEPSEEK_API_KEY
+    # 属于另一个网关（gw-b），打到 gw-a 会 401。
+    cfg_key = read_hermes_key()
+    if cfg_key:
+        return cfg_key
     for env_path in (HERMES_ENV, ROOT / ".env"):
         if not env_path.exists():
             continue
@@ -117,7 +162,7 @@ def load_api_key() -> str:
             if line.startswith("DEEPSEEK_API_KEY"):
                 _, _, val = line.partition("=")
                 return val.strip().strip("'\"")
-    raise SystemExit("ERROR: 找不到 DEEPSEEK_API_KEY（env 或 ~/.hermes/.env）")
+    raise SystemExit("ERROR: 找不到 DEEPSEEK_API_KEY（env、config.yaml providers 或 ~/.hermes/.env）")
 
 
 # ── 数据来源 ──────────────────────────────────────────────────────────────

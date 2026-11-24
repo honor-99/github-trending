@@ -34,7 +34,7 @@
    "language": "Python",
    "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
    "description": "The only downloader you need. 下载器的集大成者。",
-   "streak": 4,
+   "streak": 5,
    "status": "continued",
    "prev_rank": 4,
    "rank_change": 2
@@ -47,7 +47,7 @@
    "language": "TypeScript",
    "url": "https://github.com/firecrawl/firecrawl",
    "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
-   "streak": 4,
+   "streak": 5,
    "status": "continued",
    "prev_rank": 2,
    "rank_change": -1
@@ -60,7 +60,7 @@
    "language": "Python",
    "url": "https://github.com/zhouxiaoka/autoclip",
    "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
-   "streak": 4,
+   "streak": 5,
    "status": "continued",
    "prev_rank": 7,
    "rank_change": 3
@@ -73,7 +73,7 @@
    "language": "Shell",
    "url": "https://github.com/obra/superpowers",
    "description": "An agentic skills framework & software development methodology that works.",
-   "streak": 5,
+   "streak": 7,
    "status": "continued",
    "prev_rank": 3,
    "rank_change": -2
@@ -99,7 +99,7 @@
    "language": "Python",
    "url": "https://github.com/mvanhorn/last30days-skill",
    "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
-   "streak": 6,
+   "streak": 8,
    "status": "continued",
    "prev_rank": 6,
    "rank_change": -1
@@ -112,7 +112,7 @@
    "language": "Python",
    "url": "https://github.com/HKUDS/CLI-Anything",
    "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-   "streak": 4,
+   "streak": 6,
    "status": "continued",
    "prev_rank": 5,
    "rank_change": -3
@@ -125,7 +125,7 @@
    "language": "Shell",
    "url": "https://github.com/mjmirza/app-store-compliance",
    "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
-   "streak": 4,
+   "streak": 5,
    "status": "continued",
    "prev_rank": 8,
    "rank_change": -1
@@ -138,7 +138,7 @@
    "language": "HTML",
    "url": "https://github.com/cathrynlavery/diagram-design",
    "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
-   "streak": 4,
+   "streak": 5,
    "status": "continued",
    "prev_rank": 10,
    "rank_change": 0
@@ -151,7 +151,7 @@
    "language": "TypeScript",
    "url": "https://github.com/toeverything/AFFiNE",
    "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
-   "streak": 4,
+   "streak": 5,
    "status": "continued",
    "prev_rank": 9,
    "rank_change": -2
@@ -164,7 +164,7 @@
    "language": "Python",
    "url": "https://github.com/Tracer-Cloud/opensre",
    "description": "The open-source agent for CI/CD reliability.",
-   "streak": 4,
+   "streak": 5,
    "status": "continued",
    "prev_rank": 13,
    "rank_change": 1
@@ -177,7 +177,7 @@
    "language": "TypeScript",
    "url": "https://github.com/google-labs-code/stitch-skills",
    "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
-   "streak": 7,
+   "streak": 9,
    "status": "continued",
    "prev_rank": 11,
    "rank_change": -2
@@ -190,7 +190,7 @@
    "language": "TypeScript",
    "url": "https://github.com/cursor/plugins",
    "description": "Cursor plugin specification and official plugins",
-   "streak": 5,
+   "streak": 7,
    "status": "continued",
    "prev_rank": 14,
    "rank_change": 0
@@ -203,7 +203,7 @@
    "language": "C++",
    "url": "https://github.com/openvinotoolkit/openvino",
    "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
-   "streak": 4,
+   "streak": 6,
    "status": "continued",
    "prev_rank": 16,
    "rank_change": 1
@@ -216,13 +216,13 @@
    "language": "C",
    "url": "https://github.com/nginx/nginx",
    "description": "The official NGINX Open Source repository.",
-   "streak": 4,
+   "streak": 5,
    "status": "continued",
    "prev_rank": 15,
    "rank_change": -1
   }
  ],
  "dropped": [],
- "snapshot_count": 10,
+ "snapshot_count": 12,
  "first_snapshot": "2026-11-11"
 }

@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-24T09:33:49+08:00",
+ "generated_at": "2026-11-24T09:39:09+08:00",
  "basis": "所有日/周/月快照里出现过的项目去重并集，按累计 star 总量降序（取最近一次上榜时的值）",
  "sort_key": "stars_total",
- "project_count": 78,
- "index_rows": 179,
- "snapshot_count": 14,
+ "project_count": 84,
+ "index_rows": 214,
+ "snapshot_count": 15,
  "first_date": "2026-11-11",
  "latest_date": "2026-11-24",
  "period_counts": {
-  "daily": 11,
+  "daily": 12,
   "weekly": 2,
   "monthly": 1
  },
@@ -44,8 +44,8 @@
    "language": "Shell",
    "stars_total": 325037,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 5318,
-   "appearances": 5,
+   "stars_period_sum": 8168,
+   "appearances": 7,
    "best_rank": 1,
    "periods": [
     "daily"
@@ -54,7 +54,7 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 5
+    "daily": 7
    },
    "first_seen": "2026-11-18",
    "last_seen": "2026-11-24",
@@ -91,11 +91,11 @@
    "url": "https://github.com/affaan-m/ECC",
    "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
    "language": "JavaScript",
-   "stars_total": 306478,
+   "stars_total": 306809,
    "stars_total_date": "2026-11-19",
    "stars_period_sum": 1991,
    "appearances": 2,
-   "best_rank": 3,
+   "best_rank": 2,
    "periods": [
     "daily"
    ],
@@ -114,11 +114,11 @@
    "url": "https://github.com/n8n-io/n8n",
    "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
    "language": "TypeScript",
-   "stars_total": 211062,
+   "stars_total": 211294,
    "stars_total_date": "2026-11-19",
    "stars_period_sum": 325,
    "appearances": 1,
-   "best_rank": 10,
+   "best_rank": 9,
    "periods": [
     "daily"
    ],
@@ -135,35 +135,12 @@
   {
    "full_name": "firecrawl/firecrawl",
    "url": "https://github.com/firecrawl/firecrawl",
-   "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.",
-   "language": "TypeScript",
-   "stars_total": 204179,
-   "stars_total_date": "2026-11-20",
-   "stars_period_sum": 825,
-   "appearances": 1,
-   "best_rank": 5,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-20",
-   "last_seen": "2026-11-20",
-   "place": 6
-  },
-  {
-   "full_name": "firecrawl/firecrawl",
-   "url": "https://github.com/firecrawl/firecrawl",
    "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
    "language": "TypeScript",
    "stars_total": 207895,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 4086,
-   "appearances": 4,
+   "stars_period_sum": 4911,
+   "appearances": 5,
    "best_rank": 2,
    "periods": [
     "daily"
@@ -172,11 +149,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 5
    },
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-20",
    "last_seen": "2026-11-24",
-   "place": 5
+   "place": 6
   },
   {
    "full_name": "anthropics/skills",
@@ -202,7 +179,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 6
+   "place": 7
   },
   {
    "full_name": "ggml-org/llama.cpp",
@@ -225,7 +202,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 7
+   "place": 8
   },
   {
    "full_name": "nodejs/node",
@@ -248,7 +225,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 8
+   "place": 9
   },
   {
    "full_name": "addyosmani/agent-skills",
@@ -274,7 +251,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 9
+   "place": 10
   },
   {
    "full_name": "thedotmack/claude-mem",
@@ -300,7 +277,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 10
+   "place": 11
   },
   {
    "full_name": "sherlock-project/sherlock",
@@ -326,7 +303,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 11
+   "place": 12
   },
   {
    "full_name": "pbakaus/impeccable",
@@ -349,7 +326,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 12
+   "place": 13
   },
   {
    "full_name": "debpalash/VoiceStudio",
@@ -372,7 +349,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 13
+   "place": 14
   },
   {
    "full_name": "D4Vinci/Scrapling",
@@ -395,7 +372,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 14
+   "place": 15
   },
   {
    "full_name": "NationalSecurityAgency/ghidra",
@@ -418,18 +395,18 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 15
+   "place": 16
   },
   {
    "full_name": "punkpeye/awesome-mcp-servers",
    "url": "https://github.com/punkpeye/awesome-mcp-servers",
    "description": "A collection of MCP servers.",
    "language": "-",
-   "stars_total": 98009,
+   "stars_total": 98163,
    "stars_total_date": "2026-11-19",
    "stars_period_sum": 53,
    "appearances": 1,
-   "best_rank": 18,
+   "best_rank": 17,
    "periods": [
     "daily"
    ],
@@ -439,16 +416,16 @@
    "times_by_period": {
     "daily": 1
    },
-   "first_seen": "2026-11-13",
-   "last_seen": "2026-11-13",
-   "place": 16
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "place": 17
   },
   {
    "full_name": "nvm-sh/nvm",
    "url": "https://github.com/nvm-sh/nvm",
    "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
    "language": "Shell",
-   "stars_total": 96152,
+   "stars_total": 96207,
    "stars_total_date": "2026-11-19",
    "stars_period_sum": 300,
    "appearances": 2,
@@ -471,11 +448,11 @@
    "url": "https://github.com/astral-sh/uv",
    "description": "An extremely fast Python package and project manager, written in Rust.",
    "language": "Rust",
-   "stars_total": 92218,
+   "stars_total": 92342,
    "stars_total_date": "2026-11-19",
    "stars_period_sum": 258,
    "appearances": 1,
-   "best_rank": 14,
+   "best_rank": 13,
    "periods": [
     "daily"
    ],
@@ -494,11 +471,11 @@
    "url": "https://github.com/sveltejs/svelte",
    "description": "web development for the rest of us",
    "language": "JavaScript",
-   "stars_total": 89626,
+   "stars_total": 89718,
    "stars_total_date": "2026-11-19",
    "stars_period_sum": 1284,
    "appearances": 3,
-   "best_rank": 6,
+   "best_rank": 5,
    "periods": [
     "daily"
    ],
@@ -509,8 +486,8 @@
     "daily": 3
    },
    "first_seen": "2026-11-17",
-   "last_seen": "2026-11-18",
-   "place": 17
+   "last_seen": "2026-11-19",
+   "place": 20
   },
   {
    "full_name": "heygen-com/hyperframes",
@@ -533,7 +510,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 18
+   "place": 21
   },
   {
    "full_name": "toeverything/AFFiNE",
@@ -542,8 +519,8 @@
    "language": "TypeScript",
    "stars_total": 77376,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 2387,
-   "appearances": 4,
+   "stars_period_sum": 2569,
+   "appearances": 5,
    "best_rank": 9,
    "periods": [
     "daily"
@@ -552,11 +529,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 5
    },
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-20",
    "last_seen": "2026-11-24",
-   "place": 19
+   "place": 22
   },
   {
    "full_name": "mvanhorn/last30days-skill",
@@ -565,9 +542,9 @@
    "language": "Python",
    "stars_total": 73423,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 3537,
-   "appearances": 6,
-   "best_rank": 6,
+   "stars_period_sum": 5550,
+   "appearances": 8,
+   "best_rank": 3,
    "periods": [
     "daily"
    ],
@@ -575,11 +552,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 6
+    "daily": 8
    },
    "first_seen": "2026-11-17",
    "last_seen": "2026-11-24",
-   "place": 20
+   "place": 23
   },
   {
    "full_name": "ZhuLinsen/daily_stock_analysis",
@@ -605,7 +582,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-16",
-   "place": 21
+   "place": 24
   },
   {
    "full_name": "cathrynlavery/diagram-design",
@@ -614,32 +591,9 @@
    "language": "HTML",
    "stars_total": 70949,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 2357,
-   "appearances": 4,
-   "best_rank": 8,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 4
-   },
-   "first_seen": "2026-11-21",
-   "last_seen": "2026-11-24",
-   "place": 22
-  },
-  {
-   "full_name": "jingyaogong/minimind",
-   "url": "https://github.com/jingyaogong/minimind",
-   "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
-   "language": "Python",
-   "stars_total": 69435,
-   "stars_total_date": "2026-11-24",
-   "stars_period_sum": 2828,
+   "stars_period_sum": 2628,
    "appearances": 5,
-   "best_rank": 6,
+   "best_rank": 8,
    "periods": [
     "daily"
    ],
@@ -649,9 +603,32 @@
    "times_by_period": {
     "daily": 5
    },
+   "first_seen": "2026-11-20",
+   "last_seen": "2026-11-24",
+   "place": 25
+  },
+  {
+   "full_name": "jingyaogong/minimind",
+   "url": "https://github.com/jingyaogong/minimind",
+   "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+   "language": "Python",
+   "stars_total": 69435,
+   "stars_total_date": "2026-11-24",
+   "stars_period_sum": 3066,
+   "appearances": 6,
+   "best_rank": 6,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 6
+   },
    "first_seen": "2026-11-18",
    "last_seen": "2026-11-24",
-   "place": 23
+   "place": 26
   },
   {
    "full_name": "cloudflare/security-audit-skill",
@@ -677,7 +654,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 24
+   "place": 27
   },
   {
    "full_name": "Alishahryar1/free-claude-code",
@@ -700,7 +677,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 25
+   "place": 28
   },
   {
    "full_name": "TheAlgorithms/Java",
@@ -723,7 +700,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 26
+   "place": 29
   },
   {
    "full_name": "HKUDS/CLI-Anything",
@@ -732,9 +709,9 @@
    "language": "Python",
    "stars_total": 63601,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 3031,
-   "appearances": 4,
-   "best_rank": 5,
+   "stars_period_sum": 4318,
+   "appearances": 6,
+   "best_rank": 4,
    "periods": [
     "daily"
    ],
@@ -742,11 +719,57 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 6
    },
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-19",
    "last_seen": "2026-11-24",
-   "place": 27
+   "place": 30
+  },
+  {
+   "full_name": "jquery/jquery",
+   "url": "https://github.com/jquery/jquery",
+   "description": "jQuery JavaScript Library",
+   "language": "JavaScript",
+   "stars_total": 60077,
+   "stars_total_date": "2026-11-19",
+   "stars_period_sum": 266,
+   "appearances": 1,
+   "best_rank": 12,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "place": 31
+  },
+  {
+   "full_name": "appwrite/appwrite",
+   "url": "https://github.com/appwrite/appwrite",
+   "description": "The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more",
+   "language": "TypeScript",
+   "stars_total": 58345,
+   "stars_total_date": "2026-11-19",
+   "stars_period_sum": 232,
+   "appearances": 1,
+   "best_rank": 15,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "place": 32
   },
   {
    "full_name": "HKUDS/DeepTutor",
@@ -769,7 +792,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 28
+   "place": 33
   },
   {
    "full_name": "ChromeDevTools/chrome-devtools-mcp",
@@ -792,7 +815,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-17",
-   "place": 29
+   "place": 34
   },
   {
    "full_name": "pingdotgg/t3code",
@@ -818,7 +841,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 30
+   "place": 35
   },
   {
    "full_name": "alibaba/open-code-review",
@@ -841,7 +864,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-18",
-   "place": 31
+   "place": 36
   },
   {
    "full_name": "Nutlope/hallmark",
@@ -864,7 +887,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 32
+   "place": 37
   },
   {
    "full_name": "vercel-labs/agent-browser",
@@ -890,7 +913,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 33
+   "place": 38
   },
   {
    "full_name": "tashfeenahmed/freellmapi",
@@ -913,7 +936,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 34
+   "place": 39
   },
   {
    "full_name": "anthropics/claude-plugins-official",
@@ -936,7 +959,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 35
+   "place": 40
   },
   {
    "full_name": "Donchitos/Claude-Code-Game-Studios",
@@ -959,7 +982,30 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 36
+   "place": 41
+  },
+  {
+   "full_name": "solidjs/solid",
+   "url": "https://github.com/solidjs/solid",
+   "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+   "language": "TypeScript",
+   "stars_total": 36709,
+   "stars_total_date": "2026-11-19",
+   "stars_period_sum": 40,
+   "appearances": 1,
+   "best_rank": 18,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 1
+   },
+   "first_seen": "2026-11-19",
+   "last_seen": "2026-11-19",
+   "place": 42
   },
   {
    "full_name": "anthropics/knowledge-work-plugins",
@@ -982,7 +1028,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 37
+   "place": 43
   },
   {
    "full_name": "nginx/nginx",
@@ -991,8 +1037,8 @@
    "language": "C",
    "stars_total": 33047,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 772,
-   "appearances": 4,
+   "stars_period_sum": 845,
+   "appearances": 5,
    "best_rank": 15,
    "periods": [
     "daily"
@@ -1001,11 +1047,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 5
    },
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-20",
    "last_seen": "2026-11-24",
-   "place": 38
+   "place": 44
   },
   {
    "full_name": "QwenLM/qwen-code",
@@ -1028,7 +1074,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 39
+   "place": 45
   },
   {
    "full_name": "meta/astryx",
@@ -1054,7 +1100,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 40
+   "place": 46
   },
   {
    "full_name": "dream-num/univer",
@@ -1077,7 +1123,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-18",
-   "place": 41
+   "place": 47
   },
   {
    "full_name": "milind-soni/OpenMausBot",
@@ -1100,7 +1146,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 42
+   "place": 48
   },
   {
    "full_name": "vercel-labs/agent-desktop",
@@ -1123,7 +1169,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 43
+   "place": 49
   },
   {
    "full_name": "anthropics/claude-quickstarts",
@@ -1146,7 +1192,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 44
+   "place": 50
   },
   {
    "full_name": "ag-ui-protocol/ag-ui",
@@ -1169,7 +1215,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-18",
-   "place": 45
+   "place": 51
   },
   {
    "full_name": "google/elephant-goldfish-model",
@@ -1192,7 +1238,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 46
+   "place": 52
   },
   {
    "full_name": "elementalsouls/Claude-BugHunter",
@@ -1201,8 +1247,8 @@
    "language": "Python",
    "stars_total": 19714,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 8273,
-   "appearances": 6,
+   "stars_period_sum": 9622,
+   "appearances": 7,
    "best_rank": 1,
    "periods": [
     "daily"
@@ -1211,11 +1257,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 6
+    "daily": 7
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-24",
-   "place": 47
+   "place": 53
   },
   {
    "full_name": "cursor/plugins",
@@ -1224,9 +1270,9 @@
    "language": "TypeScript",
    "stars_total": 18793,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 1451,
-   "appearances": 5,
-   "best_rank": 14,
+   "stars_period_sum": 2149,
+   "appearances": 7,
+   "best_rank": 6,
    "periods": [
     "daily"
    ],
@@ -1234,11 +1280,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 5
+    "daily": 7
    },
    "first_seen": "2026-11-18",
    "last_seen": "2026-11-24",
-   "place": 48
+   "place": 54
   },
   {
    "full_name": "google-deepmind/mujoco",
@@ -1264,7 +1310,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 49
+   "place": 55
   },
   {
    "full_name": "XiaoYouChR/Ghost-Downloader-3",
@@ -1273,8 +1319,8 @@
    "language": "Python",
    "stars_total": 16287,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 3649,
-   "appearances": 4,
+   "stars_period_sum": 3990,
+   "appearances": 5,
    "best_rank": 2,
    "periods": [
     "daily"
@@ -1283,11 +1329,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 5
    },
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-20",
    "last_seen": "2026-11-24",
-   "place": 50
+   "place": 56
   },
   {
    "full_name": "ggml-org/ggml",
@@ -1310,7 +1356,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 51
+   "place": 57
   },
   {
    "full_name": "The-PR-Agent/pr-agent",
@@ -1333,7 +1379,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 52
+   "place": 58
   },
   {
    "full_name": "we-promise/sure",
@@ -1359,7 +1405,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-16",
-   "place": 53
+   "place": 59
   },
   {
    "full_name": "Tracer-Cloud/opensre",
@@ -1368,8 +1414,8 @@
    "language": "Python",
    "stars_total": 14821,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 1751,
-   "appearances": 4,
+   "stars_period_sum": 1789,
+   "appearances": 5,
    "best_rank": 12,
    "periods": [
     "daily"
@@ -1378,11 +1424,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 5
    },
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-20",
    "last_seen": "2026-11-24",
-   "place": 54
+   "place": 60
   },
   {
    "full_name": "zhouxiaoka/autoclip",
@@ -1391,8 +1437,8 @@
    "language": "Python",
    "stars_total": 14368,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 3210,
-   "appearances": 4,
+   "stars_period_sum": 3336,
+   "appearances": 5,
    "best_rank": 4,
    "periods": [
     "daily"
@@ -1401,11 +1447,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 5
    },
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-20",
    "last_seen": "2026-11-24",
-   "place": 55
+   "place": 61
   },
   {
    "full_name": "backnotprop/plannotator",
@@ -1431,7 +1477,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-16",
-   "place": 56
+   "place": 62
   },
   {
    "full_name": "max-sixty/worktrunk",
@@ -1454,7 +1500,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 57
+   "place": 63
   },
   {
    "full_name": "openai/codex-security",
@@ -1477,7 +1523,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-13",
-   "place": 58
+   "place": 64
   },
   {
    "full_name": "openvinotoolkit/openvino",
@@ -1486,9 +1532,9 @@
    "language": "C++",
    "stars_total": 12276,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 759,
-   "appearances": 4,
-   "best_rank": 15,
+   "stars_period_sum": 1029,
+   "appearances": 6,
+   "best_rank": 11,
    "periods": [
     "daily"
    ],
@@ -1496,11 +1542,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 6
    },
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-19",
    "last_seen": "2026-11-24",
-   "place": 59
+   "place": 65
   },
   {
    "full_name": "google-labs-code/stitch-skills",
@@ -1509,8 +1555,8 @@
    "language": "TypeScript",
    "stars_total": 12269,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 2683,
-   "appearances": 7,
+   "stars_period_sum": 3350,
+   "appearances": 9,
    "best_rank": 8,
    "periods": [
     "daily"
@@ -1519,11 +1565,11 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 7
+    "daily": 9
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-24",
-   "place": 60
+   "place": 66
   },
   {
    "full_name": "CopilotKit/OpenBot",
@@ -1546,7 +1592,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 61
+   "place": 67
   },
   {
    "full_name": "NVIDIA/auto-ontology",
@@ -1569,7 +1615,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 62
+   "place": 68
   },
   {
    "full_name": "shadcn/improve",
@@ -1592,14 +1638,37 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-12",
-   "place": 63
+   "place": 69
+  },
+  {
+   "full_name": "getarcaneapp/arcane",
+   "url": "https://github.com/getarcaneapp/arcane",
+   "description": "Modern Docker Management, Designed for Everyone",
+   "language": "Go",
+   "stars_total": 9980,
+   "stars_total_date": "2026-11-19",
+   "stars_period_sum": 1211,
+   "appearances": 3,
+   "best_rank": 6,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 3
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-19",
+   "place": 70
   },
   {
    "full_name": "DeanChensj/jiangshan-map",
    "url": "https://github.com/DeanChensj/jiangshan-map",
    "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
    "language": "JavaScript",
-   "stars_total": 7916,
+   "stars_total": 8287,
    "stars_total_date": "2026-11-19",
    "stars_period_sum": 506,
    "appearances": 2,
@@ -1614,8 +1683,8 @@
     "daily": 2
    },
    "first_seen": "2026-11-17",
-   "last_seen": "2026-11-18",
-   "place": 64
+   "last_seen": "2026-11-19",
+   "place": 71
   },
   {
    "full_name": "homeassistant-ai/ha-mcp",
@@ -1638,7 +1707,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-12",
-   "place": 65
+   "place": 72
   },
   {
    "full_name": "GoogleChrome/modern-web-guidance-src",
@@ -1661,7 +1730,7 @@
    },
    "first_seen": "2026-11-12",
    "last_seen": "2026-11-16",
-   "place": 66
+   "place": 73
   },
   {
    "full_name": "tokio-rs/topcoat",
@@ -1684,30 +1753,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 67
-  },
-  {
-   "full_name": "DeanChensj/jiangshan-map",
-   "url": "https://github.com/DeanChensj/jiangshan-map",
-   "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
-   "language": "JavaScript",
-   "stars_total": 6682,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 288,
-   "appearances": 1,
-   "best_rank": 11,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 1
-   },
-   "first_seen": "2026-11-17",
-   "last_seen": "2026-11-17",
-   "place": 68
+   "place": 74
   },
   {
    "full_name": "kajisho5/ffmpeg-skill",
@@ -1730,7 +1776,7 @@
    },
    "first_seen": "2026-11-17",
    "last_seen": "2026-11-17",
-   "place": 69
+   "place": 75
   },
   {
    "full_name": "ranxianglei/billion-context",
@@ -1756,7 +1802,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 70
+   "place": 76
   },
   {
    "full_name": "tradermonty/claude-trading-skills",
@@ -1779,7 +1825,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-17",
-   "place": 71
+   "place": 77
   },
   {
    "full_name": "anomalyco/hex",
@@ -1802,7 +1848,7 @@
    },
    "first_seen": "2026-11-11",
    "last_seen": "2026-11-11",
-   "place": 72
+   "place": 78
   },
   {
    "full_name": "mjmirza/app-store-compliance",
@@ -1811,8 +1857,8 @@
    "language": "Shell",
    "stars_total": 4942,
    "stars_total_date": "2026-11-24",
-   "stars_period_sum": 2971,
-   "appearances": 4,
+   "stars_period_sum": 3348,
+   "appearances": 5,
    "best_rank": 6,
    "periods": [
     "daily"
@@ -1821,11 +1867,57 @@
     "日榜"
    ],
    "times_by_period": {
-    "daily": 4
+    "daily": 5
    },
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-20",
    "last_seen": "2026-11-24",
-   "place": 73
+   "place": 79
+  },
+  {
+   "full_name": "google-research/paper-orchestra",
+   "url": "https://github.com/google-research/paper-orchestra",
+   "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+   "language": "Python",
+   "stars_total": 4646,
+   "stars_total_date": "2026-11-19",
+   "stars_period_sum": 2909,
+   "appearances": 3,
+   "best_rank": 1,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 3
+   },
+   "first_seen": "2026-11-17",
+   "last_seen": "2026-11-19",
+   "place": 80
+  },
+  {
+   "full_name": "NVIDIA/SkillEvaluator",
+   "url": "https://github.com/NVIDIA/SkillEvaluator",
+   "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, security scanning, harness compatibility checks, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior. Ships reusable CI templates that bring every check to any repository.",
+   "language": "Python",
+   "stars_total": 3929,
+   "stars_total_date": "2026-11-19",
+   "stars_period_sum": 1307,
+   "appearances": 3,
+   "best_rank": 3,
+   "periods": [
+    "daily"
+   ],
+   "period_labels": [
+    "日榜"
+   ],
+   "times_by_period": {
+    "daily": 3
+   },
+   "first_seen": "2026-11-16",
+   "last_seen": "2026-11-19",
+   "place": 81
   },
   {
    "full_name": "Tencent/LoopForge",
@@ -1848,53 +1940,7 @@
    },
    "first_seen": "2026-11-16",
    "last_seen": "2026-11-18",
-   "place": 74
-  },
-  {
-   "full_name": "google-research/paper-orchestra",
-   "url": "https://github.com/google-research/paper-orchestra",
-   "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
-   "language": "Python",
-   "stars_total": 2958,
-   "stars_total_date": "2026-11-18",
-   "stars_period_sum": 1385,
-   "appearances": 2,
-   "best_rank": 4,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 2
-   },
-   "first_seen": "2026-11-17",
-   "last_seen": "2026-11-18",
-   "place": 75
-  },
-  {
-   "full_name": "NVIDIA/SkillEvaluator",
-   "url": "https://github.com/NVIDIA/SkillEvaluator",
-   "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
-   "language": "Python",
-   "stars_total": 2667,
-   "stars_total_date": "2026-11-17",
-   "stars_period_sum": 995,
-   "appearances": 2,
-   "best_rank": 3,
-   "periods": [
-    "daily"
-   ],
-   "period_labels": [
-    "日榜"
-   ],
-   "times_by_period": {
-    "daily": 2
-   },
-   "first_seen": "2026-11-16",
-   "last_seen": "2026-11-17",
-   "place": 76
+   "place": 82
   },
   {
    "full_name": "ashhart/TensorFold",
@@ -1917,7 +1963,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 77
+   "place": 83
   },
   {
    "full_name": "pookjw/HermesEnabler",
@@ -1940,7 +1986,7 @@
    },
    "first_seen": "2026-11-13",
    "last_seen": "2026-11-13",
-   "place": 78
+   "place": 84
   }
  ]
 }
