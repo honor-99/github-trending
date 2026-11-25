@@ -548,7 +548,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "4f2f8e8394cddaac5e62261aa6b282eca1112456fa5cdf59b264e8038a01ac66",
-  "readme_sha": "8b4cf04c46490443759708c5749738c067e34757",
+  "readme_sha": "3991560bf96c32b8bcf3e74fe035d6f3bb84af71",
   "desc_hash": "6bcf7ff63e68b99ac3215148bdc93e6a6a78978f719e90162176b38828c1eadf",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:29:18+08:00",
@@ -964,51 +964,51 @@
   "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3"
  },
  "ZhuLinsen/daily_stock_analysis": {
-  "one_liner": "用 LLM 每天自动分析多市场自选股，生成决策仪表盘并推送到你的 IM。",
-  "summary": "这是一个 Python 写的自选股智能分析系统，把多市场行情、K 线、技术指标、新闻公告和基本面数据聚合起来，交给大模型生成包含核心结论、评分、趋势、买卖点位、风险警报和操作清单的「决策仪表盘」。它自带 Web/桌面工作台，支持手动分析、历史报告、回测、持仓和配置管理，也能通过 GitHub Actions 定时跑完并把结果推到企业微信、飞书、Telegram、Discord、Slack 或邮箱。相比单纯的行情看板，它的差异点在于把「数据聚合 + LLM 报告 + 多渠道推送 + 零成本定时调度」串成了一条完整链路，还内置了均线、缠论、波浪等 15 种策略的 Agent 多轮问股。项目采用 MIT 许可，提供 Docker 镜像，README 里也标注了不同市场的数据源与能力边界文档。",
+  "one_liner": "用 LLM 每天自动分析多市场自选股，把决策仪表盘推送到你的 IM。",
+  "summary": "这是一个 Python 写的多市场股票智能分析系统，覆盖 A股、港股、美股、日股、韩股、台股和 ETF，把行情、K 线、技术指标、新闻、公告、基本面聚合起来交给大模型生成「决策仪表盘」——核心结论、评分、趋势、买卖点位、风险警报、催化因素和操作清单。它通过 GitHub Actions 或 Docker 做零成本定时运行，分析结果自动推送到企业微信、飞书、Telegram、Discord、Slack 或邮箱，另外提供 Web/桌面工作台做手动分析、历史报告、回测和持仓管理。相比单纯的行情脚本，它的差异点是把「多源数据聚合 + LLM 报告 + 多渠道推送 + Agent 多轮问股（内置均线、缠论、波浪等 15 种策略）」串成了一条完整链路，并开放 Web/Bot/API 三种入口。",
   "audience": [
-   "有编程能力、自己盯 A股/港股/美股自选股的个人投资者，希望盘后自动收到一份结构化简报。",
-   "投研或量化工程师，想快速搭一个 LLM + 多源行情 + 推送的原型来验证想法。",
-   "需要每天给客户或内部团队出盘后点评的投顾、研究员和小型投研团队。",
-   "想学习 LLM Agent 在真实业务里怎么落地（工具调用、多轮追问、定时任务）的开发者。",
-   "做 ETF 或多市场资产跟踪、需要统一看板和提醒的产品经理。"
+   "有自选股、想每天拿到一份结构化复盘报告但没时间盯盘的个人投资者。",
+   "做量化或投研工具、想参考 LLM Agent 在金融数据场景如何落地的工程师。",
+   "需要把行情、新闻、公告聚合成日报并推送到团队群的投研或运营人员。",
+   "想用 GitHub Actions 零成本跑定时任务、学习低成本部署方案的后端开发者。",
+   "做财经内容或社群运营、需要每日生成多市场分析素材的人。"
   ],
   "use_cases": [
-   "每天收盘后自动生成自选股决策仪表盘，推送到企业微信或飞书群，替代手工整理复盘笔记。",
-   "对单只股票发起 Agent 多轮追问，用均线、缠论、事件驱动等内置策略做交叉验证。",
-   "把券商导出的 CSV/Excel 或持仓截图导入系统，自动补全代码、名称和拼音别名后批量分析。",
-   "用内置回测功能检验某套策略或评分逻辑在历史区间上的表现，再决定是否纳入日常流程。",
-   "通过 GitHub Actions 配置定时任务，在零服务器成本下维持每日自动分析与推送。"
+   "每天早上自动收到自选股的决策仪表盘，直接看结论、评分、买卖点位和风险警报做当日复盘。",
+   "在 Web 工作台里用 Agent 策略问股对单只股票做多轮追问，切换均线、缠论、波浪等策略对比结论。",
+   "把持仓截图、CSV/Excel 或剪贴板内容导入，靠代码/名称/拼音自动补全，批量建立自选股池。",
+   "用历史报告和回测功能回看过去若干天的分析结论，检验策略口径是否稳定。",
+   "把每日分析结果推送到飞书群或企业微信群，作为团队盘前简报的统一来源。"
   ],
   "adoption_steps": [
-   "先读 docs/INDEX.md 和 docs/market-support.md，确认你要盯的市场（A股/港股/美股/日股/韩股/台股/ETF）在数据源和能力边界上是否覆盖你的需求。",
-   "用 Docker 镜像 zhulinsen/daily_stock_analysis 或本地 Python 环境启动服务，配置 LLM API Key 和少量自选股，先手动分析一只股票，检查报告里的数据引用和结论是否可信。",
-   "验证通过后再接入推送渠道（企业微信/飞书/Telegram 等）和 GitHub Actions 定时任务，先用小范围自选股跑一到两周，对比报告与实际行情的偏差再扩大范围。"
+   "先 fork 仓库并启用自带 GitHub Actions 工作流，在 Secrets 里配好 LLM API Key 和一个推送渠道（如 Telegram Bot Token 或飞书 Webhook），手动触发一次 workflow 看能否跑通并收到消息。",
+   "本地用 Docker 拉取 zhulinsen/daily_stock_analysis 镜像或按 docs/full-guide.md 安装，打开 Web 工作台对 1-2 只熟悉的股票做手动分析，确认目标市场的行情与新闻数据源确实取到数据。",
+   "对照 docs/market-support.md 确认你要用的市场（A股/港股/美股/日韩台/ETF）在数据源和能力边界上的限制，再扩充自选股列表和推送渠道，最后才开启每日定时。"
   ],
   "build_ideas": [
-   "把外部 LLM API 换成自建或私有化部署的模型，避免行情与持仓数据外流到第三方服务。",
-   "将每日决策仪表盘结构化落库，长期积累后做信号有效性统计，评估评分和买卖点位的实际参考价值。",
-   "基于内置的 Agent 策略框架扩展自定义策略，例如财务质量筛选、行业轮动或事件驱动规则。",
-   "复用它的数据聚合与推送骨架，改造成 ETF、可转债或其它资产类别的每日监控与提醒系统。",
-   "把分析结果对接到内部知识库或 BI 看板，做成团队共享的盘后简报工作流。"
+   "把行情和新闻数据源替换成公司内部或自购的数据接口，保留上层 LLM 报告与推送链路做私有化投研助手。",
+   "将决策仪表盘的 Markdown 输出结构化（JSON Schema），接入内部数据库或 BI，做成可检索的历史分析档案。",
+   "把默认 LLM 换成私有部署模型或国产模型，配合缓存策略压低每日分析成本。",
+   "基于它的 Agent 策略框架新增自定义策略（如财报事件驱动、行业轮动），并通过 API 暴露给其他系统调用。",
+   "扩展推送端，接入钉钉、Slack 之外的自建 IM 或邮件日报系统，做成团队级盘前简报服务。"
   ],
   "risks": [
-   "系统会输出评分、买卖点位和操作清单，这类内容在多数司法辖区可能被视作投资建议，对外使用前需确认合规与免责声明。",
-   "报告由大模型生成，存在事实错误和幻觉风险，行情数据或新闻引用可能不准确，不能直接作为交易依据。",
-   "「零成本定时运行」依赖 GitHub Actions 免费额度与第三方免费行情/新闻源，数据源限流、变更或失效会直接影响可用性。",
-   "需要自备 LLM API Key，README 中的赞助商是第三方 API 中转服务，把密钥和请求交给这类服务前需评估数据与账号安全。",
-   "README 明确说明不同市场的数据源和能力边界不一致，部分市场的行情、公告或基本面覆盖可能不完整，需按文档逐项核对。"
+   "系统强依赖外部 LLM API 与行情/新闻数据源（README 中 SerpAPI 等赞助商也印证了这一点），Key 额度、限流或数据源接口变更会直接导致分析失败或数据缺失。",
+   "README 里包含赞助商推广和姊妹项目 AlphaSift 的导流，star 数虽高但需自行核对代码结构、测试覆盖和 issue 响应速度来判断成熟度。",
+   "输出是 LLM 生成的参考信息而非投资建议，买卖点位和评分存在幻觉与过拟合风险，直接用于实盘会有真实资金损失。",
+   "多市场的数据源与能力边界并不一致（README 明确指向 docs/market-support.md），部分市场或 ETF 的字段可能缺失，不能假设各市场分析质量相同。",
+   "「零成本定时运行」依赖 GitHub Actions，私有仓库的免费分钟数、调度延迟以及 Secrets 管理都需要提前确认，敏感 Key 放在第三方 CI 上也有泄露面。"
   ],
   "tokens": {
-   "prompt_tokens": 1756,
-   "completion_tokens": 1795
+   "prompt_tokens": 1758,
+   "completion_tokens": 1958
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "43c1bdac9b6789054b5dd010384cd4d6398244bd46feb72f7e7fcdbb0a42cd96",
-  "readme_sha": "6bc0b50818d9dfc69ef3faf27633cb023d82af5d",
+  "hash": "5e3f62d2b663fce7dd105047b9c682a9ca456cc559e32fabf7ccfc6e6e92066f",
+  "readme_sha": "700f76ea3e0938d17c3d2a0ba296ca5dbb9de47a",
   "desc_hash": "01bf9845101df79035f0c81c17e2a9dd21d162e036ddbd4d3dc53b2ea4cf2ef0",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:29:59+08:00",
+  "generated_at": "2026-11-25T08:01:18+08:00",
   "readme_used": true,
   "source_description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
   "language": "Python",
@@ -1172,51 +1172,51 @@
   "desc_hash": "e6f8e9414a83a51ee8719d2f361e5fc21c78a2b940f1627ac9aa1bc50f9f732d"
  },
  "alibaba/open-code-review": {
-  "one_liner": "给 Git diff 接一个大模型审查员，按行给出精确的代码问题评论",
-  "summary": "Open Code Review 是阿里开源的 AI 代码审查 CLI，前身是阿里内部使用了两年的官方 AI 代码审查助手，据称服务过数万名开发者。它读取 Git diff，把改动文件交给可配置的 LLM，通过带工具调用能力的 Agent 去读完整文件、检索代码库、参考其他改动文件，最终输出行级精度的结构化评论；除 diff 审查外还提供 ocr scan 对整文件做审计。它的新意在于混合架构：确定性流水线加 LLM Agent，并内置 NPE、线程安全、XSS、SQL 注入等多语言规则集，模型侧兼容 OpenAI 与 Anthropic 接口。README 给出的基准称，在相同底层模型下相比通用 Agent（Claude Code）精度与 F1 更高、token 消耗约为 1/9、速度更快，但召回率更低，这是刻意用召回换降噪的取舍。",
+  "one_liner": "给 Git diff 做行级 AI 代码审查的 CLI，接自己的模型端点即可用。",
+  "summary": "Open Code Review 是阿里内部使用两年后开源的 AI 代码审查命令行工具，读取 Git diff 后把改动文件交给可配置的 LLM Agent 生成行级评论。它的 Agent 具备工具调用能力，能读完整文件、检索代码库、查看其他改动文件来补充上下文，因此不止于表面 diff 反馈；另有 `ocr scan` 可对整文件做审查，用于审计陌生代码库。与通用 Agent 的差异在于混合架构：确定性流水线加 LLM Agent，并内置 NPE、线程安全、XSS、SQL 注入等多语言规则集。项目自述在 50 个开源仓库的基准上，同模型下 Precision 与 F1 高于 Claude Code、token 消耗约为其 1/9，但 Recall 更低，这是为降低噪音而做的主动取舍。",
   "audience": [
-   "需要在 PR 流程里加一道自动化审查、又不想被大量误报淹没的研发团队负责人",
-   "负责搭建公司内部代码质量门禁或 CI 流水线的平台工程/DevOps 工程师",
-   "接手陌生代码库、想先做一轮整文件审计的维护者或新入职工程师",
-   "已经在用 OpenAI 或 Anthropic 兼容模型服务、希望复用现有额度做代码审查的团队",
-   "关注 Java/多语言静态规则（NPE、线程安全、SQL 注入）落地效果的架构师或安全工程师"
+   "负责 PR 流水线与合并门禁的平台或 DevOps 工程师。",
+   "正在评估 AI 代码评审能否落地的技术负责人与架构师。",
+   "需要低成本自查提交质量的开源项目维护者。",
+   "关注 NPE、线程安全、XSS、SQL 注入等问题的安全与代码质量工程师。",
+   "已用 Claude Code 等通用 Agent 做评审但觉得 token 成本过高的团队。"
   ],
   "use_cases": [
-   "在提交 PR 前对本地 Git diff 跑一遍审查，拿到行级评论后再决定是否推送。",
-   "把审查步骤接进 CI，对每个 Pull Request 自动生成结构化评论，减少人工首轮 review 的机械劳动。",
-   "用 ocr scan 对没有有效 diff 的历史目录或整文件做审计，快速熟悉陌生代码库。",
-   "把内置的多语言规则集当作安全与并发缺陷的初筛，重点拦截 NPE、线程安全、XSS、SQL 注入类问题。",
-   "在团队内部对比不同模型端点的审查效果，用同一套 CLI 与提示流程做横向评估。"
+   "在开发者提交 PR 时对 diff 自动生成行级评论，减少人工首轮评审。",
+   "用 `ocr scan` 对没有有效 diff 的目录或陌生代码库做整文件审查。",
+   "接入 CI 作为合并前的自动化检查环节，对不达标改动打回。",
+   "借助内置多语言规则集，在常规评审之外补一层安全类缺陷检查。",
+   "在本地提交前先跑一遍，让作者自己先修掉明显问题再提 PR。"
   ],
   "adoption_steps": [
-   "先按 README 徽章指向的 npm 包 @alibaba-group/open-code-review 安装 CLI（命令行为 ocr），确认本机 Node 环境满足要求。",
-   "配置一个 OpenAI 或 Anthropic 兼容的模型端点与密钥，在一个自己熟悉的仓库上对一段真实 diff 跑一次审查，人工核对评论的准确率与噪音比例。",
-   "确认效果后先用 ocr scan 做只读审计、不阻塞流程，再逐步把 diff 审查接入 CI 作为非阻断的评论机器人，观察一段时间后再决定是否设为门禁。"
+   "先确认本机有 Node 环境，通过 npm 安装 @alibaba-group/open-code-review 包，并配置一个 OpenAI 或 Anthropic 兼容的模型端点与密钥。",
+   "在一个非核心仓库上先用 `ocr scan` 跑整目录、再对一个真实 PR 跑 diff 审查，对照人工评审结果判断评论准确率与噪音水平。",
+   "确认效果后把 CLI 接入 CI 的 PR 触发流程，并明确它是提示性评论还是阻断合并，同时评估代码外发到模型端点的合规边界。"
   ],
   "build_ideas": [
-   "把 CLI 包装成 GitHub/GitLab App 或机器人服务，让评论自动回写到 PR 讨论区。",
-   "基于内置规则集扩展公司自有的编码规范检查项，形成内部规则包。",
-   "把审查结果结构化落库，做缺陷类型分布、按团队/仓库的统计看板。",
-   "在 Agent 的工具层接入内部代码搜索、接口文档或工单系统，让审查能引用业务上下文。",
-   "做多模型路由：按文件语言或改动规模把请求分发到不同端点，平衡成本与精度。"
+   "把 CLI 输出对接 GitLab、Gitea 或自建 Gerrit 的评论 API，做成平台内的自动评审机器人。",
+   "在开源内置规则集之上扩展公司内部编码规范，形成可复用的私有规则包。",
+   "把每次评审结果落库聚合成质量看板，跟踪缺陷类型分布与修复趋势。",
+   "用 `ocr scan` 批量跑存量仓库，做成技术债治理的定时任务。",
+   "封装成 IDE 插件或 pre-commit hook，把审查动作前移到编码阶段。"
   ],
   "risks": [
-   "README 节选未展示许可证类型，商用或二次分发前必须到仓库确认 LICENSE 具体条款。",
-   "项目主语言是 Go，但分发入口是 npm 包，落地时需确认 Node 运行时依赖与版本要求是否与现有 CI 镜像兼容。",
-   "审查质量强依赖所配置的模型端点，token 成本、数据外发合规与密钥管理需要自行评估，代码内容会发送给第三方模型服务。",
-   "官方基准自述召回率低于通用 Agent，意味着会漏掉部分问题，不宜作为唯一的合并门禁。",
-   "基准数据在材料中被截断（50 个仓库、200 个 PR、10 种语言），且为项目方自建基准，实际效果需用自己的代码库验证；内置规则集覆盖哪些语言材料中也未完整列出。"
+   "材料中未给出 LICENSE 的具体类型，商用或二次分发前必须自行确认许可条款。",
+   "审查需要把代码 diff 甚至完整文件发送到所配置的 LLM 端点，私有代码的数据合规与泄露风险需先评估。",
+   "性能对比来自项目自述的 50 个开源仓库基准，没有第三方复现，实际效果需用自己的代码库验证。",
+   "官方明确说明 Recall 低于通用 Agent，意味着会漏掉一部分问题，不能直接替代人工评审。",
+   "主语言是 Go 但通过 npm 分发，落地时依赖 Node 环境，且开源时间较短、版本与接口可能仍在快速变化。"
   ],
   "tokens": {
-   "prompt_tokens": 1334,
-   "completion_tokens": 1515
+   "prompt_tokens": 1345,
+   "completion_tokens": 1588
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "a0436f895a364b219202bb707e54118fc59bca7a37b2110656bb25e2cf4ea2af",
-  "readme_sha": "52bbc2d8e6c65fd1d7b1014998c3fdcd7a32d26d",
+  "hash": "f3a3fbb37ffdc77ac6920c6db2e798e27e9897f4c684f1ef1259afe299e1cef4",
+  "readme_sha": "14678eef5a9e6b854d74fcd7c0f19e0c347c6caa",
   "desc_hash": "447efc063cf335afd844a03cf439b399bca007b6206d0c1ab567eb73c4b2760a",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T14:20:09+08:00",
+  "generated_at": "2026-11-25T08:01:16+08:00",
   "readme_used": true,
   "source_description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
   "language": "Go",
@@ -1727,7 +1727,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "ca8091208b903d641928fe8e369cbaa410d6f97722a7d92e7a8b5056e2dc473e",
-  "readme_sha": "8053dd152bfa075e9bd0e9866232609578c68d15",
+  "readme_sha": "887ac6e6fa0c7874b203a917d012f9a4df867331",
   "desc_hash": "33d6ac01cf12bb0fb029be641d4a4b8ff524d4a288ea149e580e68972516970c",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:33:40+08:00",
@@ -1836,7 +1836,7 @@
   "source_description": "Cursor plugin specification and official plugins",
   "language": "TypeScript",
   "url": "https://github.com/cursor/plugins",
-  "readme_sha": "28aed68198b3cb587705b65218a09b512a8c1889",
+  "readme_sha": "c36b556df55731603d5b7ae31b08a65974bf55f0",
   "desc_hash": "e007f4991129a7573749c888398022349d6902b3fab61208eca5f4ba3817f421"
  },
  "debpalash/VoiceStudio": {
@@ -2794,7 +2794,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "d4d08ddb1a2dac50826c7e4bf42b19a7ccae6f35f75ee1e8a5f1376578cdc37b",
-  "readme_sha": "fe27aafebbbea98a593d12332e7bc1a65f488f68",
+  "readme_sha": "8dbd1010e751f17398d4fdbb1139016669937900",
   "desc_hash": "cee09caeff1cf9ba3b4970fe911e5d3568fe7ce5cbd5cba148432ee8fc48589d",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:25:35+08:00",
@@ -2845,7 +2845,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "b3b0352a405e3e855f4552041d4ef50362679443ffc7f2f3789ef55cf1ff7f03",
-  "readme_sha": "32db064d055ce7eb20e1b02f4e9d1f8bd7622706",
+  "readme_sha": "72849101c220d74ad255a1c46c63d420b058cac9",
   "desc_hash": "7f27e6a33ec431de0ee46e86359a6869709c4126052cf548ddf522080579987d",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:29:57+08:00",
@@ -3005,7 +3005,7 @@
   "source_description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
   "language": "Python",
   "url": "https://github.com/mvanhorn/last30days-skill",
-  "readme_sha": "8c3c3e5d82c6159d7cbd6b9611c665416b761f37",
+  "readme_sha": "60c4bc407e64a99f18f8a52d5994855e6a7b0538",
   "desc_hash": "83ec92c4a2b4fed86c986bf0af3ebfad2b30491746cc50e1ff348d8c38085f07"
  },
  "n8n-io/n8n": {
@@ -3560,7 +3560,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "808d936d18aca5ef69d48a35e5e8cc3fac23ae585d21f7d569db84529262af33",
-  "readme_sha": "c3321733dae8e88f4cbcdc1376ceac82171ac286",
+  "readme_sha": "af832f73a9512a8576ace97943ef1358cea06901",
   "desc_hash": "4318e635c80d41596d6764aa386e89f29be115a64e317aceab35846dc8458203",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:31:53+08:00",
@@ -3867,7 +3867,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "51db0404dcfa3f345f7d310dab928152e42c855c47063a2edc73ba0a978ed01a",
-  "readme_sha": "68a38806e193e975e3a9c63b32452938e7d12c56",
+  "readme_sha": "6851f40887dde1bc69aa949baf881bc57e95c679",
   "desc_hash": "53ebb0746e981e3f0d31a31cbf2a4cda48403a5943ba7e06598434d57a5ab19a",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:29:13+08:00",
@@ -3924,55 +3924,55 @@
   "source_description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
   "language": "TypeScript",
   "url": "https://github.com/thedotmack/claude-mem",
-  "readme_sha": "947b3b1aeffcc04841a4e3f7d3c3093f4240a77b",
+  "readme_sha": "574f0db72408ace0bc1f64cf346d93ee97475696",
   "desc_hash": "8e71d54bc44f2a50fa7a71dbc1d45de687258297c4384b412a3445c2e01aeafa"
  },
  "toeverything/AFFiNE": {
-  "one_liner": "把文档、白板和多视图数据库合成一个本地优先的开源工作台",
-  "summary": "AFFiNE 是一个用 TypeScript 写的开源一体化知识工作台，定位是 Notion 与 Miro 的替代品。它的核心做法是把文档和无限画布真正合并：富文本、便签、嵌入网页、多视图数据库、形状甚至幻灯片都能作为「块」放到无边界画布上。它强调 local-first，数据默认存在本地磁盘，同时支持 Web 与跨平台客户端的实时同步与协作，也允许自托管、fork 和自行构建。相比同类工具，它的差异点在于「文档 + 白板 + 数据库」三合一而不是拼接，以及把 AFFiNE AI 作为多模态助手接入写作、幻灯片、思维导图和原型绘制等流程。",
+  "one_liner": "把文档、白板和数据库融进同一块画布的开源知识库，可自托管、数据留在本地。",
+  "summary": "AFFiNE 是一个开源的 all-in-one 工作区，定位是 Notion 与 Miro 的替代品，把 wiki、知识管理、演示和数字资产放在一个产品里。它的核心做法是「无边界画布」：富文本、便签、嵌入网页、多视图数据库、链接页面、形状甚至幻灯片都能作为块直接摆在画布上，文档与白板不再分家。它强调 local-first，数据默认存在本地磁盘，同时支持 Web 与跨平台客户端的实时同步和协作，也允许自托管、fork 和自行构建。相比同类，差异点在于「文档 + 白板 + 数据库」的深度融合，以及 README 中提到的多模态 AI 助手（AFFiNE AI），可用一句提示生成大纲、幻灯片、思维导图或原型。",
   "audience": [
-   "需要同时写文档、画白板和管表格，但不想在 Notion 与 Miro 之间来回切换的产品经理。",
-   "对数据主权敏感、要求数据落在自己磁盘或自己服务器上的团队与个人。",
-   "想自托管一套内部知识库、又希望保留二次开发空间的运维或平台工程师。",
-   "做头脑风暴、方案演示和原型草图的设计师与创意工作者。",
-   "评估开源协作工具替代方案、需要对比许可与迁移成本的技术选型负责人。"
+   "正在用 Notion + Miro 两套工具、希望合并成一个工作区的产品与设计团队。",
+   "对数据主权敏感、要求知识库能自托管或本地留存的企业 IT 与安全负责人。",
+   "需要边写文档边画白板做头脑风暴、不想在两个应用间来回粘贴的创作者与咨询顾问。",
+   "想基于开源代码二次开发内部知识库的前端/全栈工程师（项目主语言为 TypeScript）。",
+   "需要给团队做演示、幻灯片和思维导图，但不想再买一套独立工具的小型创业公司。"
   ],
   "use_cases": [
-   "在一个画布里把需求文档、便签和嵌入网页并排摆放，直接做方案评审而不是切多个工具。",
-   "用多视图数据库维护任务与 backlog，并在同一页面里用白板梳理依赖关系。",
-   "把大纲交给 AFFiNE AI 生成可演示的幻灯片，或把长文压缩成结构化思维导图。",
-   "团队自托管一套知识库，在 Web 与桌面客户端之间实时同步编辑同一份文档。",
-   "在画布上直接画原型草图并整理成可分享的页面，用于早期产品讨论。"
+   "把项目需求文档、流程图和任务数据库摆在同一块无边界画布上，边讨论边修改。",
+   "用多视图数据库维护 backlog 与排期，并在同一页面里嵌入设计稿和参考网页。",
+   "在离线环境下用桌面客户端写会议记录和方案，联网后再与团队实时同步。",
+   "用 AFFiNE AI 把一段大纲直接转成可演示的幻灯片或结构化思维导图。",
+   "自托管一套内部 wiki，把制度文档、资产链接和知识沉淀集中管理。"
   ],
   "adoption_steps": [
-   "先打开 app.affine.pro 的在线 Demo 或从 affine.pro/download 下载客户端，用真实的一份文档和一张白板跑一遍核心流程。",
-   "按 docs.affine.pro 的自托管文档部署一套测试实例，验证实时同步、权限和备份是否符合团队要求。",
-   "选定一个小团队做两周试点，重点验证导入导出、协作冲突处理和 AI 功能是否满足需求，再决定是否全量迁移。"
+   "先打开 https://app.affine.pro 的在线 Demo，用真实的一份文档和一次白板讨论验证画布、数据库和协作手感是否满足需求。",
+   "从 https://affine.pro/download 安装桌面客户端，在本地新建 workspace 并断网试用，确认 local-first 的离线体验和数据存放位置符合预期。",
+   "按 https://docs.affine.pro 的自托管文档在测试环境部署一套服务，评估部署复杂度、备份方式和团队账号管理成本，再决定是否全量迁移。"
   ],
   "build_ideas": [
-   "基于其插件与第三方块机制开发团队内部专用的块类型，比如对接内部工单系统或数据看板。",
-   "fork 后做行业定制版，把模板、权限模型和品牌替换成垂直场景（如教育备课、咨询交付）的形态。",
-   "把 AFFiNE 的自托管实例接入公司 SSO 与审计日志，做成内部统一的知识与协作入口。",
-   "围绕 local-first 的同步能力做离线优先的垂直应用，例如现场作业记录或外勤文档工具。",
-   "在 AFFiNE AI 之上封装面向具体岗位的提示工作流，比如自动生成周报或会议纪要画布。"
+   "基于自托管版本做公司内部知识库，把组织架构、权限和单点登录接到现有账号体系上。",
+   "fork 仓库做垂直行业版本，预置行业模板（如研发周报、咨询项目交付物）并固化默认画布布局。",
+   "把 AFFiNE AI 的调用替换为自建模型服务，满足数据不出内网的合规要求。",
+   "围绕无边界画布开发内部块组件，把公司自有系统（如监控面板、工单列表）以嵌入块形式放进画布。",
+   "基于其跨平台客户端做定制发行版，预装团队常用模板和品牌主题后分发给成员。"
   ],
   "risks": [
-   "README 节选未给出许可证条款，商用或闭源分发前必须到仓库确认 LICENSE 的具体限制。",
-   "AFFiNE AI 在 README 中指向 affine.pro/ai 的云端入口，材料未说明自托管实例能否获得同等 AI 能力，需先确认是否依赖官方云服务。",
-   "材料未提及从 Notion、Miro 等工具导入的完整度与导出格式，迁移前需实测数据往返是否无损。",
-   "自托管涉及实时同步与协作服务，运维成本和版本升级负担需要提前评估，材料未给出部署复杂度细节。",
-   "项目迭代节奏快（本期日榜新增 574 star），功能与数据格式可能变动，长期使用需评估升级与兼容策略。"
+   "README 明确写到插件社区和第三方块「coming」，说明扩展生态尚未开放，依赖插件做深度定制的方案现在无法落地。",
+   "材料中未给出开源许可证信息，商用分发或闭源二次开发前必须在仓库中确认许可证条款。",
+   "AFFiNE AI 指向 affine.pro 的独立产品页，材料未说明其是否包含在开源自托管版本内、是否需要额外付费或联网，需先确认。",
+   "自托管意味着要自行承担部署、升级、备份和实时同步服务的运维，团队需评估是否有人力长期维护。",
+   "从 Notion 或 Miro 迁移时，块结构、数据库视图和画布布局都存在格式差异，材料未提供官方迁移工具，迁移成本需自行验证。"
   ],
   "tokens": {
-   "prompt_tokens": 1310,
-   "completion_tokens": 1360
+   "prompt_tokens": 1309,
+   "completion_tokens": 1440
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "db25f14c395c4defead20206b02eac4ee3ccd332b0e8987197ceca5147baec02",
-  "readme_sha": "537c3615ba5e354c277a30a3b8cd21faf1ab3503",
+  "hash": "a50976dbf6c9a28111d299846b0cb3cff70d63b397900f366cadec5cf841a4a9",
+  "readme_sha": "0c01921409b8f52cbb52a0d088227e4456553925",
   "desc_hash": "06dce94c691804b2e13852ade9929a87341b5c7b073a3df1bdf4551fbcc8b811",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:33:12+08:00",
+  "generated_at": "2026-11-25T08:01:16+08:00",
   "readme_used": true,
   "source_description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
   "language": "TypeScript",
@@ -4126,7 +4126,7 @@
   "source_description": "Browser automation CLI for AI agents",
   "language": "Rust",
   "url": "https://github.com/vercel-labs/agent-browser",
-  "readme_sha": "53f71fd42a568994479edfa5063c58ca0b5dad8d",
+  "readme_sha": "a9274711b317ebcc3067f55582787680532f49dd",
   "desc_hash": "7d5d49da981b31953c80e0246783c3f8496053f342f52469328b762e2b6f5476"
  },
  "vercel-labs/agent-desktop": {
@@ -4233,51 +4233,51 @@
   "desc_hash": "88d75d8d452c89972936c2e775c7fe2c4837a180ac866e5fbda813aa4f983b22"
  },
  "zhouxiaoka/autoclip": {
-  "one_liner": "把长视频或直播回放一键剪成带字幕、封面和文案的竖屏短视频。",
-  "summary": "AutoClip 是一款开源的 AI 视频剪辑桌面工具，输入一个链接、本地视频或直播回放，它会自动找出高光片段、跟踪说话人做智能重构画面、烧录字幕并生成封面与标题，导出适配抖音、小红书、TikTok、Reels、Shorts、B 站等平台的成片。它主打 local-first：剪辑与渲染都在本机完成，不上传排队、不订阅付费，可以自带 API key，也可以用 Ollama / LM Studio 搭配 Whisper / SenseVoice 全离线跑。v1.6 新增 Live Replay 标签页，支持 OBS Studio、Twitch、YouTube、Kick、Discord 和本地录制六种来源，并能通过 OBS WebSocket（4455 端口）以 -c copy 做无损裁剪。相比常见的云端切片 SaaS，它的差异点在于 MIT 许可、本地渲染和可离线模型组合；仓库还带有 MCP 标识（io.github.zhouxiaoka/autoclip-mcp），说明有面向 agent 的集成入口。",
+  "one_liner": "丢一个视频链接或本地文件，在你自己电脑上自动剪出带字幕、封面和标题的竖屏短视频。",
+  "summary": "AutoClip 是一个开源的 AI 视频剪辑桌面工具，把播客、访谈、课程、游戏直播回放等长视频自动切成适合抖音、小红书、TikTok、Reels、YouTube Shorts、Bilibili 发布的短视频。它的做法是本地优先：切片和渲染都在本机完成，不上传排队；AI 部分可以自带 API key，也可以用 Ollama / LM Studio 搭配 Whisper / SenseVoice 完全离线跑。功能上除了选高光片段，还包含说话人跟踪与智能重构图、烧字幕、生成封面和标题文案。v1.6 新增了 Live Replay 标签页，支持 OBS Studio、Twitch、YouTube、Kick 等 6 个直播回放来源，仓库还带有 MCP server（io.github.zhouxiaoka/autoclip-mcp），可以被 Agent 工具调用。相比常见的云端剪辑 SaaS，它的差异点在于 MIT 许可、零订阅、数据不出本机。",
   "audience": [
-   "做播客、访谈类长内容、需要把每期节目切成多条短视频分发的创作者。",
-   "运营抖音、小红书、TikTok、Shorts 矩阵账号、需要批量产出竖屏切片的短视频运营。",
-   "有 Twitch、Kick、YouTube 或 OBS 直播回放、想把高光时刻快速剪出来的游戏主播。",
-   "对素材外传敏感、希望在内网或纯离线环境处理视频的团队。",
-   "想把自动切片能力接进自己 agent 或工作流的开发者（仓库提供 MCP 入口）。"
+   "做播客或访谈内容的创作者，需要把一两小时的长节目稳定产出多条竖屏切片。",
+   "短视频运营/MCN 剪辑岗，每天要把同一批素材分发到抖音、小红书、TikTok、Shorts 等多个平台。",
+   "课程、知识付费和会议内容团队，希望把长录播快速拆成可传播的片段。",
+   "游戏主播和直播运营，需要从 Twitch、YouTube、Kick 或 OBS 录像里自动挑高光。",
+   "想把视频剪辑能力接进自己 Agent 或自动化流程的工程师，可以直接用仓库提供的 MCP server。"
   ],
   "use_cases": [
-   "把一期两小时的播客访谈丢进去，自动挑出若干高光片段并导出带字幕的竖屏切片。",
-   "连接 OBS WebSocket 或导入 Twitch、Kick 直播回放，无损裁剪后直接生成可发布的短视频。",
-   "给课程、讲座类长视频批量生成字幕、封面和标题文案，省掉逐条手工剪辑。",
-   "用 Ollama / LM Studio 加 Whisper / SenseVoice 在断网机器上完成从转写到成片的整条链路。",
-   "把同一段素材按不同平台比例和文案导出多版本，一次性铺到抖音、小红书和 YouTube Shorts。"
+   "把一期播客的 YouTube 链接粘进去，自动挑出若干高光片段并烧好字幕，导出成 9:16 竖屏文件。",
+   "导入本地课程录屏，批量生成带封面和标题文案的切片，再逐条人工微调后发布。",
+   "接上 OBS WebSocket 或 Twitch 回放源，直播结束后直接从录像里剪出可发布的精彩片段。",
+   "用 Ollama + Whisper / SenseVoice 在断网或涉密环境下跑完整流程，素材不出本机。",
+   "把 AutoClip 的 MCP 接口挂到自己的 Agent 工作流里，用自然语言触发「剪这条链接并出 5 条切片」。"
   ],
   "adoption_steps": [
-   "先到 GitHub Releases（github.com/zhouxiaoka/autoclip/releases/latest）下载对应系统的安装包，用一段 10 分钟左右的本地视频跑通「导入→切片→导出」全流程，确认界面与导出格式符合预期。",
-   "在设置里决定推理方式：要么填自己的模型 API key，要么本地起 Ollama 或 LM Studio 并配置 Whisper / SenseVoice，先用一条短视频验证转写与切片质量再放量。",
-   "如果要接直播场景，在 OBS 里开启 WebSocket 服务（默认端口 4455）并在 AutoClip 的 Live Replay 标签页连接，用一段回放验证无损裁剪与成片输出后再接入日常直播流程。"
+   "先到 GitHub Releases 页面下载对应系统的安装包（README 提供 Download 入口），用一条 10 分钟以内的本地视频跑通默认流程，确认界面、字幕和导出都正常。",
+   "再决定 AI 后端：要么在设置里填自己的模型 API key 换取更好的选段和文案质量，要么按 README 配置 Ollama / LM Studio + Whisper / SenseVoice 走全离线路线，两条路各跑一次对比效果。",
+   "验证通过后再接入真实工作流：先用一条真实播客链接和一次直播回放各跑一遍，记录耗时、显存/CPU 占用和成片可用率，再决定是否批量使用或通过 MCP server 集成进现有流水线。"
   ],
   "build_ideas": [
-   "基于仓库提供的 MCP 服务（io.github.zhouxiaoka/autoclip-mcp），把切片能力接进 Claude 等 agent，做成「给个链接就产出多条成片」的自动化流水线。",
-   "对接各平台的发布 API 或第三方分发工具，在切片完成后自动加标题、话题并定时发布，做成矩阵账号的批量分发系统。",
-   "在本地渲染之上加一层任务队列与模板配置，做面向团队的多素材批处理服务，统一管理切片规则和封面样式。",
-   "替换或微调高光挑选环节的评分逻辑（例如按关键词、情绪或业务指标排序），做垂直行业专用的切片策略。",
-   "把整条链路打包成内网私有化部署方案，供对素材外传有合规要求的机构使用。"
+   "基于仓库自带的 MCP server 封装一个内部剪辑 Agent，让运营在聊天窗口里提交链接并拿回成片列表。",
+   "在它之上做批量任务队列和模板系统，把「同一素材 → 多平台不同比例/字幕样式」的重复劳动自动化。",
+   "替换或扩展本地模型组合（如换用其他 ASR 或本地 LLM），针对中文、方言或垂直行业术语做识别和选段优化。",
+   "对接企业素材库或对象存储，做成「上传长视频 → 自动产出切片 + 元数据 → 回写 CMS」的内部服务。",
+   "围绕成片做二次加工插件，例如自动生成多版标题 A/B、按平台规则校验时长与画面安全区。"
   ],
   "risks": [
-   "材料只给了 README 和 star 数，没有披露测试覆盖、贡献者规模与 issue 响应情况，工程成熟度需要自己翻 issue 和提交记录验证。",
-   "本地渲染与本地模型推理都吃机器算力，长视频的处理耗时和硬件门槛材料未说明，批量使用前应先实测。",
-   "Twitch、YouTube、Kick、Discord 等来源的导入依赖第三方接口与平台条款，接口或规则变动可能导致该功能失效。",
-   "离线方案依赖 Whisper / SenseVoice 与 Ollama / LM Studio，这些组件各自的许可和模型体积、显存要求需要单独确认，商用前要核对授权。",
-   "桌面端安装包在哪些操作系统上可用、是否有签名与自动更新，材料未说明，跨平台团队需先确认自己的系统在支持范围内。"
+   "本地渲染对机器性能的实际要求（是否必须独显、显存下限、一小时视频的耗时）在给出的 README 节选中没有说明，采用前必须自己实测。",
+   "仓库归属个人账号 zhouxiaoka，且本期 star 增长较快（新增 979），热度不等于长期维护承诺，需查看 issue 响应和 release 节奏再决定是否依赖。",
+   "桌面端安装包支持哪些操作系统、是否有签名与自动更新，材料中未给出，跨平台团队要先确认。",
+   "AI 选段和文案质量取决于你自带的 API key 或本地模型，离线方案的效果与在线方案可能存在差距，且第三方模型/接口的许可与费用需自行核对。",
+   "README 明确为 MIT 许可，但项目依赖的 ASR、LLM、ffmpeg 等组件的许可与商用条款需要单独确认，尤其是对外商用分发场景。"
   ],
   "tokens": {
-   "prompt_tokens": 1503,
-   "completion_tokens": 1666
+   "prompt_tokens": 1528,
+   "completion_tokens": 1688
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "f8898998e245fe3b594450ad26c3edea5571718d1d6b390800e3d3d3f134e9c5",
-  "readme_sha": "e0e43bb4a8e4a272fc32aef8e4eb92df60516828",
+  "hash": "6b396295f3e8eab0c58dbcf27b4071f5e259acbfbe9d429f3c83b87206212d17",
+  "readme_sha": "cf1c3d9452ad77768b0d10529ae85d70e5f3bbb0",
   "desc_hash": "f6a25daa826f9591bb2a328ca6aa60415f667bb99431e78c8a97a9a988fe7bbf",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T14:20:10+08:00",
+  "generated_at": "2026-11-25T08:01:17+08:00",
   "readme_used": true,
   "source_description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
   "language": "Python",

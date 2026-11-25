@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T14:20:12+08:00",
+ "generated_at": "2026-11-25T08:01:24+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
  "project_count": 41,
  "topics": [
@@ -7,8 +7,8 @@
    "name": "AI Agent / 编码助手",
    "repo_count": 27,
    "share": 0.659,
-   "stars_period_total": 585273,
-   "avg_stars_period": 21677,
+   "stars_period_total": 585858,
+   "avg_stars_period": 21698,
    "languages": [
     "CSS",
     "Go",
@@ -212,38 +212,18 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 2029,
-     "stars_total": 19714,
+     "stars_period": 1826,
+     "stars_total": 21430,
      "language": "Python",
      "periods": [
       "daily"
      ],
-     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
-    },
-    {
-     "full_name": "firecrawl/firecrawl",
-     "stars_period": 924,
-     "stars_total": 207895,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
-    },
-    {
-     "full_name": "obra/superpowers",
-     "stars_period": 840,
-     "stars_total": 325037,
-     "language": "Shell",
-     "periods": [
-      "daily"
-     ],
-     "description": "An agentic skills framework & software development methodology that works."
+     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
     },
     {
      "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 790,
-     "stars_total": 63601,
+     "stars_period": 1074,
+     "stars_total": 64722,
      "language": "Python",
      "periods": [
       "daily"
@@ -251,9 +231,29 @@
      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
     },
     {
+     "full_name": "obra/superpowers",
+     "stars_period": 1003,
+     "stars_total": 325782,
+     "language": "Shell",
+     "periods": [
+      "daily"
+     ],
+     "description": "An agentic skills framework & software development methodology that works."
+    },
+    {
+     "full_name": "firecrawl/firecrawl",
+     "stars_period": 991,
+     "stars_total": 208915,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
+    },
+    {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 761,
-     "stars_total": 4942,
+     "stars_period": 928,
+     "stars_total": 5842,
      "language": "Shell",
      "periods": [
       "daily"
@@ -262,8 +262,8 @@
     },
     {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 620,
-     "stars_total": 70949,
+     "stars_period": 802,
+     "stars_total": 71998,
      "language": "HTML",
      "periods": [
       "daily"
@@ -272,8 +272,8 @@
     },
     {
      "full_name": "Tracer-Cloud/opensre",
-     "stars_period": 436,
-     "stars_total": 14821,
+     "stars_period": 398,
+     "stars_total": 15176,
      "language": "Python",
      "periods": [
       "daily"
@@ -282,8 +282,8 @@
     },
     {
      "full_name": "cursor/plugins",
-     "stars_period": 397,
-     "stars_total": 18793,
+     "stars_period": 360,
+     "stars_total": 19194,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -296,8 +296,8 @@
    "name": "安全 / 逆向",
    "repo_count": 8,
    "share": 0.195,
-   "stars_period_total": 498323,
-   "avg_stars_period": 62290,
+   "stars_period_total": 498276,
+   "avg_stars_period": 62284,
    "languages": [
     "Java",
     "JavaScript",
@@ -359,18 +359,18 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 2029,
-     "stars_total": 19714,
+     "stars_period": 1826,
+     "stars_total": 21430,
      "language": "Python",
      "periods": [
       "daily"
      ],
-     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
+     "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 761,
-     "stars_total": 4942,
+     "stars_period": 928,
+     "stars_total": 5842,
      "language": "Shell",
      "periods": [
       "daily"
@@ -379,8 +379,8 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 595,
-     "stars_total": 77376,
+     "stars_period": 584,
+     "stars_total": 77977,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -393,8 +393,8 @@
    "name": "CLI / 开发者工具",
    "repo_count": 7,
    "share": 0.171,
-   "stars_period_total": 13831,
-   "avg_stars_period": 1976,
+   "stars_period_total": 14370,
+   "avg_stars_period": 2053,
    "languages": [
     "HTML",
     "Python",
@@ -443,19 +443,9 @@
      "description": "Chrome DevTools for coding agents"
     },
     {
-     "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 907,
-     "stars_total": 14368,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
-    },
-    {
      "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 790,
-     "stars_total": 63601,
+     "stars_period": 1074,
+     "stars_total": 64722,
      "language": "Python",
      "periods": [
       "daily"
@@ -463,9 +453,19 @@
      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
     },
     {
+     "full_name": "zhouxiaoka/autoclip",
+     "stars_period": 980,
+     "stars_total": 15310,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
+    },
+    {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 620,
-     "stars_total": 70949,
+     "stars_period": 802,
+     "stars_total": 71998,
      "language": "HTML",
      "periods": [
       "daily"
@@ -478,8 +478,8 @@
    "name": "其他 / 未归类",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 32102,
-   "avg_stars_period": 6420,
+   "stars_period_total": 32091,
+   "avg_stars_period": 6418,
    "languages": [
     "C",
     "Objective-C",
@@ -510,8 +510,8 @@
     },
     {
      "full_name": "XiaoYouChR/Ghost-Downloader-3",
-     "stars_period": 1087,
-     "stars_total": 16287,
+     "stars_period": 1092,
+     "stars_total": 17300,
      "language": "Python",
      "periods": [
       "daily"
@@ -530,8 +530,8 @@
     },
     {
      "full_name": "nginx/nginx",
-     "stars_period": 174,
-     "stars_total": 33047,
+     "stars_period": 158,
+     "stars_total": 33216,
      "language": "C",
      "periods": [
       "daily"
@@ -544,8 +544,8 @@
    "name": "学习 / 知识管理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 30201,
-   "avg_stars_period": 6040,
+   "stars_period_total": 30257,
+   "avg_stars_period": 6051,
    "languages": [
     "Python",
     "TypeScript"
@@ -584,8 +584,8 @@
     },
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 924,
-     "stars_total": 207895,
+     "stars_period": 991,
+     "stars_total": 208915,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -594,8 +594,8 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 595,
-     "stars_total": 77376,
+     "stars_period": 584,
+     "stars_total": 77977,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -608,8 +608,8 @@
    "name": "LLM / 模型与推理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 27603,
-   "avg_stars_period": 5521,
+   "stars_period_total": 27503,
+   "avg_stars_period": 5501,
    "languages": [
     "C++",
     "Go",
@@ -649,8 +649,8 @@
     },
     {
      "full_name": "jingyaogong/minimind",
-     "stars_period": 828,
-     "stars_total": 69435,
+     "stars_period": 727,
+     "stars_total": 70158,
      "language": "Python",
      "periods": [
       "daily"
@@ -659,8 +659,8 @@
     },
     {
      "full_name": "openvinotoolkit/openvino",
-     "stars_period": 184,
-     "stars_total": 12276,
+     "stars_period": 185,
+     "stars_total": 12458,
      "language": "C++",
      "periods": [
       "daily"
@@ -673,8 +673,8 @@
    "name": "音视频 / 多模态",
    "repo_count": 3,
    "share": 0.073,
-   "stars_period_total": 74040,
-   "avg_stars_period": 24680,
+   "stars_period_total": 74113,
+   "avg_stars_period": 24704,
    "languages": [
     "Python",
     "TypeScript"
@@ -702,8 +702,8 @@
     },
     {
      "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 907,
-     "stars_total": 14368,
+     "stars_period": 980,
+     "stars_total": 15310,
      "language": "Python",
      "periods": [
       "daily"
@@ -815,8 +815,8 @@
    "name": "数据 / 爬虫",
    "repo_count": 2,
    "share": 0.049,
-   "stars_period_total": 4624,
-   "avg_stars_period": 2312,
+   "stars_period_total": 4691,
+   "avg_stars_period": 2346,
    "languages": [
     "Go",
     "TypeScript"
@@ -834,8 +834,8 @@
     },
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 924,
-     "stars_total": 207895,
+     "stars_period": 991,
+     "stars_total": 208915,
      "language": "TypeScript",
      "periods": [
       "daily"
