@@ -3207,7 +3207,7 @@
   "source_description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
   "language": "Shell",
   "url": "https://github.com/nvm-sh/nvm",
-  "readme_sha": "eaa7f89f87bef8d45679b5c10dfef34a0c0d00fb",
+  "readme_sha": "4e96b713eb2087b3f93ca913818a67ec7e388853",
   "desc_hash": "edaa8a6597a23cd011821d9aa3487baa580bb03d7a0b5984349a27b91092453c"
  },
  "obra/superpowers": {
