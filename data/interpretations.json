@@ -97,7 +97,7 @@
   "source_description": "Chrome DevTools for coding agents",
   "language": "TypeScript",
   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-  "readme_sha": "2dca1a052a314a7c2635fb9da68c96221441e380",
+  "readme_sha": "b957bc13f9bbb54da61c581c46f2348799cce672",
   "desc_hash": "7499743e168dc03b321c08a6c37854441f82f99df1d33e83d271ddaef13238fd"
  },
  "CopilotKit/OpenBot": {
@@ -148,7 +148,7 @@
   "source_description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
   "language": "TypeScript",
   "url": "https://github.com/CopilotKit/OpenBot",
-  "readme_sha": "0391651a4e4483dfa13858da452d44371c15f1d9",
+  "readme_sha": "29218b420633474a386a60dcd74a4a7b77628e45",
   "desc_hash": "04f74bb3242c6dc60cdf10f2974f246afbd4a57027defb9838b674389da8cb37"
  },
  "D4Vinci/Scrapling": {
@@ -198,55 +198,55 @@
   "source_description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
   "language": "Python",
   "url": "https://github.com/D4Vinci/Scrapling",
-  "readme_sha": "f910191967cf9f79a1bd57f0fb23ace96e0a94a7",
+  "readme_sha": "4379ae8ad7c4305f2e2c2182119c86f7c4bd742a",
   "desc_hash": "b79b4fa3f79f1ea9c006705596604601bb29cd8c7f287950cc4bb817677341f6"
  },
  "DeanChensj/jiangshan-map": {
-  "one_liner": "拖动时间轴查看中国 2400 年疆域与古城地名变迁的交互式历史地图。",
-  "summary": "这是一个把 403 BCE 到当代的中国历史地理做成可交互羊皮纸地图的网页应用，覆盖 18 个历史时期、198 份疆域快照，并叠加古城、关隘、诗词与战场地标、帝王年号与大事年表。它的做法是把「翻纸质历史地图集」的动作换成拖动时间轴加点击城市，一处地名可以追溯从古到今的名称谱系，回答「建康、黄州、蓝关在今天哪里」这类阅读时冒出的问题。相比静态教科书地图或 GIS 专业工具，它的新意在于把疆域演变、地名沿革与古典诗词路线放在同一条时间轴上做横向对比，并配了英、简、繁、日四套界面。项目以 JavaScript 实现，提供在线 Demo 直接体验，累计 star 6682、本期新增 288，属于近期热度上升较快的个人作品。",
+  "one_liner": "拖动时间轴，在交互地图上看中国两千四百年疆域与古城变迁。",
+  "summary": "这是一个用 JavaScript 实现的中国历史交互地图，把公元前 403 年（战国开端）到当代的 18 个历史时期、约 198 张疆域与政区快照压缩进一条可拖动的时间轴。用户拖动时间轴即可看列国兴亡与边界变化，点击城市能看到古今地名沿革、关隘、诗词与战场地标，并附有帝王与年号信息。它把原本只能翻纸质历史地图集的对照工作，变成一次连续的空间与时间浏览，还提供英文、简中、繁中、日文四种界面与在线 Demo。相比同类静态历史地图图片，它的新意在于「时间轴 + 可点击地名沿革 + 诗词路线」三者叠加在同一张羊皮纸风格画布上。",
   "audience": [
-   "读中国史书或古典诗词时想随手确认地名的历史地理爱好者，可以直接查建康、黄州、蓝关对应今天的哪座城市。",
-   "中学历史与语文教师，可以用时间轴对比战国七雄到清代疆域的变化来做课堂演示素材。",
-   "历史类内容创作者与科普作者，可以截图或录屏做「长安两千年改名史」这类可视化选题。",
-   "做教育类或文化类 Web 产品的工程师，可以参考它的时间轴交互与地名沿革数据组织方式。",
-   "需要给孩子讲清「秋海棠叶到雄鸡」版图变化过程的家长或科普讲解者。"
+   "做历史、人文、诗词类内容的自媒体作者与视频编导，需要直观的疆域变化画面。",
+   "中学与高校历史教师，想在课堂上演示朝代疆域与地名变迁。",
+   "前端工程师，想参考「时间轴驱动地图图层切换」这类交互的实现方式。",
+   "产品经理或设计者，评估文化科普类可视化产品的形态与信息密度。",
+   "文旅、展陈策划人员，需要把古城、关隘、诗词路线落到今天的地图上。"
   ],
   "use_cases": [
-   "备课时按朝代拖动时间轴，截取某一时期疆域与州郡快照，放进 PPT 讲分裂与统一的过程。",
-   "读《赤壁赋》或韩愈诗时，在地图上点出黄州、蓝关关隘的位置与当时政区归属，核对注释。",
-   "做短视频或图文选题时，用古城地名谱系功能展示长安—西安这类一城多名的时间线。",
-   "产品调研时完整走一遍时间轴拖动、城池点击、帝王年号查看的交互路径，记录可复用的交互模式。",
-   "对外英文内容场景下切换到英文界面，向非中文读者演示中国疆域的历史演变。"
+   "写历史或诗词科普文章时，截取特定年份的疆域图作为配图，并标注建康、黄州、蓝关等古地名对应今天的位置。",
+   "课堂上拖动时间轴，从战国七雄连续演示到秦统一、汉开河西走廊，让学生看到边界如何一步步变化。",
+   "策划「跟着诗词去旅行」线路时，用诗词路线与地标功能核对城市与关隘的实际地理位置。",
+   "做展馆或网页专题时，把在线 Demo 以链接或内嵌方式放进页面，作为可交互的历史地图模块。",
+   "做竞品或技术调研时，拆解它的时间轴控件、图层切换与地名沿革数据结构，复用到其他主题地图。"
   ],
   "adoption_steps": [
-   "先打开 README 里的在线 Demo（https://deanchen.me/jiangshan-map/?lang=en），拖动时间轴并点击几座古城，确认 198 份疆域快照的粒度与地名沿革是否满足你的需求。",
-   "读 README 与 README_ZH 全文以及作者那篇《From textbook maps to 1k GitHub stars》博文，确认数据来源、历史分期口径与项目定位，再决定是当资料用还是当二次开发底座。",
-   "如需本地部署或二次开发，克隆 DeanChensj/jiangshan-map 仓库，按仓库内 README 与 package 配置确认运行命令和依赖，并先核对仓库的 LICENSE 文件是否允许你的使用方式。"
+   "先打开 https://deanchen.me/jiangshan-map/?lang=en 在线试用，拖动时间轴并点击若干城市，确认信息密度与交互是否符合你的场景。",
+   "克隆仓库后先读根目录的 package.json 与 README 的本地运行说明，确认构建工具、依赖与启动脚本，再在本地跑起开发服务器。",
+   "确认 LICENSE 文件与历史数据的来源说明，判断能否商用或二次分发，再决定是内嵌链接还是拉取代码改造。"
   ],
   "build_ideas": [
-   "把疆域与地名数据抽出来，做一个面向教师的课件生成器，按朝代导出静态地图切片与标注图。",
-   "在时间轴之上叠加自定义图层，例如把某一诗人的行旅路线或某场战役的行军路线做成可切换的专题线。",
-   "做一个地名沿革查询小工具，输入今天的城市名反查它在各朝代的称谓与隶属政区。",
-   "参照它的交互做垂直扩展版本，比如丝路沿线或世界文明的时间轴地图，复用拖动与点击的交互范式。",
-   "将其嵌入到历史类电子书或博物馆导览页，作为章节配图的可交互替代方案。"
+   "把地名沿革数据抽出来做成可搜索的「古地名 → 今地名」查询页或小型 API。",
+   "基于时间轴与疆域快照做「同一地点在不同朝代的归属对比」小工具，输入城市名输出历代归属变化。",
+   "把诗词路线扩展成可分享的行程页，每条路线配地图、诗作原文与途经地标。",
+   "将地图做成可离线使用的静态包或嵌入组件，方便放进课件、Notion、Obsidian 等环境。",
+   "在现有四语界面基础上补充其他语种，或做面向海外读者的英文讲解层。"
   ],
   "risks": [
-   "材料中未提及许可证信息，二次开发或商用前必须到仓库确认 LICENSE 是否存在及其具体条款。",
-   "除主语言 JavaScript 外，材料未说明构建工具、依赖清单与运行方式，本地部署成本需要克隆后自行评估。",
-   "README 节选未给出历史疆域数据与地名沿革的引用来源，用于教学或出版前需自行核对史源与分期口径。",
-   "项目由个人账号维护且近期热度上升较快，材料未体现 issue 响应与发版节奏，长期维护稳定性需查看提交历史与 issue 区确认。",
-   "在线 Demo 部署在作者个人域名 deanchen.me 上，若用于课堂或正式演示，需评估该地址的可访问性与可用性风险，必要时自行部署。"
+   "材料中未出现 LICENSE 信息，商用或二次分发前必须到仓库确认授权条款。",
+   "历史疆域与政区数据的学术依据未在 README 节选中给出，用于教学或出版前需核对数据来源与精度。",
+   "地图涉及西藏、伊利、秋海棠与雄鸡地图等边界表述，在部分平台或地区发布时存在内容合规风险。",
+   "项目由单一作者维护且近期 star 增长较快，issue 响应速度与长期维护承诺无法从材料判断。",
+   "除 JavaScript 外，构建工具、依赖与数据格式均未在材料中体现，二次开发的迁移与改造成本需先读代码评估。"
   ],
   "tokens": {
-   "prompt_tokens": 1332,
-   "completion_tokens": 1410
+   "prompt_tokens": 1331,
+   "completion_tokens": 1596
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "717105c26b0faab74aa0ed3bd76c9322f6fce34b1f83304fa1f55a131c020c5d",
-  "readme_sha": "15c73efc07f1578d1d4c0e238fffa1eb38fe8d65",
+  "model_resolved": "deepseek-v4.1-flash",
+  "hash": "2a825f2ff218ed02a007fd2360cc942189cd784e69f0b229c9acf72b998e051e",
+  "readme_sha": "a2fde7a752d498f6f671a1c74e4237144be3b6b7",
   "desc_hash": "3245d689f44b18d46c92ee59ecf9f1a345e24d3def7f4fcdad3bc06ab24244d1",
-  "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-18T09:53:17+08:00",
+  "model": "deepseek-v4.1-flash-high",
+  "generated_at": "2026-11-26T08:01:13+08:00",
   "readme_used": true,
   "source_description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
   "language": "JavaScript",
@@ -497,7 +497,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "6122ef67d0b9dfdcebd8b2818fc716f8ddf19b9e39e7016921867bf22fcc0f4e",
-  "readme_sha": "b9b04b7db4d7f52c055ce0cd642da0831d4bc481",
+  "readme_sha": "c135430997858eeb293dbe252f233d5ae8f05104",
   "desc_hash": "21dcc3b3bcc84335308bdd70bdfb7e79ffc71c3e053ddabbfe1889a6bbbcd88d",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:30:46+08:00",
@@ -954,7 +954,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "b524f4a7be85ce2c6fbe049f64c7d13b85f636245c54967767be6d5fa6d897ae",
-  "readme_sha": "392b405c0aa7e609ab4a7b3f16a228e3d7a66aab",
+  "readme_sha": "7186be16eaef4bb43a0ba712004886c6465ab60a",
   "desc_hash": "c960462012b3098983fd00967a2dd63aae1d3c7d63e79aa97909b4419f09436c",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:32:34+08:00",
@@ -1223,53 +1223,51 @@
   "url": "https://github.com/alibaba/open-code-review"
  },
  "anomalyco/hex": {
-  "one_liner": "按住快捷键说话，本地转写后直接粘贴到当前光标处，跨 Mac/Windows/Linux。",
-  "summary": "Hex 是一个本地语音听写工具，按住快捷键说话、松开后文字直接落在你当前所在应用的输入框里。首次运行会下载一个语音模型，之后转写全部在本机完成，音频不出机器。它内置了多种模型可选（Parakeet、Whisper large-v3-turbo、Qwen3-ASR、SenseVoice 等），还提供 Output 步骤链（词替换、清理、自定义脚本、可选的 OpenCode 改写）并按应用或网站配置不同规则，另有可搜索的历史记录和带鉴权的本地 API 与 TypeScript SDK。相比纯听写工具，它的新意在于把「模型选择 + 后处理流水线 + 本地 API」都开放出来，还附带 Annotate 录屏标注和 macOS 的 Meetings 会议转写实验功能。",
+  "one_liner": "按住快捷键说话，本机转写后直接粘贴到光标处，语音变文字不出本机。",
+  "summary": "Hex 是一个跨 macOS、Windows、Linux 的本地语音听写工具：按住快捷键说话，松手后它在设备上完成转写，并把文字粘贴到你当前所在的任意应用光标处。首次运行会下载一个语音模型，之后音频不离开本机；模型可在设置里更换，覆盖 Parakeet、Whisper large-v3-turbo、Qwen3-ASR、SenseVoice、Cohere Transcribe 等多种选择，也支持加载自己的 GGUF 模型。除基础听写外，它还提供 Output 处理管线（按应用或网站配置词替换、内置清理、自定义脚本、可选 OpenCode 改写）、可搜索的历史记录、词汇表，以及带鉴权的本地 API 和 TypeScript SDK。新意在于把「本地模型 + 系统级粘贴 + 可编排的后处理」打包成一个桌面应用，而不是又一个网页转写服务；Annotate（边说边画录屏）和 Meetings（会议转录）目前标注为 Labs 实验功能，其中 Meetings 仅限 macOS。",
   "audience": [
-   "需要长时间写文档、写代码注释或回消息，希望用嘴代替键盘的开发者。",
-   "处理敏感内容（法务、医疗、企业内部会议）而不能把音频上传到云端的从业者。",
-   "在 Mac、Windows、Linux 多台机器间切换，想要同一套听写体验的人。",
-   "想把语音转写能力嵌进自己工具链的工程师，可以直接用它的本地 API 和 TypeScript SDK。",
-   "中文、日文、韩文或多语种混说的用户，可以选 SenseVoice Small 或 Qwen3-ASR 这类模型。"
+   "每天要写大量文字、又不想把语音上传到云端的开发者与写作者。",
+   "需要在 IDE、终端、聊天工具之间频繁切换、希望不打断思路直接口述输入的人。",
+   "使用中文或多语种、需要按语种挑选 ASR 模型（如 Qwen3-ASR、SenseVoice）的用户。",
+   "要写会议纪要、用户访谈记录，希望录音与转写都留在本机的产品经理与研究员。",
+   "想把语音转写能力嵌进自己工具链的工程师，可直接用它的本地 API 与 TypeScript SDK。"
   ],
   "use_cases": [
-   "在 IDE 或终端里按住快捷键口述提交信息、注释和变量命名，松开即插入光标处。",
-   "在会议或通话中开启 macOS 的 Meetings 实验功能，录下通话并自动生成文字记录。",
-   "用 Annotate 边在屏幕上画边讲解，同时录屏和录音，用于做产品演示或 bug 复现说明。",
-   "在 Output 里为不同应用配置不同步骤，比如在邮件客户端自动做礼貌化清理、在代码编辑器里只做术语替换。",
-   "把常用人名、项目代号、专有名词维护进 Vocabulary 一份列表，让 Whisper、Qwen3-ASR 和 OpenCode 改写统一识别。",
-   "通过本地 API 或 TypeScript SDK 把同一套模型接到自己的脚本、笔记工具或内部系统里做批量转写。"
+   "在 IDE 或终端里按住快捷键口述提交信息、注释和报错描述，松手即粘贴到光标处。",
+   "在任意聊天或邮件客户端里口述回复，用 Output 步骤统一做术语替换和格式清理。",
+   "把常用人名、项目代号、专有名词放进 Vocabulary，减少 Whisper、Qwen3-ASR 等模型的转写错误。",
+   "用 Annotate 一边在屏幕上画一边讲解，录制 bug 复现或操作演示。",
+   "在 macOS 上用 Meetings 录制线上会议并生成转录文本，再自行整理成纪要。"
   ],
   "adoption_steps": [
-   "先从 README 的 Downloads 表格按平台下载 Stable 版（macOS Apple silicon 用 DMG，Windows 用 x64 安装包），首次启动时让它下载默认语音模型并试听写一段。",
-   "在设置里把快捷键模式和模型改成你的常用语言：英文系统默认 Parakeet Unified English，中文优先试 Qwen3-ASR 0.6B 或 SenseVoice Small，多语种混说试 Parakeet v3。",
-   "把团队里的专有名词整理进 Vocabulary，再在 Output 里为最常用的两三个应用各配一条步骤链，验证替换和清理规则是否符合预期。",
-   "如果要做二次开发，先读 sdk/typescript/README.md 跑通本地 API 的鉴权调用，再决定是否接入内部工具。"
+   "先从项目 Releases 页面下载对应平台的 Stable 版本安装，首次启动时等待它下载默认语音模型（英文系统为 Parakeet Unified English）。",
+   "在设置里把快捷键模式设为按住说话或点按开始/停止，然后在编辑器、浏览器、聊天工具各试一次，确认文字能落到光标处，并用 Option-Shift-V（Windows/Linux 为 Ctrl-Alt-V）验证重复粘贴。",
+   "按需在模型选择器里换成适合你语种的模型（中文可试 Qwen3-ASR 0.6B 或 SenseVoice Small），配置 Vocabulary 与 Output 步骤，最后用本地 API 加 TypeScript SDK 跑一次自有工具的接入验证。"
   ],
   "build_ideas": [
-   "基于本地 API 和 TypeScript SDK 做一个团队内部的批量转写服务，把已有的录音文件统一转成带术语替换的文本。",
-   "为特定垂直场景（如医疗口述、法律笔录）写一套 Output 自定义脚本，把听写结果直接格式化成结构化字段。",
-   "把 Vocabulary 与公司内部的术语库或通讯录打通，自动同步人名和项目代号，避免每次手工维护。",
-   "利用按应用/网站配置不同 Output 步骤的能力，为客服、销售等岗位预置多套听写后处理模板。",
-   "在 Annotate 的录屏标注产出之上做二次加工，比如自动生成带旁白字幕的操作手册或培训素材。"
+   "用带鉴权的本地 API 和 TypeScript SDK，把 Hex 的转写接到自己的笔记、工单或命令行工具里，做成专属的语音输入通道。",
+   "编写自定义 Output 脚本步骤，把口述内容自动转成固定模板，例如工单格式、代码注释格式或会议纪要结构。",
+   "针对垂直领域（医疗、法律、内部术语）训练或转换 GGUF 模型，通过「Add model file…」加载，配合 Vocabulary 提升专有名词准确率。",
+   "基于 Annotate 的边说边画录屏能力，做一个自动生成带旁白说明的 bug 报告或产品演示的工具。",
+   "围绕 History 的本地听写记录做二次整理，例如自动归档到知识库或按应用统计输入习惯。"
   ],
   "risks": [
-   "材料中未提及开源许可证，商用或二次分发前必须自行到仓库确认 LICENSE 与模型权重各自的授权条款。",
-   "首次运行需下载语音模型，Cohere Transcribe 被明确描述为「大下载」，磁盘占用和首次启动等待时间需要提前评估。",
-   "部分能力标注为实验性或平台受限：Meetings 仅 macOS lab，Annotate 在 GNOME Wayland 上需要额外开启 Labs 选项。",
-   "默认历史记录只保留 7 天，若有合规留档需求需自行调整或另建存储方案。",
-   "模型清单和 Labs 功能迭代较快，README 中的模型名称与行为可能随版本变化，落地前应固定版本并做回归验证。"
+   "材料中未给出开源许可证信息，商用或二次分发前必须到仓库确认 LICENSE 与模型各自的授权条款。",
+   "首次运行及更换模型需要下载体积不小的模型文件（README 明确 Cohere Transcribe 是 big download），离线或带宽受限环境要先规划。",
+   "Annotate 与 Meetings 属于 Labs 实验功能，Meetings 仅限 macOS，GNOME Wayland 下的 Annotate 还需额外开启 Labs 选项，跨平台能力并不对等。",
+   "README 未说明各模型对硬件（内存、GPU、CPU）的要求与转写延迟，实际体验需在自己的机器上先验证。",
+   "项目处于 star 快速增长期，同时提供 Stable 与自动更新的 Dev 双通道，Dev 通道的稳定性与后续 API/SDK 兼容性需要按版本锁定后再依赖。"
   ],
   "tokens": {
-   "prompt_tokens": 1270,
-   "completion_tokens": 1125
+   "prompt_tokens": 1261,
+   "completion_tokens": 1618
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "b3587ab3a8639c966eb980d15da9124d2fff5a3b5ba7a1ba7345c6275550c811",
-  "readme_sha": "a5fa733257aa788d9df6e4f5b33f8c3e0ca2a835",
+  "hash": "fe7c25b5acdff741b020e8c23cfb2adaf28f25f28318af886d7937ead0ad7e4e",
+  "readme_sha": "1001068bcd70d6c7faebbf393c6c7c7015d7c661",
   "desc_hash": "6e0c61432ef25e0c09636e1ff72b829eb127066504f78943ddee2813c551f4de",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:29:50+08:00",
+  "generated_at": "2026-11-26T08:01:00+08:00",
   "readme_used": true,
   "source_description": "Local voice dictation for mac, windows and linux",
   "language": "Rust",
@@ -1533,51 +1531,52 @@
   "url": "https://github.com/appwrite/appwrite"
  },
  "ashhart/TensorFold": {
-  "one_liner": "用 Zig 写的本地 LLM 推理服务，不装 Python 也能跑",
-  "summary": "TensorFold 是一个用 Zig 编写的 LLM 推理引擎，直接读取模型 checkpoint、对请求做 tokenize，并调用 Metal 或 CUDA kernel 完成推理，对外提供 OpenAI 风格的 HTTP 接口。它的卖点是部署链路极短：Apple Silicon 上一条 brew 命令装好，NVIDIA 机器上解压官方 release 包即可，服务过程不需要 Python 或 MLX 环境。使用方式是先用 tensorfold pull 拉取指定 revision 的 4-bit 权重，再用 tensorfold serve 起服务，然后用 curl 或任意兼容 OpenAI 的客户端请求 /v1/chat/completions。除 chat completions 外，它还提供 completions、Responses 和 Anthropic Messages 接口，并自带 tensorfold chat 命令行对话模式。与常见的 Python 推理栈相比，它的新意在于用单一原生二进制覆盖 Apple 与 NVIDIA 两类硬件，省掉 Python 依赖和虚拟环境这一层。",
+  "one_liner": "用 Zig 写的本地 LLM 推理服务，Mac 和 N 卡上免 Python 直接跑",
+  "summary": "TensorFold 是一个用 Zig 编写的 LLM 推理引擎，直接读取 checkpoint、对请求做 tokenize，并调用 Metal 或 CUDA kernel 完成推理，服务端不需要安装 Python 或 MLX。它提供 OpenAI 风格的 /v1/chat/completions、completions、Responses 以及 Anthropic Messages 接口，还带一个 tensorfold chat 终端客户端。安装方式很轻：Mac 走 Homebrew，Linux 下载预编译压缩包并校验 sha256，模型通过 tensorfold pull 从 Hugging Face 拉取固定 revision 的 4bit 权重。相比常见的 Python 推理栈，它的新意在于用单一 Zig 二进制把「拉模型 + 起服务 + 终端对话」串成一条命令，减少依赖和运行时开销。",
   "audience": [
-   "想在 Mac 或单卡 NVIDIA 机器上跑本地模型、又不想维护 Python 环境的后端工程师。",
-   "需要把本地模型包装成 OpenAI 兼容接口、供内部工具调用的应用开发者。",
-   "在离线或内网环境部署推理服务、对依赖体积和安装步骤敏感的基础设施人员。",
-   "评估原生推理引擎方案、想对比 Python 栈启动与部署成本的技术选型负责人。",
-   "用 Zig 或系统编程语言做 AI 基础设施、想参考其工程实现的开发者。"
+   "在 Apple Silicon Mac 上想跑本地模型、又不想装 Python/MLX 的开发者",
+   "在 NVIDIA GPU 服务器上部署推理、希望减少 Python 依赖栈的运维或推理工程师",
+   "需要本地 OpenAI 兼容端点做离线原型验证的 AI 应用开发者",
+   "关注 Zig 在系统级/高性能场景落地情况的工程师",
+   "要给内部工具接一个可自托管的模型服务、但预算有限的产品经理"
   ],
   "use_cases": [
-   "在 Apple Silicon 笔记本上用 brew 装好后 pull 一个 4-bit 小模型，起服务做本地问答和草稿生成。",
-   "在 NVIDIA 服务器上解压 release 包并起服务，把已有 OpenAI SDK 的 base_url 指向 127.0.0.1:8080 直接复用现有代码。",
-   "用 tensorfold chat MODEL 在终端里一次性起服务、流式对话、退出即停，做模型效果的快速验证。",
-   "利用 Anthropic Messages 兼容接口，把原本调用 Claude 的内部脚本切到本地模型做成本对比测试。",
-   "在无 Python 运行时的精简容器或边缘机器上部署一个只依赖单个二进制的推理端点。"
+   "在 Mac 上用 brew 安装后 pull 一个 4bit 小模型并 serve，给本地应用提供 OpenAI 兼容接口。",
+   "用 tensorfold chat MODEL 一条命令起服务并在终端流式对话，快速对比不同 checkpoint 的输出。",
+   "把现有调用 OpenAI API 的代码只改 base_url 指向 http://127.0.0.1:8080，做离线或内网环境下的功能验证。",
+   "利用 Anthropic Messages 兼容端点，把已有 Claude 客户端或 SDK 接到本地模型上做联调。",
+   "在带 NVIDIA GPU 的 Linux 机器上部署单机推理服务，供内网多个小工具共享调用。"
   ],
   "adoption_steps": [
-   "先在 Mac 上执行 brew install ashhart/tensorfold/tensorfold，或在 Linux 上按 README 下载 v1.3.4 对应架构的 tar.gz 并校验 sha256，确认二进制能正常启动。",
-   "执行 tensorfold pull mlx-community/Qwen3.5-2B-MLX-4bit@93760be4f1f69842a46bc13dbdc0f19e291392a3，再执行 tensorfold serve 同名模型 --name local-model --context 8192，把服务跑起来。",
-   "用 README 里的 curl 请求 /v1/chat/completions 验证链路，再访问 /v1/models 确认服务名，然后把现有 OpenAI 客户端的 base_url 改到 http://127.0.0.1:8080 做一次真实业务请求压测。"
+   "先在 Apple Silicon Mac 上执行 brew install ashhart/tensorfold/tensorfold，再按 README 用固定 revision pull Qwen3.5-2B-MLX-4bit 并 serve --name local-model --context 8192。",
+   "服务起来后用 curl 请求 http://127.0.0.1:8080/v1/chat/completions 发一条测试消息，并访问 /v1/models 确认服务名和可用模型。",
+   "在 Linux + NVIDIA 环境落地前，先核对 glibc ≥ 2.28 与驱动 ≥ R580（CUDA 13.0），再下载 v1.3.5 对应架构压缩包、校验 sha256、解压并把 bin 加入 PATH 后重复上面的 pull/serve 验证。"
   ],
   "build_ideas": [
-   "在它提供的 OpenAI 兼容接口前加一层网关，做多模型路由、鉴权和用量统计，替换掉现有的 Python 推理后端。",
-   "把 tensorfold serve 封装成 systemd 服务或容器镜像，做开机自启、健康检查和日志采集的部署模板。",
-   "基于 tensorfold chat 的终端交互做一个本地知识库问答 CLI，把检索结果拼进 messages 再请求本地端点。",
-   "写一套基准脚本，对比同一模型在 TensorFold 与现有 Python 推理栈上的首 token 延迟和吞吐，产出选型报告。",
-   "针对团队内部工具链做一个模型拉取与版本锁定的封装脚本，把 pull 的 revision 固定写进配置，避免权重漂移。"
+   "基于它的 OpenAI 兼容端点封装一层本地 RAG 或 agent 服务，把检索、工具调用放在引擎之外。",
+   "做一个多后端路由网关：本地 TensorFold 与云端 API 共用同一套 OpenAI 接口，按任务或成本分流。",
+   "把它打包成 IDE 插件或桌面应用的嵌入式推理后端，利用单二进制、无 Python 依赖的特点简化分发。",
+   "在 CI 中用它起一个固定小模型的本地服务，对 prompt 模板和输出解析逻辑做离线回归测试。",
+   "围绕 tensorfold chat 的交互方式做二次封装，做成团队内部的模型对比与评测命令行工具。"
   ],
   "risks": [
-   "GitHub 描述写的是支持 Metal、CUDA 和 Vulkan，但 README 正文只给出 Apple Silicon 和 NVIDIA GPU 的安装路径，Vulkan 支持是否可用、在哪些平台可用，材料无法证实，采用前需自行验证。",
-   "Linux 侧要求 glibc 2.28 以上和 NVIDIA 驱动 R580 以上（CUDA 13.0），驱动版本门槛偏高，老卡或旧驱动的机器可能直接跑不起来。",
-   "README 只演示了 Qwen3.5-2B 一个 4-bit checkpoint，其他模型架构和量化格式的兼容范围材料中没有说明，选型前要确认自己的目标模型是否被支持。",
-   "仓库未在材料中给出开源许可证信息，而 README 明确提示模型权重另有自己的许可，商用或再分发前必须分别核对代码与权重的授权条款。",
-   "项目由个人维护（README 只有个人 Ko-fi 和 X 账号作为支持渠道），且 Linux 安装脚本用 shell 函数把 tensorfold 重定向到 tensorfold-native，说明发布包结构还在调整，长期维护与升级兼容性存在不确定性。"
+   "GitHub 描述里写了 Vulkan，但 README 只给出 Metal 和 CUDA 的安装与运行说明，Vulkan 的实际支持程度证据不足，选型前需自行确认。",
+   "Linux 侧硬性要求 NVIDIA 驱动 R580 以上（CUDA 13.0）和 glibc 2.28 以上，驱动较旧的现有 GPU 集群可能直接无法运行。",
+   "项目 star 数不到 2000、由个人维护（Ko-fi 赞助、单一 X 账号），长期维护节奏和 issue 响应速度没有保障。",
+   "README 明确说明模型权重有各自的许可，商用前必须逐个核对所拉取 checkpoint 的授权条款。",
+   "仓库许可证在给出的 README 节选中没有出现，二次分发或商用集成前需要到仓库确认 LICENSE。",
+   "快速开始只演示了 Qwen3.5-2B 的 4bit 小模型，更大模型的支持范围与吞吐表现材料中未给出，不能默认可直接替换生产推理栈。"
   ],
   "tokens": {
    "prompt_tokens": 1418,
-   "completion_tokens": 1711
+   "completion_tokens": 1874
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "b568ab0c27b6bf0a339204a5077f03411f023d107235ef7cc7e0a9b8577bbd21",
-  "readme_sha": "3f7263be0ce60bc4c9405a2aa457b3fe3df4c63b",
+  "hash": "a76bfee29e351a473dbb88d79d00907560055a8b0b954ea08db0900813d3e0e5",
+  "readme_sha": "a3de58b8cb90a5c3863e79d021239a1156d8f35b",
   "desc_hash": "e1da0c1ff0e583cfb21040ae4584dd7447124c5d721ecc1b32bf483cd195023f",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:30:03+08:00",
+  "generated_at": "2026-11-26T08:01:02+08:00",
   "readme_used": true,
   "source_description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
   "language": "Zig",
@@ -1685,54 +1684,53 @@
   "desc_hash": "ac88268daeaec406d97bbf1dd7fc89f93688416455399e9ccca740eae222d54f"
  },
  "cathrynlavery/diagram-design": {
-  "one_liner": "让编码 Agent 用一句话生成自带品牌配色的单文件 HTML+SVG 图表，替代 Mermaid 的粗糙输出。",
-  "summary": "这是一个面向编码 Agent 的 skill（技能包），安装后 Claude Code、Cursor、Codex、Copilot 等宿主就能按自然语言指令画图，产出是一个自包含的 HTML + SVG 文件，双击即可打开，不依赖渲染服务或外部资源。它内置数十种图表类型（GitHub 描述写 45 种、README 写 52 种），并支持用一条指令抓取你网站的配色和字体，让后续图表统一成你的品牌风格。相比 Mermaid 这类文本转图方案，它的差异点在于强调编辑级排版、无阴影的视觉规范，以及可导入 draw.io、Mermaid、Excalidraw、PlantUML 并导出 PNG/SVG 的互通能力。",
+  "one_liner": "让 AI 编码助手直接吐出可双击打开的单文件 HTML+SVG 图表，不用再忍受 Mermaid 的样式。",
+  "summary": "这是一个面向 AI 编码助手的 Agent Skill，安装后你用自然语言描述需求，助手会先说明选哪种图、怎么画，然后产出一个自包含的 .html 文件，图由内联 SVG 绘制，双击即可在浏览器打开。它内置 52 种图表类型，强调编辑级排版、无阴影，并明确以「不做 Mermaid 那种粗糙输出」为卖点。它还支持从 draw.io、Mermaid、Excalidraw、PlantUML 导入，以及导出 PNG/SVG；并提供 onboarding 流程，抓取你网站的配色和字体，让后续图表统一成你的品牌风格。相比让模型直接写 Mermaid 代码或手搓 SVG，它的新意在于把「图表类型选择 + 品牌一致性 + 单文件交付」固化成一套技能，而不是每次靠提示词碰运气。",
   "audience": [
-   "经常用 Claude Code、Cursor、Codex 写代码，需要顺手产出架构图或流程图的后端/全栈工程师。",
-   "要写技术方案、季度复盘、汇报材料，但不想在 Figma 里手动对齐框线的技术产品经理。",
-   "需要统一对外文档视觉风格、希望图表自动套用官网配色与字体的开发者关系或文档负责人。",
-   "已经在用 Mermaid 但受够了默认样式和布局效果、想换一套更可控输出格式的团队。",
-   "维护内部 Agent 技能库或研发效能工具链、需要评估是否把画图能力纳入标准配置的平台工程师。"
+   "经常要画架构图、时序图、流程图，但不想在绘图工具里手动拖拽的后端/全栈工程师。",
+   "维护技术文档、RFC 或博客，需要图表风格统一且能直接嵌进页面的技术写作者。",
+   "要做象限图、优先级矩阵、路线图的产品经理和项目负责人。",
+   "已经在用 Claude Code、Cursor、Codex、GitHub Copilot 等支持 Agent Skills 的宿主，想扩充其能力的团队。",
+   "需要对外材料保持品牌配色与字体一致的设计师或市场同学。"
   ],
   "use_cases": [
-   "对 Agent 说「画一张我应用的架构图：前端、后端、数据库、Redis 缓存」，直接得到可交付的单文件 HTML。",
-   "用「Q2 项目按影响力与投入做四象限」这类描述生成矩阵图，用于优先级评审会材料。",
-   "生成带 401 刷新 token 的 Bearer 调用时序图，贴进接口文档或技术设计评审。",
-   "执行「Onboard diagram-design to https://yoursite.com」抓取官网配色与字体，让之后所有图表与品牌一致。",
-   "把已有的 draw.io、Mermaid、Excalidraw 或 PlantUML 图导入后重绘，再导出 PNG/SVG 放进幻灯片。"
+   "用一句话让助手画出「前端、后端、数据库、Redis 缓存」的应用架构图，并直接交付一个 html 文件。",
+   "生成一张按影响力和投入划分 Q2 项目的四象限图，用于评审会材料。",
+   "画一张带 401 后刷新 token 的 Bearer 调用时序图，说明鉴权链路。",
+   "执行 onboarding 抓取自家官网的调色板和字体，让之后所有图表自动匹配品牌。",
+   "把已有的 draw.io、Mermaid、Excalidraw 或 PlantUML 图导入重绘，再导出 PNG/SVG 放进文档或幻灯片。"
   ],
   "adoption_steps": [
-   "先在个人项目里跑 `npx skills add cathrynlavery/diagram-design` 安装，然后在 Claude Code 或 Cursor 里用一句架构图需求验证输出是否为单个可双击打开的 HTML 文件。",
-   "用官网或产品站跑一次品牌 onboarding 指令，检查抓取到的配色与字体是否符合预期，再决定是否作为团队默认配置。",
-   "在 Claude Code 中通过 `/plugin marketplace add cathrynlavery/diagram-design` 与 `/plugin install diagram-design@diagram-design` 安装插件版，并到 `/plugin` 的 Marketplaces 里为 diagram-design 打开 Enable auto-update。",
-   "落地前阅读仓库的 LICENSE 与 PRIVACY.md，确认许可条款和该 skill 会向网络发送哪些内容，再决定是否推广到团队。"
+   "先在 Gallery（https://cathrynlavery.github.io/diagram-design/）翻一遍 52 种图型，确认有你要的图，再在项目目录执行 npx skills add cathrynlavery/diagram-design；Claude Code 用户可改用 /plugin marketplace add cathrynlavery/diagram-design 和 /plugin install diagram-design@diagram-design。",
+   "拿一个你已有的系统，用自然语言让助手画一张架构图，双击生成的 .html 检查排版、字体和可读性，确认输出质量符合预期。",
+   "对目标站点执行一次「Onboard diagram-design to https://yoursite.com」拉取品牌配色与字体，然后试一次 PNG/SVG 导出，验证能否接进现有文档或设计交付流程。"
   ],
   "build_ideas": [
-   "把该 skill 接入内部文档流水线，在 CI 中根据 Markdown 里的图表描述自动生成并归档单文件 HTML 图表。",
-   "基于其品牌 onboarding 能力，做一个公司级「图表主题包」，把设计规范里的色板、字体、间距固化成可复用配置。",
-   "针对 draw.io / Mermaid / PlantUML 的导入能力，开发批量迁移工具，把历史文档里的旧图统一重绘成新风格。",
-   "封装一层图表模板库，把常用架构图、时序图、四象限预置成团队模板，减少每次向 Agent 重复描述的成本。",
-   "结合导出 PNG/SVG 的能力，做一个把图表自动嵌入周报、幻灯片或静态站点构建流程的小工具。"
+   "把生成与导出接进 CI，在架构或接口变更时自动重跑图表并提交更新后的 HTML/SVG，避免文档图过期。",
+   "基于 onboarding 的品牌抓取能力，封装一套公司内部的图表模板与设计 token 预设，统一各团队的对外图风格。",
+   "写一个批量迁移脚本，把仓库里存量 Mermaid 或 draw.io 图统一转成这套单文件 HTML+SVG 格式。",
+   "做一个图表评审工具，对两次生成的 SVG 做 diff，让图表变更也能走 code review 流程。",
+   "把导出能力接到静态站点或幻灯片生成流水线，实现「改一句话就重出全套配图」。"
   ],
   "risks": [
-   "图表类型数量在 GitHub 描述（45 种）与 README（52 种）中不一致，说明文档同步存在问题，具体支持范围需以实际试用为准。",
-   "材料中未给出 LICENSE 的具体类型，商用或二次分发前必须自行打开 LICENSE 文件确认条款。",
-   "README 提到 Claude Desktop 的技能上传会被拒绝，说明并非所有宿主都能用，采用前需确认你的 Agent 客户端在支持列表内。",
-   "README 指向 PRIVACY.md 说明该 skill 会发起网络请求，涉及内网或敏感架构图时需先确认发送内容。",
-   "Claude Code 对第三方 marketplace 默认关闭自动更新，需要手动开启，否则容易长期停留在旧版本；同时 README 提示其他名称的插件列表为非官方副本，存在装到仿冒包的风险。"
+   "仓库有 LICENSE 文件，但材料未说明具体许可条款，商用或二次分发前必须先去仓库确认许可证类型。",
+   "README 提到 Claude Desktop 的 skill 上传会被拒绝（该段内容被截断），桌面端安装路径可能不通，需先验证你的宿主是否在支持列表内。",
+   "Claude Code 对第三方 marketplace 默认关闭自动更新，不手动开启就会长期停留在旧版本。",
+   "README 明确提示存在其他名字下的非官方副本，安装时必须确认来源是 cathrynlavery/diagram-design，否则有供应链风险。",
+   "产物是单文件 HTML+SVG，没有可视化编辑器，后续微调只能让助手重跑；同时该 skill 会联网（细节在 PRIVACY.md），企业环境需先核对网络行为。"
   ],
   "tokens": {
-   "prompt_tokens": 1310,
-   "completion_tokens": 1431
+   "prompt_tokens": 1311,
+   "completion_tokens": 1804
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "ca8091208b903d641928fe8e369cbaa410d6f97722a7d92e7a8b5056e2dc473e",
+  "hash": "46e89b2bfe4d054ca984aaef327c0be59cae79f0841438a90b2ef68aac8f8817",
   "readme_sha": "887ac6e6fa0c7874b203a917d012f9a4df867331",
-  "desc_hash": "33d6ac01cf12bb0fb029be641d4a4b8ff524d4a288ea149e580e68972516970c",
+  "desc_hash": "9321fd7a383713293fbbcfd1022e8fa9e56f6309fe6c95829d8c1bd382daae30",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:33:40+08:00",
+  "generated_at": "2026-11-26T08:01:13+08:00",
   "readme_used": true,
-  "source_description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+  "source_description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
   "language": "HTML",
   "url": "https://github.com/cathrynlavery/diagram-design"
  },
@@ -1840,56 +1838,55 @@
   "desc_hash": "e007f4991129a7573749c888398022349d6902b3fab61208eca5f4ba3817f421"
  },
  "debpalash/VoiceStudio": {
-  "one_liner": "在本机跑声音克隆、配音、转写与有声书，替代 ElevenLabs 的开源方案。",
-  "summary": "VoiceStudio 是一个用 Python 写的本地化 AI 语音工作台，把声音克隆、声音设计、视频配音、口述转文字、转写和有声书旁白放在同一个工具里，README 声称支持 646 种语言，并可运行在笔记本、台式机、服务器乃至手机和平板上。它的卖点是「全本地」，即不把音频上传到云端，对应 ElevenLabs 那类 SaaS 语音服务的隐私与订阅成本问题。除开源仓库外，项目还有官网、Release 下载页，以及 VoiceStudio Pro 和 VoiceStudio Cloud 两个商业化入口。README 提供 20 种语言的翻译版本和 Discord 社区，并列出战略赞助商，说明它已有一定的社区与商业运作。材料没有给出模型权重、硬件门槛和基准测试数据，因此「646 语言」和「手机也能跑」的实际效果还需要自行验证。",
+  "one_liner": "在本机离线完成语音克隆、配音、转录和有声书制作，作为 ElevenLabs 的本地替代。",
+  "summary": "VoiceStudio 是一个 Python 编写的本地化 AI 语音工作台，把语音克隆、音色设计、视频配音、口述转写、转录和有声书旁白打包进同一个工具，宣称支持 646 种语言，并可运行在笔记本、台式机、服务器、手机和平板上。它的卖点是「完全本地」，即音频数据不出设备，直接对标 ElevenLabs 这类云端付费 API。项目同时提供免费的 GitHub 版本、付费的 VoiceStudio Pro 和云端版 VoiceStudio Cloud，属于典型的开源核心加商业增值模式。本期新增 5 万多 star、总量超过 10 万，说明传播热度很高，但 README 节选主要是徽章、多语言链接和黑五促销，缺少架构与安装细节，实际成熟度需要自行验证。",
   "audience": [
-   "做播客、有声书或课程旁白，且不希望把原始音源上传到第三方云服务的内容创作者。",
-   "面向医疗、法律、金融等对数据出境敏感行业，需要内网部署语音转写与合成的工程团队。",
-   "要把 TTS、声音克隆能力集成进自家产品的独立开发者或小型 SaaS 团队。",
-   "做多语言内容本地化，需要批量给视频配不同语种音轨的运营与制作人员。",
-   "需要离线转写访谈录音的记者、研究者与会议记录人员。"
+   "需要批量生产旁白和有声书、又不想按字符付云端 TTS 费用的内容创作者与播客团队。",
+   "医疗、法律、金融等对音频数据出境敏感、要求推理全程在内网或本机完成的合规团队。",
+   "做多语言视频本地化、需要给同一段画面配上几十种语言音轨的出海运营团队。",
+   "想把 TTS、克隆、转录能力嵌进自己产品的 Python 开发者与算法工程师。",
+   "需要大量会议、采访录音转文字稿的研究、媒体和咨询从业者。"
   ],
   "use_cases": [
-   "录一段自己的声音样本做克隆，然后批量把长文本稿转成有声书或播客旁白。",
-   "给已有的视频成品生成多语种配音音轨，替代人工找配音演员的流程。",
-   "把访谈、会议、课堂录音在本地跑成文字稿并导出，不走任何云 API。",
-   "用「声音设计」功能凭空生成特定音色（如客服音、旁白音），不需要真人素材。",
-   "在无网络的机器上做口述记录，把口述内容实时转成文字。"
+   "用自己录制的几分钟样本克隆音色，再批量把书稿文本合成整本有声书旁白。",
+   "把一条中文视频的音频轨转录、翻译后用克隆音色重新配音，产出多语言版本。",
+   "把访谈或会议录音直接转录成带时间轴的文字稿，省去人工听写。",
+   "用口述输入替代键盘，把口述内容实时转成文字写入文档。",
+   "为产品演示、课程或广告快速试听不同音色设计，选定后再批量生成正式音频。"
   ],
   "adoption_steps": [
-   "先到 github.com/debpalash/VoiceStudio/releases/latest 下载对应平台的预编译包试跑，若你的平台没有包，再按 README 的 Get started 用 Python 环境从源码安装。",
-   "断网状态下用一段 1 到 3 分钟的中文音频跑完「转写 + 克隆 + 合成」全流程，确认它确实全本地运行、并记录耗时与显存占用。",
-   "用你自己业务中的真实长文本和真实说话人样本做一轮质量对比，重点测中文和多音字表现，再决定是否进入生产。",
-   "在正式集成前核对 LICENSE 文件的具体条款，并区分 GitHub 仓库里的开源部分与 VoiceStudio Pro、VoiceStudio Cloud 的付费功能边界。"
+   "先打开仓库根目录的 LICENSE 和 README 的 Get started 与 documentation 章节，确认许可证类型、支持平台和本地推理的硬件门槛，再决定是否投入。",
+   "从 releases/latest 页面下载对应系统的安装包，或按文档从源码搭建 Python 环境，然后用一段 1 到 2 分钟的自有录音跑通「克隆音色 → 合成一句话」的最小闭环。",
+   "用同一段文本和同一段参考音频，把它与现有云端方案在音质、生成延迟、显存或内存占用上做对比，再判断是否需要购买 Pro 版解锁更多能力。"
   ],
   "build_ideas": [
-   "把它的合成与转写能力封装成命令行工具或批处理脚本，接入现有的内容生产流水线做批量旁白生成。",
-   "做一个「转写、翻译、多语配音」串联的本地化流水线，输入一条视频直接输出多语种音轨和字幕。",
-   "为剪辑软件或字幕工具写插件，把配音生成动作嵌进创作者已有的时间线工作流里。",
-   "针对垂直场景（如客服、有声书、无障碍阅读）预置一套声音设计参数和 Prompt 模板库，做成开箱即用的配置包。",
-   "在企业内网做一层服务化封装（任务队列、权限、审计日志），把它变成团队共用的私有语音中台。"
+   "基于它的转录与克隆接口做一条播客后期流水线，自动完成去噪、转写、剪辑稿生成和补录旁白。",
+   "给企业内部知识库加一层多语言有声化服务，把文档批量转成可离线播放的音频。",
+   "封装成视频剪辑软件的插件，实现字幕识别、翻译、克隆配音一条龙导出。",
+   "在它之上加合规层，对克隆音色做授权登记、使用审计和生成内容水印。",
+   "把本地推理服务容器化，做成内网可部署的语音 API 网关，供多个业务系统调用。"
   ],
   "risks": [
-   "README 里只有 LICENSE 徽章，材料未显示具体许可证类型，商用、再分发或闭源集成前必须打开 LICENSE 原文确认条款。",
-   "项目同时有 Pro 和 Cloud 两个商业产品，需要逐项确认哪些能力真正在开源仓库里、哪些只是商业版入口，避免按开源预期做架构后发现关键功能要付费。",
-   "材料没有给出模型体积、显存或内存门槛和任何基准数据，「646 种语言」「手机平板也能跑」属于项目自述，必须在自己目标硬件上实测后再排期。",
-   "本期新增 5 万余 star、总量超 10 万，增速极快，但社区热度不等于代码成熟度，需要先看 commit 频率、issue 响应和最近一次 Release 时间再判断可维护性。",
-   "仓库挂在个人账号下且 README 以赞助商和社区推广为主，核心维护者集中度较高，长期演进和断更风险需要提前有替代方案或 fork 预案。"
+   "README 节选中 LICENSE 只是一个链接，看不到具体许可证类型，商用或二次分发前必须自行确认授权条款。",
+   "项目同时售卖 Pro 和 Cloud，但节选未说明开源版与付费版的功能边界，可能出现克隆或批量合成等关键能力被放在付费墙后。",
+   "本地推理对 GPU、显存和内存的实际要求节选未给出，不同平台（手机、平板）上的可用性需要用真实设备实测。",
+   "一个月新增 5 万多 star 属于爆发式增长，加上「646 种语言」这类宣传口径，热度不能当作质量与稳定性背书，需用自己的语料验证输出效果。",
+   "README 节选被截断，安装方式、依赖清单和模型下载来源都不明确，Python 依赖冲突和模型体积带来的部署成本需要提前评估。"
   ],
   "tokens": {
-   "prompt_tokens": 1655,
-   "completion_tokens": 1718
+   "prompt_tokens": 1663,
+   "completion_tokens": 1725
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "8e46d51ea852159cc234e70be2ef16b1b027ed76af7b1c20a21b1613e9f1cd34",
-  "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:19:50+08:00",
+  "model_resolved": "deepseek-v4.1-flash",
+  "hash": "91b278322978f7e8bed5f6a8e034204e394e895d08b30c72b177313cbe80c3b0",
+  "readme_sha": "c528f3e802d8518350fc64a1e71793b0152f87be",
+  "desc_hash": "151dd020c7b2405f6a2627c2b8b29844c0d814d64ffd9954f37cbb5380aa9744",
+  "model": "deepseek-v4.1-flash-high",
+  "generated_at": "2026-11-26T08:01:02+08:00",
   "readme_used": true,
   "source_description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
   "language": "Python",
-  "url": "https://github.com/debpalash/VoiceStudio",
-  "readme_sha": "8169321d87ef6c477076296acdae5cd7708f367d",
-  "desc_hash": "151dd020c7b2405f6a2627c2b8b29844c0d814d64ffd9954f37cbb5380aa9744"
+  "url": "https://github.com/debpalash/VoiceStudio"
  },
  "dream-num/univer": {
   "one_liner": "在自家产品里嵌入可扩展的表格与文档编辑内核，不用从零写编辑器",
@@ -1942,51 +1939,51 @@
   "desc_hash": "f14497c03d0a7f2ea9f756667b186d340201d3afd811d8da3381f1a8de77b3b8"
  },
  "elementalsouls/Claude-BugHunter": {
-  "one_liner": "给 Claude Code 装上漏洞挖掘与红队作战手册",
-  "summary": "这是一个面向 Claude Code skills 系统的即插即用技能包，装完后 Claude Code 会按你描述的目标自动加载对应的漏洞挖掘或红队技能，而不需要按名字调用。它把能力分成四层：方法论与红队思维、58 个 hunt-* Web 漏洞技能、企业身份与基础设施（M365/Entra、Okta、vCenter、SSL-VPN、SharePoint、云 IAM）的 2024–2026 CVE 链、以及 triage 验证与报告脱敏交付。内容来自 681 条公开披露报告的模式提炼（其中 433 条单独引用可审计），覆盖 24 类核心漏洞，并附带 Burp MCP 集成与项目文件夹脚手架。相比零散的 prompt 合集，它的新意在于把「检测模式 + payload + 绕过表 + 利用链模板 + VRT 映射 + 证据卫生」打包成有触发条件的结构化技能，并声明在授权红队、众测以及 DVWA、OWASP Juice Shop、Hacker101 等公开靶场上验证过。",
+  "one_liner": "给 Claude Code 装一套按漏洞类目自动触发的挖洞技能包。",
+  "summary": "这是一个面向 Claude Code 技能系统的即插即用技能包，安装后 Claude Code 会按你描述的目标类型自动加载对应的漏洞挖掘或红队技能，不需要按名字调用。它把内容分成四层：方法论与红队思维、58 个 hunt-* Web 漏洞技能（从 681 份公开披露报告中提炼检测模式、payload、绕过表和利用链模板）、企业身份与基础设施攻击矩阵（M365/Entra、Okta、vCenter、SSL-VPN、SharePoint、云 IAM 的 2024–2026 CVE 链），以及 triage 定级、报告撰写与证据脱敏。相比零散收藏的 payload 清单，它的新意在于把「报告模式 → 技能 → 自动触发」串成流水线，并接入 Burp MCP 与 HackerOne MCP，还内置了交战范围与 OOS 申诉、PII 脱敏这类工程化规范。作者称其在授权红队与赏金项目以及 DVWA、OWASP Juice Shop、Hacker101、testphp.vulnweb.com 等公开靶场上验证过。",
   "audience": [
-   "做 Web 渗透测试与外部红队评估的安全工程师，希望把重复的检测思路和 payload 沉淀成可复用资产。",
-   "参与 SRC 或 HackerOne 众测的白帽，需要按漏洞类别快速调出检测模式、绕过表和报告写法。",
-   "负责企业身份与边界设备评估的安全团队，关注 M365/Entra、Okta、vCenter、SSL-VPN 等平台的 CVE 利用链。",
-   "已经在用 Claude Code、想把安全测试流程 Agent 化的研发或安全平台工程师。",
-   "需要评估 AI 编码助手在攻防场景下能力边界的安全产品经理。"
+   "做 Web 漏洞赏金、需要按漏洞类目快速调出检测思路和绕过表的独立研究者。",
+   "承接外部红队或边界打点项目、需要 M365/Entra、Okta、SSL-VPN 等企业平台 CVE 链参考的安全工程师。",
+   "负责漏洞 triage 与定级、需要 VRT 映射和 OOS 申诉话术的应用安全人员。",
+   "写渗透测试报告和红队交付物、需要证据脱敏与结构化模板的交付岗。",
+   "在 DVWA、Juice Shop 等靶场做教学或内部演练的安全培训负责人。"
   ],
   "use_cases": [
-   "在授权靶场或测试环境中描述目标技术栈，让 Claude Code 自动加载对应 hunt-* 技能，逐类跑检测清单和绕过表。",
-   "针对 M365/Entra、Okta、vCenter、SSL-VPN 等边界资产，调用企业平台攻击矩阵梳理 2024–2026 的 CVE 链与拿到凭据后的横向提权路径。",
-   "用 triage-validation 的 7-Question Gate 过滤误报，并按 VRT 口径判定严重性、撰写 OOS 反驳理由。",
-   "在提交报告前用 evidence-hygiene 做 PII 脱敏和证据整理，生成符合众测平台要求的交付物。",
-   "通过 Burp MCP 把 Burp 的请求响应接进对话，让技能基于真实流量做分析与复现。"
+   "在授权靶场或客户资产上，用自然语言描述目标（如「测试一个 SharePoint 站点」），让 Claude Code 自动加载对应 hunt-* 技能并给出检测步骤与 payload。",
+   "对已发现的疑似漏洞做 triage：套用 7-Question Gate 判断是否成立，并按 VRT 给出严重级别。",
+   "针对边界资产梳理 2024–2026 的企业平台 CVE 利用链，规划拿到初始凭据后的横向提权路径。",
+   "撰写赏金报告或红队交付物时，用内置模板做证据整理、PII 脱敏和 OOS 反驳说明。",
+   "通过 Burp MCP 把 Burp 的请求响应接入会话，让技能基于真实流量做分析与验证。"
   ],
   "adoption_steps": [
-   "在 Claude Code 内执行 /plugin marketplace add elementalsouls/Claude-BugHunter，再执行 /plugin install claude-bughunter@elementalsouls，确认 84 个技能与 15 个命令以 claude-bughunter: 前缀加载。",
-   "安装时若不需要读取私有项目，把 HackerOne API 用户名和 token 留空；需要时只填最小权限的只读凭据，并先确认凭据存放位置。",
-   "先在 DVWA 或 OWASP Juice Shop 这类公开靶场上用自然语言描述测试目标，验证技能是否被正确触发、输出是否符合预期，再决定是否用于真实授权项目。"
+   "在 Claude Code 内执行 `/plugin marketplace add elementalsouls/Claude-BugHunter`，再执行 `/plugin install claude-bughunter@elementalsouls`，确认 85 个技能与 16 个命令以 `claude-bughunter:` 命名空间加载。",
+   "首次安装时把 HackerOne API username 和 token 留空，先不接私有项目数据；在本机起一个 DVWA 或 OWASP Juice Shop，用一句自然语言描述目标，验证技能是否被正确自动触发。",
+   "确认可用后再补 Burp MCP 与 engagement 目录脚手架，并在真实项目开始前把授权范围、OOS 清单写进交战目录，确保技能输出的动作不越界。"
   ],
   "build_ideas": [
-   "把 681 条披露报告模式抽成可检索的内部知识库或 RAG 索引，补上仓库中尚未单独引用的那部分来源。",
-   "按团队自己的 VRT 或严重性口径改写 triage-validation 的评级规则，替换成内部漏洞分级标准。",
-   "参照 hunt-* 的写法新增内部特有漏洞类别的技能，例如自研框架的鉴权缺陷或内部云环境配置问题。",
-   "把 evidence-hygiene 的脱敏规则做成独立的报告流水线，接在现有漏洞管理平台提交环节之前。",
-   "将这些技能模板移植到其他支持工具调用的 Agent 框架，脱离 Claude Code 单独运行。"
+   "把团队自己积累的公开披露报告或内部复盘整理成同格式技能，追加到 `hunt-*` 目录，形成私有漏洞知识库。",
+   "针对自家产品线定制 VRT 映射与 OOS 规则技能，让 triage 输出直接对齐内部定级标准。",
+   "在插件外层包一个范围校验钩子，在技能触发前强制比对授权资产清单，避免误打到范围外目标。",
+   "把 24 个漏洞类目的技能映射到内部靶场关卡，做成可自动出题与判分的 AI 辅助安全培训课程。",
+   "基于 engagement 目录脚手架与报告模板，接一条自动生成交付物并做 PII 脱敏的流水线。"
   ],
   "risks": [
-   "文档数字自相矛盾：GitHub 原始描述写 82 skills，README 标题写 84 skills，说明文档与实际内容存在漂移，采用前需自行核对实际加载数量。",
-   "681 条报告模式中只有 433 条被单独引用可审计，其余部分的来源无法逐条核实，用于正式报告时需自行回溯原始披露。",
-   "材料中未给出开源许可证信息，商用、二次分发或嵌入内部平台前必须先确认许可条款。",
-   "运行依赖 Claude Code 环境及其订阅，HackerOne MCP 需要 API 用户名与 token，属于敏感凭据，需明确权限范围与保管方式。",
-   "内容为攻击性工具，且 README 明确限定在授权红队与众测范围内使用，越界使用存在法律与合规风险；同时仓库以 Markdown 技能为主、Python 为辅，材料未提及测试或 CI，工程成熟度需自行验证。"
+   "仓库描述写的是 82 个技能、15 个命令，README 写的是 85 个技能、16 个命令，文档与实际内容存在版本漂移，采用前需以安装后的实际加载结果为准。",
+   "材料中未给出开源许可证信息，商用或二次分发前必须自行到仓库确认 LICENSE，否则存在合规风险。",
+   "这是攻击性安全工具，技能内置真实 CVE 利用链与 payload，只能在明确授权的资产上使用，误用会带来法律与合规责任。",
+   "安装流程会索取 HackerOne API username 与 token，涉及凭据托管，需要确认本地存储方式与团队密钥管理规范后再填写。",
+   "项目由单一作者维护并带赞助商标识，材料未说明测试覆盖与发布节奏，长期维护稳定性和版本兼容性缺乏可验证证据。"
   ],
   "tokens": {
    "prompt_tokens": 1283,
-   "completion_tokens": 1894
+   "completion_tokens": 1852
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "a534e830c7816dfe2088159c2885ef116107cb5eaa9ef7c2d590c329b3351635",
-  "readme_sha": "1ce4a56268c3b5bc505dfd42d86cbbafc68e2800",
+  "hash": "ac8105f5e34dd03cf7af11a6a75aca07665a01fea998b9b6cd3c2857e59a1d20",
+  "readme_sha": "f5c32600baa3e9f56cd4a8bae45d01b8d8978c96",
   "desc_hash": "c819ed58f6475e5e8ebb96475f3e90c3bf39d85ba246a0a96c1fd061d6bae10c",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:31:20+08:00",
+  "generated_at": "2026-11-26T08:01:13+08:00",
   "readme_used": true,
   "source_description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
   "language": "Python",
@@ -2400,52 +2397,51 @@
   "desc_hash": "f46fd57d2a64180e218c49651040d64d4414be5ab5d4d972065535ef1c6a7148"
  },
  "heygen-com/hyperframes": {
-  "one_liner": "用 HTML/CSS/JS 写页面，直接渲染成确定性 MP4 视频。",
-  "summary": "HyperFrames 是 HeyGen 开源的 AI 视频编辑器与渲染框架，核心能力是把 HTML、CSS、JavaScript、媒体素材和可 seek 的动画转成确定性的 MP4 视频。它提供三种用法：本地 CLI、在 Claude Code / Codex / Cursor 等 AI 编码代理里通过 skills 调用、以及作为托管式创作流程背后的渲染内核，且不要求使用 React。相比传统「时间轴 + 专有工程文件」的视频工具，它把视频工程还原成前端工程师熟悉的 Web 技术栈，因此改动可以精确到帧，也天然适合交给 agent 生成和修改。仓库标注 Apache 2.0，同时提供桌面端应用与在线文档、示例和区块目录。",
+  "one_liner": "用 HTML/CSS/JS 写页面，直接渲染成确定性 MP4，让 Agent 也能做视频。",
+  "summary": "HyperFrames 是 HeyGen 开源的 AI 视频编辑器与渲染框架，采用 Apache 2.0 许可，核心能力是把 HTML、CSS、JavaScript、媒体素材和可 seek 的动画转换成确定性的 MP4 视频。它提供 CLI 本地运行，也能以 skills 形式接入 Claude Code、Codex、Cursor 这类编码 Agent，还可以作为托管式创作流程背后的渲染内核，并且不要求使用 React。相比传统「时间轴 + 专有工程文件」的视频工具，它把视频工程还原成前端工程师熟悉的网页技术栈，产物可以精确到帧地修改，比如只改标题大小、剪辑节奏或字幕。",
   "audience": [
-   "前端工程师：想把已有的 HTML/CSS 动画能力直接产出成视频文件，而不想学新的时间轴工具。",
-   "使用 Claude Code、Codex、Cursor 的开发者：希望让编码代理直接生成可渲染的视频工程。",
-   "需要批量出片的内容与营销团队：想把模板化的短视频、数据图表视频做成可重复执行的流水线。",
-   "SaaS 产品团队：想在自己的产品里嵌入「文本/网页转视频」的渲染能力，而不是自研渲染管线。",
-   "数据可视化与报表方向的产品经理：想把图表、看板内容定期导出成视频形式分发。"
+   "需要批量、模板化产出视频的工程团队，希望用代码而不是手工剪辑来控制画面。",
+   "已经在用 Claude Code、Codex、Cursor 做自动化的开发者，想把「生成视频」接进现有 Agent 工作流。",
+   "前端工程师，手里已有网页动效或数据可视化，想直接导出成视频而不重做一遍。",
+   "产品与市场团队，需要可反复微调（改标题、改节奏、换字幕）而不是推倒重来的视频项目。",
+   "想把视频渲染能力嵌进自家产品的团队，寻找可自托管的渲染内核。"
   ],
   "use_cases": [
-   "把一份写好的 HTML 动画页面通过 CLI 渲染成 MP4，用于产品发布或社媒投放。",
-   "在 Claude Code 或 Cursor 里挂载 skills，让代理根据一句描述生成视频工程并迭代修改标题大小、剪辑节奏或字幕。",
-   "基于 catalog 里的区块（如 data-chart）拼装模板，批量生成结构相同、数据不同的视频。",
-   "对已有视频做 remake：替换文案、语言或画面素材，产出多语言或多渠道版本。",
-   "把渲染内核接入自有后台，让运营在网页端提交素材后自动出片，无需本地装剪辑软件。"
+   "用 HTML/CSS 写一段数据图表动画，通过 CLI 渲染成带旁白的周报或财报视频。",
+   "把一句视频描述交给编码 Agent，让它生成 HyperFrames 工程并直接渲染出成片。",
+   "拿一段已有视频做 remake，在保留结构的前提下替换文案、配色与字幕。",
+   "在 CI 流程里用固定模板批量渲染多语言、多尺寸的营销素材。",
+   "参考 catalog 里的 data-chart 等 block，拼装出可复用的视频片段库。"
   ],
   "adoption_steps": [
-   "先打开官方 Quickstart（hyperframes.heygen.com/quickstart）跑通一个最小示例，确认本机 Node.js 环境与渲染输出符合预期。",
-   "在项目里安装 npm 包 hyperframes，用 CLI 渲染一个自己写的 HTML 动画页面，验证输出 MP4 的帧率、时长与画面一致性。",
-   "如果要接入 AI 编码代理，按 skills.sh/heygen-com/hyperframes 的说明在 Claude Code 或 Cursor 中配置 skill，再用一句自然语言指令做一次端到端改动测试。",
-   "对照 catalog 中的区块（如 data-chart）评估可复用程度，决定是直接拼装还是自建模板层。"
+   "先打开官方 Quickstart（hyperframes.heygen.com/quickstart），确认所需的 Node.js 版本与 CLI 安装方式，跑通一个最小示例。",
+   "从 npm 安装 hyperframes 包（npmjs.com/package/hyperframes），用自己写的一段 HTML + CSS 动画渲染出 MP4，记录耗时并检查多次渲染结果是否一致。",
+   "如果要给 Agent 用，把官方 skills 接入 Claude Code、Codex 或 Cursor 并复现一次「描述→工程→渲染」的完整链路；如果要产品化，先核对 Apache 2.0 条款与 HeyGen 商业 Studio 的功能边界。"
   ],
   "build_ideas": [
-   "基于 catalog 区块封装一套企业品牌模板库，把字体、配色、片头片尾固化成可参数化的组件。",
-   "做一个「数据源到视频」的服务：定时拉取报表数据，填充图表区块并自动渲染成周报视频。",
-   "为内部 agent 平台开发视频生成 skill，把自然语言需求转成 HTML 工程再调用渲染，形成闭环。",
-   "在渲染层之上加一层任务队列与存储管理，做成多租户的批量出片后端。",
-   "结合 remake 能力做本地化流水线：同一份工程批量替换文案与配音，输出多语言版本。"
+   "基于 catalog 的 block 机制扩展一套自有组件库，比如品牌字幕条、转场、图表模板，供团队复用。",
+   "把 CLI 封装成带任务队列的服务端渲染 API，做成按模板批量出片的内部或 SaaS 服务。",
+   "为特定领域写专用 Agent skill，把「结构化数据 → 脚本 → HTML 工程 → MP4」的流程固化成一条命令。",
+   "做一个面向非工程师的轻量编辑前端，底层调用 HyperFrames 渲染，上层只暴露可调参数。",
+   "接入发布流水线，每次版本发布自动根据 changelog 渲染一段更新说明视频。"
   ],
   "risks": [
-   "README 节选被截断，只有框架部分明确标注 Apache 2.0，桌面端应用与托管服务的许可和收费模式在材料中无法确认，商用前需自行核实。",
-   "渲染所需的底层依赖（浏览器内核、ffmpeg、Node 版本等）未在节选中列出，部署到 CI 或容器环境前需要实测确认。",
-   "材料只给出 star 数（本期新增 22380），没有 release 记录、issue 响应速度或版本稳定性信息，生产采用前应查证维护节奏与破坏性变更历史。",
-   "官方宣称输出是 deterministic MP4，但跨机器、跨字体环境是否完全一致需要自己跑对比测试，尤其是涉及自定义字体的场景。",
-   "项目与 HeyGen 商业产品线绑定，托管式创作流程和在线文档可能随产品迭代调整，深度依赖其托管服务存在迁移成本。"
+   "项目由 HeyGen 这家商业公司主导，README 明确区分了开源框架与托管式创作流程，采用前需确认哪些能力只在商业 Studio 里提供，避免按开源能力做规划。",
+   "材料中没有给出渲染性能、并发能力与长视频支持的量化数据，需要自己压测目标时长与分辨率下的耗时。",
+   "本期新增 22380 star 说明关注度极高，但材料未体现 issue 响应速度、版本稳定性与破坏性变更策略，落地前应查看 release 记录与近期提交。",
+   "运行依赖 Node.js 与浏览器渲染栈，在无头 CI 环境下的字体、媒体编解码与输出一致性需要自行验证。",
+   "README 在「Three ways to use it」表格处被截断，skills 与 CLI 的具体用法未展示，动手前必须读完整官方文档，不能只按仓库首页判断。"
   ],
   "tokens": {
-   "prompt_tokens": 1262,
-   "completion_tokens": 1641
+   "prompt_tokens": 1268,
+   "completion_tokens": 2108
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "335a46cd9fa3af95d546af4d8d13f6b210940b62c3f501290b6aa0c0a1e73574",
-  "readme_sha": "c1712141abd3b94426fd29eb00145b0bbd493167",
+  "hash": "4f4c34c12c106d86a5da6f0fed8b28cc064f9cd2d905c730680cb0406dc85a7b",
+  "readme_sha": "f56f244cda088cac4a3a9d7888ceb893ffe443e2",
   "desc_hash": "7f544d7f6ef5cf24fc9b488e07c1affa5da8770e5ea25c36ae409a523e1dec91",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:28:50+08:00",
+  "generated_at": "2026-11-26T08:01:03+08:00",
   "readme_used": true,
   "source_description": "Write HTML. Render video. Built for agents.",
   "language": "TypeScript",
@@ -2644,7 +2640,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "af33d0d5e7d9957c7c8982503bf2309837a278bfa1ce8c5ea74e5896c15cf95d",
-  "readme_sha": "1ef24b89c323e0de3a864999cef5d389e5480780",
+  "readme_sha": "3cc81b2340961e3a927de6556729ab93c7031e52",
   "desc_hash": "4c40d1a999ee704009c182f2fc06546446c6bb9c02c5352f16c442115c31fa1f",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:31:15+08:00",
@@ -3560,7 +3556,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "808d936d18aca5ef69d48a35e5e8cc3fac23ae585d21f7d569db84529262af33",
-  "readme_sha": "af832f73a9512a8576ace97943ef1358cea06901",
+  "readme_sha": "ecc7afce6f7035768c15b0bcc52c84c640e408eb",
   "desc_hash": "4318e635c80d41596d6764aa386e89f29be115a64e317aceab35846dc8458203",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:31:53+08:00",
@@ -3867,7 +3863,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "51db0404dcfa3f345f7d310dab928152e42c855c47063a2edc73ba0a978ed01a",
-  "readme_sha": "6851f40887dde1bc69aa949baf881bc57e95c679",
+  "readme_sha": "0d29875f83bb416710485df7dfff7141daafb350",
   "desc_hash": "53ebb0746e981e3f0d31a31cbf2a4cda48403a5943ba7e06598434d57a5ab19a",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:29:13+08:00",
@@ -3877,55 +3873,55 @@
   "url": "https://github.com/tashfeenahmed/freellmapi"
  },
  "thedotmack/claude-mem": {
-  "one_liner": "让你的编码 Agent 记住上次会话做过什么，自动把相关上下文带进新会话。",
-  "summary": "claude-mem 是一个 TypeScript 编写的记忆层，作用在编码 Agent 与模型之间：会话中捕获 Agent 的操作记录，用 AI 压缩成精简记忆，在后续会话开始时把相关片段注入进去。按 README 描述，它面向 Claude Code、OpenClaw、Codex、Gemini、Hermes、Copilot、OpenCode 等多个 Agent 客户端，而不是只绑定单一工具。它的新意在于把「跨会话持久记忆」做成可在多个 Agent 之间复用的通用层，而非某个 IDE 的内置功能；但材料未给出压缩策略、存储后端与检索方式的细节，具体实现优劣无法据此判断。",
+  "one_liner": "让编码 Agent 跨会话记住上下文，自动压缩历史并回注相关记忆。",
+  "summary": "claude-mem 是一个用 TypeScript 写的持久记忆层，解决编码 Agent 每次新会话都从零开始、忘掉上次进展的问题。按仓库描述，它会捕获 Agent 在会话中的操作内容，用 AI 压缩成记忆，再在后续会话中把相关上下文注入回去。它的卖点是不绑定单一工具，宣称同时支持 Claude Code、Codex、Gemini、Copilot、OpenCode 等多个 Agent 客户端。README 节选主要是多语言文档入口和标语，没有暴露安装命令、存储方案和压缩策略细节，因此具体实现质量需要看仓库正文与 docs 才能判断。",
   "audience": [
-   "长期用 Claude Code 或 Codex 做同一项目、反复向 Agent 复述项目背景的工程师。",
-   "维护多仓库、多分支，希望 Agent 保留历史决策与踩坑记录的团队技术负责人。",
-   "同时试用多个编码 Agent、不希望记忆被单一厂商锁定的技术选型顾问。",
-   "做 Agent 工具链集成、需要现成记忆模块的开发者。",
-   "评估 AI 编码工作流自动化的产品经理。"
+   "每天用 Claude Code 或 Codex 等 CLI Agent 写代码、经常跨天接续同一任务的工程师。",
+   "同时混用多个 Agent 工具、苦于上下文无法在它们之间流转的开发者。",
+   "想给自研 Agent 或内部平台补一层记忆能力的后端/平台工程师。",
+   "需要评估「Agent 记忆」这类方案是否值得引入的技术负责人和产品经理。",
+   "对 Agent 会话留痕、复盘和知识沉淀有需求的团队。"
   ],
   "use_cases": [
-   "在项目里开启后照常写代码，下次打开会话时无需重新解释架构与约定。",
-   "让 Agent 在修复旧 bug 时自动调出此前失败过的尝试，避免重复走弯路。",
-   "跨多个仓库工作时保留统一的技术偏好与代码风格记忆。",
-   "在 Claude Code 与 Codex 之间切换时共享同一份项目上下文。",
-   "为团队新成员提供带历史上下文的 Agent 会话，缩短熟悉项目的时间。"
+   "跨天或跨周接续一次重构：新开会话时自动带回上次改到哪、为什么这么改。",
+   "把项目约定、历史决策和踩过的坑沉淀成记忆，减少每次重复解释背景。",
+   "在 Claude Code 与 Codex 等不同 Agent 之间切换时，复用同一份会话记忆。",
+   "回看某段时间内 Agent 做过哪些操作，用于复盘或排查误改。",
+   "为团队内部自研 Agent 接入一层可复用的记忆读写能力。"
   ],
   "adoption_steps": [
-   "先读 README 与 docs/i18n/README.zh.md 的中文文档，确认它对你所用 Agent 的接入方式和前置依赖。",
-   "在一个非关键的个人仓库上按文档安装，跑一次完整会话后再开新会话，验证注入的上下文是否准确有用。",
-   "检查它落盘的数据位置与内容，确认是否包含密钥、内网地址等敏感信息，再决定是否推广到团队仓库。"
+   "先打开仓库里的 docs/i18n/README.zh.md 中文文档，确认支持矩阵、前置依赖（Node 版本、是否需要模型 API Key）和记忆存储位置。",
+   "挑一个不敏感的个人项目，按 README 安装章节完成安装并跑一次完整会话，然后检查生成的记忆内容和下次会话实际注入的内容是否符合预期。",
+   "确认数据落盘路径与是否外发后，再决定是否在团队仓库启用，并把记忆目录加入 .gitignore 等忽略规则。"
   ],
   "build_ideas": [
-   "为团队封装统一的记忆配置模板，固定压缩粒度、保留时长与敏感信息过滤规则。",
-   "把记忆库接到内部知识库或工单系统，让 Agent 的上下文带上需求单与事故复盘。",
-   "基于其捕获的会话数据做开发者效率与重复劳动分析看板。",
-   "为尚未被官方支持的 Agent 客户端编写适配层，扩展兼容列表。",
-   "在记忆注入环节加一层权限校验，实现按人、按仓库隔离的上下文访问。"
+   "基于它的记忆存储做团队共享记忆库，让多个成员共用同一份项目上下文。",
+   "给记忆层加一个可视化检索与审计面板，能查、能删、能标注哪条记忆被注入过。",
+   "写一个脱敏插件，在记忆写入前过滤密钥、内网地址等敏感内容。",
+   "把记忆读写接口对接到自研 Agent 框架，做成可替换的通用记忆后端。",
+   "做一套记忆质量评估工具，对比注入记忆前后的任务完成率和 token 消耗。"
   ],
   "risks": [
-   "材料只给出 README 节选，缺少安装方式、存储后端与配置项细节，实际接入成本需要自行验证。",
-   "自动捕获会话内容意味着代码与对话会被写入本地或外部存储，压缩环节是否调用第三方模型 API 在材料中未说明，需先确认数据流向。",
-   "声称兼容 Claude Code、Codex、Gemini 等十余个 Agent，但材料未展示各客户端的适配成熟度，非 Claude Code 场景可能需要额外调试。",
-   "项目 star 增长很快而材料未提供发布版本、测试覆盖与 issue 处理情况，稳定性和长期维护状态证据不足。",
-   "记忆一旦被错误压缩或注入过期信息，可能误导后续会话，需要确认是否支持查看、编辑与清除已有记忆。"
+   "README 节选只有徽章和多语言链接，没有安装命令、架构说明和依赖清单，实际可用性必须自己跑一遍验证。",
+   "宣称「捕获 Agent 会话中的一切」，意味着代码、路径甚至可能出现的密钥会被持久化，采用前必须确认存储位置和是否上传到外部服务。",
+   "记忆压缩依赖 AI 调用，会带来额外的 token 成本和会话延迟，且压缩本身有信息丢失风险，需要实测注入内容的准确度。",
+   "本期新增 1.7 万 star 的增长速度极快，需确认 issue 响应速度和发版节奏，避免踩到早期项目的稳定性坑。",
+   "仓库存在 LICENSE 文件但节选未显示具体许可类型，商用或二次分发前需自行确认授权条款；多 Agent 兼容的宣称也需要逐个客户端验证。"
   ],
   "tokens": {
-   "prompt_tokens": 1754,
-   "completion_tokens": 806
+   "prompt_tokens": 1760,
+   "completion_tokens": 1705
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "f99962582dbebe1b560e720f75f5c07afdf594698f0b82d99fa041543303a283",
-  "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:19:34+08:00",
+  "model_resolved": "deepseek-v4.1-flash",
+  "hash": "3f99f1faa5b5edf2c6774eabf237d8a15f3d90b06edcfaa7751b18c57bdf73f6",
+  "readme_sha": "a68e38c4f72f287caa040a0202429a8c1f4c1f3b",
+  "desc_hash": "8e71d54bc44f2a50fa7a71dbc1d45de687258297c4384b412a3445c2e01aeafa",
+  "model": "deepseek-v4.1-flash-high",
+  "generated_at": "2026-11-26T08:01:02+08:00",
   "readme_used": true,
   "source_description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
   "language": "TypeScript",
-  "url": "https://github.com/thedotmack/claude-mem",
-  "readme_sha": "574f0db72408ace0bc1f64cf346d93ee97475696",
-  "desc_hash": "8e71d54bc44f2a50fa7a71dbc1d45de687258297c4384b412a3445c2e01aeafa"
+  "url": "https://github.com/thedotmack/claude-mem"
  },
  "toeverything/AFFiNE": {
   "one_liner": "把文档、白板和数据库融进同一块画布的开源知识库，可自托管、数据留在本地。",

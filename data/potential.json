@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T12:30:52+08:00",
+ "generated_at": "2026-11-26T08:01:19+08:00",
  "method": "score = 100 × 体量空间 × 新鲜度 × (0.5×涨幅分 + 0.35×增量分 + 0.15×连续在榜分)；排除 star > 150,000 的头部与单期新增 < 200 的噪音",
  "candidate_count": 36,
  "excluded_count": 5,
@@ -121,25 +121,6 @@
    ]
   },
   {
-   "full_name": "mjmirza/app-store-compliance",
-   "score": 87.0,
-   "stars_period": 928,
-   "stars_total": 5842,
-   "growth": 0.1888,
-   "language": "Shell",
-   "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
-   "periods": [
-    "daily"
-   ],
-   "streak": 6,
-   "reasons": [
-    "本期 +928 star，相当于存量的 18.9%",
-    "刚进榜单，还没被反复曝光",
-    "体量仅 5,842 star，向上空间大",
-    "连续 6 期在榜，热度不是一次性"
-   ]
-  },
-  {
    "full_name": "pookjw/HermesEnabler",
    "score": 85.4,
    "stars_period": 461,
@@ -155,6 +136,24 @@
     "本期 +461 star，相当于存量的 23.6%",
     "刚进榜单，还没被反复曝光",
     "体量仅 2,416 star，向上空间大"
+   ]
+  },
+  {
+   "full_name": "dream-num/univer",
+   "score": 80.3,
+   "stars_period": 6436,
+   "stars_total": 31355,
+   "growth": 0.2583,
+   "language": "TypeScript",
+   "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+   "periods": [
+    "weekly"
+   ],
+   "streak": 1,
+   "reasons": [
+    "本期 +6,436 star，相当于存量的 25.8%",
+    "刚进榜单，还没被反复曝光",
+    "单期绝对增量超过 2,000，属于爆发型"
    ]
   }
  ]
