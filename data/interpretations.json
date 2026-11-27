@@ -97,7 +97,7 @@
   "source_description": "Chrome DevTools for coding agents",
   "language": "TypeScript",
   "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
-  "readme_sha": "b957bc13f9bbb54da61c581c46f2348799cce672",
+  "readme_sha": "9f9a0ad37bb7b454e2ae14c0f253dfd8e66ce6d2",
   "desc_hash": "7499743e168dc03b321c08a6c37854441f82f99df1d33e83d271ddaef13238fd"
  },
  "CopilotKit/OpenBot": {
@@ -148,7 +148,7 @@
   "source_description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
   "language": "TypeScript",
   "url": "https://github.com/CopilotKit/OpenBot",
-  "readme_sha": "29218b420633474a386a60dcd74a4a7b77628e45",
+  "readme_sha": "683102f17b57604573f9a9a70884fc86373c1004",
   "desc_hash": "04f74bb3242c6dc60cdf10f2974f246afbd4a57027defb9838b674389da8cb37"
  },
  "D4Vinci/Scrapling": {
@@ -713,49 +713,51 @@
   "desc_hash": "ac7126abad317d3a764843b63f350027e482aafd6fa7c3794a9300110eb4d77a"
  },
  "Tencent/LoopForge": {
-  "one_liner": "把编码 Agent 编排成带人工审批的标准化交付流水线，自托管运行。",
-  "summary": "LoopForge 是腾讯开源的自托管工作空间，让你在聊天里把需求交给 Main Bot，它按需拉起 Docker 沙箱、检出代码仓库、把任务分派给不同项目角色，最后开出 PR。稳定下来的做法可以固化成 SOP，由引擎按顺序执行 Agent、脚本、人工审批和子 SOP 节点，每个节点跑在自己的沙箱里并留下产物与日志。它本身不提供模型能力，而是套在 CodeBuddy、Codex、Claude Code、OpenCode、Cursor CLI 等编码 Agent CLI 外面，补齐角色、沙箱、检查点和历史记录。和直接用 Agent CLI 相比，新意在于把「人怎么审、流程怎么复用、需求怎么追溯」做成了可编排、可回退的基础设施，并以 MIT 许可跑在自有环境里。",
+  "one_liner": "把 Codex、Claude Code 等编码 Agent 编排成带人工审批的可复用交付流水线。",
+  "summary": "LoopForge 是腾讯开源的自托管工作台，让团队用编码 Agent 交付软件：在聊天里向 Main Bot 描述需求，它会拉起 Docker 沙箱、检出仓库、把任务分派给项目角色，最后开出 PR。它把跑通的做法固化成 LOOP——由 Agent 节点、脚本节点、人工审批门和子 LOOP 组成的有序流程，下次同类需求按同一路径交付。底层实际干活的是 CodeBuddy、Codex、Claude Code、OpenCode、Cursor CLI 等现成 CLI，LoopForge 补上的是角色、沙箱、检查点与历史记录。与直接用 Agent CLI 相比，新意在于把「一次性对话」变成可复用、可审批、可回溯到需求并计入成本报表的交付流程，且全部跑在自己的基础设施上。",
   "audience": [
-   "想把「需求到 PR」的固定交付流程沉淀成模板的平台工程或 DevOps 团队。",
-   "需要为编码 Agent 的输出加上人工审批环节、又不愿把代码送到第三方 SaaS 的研发负责人。",
-   "同时使用 CodeBuddy、Codex、Claude Code 等多款编码 Agent CLI、希望统一调度和审计的团队。",
-   "要给内部编码助手做本地化编排与工作流扩展的工具链开发者。"
+   "研发效能或平台工程团队，想把编码 Agent 从个人玩具变成团队级标准流程。",
+   "技术负责人，需要在不放弃人工审批的前提下引入 Agent 写代码。",
+   "已在同时使用 Codex、Claude Code 等多个 Agent CLI、苦于没有统一编排层的工程师。",
+   "有代码不出内网要求的团队，需要自托管而非 SaaS 形态的 Agent 工作台。",
+   "想把需求、变更、成本三者串起来做度量的研发管理者。"
   ],
   "use_cases": [
-   "在聊天里描述一个缺陷或小需求，让 Main Bot 拉起沙箱改代码并直接开 PR/MR。",
-   "把「需求分析 → 编码 → 人工审批 → 出 PR」的固定节奏存成 SOP，之后同类需求按同一套节点重复执行。",
-   "在 SOP 里设置人工审批节点，由负责人确认后再继续，或把某一步退回指定节点重跑。",
-   "用同一套需求和产物记录，追溯每次由聊天或由 SOP 产生的变更及其成本报告。"
+   "把「需求评审→编码→人工审批→开 PR」固化成一条 LOOP，之后同类需求重复执行。",
+   "在聊天里让 Main Bot 拉起沙箱做探索性修复，满意后再沉淀成正式 LOOP。",
+   "在关键节点设置人工审批门，审批不通过就把任务打回指定步骤重跑。",
+   "用脚本节点把内部 lint、测试、构建命令接进 Agent 交付链路。",
+   "按需求维度统计每个变更的交付情况与 Agent 成本。"
   ],
   "adoption_steps": [
-   "先按 README 的 Quick start 在一台装了 Docker 的测试机上把服务自托管起来，并只接入一个编码 Agent CLI 的凭证，验证沙箱能检出仓库。",
-   "用一个低风险的小需求走「Chat with Main Bot」路径，确认它能拉起沙箱、调用角色并开出 PR，同时观察 token 与时间成本。",
-   "把这次跑通的流程保存为 SOP，加一个人工审批节点后重跑一遍，确认审批、退回和重试行为符合团队要求，再推广到真实需求。"
+   "先读 README 的 Quick start 与 docs 目录，确认 Docker 环境要求和支持的 Agent CLI 清单，再决定是否试用。",
+   "准备至少一个编码 Agent CLI 的账号与凭据（如 Codex 或 Claude Code），按文档在本地或测试机启动 LoopForge 服务。",
+   "用一个低风险的小仓库跑通「聊天提需求→沙箱执行→开 PR」的完整链路，再尝试把流程保存成第一条 LOOP 并加入人工审批门。"
   ],
   "build_ideas": [
-   "编写自定义 SOP 节点，把企业内部审批系统或工单系统接入人工审批环节。",
-   "为团队自研或未内置的编码 Agent CLI 写适配层，接入统一的角色与沙箱体系。",
-   "把每个节点的产物和日志接到内部可观测平台或成本系统，做按需求的交付与花费看板。",
-   "与 Jira、内部需求平台对接，让需求的创建、状态流转和 PR 自动关联。",
-   "把人工审批节点接到企业 IM 的卡片消息上，实现聊天内一键通过或退回指定步骤。"
+   "编写自定义脚本节点，把公司内部的 CI、静态扫描或发布流水线接进 LOOP。",
+   "把人工审批门对接企业 IM 或工单系统，实现不登录 LoopForge 也能审批和打回。",
+   "基于需求与节点日志数据做二次开发，产出团队级的 Agent 交付与成本看板。",
+   "沉淀内部项目角色库和 LOOP 模板，做成团队可复用的交付规范包。",
+   "适配内部代码托管（如自建 GitLab）与私有模型网关，替换默认的 Agent CLI 调用路径。"
   ],
   "risks": [
-   "README 把 Local 模式标注为 Legacy，已采用 Local 的团队需要确认到新架构的迁移路径，材料中未见迁移说明。",
-   "运行效果强依赖 CodeBuddy、Codex、Claude Code 等第三方 Agent CLI，任一 CLI 的认证方式或接口变化都会直接影响流程。",
-   "项目处于早期热度阶段（本期新增 423 star、仅出现在 daily 榜），材料未提供版本与发布节奏信息，SOP 定义和接口稳定性证据不足。",
-   "自托管意味着沙箱隔离、凭证保管、代码仓库访问权限和网络出口都要自行负责，安全边界需自行加固。",
-   "Agent 调用会产生模型费用，材料只提到有交付与成本报告，未见配额或限额机制的说明，规模化前需自行评估。"
+   "项目仍处早期：累计 star 约 1582，README 中 Local 工作流已被标注为 Legacy，说明接口和形态可能还在调整，升级会有迁移成本。",
+   "强依赖十余个第三方编码 Agent CLI，这些 CLI 的登录方式、参数和额度策略一旦变化，会直接影响可用性，且需要各自付费账号。",
+   "自托管意味着要自己维护 Docker 沙箱、凭据与网络出网策略，Agent 在沙箱内执行代码本身就是需要评估的安全面。",
+   "README 声称 MIT 许可，但材料只给了 LICENSE 链接未给内容，商用前需实际打开 LICENSE 文件确认。",
+   "材料中 README 被截断，缺少部署资源要求、并发规模、版本发布节奏与社区活跃度的信息，无法据此判断生产可用性。"
   ],
   "tokens": {
-   "prompt_tokens": 1348,
-   "completion_tokens": 1753
+   "prompt_tokens": 1350,
+   "completion_tokens": 1468
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "1467fbf90c9e8ea99700ec24f66ef14a1c9e6dac6dded6f7782483baf526186b",
-  "readme_sha": "d465ff9e9b4dbbd77dea869b7ddc24b1fd9768fe",
+  "model_resolved": "deepseek-v4.1-flash",
+  "hash": "d344a05d7e1b7dac6079f2332504874795f8899fca0572de2474249a71ecae64",
+  "readme_sha": "c684de46cd7fb3a3391a4bc8b751e118b17148d1",
   "desc_hash": "9d93e108a4393f2ba77830789baf8e62ee6a354f7517bc3ae3ec33699ffced3d",
-  "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-19T08:00:59+08:00",
+  "model": "deepseek-v4.1-flash-high",
+  "generated_at": "2026-11-27T08:00:54+08:00",
   "readme_used": true,
   "source_description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
   "language": "Go",
@@ -807,7 +809,7 @@
   "source_description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
   "language": "Python",
   "url": "https://github.com/The-PR-Agent/pr-agent",
-  "readme_sha": "5ae64795bf57565830ff4ab24034773e9df293c1",
+  "readme_sha": "6fc5253ad1a9f12a87007af9920430ef425bfad4",
   "desc_hash": "d16f061a222496442e38653e803c83f650cc41914492876a0aff1aa05c22a49c"
  },
  "TheAlgorithms/Java": {
@@ -913,51 +915,49 @@
   "url": "https://github.com/Tracer-Cloud/opensre"
  },
  "XiaoYouChR/Ghost-Downloader-3": {
-  "one_liner": "一个应用搞定 HTTP、BT、视频站与网盘镜像下载，弱网也能跑满带宽。",
-  "summary": "Ghost-Downloader-3 是用 Python 写的跨平台下载器，把 HTTP、Magnet/BT、FTP、M3U8、MPEG-DASH、eD2k 以及 YouTube、Bilibili、GitHub、HuggingFace 的下载收进同一个客户端。它的差异点在于弱网优化：智能分块且不需要合并文件、自动探测带宽，并声称使用真实浏览器的 TLS 指纹来规避反爬拦截。配套浏览器扩展可以嗅探页面上的所有媒体并提供下载按钮，认证状态会带到桌面端，省去复制链接。它还提供 aria2 兼容的 RPC API，并支持下载中途修改 URL、请求头或代理，Android 端支持直播 M3U8 录制与后台下载。",
+  "one_liner": "一个 Python 写的下载器，主打用一个工具覆盖你日常零散的各类下载需求。",
+  "summary": "Ghost-Downloader-3 是一个用 Python 开发的下载工具，仓库自述为「The only downloader you need」，定位是替代用户手头多个下载软件的集大成式客户端。项目配有独立文档站（gd.xychr.com）、演示视频、QQ 群与 Discord 社群，并在 GitHub Releases 之外提供 AtomGit 下载渠道，说明它面向普通终端用户分发而非仅作代码库。当前累计 star 约 1.6 万、单日新增 1087，处于明显的曝光上升期。需要说明的是，本次提供的 README 节选几乎全是赞助商位与徽章，没有展开支持哪些协议、是否支持多线程/断点续传/浏览器接管等关键能力，这些必须到文档站和 Releases 里核实，材料本身不足以判断它与 aria2、Motrix、IDM 等同类工具的差异点。",
   "audience": [
-   "需要从 YouTube、Bilibili 批量抓取视频、字幕和多 P 合集的内容创作者与剪辑人员。",
-   "经常在弱网或跨境网络环境下下载大文件、苦于断流和限速的运维与后端工程师。",
-   "已经在用 aria2 或第三方下载面板、希望换一个带 GUI 但仍兼容 RPC 接口的用户。",
-   "需要从 GitHub Releases 或 HuggingFace 拉模型权重、受镜像速度困扰的 AI 应用开发者。",
-   "同时使用 Windows、macOS、Linux 和 Android、希望四端体验一致的个人用户。"
+   "经常需要下载大体积安装包、镜像或素材，想要一个统一客户端的后端/运维工程师。",
+   "需要给不熟悉命令行的同事推荐图形化下载工具的技术支持或 IT 管理员。",
+   "做 Python 桌面应用、想参考一个万级 star 项目如何组织 GUI 与下载逻辑的开发者。",
+   "正在寻找商业下载软件开源替代品、且愿意先读文档确认功能覆盖的个人用户。"
   ],
   "use_cases": [
-   "把 B 站或 YouTube 的整季多 P 视频按指定清晰度连同字幕一次性加入队列下载。",
-   "在浏览器里点扩展图标列出当前页面所有媒体流，直接选清晰度交给桌面端接管下载。",
-   "用 aria2 兼容的 RPC 接口把下载任务接入已有的自动化脚本或第三方下载面板。",
-   "在 Android 手机上录制直播的 M3U8 流，并让它在后台持续下载不中断。",
-   "下载中途发现链接失效或需要换代理时，直接改 URL、请求头或代理而不必重新开始。"
+   "把日常分散在浏览器里的安装包、镜像、素材下载任务收拢到一个客户端里统一管理。",
+   "在给团队选型前，用文档站和演示视频逐条核对它是否支持你必需的协议与断点续传能力。",
+   "作为 Python 桌面项目的参考实现，研究它的界面组织、打包分发与多语言 README 维护方式。",
+   "在需要避开单一分发渠道的场景下，从 GitHub Releases 或 AtomGit 两个入口获取安装包。"
   ],
   "adoption_steps": [
-   "先到 GitHub Releases 页面下载对应平台（Windows/macOS/Linux/Android）的安装包，或从 README 指向的 gd.xychr.com 文档站按平台指引安装，跑通一次普通 HTTP 大文件下载。",
-   "安装配套浏览器扩展，在一个含视频的页面上验证媒体嗅探与「交给桌面端下载」的链路是否通畅。",
-   "如果已有 aria2 工作流，用它的 aria2 兼容 RPC API 接入一个测试任务，确认接口行为与现有脚本兼容后再替换生产环境。"
+   "先打开文档站 https://gd.xychr.com 阅读功能与支持协议清单，确认它能覆盖你当前使用的下载工具再继续。",
+   "到 GitHub Releases 页面按你的操作系统下载对应安装包（或从 README 中的 AtomGit 下载入口获取），先在一台非关键机器上安装试用。",
+   "用三个典型任务实测：一个大文件、一个需要中断后继续的任务、一个你日常最常下的资源类型，通过后再决定是否替换现有工具或在团队内推广。"
   ],
   "build_ideas": [
-   "基于 aria2 兼容 RPC API 写一层任务编排服务，把订阅式视频更新、模型权重拉取等场景做成定时自动下载流水线。",
-   "在浏览器扩展基础上做二次开发，针对特定站点定制媒体嗅探规则和一键归档到指定目录的工作流。",
-   "结合 GitHub/HuggingFace 镜像加速能力，封装一个命令行或 CI 步骤，用于在构建环境里稳定拉取大体积模型文件。",
-   "利用 M3U8 直播录制能力做直播归档工具，配合后台下载与文件命名规则实现自动分段落盘。",
-   "围绕「下载中可改 URL/请求头/代理」的特性，做一个下载任务监控与故障自愈面板，自动切换失效链接或代理。"
+   "如果项目当前只提供图形界面，可基于其 Python 代码补一层命令行或无头模式，方便在服务器和脚本里复用。",
+   "针对内网镜像源或企业代理环境做定制分支，预置下载源与网络配置，减少同事的手动设置成本。",
+   "把下载核心接入自动化流水线，用于构建产物的可视化拉取与失败重试。",
+   "基于其多语言 README 与文档站结构，做一套面向国内用户的部署与常见问题手册。",
+   "在遵守其开源许可的前提下，打包成带预设配置的便携版分发给非技术同事。"
   ],
   "risks": [
-   "材料中未提及开源许可证，商用或二次分发前必须到仓库确认 LICENSE 文件的具体条款。",
-   "仓库归属个人账号 XiaoYouChR，且当前是第 3 代大版本，接口与配置格式存在随版本重写而变动的可能，升级前需锁定版本。",
-   "「真实浏览器 TLS 指纹、对反爬不可见」属于项目自述，未在材料中给出可验证的对比数据，实际效果需在目标站点上自测。",
-   "下载 YouTube、Bilibili 等平台内容涉及各站服务条款与版权限制，合规责任在使用方，项目本身不提供授权。",
-   "Android 端后台录制与持续下载会受系统省电策略和厂商 ROM 限制，需在目标机型上实测，不能假定与桌面端行为一致。"
+   "提供的材料里没有出现许可证信息，商用、内部分发或二次开发前必须到仓库确认 LICENSE 的具体条款。",
+   "README 节选大部分是赞助商广告，功能清单、协议支持、系统要求均未体现，选型判断不能只依赖 star 数。",
+   "仓库名为 Ghost-Downloader-3，说明存在代际版本，从旧版本升级时需确认任务列表与配置是否兼容、旧版本是否还维护。",
+   "Python 桌面应用通常涉及打包体积与运行时依赖，实际安装包大小、内存占用和启动速度需在目标机器上实测。",
+   "单日新增 star 过千意味着短期关注度暴涨，issue 响应速度与发布节奏是否跟得上，需要查看近期的 issue 与 release 记录再判断。"
   ],
   "tokens": {
-   "prompt_tokens": 1299,
-   "completion_tokens": 1598
+   "prompt_tokens": 1308,
+   "completion_tokens": 1711
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "b524f4a7be85ce2c6fbe049f64c7d13b85f636245c54967767be6d5fa6d897ae",
-  "readme_sha": "7186be16eaef4bb43a0ba712004886c6465ab60a",
+  "hash": "79083c41366da5fa36e7741b3aa9f1ce1d3fa82babaff81cbe5659bf2db69227",
+  "readme_sha": "258c8d09a25b20a0dd7862d3c4238b6d8ecb9e66",
   "desc_hash": "c960462012b3098983fd00967a2dd63aae1d3c7d63e79aa97909b4419f09436c",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:32:34+08:00",
+  "generated_at": "2026-11-27T08:01:04+08:00",
   "readme_used": true,
   "source_description": "The only downloader you need. 下载器的集大成者。",
   "language": "Python",
@@ -1223,51 +1223,52 @@
   "url": "https://github.com/alibaba/open-code-review"
  },
  "anomalyco/hex": {
-  "one_liner": "按住快捷键说话，本机转写后直接粘贴到光标处，语音变文字不出本机。",
-  "summary": "Hex 是一个跨 macOS、Windows、Linux 的本地语音听写工具：按住快捷键说话，松手后它在设备上完成转写，并把文字粘贴到你当前所在的任意应用光标处。首次运行会下载一个语音模型，之后音频不离开本机；模型可在设置里更换，覆盖 Parakeet、Whisper large-v3-turbo、Qwen3-ASR、SenseVoice、Cohere Transcribe 等多种选择，也支持加载自己的 GGUF 模型。除基础听写外，它还提供 Output 处理管线（按应用或网站配置词替换、内置清理、自定义脚本、可选 OpenCode 改写）、可搜索的历史记录、词汇表，以及带鉴权的本地 API 和 TypeScript SDK。新意在于把「本地模型 + 系统级粘贴 + 可编排的后处理」打包成一个桌面应用，而不是又一个网页转写服务；Annotate（边说边画录屏）和 Meetings（会议转录）目前标注为 Labs 实验功能，其中 Meetings 仅限 macOS。",
+  "one_liner": "按住快捷键说话，本地转写后直接粘贴到当前光标处",
+  "summary": "Hex 是一个用 Rust 写的跨平台本地语音听写工具，按住快捷键说话、松开后文字直接落在你正在用的任何应用的光标位置。它首次运行下载一个语音模型，之后转写全部在本机完成，音频不出机器。除了基础听写，它还提供可搜索的历史记录、按应用或网站配置的 Output 后处理流水线（词替换、内置清理、自定义脚本、可选 OpenCode 改写）、统一的 Vocabulary 词表，以及一个带鉴权的本地 API 和 TypeScript SDK 供自己的工具复用同一模型。相比多数把音频传到云端的听写方案，它的差异点在于端上推理加可插拔模型（Parakeet、Whisper、Qwen3-ASR、SenseVoice、Cohere Transcribe，甚至可加载自己的 GGUF），并且把「听写」扩展成了可编程的文本入口。",
   "audience": [
-   "每天要写大量文字、又不想把语音上传到云端的开发者与写作者。",
-   "需要在 IDE、终端、聊天工具之间频繁切换、希望不打断思路直接口述输入的人。",
-   "使用中文或多语种、需要按语种挑选 ASR 模型（如 Qwen3-ASR、SenseVoice）的用户。",
-   "要写会议纪要、用户访谈记录，希望录音与转写都留在本机的产品经理与研究员。",
-   "想把语音转写能力嵌进自己工具链的工程师，可直接用它的本地 API 与 TypeScript SDK。"
+   "每天要写大量文字、又不想把语音发到云端的开发者与写作者",
+   "需要在 IDE、终端、Slack 等多个应用间频繁切换输入的人",
+   "对数据出境敏感、所在团队禁止使用云端转写服务的工程师",
+   "想把语音转写能力接进自己内部工具的平台或效率工具开发者",
+   "使用中英混说或多语种会议、需要挑选合适 ASR 模型的重度用户"
   ],
   "use_cases": [
-   "在 IDE 或终端里按住快捷键口述提交信息、注释和报错描述，松手即粘贴到光标处。",
-   "在任意聊天或邮件客户端里口述回复，用 Output 步骤统一做术语替换和格式清理。",
-   "把常用人名、项目代号、专有名词放进 Vocabulary，减少 Whisper、Qwen3-ASR 等模型的转写错误。",
-   "用 Annotate 一边在屏幕上画一边讲解，录制 bug 复现或操作演示。",
-   "在 macOS 上用 Meetings 录制线上会议并生成转录文本，再自行整理成纪要。"
+   "在任意编辑器或聊天窗口里按住快捷键口述一段话，松开即完成输入，不用切换窗口。",
+   "用 Option-Shift-V（Windows/Linux 为 Ctrl-Alt-V）把上一条听写内容重复粘贴到另一个应用。",
+   "在 Output 里为不同应用配置不同的后处理步骤，例如在邮件客户端自动做词替换和清理，在代码编辑器里只做最小改动。",
+   "把常用人名、术语、产品名维护进 Vocabulary，让 Whisper、Qwen3-ASR 等模型在转写时正确识别。",
+   "在 macOS/Linux/Windows 上用 Annotate 一边在屏幕上画一边讲解，同时录屏和录音并留下记录。",
+   "通过本地 API 或 TypeScript SDK 调用同一个模型，为自己的脚本或内部工具加上转写能力。"
   ],
   "adoption_steps": [
-   "先从项目 Releases 页面下载对应平台的 Stable 版本安装，首次启动时等待它下载默认语音模型（英文系统为 Parakeet Unified English）。",
-   "在设置里把快捷键模式设为按住说话或点按开始/停止，然后在编辑器、浏览器、聊天工具各试一次，确认文字能落到光标处，并用 Option-Shift-V（Windows/Linux 为 Ctrl-Alt-V）验证重复粘贴。",
-   "按需在模型选择器里换成适合你语种的模型（中文可试 Qwen3-ASR 0.6B 或 SenseVoice Small），配置 Vocabulary 与 Output 步骤，最后用本地 API 加 TypeScript SDK 跑一次自有工具的接入验证。"
+   "先从 README 的 Downloads 一节下载 Stable 版本安装，首次启动让它下载默认语音模型，然后按住快捷键在记事本里试一句话确认能正常粘贴。",
+   "在设置里按你的语言和硬件挑选模型：英文系统默认 Parakeet Unified English，中文或多语种可试 Qwen3-ASR 0.6B 或 SenseVoice Small，注意 Cohere Transcribe 属于大体积下载。",
+   "把常用术语录入 Vocabulary，并针对你最常用的两三个应用在 Output 里配置后处理步骤，跑一周后再决定是否开启 Labs 里的实验功能（如 Annotate、Meetings）。"
   ],
   "build_ideas": [
-   "用带鉴权的本地 API 和 TypeScript SDK，把 Hex 的转写接到自己的笔记、工单或命令行工具里，做成专属的语音输入通道。",
-   "编写自定义 Output 脚本步骤，把口述内容自动转成固定模板，例如工单格式、代码注释格式或会议纪要结构。",
-   "针对垂直领域（医疗、法律、内部术语）训练或转换 GGUF 模型，通过「Add model file…」加载，配合 Vocabulary 提升专有名词准确率。",
-   "基于 Annotate 的边说边画录屏能力，做一个自动生成带旁白说明的 bug 报告或产品演示的工具。",
-   "围绕 History 的本地听写记录做二次整理，例如自动归档到知识库或按应用统计输入习惯。"
+   "用仓库里的 TypeScript SDK 把 Hex 的本地转写接进自己的笔记或工单系统，做成「说完即建单」的内部工具。",
+   "基于带鉴权的本地 API 写一个命令行或编辑器插件，把听写结果按项目自动归档到不同目录。",
+   "在 Output 的自定义脚本环节接入自己的格式化或脱敏逻辑，例如口述后自动转成结构化字段或去掉敏感信息。",
+   "按 docs/features/own-models.md 的说明打包自己的 GGUF 模型，针对垂直领域（如医疗、法律术语）做专用听写配置。",
+   "把 Annotate 的录屏加语音产物接到自己的演示或培训素材流水线里，做自动切片与转写归档。"
   ],
   "risks": [
-   "材料中未给出开源许可证信息，商用或二次分发前必须到仓库确认 LICENSE 与模型各自的授权条款。",
-   "首次运行及更换模型需要下载体积不小的模型文件（README 明确 Cohere Transcribe 是 big download），离线或带宽受限环境要先规划。",
-   "Annotate 与 Meetings 属于 Labs 实验功能，Meetings 仅限 macOS，GNOME Wayland 下的 Annotate 还需额外开启 Labs 选项，跨平台能力并不对等。",
-   "README 未说明各模型对硬件（内存、GPU、CPU）的要求与转写延迟，实际体验需在自己的机器上先验证。",
-   "项目处于 star 快速增长期，同时提供 Stable 与自动更新的 Dev 双通道，Dev 通道的稳定性与后续 API/SDK 兼容性需要按版本锁定后再依赖。"
+   "材料中没有出现许可证信息，商用或二次分发前必须先去仓库确认 LICENSE，否则存在合规不确定性。",
+   "Meetings 明确标注为 macOS 的 Labs 功能，Annotate 在 GNOME Wayland 上需要额外开启 Labs 选项，跨平台能力并不完全对等。",
+   "首次运行及切换模型需要下载模型文件，Cohere Transcribe 被描述为「大体积下载」，磁盘占用和弱网环境下的首次体验需要提前评估。",
+   "History 默认只保留 7 天，依赖历史记录做回溯的流程需要先确认保留策略是否可调。",
+   "Labs 中的功能被标注为实验性，接口和行为可能变动；同时 README 被截断，构建方式、贡献流程和发布节奏等信息不足，长期维护状态无法从现有材料判断。"
   ],
   "tokens": {
-   "prompt_tokens": 1261,
-   "completion_tokens": 1618
+   "prompt_tokens": 1264,
+   "completion_tokens": 1432
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "fe7c25b5acdff741b020e8c23cfb2adaf28f25f28318af886d7937ead0ad7e4e",
-  "readme_sha": "1001068bcd70d6c7faebbf393c6c7c7015d7c661",
+  "hash": "171dff2fd1fd9587fa9c795149c63d76ec6dc9886abb5cf6e4fe6b1fcc90b99b",
+  "readme_sha": "fcde4af07b65390e0f0ac5eca70db1a17fc36ad8",
   "desc_hash": "6e0c61432ef25e0c09636e1ff72b829eb127066504f78943ddee2813c551f4de",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-26T08:01:00+08:00",
+  "generated_at": "2026-11-27T08:00:54+08:00",
   "readme_used": true,
   "source_description": "Local voice dictation for mac, windows and linux",
   "language": "Rust",
@@ -1531,52 +1532,51 @@
   "url": "https://github.com/appwrite/appwrite"
  },
  "ashhart/TensorFold": {
-  "one_liner": "用 Zig 写的本地 LLM 推理服务，Mac 和 N 卡上免 Python 直接跑",
-  "summary": "TensorFold 是一个用 Zig 编写的 LLM 推理引擎，直接读取 checkpoint、对请求做 tokenize，并调用 Metal 或 CUDA kernel 完成推理，服务端不需要安装 Python 或 MLX。它提供 OpenAI 风格的 /v1/chat/completions、completions、Responses 以及 Anthropic Messages 接口，还带一个 tensorfold chat 终端客户端。安装方式很轻：Mac 走 Homebrew，Linux 下载预编译压缩包并校验 sha256，模型通过 tensorfold pull 从 Hugging Face 拉取固定 revision 的 4bit 权重。相比常见的 Python 推理栈，它的新意在于用单一 Zig 二进制把「拉模型 + 起服务 + 终端对话」串成一条命令，减少依赖和运行时开销。",
+  "one_liner": "用 Zig 写的本地 LLM 推理服务，不装 Python 也能在 Mac 和 N 卡上跑模型",
+  "summary": "TensorFold 是一个用 Zig 编写的 LLM 推理引擎，直接读取 checkpoint、对请求做 tokenize，并调用 Metal 或 CUDA kernel 完成推理，对外提供 OpenAI 风格的 HTTP 服务。它的卖点是把 Python、MLX 这类运行时依赖全部去掉，交付物就是一个二进制：Mac 上 brew install 即可，Linux 上解压 release 包加进 PATH 就能 serve。使用路径也很直白：tensorfold pull 拉取指定 revision 的 4-bit 权重，tensorfold serve 起服务，再用 curl 打 /v1/chat/completions；此外还提供 tensorfold chat 单命令终端对话。相比常见的 Python 推理栈，它的新意在于用 Zig 做单二进制分发并同时覆盖 Apple Silicon 与 NVIDIA GPU，但 README 只体现了 Metal 和 CUDA 两条后端，仓库描述里提到的 Vulkan 在节选中没有对应说明。",
   "audience": [
-   "在 Apple Silicon Mac 上想跑本地模型、又不想装 Python/MLX 的开发者",
-   "在 NVIDIA GPU 服务器上部署推理、希望减少 Python 依赖栈的运维或推理工程师",
-   "需要本地 OpenAI 兼容端点做离线原型验证的 AI 应用开发者",
-   "关注 Zig 在系统级/高性能场景落地情况的工程师",
-   "要给内部工具接一个可自托管的模型服务、但预算有限的产品经理"
+   "想在 Mac 或单卡 N 卡工作站上跑本地模型、又不想维护 Python 虚拟环境和 CUDA 工具链的工程师。",
+   "需要给内部工具接一个 OpenAI 兼容接口、希望部署物只是一个二进制文件的后端开发者。",
+   "在做端侧或私有化推理方案、关注 Zig 这类系统语言如何写推理引擎的技术选型人员。",
+   "需要 Anthropic Messages 或 Responses 兼容层、想把本地模型接到已有客户端里的产品团队。"
   ],
   "use_cases": [
-   "在 Mac 上用 brew 安装后 pull 一个 4bit 小模型并 serve，给本地应用提供 OpenAI 兼容接口。",
-   "用 tensorfold chat MODEL 一条命令起服务并在终端流式对话，快速对比不同 checkpoint 的输出。",
-   "把现有调用 OpenAI API 的代码只改 base_url 指向 http://127.0.0.1:8080，做离线或内网环境下的功能验证。",
-   "利用 Anthropic Messages 兼容端点，把已有 Claude 客户端或 SDK 接到本地模型上做联调。",
-   "在带 NVIDIA GPU 的 Linux 机器上部署单机推理服务，供内网多个小工具共享调用。"
+   "在 Apple Silicon 笔记本上用 brew 装好后 serve 一个 4-bit Qwen 小模型，作为日常本地问答和草稿生成服务。",
+   "在装有 R580 以上驱动的 NVIDIA Linux 机器上解压 release 包，起一个 OpenAI 兼容端点供内部应用调用。",
+   "用 tensorfold chat MODEL 在终端里直接和模型对话，做提示词调试或快速验证模型效果。",
+   "把已有调用 OpenAI / Anthropic Messages 接口的代码里的 base_url 指向 127.0.0.1:8080，做零改动的本地替换测试。",
+   "在 CI 或脚本里用 curl 打 /v1/chat/completions 和 /v1/models，对固定 revision 的模型做可复现的输出回归。"
   ],
   "adoption_steps": [
-   "先在 Apple Silicon Mac 上执行 brew install ashhart/tensorfold/tensorfold，再按 README 用固定 revision pull Qwen3.5-2B-MLX-4bit 并 serve --name local-model --context 8192。",
-   "服务起来后用 curl 请求 http://127.0.0.1:8080/v1/chat/completions 发一条测试消息，并访问 /v1/models 确认服务名和可用模型。",
-   "在 Linux + NVIDIA 环境落地前，先核对 glibc ≥ 2.28 与驱动 ≥ R580（CUDA 13.0），再下载 v1.3.5 对应架构压缩包、校验 sha256、解压并把 bin 加入 PATH 后重复上面的 pull/serve 验证。"
+   "先在 Apple Silicon Mac 上执行 brew install ashhart/tensorfold/tensorfold，再按 README 的 pull 命令拉取 Qwen3.5-2B-MLX-4bit 的固定 revision，用 serve 起服务验证链路是否通。",
+   "服务起来后用 README 里的 curl 请求 /v1/chat/completions 发一条消息，并访问 /v1/models 确认服务名，确认返回正常再继续。",
+   "在目标 Linux 机器上先核对 glibc 是否 ≥2.28、NVIDIA 驱动是否 ≥R580（CUDA 13.0），再下载对应架构的 release 包并用附带的 sha256 校验后解压。",
+   "把现有业务代码的 base_url 指向本地端点做一次真实业务请求的连通性验证，同时确认它支持的 completions、Responses、Anthropic Messages 中你实际用到的那一种。"
   ],
   "build_ideas": [
-   "基于它的 OpenAI 兼容端点封装一层本地 RAG 或 agent 服务，把检索、工具调用放在引擎之外。",
-   "做一个多后端路由网关：本地 TensorFold 与云端 API 共用同一套 OpenAI 接口，按任务或成本分流。",
-   "把它打包成 IDE 插件或桌面应用的嵌入式推理后端，利用单二进制、无 Python 依赖的特点简化分发。",
-   "在 CI 中用它起一个固定小模型的本地服务，对 prompt 模板和输出解析逻辑做离线回归测试。",
-   "围绕 tensorfold chat 的交互方式做二次封装，做成团队内部的模型对比与评测命令行工具。"
+   "在它提供的 OpenAI 兼容端点前面加一层网关，做多模型路由、鉴权和用量统计，把本地模型和云端模型统一成一个入口。",
+   "基于 tensorfold chat 的交互模式封装一个领域专用的终端助手，预置系统提示词和常用命令。",
+   "把 pull 的固定 revision 机制纳入模型分发流程，做一套内部模型版本管理与灰度切换的脚本。",
+   "按 README 提到的 contributor skill 和 CONTRIBUTING.md 参与后端 kernel 或平台适配的二次开发，例如补齐仓库描述里提到但 README 未展开的 Vulkan 路径。",
+   "围绕 /v1/models 和 chat/completions 写一套自动化评测脚本，对不同 4-bit checkpoint 做同题对比。"
   ],
   "risks": [
-   "GitHub 描述里写了 Vulkan，但 README 只给出 Metal 和 CUDA 的安装与运行说明，Vulkan 的实际支持程度证据不足，选型前需自行确认。",
-   "Linux 侧硬性要求 NVIDIA 驱动 R580 以上（CUDA 13.0）和 glibc 2.28 以上，驱动较旧的现有 GPU 集群可能直接无法运行。",
-   "项目 star 数不到 2000、由个人维护（Ko-fi 赞助、单一 X 账号），长期维护节奏和 issue 响应速度没有保障。",
-   "README 明确说明模型权重有各自的许可，商用前必须逐个核对所拉取 checkpoint 的授权条款。",
-   "仓库许可证在给出的 README 节选中没有出现，二次分发或商用集成前需要到仓库确认 LICENSE。",
-   "快速开始只演示了 Qwen3.5-2B 的 4bit 小模型，更大模型的支持范围与吞吐表现材料中未给出，不能默认可直接替换生产推理栈。"
+   "仓库描述写的是支持 Metal、CUDA 和 Vulkan，但 README 节选只给出 Metal 与 CUDA 的安装和运行说明，Vulkan 的实际可用程度需要自行验证。",
+   "Linux 侧硬性要求 glibc 2.28 以上和 NVIDIA 驱动 R580 以上（CUDA 13.0），老驱动或老发行版的环境可能直接跑不起来。",
+   "材料中没有给出项目的开源许可证信息，商用或再分发前必须自行到仓库确认 license，同时 README 明确提示模型权重有各自的许可。",
+   "项目 star 量约 1900、由单一作者维护并靠个人赞助支持，长期维护节奏和问题响应速度缺乏证据支撑，关键生产路径上要准备退路。",
+   "快速上手依赖 mlx-community 的 4-bit checkpoint，其他模型格式或精度能否直接加载，材料中没有说明，迁移前需要实测。"
   ],
   "tokens": {
    "prompt_tokens": 1418,
-   "completion_tokens": 1874
+   "completion_tokens": 1422
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "a76bfee29e351a473dbb88d79d00907560055a8b0b954ea08db0900813d3e0e5",
-  "readme_sha": "a3de58b8cb90a5c3863e79d021239a1156d8f35b",
+  "hash": "cb32e7974b094ae09bb834edf407680d95e1cdc1d7d074403bb9c1807fde0680",
+  "readme_sha": "cd10be65ae7d505366bb86376d6809a6f3fbf9b2",
   "desc_hash": "e1da0c1ff0e583cfb21040ae4584dd7447124c5d721ecc1b32bf483cd195023f",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-26T08:01:02+08:00",
+  "generated_at": "2026-11-27T08:00:54+08:00",
   "readme_used": true,
   "source_description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
   "language": "Zig",
@@ -1680,7 +1680,7 @@
   "source_description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
   "language": "TypeScript",
   "url": "https://github.com/backnotprop/plannotator",
-  "readme_sha": "b8de95afdf52a703d9013c6ee51bbb5d22f44b18",
+  "readme_sha": "05e2dc5607f7d6e3926c1f3807f928535eac3234",
   "desc_hash": "ac88268daeaec406d97bbf1dd7fc89f93688416455399e9ccca740eae222d54f"
  },
  "cathrynlavery/diagram-design": {
@@ -1834,7 +1834,7 @@
   "source_description": "Cursor plugin specification and official plugins",
   "language": "TypeScript",
   "url": "https://github.com/cursor/plugins",
-  "readme_sha": "c36b556df55731603d5b7ae31b08a65974bf55f0",
+  "readme_sha": "8447d807c64f80e90c39a68dbb12e0489dc43b86",
   "desc_hash": "e007f4991129a7573749c888398022349d6902b3fab61208eca5f4ba3817f421"
  },
  "debpalash/VoiceStudio": {
@@ -2640,7 +2640,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "af33d0d5e7d9957c7c8982503bf2309837a278bfa1ce8c5ea74e5896c15cf95d",
-  "readme_sha": "3cc81b2340961e3a927de6556729ab93c7031e52",
+  "readme_sha": "695846512c99036bb2b93e88747d4657cd67d51d",
   "desc_hash": "4c40d1a999ee704009c182f2fc06546446c6bb9c02c5352f16c442115c31fa1f",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:31:15+08:00",
@@ -2893,7 +2893,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "e0195cac31e15f0a7b36371c6d76e85342ffc6272e43be3697dbb51efab896a3",
-  "readme_sha": "7056ca8c29caaf88345c06e84c09a3e4a6311c92",
+  "readme_sha": "d35d62a49db3b3755ba22c53a60817e87f2452db",
   "desc_hash": "0ce4f8b430ca3ff16fc093d9174166b82f67d23571513587718dc196b2395514",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:33:18+08:00",
@@ -2954,55 +2954,55 @@
   "url": "https://github.com/morluto/rea"
  },
  "mvanhorn/last30days-skill": {
-  "one_liner": "让 AI agent 跨 Reddit、X、YouTube、HN 等平台检索并汇总某话题最近的真实讨论",
-  "summary": "这是一个给 AI agent 用的「搜索技能」：它并行查询 Reddit、X、YouTube、TikTok、Hacker News、Polymarket、arXiv、Techmeme 等平台，再按点赞、投票、赔率等真实互动信号打分，由一个 AI judge 合成一份带出处的简报。它的卖点不是自建索引，而是把十几个各自有 API 和鉴权壁垒的封闭平台，通过你自己的 API key 和浏览器会话，接到同一个 agent 里，从而绕开「Google 只聚合编辑、ChatGPT 只有 Reddit、Gemini 只有 YouTube」的割裂。安装方式很轻：Claude Code 走 plugin marketplace，其他 50+ Agent Skills 宿主用 npx skills add。Reddit、HN、Polymarket、GitHub 以及公司相关的专利与招聘页零配置可用，X、YouTube、TikTok、arXiv 等需要跑一次设置向导解锁。相对同类工具的新意在于「跨平台 + 按真实互动排序 + agent 综合」这三件事被打包成一个可安装的 skill，而不是一个新搜索引擎。",
+  "one_liner": "让 AI agent 跨多个平台检索话题，按真实互动排序并汇总成一份简报。",
+  "summary": "这是一个给 AI agent 用的「技能」包，装进 Claude Code、Codex、Cursor 等宿主后，用一条 /last30days 命令并行检索 Reddit、X、YouTube、HN、Polymarket、GitHub 等平台，再由 agent 综合成一份有出处的近期摘要。它的排序依据不是编辑推荐，而是 upvote、点赞和 Polymarket 上用真金白银下注的赔率，等于用人的注意力和钱来投票。新意在于它不自己造搜索引擎，而是让用户自带 API key 和浏览器会话，把十几个互不相通的平台在 agent 层打通。Reddit、HN、Polymarket、GitHub 号称零配置可用，X、YouTube、TikTok、arXiv 等需要跑一次 setup wizard 解锁。README 说明当前是 v4 管线，具体命令与配置以 skills/last30days/SKILL.md 为准。",
   "audience": [
-   "需要在见客户或候选人前快速摸清对方近一个月公开动态的销售、BD 和招聘人员。",
-   "做技术选型、要在拍板前收集真实用户吐槽与踩坑记录的工程师和架构师。",
-   "做选题和竞品追踪的内容运营与产品经理，需要跨平台看同一话题的讨论热度。",
-   "用 Polymarket 赔率做事件预期判断的投研或分析岗位。",
-   "已经在用 Claude Code、Cursor、Codex 等 Agent Skills 宿主、想把外部检索能力接进工作流的开发者。"
+   "需要在会前快速摸清某个人或公司最近一个月动态的销售、BD 和投资人。",
+   "已经在用 Claude Code、Cursor、Codex 等 agent 宿主、想给它加一个外部情报检索能力的工程师。",
+   "要跟踪某个技术话题在 Reddit、HN 上的真实讨论与争议的开发者或技术写作者。",
+   "做竞品监测和舆情分析、希望看到带原始互动量证据而非二手结论的产品经理。",
+   "关注预测市场信号、想用 Polymarket 赔率交叉验证判断的研究和交易人员。"
   ],
   "use_cases": [
-   "见面前跑一次 /last30days <人名>，拿到对方这个月的项目动向、发言和代码提交情况，而不是几年前的 LinkedIn。",
-   "在引入某个新框架前检索 Reddit 与 HN 上最近 30 天的抱怨帖和技术讨论，判断真实落地坑点。",
-   "对比同一话题在 X 和 Reddit 上的口碑差异，识别哪个平台在吹、哪个平台在骂。",
-   "把 Polymarket 的赔率变化和 YouTube 转写、新闻报道放在一起，形成某个事件的预期简报。",
-   "定期为公司名跑一次，汇总专利 filings、招聘页面和技术社区讨论，作为竞品情报输入。"
+   "见客户或候选人之前，跑一次 /last30days <人名>，把对方本月在 X 和 Reddit 上的公开发言整理成谈话背景。",
+   "调研某家创业公司时，让它同时抓取专利 filings、招聘页面和 HN 讨论，判断其技术方向和扩张节奏。",
+   "追踪一个技术话题（例如某个模型或框架）近 30 天在 Reddit 和 HN 的高赞帖，提炼出主要争议点。",
+   "用 Polymarket 的赔率数据为某个事件的市场预期定量，再和社交媒体情绪做对照。",
+   "把每次检索的输出沉淀成团队周报或内部知识库条目，替代人工逐个平台翻帖。"
   ],
   "adoption_steps": [
-   "在 Claude Code 中依次执行 /plugin marketplace add mvanhorn/last30days-skill 和 /plugin install last30days；非 Claude Code 宿主改用 npx skills add mvanhorn/last30days-skill -g 全局安装。",
-   "先不配置任何 key，用它跑一个你自己非常熟悉的话题，检查召回来源和摘要是否准确，确认质量后再进入设置向导配置 X、YouTube、TikTok 等凭据。",
-   "打开 skills/last30days/SKILL.md 核对当前命令、配置项和依赖，把它作为版本依据，再决定是否写进团队的标准调研流程。"
+   "在 Claude Code 中执行 /plugin marketplace add mvanhorn/last30days-skill 再执行 /plugin install last30days；如果使用 Codex、Cursor、Copilot、Gemini CLI 等其他宿主，改用 npx skills add mvanhorn/last30days-skill -g 全局安装。",
+   "先用零配置平台试跑：直接执行 /last30days <一个你熟悉的话题>，对照 Reddit、HN、Polymarket、GitHub 的结果判断摘要质量和引用是否可信。",
+   "确认可用后再跑一次 setup wizard 配置 X、YouTube、TikTok、arXiv 等平台的 key 或浏览器会话，并对照 skills/last30days/SKILL.md 核对最新命令与配置项。"
   ],
   "build_ideas": [
-   "把 /last30days 的输出接进内部知识库或飞书/Slack 机器人，做成定期的行业或竞品情报推送。",
-   "针对垂直领域定制来源白名单和打分权重，例如给技术选型场景提高 HN 与 GitHub 权重、降低 TikTok 权重。",
-   "封装成 CI 或定时任务里的追踪器，对公司名、产品名做每日或每周增量对比并生成 diff 报告。",
-   "基于 SKILL.md 派生一个私有分支，接入公司内部数据源（工单、内部论坛、Slack 归档），让 agent 同时检索内外网信号。",
-   "把 Polymarket 赔率变化做成阈值触发器，赔率异动时自动触发一次跨平台检索并生成事件预警。"
+   "把 /last30days 的输出接进内部周报或知识库流水线，做成定时生成的话题监测简报。",
+   "针对垂直场景（如招聘动向、专利布局、开源项目活跃度）编写自定义数据源适配器，扩展 SKILL.md 里的检索范围。",
+   "替换或调整评分层权重，做一套面向品牌舆情或竞品监测的自定义排序逻辑。",
+   "为团队封装一层 API key 与浏览器会话的集中管理，避免每个成员各自配置 X、YouTube 凭证。",
+   "基于 SKILL.md 的规范做多宿主兼容封装，让同一套检索流程在 Claude Code 之外的 agent 平台上复用。"
   ],
   "risks": [
-   "材料中没有给出开源许可证信息，商用或二次分发前必须自行到仓库确认 License。",
-   "X、YouTube、TikTok 等平台依赖你自带的 API key 和浏览器登录态，可能违反平台服务条款，并存在账号被限流或封禁的风险。",
-   "跨平台抓取依赖各平台 API 与页面结构，平台一旦改动就会失效，维护成本落在使用者自己身上。",
-   "排序基于 upvote、like 和赔率，天然偏向话题热度而非事实正确性，高互动内容也可能是营销或错误信息。",
-   "它绑定 Claude Code 或其他 Agent Skills 宿主，更换宿主或宿主 skill 规范变化时存在迁移成本，README 与 SKILL.md 也可能出现文档漂移。"
+   "X、TikTok 等平台依赖用户自带的 API key 或浏览器会话访问，可能触及平台服务条款并带来账号风控风险，需要在公司合规层面先确认。",
+   "检索能力建立在各平台 API 和页面结构之上，X、YouTube 等接口一旦变更，相关数据源可能直接失效。",
+   "材料中未提及开源许可证，商用或二次分发前必须到仓库确认 LICENSE，不能默认可用。",
+   "项目由单一作者维护且管线已迭代到 v4，命令与配置行为可能随版本变化，落地时应以 SKILL.md 为准并锁定版本。",
+   "零配置只覆盖 Reddit、HN、Polymarket、GitHub 等少数来源，X、YouTube、TikTok 等需要额外配置，实际覆盖面和宣传口径存在差距。"
   ],
   "tokens": {
-   "prompt_tokens": 1286,
-   "completion_tokens": 1797
+   "prompt_tokens": 1293,
+   "completion_tokens": 1894
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "740470f91fa61dd14ae7624a818858db11dbe8d53d9a7160cb0542a83e189aed",
-  "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-18T08:01:14+08:00",
+  "model_resolved": "deepseek-v4.1-flash",
+  "hash": "e0eadb6b5198a3deed1c4d0e1b74265b2abfc5f03efb63c41ca664f59d8922a6",
+  "readme_sha": "aa8f48f89de2787778df09ac48b792f1dd4e169d",
+  "desc_hash": "83ec92c4a2b4fed86c986bf0af3ebfad2b30491746cc50e1ff348d8c38085f07",
+  "model": "deepseek-v4.1-flash-high",
+  "generated_at": "2026-11-27T08:00:56+08:00",
   "readme_used": true,
   "source_description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
   "language": "Python",
-  "url": "https://github.com/mvanhorn/last30days-skill",
-  "readme_sha": "60c4bc407e64a99f18f8a52d5994855e6a7b0538",
-  "desc_hash": "83ec92c4a2b4fed86c986bf0af3ebfad2b30491746cc50e1ff348d8c38085f07"
+  "url": "https://github.com/mvanhorn/last30days-skill"
  },
  "n8n-io/n8n": {
   "one_liner": "可视化画布加自定义代码，把 AI 智能体和系统集成串成可自托管的工作流。",
@@ -3362,55 +3362,54 @@
   "url": "https://github.com/openvinotoolkit/openvino"
  },
  "pbakaus/impeccable": {
-  "one_liner": "给编码 agent 一套设计词汇，让它按命令打磨和审查界面，拦下 AI 味",
-  "summary": "Impeccable 解决的是「让 AI 帮你写界面，但写出来千篇一律」的问题：它把模糊的「让它更出彩」拆成 polish、bolder、quieter、harden 这类可执行的动词，每个词对应一份专用 playbook，并要求指定明确的目标（比如「pricing cards」）。它靠三类能力落地：一是风格指令，二是 critic/audit 这类评审角色（critique 按可用性启发式打分并排序修复优先级，audit 检查无障碍、性能、主题和响应式，结论按 P0 到 P3 分级），三是 62 条确定性规则组成的 slop 检测器，不调用 LLM、不需要 API key，所以检出结果是可复现的。工程上它通过 npx impeccable install 装进项目，首次运行 /impeccable init 读取代码并写出 PRODUCT.md 作为长期上下文，/impeccable document 则把现有视觉系统固化到 DESIGN.md，让后续改动不偏离品牌。相比常见的「提示词模板」或纯模型评审，它的新意在于把设计评审拆成确定性规则加结构化上下文文件，并适配了 Claude Code、Cursor、Codex CLI 等一大批编码工具。",
+  "one_liner": "给编码 agent 一套设计命令，审查并修正 AI 生成的界面。",
+  "summary": "Impeccable 是一套装进编码 agent 的设计命令集：通过 npx 安装后，在 Claude Code、Cursor、Codex CLI 等工具里用 /impeccable 加 critique、audit、polish、bolder 等动词，对指定页面或组件做评审和定向修改。它靠两份上下文文件工作：init 生成 PRODUCT.md 记录产品定位与约束，document 把现有视觉系统写进 DESIGN.md，之后每条命令都读这两份文件。差异化在于内置 62 条确定性规则做「AI slop」检测，不调用 LLM、不需要 API key，能稳定指出紫蓝渐变、卡片套卡片、彩色背景上的灰字这类套路化痕迹。README 明确说它最强的场景是已有界面的迭代，从零建新页面是更难的次要模式。",
   "audience": [
-   "日常用 Claude Code、Cursor 或 Codex CLI 生成前端页面、苦于产出「Inter 字体加紫蓝渐变」套路的工程师",
-   "需要在 AI 生成稿进入开发前做一次设计质量把关的前端负责人或 Tech Lead",
-   "想给团队沉淀一份可复用的设计词汇与评审标准的设计系统维护者",
-   "做产品页面、落地页、定价页，希望快速迭代视觉方向的产品经理或独立开发者",
-   "需要把无障碍、响应式、主题一致性检查纳入交付流程的质量或测试角色"
+   "日常用 Claude Code、Cursor、Codex CLI 等 agent 生成前端页面的工程师，希望产出不要停留在默认模板味。",
+   "维护设计系统或品牌规范的前端架构师，需要把视觉规则固化成 agent 能直接读的文件。",
+   "没有专职设计师的独立开发者和小团队，需要有人替他们做设计评审和可访问性检查。",
+   "负责 UI 质量把关的评审者或 QA，需要在合并前拦截可访问性、响应式和主题问题。"
   ],
   "use_cases": [
-   "对已有的定价卡片或 onboarding 流程执行 /impeccable critique，拿到按优先级排序的设计问题清单再逐条修改。",
-   "用 /impeccable bolder 或 /impeccable quieter 针对单个 section 调整视觉分量，避免让模型自由发挥导致整体跑偏。",
-   "在对外发布前跑 audit，把无障碍、性能、主题和响应式问题按 P0 到 P3 归档成待办。",
-   "用 slop 检测器的 62 条规则扫一遍生成页面，定位嵌套卡片、彩色背景上的灰字、跳过标题层级这类具体缺陷。",
-   "项目启动时运行 /impeccable init 与 /impeccable document，把产品定位写进 PRODUCT.md、把现有视觉系统写进 DESIGN.md，作为后续所有改动的约束。"
+   "对已有页面跑 `/impeccable critique the onboarding flow`，拿到按可用性启发式打分的清单和修复优先级。",
+   "用 `/impeccable audit checkout` 检查可访问性、性能、主题和响应式行为，按 P0 到 P3 排序逐项处理。",
+   "用 `/impeccable bolder the pricing cards` 或 quieter、polish 对单个区块做定向风格调整，替代「让它更抓眼」这种模糊指令。",
+   "用 `/impeccable document` 把现有视觉系统沉淀成 DESIGN.md，让后续每次改动都保持品牌一致。",
+   "在提交前用 62 条确定性规则扫描，拦下紫蓝渐变、卡片套卡片、彩色背景灰字、跳过标题层级等痕迹。"
   ],
   "adoption_steps": [
-   "在项目根目录执行 npx impeccable install，然后重载你使用的编码工具，确认斜杠命令已注册。",
-   "在 agent 中运行 /impeccable init（Codex 上为 $impeccable init），回答它无法从代码推断的问题，生成并检查 PRODUCT.md 内容是否准确。",
-   "挑一个具体组件试跑，例如 /impeccable critique the pricing cards，评估输出质量后再决定是否补跑 /impeccable document 固化 DESIGN.md 并推广到全项目。"
+   "在项目根目录执行 `npx impeccable install`，然后重载你正在用的编码工具（Claude Code、Cursor、Codex CLI 等）。",
+   "在 agent 里运行 `/impeccable init`（Codex 上用 `$impeccable init`），回答它无法自行推断的产品定位、目标用户和约束，生成 PRODUCT.md 并提交进仓库。",
+   "先挑一个具体组件试跑 `/impeccable critique the pricing cards` 和 `/impeccable audit`，对比修复前后的差异，再决定是否跑 `/impeccable document` 并推广到全项目。"
   ],
   "build_ideas": [
-   "把 62 条确定性规则包装成 CI 检查步骤，在 PR 阶段对改动的组件或页面自动输出 slop 与质量问题报告。",
-   "针对自家设计系统扩充或定制规则集与 playbook，让 polish、bolder 这类命令遵循内部组件库和品牌规范。",
-   "维护一套 PRODUCT.md 与 DESIGN.md 的模板仓库，新项目初始化时自动注入，减少每次 init 的重复问答。",
-   "将 critique 与 audit 的输出结构化落库，做一个设计债看板，跟踪 P0 到 P3 问题的收敛情况。",
-   "把 Impeccable 的命令封装成团队内部 agent 的 skill 或插件，统一各编码工具上的调用方式与默认参数。"
+   "把 62 条确定性规则接进 CI，做成 PR 阶段的 UI 检查门禁，命中规则就阻断合并。",
+   "在 DESIGN.md 之上扩展团队自定义规则和设计词表，让 critique 按自家设计系统打分而不是通用启发式。",
+   "把 critique 和 audit 的结构化输出接到 issue 系统或设计评审看板，自动生成带 P0-P3 优先级的修复任务。",
+   "为自研 IDE 插件或内部 agent 封装一层命令适配，复用它的 playbook 和规则引擎。",
+   "基于 PRODUCT.md 与 DESIGN.md 做品牌一致性巡检工具，定期扫描多个页面是否偏离既定视觉系统。"
   ],
   "risks": [
-   "仓库未在材料中给出开源许可证信息，商用或二次分发前必须自行到仓库确认授权条款。",
-   "主语言标注为 Rust，但实际安装入口是 npx/npm 包，落地时会引入 Node 工具链依赖，需要确认团队环境是否接受。",
-   "功能依赖各编码工具的命令机制（Claude Code 用 /impeccable，Codex 用 $impeccable），不同工具的注册方式与行为一致性需在目标工具上实测。",
-   "README 中的效果对比以图片呈现，在纯文本材料里无法核验，实际提效幅度需要用自己的页面做过对比才能判断。",
-   "项目处于 star 短期快速增长阶段（本期新增约 2.9 万），命令集和上下文文件格式仍可能变动，PRODUCT.md 与 DESIGN.md 存在未来需要迁移的成本。"
+   "材料未提供 LICENSE 信息，商用或二次分发前必须到仓库确认许可证类型。",
+   "安装方式是 `npx impeccable install`，会在本地执行 npm 分发的脚本，需要确认包来源与版本锁定；仓库主语言标为 Rust 而分发走 npm，两者关系材料未说明，是否需要 Node 运行时也要自行验证。",
+   "README 的效果对比来自官方自述和自家案例（同一模型 Fable 5.1 的前后对比），材料中没有第三方评测、误报率或规则命中率数据。",
+   "62 条规则的具体清单、可配置程度和误报处理方式未在材料中给出，接入 CI 前需要自己实测。",
+   "init 和 document 会往仓库写入 PRODUCT.md 与 DESIGN.md，团队需先约定这两份文件是否入库、由谁维护，否则容易产生冲突。"
   ],
   "tokens": {
    "prompt_tokens": 1260,
-   "completion_tokens": 1749
+   "completion_tokens": 2974
   },
-  "model_resolved": "deepseek-flash",
-  "hash": "1f30182b5b437da4242c6724486841a58b932dc8ec6b2b6789835f3f4bb5b641",
-  "model": "deepseek-v4-pro",
-  "generated_at": "2026-11-11T12:19:53+08:00",
+  "model_resolved": "deepseek-v4.1-flash",
+  "hash": "dbb722156e64482f3e77b18205af2e7a471f67891915236f5be09f76f12a7a45",
+  "readme_sha": "62b92c92681152ef9c6ba9aee980bfe15e325aba",
+  "desc_hash": "0ea4828f53de65bcb221010d18416cec9f8d699696bb18b3ae71c3dd21a84d93",
+  "model": "deepseek-v4.1-flash-high",
+  "generated_at": "2026-11-27T08:00:59+08:00",
   "readme_used": true,
   "source_description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
   "language": "Rust",
-  "url": "https://github.com/pbakaus/impeccable",
-  "readme_sha": "dedd4ef31619e9fc3fa04006f2280d12abb3cefc",
-  "desc_hash": "0ea4828f53de65bcb221010d18416cec9f8d699696bb18b3ae71c3dd21a84d93"
+  "url": "https://github.com/pbakaus/impeccable"
  },
  "pingdotgg/t3code": {
   "one_liner": "把本机各种编码 agent 收进一个界面，还能用手机接着审批下一步。",
@@ -3556,7 +3555,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "808d936d18aca5ef69d48a35e5e8cc3fac23ae585d21f7d569db84529262af33",
-  "readme_sha": "ecc7afce6f7035768c15b0bcc52c84c640e408eb",
+  "readme_sha": "ad2f779dcf6d32bf6b13a65a31a53b08cfab3aeb",
   "desc_hash": "4318e635c80d41596d6764aa386e89f29be115a64e317aceab35846dc8458203",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:31:53+08:00",
@@ -3607,7 +3606,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "7ea2cee4942b3b7a3253a2661bdb87c3b3b8a056f5e667e1f24e271c6161694a",
-  "readme_sha": "8d984a8dcae5cccfb6dbd8ea6ef0dae462c0598b",
+  "readme_sha": "21416ff09593c03748c4e0b644bb82f470487469",
   "desc_hash": "8f7d7ef8b6b7184f5dc333ca69c1ef7a0bc3c01f405ba92fa438bdfc65f1e80c",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:28:48+08:00",
@@ -3873,51 +3872,51 @@
   "url": "https://github.com/tashfeenahmed/freellmapi"
  },
  "thedotmack/claude-mem": {
-  "one_liner": "让编码 Agent 跨会话记住上下文，自动压缩历史并回注相关记忆。",
-  "summary": "claude-mem 是一个用 TypeScript 写的持久记忆层，解决编码 Agent 每次新会话都从零开始、忘掉上次进展的问题。按仓库描述，它会捕获 Agent 在会话中的操作内容，用 AI 压缩成记忆，再在后续会话中把相关上下文注入回去。它的卖点是不绑定单一工具，宣称同时支持 Claude Code、Codex、Gemini、Copilot、OpenCode 等多个 Agent 客户端。README 节选主要是多语言文档入口和标语，没有暴露安装命令、存储方案和压缩策略细节，因此具体实现质量需要看仓库正文与 docs 才能判断。",
+  "one_liner": "给编码 Agent 加跨会话持久记忆，自动压缩历史并回注相关上下文。",
+  "summary": "claude-mem 是一个用 TypeScript 实现的记忆层，目标是解决编码 Agent 每次新会话都从零开始、忘掉之前做过什么的问题。它的做法是：捕获 Agent 在会话中的操作与信息，用 AI 压缩成记忆，再在后续会话中把相关上下文注入回去，形成一个自动的「记录—压缩—回注」闭环。GitHub 描述里明确列出了 Claude Code、OpenClaw、Codex、Gemini、Hermes、Copilot、OpenCode 等客户端，定位是跨 Agent 通用而不是绑定单一工具，这也是它和单一 IDE 内置记忆功能的主要差异点。README 节选只保留了标题、多语言链接和一句口号，具体的安装方式、存储位置与压缩策略在给出的材料中看不到。",
   "audience": [
-   "每天用 Claude Code 或 Codex 等 CLI Agent 写代码、经常跨天接续同一任务的工程师。",
-   "同时混用多个 Agent 工具、苦于上下文无法在它们之间流转的开发者。",
-   "想给自研 Agent 或内部平台补一层记忆能力的后端/平台工程师。",
-   "需要评估「Agent 记忆」这类方案是否值得引入的技术负责人和产品经理。",
-   "对 Agent 会话留痕、复盘和知识沉淀有需求的团队。"
+   "每天用 Claude Code、Codex、Copilot 等 CLI/IDE Agent 写代码、经常需要跨天续接同一任务的工程师。",
+   "维护大型或历史包袱重的代码库、希望 Agent 记住项目约定和踩坑记录的技术负责人。",
+   "在团队内建设 AI 编码工具链、需要评估 Agent 记忆方案是否可落地的平台工程师。",
+   "同时使用多个 Agent 产品、苦于上下文无法在工具之间迁移的重度用户。",
+   "想判断「Agent 记忆」这类能力是否值得投入的产品经理。"
   ],
   "use_cases": [
-   "跨天或跨周接续一次重构：新开会话时自动带回上次改到哪、为什么这么改。",
-   "把项目约定、历史决策和踩过的坑沉淀成记忆，减少每次重复解释背景。",
-   "在 Claude Code 与 Codex 等不同 Agent 之间切换时，复用同一份会话记忆。",
-   "回看某段时间内 Agent 做过哪些操作，用于复盘或排查误改。",
-   "为团队内部自研 Agent 接入一层可复用的记忆读写能力。"
+   "第二天继续前一天没做完的重构任务时，让 Agent 直接接上之前的决策和进度，而不是重新解释一遍背景。",
+   "把项目里的命名约定、目录结构规则、已知坑点沉淀成记忆，减少每次会话重复纠正 Agent 的成本。",
+   "在 Claude Code 里做完一轮分析后切到 Codex 或 OpenCode 继续实现，尽量保留前一轮的上下文。",
+   "排查线上问题时，让新会话能调出上一次调试得出的结论和排除过的假设。",
+   "长期维护的老项目里，让 Agent 记住哪些模块不能动、哪些改动曾经导致过回归。"
   ],
   "adoption_steps": [
-   "先打开仓库里的 docs/i18n/README.zh.md 中文文档，确认支持矩阵、前置依赖（Node 版本、是否需要模型 API Key）和记忆存储位置。",
-   "挑一个不敏感的个人项目，按 README 安装章节完成安装并跑一次完整会话，然后检查生成的记忆内容和下次会话实际注入的内容是否符合预期。",
-   "确认数据落盘路径与是否外发后，再决定是否在团队仓库启用，并把记忆目录加入 .gitignore 等忽略规则。"
+   "先打开仓库 README 的安装章节确认实际安装方式与前置依赖（给出的 README 节选被截断，未包含命令），不要凭印象执行来源不明的安装脚本。",
+   "在一个非核心的试验项目里启用，跑一次完整任务后新开会话，检查注入的上下文是否准确、是否夹带过期或错误信息。",
+   "确认记忆数据的存储位置与是否上传到外部服务，再决定是否在含敏感代码的仓库中启用，并据此写进团队使用规范。"
   ],
   "build_ideas": [
-   "基于它的记忆存储做团队共享记忆库，让多个成员共用同一份项目上下文。",
-   "给记忆层加一个可视化检索与审计面板，能查、能删、能标注哪条记忆被注入过。",
-   "写一个脱敏插件，在记忆写入前过滤密钥、内网地址等敏感内容。",
-   "把记忆读写接口对接到自研 Agent 框架，做成可替换的通用记忆后端。",
-   "做一套记忆质量评估工具，对比注入记忆前后的任务完成率和 token 消耗。"
+   "基于它的捕获与注入机制，做一个团队共享记忆库，让多个成员和多个 Agent 复用同一份项目知识。",
+   "给自研的内部 Agent 或工作流接入这套记忆接口，补齐跨会话上下文能力。",
+   "开发记忆审计与可视化面板，展示每次会话注入了哪些内容、来源是哪次会话，便于排查错误上下文。",
+   "在写入记忆前加一层敏感信息过滤（密钥、内部地址、客户数据），做成可插拔的预处理环节。",
+   "做记忆质量评估工具，对比开启与关闭记忆时同一任务的重述次数和返工率。"
   ],
   "risks": [
-   "README 节选只有徽章和多语言链接，没有安装命令、架构说明和依赖清单，实际可用性必须自己跑一遍验证。",
-   "宣称「捕获 Agent 会话中的一切」，意味着代码、路径甚至可能出现的密钥会被持久化，采用前必须确认存储位置和是否上传到外部服务。",
-   "记忆压缩依赖 AI 调用，会带来额外的 token 成本和会话延迟，且压缩本身有信息丢失风险，需要实测注入内容的准确度。",
-   "本期新增 1.7 万 star 的增长速度极快，需确认 issue 响应速度和发版节奏，避免踩到早期项目的稳定性坑。",
-   "仓库存在 LICENSE 文件但节选未显示具体许可类型，商用或二次分发前需自行确认授权条款；多 Agent 兼容的宣称也需要逐个客户端验证。"
+   "给出的 README 节选被截断，许可证、安装命令、运行时依赖和最低版本要求都看不到，采用前必须自行到仓库确认。",
+   "记忆内容会被 AI 压缩并回注到后续会话，代码与对话是否离开本机、存储在哪里，材料中没有说明，涉及敏感代码时风险不可忽略。",
+   "回注的上下文会占用上下文窗口，且过期或错误的记忆可能误导 Agent，需要实际测试注入准确率。",
+   "描述中列出的客户端很多，但各集成的深度与完成度在材料中没有任何证据，不能按「全都支持」来规划。",
+   "本期新增 star 数（17223）相对累计 star 增长极快，热度不等于稳定性，应查看 issue 响应、发布节奏和最近提交再判断是否可用于生产。"
   ],
   "tokens": {
-   "prompt_tokens": 1760,
-   "completion_tokens": 1705
+   "prompt_tokens": 1756,
+   "completion_tokens": 1557
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "3f99f1faa5b5edf2c6774eabf237d8a15f3d90b06edcfaa7751b18c57bdf73f6",
-  "readme_sha": "a68e38c4f72f287caa040a0202429a8c1f4c1f3b",
+  "hash": "c175e6f8831e3893d6483670917e98d5ed48bbb17b36ed4c4e96cbdc3d5e8c37",
+  "readme_sha": "97cd98a0f3a20e1b4cf5da0d57cc28a7c03fb5fa",
   "desc_hash": "8e71d54bc44f2a50fa7a71dbc1d45de687258297c4384b412a3445c2e01aeafa",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-26T08:01:02+08:00",
+  "generated_at": "2026-11-27T08:00:55+08:00",
   "readme_used": true,
   "source_description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
   "language": "TypeScript",
@@ -4229,51 +4228,51 @@
   "desc_hash": "88d75d8d452c89972936c2e775c7fe2c4837a180ac866e5fbda813aa4f983b22"
  },
  "zhouxiaoka/autoclip": {
-  "one_liner": "丢一个视频链接或本地文件，在你自己电脑上自动剪出带字幕、封面和标题的竖屏短视频。",
-  "summary": "AutoClip 是一个开源的 AI 视频剪辑桌面工具，把播客、访谈、课程、游戏直播回放等长视频自动切成适合抖音、小红书、TikTok、Reels、YouTube Shorts、Bilibili 发布的短视频。它的做法是本地优先：切片和渲染都在本机完成，不上传排队；AI 部分可以自带 API key，也可以用 Ollama / LM Studio 搭配 Whisper / SenseVoice 完全离线跑。功能上除了选高光片段，还包含说话人跟踪与智能重构图、烧字幕、生成封面和标题文案。v1.6 新增了 Live Replay 标签页，支持 OBS Studio、Twitch、YouTube、Kick 等 6 个直播回放来源，仓库还带有 MCP server（io.github.zhouxiaoka/autoclip-mcp），可以被 Agent 工具调用。相比常见的云端剪辑 SaaS，它的差异点在于 MIT 许可、零订阅、数据不出本机。",
+  "one_liner": "把播客、访谈、课程等长视频一键剪成带字幕封面的竖屏短视频，全程在本机渲染。",
+  "summary": "AutoClip 是一个开源的 AI 视频剪辑桌面工具，输入一个视频链接或本地长视频，自动挑出高光片段并剪成适合抖音、小红书、TikTok、Reels、YouTube Shorts 的短视频，同时生成字幕、封面、标题和发布文案。它把自己定位成 OpusClip 的开源替代品，主打 local-first：剪辑和渲染在用户自己的机器上完成，不收订阅费，采用 MIT 许可。相比同类云端 SaaS，它的差异点在于零订阅、素材不出本机，并内置 MCP 接口，可以被 AI agent 调用；v1.6 还扩展到了直播回放场景。",
   "audience": [
-   "做播客或访谈内容的创作者，需要把一两小时的长节目稳定产出多条竖屏切片。",
-   "短视频运营/MCN 剪辑岗，每天要把同一批素材分发到抖音、小红书、TikTok、Shorts 等多个平台。",
-   "课程、知识付费和会议内容团队，希望把长录播快速拆成可传播的片段。",
-   "游戏主播和直播运营，需要从 Twitch、YouTube、Kick 或 OBS 录像里自动挑高光。",
-   "想把视频剪辑能力接进自己 Agent 或自动化流程的工程师，可以直接用仓库提供的 MCP server。"
+   "做播客、访谈、知识类长视频，需要批量产出短视频切片的内容创作者。",
+   "运营小红书、抖音、TikTok、YouTube Shorts 账号，日常需要大量竖屏素材的社媒运营。",
+   "需要把课程、讲座、会议录像二次分发的培训或市场团队。",
+   "想把视频剪辑能力接进自己 agent 工作流的 AI 应用开发者（仓库提供 MCP 服务）。",
+   "对云端剪辑 SaaS 订阅费敏感、或素材不便上传第三方平台的小团队与个人工作室。"
   ],
   "use_cases": [
-   "把一期播客的 YouTube 链接粘进去，自动挑出若干高光片段并烧好字幕，导出成 9:16 竖屏文件。",
-   "导入本地课程录屏，批量生成带封面和标题文案的切片，再逐条人工微调后发布。",
-   "接上 OBS WebSocket 或 Twitch 回放源，直播结束后直接从录像里剪出可发布的精彩片段。",
-   "用 Ollama + Whisper / SenseVoice 在断网或涉密环境下跑完整流程，素材不出本机。",
-   "把 AutoClip 的 MCP 接口挂到自己的 Agent 工作流里，用自然语言触发「剪这条链接并出 5 条切片」。"
+   "把一期 1 小时的播客丢进去，自动切出若干条带字幕的竖屏高光片段用于日更。",
+   "把访谈或直播回放转成适配不同平台比例的短视频，省掉手动重构图和加字幕的步骤。",
+   "为每条切片自动生成封面、标题和发布文案，直接进入排期发布流程。",
+   "把课程或讲座录像批量拆条，做成知识点短视频用于社群和课程引流。",
+   "通过 MCP 让 AI agent 调用剪辑能力，把「找素材—切片—出文案」串成自动化流水线。"
   ],
   "adoption_steps": [
-   "先到 GitHub Releases 页面下载对应系统的安装包（README 提供 Download 入口），用一条 10 分钟以内的本地视频跑通默认流程，确认界面、字幕和导出都正常。",
-   "再决定 AI 后端：要么在设置里填自己的模型 API key 换取更好的选段和文案质量，要么按 README 配置 Ollama / LM Studio + Whisper / SenseVoice 走全离线路线，两条路各跑一次对比效果。",
-   "验证通过后再接入真实工作流：先用一条真实播客链接和一次直播回放各跑一遍，记录耗时、显存/CPU 占用和成片可用率，再决定是否批量使用或通过 MCP server 集成进现有流水线。"
+   "先到 GitHub Releases 页面（github.com/zhouxiaoka/autoclip/releases/latest）下载对应系统的桌面安装包，用一条自己的长视频跑通完整流程。",
+   "对照官网的 Quick Start 和功能文档（zhouxiaoka.github.io/autoclip_intro）确认支持的语言、平台比例和输出格式是否覆盖你的发布渠道。",
+   "如果要做自动化，按 README 中的 MCP 名称 io.github.zhouxiaoka/autoclip-mcp 把服务接入你的 agent 客户端，先用小批量素材验证稳定性再扩大规模。"
   ],
   "build_ideas": [
-   "基于仓库自带的 MCP server 封装一个内部剪辑 Agent，让运营在聊天窗口里提交链接并拿回成片列表。",
-   "在它之上做批量任务队列和模板系统，把「同一素材 → 多平台不同比例/字幕样式」的重复劳动自动化。",
-   "替换或扩展本地模型组合（如换用其他 ASR 或本地 LLM），针对中文、方言或垂直行业术语做识别和选段优化。",
-   "对接企业素材库或对象存储，做成「上传长视频 → 自动产出切片 + 元数据 → 回写 CMS」的内部服务。",
-   "围绕成片做二次加工插件，例如自动生成多版标题 A/B、按平台规则校验时长与画面安全区。"
+   "基于内置 MCP 服务封装一层批量任务调度，把长视频列表自动排队切片并回传结果到素材库。",
+   "在切片输出后接一道自动发布环节，按平台分别生成标题、话题标签并推送到各渠道。",
+   "针对垂直领域（如法律、医疗、教育）定制高光挑选与文案风格，替换默认的通用剪辑策略。",
+   "把字幕产物接入翻译流程，一次切片同时产出多语种版本用于海外分发。",
+   "为团队场景做一个审核台，把自动切片结果先集中预览打分，再决定哪些进入发布队列。"
   ],
   "risks": [
-   "本地渲染对机器性能的实际要求（是否必须独显、显存下限、一小时视频的耗时）在给出的 README 节选中没有说明，采用前必须自己实测。",
-   "仓库归属个人账号 zhouxiaoka，且本期 star 增长较快（新增 979），热度不等于长期维护承诺，需查看 issue 响应和 release 节奏再决定是否依赖。",
-   "桌面端安装包支持哪些操作系统、是否有签名与自动更新，材料中未给出，跨平台团队要先确认。",
-   "AI 选段和文案质量取决于你自带的 API key 或本地模型，离线方案的效果与在线方案可能存在差距，且第三方模型/接口的许可与费用需自行核对。",
-   "README 明确为 MIT 许可，但项目依赖的 ASR、LLM、ffmpeg 等组件的许可与商用条款需要单独确认，尤其是对外商用分发场景。"
+   "本地渲染意味着剪辑速度取决于你自己的机器，材料中没有给出硬件与系统要求，采用前需实测长视频的处理耗时。",
+   "README 中出现 AI 图像/视频 API 赞助商，若字幕、封面或文案环节依赖云端模型，需确认哪些步骤会联网、素材是否会离开本机，与 local-first 的预期是否一致。",
+   "仓库归属个人账号（zhouxiaoka），版本仍在快速迭代（已到 v1.6），长期维护与问题响应能力需自行评估，不建议在关键生产链路上做单点依赖。",
+   "许可为 MIT，二次开发和商用限制较少，但需自行确认随包分发的第三方模型、字体、素材的授权是否同样宽松。",
+   "材料只覆盖英文 README 与文档站，中文等多语言文档的实际完整度、以及各平台导出规格的准确性，需要下载试用后再判断。"
   ],
   "tokens": {
-   "prompt_tokens": 1528,
-   "completion_tokens": 1688
+   "prompt_tokens": 1576,
+   "completion_tokens": 1229
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "6b396295f3e8eab0c58dbcf27b4071f5e259acbfbe9d429f3c83b87206212d17",
-  "readme_sha": "cf1c3d9452ad77768b0d10529ae85d70e5f3bbb0",
+  "hash": "0343016fe03dfbeb6388a73b1df1e378003ad80e408b337d79d0eb6794297abd",
+  "readme_sha": "0c346c00657e35f5e8db151a448c1ce94ccd0673",
   "desc_hash": "f6a25daa826f9591bb2a328ca6aa60415f667bb99431e78c8a97a9a988fe7bbf",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-25T08:01:17+08:00",
+  "generated_at": "2026-11-27T08:01:02+08:00",
   "readme_used": true,
   "source_description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
   "language": "Python",

@@ -286,18 +286,25 @@
     "rank": 4,
     "stars_period": 1106,
     "stars_total": 65658
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 8,
+    "stars_period": 746,
+    "stars_total": 66343
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 8,
-    "times": 8
+    "last_date": "2026-11-27",
+    "streak": 9,
+    "times": 9
    }
   },
-  "times_on_board": 8,
+  "times_on_board": 9,
   "url": "https://github.com/HKUDS/CLI-Anything"
  },
  "HKUDS/DeepTutor": {
@@ -599,18 +606,25 @@
     "rank": 14,
     "stars_period": 348,
     "stars_total": 15507
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 12,
+    "stars_period": 327,
+    "stars_total": 15811
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 7
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 8
    }
   },
-  "times_on_board": 7,
+  "times_on_board": 8,
   "url": "https://github.com/Tracer-Cloud/opensre"
  },
  "XiaoYouChR/Ghost-Downloader-3": {
@@ -666,18 +680,25 @@
     "rank": 5,
     "stars_period": 951,
     "stars_total": 18220
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 4,
+    "stars_period": 889,
+    "stars_total": 19088
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 7
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 8
    }
   },
-  "times_on_board": 7,
+  "times_on_board": 8,
   "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3"
  },
  "ZhuLinsen/daily_stock_analysis": {
@@ -1232,18 +1253,25 @@
     "rank": 2,
     "stars_period": 1141,
     "stars_total": 73004
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 3,
+    "stars_period": 955,
+    "stars_total": 73831
    }
   ],
   "language": "HTML",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 7
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 8
    }
   },
-  "times_on_board": 7,
+  "times_on_board": 8,
   "url": "https://github.com/cathrynlavery/diagram-design"
  },
  "cloudflare/security-audit-skill": {
@@ -1350,18 +1378,25 @@
     "rank": 12,
     "stars_period": 416,
     "stars_total": 19523
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 14,
+    "stars_period": 270,
+    "stars_total": 19779
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 9,
-    "times": 9
+    "last_date": "2026-11-27",
+    "streak": 10,
+    "times": 10
    }
   },
-  "times_on_board": 9,
+  "times_on_board": 10,
   "url": "https://github.com/cursor/plugins"
  },
  "debpalash/VoiceStudio": {
@@ -1507,18 +1542,25 @@
     "rank": 1,
     "stars_period": 1652,
     "stars_total": 22967
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 1,
+    "stars_period": 1597,
+    "stars_total": 24537
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 9
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 10
    }
   },
-  "times_on_board": 9,
+  "times_on_board": 10,
   "url": "https://github.com/elementalsouls/Claude-BugHunter"
  },
  "firecrawl/firecrawl": {
@@ -1574,18 +1616,25 @@
     "rank": 3,
     "stars_period": 1135,
     "stars_total": 210011
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 2,
+    "stars_period": 1046,
+    "stars_total": 210921
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 7
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 8
    }
   },
-  "times_on_board": 7,
+  "times_on_board": 8,
   "url": "https://github.com/firecrawl/firecrawl"
  },
  "getarcaneapp/arcane": {
@@ -1797,6 +1846,13 @@
     "stars_total": 12970
    },
    {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 13,
+    "stars_period": 309,
+    "stars_total": 13283
+   },
+   {
     "date": "2026-11-23",
     "period": "weekly",
     "rank": 9,
@@ -1808,9 +1864,9 @@
   "last_seen": "2026-11-23",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 11,
-    "times": 11
+    "last_date": "2026-11-27",
+    "streak": 12,
+    "times": 12
    },
    "weekly": {
     "last_date": "2026-11-23",
@@ -1818,7 +1874,7 @@
     "times": 1
    }
   },
-  "times_on_board": 12,
+  "times_on_board": 13,
   "url": "https://github.com/google-labs-code/stitch-skills"
  },
  "google-research/paper-orchestra": {
@@ -2002,18 +2058,25 @@
     "rank": 10,
     "stars_period": 826,
     "stars_total": 70929
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 9,
+    "stars_period": 702,
+    "stars_total": 71613
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 8
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 9
    }
   },
-  "times_on_board": 8,
+  "times_on_board": 9,
   "url": "https://github.com/jingyaogong/minimind"
  },
  "jquery/jquery": {
@@ -2231,7 +2294,7 @@
   "url": "https://github.com/milind-soni/OpenMausBot"
  },
  "mjmirza/app-store-compliance": {
-  "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 114 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+  "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, privacy manifest and Data safety checks, 117 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
   "first_seen": "2026-11-20",
   "full_name": "mjmirza/app-store-compliance",
   "history": [
@@ -2283,18 +2346,25 @@
     "rank": 9,
     "stars_period": 858,
     "stars_total": 6463
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 10,
+    "stars_period": 562,
+    "stars_total": 7016
    }
   ],
   "language": "Shell",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 7
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 8
    }
   },
-  "times_on_board": 7,
+  "times_on_board": 8,
   "url": "https://github.com/mjmirza/app-store-compliance"
  },
  "morluto/rea": {
@@ -2398,6 +2468,13 @@
     "stars_total": 75090
    },
    {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 7,
+    "stars_period": 759,
+    "stars_total": 75735
+   },
+   {
     "date": "2026-11-23",
     "period": "weekly",
     "rank": 2,
@@ -2409,9 +2486,9 @@
   "last_seen": "2026-11-23",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 10,
-    "times": 10
+    "last_date": "2026-11-27",
+    "streak": 11,
+    "times": 11
    },
    "weekly": {
     "last_date": "2026-11-23",
@@ -2419,7 +2496,7 @@
     "times": 1
    }
   },
-  "times_on_board": 11,
+  "times_on_board": 12,
   "url": "https://github.com/mvanhorn/last30days-skill"
  },
  "n8n-io/n8n": {
@@ -2500,18 +2577,25 @@
     "rank": 16,
     "stars_period": 176,
     "stars_total": 33367
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 16,
+    "stars_period": 150,
+    "stars_total": 33520
    }
   ],
   "language": "C",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 7
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 8
    }
   },
-  "times_on_board": 7,
+  "times_on_board": 8,
   "url": "https://github.com/nginx/nginx"
  },
  "nodejs/node": {
@@ -2638,18 +2722,25 @@
     "rank": 7,
     "stars_period": 903,
     "stars_total": 326595
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 5,
+    "stars_period": 854,
+    "stars_total": 327472
    }
   ],
   "language": "Shell",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 9,
-    "times": 9
+    "last_date": "2026-11-27",
+    "streak": 10,
+    "times": 10
    }
   },
-  "times_on_board": 9,
+  "times_on_board": 10,
   "url": "https://github.com/obra/superpowers"
  },
  "openai/codex-security": {
@@ -2744,18 +2835,25 @@
     "rank": 15,
     "stars_period": 191,
     "stars_total": 12650
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 15,
+    "stars_period": 176,
+    "stars_total": 12815
    }
   ],
   "language": "C++",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 8,
-    "times": 8
+    "last_date": "2026-11-27",
+    "streak": 9,
+    "times": 9
    }
   },
-  "times_on_board": 8,
+  "times_on_board": 9,
   "url": "https://github.com/openvinotoolkit/openvino"
  },
  "pbakaus/impeccable": {
@@ -3160,18 +3258,25 @@
     "rank": 11,
     "stars_period": 574,
     "stars_total": 78478
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 11,
+    "stars_period": 525,
+    "stars_total": 78961
    }
   ],
   "language": "TypeScript",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 7
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 8
    }
   },
-  "times_on_board": 7,
+  "times_on_board": 8,
   "url": "https://github.com/toeverything/AFFiNE"
  },
  "tokio-rs/topcoat": {
@@ -3378,7 +3483,7 @@
   "url": "https://github.com/we-promise/sure"
  },
  "zhouxiaoka/autoclip": {
-  "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+  "description": "AutoClip｜The open-source OpusClip alternative — local-first AI clipping & MCP server, zero subscriptions. 一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。",
   "first_seen": "2026-11-20",
   "full_name": "zhouxiaoka/autoclip",
   "history": [
@@ -3430,18 +3535,25 @@
     "rank": 8,
     "stars_period": 880,
     "stars_total": 16133
+   },
+   {
+    "date": "2026-11-27",
+    "period": "daily",
+    "rank": 6,
+    "stars_period": 774,
+    "stars_total": 16917
    }
   ],
   "language": "Python",
-  "last_seen": "2026-11-26",
+  "last_seen": "2026-11-27",
   "periods": {
    "daily": {
-    "last_date": "2026-11-26",
-    "streak": 7,
-    "times": 7
+    "last_date": "2026-11-27",
+    "streak": 8,
+    "times": 8
    }
   },
-  "times_on_board": 7,
+  "times_on_board": 8,
   "url": "https://github.com/zhouxiaoka/autoclip"
  }
 }

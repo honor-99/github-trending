@@ -1,14 +1,14 @@
 {
- "generated_at": "2026-11-26T08:01:19+08:00",
+ "generated_at": "2026-11-27T08:01:12+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
  "project_count": 41,
  "topics": [
   {
    "name": "AI Agent / 编码助手",
-   "repo_count": 27,
-   "share": 0.659,
-   "stars_period_total": 586035,
-   "avg_stars_period": 21705,
+   "repo_count": 28,
+   "share": 0.683,
+   "stars_period_total": 585607,
+   "avg_stars_period": 20915,
    "languages": [
     "CSS",
     "Go",
@@ -212,8 +212,8 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1652,
-     "stars_total": 22967,
+     "stars_period": 1597,
+     "stars_total": 24537,
      "language": "Python",
      "periods": [
       "daily"
@@ -221,19 +221,9 @@
      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
     },
     {
-     "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 1141,
-     "stars_total": 73004,
-     "language": "HTML",
-     "periods": [
-      "daily"
-     ],
-     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
-    },
-    {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 1135,
-     "stars_total": 210011,
+     "stars_period": 1046,
+     "stars_total": 210921,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -241,19 +231,19 @@
      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API."
     },
     {
-     "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 1106,
-     "stars_total": 65658,
-     "language": "Python",
+     "full_name": "cathrynlavery/diagram-design",
+     "stars_period": 955,
+     "stars_total": 73831,
+     "language": "HTML",
      "periods": [
       "daily"
      ],
-     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
+     "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
     },
     {
      "full_name": "obra/superpowers",
-     "stars_period": 903,
-     "stars_total": 326595,
+     "stars_period": 854,
+     "stars_total": 327472,
      "language": "Shell",
      "periods": [
       "daily"
@@ -261,34 +251,54 @@
      "description": "An agentic skills framework & software development methodology that works."
     },
     {
+     "full_name": "zhouxiaoka/autoclip",
+     "stars_period": 774,
+     "stars_total": 16917,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AutoClip｜The open-source OpusClip alternative — local-first AI clipping & MCP server, zero subscriptions. 一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和"
+    },
+    {
+     "full_name": "HKUDS/CLI-Anything",
+     "stars_period": 746,
+     "stars_total": 66343,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
+    },
+    {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 858,
-     "stars_total": 6463,
+     "stars_period": 562,
+     "stars_total": 7016,
      "language": "Shell",
      "periods": [
       "daily"
      ],
-     "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and"
-    },
-    {
-     "full_name": "cursor/plugins",
-     "stars_period": 416,
-     "stars_total": 19523,
-     "language": "TypeScript",
-     "periods": [
-      "daily"
-     ],
-     "description": "Cursor plugin specification and official plugins"
+     "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, privacy manifest and"
     },
     {
      "full_name": "Tracer-Cloud/opensre",
-     "stars_period": 348,
-     "stars_total": 15507,
+     "stars_period": 327,
+     "stars_total": 15811,
      "language": "Python",
      "periods": [
       "daily"
      ],
      "description": "The open-source agent for CI/CD reliability."
+    },
+    {
+     "full_name": "cursor/plugins",
+     "stars_period": 270,
+     "stars_total": 19779,
+     "language": "TypeScript",
+     "periods": [
+      "daily"
+     ],
+     "description": "Cursor plugin specification and official plugins"
     }
    ]
   },
@@ -296,8 +306,8 @@
    "name": "安全 / 逆向",
    "repo_count": 8,
    "share": 0.195,
-   "stars_period_total": 498022,
-   "avg_stars_period": 62253,
+   "stars_period_total": 497622,
+   "avg_stars_period": 62203,
    "languages": [
     "Java",
     "JavaScript",
@@ -359,8 +369,8 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1652,
-     "stars_total": 22967,
+     "stars_period": 1597,
+     "stars_total": 24537,
      "language": "Python",
      "periods": [
       "daily"
@@ -369,18 +379,18 @@
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 858,
-     "stars_total": 6463,
+     "stars_period": 562,
+     "stars_total": 7016,
      "language": "Shell",
      "periods": [
       "daily"
      ],
-     "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and"
+     "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, privacy manifest and"
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 574,
-     "stars_total": 78478,
+     "stars_period": 525,
+     "stars_total": 78961,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -393,8 +403,8 @@
    "name": "CLI / 开发者工具",
    "repo_count": 7,
    "share": 0.171,
-   "stars_period_total": 14641,
-   "avg_stars_period": 2092,
+   "stars_period_total": 13989,
+   "avg_stars_period": 1998,
    "languages": [
     "HTML",
     "Python",
@@ -444,8 +454,8 @@
     },
     {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 1141,
-     "stars_total": 73004,
+     "stars_period": 955,
+     "stars_total": 73831,
      "language": "HTML",
      "periods": [
       "daily"
@@ -453,24 +463,24 @@
      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
     },
     {
+     "full_name": "zhouxiaoka/autoclip",
+     "stars_period": 774,
+     "stars_total": 16917,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AutoClip｜The open-source OpusClip alternative — local-first AI clipping & MCP server, zero subscriptions. 一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和"
+    },
+    {
      "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 1106,
-     "stars_total": 65658,
+     "stars_period": 746,
+     "stars_total": 66343,
      "language": "Python",
      "periods": [
       "daily"
      ],
      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/"
-    },
-    {
-     "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 880,
-     "stars_total": 16133,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
     }
    ]
   },
@@ -478,8 +488,8 @@
    "name": "其他 / 未归类",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 31968,
-   "avg_stars_period": 6394,
+   "stars_period_total": 31880,
+   "avg_stars_period": 6376,
    "languages": [
     "C",
     "Objective-C",
@@ -510,8 +520,8 @@
     },
     {
      "full_name": "XiaoYouChR/Ghost-Downloader-3",
-     "stars_period": 951,
-     "stars_total": 18220,
+     "stars_period": 889,
+     "stars_total": 19088,
      "language": "Python",
      "periods": [
       "daily"
@@ -530,8 +540,8 @@
     },
     {
      "full_name": "nginx/nginx",
-     "stars_period": 176,
-     "stars_total": 33367,
+     "stars_period": 150,
+     "stars_total": 33520,
      "language": "C",
      "periods": [
       "daily"
@@ -544,8 +554,8 @@
    "name": "学习 / 知识管理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 30391,
-   "avg_stars_period": 6078,
+   "stars_period_total": 30253,
+   "avg_stars_period": 6051,
    "languages": [
     "Python",
     "TypeScript"
@@ -584,8 +594,8 @@
     },
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 1135,
-     "stars_total": 210011,
+     "stars_period": 1046,
+     "stars_total": 210921,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -594,8 +604,8 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 574,
-     "stars_total": 78478,
+     "stars_period": 525,
+     "stars_total": 78961,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -608,8 +618,8 @@
    "name": "LLM / 模型与推理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 27608,
-   "avg_stars_period": 5522,
+   "stars_period_total": 27469,
+   "avg_stars_period": 5494,
    "languages": [
     "C++",
     "Go",
@@ -649,8 +659,8 @@
     },
     {
      "full_name": "jingyaogong/minimind",
-     "stars_period": 826,
-     "stars_total": 70929,
+     "stars_period": 702,
+     "stars_total": 71613,
      "language": "Python",
      "periods": [
       "daily"
@@ -659,8 +669,8 @@
     },
     {
      "full_name": "openvinotoolkit/openvino",
-     "stars_period": 191,
-     "stars_total": 12650,
+     "stars_period": 176,
+     "stars_total": 12815,
      "language": "C++",
      "periods": [
       "daily"
@@ -670,11 +680,55 @@
    ]
   },
   {
-   "name": "音视频 / 多模态",
+   "name": "后端 / 基础设施",
    "repo_count": 3,
    "share": 0.073,
-   "stars_period_total": 74013,
-   "avg_stars_period": 24671,
+   "stars_period_total": 7205,
+   "avg_stars_period": 2402,
+   "languages": [
+    "Python",
+    "TypeScript"
+   ],
+   "repos": [
+    {
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars_period": 3748,
+     "stars_total": 9927,
+     "language": "Python",
+     "periods": [
+      "weekly"
+     ],
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
+    },
+    {
+     "full_name": "google-labs-code/stitch-skills",
+     "stars_period": 2683,
+     "stars_total": 12059,
+     "language": "TypeScript",
+     "periods": [
+      "daily",
+      "weekly"
+     ],
+     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
+    },
+    {
+     "full_name": "zhouxiaoka/autoclip",
+     "stars_period": 774,
+     "stars_total": 16917,
+     "language": "Python",
+     "periods": [
+      "daily"
+     ],
+     "description": "AutoClip｜The open-source OpusClip alternative — local-first AI clipping & MCP server, zero subscriptions. 一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和"
+    }
+   ]
+  },
+  {
+   "name": "音视频 / 多模态",
+   "repo_count": 2,
+   "share": 0.049,
+   "stars_period_total": 73133,
+   "avg_stars_period": 36566,
    "languages": [
     "Python",
     "TypeScript"
@@ -699,16 +753,6 @@
       "monthly"
      ],
      "description": "Write HTML. Render video. Built for agents."
-    },
-    {
-     "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 880,
-     "stars_total": 16133,
-     "language": "Python",
-     "periods": [
-      "daily"
-     ],
-     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
     }
    ]
   },
@@ -778,45 +822,11 @@
    ]
   },
   {
-   "name": "后端 / 基础设施",
-   "repo_count": 2,
-   "share": 0.049,
-   "stars_period_total": 6431,
-   "avg_stars_period": 3216,
-   "languages": [
-    "Python",
-    "TypeScript"
-   ],
-   "repos": [
-    {
-     "full_name": "kajisho5/ffmpeg-skill",
-     "stars_period": 3748,
-     "stars_total": 9927,
-     "language": "Python",
-     "periods": [
-      "weekly"
-     ],
-     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
-    },
-    {
-     "full_name": "google-labs-code/stitch-skills",
-     "stars_period": 2683,
-     "stars_total": 12059,
-     "language": "TypeScript",
-     "periods": [
-      "daily",
-      "weekly"
-     ],
-     "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents s"
-    }
-   ]
-  },
-  {
    "name": "数据 / 爬虫",
    "repo_count": 2,
    "share": 0.049,
-   "stars_period_total": 4835,
-   "avg_stars_period": 2418,
+   "stars_period_total": 4746,
+   "avg_stars_period": 2373,
    "languages": [
     "Go",
     "TypeScript"
@@ -834,8 +844,8 @@
     },
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 1135,
-     "stars_total": 210011,
+     "stars_period": 1046,
+     "stars_total": 210921,
      "language": "TypeScript",
      "periods": [
       "daily"
