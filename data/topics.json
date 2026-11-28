@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T08:01:12+08:00",
+ "generated_at": "2026-11-28T08:01:27+08:00",
  "basis": "最近一次日/周/月榜去重后的项目，按名称+描述关键词规则归类（最多 3 个话题）",
  "project_count": 41,
  "topics": [
@@ -7,8 +7,8 @@
    "name": "AI Agent / 编码助手",
    "repo_count": 28,
    "share": 0.683,
-   "stars_period_total": 585607,
-   "avg_stars_period": 20915,
+   "stars_period_total": 585038,
+   "avg_stars_period": 20894,
    "languages": [
     "CSS",
     "Go",
@@ -212,8 +212,8 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1597,
-     "stars_total": 24537,
+     "stars_period": 1608,
+     "stars_total": 26051,
      "language": "Python",
      "periods": [
       "daily"
@@ -221,9 +221,19 @@
      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulne"
     },
     {
+     "full_name": "obra/superpowers",
+     "stars_period": 922,
+     "stars_total": 328291,
+     "language": "Shell",
+     "periods": [
+      "daily"
+     ],
+     "description": "An agentic skills framework & software development methodology that works."
+    },
+    {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 1046,
-     "stars_total": 210921,
+     "stars_period": 822,
+     "stars_total": 211671,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -232,8 +242,8 @@
     },
     {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 955,
-     "stars_total": 73831,
+     "stars_period": 725,
+     "stars_total": 74447,
      "language": "HTML",
      "periods": [
       "daily"
@@ -241,19 +251,9 @@
      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. "
     },
     {
-     "full_name": "obra/superpowers",
-     "stars_period": 854,
-     "stars_total": 327472,
-     "language": "Shell",
-     "periods": [
-      "daily"
-     ],
-     "description": "An agentic skills framework & software development methodology that works."
-    },
-    {
      "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 774,
-     "stars_total": 16917,
+     "stars_period": 718,
+     "stars_total": 17578,
      "language": "Python",
      "periods": [
       "daily"
@@ -262,8 +262,8 @@
     },
     {
      "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 746,
-     "stars_total": 66343,
+     "stars_period": 666,
+     "stars_total": 66990,
      "language": "Python",
      "periods": [
       "daily"
@@ -272,8 +272,8 @@
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 562,
-     "stars_total": 7016,
+     "stars_period": 530,
+     "stars_total": 7889,
      "language": "Shell",
      "periods": [
       "daily"
@@ -282,8 +282,8 @@
     },
     {
      "full_name": "Tracer-Cloud/opensre",
-     "stars_period": 327,
-     "stars_total": 15811,
+     "stars_period": 328,
+     "stars_total": 16121,
      "language": "Python",
      "periods": [
       "daily"
@@ -292,8 +292,8 @@
     },
     {
      "full_name": "cursor/plugins",
-     "stars_period": 270,
-     "stars_total": 19779,
+     "stars_period": 243,
+     "stars_total": 20010,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -306,8 +306,8 @@
    "name": "安全 / 逆向",
    "repo_count": 8,
    "share": 0.195,
-   "stars_period_total": 497622,
-   "avg_stars_period": 62203,
+   "stars_period_total": 497550,
+   "avg_stars_period": 62194,
    "languages": [
     "Java",
     "JavaScript",
@@ -369,8 +369,8 @@
     },
     {
      "full_name": "elementalsouls/Claude-BugHunter",
-     "stars_period": 1597,
-     "stars_total": 24537,
+     "stars_period": 1608,
+     "stars_total": 26051,
      "language": "Python",
      "periods": [
       "daily"
@@ -379,8 +379,8 @@
     },
     {
      "full_name": "mjmirza/app-store-compliance",
-     "stars_period": 562,
-     "stars_total": 7016,
+     "stars_period": 530,
+     "stars_total": 7889,
      "language": "Shell",
      "periods": [
       "daily"
@@ -389,8 +389,8 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 525,
-     "stars_total": 78961,
+     "stars_period": 474,
+     "stars_total": 79447,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -403,8 +403,8 @@
    "name": "CLI / 开发者工具",
    "repo_count": 7,
    "share": 0.171,
-   "stars_period_total": 13989,
-   "avg_stars_period": 1998,
+   "stars_period_total": 13623,
+   "avg_stars_period": 1946,
    "languages": [
     "HTML",
     "Python",
@@ -454,8 +454,8 @@
     },
     {
      "full_name": "cathrynlavery/diagram-design",
-     "stars_period": 955,
-     "stars_total": 73831,
+     "stars_period": 725,
+     "stars_total": 74447,
      "language": "HTML",
      "periods": [
       "daily"
@@ -464,8 +464,8 @@
     },
     {
      "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 774,
-     "stars_total": 16917,
+     "stars_period": 718,
+     "stars_total": 17578,
      "language": "Python",
      "periods": [
       "daily"
@@ -474,8 +474,8 @@
     },
     {
      "full_name": "HKUDS/CLI-Anything",
-     "stars_period": 746,
-     "stars_total": 66343,
+     "stars_period": 666,
+     "stars_total": 66990,
      "language": "Python",
      "periods": [
       "daily"
@@ -488,8 +488,8 @@
    "name": "其他 / 未归类",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 31880,
-   "avg_stars_period": 6376,
+   "stars_period_total": 31823,
+   "avg_stars_period": 6365,
    "languages": [
     "C",
     "Objective-C",
@@ -520,8 +520,8 @@
     },
     {
      "full_name": "XiaoYouChR/Ghost-Downloader-3",
-     "stars_period": 889,
-     "stars_total": 19088,
+     "stars_period": 836,
+     "stars_total": 19834,
      "language": "Python",
      "periods": [
       "daily"
@@ -540,8 +540,8 @@
     },
     {
      "full_name": "nginx/nginx",
-     "stars_period": 150,
-     "stars_total": 33520,
+     "stars_period": 146,
+     "stars_total": 33662,
      "language": "C",
      "periods": [
       "daily"
@@ -554,8 +554,8 @@
    "name": "学习 / 知识管理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 30253,
-   "avg_stars_period": 6051,
+   "stars_period_total": 29978,
+   "avg_stars_period": 5996,
    "languages": [
     "Python",
     "TypeScript"
@@ -594,8 +594,8 @@
     },
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 1046,
-     "stars_total": 210921,
+     "stars_period": 822,
+     "stars_total": 211671,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -604,8 +604,8 @@
     },
     {
      "full_name": "toeverything/AFFiNE",
-     "stars_period": 525,
-     "stars_total": 78961,
+     "stars_period": 474,
+     "stars_total": 79447,
      "language": "TypeScript",
      "periods": [
       "daily"
@@ -618,8 +618,8 @@
    "name": "LLM / 模型与推理",
    "repo_count": 5,
    "share": 0.122,
-   "stars_period_total": 27469,
-   "avg_stars_period": 5494,
+   "stars_period_total": 27402,
+   "avg_stars_period": 5480,
    "languages": [
     "C++",
     "Go",
@@ -659,8 +659,8 @@
     },
     {
      "full_name": "jingyaogong/minimind",
-     "stars_period": 702,
-     "stars_total": 71613,
+     "stars_period": 660,
+     "stars_total": 72202,
      "language": "Python",
      "periods": [
       "daily"
@@ -669,8 +669,8 @@
     },
     {
      "full_name": "openvinotoolkit/openvino",
-     "stars_period": 176,
-     "stars_total": 12815,
+     "stars_period": 151,
+     "stars_total": 12949,
      "language": "C++",
      "periods": [
       "daily"
@@ -683,8 +683,8 @@
    "name": "后端 / 基础设施",
    "repo_count": 3,
    "share": 0.073,
-   "stars_period_total": 7205,
-   "avg_stars_period": 2402,
+   "stars_period_total": 7149,
+   "avg_stars_period": 2383,
    "languages": [
     "Python",
     "TypeScript"
@@ -713,8 +713,8 @@
     },
     {
      "full_name": "zhouxiaoka/autoclip",
-     "stars_period": 774,
-     "stars_total": 16917,
+     "stars_period": 718,
+     "stars_total": 17578,
      "language": "Python",
      "periods": [
       "daily"
@@ -825,8 +825,8 @@
    "name": "数据 / 爬虫",
    "repo_count": 2,
    "share": 0.049,
-   "stars_period_total": 4746,
-   "avg_stars_period": 2373,
+   "stars_period_total": 4522,
+   "avg_stars_period": 2261,
    "languages": [
     "Go",
     "TypeScript"
@@ -844,8 +844,8 @@
     },
     {
      "full_name": "firecrawl/firecrawl",
-     "stars_period": 1046,
-     "stars_total": 210921,
+     "stars_period": 822,
+     "stars_total": 211671,
      "language": "TypeScript",
      "periods": [
       "daily"

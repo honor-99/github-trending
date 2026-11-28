@@ -964,51 +964,50 @@
   "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3"
  },
  "ZhuLinsen/daily_stock_analysis": {
-  "one_liner": "用 LLM 每天自动分析多市场自选股，把决策仪表盘推送到你的 IM。",
-  "summary": "这是一个 Python 写的多市场股票智能分析系统，覆盖 A股、港股、美股、日股、韩股、台股和 ETF，把行情、K 线、技术指标、新闻、公告、基本面聚合起来交给大模型生成「决策仪表盘」——核心结论、评分、趋势、买卖点位、风险警报、催化因素和操作清单。它通过 GitHub Actions 或 Docker 做零成本定时运行，分析结果自动推送到企业微信、飞书、Telegram、Discord、Slack 或邮箱，另外提供 Web/桌面工作台做手动分析、历史报告、回测和持仓管理。相比单纯的行情脚本，它的差异点是把「多源数据聚合 + LLM 报告 + 多渠道推送 + Agent 多轮问股（内置均线、缠论、波浪等 15 种策略）」串成了一条完整链路，并开放 Web/Bot/API 三种入口。",
+  "one_liner": "用 LLM 每天自动分析多市场自选股，并把决策仪表盘推送到你的 IM。",
+  "summary": "这是一个 Python 写的多市场股票智能分析系统，覆盖 A股、港股、美股、日股、韩股、台股和 ETF，把行情、K 线、技术指标、新闻、公告、基本面等数据聚合后交给大模型生成「决策仪表盘」，包含核心结论、评分、趋势、买卖点位、风险警报与操作清单。它提供 Web/桌面工作台做手动分析、历史报告、回测、持仓与配置管理，并内置 20 种策略的 Agent 多轮问股。结果可自动推送到企业微信、飞书、Telegram、Discord、Slack 或邮箱，配合 GitHub Actions 做零成本定时运行。相比单点脚本，它的新意在于把「数据聚合 + LLM 报告 + 多通道推送 + 工作台 + 策略追问」串成一条可定时跑的流水线，并明确标注了各市场数据源的能力边界。",
   "audience": [
-   "有自选股、想每天拿到一份结构化复盘报告但没时间盯盘的个人投资者。",
-   "做量化或投研工具、想参考 LLM Agent 在金融数据场景如何落地的工程师。",
-   "需要把行情、新闻、公告聚合成日报并推送到团队群的投研或运营人员。",
-   "想用 GitHub Actions 零成本跑定时任务、学习低成本部署方案的后端开发者。",
-   "做财经内容或社群运营、需要每日生成多市场分析素材的人。"
+   "有 Python 基础、想给自己自选股做每日自动复盘的个人投资者。",
+   "需要快速验证 LLM 金融分析产品形态的投研或量化工程师。",
+   "运营股票社群、需要每天产出结构化复盘内容的内容创作者。",
+   "评估「AI 选股/决策看板」类产品可行性的产品经理。"
   ],
   "use_cases": [
-   "每天早上自动收到自选股的决策仪表盘，直接看结论、评分、买卖点位和风险警报做当日复盘。",
-   "在 Web 工作台里用 Agent 策略问股对单只股票做多轮追问，切换均线、缠论、波浪等策略对比结论。",
-   "把持仓截图、CSV/Excel 或剪贴板内容导入，靠代码/名称/拼音自动补全，批量建立自选股池。",
-   "用历史报告和回测功能回看过去若干天的分析结论，检验策略口径是否稳定。",
-   "把每日分析结果推送到飞书群或企业微信群，作为团队盘前简报的统一来源。"
+   "把自己几十只自选股配进去，每天早上自动收到一份带评分、买卖点位和风险提示的决策仪表盘。",
+   "用 Web 工作台对单只股票手动触发分析，查看完整 Markdown 报告、历史记录与回测结果。",
+   "通过 Agent 策略问股对同一标的做均线、缠论、波浪、量化因子等多策略多轮追问对比。",
+   "用图片、CSV/Excel 或剪贴板批量导入持仓与股票代码，让系统自动补全并跟踪。",
+   "把每日分析结果推送到团队飞书群或 Telegram 频道，作为投研晨会材料。"
   ],
   "adoption_steps": [
-   "先 fork 仓库并启用自带 GitHub Actions 工作流，在 Secrets 里配好 LLM API Key 和一个推送渠道（如 Telegram Bot Token 或飞书 Webhook），手动触发一次 workflow 看能否跑通并收到消息。",
-   "本地用 Docker 拉取 zhulinsen/daily_stock_analysis 镜像或按 docs/full-guide.md 安装，打开 Web 工作台对 1-2 只熟悉的股票做手动分析，确认目标市场的行情与新闻数据源确实取到数据。",
-   "对照 docs/market-support.md 确认你要用的市场（A股/港股/美股/日韩台/ETF）在数据源和能力边界上的限制，再扩充自选股列表和推送渠道，最后才开启每日定时。"
+   "先读 docs/INDEX.md 和 docs/market-support.md，确认你要交易的市场在数据源与能力边界上被支持，再决定是否投入。",
+   "按 docs/full-guide.md 用 Docker 镜像 zhulinsen/daily_stock_analysis 或本地 Python 环境起服务，配置 LLM API Key 与一个推送渠道（如飞书或 Telegram webhook），用 3-5 只股票手动跑一次分析验证输出质量。",
+   "验证满意后 fork 仓库并启用自带 GitHub Actions 工作流，把自选股列表和密钥写进仓库 Secrets，实现零成本定时分析与推送。"
   ],
   "build_ideas": [
-   "把行情和新闻数据源替换成公司内部或自购的数据接口，保留上层 LLM 报告与推送链路做私有化投研助手。",
-   "将决策仪表盘的 Markdown 输出结构化（JSON Schema），接入内部数据库或 BI，做成可检索的历史分析档案。",
-   "把默认 LLM 换成私有部署模型或国产模型，配合缓存策略压低每日分析成本。",
-   "基于它的 Agent 策略框架新增自定义策略（如财报事件驱动、行业轮动），并通过 API 暴露给其他系统调用。",
-   "扩展推送端，接入钉钉、Slack 之外的自建 IM 或邮件日报系统，做成团队级盘前简报服务。"
+   "把 LLM 调用层换成公司自建或私有化模型网关，去掉对第三方模型聚合商的依赖并做成本与内容合规管控。",
+   "将每日决策报告落库，叠加自己的持仓数据做归因分析、策略胜率统计和参数调优。",
+   "把推送通道替换成内部 IM 或告警平台，并把报告结构化成可被内部研报库检索的条目。",
+   "基于内置的 20 种策略接口扩展自定义策略插件，接入自有因子或另类数据源。",
+   "在分析结果之上做一个组合层面的风控层，对多标的的买卖点位做冲突检测与仓位建议。"
   ],
   "risks": [
-   "系统强依赖外部 LLM API 与行情/新闻数据源（README 中 SerpAPI 等赞助商也印证了这一点），Key 额度、限流或数据源接口变更会直接导致分析失败或数据缺失。",
-   "README 里包含赞助商推广和姊妹项目 AlphaSift 的导流，star 数虽高但需自行核对代码结构、测试覆盖和 issue 响应速度来判断成熟度。",
-   "输出是 LLM 生成的参考信息而非投资建议，买卖点位和评分存在幻觉与过拟合风险，直接用于实盘会有真实资金损失。",
-   "多市场的数据源与能力边界并不一致（README 明确指向 docs/market-support.md），部分市场或 ETF 的字段可能缺失，不能假设各市场分析质量相同。",
-   "「零成本定时运行」依赖 GitHub Actions，私有仓库的免费分钟数、调度延迟以及 Secrets 管理都需要提前确认，敏感 Key 放在第三方 CI 上也有泄露面。"
+   "系统直接输出评分、买卖点位和操作清单，属于投资建议性质内容，实际使用前需自行确认所在地区的合规边界与免责安排。",
+   "运行依赖第三方 LLM API 与行情/新闻数据源（README 赞助商中包含模型聚合商与 SerpAPI），密钥成本、限流和数据源可用性会直接影响结果，README 也单独用 market-support.md 说明各市场能力边界不一致。",
+   "README 中引用的 arXiv 链接编号为 2608.26990，格式异常，论文真实性需自行核实后再作为技术依据引用。",
+   "材料只能证明存在 CI 工作流与 Docker 镜像，无法判断 issue 响应速度、版本迭代节奏与长期维护意愿，生产使用前应查看提交历史与未关闭 issue。",
+   "多市场（尤其日股、韩股、台股）的数据完整度与 A股/美股不对等，跨市场对比分析时结论可靠性可能下降。"
   ],
   "tokens": {
-   "prompt_tokens": 1758,
-   "completion_tokens": 1958
+   "prompt_tokens": 1759,
+   "completion_tokens": 1583
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "5e3f62d2b663fce7dd105047b9c682a9ca456cc559e32fabf7ccfc6e6e92066f",
-  "readme_sha": "700f76ea3e0938d17c3d2a0ba296ca5dbb9de47a",
+  "hash": "8d1a216009805ed4265fd6f7cc24825cda42e87ee62fa5ee02929ece9c448980",
+  "readme_sha": "03cba72989c1b487c7c237c9e792886520f60831",
   "desc_hash": "01bf9845101df79035f0c81c17e2a9dd21d162e036ddbd4d3dc53b2ea4cf2ef0",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-25T08:01:18+08:00",
+  "generated_at": "2026-11-28T08:01:12+08:00",
   "readme_used": true,
   "source_description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
   "language": "Python",
@@ -1980,7 +1979,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "ac8105f5e34dd03cf7af11a6a75aca07665a01fea998b9b6cd3c2857e59a1d20",
-  "readme_sha": "f5c32600baa3e9f56cd4a8bae45d01b8d8978c96",
+  "readme_sha": "ea486ccf7a43c897f2724b835cb1e2d8b6d72c97",
   "desc_hash": "c819ed58f6475e5e8ebb96475f3e90c3bf39d85ba246a0a96c1fd061d6bae10c",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-26T08:01:13+08:00",
@@ -2600,50 +2599,51 @@
   "url": "https://github.com/jquery/jquery"
  },
  "kajisho5/ffmpeg-skill": {
-  "one_liner": "让编码 Agent 用本地 FFmpeg 剪视频，不用云服务也不用 API Key",
-  "summary": "这是一个给编码 Agent 用的本地视频编辑器：把 42 个 FFmpeg 操作封装成带机器可读契约的工具，并通过 MCP server 暴露给 Claude Code、Cursor、Codex 等客户端。Agent 调用 caption.py、fit.py、silence.py、loudness.py 这类脚本完成加字幕、改画幅、去静音、调响度等动作，再用本地生成的 review 页面检查自己的输出。实现上强调零云依赖、零 API Key、只用 Python 标准库，同时提供 npx ffmpeg-skill 的 npm 入口。相比让模型直接拼 FFmpeg 命令，它的新意在于把命令参数固化成契约并提供自检环节，降低 Agent 生成错误命令的概率。",
+  "one_liner": "给编码 agent 装一个本地视频剪辑器，42 个 FFmpeg 工具，不用云服务也不用 API key。",
+  "summary": "ffmpeg-skill 把 FFmpeg 的常用剪辑动作拆成 42 个带机器可读契约的 Python 工具脚本，再包一层 MCP server，让 Claude Code、Cursor、Codex 这类编码 agent 能直接调用它剪片。它覆盖裁切、字幕、竖屏重构、响度标准化、平台导出等场景，全部在本机跑，README 强调无云、无 API key、只用 Python 标准库。比较特别的是「自检」设计：编辑完成后可以让 agent 生成 review page，用 npx ffmpeg-skill review project.json --result run.json 输出结果供核对，等于给 agent 的剪辑加了验收环节。分发上走 npm（npx ffmpeg-skill），但核心实现是 Python 脚本，本质是给 agent 生态补一个可被结构化调用的视频处理层。",
   "audience": [
-   "日常用 Claude Code、Cursor 或 Codex 写代码、希望把视频处理也交给 Agent 的开发者。",
-   "需要批量产出竖屏短视频、字幕版切条的内容运营与剪辑工程化人员。",
-   "素材涉密或不便上传云端，只能在本机完成转码与剪辑的团队。",
-   "在搭建 MCP 工具链、想参考一个真实 MCP server 设计与工具契约的工程师。"
+   "日常用 Claude Code、Cursor 或 Codex 写代码、希望把视频处理也交给 agent 的开发者。",
+   "需要批量产出竖屏短视频、加字幕、统一响度的内容运营或自媒体团队。",
+   "素材涉密或不便上传云端，只能在本机完成剪辑的团队。",
+   "在做 MCP 工具链、想参考「工具契约 + 自检回执」设计方式的工程师。",
+   "评估 agent 能力边界、想知道视频剪辑能否自动化的产品经理。"
   ],
   "use_cases": [
-   "用 fit.py --aspect 9:16 --fit crop 把横屏素材批量改成竖屏发布版本。",
-   "用 caption.py --animate pop --karaoke 给口播视频生成带卡拉 OK 效果的字幕。",
-   "用 silence.py --threshold -35 自动剪掉录音中的停顿，压缩成更紧凑的短片。",
-   "用 loudness.py -I -14 --tp -1 把不同来源的音频统一到平台要求的响度标准。",
-   "剪辑完成后让 Agent 打开 review 页面，逐步核对每个处理步骤和最终结果再交付。"
+   "把横版素材批量转成竖屏：用 fit.py --aspect 9:16 --fit crop 做裁切重构。",
+   "给口播视频自动加动态字幕：用 caption.py --animate pop --karaoke 生成逐词高亮字幕。",
+   "按平台响度规范统一音量：用 loudness.py -I -14 --tp -1 做响度标准化与真峰值限制。",
+   "剪掉录制中的停顿和空白：用 silence.py --threshold -35 检测并删除静音段。",
+   "让 agent 剪完后自查：跑 review project.json --result run.json 生成 review page 核对输出。"
   ],
   "adoption_steps": [
-   "先在本机确认已安装可用的 FFmpeg，然后直接运行 npx ffmpeg-skill，看它能否正常启动并列出可用工具。",
-   "挑一段几十秒的测试素材，在你的 MCP 客户端里注册这个 server，先只跑 fit.py 和 caption.py 两个工具验证链路。",
-   "用 npx ffmpeg-skill review project.json --result run.json 生成 review 页面，确认输出符合预期后再接入正式生产流程。"
+   "先读 SECURITY.md 的「What you install and what it touches」和 README 的 ffmpeg compatibility 章节，确认本机 FFmpeg 版本、Python 环境以及它会读写哪些路径。",
+   "用 npx ffmpeg-skill 拉起工具，拿一条短视频分别试 fit.py --aspect 9:16 --fit crop 和 loudness.py -I -14 --tp -1，确认输出文件符合预期。",
+   "把 MCP server 接到你常用的客户端（Claude Code / Cursor / Codex），让 agent 完整跑一次「裁切 + 字幕 + 导出」，再用 npx ffmpeg-skill review project.json --result run.json 检查回执是否可读、结论是否可信。"
   ],
   "build_ideas": [
-   "把 42 个工具编排成批量流水线，对一整个素材目录自动完成改幅、字幕、响度统一和平台导出。",
-   "把 review 页面产出的 HTML 接入 CI，作为视频处理任务的自动验收环节。",
-   "在 MCP server 之上扩展自定义工具，例如固定品牌片头片尾、固定字幕样式模板。",
-   "针对不同发布平台沉淀一套导出预设，封装成团队内部的调用约定。",
-   "结合自有素材库或选题系统，让 Agent 从选题到成片全自动跑通一条内容生产线。"
+   "基于这 42 个工具封装一条批量流水线，把一批素材按平台规格自动裁切、加字幕、统一响度后导出。",
+   "把 review page 的产物接进 CI，做成视频输出的质量门禁，不合格的自动打回重跑。",
+   "针对抖音、YouTube Shorts、Reels 等平台各做一套预设参数包，减少每次手写参数。",
+   "在 project.json 之上做一层素材与项目管理层，支持断点续跑和多次编辑的版本对比。",
+   "在 MCP server 上扩展自定义工具，比如品牌水印、片头片尾模板、封面抽帧。"
   ],
   "risks": [
-   "依赖本机 FFmpeg，README 专门设有 FFmpeg 兼容性章节，说明不同版本下工具行为可能存在差异，需要固定版本并自测。",
-   "材料中只看到 LICENSE 链接，未写明具体许可类型，商用或二次分发前必须先去仓库确认。",
-   "项目 star 增长很快但公开信息里看不到长期维护承诺，42 个工具的实际稳定性需要用自己的素材验证。",
-   "MCP 客户端之间实现存在差异，在 Claude Code 上跑通不代表在 Cursor 或 Codex 上行为一致。",
-   "仓库由个人账号维护，遇到问题时的响应速度和后续迭代节奏存在不确定性。"
+   "材料里只给了 LICENSE 链接、没有给出具体许可条款，商用或二次分发前必须自己打开确认。",
+   "分发方式是 npx 但核心是 Python 脚本，实际落地要同时具备 Node 和 Python 环境，并依赖本机已安装且版本兼容的 FFmpeg。",
+   "本期新增 3748 star、总量接近一万，热度上升很快，但材料没有体现测试覆盖、发版节奏和维护者数量，成熟度需自行验证。",
+   "42 个工具的实际能力边界和稳定性在材料中只有 4 个命令示例，其余工具需要自己逐个试。",
+   "官方 showcase 的 12 条片子里有 9 条是 Google Veo 生成的素材，真实手机拍摄或专业素材上的效果需要自测。"
   ],
   "tokens": {
-   "prompt_tokens": 1520,
-   "completion_tokens": 1487
+   "prompt_tokens": 1530,
+   "completion_tokens": 1838
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "af33d0d5e7d9957c7c8982503bf2309837a278bfa1ce8c5ea74e5896c15cf95d",
-  "readme_sha": "695846512c99036bb2b93e88747d4657cd67d51d",
+  "hash": "2ab9d7078ad78f58687977b574e3ed4afe68f7601ae71e770aae5605200ed6a8",
+  "readme_sha": "e29b2c00559358ba73d0c21d93e282a8d3171c89",
   "desc_hash": "4c40d1a999ee704009c182f2fc06546446c6bb9c02c5352f16c442115c31fa1f",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:31:15+08:00",
+  "generated_at": "2026-11-28T08:01:13+08:00",
   "readme_used": true,
   "source_description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
   "language": "Python",
@@ -3606,7 +3606,7 @@
   },
   "model_resolved": "deepseek-v4.1-flash",
   "hash": "7ea2cee4942b3b7a3253a2661bdb87c3b3b8a056f5e667e1f24e271c6161694a",
-  "readme_sha": "21416ff09593c03748c4e0b644bb82f470487469",
+  "readme_sha": "1d4ca584bc249a0c0cd7bc8096a6ea3477be8f91",
   "desc_hash": "8f7d7ef8b6b7184f5dc333ca69c1ef7a0bc3c01f405ba92fa438bdfc65f1e80c",
   "model": "deepseek-v4.1-flash-high",
   "generated_at": "2026-11-24T09:28:48+08:00",
@@ -3821,51 +3821,51 @@
   "desc_hash": "d009615483c94bf84a3487749cbcf1934ce44da2368ee13778046e6c9b7d63ad"
  },
  "tashfeenahmed/freellmapi": {
-  "one_liner": "把几十家免费 LLM 额度聚合成一个 OpenAI 兼容接口，自动路由与故障转移。",
-  "summary": "FreeLLMAPI 是一个 TypeScript 写的聚合网关，把 87 家（README 口径）厂商的免费额度统一暴露成一个 OpenAI 兼容的 /v1 端点，客户端只要改 base_url 就能用。它内置路由器按请求挑可用模型，遇到限流自动切到下一家，并按 key 记录用量以免超出各家免费额度上限，密钥加密存储。除免费厂商外也能挂自定义的 OpenAI 兼容 chat、embedding、图像、音频端点。相对同类聚合脚本，它的差异点在于自带模型目录的签名更新通道和桌面端（Windows/Play/App Store）分发，但最新目录只对 19 美元/年的付费版当天开放，免费版延迟 30 天。",
+  "one_liner": "把几十家免费 LLM 额度聚合成一个 OpenAI 兼容的 /v1 接口",
+  "summary": "FreeLLMAPI 是一个 TypeScript 写的自托管网关，把 87 家厂商的免费额度（README 称 1,313 个免费模型端点）统一收敛到一个 OpenAI 兼容的 /v1 接口后面，同时支持你自己填的任意 OpenAI 兼容端点。它内置路由器按请求挑当前可用的模型，遇到限流自动 failover 到下一家，并按 key 记录用量以卡在各家免费额度上限之内，密钥加密存储。相比自己写脚本轮询多个 API key，它的新意在于把「选模型 + 切厂商 + 配额记账」做成一层可复用的基础设施，还提供桌面端、Docker 镜像和移动端安装包。需要注意的是，README 里的数字（10.1B tokens/87 家/1,313 端点）与 GitHub 仓库描述（7.4B/34 家/635 端点）不一致，说明目录扩张很快，实际能力以你部署时拉到的 catalog 为准。",
   "audience": [
-   "想低成本横向试用多家模型、又不想逐家写适配代码的独立开发者和爱好者。",
-   "手上已有 OpenAI SDK 代码、希望只改 base_url 就能切换或轮换模型的后端工程师。",
-   "在 Cursor、Continue 一类 OpenAI 兼容 CLI 或编码 agent 里想接免费模型的开发者。",
-   "需要做多模型输出对比评测、但预算有限的产品经理或算法同学。",
-   "黑客松、教学演示等短期需要大量 token 且不追求 SLA 的场景。"
+   "做原型和 side project、不想先掏 API 费用的独立开发者与 indie hacker。",
+   "需要在多个模型之间做对比评测、又不想为每家单独写接入代码的算法工程师。",
+   "想把 Claude Code、Cursor 这类 OpenAI 兼容客户端接到免费模型上试跑的开发者。",
+   "给团队做 AI 教学、demo 或内部试验环境，预算有限但需要多模型可用性的技术负责人。",
+   "想研究多厂商路由、限流降级与配额调度策略的后端工程师。"
   ],
   "use_cases": [
-   "把现有 OpenAI SDK 项目的 base_url 指向本地 /v1，用同一份代码跑多个模型的输出对比。",
-   "在编码 agent 或 CLI 工具里配置成 OpenAI 兼容后端，承担日常小规模问答和补全。",
-   "做原型时依赖路由和自动 failover，避免某家免费额度耗尽导致演示中断。",
-   "开启 README 提到的 prompt compression 管线，压缩长提示以降低 token 消耗。",
-   "把自建的 embedding、图像、音频 OpenAI 兼容端点一并挂进来，做多模态小实验。"
+   "把本地客户端的 base_url 指向自建的 /v1，让同一个 API key 在多家免费模型间自动切换跑通对话。",
+   "批量跑 prompt 评测时，用它的 failover 机制在某个厂商触发限流后自动换下一家，避免整批任务中断。",
+   "给个人 coding agent 配置统一入口，在免费额度内做日常代码补全和问答实验。",
+   "用它的 per-key 用量统计观察各家免费额度的消耗节奏，决定哪些场景值得付费升级。",
+   "把公司内部已有的 OpenAI 兼容服务作为 custom endpoint 挂进去，和免费模型混跑做灰度对比。"
   ],
   "adoption_steps": [
-   "先按 docs/en/install/01-install.md 的 Docker Compose 方式在本地起服务（或直接装桌面版），确认 /v1 端点可访问。",
-   "在配置里填入 2 到 3 家厂商的免费 key，用 /v1/chat/completions 发一条测试请求，再手动触发限流验证 failover 是否真的切换。",
-   "把现有项目复制一份改 base_url 和 api_key 指向本地端点做小流量试跑，对照 per-key 用量统计确认没有超出各家免费额度。"
+   "先按 README 的 Quick start 用 Docker Compose 起一个本地实例（或直接装桌面版），确认 /v1 能正常响应再继续。",
+   "在管理界面里填入你已有的 1-2 家厂商 API key，只开少量模型做连通性和 failover 验证，别一次性全量导入。",
+   "把现有客户端（如 OpenAI SDK 或 coding agent）的 base_url 改成实例地址、api_key 换成实例签发的 key，跑一轮真实任务观察限流与切换日志。"
   ],
   "build_ideas": [
-   "在路由层加自己的模型评分或任务分类逻辑，按代码、写作、翻译等场景指定优先模型。",
-   "把公司内部或自建的 OpenAI 兼容端点注册为兜底 provider，形成免费额度加私有模型的混合路由。",
-   "基于它的 per-key 用量数据做一层监控看板或告警，接进自己的 Prometheus、Grafana 体系。",
-   "把 prompt compression 单独抽出来做成中间件，复用到其他调用链路上做成本优化。",
-   "在桌面端基础上做面向非工程用户的简化配置向导，降低填 key 和选模型的门槛。"
+   "在它的路由层之上加一层按任务类型（代码/长文/多模态）的模型选择策略插件，替换默认的「挑可用模型」逻辑。",
+   "基于它的 per-key 用量数据做一个团队级配额看板，展示每家免费额度的剩余量和消耗曲线。",
+   "把它当作评测 harness 的统一出口，接上自己的 prompt 集和打分脚本，做跨厂商模型横评。",
+   "封装成公司内网的统一 LLM 网关，在免费模型之外挂上自建或付费端点，做成本分层路由。",
+   "针对 failover 行为写一套混沌测试工具，模拟某厂商 429/超时，验证降级链路是否按预期切换。"
   ],
   "risks": [
-   "README 明确写着 Personal experimentation only，聚合使用各家免费额度很可能触碰厂商服务条款，商用或大规模调用存在账号被封的法律与可用性风险。",
-   "容量数字自相矛盾：GitHub 描述是 34 家厂商、635 个端点、74 亿 token/月，README 已变成 87 家、1313 个端点、101 亿 token/月，说明指标口径不稳定且为自报，不能当作 SLA 或容量承诺。",
-   "免费安装拿到的模型目录是月度快照、比实时 feed 晚 30 天，最新模型和配额变更要 19 美元/年的付费版才当天可见，核心能力被切分到商业订阅。",
-   "可用性完全依赖第三方免费端点，任一厂商改配额或下线都会直接影响结果，路由和 failover 只能缓解不能消除，材料中也未见任何 SLA 说明。",
-   "所有厂商密钥集中存放在这一个服务里，虽然加密存储，但它成为单点，自托管部署时的网络安全和密钥管理需要自行评估；材料未提供测试覆盖、issue 处理或发布历史等维护证据，长期维护状态无法判断。"
+   "README 明确标注「Personal experimentation only」，定位是个人实验，直接用于生产或对外服务缺少官方支持承诺。",
+   "能力完全依赖第三方免费额度，各厂商随时可能调整或取消免费政策、限制并发，聚合多账号使用也可能触碰其服务条款导致封号。",
+   "免费安装拿到的模型目录是月度快照，新模型要滞后 30 天，实时目录需 $19/年订阅，核心体验存在付费墙分层。",
+   "材料只链接了 LICENSE 文件但未给出具体许可证类型，商用或二次分发前必须自行确认授权范围。",
+   "密钥虽加密存储，但集中托管在你的实例上，且请求会把 prompt 转发给多家第三方厂商，涉及数据出境与隐私合规需自行评估。"
   ],
   "tokens": {
-   "prompt_tokens": 1396,
-   "completion_tokens": 1923
+   "prompt_tokens": 1404,
+   "completion_tokens": 1742
   },
   "model_resolved": "deepseek-v4.1-flash",
-  "hash": "51db0404dcfa3f345f7d310dab928152e42c855c47063a2edc73ba0a978ed01a",
-  "readme_sha": "0d29875f83bb416710485df7dfff7141daafb350",
+  "hash": "c9071c50c7b7cece667072b6191cf86051c776e1b0a7b08f176d9d7ea1f90225",
+  "readme_sha": "bd6d1f03cbc3ca50dc10b0795fbd4ab57288f211",
   "desc_hash": "53ebb0746e981e3f0d31a31cbf2a4cda48403a5943ba7e06598434d57a5ab19a",
   "model": "deepseek-v4.1-flash-high",
-  "generated_at": "2026-11-24T09:29:13+08:00",
+  "generated_at": "2026-11-28T08:01:14+08:00",
   "readme_used": true,
   "source_description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
   "language": "TypeScript",
@@ -4071,7 +4071,7 @@
   "source_description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
   "language": "Python",
   "url": "https://github.com/tradermonty/claude-trading-skills",
-  "readme_sha": "a3c2d91c57fb18cbe5cdb5b2aaca5e34f44b63b8",
+  "readme_sha": "f27d11ceef114b21386b333622572513ac42e04c",
   "desc_hash": "8a235d57665cac673b73b04ec2a0c246c4a0e43ba346d23a8565d8c266d1b26b"
  },
  "vercel-labs/agent-browser": {
